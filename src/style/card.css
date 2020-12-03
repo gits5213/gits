@@ -1,0 +1,18 @@
+.img-style { 
+    padding-bottom: 1em;
+}
+
+.img-style img {
+    border-radius: 70px;
+    border-style: double;
+    border-color: cornsilk;
+}
+
+.course-details{
+    font-family: monospace;
+    opacity: .8;
+    width: 75%;
+    margin: auto;
+    border-radius: 10px;
+    border-top-style: solid;
+}

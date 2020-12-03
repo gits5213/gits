@@ -1,0 +1,37 @@
+{
+  "files": {
+    "main.css": "/static/css/main.7b1aa408.chunk.css",
+    "main.js": "/static/js/main.ba263a75.chunk.js",
+    "main.js.map": "/static/js/main.ba263a75.chunk.js.map",
+    "runtime-main.js": "/static/js/runtime-main.f0a26c96.js",
+    "runtime-main.js.map": "/static/js/runtime-main.f0a26c96.js.map",
+    "static/css/2.42449d2c.chunk.css": "/static/css/2.42449d2c.chunk.css",
+    "static/js/2.67df3808.chunk.js": "/static/js/2.67df3808.chunk.js",
+    "static/js/2.67df3808.chunk.js.map": "/static/js/2.67df3808.chunk.js.map",
+    "index.html": "/index.html",
+    "static/css/2.42449d2c.chunk.css.map": "/static/css/2.42449d2c.chunk.css.map",
+    "static/css/main.7b1aa408.chunk.css.map": "/static/css/main.7b1aa408.chunk.css.map",
+    "static/js/2.67df3808.chunk.js.LICENSE.txt": "/static/js/2.67df3808.chunk.js.LICENSE.txt",
+    "static/media/about-pic.f77d187b.png": "/static/media/about-pic.f77d187b.png",
+    "static/media/apiAutoTest.4170e923.png": "/static/media/apiAutoTest.4170e923.png",
+    "static/media/apiManualTest.d45aa971.png": "/static/media/apiManualTest.d45aa971.png",
+    "static/media/bugLifeCycle.8ba6cc50.png": "/static/media/bugLifeCycle.8ba6cc50.png",
+    "static/media/codeForKids.d0058eb3.png": "/static/media/codeForKids.d0058eb3.png",
+    "static/media/code_kids.354c9d33.png": "/static/media/code_kids.354c9d33.png",
+    "static/media/codingImage.2219e51c.png": "/static/media/codingImage.2219e51c.png",
+    "static/media/defectBugError.0946ec0d.png": "/static/media/defectBugError.0946ec0d.png",
+    "static/media/manualLogo.1c0c04d3.png": "/static/media/manualLogo.1c0c04d3.png",
+    "static/media/testPyramid.140a20ce.png": "/static/media/testPyramid.140a20ce.png",
+    "static/media/testPyramid1.31ba110a.png": "/static/media/testPyramid1.31ba110a.png",
+    "static/media/uiAutoTest.e4a185de.png": "/static/media/uiAutoTest.e4a185de.png",
+    "static/media/uiManualTest.653deb53.png": "/static/media/uiManualTest.653deb53.png",
+    "static/media/webDev.3307fb6e.png": "/static/media/webDev.3307fb6e.png"
+  },
+  "entrypoints": [
+    "static/js/runtime-main.f0a26c96.js",
+    "static/css/2.42449d2c.chunk.css",
+    "static/js/2.67df3808.chunk.js",
+    "static/css/main.7b1aa408.chunk.css",
+    "static/js/main.ba263a75.chunk.js"
+  ]
+}

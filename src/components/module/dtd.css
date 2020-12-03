@@ -1,0 +1,62 @@
+.first-name {
+    padding-bottom: 15px;
+}
+
+.first-name input{
+    border-radius: 90px;
+}
+
+.last-name {
+    padding-bottom: 15px;
+}
+
+.last-name input{
+    border-radius: 90px;
+}
+
+.email-phone-number {
+    padding-bottom: 15px;
+}
+
+.email-phone-number input{
+    border-radius: 90px;
+}
+
+.password {
+    padding-bottom: 15px;
+}
+
+.password input{
+    border-radius: 90px;
+}
+
+.day {
+    border-radius: 90px;
+}
+
+.month {
+    border-radius: 90px;
+}
+
+.year {
+    border-radius: 90px;
+}
+
+.gender {
+    padding-top: 15px;
+    padding-bottom: 15px;
+}
+
+
+
+.female {
+    border-radius: 90px;
+}
+
+.male {
+    border-radius: 90px;
+}
+
+.custom {
+    border-radius: 90px;
+}

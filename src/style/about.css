@@ -1,0 +1,41 @@
+.training-title {
+    text-align: center;
+}
+
+.training-title h4{
+    font-weight: bold;
+}
+
+#training-description{
+    text-align: justify;
+    padding-top: 1em;
+}
+
+.about-instructor {
+    /* display: block; */
+    margin: auto;
+    border-radius: 100%;
+}
+
+.about-section-img{
+    float: left;
+    border-radius: 20%;
+    height: 190px;
+}
+
+.instructor-details-first p{
+    position: relative;
+    left: 15px; 
+    text-align: justify;
+}
+
+.instructor-details-second {
+    position: relative;
+    left: 15px; 
+    text-align: justify;
+}
+
+.instructor-details-second #last-para {
+    top: 20px;
+    
+}

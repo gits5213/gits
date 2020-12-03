@@ -1,0 +1,56 @@
+.sticky {
+  /* position: fixed; */
+  /* overflow: hidden; */
+}
+
+/* page tab scroll bar */
+.mdl-tabs__tab-bar {
+  overflow-x: auto;
+  overflow-y: hidden;
+  padding-left: 10px;
+}
+
+.mdl-tabs__tab {
+  flex-shrink: 0;
+}
+
+.page-tab-body {
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  text-align: left;
+  width: 100%;
+  margin: auto;
+  height: 100vh;
+  padding-left: 40px;
+}
+
+h6 {
+  text-decoration: underline;
+}
+
+.page-tab-grid {
+  text-align: left;
+  color: black;
+}
+
+.page-tab-second-col {
+  background: whitesmoke;
+  float: right;
+  height: 100vh;
+}
+
+.header-color h2 {
+  font-family: monospace;
+  
+}
+
+.top-link {
+  font-family: monospace;
+}
+
+.side-header-color h2{
+  font-family: monospace;
+}
+
+.side-link {
+  font-family: monospace;
+}
