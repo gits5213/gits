@@ -7,7 +7,7 @@ import {cardDetails}from '../components/cardDetails';
 import Footer from '../components/footer';
 // import LandingSlideShow from '../components/slideShow/LandingSlideShow';
 
-const goToMeeting = 'https://global.gotomeeting.com/join/115264677';
+const googleMeet = 'https://meet.google.com/wco-zfnf-swy';
 const ZoomMeeting = 'https://us04web.zoom.us/j/4110977526?pwd=TnRkbDNud202Z0U1Z3NKT1RHcmQ4UT09';
 
 class Landing extends Component {
@@ -25,7 +25,7 @@ class Landing extends Component {
                         <p>New batch starting every after week. Code4Kids | Web Developement & SQA Training Courses | Get in Touch with +1.917.561.6554</p>
                     </div>
                     <div className='goLink container ph3 mt4'>
-                        <a class='f6 grow no-underline br-pill ba bw1 ph3 pv2 mb2 dib dark-green' href={goToMeeting}>
+                        <a class='f6 grow no-underline br-pill ba bw1 ph3 pv2 mb2 dib dark-green' href={googleMeet}>
                             ITTCI Classroom
                         </a>
                         <a class='f6 grow no-underline br-pill ba bw1 ph3 pv2 mb2 dib dark-green' href={ZoomMeeting}>
