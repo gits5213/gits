@@ -8,8 +8,6 @@ import About from '../pages/about';
 import Contact from '../pages/contact';
 import Practice from '../pages/practice';
 
-
-
 const Main = () => (
     <Switch>
         <Route exact path='/' component={Landing} />
