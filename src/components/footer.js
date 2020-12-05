@@ -9,6 +9,7 @@ const footer = () => {
             <FooterSection type="middle">
                 <FooterDropDownSection title="Features">
                     <FooterLinkList>
+                        <a href="http://itnycusa.com/">WordPress Website</a>
                         <a href="/about">About</a>
                         <a href="/">Terms</a>
                     </FooterLinkList>
