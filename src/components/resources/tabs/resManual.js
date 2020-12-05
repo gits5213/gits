@@ -12,7 +12,7 @@ const resManual = () => {
     return(
         <div className='page-tab-body'>
             <Grid className='page-tab-grid'>
-                <Cell className='page-tab-first-col' col={10}>
+                <Cell className='page-tab-first-col' col={12}>
                     <div className='resManual-first-section'>
                         <div>
                             <h5>Software Manual Testing</h5>
@@ -752,10 +752,11 @@ const resManual = () => {
                             As a consultant, I am hired for a certain period of time, normally for 6 months to 1 year. Once the project is over, I needed to move to another project. That’s why you see me in the resume jumping frequently here and there. 
                         </p> 
                     </div>
-                </Cell>
-                <Cell className='page-tab-second-col' col={2}>
                     <GoogleAd slot="1541085932" classNames="page-right-side" />
                 </Cell>
+                {/* <Cell className='page-tab-second-col' col={2}>
+                    
+                </Cell> */}
             </Grid>
         </div>
     )

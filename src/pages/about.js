@@ -12,9 +12,9 @@ class About extends Component {
             <div className='page-tab-body'>
                 <HeaderText />
                 <Grid className='page-tab-grid'>
-                    <Cell className='menu' col={2} >
-                    </Cell>
-                    <Cell className='page-tab-first-col'col={8}>
+                    {/* <Cell className='menu' col={2} >
+                    </Cell> */}
+                    <Cell className='page-tab-first-col'col={12}>
                         <div className='training-title'>
                             <h2>WHO WE ARE</h2>
                             <h4>
@@ -71,11 +71,12 @@ class About extends Component {
                                 Please connect me through the social media below.
                             </p>
                             <SocialIcon />
+                            <GoogleAd slot="1541085932" classNames="page-right-side" />
                         </div>
                     </Cell>
-                    <Cell className='page-tab-second-col' col={2}>
+                    {/* <Cell className='page-tab-second-col' col={2}>
                         <GoogleAd slot="1541085932" classNames="page-right-side" />
-                    </Cell>
+                    </Cell> */}
                 </Grid>
             </div> 
         );

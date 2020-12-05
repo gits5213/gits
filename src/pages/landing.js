@@ -10,6 +10,10 @@ import Footer from '../components/footer';
 const googleMeet = 'https://meet.google.com/wco-zfnf-swy';
 const ZoomMeeting = 'https://us04web.zoom.us/j/4110977526?pwd=TnRkbDNud202Z0U1Z3NKT1RHcmQ4UT09';
 
+const studentSubscription = 'https://msz5213.github.io/student-subscription/';
+const code4KidsSignUp = 'https://mailchi.mp/351449e3a71f/sqabdtraining';
+const bdSignUp = 'https://mailchi.mp/351449e3a71f/sqabdtraining';
+
 class Landing extends Component {
     render(){
         return(
@@ -33,10 +37,13 @@ class Landing extends Component {
                         </a>
                         <img alt='cover' className="cover-img" src={codingImage}/>
 
-                        <a class='f6 grow no-underline br-pill ba bw1 ph3 pv2 mb2 dib dark-green' href="https://msz5213.github.io/student-subscription/">
+                        <a class='f6 grow no-underline br-pill ba bw1 ph3 pv2 mb2 dib dark-green' href={studentSubscription}>
                             Sign Up Now
                         </a>
-                        <a class='f6 grow no-underline br-pill ba bw1 ph3 pv2 mb2 dib dark-green' href="https://mailchi.mp/93b0b3a7293e/code4kids">
+                        <a class='f6 grow no-underline br-pill ba bw1 ph3 pv2 mb2 dib dark-green' href={bdSignUp}>
+                            BD Sign Up
+                        </a>
+                        <a class='f6 grow no-underline br-pill ba bw1 ph3 pv2 mb2 dib dark-green' href={code4KidsSignUp}>
                             Code4Kids Sign Up
                         </a>
                     </div>
