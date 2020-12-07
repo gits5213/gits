@@ -5,13 +5,15 @@
 
 /* page tab scroll bar */
 .mdl-tabs__tab-bar {
+  /* width:1400px; */
   overflow-x: auto;
-  overflow-y: hidden;
+  overflow-y: hidden; 
   padding-left: 10px;
+
 }
 
 .mdl-tabs__tab {
-  flex-shrink: 0;
+  /* flex-shrink: 0; */
 }
 
 .category-tabs{

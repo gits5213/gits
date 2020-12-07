@@ -1,7 +1,6 @@
 import React, {Component} from 'react';
 import { Tabs, Tab } from 'react-mdl';
 import HeaderText from '../components/header';
-
 import ResManual from '../components/resources/tabs/resManual';
 import ResLinux from '../components/resources/tabs/resLinux';
 import ResSql from '../components/resources/tabs/resSql';
@@ -95,7 +94,7 @@ class resources extends Component {
         }
         
     }
-
+    
     render() {
         return (
             <div className="category-tabs">

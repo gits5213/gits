@@ -7,7 +7,7 @@ const resHtml = () => {
     return(
         <div className='page-tab-body'>
             <Grid className='page-tab-grid'>
-                <Cell className='page-tab-first-col' col={10}>
+                <Cell className='page-tab-first-col' col={12}>
                     <div>
                         <h5>
                             Basic & Advance Web Development {utils.courseOutline}
@@ -43,11 +43,12 @@ const resHtml = () => {
                                 <td>Defines an area inside an image map</td>
                             </tr>
                         </table>
+                        <GoogleAd slot="1541085932" classNames="page-right-side" />
                 </div>
                 </Cell>
-                <Cell className='page-tab-second-col' col={2} >
+                {/* <Cell className='page-tab-second-col' col={2} >
                     <GoogleAd slot="1541085932" classNames="page-right-side" />
-                </Cell>
+                </Cell> */}
             </Grid>
         </div>
     )
