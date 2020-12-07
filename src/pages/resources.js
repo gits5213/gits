@@ -16,8 +16,8 @@ import ResAppium from '../components/resources/tabs/resAppium';
 import ResRestassured from '../components/resources/tabs/resRestassured';
 import ResSuperTest from '../components/resources/tabs/resSuperTest';
 import ResReact from '../components/resources/tabs/resReact';
-import ResFrisby from '../components/resources/tabs/resFrisby'
-
+import ResFrisby from '../components/resources/tabs/resFrisby';
+import Links from '../components/resources/tabs/resLinks';
 
 class resources extends Component {
     constructor(props) {
@@ -29,19 +29,19 @@ class resources extends Component {
 
         if(this.state.activeTab === 0) {
             return(
-                <ResManual />
+                <ResNetwork />
             )
         } else if(this.state.activeTab === 1) {
             return(
-                <ResLinux />
+                <ResSql />
             )
         } else if(this.state.activeTab === 2) {
             return(
-                <ResSql />
+                <ResManual />
             )
         } else if(this.state.activeTab === 3) {
             return(
-                <ResNetwork />
+                <ResLinux />
             )
         } else if(this.state.activeTab === 4) {
             return(
@@ -65,36 +65,40 @@ class resources extends Component {
             )
         } else if(this.state.activeTab === 9) {
             return(
-                <ResProtractor />
+                <Links />
             )
         } else if(this.state.activeTab === 10) {
             return(
-                <ResWebIo />
+                <ResProtractor />
             )
         } else if(this.state.activeTab === 11) {
             return(
-                <ResAppium />
+                <ResWebIo />
             )
         } else if(this.state.activeTab === 12) {
             return(
-                <ResRestassured />
+                <ResAppium />
             )
         } else if(this.state.activeTab === 13) {
             return(
-                <ResSuperTest />
+                <ResRestassured />
             )
         } else if(this.state.activeTab === 14) {
             return(
-                <ResReact />
+                <ResSuperTest />
             )
         } else if(this.state.activeTab === 15) {
+            return(
+                <ResReact />
+            )
+        } else if(this.state.activeTab === 16) {
             return(
                 <ResFrisby />
             )
         }
         
     }
-    
+
     render() {
         return (
             <div className="category-tabs">

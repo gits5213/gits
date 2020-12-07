@@ -60,3 +60,10 @@ h6 {
 .side-link {
   font-family: monospace;
 }
+
+/* Course-Manual-Automation */
+.courseOutline {
+  align-items: center;
+  width: 1200px;
+  height: 1600px;
+}

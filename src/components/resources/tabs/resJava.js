@@ -8,7 +8,7 @@ const resJava = () => {
             <Grid className='page-tab-grid'>
                 <Cell className='page-tab-first-col' col={12}>
                     <div className='resAppium-'>
-                        <h1>Working in progress...</h1>
+                        <a href='https://www.javatpoint.com/java-tutorial'>Java Resources</a>
                     </div>
                     <GoogleAd slot="1541085932" classNames="page-right-side" />
                 </Cell>
