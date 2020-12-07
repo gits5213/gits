@@ -113,9 +113,9 @@ class resources extends Component {
                 <Tab>WebDriverIO</Tab>
                 <Tab>Appium</Tab>
                 <Tab>RestAssured</Tab>
-                <Tab>SuperTest</Tab>
+                {/* <Tab>SuperTest</Tab>
                 <Tab>FrisbyJS</Tab>
-                <Tab>ReactJS</Tab>
+                <Tab>ReactJS</Tab> */}
                 </Tabs>
                 <HeaderText /> 
                 <section>
