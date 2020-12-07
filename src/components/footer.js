@@ -10,6 +10,10 @@ const footer = () => {
                 <FooterDropDownSection title="Features">
                     <FooterLinkList>
                         <a href="http://itnycusa.com/">WordPress Website</a>
+                        <a href="http://the-internet.herokuapp.com/">Internet Website</a>
+                        <a href="https://msz5213.github.io/mdzamanportfolio/">Md's Portfolio</a>
+                        <a href="http://jsonplaceholder.typicode.com/">JSONPlaceholder</a>
+                        <a href="https://reqres.in/">RESREQ Website</a>
                         <a href="/about">About</a>
                         <a href="/">Terms</a>
                     </FooterLinkList>
