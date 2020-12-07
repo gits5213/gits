@@ -29,22 +29,22 @@ class Landing extends Component {
                         <p>New batch starting every after week. Code4Kids | Web Developement & SQA Training Courses | Get in Touch with +1.917.561.6554</p>
                     </div>
                     <div className='goLink container ph3 mt4'>
-                        <a class='f6 grow no-underline br-pill ba bw1 ph3 pv2 mb2 dib dark-green' href={googleMeet}>
+                        <a class='f6 grow no-underline br-pill ba bw1 ph3 pv2 mb2 dib dark-green' href={googleMeet} target="_blank" rel="noopener noreferrer">
                             ITTCI Classroom
                         </a>
-                        <a class='f6 grow no-underline br-pill ba bw1 ph3 pv2 mb2 dib dark-green' href={ZoomMeeting}>
+                        <a class='f6 grow no-underline br-pill ba bw1 ph3 pv2 mb2 dib dark-green' href={ZoomMeeting} target="_blank" rel="noopener noreferrer">
                             Zoom Classroom
                         </a>
                         <img alt='cover' className="cover-img" src={codingImage}/>
 
-                        <a class='f6 grow no-underline br-pill ba bw1 ph3 pv2 mb2 dib dark-green' href={studentSubscription}>
-                            Sign Up Now
+                        <a class='f6 grow no-underline br-pill ba bw1 ph3 pv2 mb2 dib dark-green' href={studentSubscription} target="_blank" rel="noopener noreferrer">
+                            SignUp Now
                         </a>
-                        <a class='f6 grow no-underline br-pill ba bw1 ph3 pv2 mb2 dib dark-green' href={bdSignUp}>
-                            BD Sign Up
+                        <a class='f6 grow no-underline br-pill ba bw1 ph3 pv2 mb2 dib dark-green' href={bdSignUp} target="_blank" rel="noopener noreferrer">
+                            BD SignUp
                         </a>
-                        <a class='f6 grow no-underline br-pill ba bw1 ph3 pv2 mb2 dib dark-green' href={code4KidsSignUp}>
-                            Code4Kids Sign Up
+                        <a class='f6 grow no-underline br-pill ba bw1 ph3 pv2 mb2 dib dark-green' href={code4KidsSignUp} target="_blank" rel="noopener noreferrer">
+                            Code4Kids SignUp
                         </a>
                     </div>
                     <div>
