@@ -5,11 +5,9 @@ import codingImage from '../images/codingImage.png'
 import CardList from '../components/cardList';
 import {cardDetails}from '../components/cardDetails';
 import Footer from '../components/footer';
-// import LandingSlideShow from '../components/slideShow/LandingSlideShow';
 
 const googleMeet = 'https://meet.google.com/wco-zfnf-swy';
 const ZoomMeeting = 'https://us04web.zoom.us/j/4110977526?pwd=TnRkbDNud202Z0U1Z3NKT1RHcmQ4UT09';
-
 const studentSubscription = 'https://msz5213.github.io/student-subscription/';
 const code4KidsSignUp = 'https://mailchi.mp/351449e3a71f/sqabdtraining';
 const bdSignUp = 'https://mailchi.mp/351449e3a71f/sqabdtraining';

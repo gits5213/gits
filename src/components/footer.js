@@ -11,10 +11,11 @@ const REQRES_WEBSITE = 'https://reqres.in/';
 const QUESTIONS = 'https://www.facebook.com/itnycusa/';
 const ANSWERE = 'https://www.linkedin.com/company/52147964/';
 
-const HOW_IT_WORKS = '/courses/';
-const ABOUT = '/about';
-const SERVICES = 'Services';
-const CONTACT = '/contact';
+const ITTCIWEBSITE = '/ittciwebsite/';
+const HOW_IT_WORKS = '/ittciwebsite/courses/';
+const ABOUT = '/ittciwebsite/about/';
+const SERVICES = 'https://msz5213.github.io/student-subscription/';
+const CONTACT = '/ittciwebsite/contact/';
 
 const footer = () => {
     return(
@@ -31,18 +32,18 @@ const footer = () => {
                 </FooterDropDownSection>
                 <FooterDropDownSection title="Details">
                     <FooterLinkList>
-                        <a href="/">UI Automation</a>
-                        <a href="/">API Automation</a>
-                        <a href="/">UI Manual</a>
-                        <a href="/">API Manual</a>
+                        <a href={ITTCIWEBSITE} target="_blank" rel="noopener noreferrer">UI Automation</a>
+                        <a href={ITTCIWEBSITE} target="_blank" rel="noopener noreferrer">API Automation</a>
+                        <a href={ITTCIWEBSITE} target="_blank" rel="noopener noreferrer">UI Manual</a>
+                        <a href={ITTCIWEBSITE} target="_blank" rel="noopener noreferrer">API Manual</a>
                         
                     </FooterLinkList>
                 </FooterDropDownSection>
                 <FooterDropDownSection title="Technology">
                     <FooterLinkList>
                         <a href={HOW_IT_WORKS} target="_blank" rel="noopener noreferrer">How it works</a>
-                        <a href={SERVICES}>Services</a>
-                        <a href={ABOUT}>About</a> 
+                        <a href={SERVICES} target="_blank" rel="noopener noreferrer">Services</a>
+                        <a href={ABOUT} target="_blank" rel="noopener noreferrer">About</a> 
                     </FooterLinkList>
                 </FooterDropDownSection>
                 <FooterDropDownSection title="FAQ">
