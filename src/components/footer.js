@@ -11,11 +11,11 @@ const REQRES_WEBSITE = 'https://reqres.in/';
 const QUESTIONS = 'https://www.facebook.com/itnycusa/';
 const ANSWERE = 'https://www.linkedin.com/company/52147964/';
 
-const ITTCIWEBSITE = '/ittciwebsite/';
-const HOW_IT_WORKS = '/ittciwebsite/courses/';
-const ABOUT = '/ittciwebsite/about/';
+const ITTCIWEBSITE = '/';
+const HOW_IT_WORKS = '/courses';
+const ABOUT = '/about';
 const SERVICES = 'https://msz5213.github.io/student-subscription/';
-const CONTACT = '/ittciwebsite/contact/';
+const CONTACT = '/contact';
 
 const footer = () => {
     return(
