@@ -6,7 +6,7 @@ const kidBrowserconf = () => {
     return(
         <div className='page-tab-body'>
             <Grid className='page-tab-grid'>
-                <Cell className='page-tab-first-col' col={10}>
+                <Cell className='page-tab-first-col' col={12}>
                     <div className='kidBrowserconf-first-section'>
                         <div>
                             <h5>
@@ -68,9 +68,10 @@ const kidBrowserconf = () => {
                         </div>
                     </div>
                 </Cell>
-                <Cell className='page-tab-second-col' col={2}>
+                <GoogleAd slot="1541085932" classNames="page-right-side" />
+                {/* <Cell className='page-tab-second-col' col={2}>
                     <GoogleAd slot="1541085932" classNames="page-right-side" />
-                </Cell>
+                </Cell> */}
             </Grid>
         </div>
     )

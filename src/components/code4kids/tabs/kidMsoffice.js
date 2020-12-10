@@ -6,7 +6,7 @@ const kidMsoffice = () => {
     return(
         <div className='page-tab-body'>
             <Grid className='page-tab-grid'>
-                <Cell className='page-tab-first-col' col={10}>
+                <Cell className='page-tab-first-col' col={12}>
                     <div className='kidMsoffice-first-section-'>
                         <div>
                             <h5>Basic & Advance MS Word Skills - Class Outline</h5>
@@ -107,9 +107,10 @@ const kidMsoffice = () => {
                         </div>
                     </div>
                 </Cell>
-                <Cell className='page-tab-second-col' col={2}>
+                <GoogleAd slot="1541085932" classNames="page-right-side" />
+                {/* <Cell className='page-tab-second-col' col={2}>
                     <GoogleAd slot="1541085932" classNames="page-right-side" />
-                </Cell>
+                </Cell> */}
             </Grid>
         </div>
     )

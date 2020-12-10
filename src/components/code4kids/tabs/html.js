@@ -7,15 +7,16 @@ const html = () => {
     return(
         <div className='page-tab-body'>
             <Grid className='page-tab-grid'>
-                <Cell className='page-tab-first-col' col={10}>
+                <Cell className='page-tab-first-col' col={12}>
                     <div>
                         <HTMLContainer />
                     </div>
                 </Cell>
+                <GoogleAd slot="1541085932" classNames="page-right-side" />
 
-                <Cell className='page-tab-second-col' col={2}>
+                {/* <Cell className='page-tab-second-col' col={2}>
                     <GoogleAd slot="1541085932" classNames="page-right-side" />
-                </Cell>
+                </Cell> */}
             </Grid>
         </div>
     )
