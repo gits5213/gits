@@ -9,7 +9,7 @@ import Footer from '../components/footer';
 const googleMeet = 'https://meet.google.com/wco-zfnf-swy';
 const ZoomMeeting = 'https://us04web.zoom.us/j/76185361138?pwd=QnJybGczamROdVpTVS9rVU9hMDQ2Zz09';
 const studentSubscription = 'https://msz5213.github.io/student-subscription/';
-const code4KidsSignUp = 'https://mailchi.mp/351449e3a71f/sqabdtraining';
+const code4KidsSignUp = 'https://mailchi.mp/93b0b3a7293e/code4kids';
 const bdSignUp = 'https://mailchi.mp/351449e3a71f/sqabdtraining';
 
 class Landing extends Component {
