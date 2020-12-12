@@ -1,15 +1,16 @@
 import React from 'react';
 import { Grid, Cell } from 'react-mdl';
-import HTMLContainer from '../../container/html';
-import GoogleAd from '../../../components/GoogleAd';
+import GoogleAd from '../../GoogleAd';
 
 const html = () => {
     return(
         <div className='page-tab-body'>
             <Grid className='page-tab-grid'>
                 <Cell className='page-tab-first-col' col={12}>
-                    <div>
-                        <HTMLContainer />
+                    <div className='links-links'>
+                        <h5>
+                            Working on progress...
+                        </h5>
                     </div>
                 </Cell>
                 <GoogleAd slot="1541085932" classNames="page-right-side" />

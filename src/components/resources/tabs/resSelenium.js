@@ -539,7 +539,6 @@ const selenium = () => {
                                     // Now throw the exception back to the system
                                     //throw(e);
                                 }
-                              }
                         </code>
                       </pre>
                     </p>
@@ -562,7 +561,6 @@ const selenium = () => {
                               catch (ExceptionType1 e2){
                                   // Code to handle exception 2
                                 }
-                              }
                         </code>
                       </pre>
                     </p>
@@ -636,9 +634,6 @@ const selenium = () => {
                 <GoogleAd slot="1541085932" classNames="page-right-side" />
 
             </Cell>
-              {/* <Cell className='page-tab-second-col' col={2}>
-                <GoogleAd slot="1541085932" classNames="page-right-side" />
-              </Cell> */}
           </Grid>
         </div>
     );

@@ -5,12 +5,10 @@ import Main from './components/main';
 import {Link } from 'react-router-dom';
 
 const COURSES = '/courses';
-const CODE4KIDS = '/code4Kids';
-const RESOURCES = '/resources';
-const PRACTICE = '/practice';
+const LINKS = '/links';
+const DOCS = '/docs';
 const ABOUT = '/about';
 const CONTACT = '/contact';
-
 
 class App extends Component {
   render(){
@@ -21,18 +19,16 @@ class App extends Component {
             <Navigation className='top-link'>
               <Link to='/'>Home</Link>
               <Link to={COURSES}>Courses</Link>
-              <Link to={CODE4KIDS}>Code4Kids</Link>
-              <Link to={RESOURCES}>Resources</Link>
-              <Link to={PRACTICE}>Practice</Link>
+              <Link to={DOCS}>Docs</Link>
+              <Link to={LINKS}>Links</Link>
             </Navigation>
           </Header>
           <Drawer className='side-header-color' title= {<h2><strong>ITTCI</strong></h2>} >
             <Navigation className='side-link'>
               <Link to='/'>Home</Link>
               <Link to={COURSES}>Courses</Link>
-              <Link to={CODE4KIDS}>Code4Kids</Link>
-              <Link to={RESOURCES}>Resources</Link>
-              <Link to={PRACTICE}>Practice</Link>
+              <Link to={DOCS}>Docs</Link>
+              <Link to={LINKS}>Links</Link>
               <Link to={ABOUT}>About</Link>
               <Link to={CONTACT}>Contact</Link> 
             </Navigation>

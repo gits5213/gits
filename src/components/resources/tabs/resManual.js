@@ -97,9 +97,9 @@ const resManual = () => {
                         <p>
                             It is a document that describes the details of the application functionalities which is required by the user. This document is written by the Business Analysts.
                         </p>
-                        <h5>What is SCRUM & What is the User Stories?</h5>
+                        <h5>What is SCRUM and What is the User Stories?</h5>
                         <p>
-                            Visit Website about scrum & user stories: 
+                            Visit Website about scrum and user stories: 
                             <a href='https://www.mountaingoatsoftware.com/agile'>
                                 VISIT
                             </a> 
@@ -114,7 +114,7 @@ const resManual = () => {
                             <li>It is Testable - it can be verified independently to have met the acceptance criteria</li>
                             <li>It is Estimatable</li>
                             <li>There are no unmet dependencies</li>
-                            <li>Minimum performance criteria has been defined & documented if necessary</li>
+                            <li>Minimum performance criteria has been defined and documented if necessary</li>
                             <li>Test plans added to the project sprint</li>
                             <li>The Test Engineer, Product Owner, and Developer responsible for the story are all satisfied they understand the requirment of the story and they have no further question.</li>
                         </ul>
@@ -142,7 +142,7 @@ const resManual = () => {
                             <li>Bug logging and tracking</li>
                             <li>Bug Re-test</li>
                             <li>Close or Reopen bugs</li>
-                            <li>Result & Report</li>
+                            <li>Result and Report</li>
                         </ol>
                         <h5>What is Software Development Life Cycle?</h5>
                         <p>
@@ -173,7 +173,7 @@ const resManual = () => {
                             What is Test Strategy?
                         </h5>
                         <p>
-                            A test strategy is an outline that describes the testing portion of the software development cycle. It is created to –>  inform project managers, testers, and developers about some key issues of the testing process. 
+                            A test strategy is an outline that describes the testing portion of the software development cycle. It is created to:  inform project managers, testers, and developers about some key issues of the testing process. 
                         </p>
                         <h5>
                             What does included in Test strategy?
@@ -210,7 +210,7 @@ const resManual = () => {
                             It is the document which describes the application functionalities of the user in detail. This document is the further details of the Business Requirement Document. This is a very crucial step in the SDLC. Sometimes the Business Requirement Document and Business Design Document can be lumped together to make only one Business Requirement Document.
                         </p>
                         <h5>
-                            List of Test Cases writing tools & plugings?
+                            List of Test Cases writing tools and plugings?
                         </h5>
                         <ol>
                             <li>MS Excel</li>
@@ -265,12 +265,12 @@ const resManual = () => {
                             <li>Smoke testing(Ad-hoc testing)</li>
                             <li>Regression Testing</li>
                             <li>Sanity testing</li>
-                            <li>User Acceptance Testing(Alpha & Beta)</li>
-                            <li>Interface & Usability Testing</li>
-                            <li>Globalization & Localization Testing</li>
+                            <li>User Acceptance Testing(Alpha and Beta)</li>
+                            <li>Interface and Usability Testing</li>
+                            <li>Globalization and Localization Testing</li>
                             <li>UAT test strategy</li>
                             <li>System Testing</li>
-                            <li>White Box & Black Box Testing</li>
+                            <li>White Box and Black Box Testing</li>
                         </ol>
                         <p>Non-Functional Testing: Testing the application against clients and performance requirement. Non-Functioning testing is done based on the requirements and test scenarios defined by the client.</p>
                         <p><strong>Non-Functional Testing includes:</strong></p>
@@ -287,7 +287,7 @@ const resManual = () => {
                             <li>Stress testing</li>
                             <li>Recovery testing</li>
                             <li>Internationalization testing and Localization testing</li>
-                            <li>Compatibility & Migration Testing</li>
+                            <li>Compatibility and Migration Testing</li>
                             <li>Data Conversion Testing</li>
                             <li>Security / Penetration Testing</li>
                             <li>Installation Testing</li>
@@ -364,7 +364,7 @@ const resManual = () => {
                             <li>Incomplete test environment to support testing (Unstable test environment)</li>
                             <li>Delay of CI/CD process</li>
                             <li>Delay of device environment ipa/apk(Simulator/Real Devices)</li>
-                            <li>Delay of the physical devices for QA & Dev</li>
+                            <li>Delay of the physical devices for QA and Dev</li>
                             <li>Delay of the lockdown Functionality</li>
                             <li>Dedicated resource unavailable (Not enough resources)</li>
                             <li>Service(Test) Account (If application support single sign-on)</li>
@@ -479,7 +479,7 @@ const resManual = () => {
                             Functional Testing – This is performed on the entire system. This is to ensure that system delivers what client has asked for. To check the system from business stakeholder’s point of view is a big concern of this.
                         </p>
                         <p>
-                            “Unit > Integration > Functional”, specially where the original SDLC are following.
+                            “Unit | Integration | Functional”, specially where the original SDLC are following.
                         </p>
                         <h5>What is Unit Test?</h5>
                         <p>
@@ -754,9 +754,6 @@ const resManual = () => {
                     </div>
                     <GoogleAd slot="1541085932" classNames="page-right-side" />
                 </Cell>
-                {/* <Cell className='page-tab-second-col' col={2}>
-                    
-                </Cell> */}
             </Grid>
         </div>
     )

@@ -1,27 +1,26 @@
 import React from 'react';
 import '../style/coursesCode4Kids.css';
 import { Grid, Cell } from 'react-mdl';
-import HtmlContainer from '../../container/html';
-import CssContainer from '../../container/css';
-import SystemConfig  from '../../code4kids/tabs/kidSystemconf';
-import BrowserConfig  from '../../code4kids/tabs/kidBrowserconf';
-import MsOfficeConf  from '../../code4kids/tabs/kidMsoffice';
 import code_kids_pic from '../../../images/tabs/code_kids.png';
 import GoogleAd from '../../../components/GoogleAd';
+import code4KidProgramOutline from '../../../images/code4KidsProgram.png';
 
 const coursesCode4Kids = () => {
     return(
         <div className='page-tab-body'>
             <Grid className='page-tab-grid'>
-                <Cell className='page-tab-first-col' col={10}>
+                <Cell className='page-tab-first-col' col={12}>
                     <div>
                         <img src={code_kids_pic} alt='code4kidsl' />
                     </div>
                     <div className='kid-csforall-oba-video'>
                         <h5>Computer Science For All</h5>
-                        <iframe title='CS For All' width="250" height="220" src="https://www.youtube.com/embed/qZfrDLLja-k" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen>
+
+                        <iframe title='CS For All' width="100%" height="100%" src="https://www.youtube.com/embed/qZfrDLLja-k" allowfullscreen>
                             Computer Science  for Students
                         </iframe>
+
+
                     </div>
                     <div className='kid-csforall-oba-para'>
                         <p> 
@@ -77,61 +76,15 @@ const coursesCode4Kids = () => {
                         </p>
                         <hr />
                     </div>
-                    <div className='kid-outline'>
-                        <h2>Course Outline</h2>
-                        <div className='kid-course-grid '>
-                            <div className='kid-course-basic'> 
-                                <ul className='kid-courseList'>
-                                    <h5>BASICS</h5>
-                                    <a href={SystemConfig}><li>SYSTEM-CONFIGURATION</li></a>
-                                    <li>CONTROL PANEL</li> 
-                                    <a href={BrowserConfig}><li>BROWSER-CONFIGURATION</li></a>                         
-                                </ul>
-                            </div>
-                            <div className='kid-course-basic'> 
-                                <ul className='kid-courseList'>
-                                    <h5>HIGHER</h5>
-                                    <a href={MsOfficeConf}><li>MS-OFFICE</li></a>
-                                    <li>MS-WORD</li>
-                                    <li>EXCEL</li>
-                                    <li>POWER-POINT</li>
-                                    <li>OUTLOOK</li>
-                                    <li>ONENOTE</li>
-                                    <li>EDITORS</li>
-                                </ul>
-                            </div>
-                            <div className='kid-course-basic'> 
-                                <ul className='kid-courseList'>
-                                    <h5>INTERMEDIATE</h5>
-                                    <li>HTML5</li>
-                                    <li>BASIC CSS</li>
-                                    <li>INTERMEDIATE CSS</li>   
-                                    <li>ADVANCED CSS</li>                       
-                                </ul>
-                            </div>
-                            <div className='kid-course-basic'> 
-                                <ul className='kid-courseList'>
-                                    <h5>ADVANCED</h5>
-                                    <li>JAVASCRIPT</li>
-                                    <li>REACT</li>
-                                    <li>DEVELOPMENT</li>                            
-                                </ul>
-                            </div>
-                        </div>
-                        <hr />
-                        <div className='kid-html-section'>
-                            <HtmlContainer />
-                        </div>
-                        <hr />
-                        <div className='kid-css-section'>
-                            <CssContainer />
-                        </div>
-                        <hr />
+                    <div className='programOutline'>
+                        <h1 className= 'tc'>Web Development Code4Kids Course Outline</h1>
+                        <img className='courseOutline' src={code4KidProgramOutline} alt="Course Outline"></img>
                     </div>
                 </Cell>
-                <Cell className='page-tab-second-col' col={2} >
+                <GoogleAd slot="1541085932" classNames="page-right-side" />
+                {/* <Cell className='page-tab-second-col' col={2} >
                     <GoogleAd slot="1541085932" classNames="page-right-side" />
-                </Cell>
+                </Cell> */}
             </Grid>
         </div>
     )

@@ -63,7 +63,8 @@ h6 {
 
 /* Course-Manual-Automation */
 .courseOutline {
-  align-items: center;
-  width: 1200px;
-  height: 1600px;
+  width: 100%;
+  height: auto;
+  border-radius: 5%;
 }
+

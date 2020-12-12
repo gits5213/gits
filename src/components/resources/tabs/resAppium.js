@@ -12,9 +12,6 @@ const resAppium = () => {
                     </div>
                     <GoogleAd slot="1541085932" classNames="page-right-side" />
                 </Cell>
-                {/* <Cell className='page-tab-second-col' col={2}>
-                    <GoogleAd slot="1541085932" classNames="page-right-side" />
-                </Cell> */}
             </Grid>
         </div>
     )

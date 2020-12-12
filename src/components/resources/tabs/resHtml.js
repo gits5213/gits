@@ -10,7 +10,7 @@ const resHtml = () => {
                 <Cell className='page-tab-first-col' col={12}>
                     <div>
                         <h5>
-                            Basic & Advance Web Development {utils.courseOutline}
+                            Basic and Advance Web Development {utils.courseOutline}
                         </h5>
                         <h5>List of HTML Tags:</h5>
                         <table>
@@ -46,9 +46,6 @@ const resHtml = () => {
                         <GoogleAd slot="1541085932" classNames="page-right-side" />
                 </div>
                 </Cell>
-                {/* <Cell className='page-tab-second-col' col={2} >
-                    <GoogleAd slot="1541085932" classNames="page-right-side" />
-                </Cell> */}
             </Grid>
         </div>
     )

@@ -1,15 +1,16 @@
 import React from 'react';
 import { Grid, Cell } from 'react-mdl';
-import CSSContainer from '../../container/css';
-import GoogleAd from '../../../components/GoogleAd';
+import GoogleAd from '../../GoogleAd';
 
-const css = () => {
+const kidSystemconf = () => {
     return(
         <div className='page-tab-body'>
             <Grid className='page-tab-grid'>
                 <Cell className='page-tab-first-col' col={12}>
-                    <div>
-                        <CSSContainer />
+                    <div className='links-links'>
+                        <h5>
+                            Working on progress...
+                        </h5>
                     </div>
                 </Cell>
                 <GoogleAd slot="1541085932" classNames="page-right-side" />
@@ -18,7 +19,10 @@ const css = () => {
                     <GoogleAd slot="1541085932" classNames="page-right-side" />
                 </Cell> */}
             </Grid>
+            
+            
+
         </div>
     )
 }
-export default css;
+export default kidSystemconf;
