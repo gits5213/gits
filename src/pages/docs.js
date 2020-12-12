@@ -1,23 +1,22 @@
 import React, {Component} from 'react';
 import { Tabs, Tab } from 'react-mdl';
 import HeaderText from '../components/header';
-import ResManual from '../components/resources/tabs/resManual';
-import ResLinux from '../components/resources/tabs/resLinux';
-import ResSql from '../components/resources/tabs/resSql';
-import ResNetwork from '../components/resources/tabs/resNetwork';
-import ResHtml from '../components/resources/tabs/resHtml';
-import ResCss from '../components/resources/tabs/resCss';
-import ResJavascript from '../components/resources/tabs/resJavascript';
-import ResJava from '../components/resources/tabs/resJava';
-import ResSelenium from '../components/resources/tabs/resSelenium';
-import ResProtractor from '../components/resources/tabs/resProtractor';
-import ResWebIo from '../components/resources/tabs/resWebIo';
-import ResAppium from '../components/resources/tabs/resAppium';
-import ResRestassured from '../components/resources/tabs/resRestassured';
-// import ResSuperTest from '../components/resources/tabs/resSuperTest';
-// import ResReact from '../components/resources/tabs/resReact';
-// import ResFrisby from '../components/resources/tabs/resFrisby';
-import Links from '../components/resources/tabs/resLinks';
+import ResManual from '../components/docs/tabs/resManual';
+import ResLinux from '../components/docs/tabs/resLinux';
+import ResSql from '../components/docs/tabs/resSql';
+import ResNetwork from '../components/docs/tabs/resNetwork';
+import ResHtml from '../components/docs/tabs/resHtml';
+import ResCss from '../components/docs/tabs/resCss';
+import ResJavascript from '../components/docs/tabs/resJavascript';
+import ResJava from '../components/docs/tabs/resJava';
+import ResSelenium from '../components/docs/tabs/resSelenium';
+import ResProtractor from '../components/docs/tabs/resProtractor';
+import ResWebIo from '../components/docs/tabs/resWebIo';
+import ResAppium from '../components/docs/tabs/resAppium';
+import ResRestassured from '../components/docs/tabs/resRestassured';
+import Agile from '../components/docs/tabs/agile';
+import Scrum from '../components/docs/tabs/scrum';
+import Links from '../components/docs/tabs/resLinks';
 
 class resources extends Component {
     constructor(props) {
@@ -29,72 +28,68 @@ class resources extends Component {
 
         if(this.state.activeTab === 0) {
             return(
+                <Agile />
+            )
+        }else if(this.state.activeTab === 1) {
+            return(
+                <Scrum />
+            )
+        }else if(this.state.activeTab === 2) {
+            return(
                 <ResNetwork />
-            )
-        } else if(this.state.activeTab === 1) {
-            return(
-                <ResSql />
-            )
-        } else if(this.state.activeTab === 2) {
-            return(
-                <ResManual />
             )
         } else if(this.state.activeTab === 3) {
             return(
-                <ResLinux />
+                <ResSql />
             )
         } else if(this.state.activeTab === 4) {
             return(
-                <ResHtml />
+                <ResManual />
             )
         } else if(this.state.activeTab === 5) {
             return(
-                <ResCss />
+                <ResLinux />
             )
         } else if(this.state.activeTab === 6) {
             return(
-                <ResJavascript />
+                <ResHtml />
             )
         } else if(this.state.activeTab === 7) {
             return(
-                <ResJava />
+                <ResCss />
             )
         } else if(this.state.activeTab === 8) {
             return(
-                <ResSelenium />
+                <ResJavascript />
             )
         } else if(this.state.activeTab === 9) {
             return(
-                <Links />
+                <ResJava />
             )
         } else if(this.state.activeTab === 10) {
             return(
-                <ResProtractor />
+                <ResSelenium />
             )
         } else if(this.state.activeTab === 11) {
             return(
-                <ResWebIo />
+                <Links />
             )
         } else if(this.state.activeTab === 12) {
             return(
-                <ResAppium />
+                <ResProtractor />
             )
         } else if(this.state.activeTab === 13) {
             return(
+                <ResWebIo />
+            )
+        } else if(this.state.activeTab === 14) {
+            return(
+                <ResAppium />
+            )
+        } else if(this.state.activeTab === 15) {
+            return(
                 <ResRestassured />
             )
-        // } else if(this.state.activeTab === 14) {
-        //     return(
-        //         <ResSuperTest />
-        //     )
-        // } else if(this.state.activeTab === 15) {
-        //     return(
-        //         <ResReact />
-        //     )
-        // } else if(this.state.activeTab === 16) {
-        //     return(
-        //         <ResFrisby />
-        //     )
          }
         
     }
@@ -103,6 +98,8 @@ class resources extends Component {
         return (
             <div className="category-tabs">
                 <Tabs activeTab={this.state.activeTab} onChange={(tabId) => this.setState({ activeTab: tabId })} ripple>
+                <Tab>Agile</Tab>
+                <Tab>Scrum</Tab>
                 <Tab>Networking</Tab>
                 <Tab>SQL</Tab>
                 <Tab>Manual</Tab>
