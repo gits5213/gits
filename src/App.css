@@ -4,12 +4,17 @@
 }
 
 #htext{
-  margin: auto;
+  margin-left: 0px;
   text-align: center;
   font-family: monospace;
   text-justify: auto;
   text-transform: capitalize;
   font-size: x-large;
+  float: left;
+
+}
+
+.sign-up{
   padding-top: 1em;
 }
 
@@ -41,6 +46,7 @@ background: linear-gradient(to right, #FFE000, #799F0C, #00416A); /* W3C, IE 10+
 }
 
 .cover-img {
+  /* height: 100vh; */
   height: 100%;
   width: auto;
   border-radius: 35%;
