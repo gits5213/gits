@@ -1,5 +1,4 @@
 import React from 'react';
-import '../style/footer.css';
 import SocialIcon from '../components/socialIcon';
 import {Footer, FooterSection, FooterDropDownSection, FooterLinkList} from 'react-mdl';
 

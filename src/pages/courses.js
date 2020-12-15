@@ -1,6 +1,5 @@
 import React, {Component} from 'react';
 import { Tabs, Tab } from 'react-mdl';
-import '../style/courseTab.css';
 import HeaderText from '../components/header';
 import CoursesCode4Kids from '../components/courses/tabs/coursesCode4Kids';
 import CoursesWebDev from '../components/courses/tabs/coursesWebDev';

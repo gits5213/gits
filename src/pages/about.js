@@ -1,5 +1,4 @@
 import React, {Component} from 'react';
-import '../style/about.css';
 import HeaderText from '../components/header';
 import { Grid, Cell } from 'react-mdl';
 import aboutPic from '../images/about-pic.png';

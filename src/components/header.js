@@ -1,6 +1,4 @@
 import React from 'react';
-import '../style/header.css'
-
 const WEB_DEV_SIGN_UP = 'https://msz5213.github.io/student-subscription/';
 const SQA_SIGN_UP = 'https://msz5213.github.io/student-subscription/';
 const CODE4KIDS_SIGN_UP = 'https://mailchi.mp/93b0b3a7293e/code4kids';

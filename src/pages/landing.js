@@ -1,6 +1,5 @@
 import React, {Component} from 'react';
 import HeaderText from '../components/header';
-import '../style/landing.css';
 import codingImage from '../images/codingImage.png'
 import CardList from '../components/cardList';
 import {cardDetails}from '../components/cardDetails';

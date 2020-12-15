@@ -2,7 +2,6 @@ import React, {Component} from 'react';
 import HeaderText from '../components/header';
 import { Grid, Cell, Button } from 'react-mdl';
 import GoogleAd from '../components/GoogleAd';
-import '../style/contact.css';
 
 class Contact extends Component {
     
