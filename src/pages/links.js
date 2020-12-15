@@ -37,10 +37,10 @@ class Code4Kids extends Component {
         return (
             <div className="category-tabs">
                 <Tabs activeTab={this.state.activeTab} onChange={(tabId) => this.setState({ activeTab: tabId })} ripple>
-                    <Tab>Basic-Links</Tab>
-                    <Tab>Test-Links</Tab>
-                    <Tab>WebDev-Links</Tab>
-                    <Tab>ProgLang-Links</Tab>
+                    <Tab>Basic</Tab>
+                    <Tab>SQA</Tab>
+                    <Tab>WebDev</Tab>
+                    <Tab>Prog-Lang</Tab>
                 </Tabs>
                 <HeaderText /> 
                 <section>
