@@ -3,7 +3,7 @@
   /* overflow: hidden; */
 }
 
-/* page tab scroll bar */
+/* ===========Page tabe scroll bar=============*/
 .mdl-tabs__tab-bar {
   /* width:1400px; */
   overflow-x: auto;
@@ -16,9 +16,9 @@
   /* flex-shrink: 0; */
 }
 
-.category-tabs{
+/* .category-tabs{
   padding: 1rem 2rem 2rem 2rem;
-}
+} */
 
 .page-tab-body {
   font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
@@ -61,10 +61,17 @@ h6 {
   font-family: monospace;
 }
 
-/* Course-Manual-Automation */
+/* ============Course-Manual-Automation========= */
 .courseOutline {
   width: 100%;
   height: auto;
   border-radius: 5%;
 }
 
+/* ==============Course-code4Kids==============*/
+.obama_talk{
+  position: relative;
+  z-index: 999;
+  width: 100%;
+  height: 100%;
+}

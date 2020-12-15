@@ -1,9 +1,11 @@
 import React from 'react';
 import '../style/coursesCode4Kids.css';
 import { Grid, Cell } from 'react-mdl';
-import code_kids_pic from '../../../images/tabs/code_kids.png';
+// import code_kids_pic from '../../../images/tabs/code_kids.png';
 import GoogleAd from '../../../components/GoogleAd';
 import code4KidProgramOutline from '../../../images/code4KidsProgram.png';
+
+const OBAMA_SPEACE = 'https://www.youtube.com/embed/JDw1ii7aKwg';
 
 const coursesCode4Kids = () => {
     return(
@@ -11,16 +13,29 @@ const coursesCode4Kids = () => {
             <Grid className='page-tab-grid'>
                 <Cell className='page-tab-first-col' col={12}>
                     <div>
-                        <img src={code_kids_pic} alt='code4kidsl' />
+                        <h3>
+                            Return on Investment(ROI) for KIDS
+                        </h3>
+                        <p>
+                            I am paying my <strong>KIDS</strong> $20-30/hour to <strong>CODE</strong> and some people are thinking this is a <strong>STUPID</strong> and <strong>DUMB IDEA!</strong> but, I would like to say this a <strong>GENIUS IDEA</strong> because here is <strong>MATH</strong> and <strong>REALITY!</strong>
+                            I am not buying a car for my <strong>KIDS</strong> at the age of 16 including insurance, on average the age of 16th the first <strong>CAR</strong> is about <strong>$15K</strong> and Insurance for <strong>$6K</strong> Total is <strong>$21K</strong>.
+                            Compare to over a period of 5 years, I will end up paying one kid <strong>$10K</strong> to <strong>CODE</strong>.
+                            I'm not <strong>BUYING THE CAR</strong> but they are <strong>EARNING</strong> the <strong>CAR</strong> with the <strong>SKILL</strong> set. I don't make them do this. If they want to earn it, they can. If they don't, they don't, still, they can continue education to the next level and get a faster way to complete <strong>GRADUATION!</strong>
+                        </p>
                     </div>
+                    {/* <div>
+                        <img src={code_kids_pic} alt='code4kidsl' />
+                    </div> */}
                     <div className='kid-csforall-oba-video'>
                         <h5>Computer Science For All</h5>
 
-                        <iframe title='CS For All' width="100%" height="100%" src="https://www.youtube.com/embed/qZfrDLLja-k" allowfullscreen>
-                            Computer Science  for Students
+                        <iframe 
+                            className='obama_talk' 
+                            title='obama_speace' 
+                            src={OBAMA_SPEACE} 
+                            frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
+                            allowfullscreen >
                         </iframe>
-
-
                     </div>
                     <div className='kid-csforall-oba-para'>
                         <p> 
@@ -51,7 +66,7 @@ const coursesCode4Kids = () => {
                         <h5>What is CODING?</h5>
                         <p> 
                             Welcome to our of code an introduction to the basics of computer 
-                            programming or as it's commonly called codin., 
+                            programming or as it's commonly called Code4Kids coding. 
                         </p>
                         <p>
                             code is all around you and the results of coding are everywhere whether 

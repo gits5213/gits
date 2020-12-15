@@ -1,8 +1,8 @@
 {
   "files": {
-    "main.css": "/ittciwebsite/static/css/main.cab5b132.chunk.css",
-    "main.js": "/ittciwebsite/static/js/main.1d85cc9a.chunk.js",
-    "main.js.map": "/ittciwebsite/static/js/main.1d85cc9a.chunk.js.map",
+    "main.css": "/ittciwebsite/static/css/main.f66a2578.chunk.css",
+    "main.js": "/ittciwebsite/static/js/main.13332057.chunk.js",
+    "main.js.map": "/ittciwebsite/static/js/main.13332057.chunk.js.map",
     "runtime-main.js": "/ittciwebsite/static/js/runtime-main.912ab8f2.js",
     "runtime-main.js.map": "/ittciwebsite/static/js/runtime-main.912ab8f2.js.map",
     "static/css/2.42449d2c.chunk.css": "/ittciwebsite/static/css/2.42449d2c.chunk.css",
@@ -10,17 +10,16 @@
     "static/js/2.8e60253f.chunk.js.map": "/ittciwebsite/static/js/2.8e60253f.chunk.js.map",
     "index.html": "/ittciwebsite/index.html",
     "static/css/2.42449d2c.chunk.css.map": "/ittciwebsite/static/css/2.42449d2c.chunk.css.map",
-    "static/css/main.cab5b132.chunk.css.map": "/ittciwebsite/static/css/main.cab5b132.chunk.css.map",
+    "static/css/main.f66a2578.chunk.css.map": "/ittciwebsite/static/css/main.f66a2578.chunk.css.map",
     "static/js/2.8e60253f.chunk.js.LICENSE.txt": "/ittciwebsite/static/js/2.8e60253f.chunk.js.LICENSE.txt",
     "static/media/about-pic.f77d187b.png": "/ittciwebsite/static/media/about-pic.f77d187b.png",
     "static/media/apiAutoTest.4170e923.png": "/ittciwebsite/static/media/apiAutoTest.4170e923.png",
     "static/media/apiManualTest.d45aa971.png": "/ittciwebsite/static/media/apiManualTest.d45aa971.png",
     "static/media/bugLifeCycle.8ba6cc50.png": "/ittciwebsite/static/media/bugLifeCycle.8ba6cc50.png",
-    "static/media/code4KidsProgram.2676f345.png": "/ittciwebsite/static/media/code4KidsProgram.2676f345.png",
+    "static/media/code4KidsProgram.a38fdee9.png": "/ittciwebsite/static/media/code4KidsProgram.a38fdee9.png",
     "static/media/codeForKids.d0058eb3.png": "/ittciwebsite/static/media/codeForKids.d0058eb3.png",
-    "static/media/code_kids.354c9d33.png": "/ittciwebsite/static/media/code_kids.354c9d33.png",
     "static/media/codingImage.2219e51c.png": "/ittciwebsite/static/media/codingImage.2219e51c.png",
-    "static/media/courseOutline.01e48f14.png": "/ittciwebsite/static/media/courseOutline.01e48f14.png",
+    "static/media/courseOutline.56cfaf7a.png": "/ittciwebsite/static/media/courseOutline.56cfaf7a.png",
     "static/media/defectBugError.0946ec0d.png": "/ittciwebsite/static/media/defectBugError.0946ec0d.png",
     "static/media/manualLogo.1c0c04d3.png": "/ittciwebsite/static/media/manualLogo.1c0c04d3.png",
     "static/media/testPyramid.140a20ce.png": "/ittciwebsite/static/media/testPyramid.140a20ce.png",
@@ -34,7 +33,7 @@
     "static/js/runtime-main.912ab8f2.js",
     "static/css/2.42449d2c.chunk.css",
     "static/js/2.8e60253f.chunk.js",
-    "static/css/main.cab5b132.chunk.css",
-    "static/js/main.1d85cc9a.chunk.js"
+    "static/css/main.f66a2578.chunk.css",
+    "static/js/main.13332057.chunk.js"
   ]
 }
