@@ -3,17 +3,6 @@
   /* overflow: hidden; */
 }
 
-/* #htext{
-  margin-left: 50px;
-  text-align: center;
-  font-family: monospace;
-  text-justify: auto;
-  text-transform: capitalize;
-  font-size: x-large;
-  float: left;
-
-} */
-
 .header-color{
   background: #00416A;  /* fallback for old browsers */
 background: -webkit-linear-gradient(to right, #FFE000, #799F0C, #00416A);  /* Chrome 10-25, Safari 5.1-6 */
@@ -21,7 +10,7 @@ background: linear-gradient(to right, #FFE000, #799F0C, #00416A); /* W3C, IE 10+
 }
 
 .landing-body h3{
-  text-align: center;
+  /* text-align: center; */
   font-family: monospace;
   position: 'absolute';
   height: '100%';
@@ -32,13 +21,21 @@ background: linear-gradient(to right, #FFE000, #799F0C, #00416A); /* W3C, IE 10+
 }
 
 .container {
+  /* background-color: #9f9a0c; */
   display: flexbox;
-  align-items: center;
-  justify-content: center;
+  /* align-items: center; */
+  /* justify-content: center; */
   height: 37vh;
   text-align: center;
-  font-size: 20px;
-  font-family: monospace;
+  /* font-size: 20px; */
+  /* font-family: monospace; */
+}
+
+.cover-img {
+  /* height: 100vh; */
+  height: 100%;
+  width: auto;
+  /* border-radius: 35%; */
 }
 
 .sign-up{
@@ -46,13 +43,6 @@ background: linear-gradient(to right, #FFE000, #799F0C, #00416A); /* W3C, IE 10+
   padding-right: 2em;
   float: right;
 
-}
-
-.cover-img {
-  /* height: 100vh; */
-  height: 100%;
-  width: auto;
-  border-radius: 35%;
 }
 
 .qa-talks{
@@ -66,12 +56,10 @@ background: linear-gradient(to right, #FFE000, #799F0C, #00416A); /* W3C, IE 10+
 #program-heading {
   text-align: center;
   font-family: monospace;
-  /* padding-top: 2em; */
 }
 
 /* ===========Page tabe scroll bar=============*/
 .mdl-tabs__tab-bar {
-  /* width:1400px; */
   overflow-x: auto;
   overflow-y: hidden; 
   padding-left: 10px;
@@ -115,7 +103,6 @@ h6 {
 
 .header-color h2 {
   font-family: monospace;
-  
 }
 
 .top-link {
@@ -150,7 +137,6 @@ h6 {
   border-top-style: solid;
 }
 
-
 /* ============Course-Manual-Automation========= */
 .courseOutline {
   width: 100%;
@@ -175,7 +161,6 @@ h6 {
 }
 
 /* ==============About==============*/
-
 .about-section-img{
   border-radius: 50%;
   width: auto;
@@ -208,4 +193,15 @@ h6 {
     margin: 20px;
     text-align: center;
   } */
+
+  /* #htext{
+  margin-left: 50px;
+  text-align: center;
+  font-family: monospace;
+  text-justify: auto;
+  text-transform: capitalize;
+  font-size: x-large;
+  float: left;
+
+} */
 

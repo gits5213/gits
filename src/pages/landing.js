@@ -28,9 +28,11 @@ class Landing extends Component {
                         GOTO Classroom
                     </a>
                 </div>
-                
+                <div className='container ph3 mt4'>
+                    <img alt='cover' className="cover-img" src={codingImage}/>
+                </div>
                 <div>
-                    <div className='qa-talks'>
+                    <div className='tj qa-talks'>
                         <h3>
                             Return on Investment (ROI) for KIDS
                         </h3>
@@ -41,23 +43,7 @@ class Landing extends Component {
                             I'm not "BUYING THE CAR" but they are EARNING the CAR with the SKILL set. I don't make them do this. If they want to earn it, they can. If they don't, they don't still, they can continue education to the next level & get a faster way to complete graduation!
                         </p>
                     </div>
-                    {/* <div className='goLink container ph3 mt4'>
-                        <a class='f6 grow no-underline br-pill ba bw1 ph3 pv2 mb2 dib dark-green' href={GOOGLE_MEET} target="_blank" rel="noopener noreferrer">
-                            GO Classroom
-                        </a>
-                        <a class='f6 grow no-underline br-pill ba bw1 ph3 pv2 mb2 dib dark-green' href={ZOOM_MEET} target="_blank" rel="noopener noreferrer">
-                            Zoom Classroom
-                        </a>
-                        <a class='f6 grow no-underline br-pill ba bw1 ph3 pv2 mb2 dib dark-green' href={GOTO_MEET} target="_blank" rel="noopener noreferrer">
-                            GOTO Classroom
-                        </a>
-                        
-                        <img alt='cover' className="cover-img" src={codingImage}/>
-                    </div> */}
-                    <div className='container ph3 mt4'>
-                        <img alt='cover' className="cover-img" src={codingImage}/>
-                    </div>
-                    <div className='qa-talks'>
+                    <div className='tj qa-talks'>
                         <h3>
                             Why Software QA Is a Good Career Choice?
                         </h3>
@@ -65,9 +51,8 @@ class Landing extends Component {
                             A rise in tech companies often brings a rise of software engineers, including engineers that specialize in software quality assurance (SQA or QA). While every company works differently with quality control QA engineers (ex. some have an independent QA team, some have one or two people within the company, and some embed QA personnel with every development team), it's safe to say there is need for these kind of software specialists.
                         </p>
                         <h3>Tech Companies Need QA Engineers</h3>
-                        <p>
-                            In a nutshell, software QA is getting paid to break software
-                        </p>
+                        
+                            In a nutshell, software QA is getting paid to break software! <br />
                         <p>
                             A QA engineer's job is to prevent bad software from being seen by customers. How customers interact with software determines their relationship with whatever product is being sold. That means QA engineers need to find every possible way to break software, and then report where the software testing failed to developers for a fix. Without QA engineers, there are clunkier workflows and broken processes. Being in the tech driven world we live in today, tech companies that want to remain in business really can't afford the absence of QA engineers.
                         </p>
