@@ -1,8 +1,8 @@
 {
   "files": {
-    "main.css": "/ittciwebsite/static/css/main.38be76f4.chunk.css",
-    "main.js": "/ittciwebsite/static/js/main.e81474b9.chunk.js",
-    "main.js.map": "/ittciwebsite/static/js/main.e81474b9.chunk.js.map",
+    "main.css": "/ittciwebsite/static/css/main.9cb41047.chunk.css",
+    "main.js": "/ittciwebsite/static/js/main.39ca35b1.chunk.js",
+    "main.js.map": "/ittciwebsite/static/js/main.39ca35b1.chunk.js.map",
     "runtime-main.js": "/ittciwebsite/static/js/runtime-main.912ab8f2.js",
     "runtime-main.js.map": "/ittciwebsite/static/js/runtime-main.912ab8f2.js.map",
     "static/css/2.42449d2c.chunk.css": "/ittciwebsite/static/css/2.42449d2c.chunk.css",
@@ -10,7 +10,7 @@
     "static/js/2.c571d4b1.chunk.js.map": "/ittciwebsite/static/js/2.c571d4b1.chunk.js.map",
     "index.html": "/ittciwebsite/index.html",
     "static/css/2.42449d2c.chunk.css.map": "/ittciwebsite/static/css/2.42449d2c.chunk.css.map",
-    "static/css/main.38be76f4.chunk.css.map": "/ittciwebsite/static/css/main.38be76f4.chunk.css.map",
+    "static/css/main.9cb41047.chunk.css.map": "/ittciwebsite/static/css/main.9cb41047.chunk.css.map",
     "static/js/2.c571d4b1.chunk.js.LICENSE.txt": "/ittciwebsite/static/js/2.c571d4b1.chunk.js.LICENSE.txt",
     "static/media/about-pic.35c9381f.png": "/ittciwebsite/static/media/about-pic.35c9381f.png",
     "static/media/apiAutoTest.4170e923.png": "/ittciwebsite/static/media/apiAutoTest.4170e923.png",
@@ -18,7 +18,7 @@
     "static/media/bugLifeCycle.8ba6cc50.png": "/ittciwebsite/static/media/bugLifeCycle.8ba6cc50.png",
     "static/media/code4KidsProgram.a38fdee9.png": "/ittciwebsite/static/media/code4KidsProgram.a38fdee9.png",
     "static/media/codeForKids.d0058eb3.png": "/ittciwebsite/static/media/codeForKids.d0058eb3.png",
-    "static/media/codingImage.d47163f8.png": "/ittciwebsite/static/media/codingImage.d47163f8.png",
+    "static/media/codingImage.b1c7a2af.png": "/ittciwebsite/static/media/codingImage.b1c7a2af.png",
     "static/media/courseOutline.56cfaf7a.png": "/ittciwebsite/static/media/courseOutline.56cfaf7a.png",
     "static/media/defectBugError.0946ec0d.png": "/ittciwebsite/static/media/defectBugError.0946ec0d.png",
     "static/media/manualLogo.1c0c04d3.png": "/ittciwebsite/static/media/manualLogo.1c0c04d3.png",
@@ -33,7 +33,7 @@
     "static/js/runtime-main.912ab8f2.js",
     "static/css/2.42449d2c.chunk.css",
     "static/js/2.c571d4b1.chunk.js",
-    "static/css/main.38be76f4.chunk.css",
-    "static/js/main.e81474b9.chunk.js"
+    "static/css/main.9cb41047.chunk.css",
+    "static/js/main.39ca35b1.chunk.js"
   ]
 }
