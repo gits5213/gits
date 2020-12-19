@@ -1,9 +1,9 @@
 import React, {Component} from 'react';
 import HeaderText from '../components/header';
 import { Grid, Cell } from 'react-mdl';
-import aboutPic from '../images/about-pic.png';
 import SocialIcon from '../components/socialIcon';
 import GoogleAd from '../components/GoogleAd';
+import aboutPic from '../images/about-pic.png';
 
 class About extends Component {
     render(){
@@ -11,16 +11,16 @@ class About extends Component {
             <div className='page-tab-body'>
                 <HeaderText />
                 <Grid className='page-tab-grid'>
-                    {/* <Cell className='menu' col={2} >
-                    </Cell> */}
                     <Cell className='page-tab-first-col'col={12}>
-                        <div className='training-title'>
+                        <div className='tc pb4 training-title'>
                             <h2>WHO WE ARE</h2>
                             <h4>
                                 INPERSON & ONLINE <br />
                                 Interactive & Innovative Trainig Center for <br />
                                 Code4Kids | WebDevelopment | Full Stack SQA Courses
                             </h4>
+                        </div>
+                        <div>
                             <p id='training-description'>
                                 We are the leaders in providing quality training's of 
                                 Code4Kids (5th Grade to 12th Gade) Web|UI|Frontend Development
@@ -28,13 +28,12 @@ class About extends Component {
                                 This is the best In-person 
                                 and Online training center at Hollis, Queens-NY. Our main intention 
                                 is to let our students learn through the Interactive process, practice and provide as 
-                                much detailed information as possible. Our training's are divided 
-                                in three modules - Code4Kids, Web|UI|Frontend Development and Full Stack SQA Courses.
+                                much as detailed information as possible. Our training's are divided 
+                                in three modules - Code4Kids program, Web|UI|Frontend Development program and Full Stack SQA Program.
                             </p>
                             <hr />
                         </div>
                         <div className='about-instructor'>
-                            <h3>SHAHNEWAZ</h3>
                             <img className='about-section-img' src={aboutPic} alt='avatar'/>
                         </div>
                         <div className='instructor-details-first'>
@@ -42,12 +41,15 @@ class About extends Component {
                                 I’m Md Shahnewaz Zaman(Shanto) and I’m Head of SQA at Raytheon Technology.
                             </p>
                             <p>
-                                I got over 12 years of diverse industry experience. I am Certified 
-                                SAFe4Agilist and an expert in creating automation 
+                                I've got 14+ years of diverse industry experience. Practicing Software Quality Assurance principles, methodologies, mentoring and leading full-stack testing efforts and hands-on coding, leading with the ability to collaborate with software development in all phases of the SDLC and STLC, including planning, coding, testing, troubleshooting, deploying, and ongoing SQA full-stack automation code maintenance and delivering right product on time.
+                            </p>
+                            <p>
+                                I am Certified in
+                                SAFe4Agilist, ISTQB, Scrum Master(Scrum.org) and an expert in creating automation 
                                 solutions and frameworks for large scale complex digital functions. 
                                 Expert in automation across tech stacks (HTML, CSS, Javascript, Java, Selenium, Protractor, 
                                 WebDriverIO, Appium, API's) and on 
-                                different channels (Web, APIs & Mobile apps).
+                                different types of application (Web, APIs and Mobile apps).
                             </p>
                         </div>
                         <div className='instructor-details-second'>

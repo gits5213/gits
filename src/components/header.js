@@ -7,7 +7,6 @@ const BD_SIGN_UP = 'https://docs.google.com/forms/d/e/1FAIpQLScBX0mnlaMNJFhOGnfH
 const headerText = () => {
     return(
         <div>
-            <h1 id='htext'>Nothing to lose by learning new skill!</h1>
             <div className='sign-up'>
                 <a class='f6 grow no-underline br-pill ba bw1 ph3 pv2 mb2 dib dark-green' href={SQA_SIGN_UP} target="_blank" rel="noopener noreferrer">
                     SQA-SignUp

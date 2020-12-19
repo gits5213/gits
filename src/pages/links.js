@@ -5,6 +5,8 @@ import BasicLinks from '../components/links/tabs/basicLinks';
 import FullStackTest from '../components/links/tabs/fullStackTest';
 import FullStackDev from '../components/links/tabs/fullStackDev';
 import ProgLang from '../components/links/tabs/progLang'
+import Window from '../components/links/tabs/window'
+import Mac from '../components/links/tabs/mac'
 
 
 class Code4Kids extends Component {
@@ -31,6 +33,16 @@ class Code4Kids extends Component {
                 <ProgLang />
             )
         }
+        else if(this.state.activeTab === 3) {
+            return(
+                <Window />
+            )
+        }
+        else if(this.state.activeTab === 3) {
+            return(
+                <Mac />
+            )
+        }
     }
 
     render() {
@@ -41,6 +53,8 @@ class Code4Kids extends Component {
                     <Tab>SQA</Tab>
                     <Tab>WebDev</Tab>
                     <Tab>Prog-Lang</Tab>
+                    <Tab>Window</Tab>
+                    <Tab>MAC</Tab>
                 </Tabs>
                 <HeaderText /> 
                 <section>

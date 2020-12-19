@@ -3,7 +3,7 @@
   /* overflow: hidden; */
 }
 
-#htext{
+/* #htext{
   margin-left: 50px;
   text-align: center;
   font-family: monospace;
@@ -12,7 +12,7 @@
   font-size: x-large;
   float: left;
 
-}
+} */
 
 .sign-up{
   padding-top: 1em;
@@ -45,6 +45,10 @@ background: linear-gradient(to right, #FFE000, #799F0C, #00416A); /* W3C, IE 10+
   font-family: monospace;
 }
 
+.goLink {
+  float: right;
+}
+
 .cover-img {
   /* height: 100vh; */
   height: 100%;
@@ -52,10 +56,18 @@ background: linear-gradient(to right, #FFE000, #799F0C, #00416A); /* W3C, IE 10+
   border-radius: 35%;
 }
 
-#program-heading{
-  text-align: center;
+.qa-talks{
+  text-align: left;
   font-family: monospace;
   padding-top: 2em;
+  padding-right: 2em;
+  margin-left: 50px;
+}
+
+#program-heading {
+  text-align: center;
+  font-family: monospace;
+  /* padding-top: 2em; */
 }
 
 /* ===========Page tabe scroll bar=============*/
@@ -156,67 +168,23 @@ h6 {
 }
 
 /* ==============Contact==============*/
-.contact-section-1 {
-  text-align: center;
-}
-
-.page-tab-body a{
+.visit- {
   text-decoration: none;
-  padding-top: 5rem;
 }
-
-#contact-interested {
-  padding-bottom: 5rem;
-}
-
-.contact-btn {
-  margin: auto;
-  width: 40%;
-  position: relative;
-  
+.doc- {
+  text-decoration: none;
 }
 
 /* ==============About==============*/
-.training-title {
-  text-align: center;
-}
-
-.training-title h4{
-  font-weight: bold;
-}
-
-#training-description{
-  text-align: justify;
-  padding-top: 1em;
-}
-
-.about-instructor {
-  /* display: block; */
-  margin: auto;
-  border-radius: 100%;
-}
 
 .about-section-img{
-  float: left;
-  border-radius: 20%;
-  height: 190px;
-}
-
-.instructor-details-first p{
-  position: relative;
-  left: 15px; 
-  text-align: justify;
-}
-
-.instructor-details-second {
-  position: relative;
-  left: 15px; 
-  text-align: justify;
-}
-
-.instructor-details-second #last-para {
-  top: 20px;
-  
+  border-radius: 50%;
+  width: auto;
+  height: 200px;
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  padding-bottom: 1em;
 }
 
 /* ==============footer==============*/
