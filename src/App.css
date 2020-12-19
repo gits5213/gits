@@ -14,10 +14,6 @@
 
 } */
 
-.sign-up{
-  padding-top: 1em;
-}
-
 .header-color{
   background: #00416A;  /* fallback for old browsers */
 background: -webkit-linear-gradient(to right, #FFE000, #799F0C, #00416A);  /* Chrome 10-25, Safari 5.1-6 */
@@ -45,8 +41,11 @@ background: linear-gradient(to right, #FFE000, #799F0C, #00416A); /* W3C, IE 10+
   font-family: monospace;
 }
 
-.goLink {
+.sign-up{
+  padding-top: 1em;
+  padding-right: 2em;
   float: right;
+
 }
 
 .cover-img {

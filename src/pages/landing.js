@@ -14,7 +14,10 @@ class Landing extends Component {
     render(){
         return(
             <div className='landing-body'> 
-                <div className='goLink ph5 mt4'>
+                <div>
+                    <HeaderText />
+                </div>
+                <div className='goLink ph5 mt4 pt3'>
                     <a class='f6 grow no-underline br-pill ba bw1 ph3 pv2 mb2 dib dark-green' href={GOOGLE_MEET} target="_blank" rel="noopener noreferrer">
                         GO Classroom
                     </a>
@@ -25,9 +28,7 @@ class Landing extends Component {
                         GOTO Classroom
                     </a>
                 </div>
-                <div>
-                    <HeaderText />
-                </div>
+                
                 <div>
                     <div className='qa-talks'>
                         <h3>

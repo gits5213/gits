@@ -1,18 +1,18 @@
 {
   "files": {
-    "main.css": "/ittciwebsite/static/css/main.bc3ba09b.chunk.css",
-    "main.js": "/ittciwebsite/static/js/main.7f54dbcc.chunk.js",
-    "main.js.map": "/ittciwebsite/static/js/main.7f54dbcc.chunk.js.map",
+    "main.css": "/ittciwebsite/static/css/main.24a3dd0d.chunk.css",
+    "main.js": "/ittciwebsite/static/js/main.edf89fa4.chunk.js",
+    "main.js.map": "/ittciwebsite/static/js/main.edf89fa4.chunk.js.map",
     "runtime-main.js": "/ittciwebsite/static/js/runtime-main.912ab8f2.js",
     "runtime-main.js.map": "/ittciwebsite/static/js/runtime-main.912ab8f2.js.map",
     "static/css/2.42449d2c.chunk.css": "/ittciwebsite/static/css/2.42449d2c.chunk.css",
-    "static/js/2.3caca258.chunk.js": "/ittciwebsite/static/js/2.3caca258.chunk.js",
-    "static/js/2.3caca258.chunk.js.map": "/ittciwebsite/static/js/2.3caca258.chunk.js.map",
+    "static/js/2.c571d4b1.chunk.js": "/ittciwebsite/static/js/2.c571d4b1.chunk.js",
+    "static/js/2.c571d4b1.chunk.js.map": "/ittciwebsite/static/js/2.c571d4b1.chunk.js.map",
     "index.html": "/ittciwebsite/index.html",
     "static/css/2.42449d2c.chunk.css.map": "/ittciwebsite/static/css/2.42449d2c.chunk.css.map",
-    "static/css/main.bc3ba09b.chunk.css.map": "/ittciwebsite/static/css/main.bc3ba09b.chunk.css.map",
-    "static/js/2.3caca258.chunk.js.LICENSE.txt": "/ittciwebsite/static/js/2.3caca258.chunk.js.LICENSE.txt",
-    "static/media/about-pic.f77d187b.png": "/ittciwebsite/static/media/about-pic.f77d187b.png",
+    "static/css/main.24a3dd0d.chunk.css.map": "/ittciwebsite/static/css/main.24a3dd0d.chunk.css.map",
+    "static/js/2.c571d4b1.chunk.js.LICENSE.txt": "/ittciwebsite/static/js/2.c571d4b1.chunk.js.LICENSE.txt",
+    "static/media/about-pic.35c9381f.png": "/ittciwebsite/static/media/about-pic.35c9381f.png",
     "static/media/apiAutoTest.4170e923.png": "/ittciwebsite/static/media/apiAutoTest.4170e923.png",
     "static/media/apiManualTest.d45aa971.png": "/ittciwebsite/static/media/apiManualTest.d45aa971.png",
     "static/media/bugLifeCycle.8ba6cc50.png": "/ittciwebsite/static/media/bugLifeCycle.8ba6cc50.png",
@@ -32,8 +32,8 @@
   "entrypoints": [
     "static/js/runtime-main.912ab8f2.js",
     "static/css/2.42449d2c.chunk.css",
-    "static/js/2.3caca258.chunk.js",
-    "static/css/main.bc3ba09b.chunk.css",
-    "static/js/main.7f54dbcc.chunk.js"
+    "static/js/2.c571d4b1.chunk.js",
+    "static/css/main.24a3dd0d.chunk.css",
+    "static/js/main.edf89fa4.chunk.js"
   ]
 }
