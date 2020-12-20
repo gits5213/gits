@@ -1,18 +1,22 @@
 import React from 'react';
-import { Grid, Cell } from 'react-mdl';
 import GoogleAd from '../../../components/GoogleAd';
-
+import ProtractorLog from '../../../images/tabs/protractorLog.png';
+const PROTRACTOR_GITHUB = 'https://github.com/angular/protractor';
+const GITHUB_ICON ='http://www.protractortest.org/img/GitHub-Mark-Light-32px.png';
 const resProtractor = () => {
     return(
         <div className='page-tab-body'>
-            <Grid className='page-tab-grid'>
-                <Cell className='page-tab-first-col' col={12}>
-                    <div className='resAppium-'>
-                        <h1>Working in progress...</h1>
-                    </div>
-                    <GoogleAd slot="1541085932" classNames="page-right-side" />
-                </Cell>
-            </Grid>
+            <div className='tc'>
+                <h3>Software Automation Testing Framework</h3>
+                <img className='protractor-logo' src={ProtractorLog} alt='protractor Logo' />
+            </div>
+            <div className='tc pt4'>
+                <a class='f6 grow no-underline br-pill ph3 pv2 mb2 dib white bg-red' href={PROTRACTOR_GITHUB} target="_blank" rel="noopener noreferrer">
+                    <img className='pr2' src={GITHUB_ICON} alt='github log' /> 
+                    View on GitHub                 
+                </a>
+            </div>
+            <GoogleAd slot="1541085932" classNames="page-right-side" />
         </div>
     )
 }

@@ -1,6 +1,6 @@
 import React, {Component} from 'react';
 import HeaderText from '../components/header';
-import { Grid, Cell, Button } from 'react-mdl';
+import { Grid, Cell} from 'react-mdl';
 import GoogleAd from '../components/GoogleAd';
 import SocialIcon from '../components/socialIcon';
 

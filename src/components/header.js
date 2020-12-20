@@ -4,6 +4,7 @@ const SQA_SIGN_UP = 'https://msz5213.github.io/student-subscription/';
 const CODE4KIDS_SIGN_UP = 'https://mailchi.mp/93b0b3a7293e/code4kids';
 const BD_SIGN_UP = 'https://docs.google.com/forms/d/e/1FAIpQLScBX0mnlaMNJFhOGnfHcHV9TLvSK3L3aQTlYZO9LNVKidcY6w/viewform?usp=sf_link';
 
+// https://tachyons.io/components/buttons/pill-grow/index.html
 const headerText = () => {
     return(
         <div>
