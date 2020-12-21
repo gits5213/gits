@@ -8,9 +8,12 @@ const coursesCode4Kids = () => {
     return(
         <div className='page-tab-body'>
             <div>
-                <h3>
-                    Return on Investment(ROI) for KIDS
-                </h3>
+                <h1 className= 'pl5 tl'>Code4Kids Course Outline</h1>
+            </div>
+            <div>
+                <h2>Return on Investment(ROI) for KIDS</h2>
+            </div>
+            <div>
                 <p>
                     I am paying my <strong>KIDS</strong> $20-30/hour to <strong>CODE</strong> and some people are thinking this is a <strong>STUPID</strong> and <strong>DUMB IDEA!</strong> but, I would like to say this a <strong>GENIUS IDEA</strong> because here is <strong>MATH</strong> and <strong>REALITY!</strong>
                     I am not buying a car for my <strong>KIDS</strong> at the age of 16 including insurance, on average the age of 16th the first <strong>CAR</strong> is about <strong>$15K</strong> and Insurance for <strong>$6K</strong> Total is <strong>$21K</strong>.
@@ -19,8 +22,7 @@ const coursesCode4Kids = () => {
                 </p>
             </div>
             <div className='kid-csforall-oba-video'>
-                <h5>Computer Science For All</h5>
-
+                <h4>Computer Science For All</h4>
                 <iframe 
                     className='obama_talk' 
                     title='obama_speace' 
@@ -36,9 +38,9 @@ const coursesCode4Kids = () => {
                     igital economy.
                 </p>
                     
-                <h5>
+                <h2>
                     CS For All 
-                </h5>
+                </h2>
                 <p>
                     Computer Science for All is the President’s bold new initiative to 
                     empower all American students from kindergarten through high school 
@@ -55,7 +57,7 @@ const coursesCode4Kids = () => {
                 </p>
             </div>
             <div>
-                <h5>What is CODING?</h5>
+                <h2>What is CODING?</h2>
                 <p> 
                     Welcome to our of code an introduction to the basics of computer 
                     programming or as it's commonly called Code4Kids coding. 
