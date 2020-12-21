@@ -1,5 +1,4 @@
 import React from 'react';
-// import { Grid, Cell } from 'react-mdl';
 import ManualLogo from '../../../images/tabs/manualLogo.png';
 import DefectBugError from '../../../images/tabs/defectBugError.png';
 import BugLifeCycle from '../../../images/tabs/bugLifeCycle.png'
@@ -11,8 +10,10 @@ const resManual = () => {
     return(
         <div className='page-tab-body'>
             <div className='resManual-first-section'>
-                <div className='tc'>
+                <div>
                     <h3>Software Manual Testing</h3>
+                </div>
+                <div className='tc'>
                     <img className='manual-logo' src={ManualLogo} alt='Manual Logo' />
                 </div>
                 <div>
