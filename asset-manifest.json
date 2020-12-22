@@ -1,8 +1,8 @@
 {
   "files": {
-    "main.css": "/ittciwebsite/static/css/main.5ccd3fbb.chunk.css",
-    "main.js": "/ittciwebsite/static/js/main.916bbea2.chunk.js",
-    "main.js.map": "/ittciwebsite/static/js/main.916bbea2.chunk.js.map",
+    "main.css": "/ittciwebsite/static/css/main.6b8f43f2.chunk.css",
+    "main.js": "/ittciwebsite/static/js/main.30cb10eb.chunk.js",
+    "main.js.map": "/ittciwebsite/static/js/main.30cb10eb.chunk.js.map",
     "runtime-main.js": "/ittciwebsite/static/js/runtime-main.912ab8f2.js",
     "runtime-main.js.map": "/ittciwebsite/static/js/runtime-main.912ab8f2.js.map",
     "static/css/2.42449d2c.chunk.css": "/ittciwebsite/static/css/2.42449d2c.chunk.css",
@@ -10,9 +10,10 @@
     "static/js/2.7c655aea.chunk.js.map": "/ittciwebsite/static/js/2.7c655aea.chunk.js.map",
     "index.html": "/ittciwebsite/index.html",
     "static/css/2.42449d2c.chunk.css.map": "/ittciwebsite/static/css/2.42449d2c.chunk.css.map",
-    "static/css/main.5ccd3fbb.chunk.css.map": "/ittciwebsite/static/css/main.5ccd3fbb.chunk.css.map",
+    "static/css/main.6b8f43f2.chunk.css.map": "/ittciwebsite/static/css/main.6b8f43f2.chunk.css.map",
     "static/js/2.7c655aea.chunk.js.LICENSE.txt": "/ittciwebsite/static/js/2.7c655aea.chunk.js.LICENSE.txt",
     "static/media/about-pic.35c9381f.png": "/ittciwebsite/static/media/about-pic.35c9381f.png",
+    "static/media/agileLogo.45c97340.png": "/ittciwebsite/static/media/agileLogo.45c97340.png",
     "static/media/apiAutoTest.4170e923.png": "/ittciwebsite/static/media/apiAutoTest.4170e923.png",
     "static/media/apiManualTest.d45aa971.png": "/ittciwebsite/static/media/apiManualTest.d45aa971.png",
     "static/media/bugLifeCycle.8ba6cc50.png": "/ittciwebsite/static/media/bugLifeCycle.8ba6cc50.png",
@@ -35,7 +36,7 @@
     "static/js/runtime-main.912ab8f2.js",
     "static/css/2.42449d2c.chunk.css",
     "static/js/2.7c655aea.chunk.js",
-    "static/css/main.5ccd3fbb.chunk.css",
-    "static/js/main.916bbea2.chunk.js"
+    "static/css/main.6b8f43f2.chunk.css",
+    "static/js/main.30cb10eb.chunk.js"
   ]
 }
