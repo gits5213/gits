@@ -2,13 +2,11 @@
   /* position: fixed; */
   /* overflow: hidden; */
 }
-
 .header-color{
   background: #00416A;  /* fallback for old browsers */
 background: -webkit-linear-gradient(to right, #FFE000, #799F0C, #00416A);  /* Chrome 10-25, Safari 5.1-6 */
 background: linear-gradient(to right, #FFE000, #799F0C, #00416A); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
 }
-
 .landing-body h3{
   /* text-align: center; */
   font-family: monospace;
@@ -19,7 +17,6 @@ background: linear-gradient(to right, #FFE000, #799F0C, #00416A); /* W3C, IE 10+
   justify-content: center;
   align-self: flex-start;    
 }
-
 .container {
   /* background-color: #9f9a0c; */
   display: flexbox;
@@ -30,21 +27,17 @@ background: linear-gradient(to right, #FFE000, #799F0C, #00416A); /* W3C, IE 10+
   font-size: 20px;
   font-family: monospace;
 }
-
 .cover-img {
   /* height: 100vh; */
   height: 100%;
   width: auto;
   /* border-radius: 35%; */
 }
-
 .sign-up{
   padding-top: 1em;
   padding-right: 2em;
   float: right;
-
 }
-
 .qa-talks{
   text-align: left;
   font-family: monospace;
@@ -52,31 +45,25 @@ background: linear-gradient(to right, #FFE000, #799F0C, #00416A); /* W3C, IE 10+
   padding-right: 2em;
   margin-left: 50px;
 }
-
 #program-heading {
   text-align: center;
   font-family: monospace;
 }
-
 /* ===========Page tabe scroll bar=============*/
 .mdl-tabs__tab-bar {
   overflow-x: auto;
   overflow-y: hidden; 
   padding-left: 10px;
-
 }
-
 /* .mdl-tabs__tab {
   flex-shrink: 0; 
 } */
-
 .category-tabs{
   font-family: monospace;
   text-align: center;
   margin: auto;
   padding-top: 1em;
 }
-
 .page-tab-body {
   font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
   width: 100%;
@@ -88,34 +75,27 @@ background: linear-gradient(to right, #FFE000, #799F0C, #00416A); /* W3C, IE 10+
   text-align: left;
   color: black;
 }
-
 h6 {
   text-decoration: underline;
 }
-
 .top-link {
   font-family: monospace;
 }
-
 .side-header-color h2{
   font-family: monospace;
 }
-
 .side-link {
   font-family: monospace;
 }
-
 /* ============Card========= */
 .img-style { 
   padding-bottom: 1em;
 }
-
 .img-style img {
   border-radius: 70px;
   border-style: double;
   border-color: cornsilk;
 }
-
 .course-details{
   font-family: monospace;
   opacity: .8;
@@ -124,14 +104,12 @@ h6 {
   border-radius: 10px;
   border-top-style: solid;
 }
-
 /* ============Course-Manual-Automation========= */
 .courseOutline {
   width: 100%;
   height: auto;
   border-radius: 5%;
 }
-
 /* ==============Course-code4Kids==============*/
 .obama_talk{
   position: relative;
@@ -139,16 +117,21 @@ h6 {
   width: 100%;
   height: 100%;
 }
-
 .kid-csforall-oba-video {
   float: left;
 }
-
 .kid-csforall-oba-para {
   position: relative;
   left: 15px;
 }
-
+/* ==============resScrum==============*/
+.scrum-logo-1 {
+  float: left;
+}
+.scrumorg-btn {
+  float: left;
+  padding-right: 1em;
+}
 /* ==============resManual==============*/
 #bugPicid{
   display: block;
@@ -156,7 +139,6 @@ h6 {
   margin-right: auto;
   padding-bottom: 2em;
 }
-
 /* ==============resSelenium==============*/
 .hero.homepage {
   background-image: url(./images/tabs/green-bg-opt.jpg);
@@ -173,14 +155,12 @@ h6 {
   padding: 30px 40px;
   margin: 20px;
 }
-
 .hero h1 {
   font-family: sans-serif;
   line-height: 56px;
   font-size: 44px;
   font-weight: 800;
 }
-
 h1.sub-header {
   margin-top: 5px;
   font-weight: 100;
@@ -202,15 +182,12 @@ h1.sub-header {
   margin-top: 5px;
   margin-bottom: 35px;
 }
-
 /* ==============resProtractor==============*/
 .protractor-logo {
   height: 101px;
   width: 450px;
   background-size: 100%;
 }
-
-
 /* ==============Contact==============*/
 .visit- {
   text-decoration: none;
@@ -218,7 +195,6 @@ h1.sub-header {
 .doc- {
   text-decoration: none;
 }
-
 /* ==============About==============*/
 .about-section-img{
   border-radius: 50%;
@@ -229,20 +205,14 @@ h1.sub-header {
   margin-right: auto;
   padding-bottom: 1em;
 }
-
 /* ==============footer==============*/
 .copyIcon a {
   text-decoration: none;
   color: white;
 }
-
 .social-icon a{
   color: white;
 }
-
-
-
-
 /* .container {
     background-image: url(/images/codingImage.jpg);
     background-position: center;
@@ -254,7 +224,6 @@ h1.sub-header {
     margin: 20px;
     text-align: center;
   } */
-
   /* #htext{
   margin-left: 50px;
   text-align: center;
@@ -265,4 +234,3 @@ h1.sub-header {
   float: left;
 
 } */
-

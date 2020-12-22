@@ -1,7 +1,9 @@
 import React from 'react';
 import GoogleAd from '../../../components/GoogleAd';
-const AgilelLogo ='https://projectresources.cdt.ca.gov/wp-content/uploads/sites/50/2017/08/scrum-framework-at-a-glance.jpg';
+
+import AgilelLogo from '../../../images/tabs/agileLogo.png'; 
 const AGILE_MENUFESTO = 'https://www.mountaingoatsoftware.com/agile/new-to-agile-or-scrum';
+const AGILE_TOOLS_TECHN = ' https://projectresources.cdt.ca.gov/agile/agile-tools-and-techniques/';
 
 const agile = () => {
     return(
@@ -45,13 +47,14 @@ const agile = () => {
                     <li>At regular intervals, the team reflects on how to become more effective, then tunes and adjusts its behavior accordingly.</li>
                 </ol>
             </div>
-            <div className='sign-up'>
+            <div className='pt4 agile-btn'>
                 <a class='f6 grow no-underline br-pill ba bw1 ph3 pv2 mb2 dib dark-green' href={AGILE_MENUFESTO} target="_blank" rel="noopener noreferrer">
                     New to Agile and Scrum
                 </a>
+                <a className='f6 grow no-underline br-pill ba bw1 ph3 pv2 mb2 dib dark-green' href={AGILE_TOOLS_TECHN} target="_blank" rel="noopener noreferrer">
+                    Agile Tools & techniques
+                </a>
             </div>
-
-
 
             <GoogleAd slot="1541085932" classNames="page-right-side" />
         </div>
