@@ -132,6 +132,9 @@ h6 {
   float: left;
   padding-right: 1em;
 }
+.scrum-values {
+  float: left;
+}
 /* ==============resManual==============*/
 #bugPicid{
   display: block;
