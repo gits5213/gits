@@ -9,6 +9,8 @@ const HTML_FROMS = 'https://www.w3schools.com/html/html_forms.asp';
 const HTML_MEDIA = 'https://www.w3schools.com/html/html_forms.asp';
 const HTML_QUIZ = 'https://www.w3schools.com/html/html_forms.asp';
 const HTML_REFERENCES = 'https://www.w3schools.com/html/html_forms.asp';
+const MATERIAL_UI = 'https://material-ui.com/';
+const GOOGLE_FONTS = 'https://fonts.google.com/';
 
 const resHtml = () => {
     return(
@@ -131,6 +133,9 @@ const resHtml = () => {
                 <img className='pr4 pb4 html-tag' src={HTML_TAG} alt='html tag'/>
             </div>
             <hr />
+            <div>
+                <h3>Links & References</h3>
+            </div>
             <div className='pt4 html-btn'>
                 <a className='f6 grow no-underline br-pill ba bw1 ph3 pv2 mb2 dib dark-green' href={HTML_TAGS} target="_blank" rel="noopener noreferrer">
                     HTML tags
@@ -146,6 +151,15 @@ const resHtml = () => {
                 </a>
                 <a className='f6 grow no-underline br-pill ba bw1 ph3 pv2 mb2 dib dark-green' href={HTML_REFERENCES} target="_blank" rel="noopener noreferrer">
                     HTML References
+                </a>
+            </div>
+            <hr />
+            <div>
+                <a className='f6 grow no-underline br-pill ba bw1 ph3 pv2 mb2 dib dark-green' href={MATERIAL_UI} target="_blank" rel="noopener noreferrer">
+                    ICONS - Material UI
+                </a>
+                <a className='f6 grow no-underline br-pill ba bw1 ph3 pv2 mb2 dib dark-green' href={GOOGLE_FONTS} target="_blank" rel="noopener noreferrer">
+                    Google Fonts
                 </a>
             </div>
            <GoogleAd slot="1541085932" classNames="page-right-side" /> 
