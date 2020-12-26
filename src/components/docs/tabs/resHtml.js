@@ -1,6 +1,7 @@
 import React from 'react';
 import GoogleAd from '../../../components/GoogleAd';
 import HTML_LOGO from '../../../images/tabs/htmlLogo.png';
+import HTML_TAG from '../../../images/tabs/htmlTags.jpeg';
 
 const VSCODE = 'https://code.visualstudio.com/download';
 const HTML_TAGS = 'https://www.w3schools.com/tags/ref_attributes.asp';
@@ -124,6 +125,10 @@ const resHtml = () => {
                     <li>Open <strong>sample.html</strong> file and enter some html code</li>
                     <li>Enter <strong>!</strong>and hit <strong>tab</strong> from the keyboad</li>
                 </ul>
+            </div>
+            <h3>HTML Tags Cheat Sheet</h3>
+            <div className='tc'>
+                <img className='pr4 pb4 html-tag' src={HTML_TAG} alt='html tag'/>
             </div>
             <hr />
             <div className='pt4 html-btn'>
