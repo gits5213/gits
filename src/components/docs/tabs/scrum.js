@@ -163,7 +163,6 @@ const scrum = () => {
                     ScrumMountainGoat
                 </a>
             </div>
-            
             <GoogleAd slot="1541085932" classNames="page-right-side" />
         </div>
     )

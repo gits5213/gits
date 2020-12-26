@@ -135,6 +135,11 @@ h6 {
 .scrum-values {
   float: left;
 }
+
+/* ==============resHTML==============*/
+.tag-Color {
+  color: #990000;
+}
 /* ==============resManual==============*/
 #bugPicid{
   display: block;
