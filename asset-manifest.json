@@ -1,8 +1,8 @@
 {
   "files": {
     "main.css": "/ittciwebsite/static/css/main.14024232.chunk.css",
-    "main.js": "/ittciwebsite/static/js/main.8adeb38d.chunk.js",
-    "main.js.map": "/ittciwebsite/static/js/main.8adeb38d.chunk.js.map",
+    "main.js": "/ittciwebsite/static/js/main.f879d09e.chunk.js",
+    "main.js.map": "/ittciwebsite/static/js/main.f879d09e.chunk.js.map",
     "runtime-main.js": "/ittciwebsite/static/js/runtime-main.912ab8f2.js",
     "runtime-main.js.map": "/ittciwebsite/static/js/runtime-main.912ab8f2.js.map",
     "static/css/2.42449d2c.chunk.css": "/ittciwebsite/static/css/2.42449d2c.chunk.css",
@@ -21,6 +21,8 @@
     "static/media/codeForKids.d0058eb3.png": "/ittciwebsite/static/media/codeForKids.d0058eb3.png",
     "static/media/codingImage.b1c7a2af.png": "/ittciwebsite/static/media/codingImage.b1c7a2af.png",
     "static/media/courseOutline.56cfaf7a.png": "/ittciwebsite/static/media/courseOutline.56cfaf7a.png",
+    "static/media/cssImage.ad63ea32.jpeg": "/ittciwebsite/static/media/cssImage.ad63ea32.jpeg",
+    "static/media/cssLogo.bbf01949.png": "/ittciwebsite/static/media/cssLogo.bbf01949.png",
     "static/media/defectBugError.0946ec0d.png": "/ittciwebsite/static/media/defectBugError.0946ec0d.png",
     "static/media/App.css": "/ittciwebsite/static/media/green-bg-opt.33c4b9e8.jpg",
     "static/media/htmlLogo.bd7deb01.png": "/ittciwebsite/static/media/htmlLogo.bd7deb01.png",
@@ -42,6 +44,6 @@
     "static/css/2.42449d2c.chunk.css",
     "static/js/2.5361e51b.chunk.js",
     "static/css/main.14024232.chunk.css",
-    "static/js/main.8adeb38d.chunk.js"
+    "static/js/main.f879d09e.chunk.js"
   ]
 }
