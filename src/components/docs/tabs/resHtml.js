@@ -134,7 +134,7 @@ const resHtml = () => {
             </div>
             <hr />
             <div>
-                <h3>Links & References</h3>
+                <h3>References</h3>
             </div>
             <div className='pt4 html-btn'>
                 <a className='f6 grow no-underline br-pill ba bw1 ph3 pv2 mb2 dib dark-green' href={HTML_TAGS} target="_blank" rel="noopener noreferrer">

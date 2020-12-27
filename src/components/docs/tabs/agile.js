@@ -12,7 +12,7 @@ const agile = () => {
                 <h3>The Agile Manifesto</h3>
             </div>
             <div className='tc'>
-                <img className='pt4 pb4 agile-logo' src={AgilelLogo} alt='Manual Logo' height='540' width='801'/>
+                <img className='pt4 pb4 agile-logo' src={AgilelLogo} alt='Manual Logo' height='401' width='801'/>
             </div>
             <div>
                 <h2>The key values and principles of agile</h2>

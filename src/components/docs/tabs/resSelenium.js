@@ -29,7 +29,7 @@ const selenium = () => {
           <div className='tc pt3'>
               <a class='f6 grow no-underline br-pill ph3 pv2 mb2 dib white bg-red' href={SELENIUM_GITHUB} target="_blank" rel="noopener noreferrer">
                   <img className='pr2' src={GITHUB_ICON} alt='github log' /> 
-                  View on GitHub                 
+                  SeleniumHQ on GitHub                 
               </a>
           </div>
 

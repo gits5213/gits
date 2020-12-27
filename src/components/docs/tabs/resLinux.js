@@ -3,8 +3,8 @@ import GoogleAd from '../../../components/GoogleAd';
 import linuxLogo from '../../../images/tabs/linuxLogo.png';
 import linuxCheatSheet from '../../../images/tabs/linuxCheatSheet.png';
 
-
-
+const GITHUB_ICON ='http://www.protractortest.org/img/GitHub-Mark-Light-32px.png';
+const LINUX_ = 'https://gist.github.com/riipandi/3097780';
 
 const resLinux = () => {
     return(
@@ -15,6 +15,12 @@ const resLinux = () => {
             <div className='tc'>
                 <img className='pr4 pt4 pb4 linux-logo' src={linuxLogo} alt='Linux Logo' height='350' width='999'/>
             </div>
+            <div className='tc pt3'>
+              <a class='f6 grow no-underline br-pill ph3 pv2 mb2 dib white bg-red' href={LINUX_} target="_blank" rel="noopener noreferrer">
+                  <img className='pr2' src={GITHUB_ICON} alt='github log' /> 
+                  Linux Command on GitHub                 
+              </a>
+          </div>
             <div>
                 <h3>What is Linux?</h3>
                 <p>
