@@ -18,7 +18,7 @@ background: linear-gradient(to right, #FFE000, #799F0C, #00416A); /* W3C, IE 10+
   align-self: flex-start;    
 }
 .container {
-  /* background-color: #9f9a0c; */
+  /* background-color: #9f9a0c;  */
   display: flexbox;
   align-items: center;
   justify-content: center;
@@ -49,6 +49,63 @@ background: linear-gradient(to right, #FFE000, #799F0C, #00416A); /* W3C, IE 10+
   text-align: center;
   font-family: monospace;
 }
+
+/* ===========Landing Page 2nd Image=============*/
+.landing-s-image {
+  background: #68dca8;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  position: relative;
+  padding: 20px 20px;
+  margin: 20px;
+  text-align: center;
+  color: #ffffff;
+}
+.seImage {
+  padding: 30px 40px;
+  margin: 20px;
+}
+.seImage h1 {
+  font-family: sans-serif;
+  line-height: 56px;
+  font-size: 44px;
+  font-weight: 800;
+}
+h1.sub-header {
+  margin-top: 5px;
+  font-weight: 100;
+}
+
+/* ===========Landing Page 3rd Image=============*/
+.landing-t-image {
+  background: #272727;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  position: relative;
+  padding: 20px 20px;
+  margin: 20px;
+  text-align: center;
+  color: #ffffff;
+  /* padding-top: 100px; */
+  display: block;
+  height: auto !important;
+}
+#aboutUs-header {
+    font-size: 50px;
+    font-weight: inherit;
+    text-transform: uppercase;
+}
+.border-2 {
+  font-size: 10px;
+  text-transform: uppercase;
+}
+
+
+
+
+
 /* ===========Page tabe scroll bar=============*/
 .mdl-tabs__tab-bar {
   overflow-x: auto;

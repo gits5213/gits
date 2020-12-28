@@ -11,7 +11,7 @@ const COURSES = '/ittciwebsite/courses/';
 
 const cardList = ({cardDetails}) => {
     return(
-        <div>
+        <div className='tc' >
             <Card img={<a href={COURSES} target="_blank" rel="noopener noreferrer"><img alt='codeForkids' src={codeForkids} width='200' height='200'/></a>} id={cardDetails[4].id} courseName={cardDetails[4].courseName} techStack={cardDetails[4].techStack}/>
             <Card img={<a href={COURSES} target="_blank" rel="noopener noreferrer"><img alt='webDev' src={webDev} width='200' height='200'/></a>} id={cardDetails[5].id} courseName={cardDetails[5].courseName} techStack={cardDetails[5].techStack}/>
             <Card img={<a href={COURSES} target="_blank" rel="noopener noreferrer"><img alt='uiManualTest' src={uiManualTest} width='200' height='200'/></a>} id={cardDetails[0].id} courseName={cardDetails[0].courseName} techStack={cardDetails[0].techStack}/>

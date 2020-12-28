@@ -3,6 +3,7 @@ import GoogleAd from '../../../components/GoogleAd';
 import css_logo from '../../../images/tabs/cssLogo.png';
 import css_image from '../../../images/tabs/cssImage.jpeg';
 
+const CSS_TRICKS = 'https://css-tricks.com/snippets/css/';
 const W3_CSS = 'https://www.w3schools.com/css/css_syntax.asp';
 const W3_CSS_HOWTO = 'https://www.w3schools.com/howto/default.asp';
 const TACHYONS = 'https://tachyons.io/docs/';
@@ -92,6 +93,9 @@ const resCss = () => {
                 </a>
                 <a className='f6 grow no-underline br-pill ba bw1 ph3 pv2 mb2 dib dark-green' href={W3_CSS_HOWTO} target="_blank" rel="noopener noreferrer">
                     CSS - How To
+                </a>
+                <a className='f6 grow no-underline br-pill ba bw1 ph3 pv2 mb2 dib dark-green' href={CSS_TRICKS} target="_blank" rel="noopener noreferrer">
+                    CSS-TRICKS
                 </a>
                 <a className='f6 grow no-underline br-pill ba bw1 ph3 pv2 mb2 dib dark-green' href={W3_CSS_F} target="_blank" rel="noopener noreferrer">
                     CSS - W3CSS Framework

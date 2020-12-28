@@ -19,7 +19,7 @@ const CONTACT = '/contact';
 const footer = () => {
     return(
         <Footer size="mega">
-            <FooterSection type="middle">
+            <FooterSection type="middle" className='tc'>
                 <FooterDropDownSection title="Features">
                     <FooterLinkList>
                         <a href={ITNYCUSA} target="_blank" rel="noopener noreferrer">WordPress Website</a>
