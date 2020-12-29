@@ -6,8 +6,7 @@ import landingImage from '../images/sdlcLogo.png'
 import CardList from '../components/cardList';
 import {cardDetails}from '../components/cardDetails';
 import Footer from '../components/footer';
-import Roi from '../components/courses/tabs/roi';
-import QaCareer from '../components/courses/tabs/qaCareer';
+
 
 const GOTO_MEET = 'https://global.gotomeeting.com/join/115264677';
 const GOOGLE_MEET = 'https://meet.google.com/wco-zfnf-swy';
@@ -53,41 +52,60 @@ class Landing extends Component {
                 </section>
                 <div className='landing-t-image tc'>
                     <h2 id='aboutUs-header'> 
-                        Who we are
+                        WHO WE ARE
                         <p>
-                            Code4Kids & Full Stack Quality Assurance Enginnering & Web Developer Training Center. 
+                            Code4Kids ans Full Stack Quality Assurance Enginnering and Web Developer Training Center. 
                         </p>
                     </h2>
                     <Grid className="border">
-                        <Cell className='pl4 border-1 tl' col={6}>
-                            <div>
-                                <h2>- Code4Kids - SE</h2>
-                                <h2>- Full Stack SQAE</h2>
-                                <h2>- Frontend Web Developer </h2>
+                        <Cell className='pl4 tr' col={4}>
+                            <div className='border-1'>
+                                <h4>- Code4Kids (To Become a Software Engineer)</h4>
+                                <h4>
+                                    - Full Stack SQAE
+                                    Web and API Manual
+                                    Web and API Automation
+                                </h4>
+                                <h4>- Frontend Web Developer (Software Engineer) </h4>
                             </div>
                         </Cell>
-                        <Cell className='border-2 tl' col={6}>
-                            <div>
-                                <h2>- In-Person Training</h2>
-                                <h2>- Oneline Training</h2>
-                                <h2>- Corporate Training</h2>
-                                <h2>- Project Support</h2>
+                        <Cell className='pl4 tl pt4' col={4}>
+                            <div className='border-2'>
+                                <p>
+                                    We are the leaders in providing quality Training's of Web Development, Full Stack Quality Assurance Engineering and Code4Kids to Corporate and Individuals. This is the best In-person and Online training center at Queens, Hollis-NY. Our main intention is to let our students learn through practice and provide as much detailed information as possible. Our training's are divided in three modules - <strong>Full Stack SQA Engineering Program - Frontend Web Development Program - Code4Kids Program</strong>.
+                                </p>
                             </div>
                         </Cell>
-                        
+                        <Cell className='border-3 tl' col={4}>
+                            <div className='pt4 scrummountain-btn'>
+                                <button className='b f6 link dim br-pill ph3 pv2 mb2 dib white bg-dark-red'>
+                                    In-Person Training
+                                </button>
+                            </div>
+                            <div className='pt4 scrummountain-btn'>
+                                <button className='b f6 link dim br-pill ph3 pv2 mb2 dib white bg-dark-red'>
+                                    Online Training
+                                </button>
+                            </div>
+                            <div className='pt4 scrummountain-btn'>
+                                <button className='b f6 link dim br-pill ph3 pv2 mb2 dib white bg-dark-red'>
+                                    Corporate Training
+                                </button>
+                            </div>
+                            <div className='pt4 scrummountain-btn'>
+                                <button className='b f6 link dim br-pill ph3 pv2 mb2 dib white bg-dark-red'>
+                                    Project Support
+                                </button>
+                            </div>
+                        </Cell>
                     </Grid>
                 </div>
-                <div>
-                    <Roi />
-                </div>
-                <div>
-                    <QaCareer />
-                </div>
-                
                 <div className='pt4'>
                     <Footer />
                 </div>
             </div>
+
+            
 
         )
     } 

@@ -272,6 +272,11 @@ const resJavascript = () => {
                     <iframe src="https://drive.google.com/file/d/10vq1bR8_GeI38zC1kZ48d9n8gzzox_Do/preview" width="640" height="800" title='js-cheat-sheet'></iframe>
                 </div>
             </section>
+            <div className='pt4'>
+                <a className='f6 grow no-underline br-pill ba bw1 ph3 pv2 mb2 dib dark-red' href={JS_ChEAT_SHEET} target="_blank" rel="noopener noreferrer">
+                    JavaScript Cheat Sheet
+                </a>
+            </div>
             <GoogleAd slot="1541085932" classNames="page-right-side" />
         </div>
     )
