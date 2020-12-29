@@ -2,6 +2,7 @@
   /* position: fixed; */
   /* overflow: hidden; */
 }
+
 .header-color{
   background: #00416A;  /* fallback for old browsers */
 background: -webkit-linear-gradient(to right, #FFE000, #799F0C, #00416A);  /* Chrome 10-25, Safari 5.1-6 */
@@ -48,6 +49,11 @@ background: linear-gradient(to right, #FFE000, #799F0C, #00416A); /* W3C, IE 10+
 #program-heading {
   text-align: center;
   font-family: monospace;
+}
+
+/* ===========Back TO TOP Button=============*/
+.back-to-top {
+  float: right;
 }
 
 /* ===========Landing Page 2nd Image=============*/
@@ -201,6 +207,21 @@ h6 {
   margin-right: auto;
   padding-bottom: 2em;
 }
+
+/* ==============resJava==============*/
+.pre-code {
+  background-color: black;
+  overflow: auto;
+  margin-bottom: 1rem;
+  display: block;
+  color: #ffffff;
+  font-size: 87.5%;
+  /* font-family: 'Courier New', Courier, monospace; */
+  white-space: pre;
+  margin: 1em 0px;
+  padding: 2em 2em 2em 2em;
+}
+
 /* ==============resSelenium==============*/
 .hero.homepage {
   background-image: url(./images/tabs/green-bg-opt.jpg);
