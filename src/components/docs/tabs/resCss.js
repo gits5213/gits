@@ -12,6 +12,8 @@ const BOOTSTRAP = 'https://getbootstrap.com/docs/5.0/getting-started/introductio
 const MATERIAL = 'https://material.io/components?platform=web';
 const METERIAL_UI_F = 'https://material-ui.com/';
 const REACT_BOOTSTRAP = 'https://react-bootstrap.github.io/components/alerts';
+const FONT_AWESOME = 'https://fontawesome.com/v4.7.0/';
+const FONT_AWESOME_CHEATSHEET = 'https://fontawesome.com/v4.7.0/cheatsheet/';
 
 const GITHUB_ICON ='http://www.protractortest.org/img/GitHub-Mark-Light-32px.png';
 const CSS_FRAMEWORK_TOPICS = 'https://github.com/topics/css-framework';
@@ -111,6 +113,12 @@ const resCss = () => {
                 </a>
                 <a className='f6 grow no-underline br-pill ba bw1 ph3 pv2 mb2 dib dark-green' href={MATERIAL} target="_blank" rel="noopener noreferrer">
                     MATERIAL FW
+                </a>
+                <a className='f6 grow no-underline br-pill ba bw1 ph3 pv2 mb2 dib dark-green' href={FONT_AWESOME} target="_blank" rel="noopener noreferrer">
+                    Font Awesome ICONIC CSS TOOLKID
+                </a>
+                <a className='f6 grow no-underline br-pill ba bw1 ph3 pv2 mb2 dib dark-green' href={FONT_AWESOME_CHEATSHEET} target="_blank" rel="noopener noreferrer">
+                    F.A ICONIC CSS Cheatsheet
                 </a>
             </div>
             <hr />

@@ -40,16 +40,12 @@ class apis extends Component {
             )
         } else if(this.state.activeTab === 5) {
             return(
-                <WebDriverIO />
-            )
-        } else if(this.state.activeTab === 6) {
-            return(
-                <Frisby />
+                <SuperTest />
             )
         }
-        else if(this.state.activeTab === 7) {
+        else if(this.state.activeTab === 6) {
             return(
-                <SuperTest />
+                <Frisby />
             )
         }
     }

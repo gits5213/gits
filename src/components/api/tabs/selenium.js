@@ -8,6 +8,7 @@ const approach_3_3 = "//*[starts-with(@id,'user')]′] ";
 
 const GITHUB_ICON ='http://www.protractortest.org/img/GitHub-Mark-Light-32px.png';
 const SELENIUM_GITHUB = 'https://github.com/SeleniumHQ';
+const SELENIUM_WEBSITE = 'https://www.selenium.dev/';
 
 const selenium = () => {
     return(
@@ -31,6 +32,10 @@ const selenium = () => {
                   <img className='pr2' src={GITHUB_ICON} alt='github log' /> 
                   SeleniumHQ on GitHub                 
               </a>
+              <a class='f6 grow no-underline br-pill ph3 pv2 mb2 dib white bg-green' href={SELENIUM_WEBSITE} target="_blank" rel="noopener noreferrer">
+                    <img className='pr2' src={GITHUB_ICON} alt='github log' /> 
+                    SeleniumHQ Org                 
+                </a>
           </div>
 
           <div>
