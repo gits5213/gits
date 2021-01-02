@@ -13,7 +13,7 @@ const SELENIUM_WEBSITE = 'https://www.selenium.dev/';
 const selenium = () => {
     return(
         <div className = 'page-tab-body'>
-          <h3>SELENIUM</h3>
+          <h3>Selenium API</h3>
           <section class='hero homepage'>
               <h1>Selenium automates browsers. That's it!</h1>
               <h1 class='sub-header'>What you do with that power is entirely up to you.</h1>
@@ -211,17 +211,19 @@ const selenium = () => {
               </li>
             </ol>
             <p><strong>Approach #1:</strong> Below is the xpath of one of the cell in html table.</p>
-            <p>
-              <pre>
+            <div>
+              <pre className='pre-code'>
+                  <code>
+                    {approch_1}
+                  </code>
+              </pre>
+            </div>        
+            <p><strong>Approach #2:</strong> The first approach is best suitable for the table which doesn’t change its dimensions and always remains the same. Above approach will not be a perfect solution for dynamically changing web tables.</p>
+              <pre className='pre-code'>
                 <code>
-                  {approch_1}
+                  {approach_2}
                 </code>
               </pre>
-            </p>
-        
-            <p><strong>Approach #2:</strong> The first approach is best suitable for the table which doesn’t change its dimensions and always remains the same. Above approach will not be a perfect solution for dynamically changing web tables.</p>
-            <p><code>{approach_2}</code></p>
-
             <p>
               <strong>
                 Approach #3:
@@ -230,11 +232,15 @@ const selenium = () => {
               <br />
               In few scenarios, element attributes change dynamically. It can be ‘id’, ’name’ etc.
             </p>
-            <p>
-              <code>{approach_3_1} </code> <br />
-              <code> {approach_3_2}</code> <br />
-              <code>{approach_3_3} </code>
-            </p>
+            <div>
+              <pre className='pre-code'>
+                <code>
+                  {approach_3_1} <br />
+                  {approach_3_2} <br />
+                  {approach_3_3}
+                </code>
+              </pre>
+            </div>
             <ol>
               <h5><strong><u>Class Actions</u></strong></h5>
               <li>
@@ -356,11 +362,13 @@ const selenium = () => {
                   <p>
                     Once the command is in place, Implicit Wait stays in place for the entire duration for which the browser is open. Its default setting is 0, and the specific wait time needs to be set by the following protocol.
                   </p>
-                  <pre>
-                    <code>
-                      driver.manage().timeouts().implicitlywait(20L,Timeunit.sec);
-                    </code>
-                  </pre>
+                  <div>
+                    <pre className='pre-code'>
+                      <code>
+                        driver.manage().timeouts().implicitlywait(20L,Timeunit.sec);
+                      </code>
+                    </pre>
+                  </div>
                 </li>
                 <li>
                   <strong>Explicit Wait in Selenium: </strong>
@@ -400,13 +408,14 @@ const selenium = () => {
                     <li>visibilityOfElementLocated()</li>
                   </ul>
                   <p className='pt2'>Initialize A Wait Object using WebDriverWait Class.</p>
-                  <pre>
-                    <code>
-                      WebDriverWait wait = new WebDriverWait(driver,30);<br />
-                      wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath("//div[contains(text(),'COMPOSE')]")));
-                    </code>
-                  </pre>
-
+                  <div>
+                    <pre className='pre-code'>
+                      <code>
+                          WebDriverWait wait = new WebDriverWait(driver,30);<br />
+                          wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath("//div[contains(text(),'COMPOSE')]")));
+                      </code>
+                    </pre>
+                  </div>
                 </li>
                 <li>
                   <strong>Fluent Wait in Selenium: </strong>
@@ -425,14 +434,16 @@ const selenium = () => {
                   <p>
                     While using Fluent Wait, it is possible to set a default polling period as needed. The user can configure the wait to ignore any exceptions during the polling period.
                   </p>
-                  <pre>
-                    <code>
-                    Wait wait = new FluentWait (WebDriver)(driver) <br />
-                      .withTimeout(50, TimeUnit.SECONDS) <br />
-                      .pollingevery(3, TimeUnit.SECONDS) <br />
-                      .ignoring(NoSuchElementException.class); 
-                    </code>
-                  </pre>
+                  <div>
+                    <pre className='pre-code'>
+                      <code>
+                        Wait wait = new FluentWait (WebDriver)(driver) <br />
+                        .withTimeout(50, TimeUnit.SECONDS) <br />
+                        .pollingevery(3, TimeUnit.SECONDS) <br />
+                        .ignoring(NoSuchElementException.class); 
+                      </code>
+                    </pre>
+                  </div>
                 </li>
               </ol>
               <h5>
@@ -512,16 +523,18 @@ const selenium = () => {
                   <span>
                     This method can catch Exceptions by using a combination of the try and catch keywords. Try indicates the start of the block, and Catch is placed at the end of the try block to handle or resolve the Exception. The code that is written within the Try/Catch block is referred to as “protected code.” The following code represents the syntax of Try/Catch block –
                   </span>
-                  <pre>
-                    <code>
-                      try{
-                          // Some code
-                        }
-                      catch(Exception e){
-                          // Code for Handling the exception
-                        }
-                    </code>
-                  </pre>
+                  <div>
+                    <pre className='pre-code'>
+                      <code>
+                        try{'{'} <br />
+                          {'//'}Some code - <br />
+                            {'}'} <br />
+                        catch(Exception e){'{'} <br />
+                          {'//'}Code for Handling the exception - <br />
+                            {'}'}
+                      </code>
+                    </pre>
+                  </div>
                 </p>
                 <p>
                   <strong>
@@ -530,19 +543,22 @@ const selenium = () => {
                   <span>
                     There are various types of Exceptions, and one can expect more than one exception from a single block of code. Multiple catch blocks are used to handle every kind of Exception separately with a separate block of code. One can use more than two catch blocks, and there is no limitation on the number of catch blocks. The code below represents the syntax of multiple catch blocks –
                   </span>
-                  <pre>
-                    <code>
-                      try{
-                            //Some code
-                        }
-                      catch(ExceptionType1 e1){
-                          //Code for Handling the Exception 1
-                        }
-                      catch(ExceptionType2 e2){
-                          //Code for Handling the Exception 2
-                        }
-                    </code>
-                  </pre>
+
+                  <div>
+                    <pre className='pre-code'>
+                      <code>
+                        try{'{'} <br />
+                          {'//'}Some code - <br />
+                            {'}'} <br />
+                        catch(ExceptionType1 e1){'{'} <br />
+                          {'//'}Code for Handling the Exception 1 - <br />
+                            {'}'} <br />
+                        catch(ExceptionType2 e2){'{'} <br />
+                         {'//'}Code for Handling the Exception 2 - <br />
+                        {'}'}
+                      </code>
+                    </pre>
+                  </div>
                 </p>
                 <p>
                   <strong>
@@ -551,18 +567,16 @@ const selenium = () => {
                   <span>
                     When a programmer wants to generate an Exception explicitly, the Throw keyword is used to throw Exception to runtime to handle it. When a programmer is throwing an Exception without handling it, then he/she needs to use Throws keyword in the method signature to enable the caller program to understand the exceptions that might be thrown by the method. The syntax for Throws is as follows:
                   </span>
-                  <pre>
+                  <pre className='pre-code'>
                     <code>
-                        public static void anyFunction() throws Exception{
-                          //try{
-                              // write your code here
-                            }
-                          catch (Exception e){
-                                // Do whatever you wish to do here
-
-                                // Now throw the exception back to the system
-                                //throw(e);
-                            }
+                      public static void anyFunction() throws Exception{'{'} <br />
+                         {'//'}try{'{'} write your code here <br />
+                        {'}'} <br />
+                        catch(Exception e){'{'} <br />
+                          {'//'}Do whatever you wish to do here <br />
+                          {'//'}Now throw the exception back to the system <br />
+                          {'//'}throw(e);<br />
+                        {'}'}
                     </code>
                   </pre>
                 </p>
@@ -573,18 +587,18 @@ const selenium = () => {
                   <span>
                     One can mention various Exceptions in the throws clause. Refer to the example below:
                   </span>
-                  <pre>
+
+                  <pre className='pre-code'>
                     <code>
-                        public static void anyFunction() throws ExceptionType1, ExceptionType2{
-                          //try{
-                              // write your code here
-                            }
-                          catch (ExceptionType1 e1){
-                              // Code to handle exception 1
-                            }
-                          catch (ExceptionType1 e2){
-                              // Code to handle exception 2
-                            }
+                      public static void anyFunction() throws ExceptionType1, ExceptionType2 {'{'} <br />
+                         {'//'}try{'{'} write your code here <br />
+                        {'}'} <br />
+                        catch(ExceptionType1 e1){'{'} <br />
+                          {'//'}Code to handle exception 1 <br />
+                        {'}'} <br />
+                        catch(ExceptionType2 e2){'{'} <br />
+                          {'//'}Code to handle exception 2 
+                        {'}'}
                     </code>
                   </pre>
                 </p>
@@ -595,26 +609,26 @@ const selenium = () => {
                   <span>
                     The Final keyword is used to create a block of code under the try block. This final code block always executes irrespective of the occurrence of an exception
                   </span>
-                  <pre>
-                    <code>
-                        try{
-                            //Protected code
-                          }
-                        catch(ExceptionType1 e1){
-                            //Catch block
-                          }
-                        catch(ExceptionType2 e2){
-                            //Catch block
-                          }
-                        catch(ExceptionType3 e3){
-                            //Catch block
-                          }
 
-                        finally{
-                            //The finally block always executes.
-                          }
-                    </code>
-                  </pre>
+                  <pre className='pre-code'>
+                      <code>
+                        try{'{'} <br />
+                          {'//'}Protected code - <br />
+                            {'}'} <br />
+                        catch(ExceptionType1 e1){'{'} <br />
+                          {'//'}Catch block - <br />
+                            {'}'} <br />
+                        catch(ExceptionType2 e2){'{'} <br />
+                          {'//'}Catch block - <br />
+                            {'}'}
+                        catch(ExceptionType3 e3){'{'} <br />
+                          {'//'}Catch block - <br />
+                            {'}'}
+                        finally {'{'} <br />
+                          {'//'}The finally block always executes. - <br />
+                            {'}'}
+                      </code>
+                    </pre>
                   </p>
                 <p>
                   One can also use the following methods to display Exception Information:

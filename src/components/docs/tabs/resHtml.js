@@ -36,17 +36,21 @@ const resHtml = () => {
                 </ul>
             </div>
             <h3>Example</h3>
-            <div className='w3-code'>
-                <code className='tag-Color'>{'<'}!DOCTYPE html{'>'}</code><br />
-                <code className='tag-Color'>{'<'}html{'>'}</code><br />
-                    <code className='pl3 tag-Color'>{'<'}head{'>'}</code><br />
-                        <code className='pl4 tag-Color'>{'<'}titile{'>'} Page Title {'<'}titile{'/>'} </code><br />
-                    <code className='pl3 tag-Color'>{'<'}head{'/>'}</code><br />
-                    <code className='pl3 tag-Color'>{'<'}body{'>'}</code><br />
-                        <code className='pl4 tag-Color'>{'<'}h1{'>'} My First Heading {'<'}h1{'/>'}</code><br />
-                        <code className='pl4 tag-Color'>{'<'}p{'>'}My First Paragraph. {'<'}p{'/>'}</code><br />
-                    <code className='pl3 tag-Color'>{'<'}body{'/>'}</code><br />
-                <code className='tag-Color'>{'<'}html{'/>'}</code><br />
+            <div>
+                <pre className='pre-code'>
+                    <code>
+                        {'<'}!DOCTYPE html{'>'} <br />
+                        {'<'}html{'>'} <br />
+                        |   {'<'}head{'>'} <br />
+                        |    |   {'<'}titile{'>'} Page Title {'<'}titile/{'>'} <br />
+                        |   {'<'}head/{'>'} <br />
+                        |   {'<'}body{'>'} <br />
+                        |    |  {'<'}h1{'>'} My First Heading {'<'}h1/{'>'} <br />
+                        |    |  {'<'}p{'>'}My First Paragraph. {'<'}p/{'>'} <br />
+                        |   {'<'}body/{'>'} <br />
+                        {'<'}html/{'>'}
+                    </code>
+                </pre>
             </div>
             <div>
                 <h3>Example Explained</h3>

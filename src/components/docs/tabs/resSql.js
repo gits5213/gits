@@ -89,7 +89,7 @@ const resSql = () => {
                     <li>Rright click on DVDRental and click on <strong>Restore</strong> add <strong>dvdrental path</strong> and then click on <strong>Restore</strong></li>
                     <li>Right click on DVDRental and click on <strong>Refresh</strong>and Validate Under Schemas there is a 15 tables</li>
                     <li>Click on the Query Tools Icon (on the same panel top database icon)</li>
-                    <li>Start writing query `Select * FROM actor;` and click on run button</li>
+                    <li>Start writing query <code className='tag-Color'>Select * FROM actor</code>; and click on run button</li>
                 </ul>
             </div>
             <hr />
