@@ -1,5 +1,5 @@
 import React from 'react';
-import GoogleAd from '../../../components/GoogleAd';
+import GoogleAd from '../../GoogleAd';
 import ProtractorLog from '../../../images/tabs/protractorLog.png';
 const PROTRACTOR_GITHUB = 'https://github.com/angular/protractor';
 const GITHUB_ICON ='http://www.protractortest.org/img/GitHub-Mark-Light-32px.png';

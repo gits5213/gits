@@ -1,8 +1,8 @@
 import React from 'react';
 import { Grid, Cell } from 'react-mdl';
-import GoogleAd from '../../../components/GoogleAd';
+import GoogleAd from '../../GoogleAd';
 
-const resWebIo = () => {
+const resRestassured = () => {
     return(
         <div className='page-tab-body'>
             <Grid className='page-tab-grid'>
@@ -16,4 +16,4 @@ const resWebIo = () => {
         </div>
     )
 }
-export default resWebIo;
+export default resRestassured;

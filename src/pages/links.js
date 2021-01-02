@@ -9,7 +9,7 @@ import Window from '../components/links/tabs/window'
 import Mac from '../components/links/tabs/mac'
 
 
-class Code4Kids extends Component {
+class links extends Component {
     constructor(props) {
         super(props)
         this.state = { activeTab: 0 };
@@ -64,4 +64,4 @@ class Code4Kids extends Component {
         );
     }
 }
-export default Code4Kids;
+export default links;

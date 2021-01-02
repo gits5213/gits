@@ -35,7 +35,7 @@ const resCss = () => {
                   <img className='pr2' src={GITHUB_ICON} alt='github log' /> 
                   React CSS FW Topics on GitHub                 
               </a>
-          </div>
+            </div>
             <div>
                 <h3>What is CSS?</h3>
                 <ul>

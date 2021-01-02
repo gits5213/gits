@@ -1,5 +1,5 @@
 import React from 'react';
-import GoogleAd from '../../../components/GoogleAd';
+import GoogleAd from '../../GoogleAd';
 const approch_1 = "//div[@id='main']/table[1]/tbody/tr[1]/th[1]";
 const approach_2 = "//*[@id='main']/table[1]/tbody";
 const approach_3_1 = "//*[@id='username_123′]";

@@ -7,6 +7,7 @@ import {Link } from 'react-router-dom';
 const COURSES = '/courses';
 const LINKS = '/links';
 const DOCS = '/docs';
+const APIS = '/apis';
 const ABOUT = '/about';
 const CONTACT = '/contact';
 
@@ -20,6 +21,7 @@ class App extends Component {
               <Link to='/'>Home</Link>
               <Link to={COURSES}>Courses</Link>
               <Link to={DOCS}>Docs</Link>
+              <Link to={APIS}>API</Link>
               <Link to={LINKS}>Links</Link>
             </Navigation>
           </Header>
@@ -28,6 +30,7 @@ class App extends Component {
               <Link to='/'>Home</Link>
               <Link to={COURSES}>Courses</Link>
               <Link to={DOCS}>Docs</Link>
+              <Link to={APIS}>API</Link>
               <Link to={LINKS}>Links</Link>
               <Link to={ABOUT}>About</Link>
               <Link to={CONTACT}>Contact</Link> 

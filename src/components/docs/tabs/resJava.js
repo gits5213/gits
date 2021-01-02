@@ -7,6 +7,9 @@ import GoogleAd from '../../../components/GoogleAd';
 import java_logo from '../../../images/tabs/javaLogo.png';
 
 const ORACLE = 'https://www.oracle.com/java/technologies/java-se-glance.html';
+const GITHUB_ICON ='http://www.protractortest.org/img/GitHub-Mark-Light-32px.png';
+const JAVA_TOPICS = 'https://github.com/topics/java';
+const JAVA_CODE_STYLEGUIDE = 'https://google.github.io/styleguide/javaguide.html';
 
 const resJava = () => {
     return(
@@ -17,6 +20,16 @@ const resJava = () => {
             <div className='tc'>
                 <img className='pr4 pt4 pb4 js-logo' src={java_logo} alt='js Logo' height='300' width='800'/>
             </div>
+            <div className='tc pt3'>
+              <a class='f6 grow no-underline br-pill ph3 pv2 mb2 dib white bg-red' href={JAVA_TOPICS} target="_blank" rel="noopener noreferrer">
+                  <img className='pr2' src={GITHUB_ICON} alt='github log' /> 
+                  Java Topics on GitHub                 
+              </a>
+              <a class='f6 grow no-underline br-pill ph3 pv2 mb2 dib white bg-green' href={JAVA_CODE_STYLEGUIDE} target="_blank" rel="noopener noreferrer">
+                  <img className='pr2' src={GITHUB_ICON} alt='github log' /> 
+                   Google Java Style Guide              
+              </a>
+          </div>
             <div>
                 <h3>What is Java?</h3>
                 <p>

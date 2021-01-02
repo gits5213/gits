@@ -1,7 +1,6 @@
 import React, {Component} from 'react';
 import { Grid, Cell } from 'react-mdl';
 import HeaderText from '../components/header';
-// import codingImage from '../images/codingImage.png'
 import landingImage from '../images/sdlcLogo.png'
 import CardList from '../components/cardList';
 import {cardDetails}from '../components/cardDetails';

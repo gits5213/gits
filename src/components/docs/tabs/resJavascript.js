@@ -33,12 +33,13 @@ const JS_ChEAT_SHEET = 'https://htmlcheatsheet.com/js/';
 
 const GITHUB_ICON ='http://www.protractortest.org/img/GitHub-Mark-Light-32px.png';
 const JAVASCRIPT_TOPICS = 'https://github.com/topics/javascript';
+const JAVASCRIPT_STYLEGUIDE = 'https://github.com/airbnb/javascript';
 
 const resJavascript = () => {
     return(
         <div className='page-tab-body'>
             <div>
-                <h3>JAVAScript</h3>
+                <h3>JavaScript</h3>
             </div>
             <div className='tc'>
                 <img className='pr4 pt4 pb4 js-logo' src={javascript_logo} alt='js Logo' height='300' width='800'/>
@@ -47,6 +48,10 @@ const resJavascript = () => {
               <a class='f6 grow no-underline br-pill ph3 pv2 mb2 dib white bg-red' href={JAVASCRIPT_TOPICS} target="_blank" rel="noopener noreferrer">
                   <img className='pr2' src={GITHUB_ICON} alt='github log' /> 
                   JavaScript Topics on GitHub                 
+              </a>
+              <a class='f6 grow no-underline br-pill ph3 pv2 mb2 dib white bg-green' href={JAVASCRIPT_STYLEGUIDE} target="_blank" rel="noopener noreferrer">
+                  <img className='pr2' src={GITHUB_ICON} alt='github log' /> 
+                   Airbnb JavaScript Style Guide                
               </a>
           </div>
             <div>
