@@ -42,8 +42,8 @@ const scrum = () => {
                 <h3>Scrum Framework</h3>
             </div>
             <div className='tc'>
-                <img className='pr4 pt4 pb4 scrum-logo-1' src={SCRUM_LOGO1} alt='Scrum Logo' height='400' width='650'/>
-                <img className='pt4 pb4 scrum-logo' src={SCRUM_LOGO} alt='Scrum Logo' height='400' width='650'/>
+                <img className='pr4 pt4 pb4 scrum-logo-1' src={SCRUM_LOGO1} alt='Scrum Logo'/>
+                <img className='pt4 pb4 scrum-logo' src={SCRUM_LOGO} alt='Scrum Logo'/>
             </div>
             <div>
                 <h3>WHAT IS SCRUM?</h3>

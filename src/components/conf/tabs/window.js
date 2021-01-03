@@ -9,7 +9,7 @@ const window = () => {
                 <h3>Windows</h3>
             </div>
             <div className='tc'>
-                <img className='win-logo' src={windowsLogo} alt='win Logo' height='162' width='562' />
+                <img className='win-logo' src={windowsLogo} alt='win Logo'/>
             </div>
            
             <GoogleAd slot="1541085932" classNames="page-right-side" />

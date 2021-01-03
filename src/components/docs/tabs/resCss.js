@@ -26,7 +26,7 @@ const resCss = () => {
                 <h3>CSS</h3>
             </div>
             <div className='tc'>
-                <img className='pr4 pt4 pb4 css-logo' src={css_logo} alt='css Logo' height='330' width='888'/>
+                <img className='pr4 pt4 pb4 css-logo' src={css_logo} alt='css Logo'/>
             </div>
             <div className='tc pt3'>
               <a class='f6 grow no-underline br-pill ph3 pv2 mb2 dib white bg-red' href={CSS_FRAMEWORK_TOPICS} target="_blank" rel="noopener noreferrer">

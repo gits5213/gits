@@ -17,7 +17,7 @@ const resSql = () => {
                 <h3>SQL</h3>
             </div>
             <div className='tc'>
-                <img className='pr4 pt4 pb4 sql-logo' src={SQL_LOGO} alt='SQL Logo' height='300' width='800'/>
+                <img className='pr4 pt4 pb4 sql-logo' src={SQL_LOGO} alt='SQL Logo'/>
             </div>
             <div>
                 <h3>Introduction to SQL</h3>

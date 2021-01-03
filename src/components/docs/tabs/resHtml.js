@@ -19,7 +19,7 @@ const resHtml = () => {
                 <h3>HTML</h3>
             </div>
             <div className='tc'>
-                <img className='pr4 pt4 pb4 html-logo' src={HTML_LOGO} alt='html Logo' height='330' width='888'/>
+                <img className='pr4 pt4 pb4 html-logo' src={HTML_LOGO} alt='html Logo'/>
             </div>
             <div>
                 <p>

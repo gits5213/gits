@@ -13,7 +13,7 @@ const resLinux = () => {
                 <h3>Unix/Linux</h3>
             </div>
             <div className='tc'>
-                <img className='pr4 pt4 pb4 linux-logo' src={linuxLogo} alt='Linux Logo' height='350' width='999'/>
+                <img className='pr4 pt4 pb4 linux-logo' src={linuxLogo} alt='Linux Logo'/>
             </div>
             <div className='tc pt3'>
               <a class='f6 grow no-underline br-pill ph3 pv2 mb2 dib white bg-red' href={LINUX_} target="_blank" rel="noopener noreferrer">

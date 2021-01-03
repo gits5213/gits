@@ -42,7 +42,7 @@ const resJavascript = () => {
                 <h3>JavaScript</h3>
             </div>
             <div className='tc'>
-                <img className='pr4 pt4 pb4 js-logo' src={javascript_logo} alt='js Logo' height='300' width='800'/>
+                <img className='pr4 pt4 pb4 js-logo' src={javascript_logo} alt='js Logo'/>
             </div>
             <div className='tc pt3'>
               <a class='f6 grow no-underline br-pill ph3 pv2 mb2 dib white bg-red' href={JAVASCRIPT_TOPICS} target="_blank" rel="noopener noreferrer">

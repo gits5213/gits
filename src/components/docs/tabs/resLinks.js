@@ -3,7 +3,14 @@ import { Grid, Cell } from 'react-mdl';
 import GoogleAd from '../../../components/GoogleAd';
 import linklogo from '../../../images/tabs/linkLogo.png';
 
+// GitHub
+
+// Website
 const SWAGGER = 'https://swagger.io/';
+const JIRA_CLOUD = 'https://id.atlassian.com/login?';
+
+// Downloads
+
 
 const resLinks = () => {
     return(
@@ -15,7 +22,7 @@ const resLinks = () => {
                 <img className='pr4 pt4 pb4 react-logo' src={linklogo} alt='react Logo' height='192' width='575'/>
             </div>
             <div>
-                <h3>Tech GitHub</h3>
+                <h3>TechStack GitHub</h3>
             </div>
             <hr />
             <div>
@@ -45,18 +52,18 @@ const resLinks = () => {
             </div>
             <hr />
             <div>
-                <p>Paragraph</p>
+                <p>Technology Stack Releated Website References Announcement and News</p>
             </div>
             <div>
-                <h3>Tech Website</h3>
+                <h3>TechStack Website</h3>
             </div>
             <hr />
             <div>
                 <Grid className="border">
                     <Cell className='pl4' col={4}>
                         <div className='pt4'>
-                            <a class='f6 link dim ph3 pv2 mb2 dib white bg-mid-gray' href={SWAGGER} target="_blank" rel="noopener noreferrer">
-                                Swagger Docs                
+                            <a class='f6 link dim ph3 pv2 mb2 dib white bg-mid-gray' href={JIRA_CLOUD} target="_blank" rel="noopener noreferrer">
+                                Jira Cloud               
                             </a>
                         </div>
                     </Cell>
@@ -78,10 +85,10 @@ const resLinks = () => {
             </div>
             <hr />
             <div>
-                <p>Paragraph</p>
+                <p>Technology Stack Releated Download References Announcement and News</p>
             </div>
             <div>
-                <h3>Tech Download</h3>
+                <h3>TechStack Download</h3>
             </div>
             <hr />
             <div>

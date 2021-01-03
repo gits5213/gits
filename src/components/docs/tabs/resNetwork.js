@@ -23,7 +23,7 @@ const resNetwork = () => {
                 <h3>Networking</h3>
             </div>
             <div className='tc pt5'>
-                <img className='pr4 pt4 pb4 VPN-logo' src={VPN} alt='Scrum Logo' height='400' width='801'/>
+                <img className='pr4 pt4 pb4 VPN-logo' src={VPN} alt='Scrum Logo' />
             </div>
             <div>
                 <p className='pt4'>

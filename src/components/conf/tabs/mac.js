@@ -9,7 +9,7 @@ const mac = () => {
                 <h3>Mac</h3>
             </div>
             <div className='tc'>
-                <img className='mac-logo' src={macLogo} alt='mac Logo' height='156' width='582' />
+                <img className='mac-logo' src={macLogo} alt='mac Logo'/>
             </div>
            
             <GoogleAd slot="1541085932" classNames="page-right-side" />
