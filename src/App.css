@@ -19,7 +19,6 @@ background: linear-gradient(to right, #FFE000, #799F0C, #00416A); /* W3C, IE 10+
   align-self: flex-start;    
 }
 .container {
-  /* background-color: #9f9a0c;  */
   display: flexbox;
   align-items: center;
   justify-content: center;
@@ -29,10 +28,8 @@ background: linear-gradient(to right, #FFE000, #799F0C, #00416A); /* W3C, IE 10+
   font-family: monospace;
 }
 .cover-img {
-  /* height: 100vh; */
   height: 100%;
   width: auto;
-  /* border-radius: 35%; */
 }
 .sign-up{
   padding-top: 1em;

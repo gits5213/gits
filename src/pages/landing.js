@@ -30,8 +30,8 @@ class Landing extends Component {
                         GOTO Classroom
                     </a>
                 </div>
-                <div className='container ph3 mt4'>
-                    <img alt='cover' className="cover-img" src={landingImage}/>
+                <div className='tc ph3 mt4'> {/* container */}
+                    <img alt='cover' className='img-one' src={landingImage}/> {/* cover-img */}
                 </div>
                 <div className='seImage landing-s-image'>
                     <h1>Nothing to Lose By Learing New Skills!</h1>
@@ -75,7 +75,7 @@ class Landing extends Component {
                                 </p>
                             </div>
                         </Cell>
-                        <Cell className='border-3 tl' col={4}>
+                        <Cell className='pl4 border-3 tl' col={4}>
                             <div className='pt4 scrummountain-btn'>
                                 <button className='b f6 link dim br-pill ph3 pv2 mb2 dib white bg-dark-red'>
                                     In-Person Training
