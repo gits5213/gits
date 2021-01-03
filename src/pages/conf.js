@@ -1,12 +1,11 @@
 import React, {Component} from 'react';
 import { Tabs, Tab } from 'react-mdl';
 import HeaderText from '../components/header';
-import BasicLinks from '../components/links/tabs/basicLinks';
-import FullStackTest from '../components/links/tabs/fullStackTest';
-import FullStackDev from '../components/links/tabs/fullStackDev';
-import ProgLang from '../components/links/tabs/progLang'
-import Window from '../components/links/tabs/window'
-import Mac from '../components/links/tabs/mac'
+import Window from '../components/conf/tabs/window';
+import Mac from '../components/conf/tabs/mac';
+import Basic from '../components/conf/tabs/basic';
+import Gk from '../components/conf/tabs/gk';
+import Help from '../components/conf/tabs/help';
 
 
 class links extends Component {
@@ -18,29 +17,23 @@ class links extends Component {
     toggleCategories() {
         if(this.state.activeTab === 0) {
             return(
-                <BasicLinks />
+                <Window />
             )
         } else if(this.state.activeTab === 1) {
             return(
-                <FullStackTest />
+                <Mac />
             )
         } else if(this.state.activeTab === 2) {
             return(
-                <FullStackDev />
+                <Basic />
             )
         } else if(this.state.activeTab === 3) {
             return(
-                <ProgLang />
+                <Gk />
             )
-        }
-        else if(this.state.activeTab === 3) {
+        } else if(this.state.activeTab === 4) {
             return(
-                <Window />
-            )
-        }
-        else if(this.state.activeTab === 3) {
-            return(
-                <Mac />
+                <Help />
             )
         }
     }
@@ -49,12 +42,11 @@ class links extends Component {
         return (
             <div className="category-tabs">
                 <Tabs activeTab={this.state.activeTab} onChange={(tabId) => this.setState({ activeTab: tabId })} ripple>
-                    <Tab>Basic</Tab>
-                    <Tab>SQA</Tab>
-                    <Tab>WebDev</Tab>
-                    <Tab>Prog-Lang</Tab>
                     <Tab>Window</Tab>
                     <Tab>MAC</Tab>
+                    <Tab>Basic</Tab>
+                    <Tab>G.K</Tab>
+                    <Tab>Help</Tab>
                 </Tabs>
                 <HeaderText /> 
                 <section>

@@ -5,7 +5,7 @@ import Main from './components/main';
 import {Link } from 'react-router-dom';
 
 const COURSES = '/courses';
-const LINKS = '/links';
+const CONFS = '/conf';
 const DOCS = '/docs';
 const APIS = '/apis';
 const ABOUT = '/about';
@@ -22,7 +22,7 @@ class App extends Component {
               <Link to={COURSES}>Courses</Link>
               <Link to={DOCS}>Docs</Link>
               <Link to={APIS}>API</Link>
-              <Link to={LINKS}>Links</Link>
+              <Link to={CONFS}>Conf</Link>
             </Navigation>
           </Header>
           <Drawer className='side-header-color' title= {<h2><strong>ITTCI</strong></h2>} >
@@ -31,7 +31,7 @@ class App extends Component {
               <Link to={COURSES}>Courses</Link>
               <Link to={DOCS}>Docs</Link>
               <Link to={APIS}>API</Link>
-              <Link to={LINKS}>Links</Link>
+              <Link to={CONFS}>Conf</Link>
               <Link to={ABOUT}>About</Link>
               <Link to={CONTACT}>Contact</Link> 
             </Navigation>
