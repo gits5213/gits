@@ -6,7 +6,7 @@ const help = () => {
     return(
         <div className='page-tab-body'>
             <div>
-                <h3>Windows</h3>
+                <h3>Help</h3>
             </div>
             <div className='tc'>
                 <img className='help-logo' src={helpLogo} alt='help Logo'/>

@@ -6,7 +6,7 @@ const basic = () => {
     return(
         <div className='page-tab-body'>
             <div>
-                <h3>General Knowledge</h3>
+                <h3>Bscis</h3>
             </div>
             <div className='tc'>
                 <img className='basic-logo' src={basicLogo} alt='basic Logo' />
