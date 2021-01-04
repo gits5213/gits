@@ -1,17 +1,17 @@
 {
   "files": {
     "main.css": "/ittciwebsite/static/css/main.dac802c4.chunk.css",
-    "main.js": "/ittciwebsite/static/js/main.264f538b.chunk.js",
-    "main.js.map": "/ittciwebsite/static/js/main.264f538b.chunk.js.map",
+    "main.js": "/ittciwebsite/static/js/main.02104d40.chunk.js",
+    "main.js.map": "/ittciwebsite/static/js/main.02104d40.chunk.js.map",
     "runtime-main.js": "/ittciwebsite/static/js/runtime-main.912ab8f2.js",
     "runtime-main.js.map": "/ittciwebsite/static/js/runtime-main.912ab8f2.js.map",
     "static/css/2.42449d2c.chunk.css": "/ittciwebsite/static/css/2.42449d2c.chunk.css",
-    "static/js/2.5361e51b.chunk.js": "/ittciwebsite/static/js/2.5361e51b.chunk.js",
-    "static/js/2.5361e51b.chunk.js.map": "/ittciwebsite/static/js/2.5361e51b.chunk.js.map",
+    "static/js/2.c9c781fa.chunk.js": "/ittciwebsite/static/js/2.c9c781fa.chunk.js",
+    "static/js/2.c9c781fa.chunk.js.map": "/ittciwebsite/static/js/2.c9c781fa.chunk.js.map",
     "index.html": "/ittciwebsite/index.html",
     "static/css/2.42449d2c.chunk.css.map": "/ittciwebsite/static/css/2.42449d2c.chunk.css.map",
     "static/css/main.dac802c4.chunk.css.map": "/ittciwebsite/static/css/main.dac802c4.chunk.css.map",
-    "static/js/2.5361e51b.chunk.js.LICENSE.txt": "/ittciwebsite/static/js/2.5361e51b.chunk.js.LICENSE.txt",
+    "static/js/2.c9c781fa.chunk.js.LICENSE.txt": "/ittciwebsite/static/js/2.c9c781fa.chunk.js.LICENSE.txt",
     "static/media/about-pic.35c9381f.png": "/ittciwebsite/static/media/about-pic.35c9381f.png",
     "static/media/agileLogo.8624dbdd.png": "/ittciwebsite/static/media/agileLogo.8624dbdd.png",
     "static/media/apiAutoTest.4170e923.png": "/ittciwebsite/static/media/apiAutoTest.4170e923.png",
@@ -56,8 +56,8 @@
   "entrypoints": [
     "static/js/runtime-main.912ab8f2.js",
     "static/css/2.42449d2c.chunk.css",
-    "static/js/2.5361e51b.chunk.js",
+    "static/js/2.c9c781fa.chunk.js",
     "static/css/main.dac802c4.chunk.css",
-    "static/js/main.264f538b.chunk.js"
+    "static/js/main.02104d40.chunk.js"
   ]
 }
