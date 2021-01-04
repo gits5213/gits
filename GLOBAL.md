@@ -7,8 +7,6 @@
 </pre>
 .back-to-top
 
-
-
 main.js
 App.js
 index.js

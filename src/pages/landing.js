@@ -11,7 +11,6 @@ const GOTO_MEET = 'https://global.gotomeeting.com/join/115264677';
 const GOOGLE_MEET = 'https://meet.google.com/wco-zfnf-swy';
 const ZOOM_MEET = 'https://us04web.zoom.us/j/76185361138?pwd=QnJybGczamROdVpTVS9rVU9hMDQ2Zz09';
 
-
 class Landing extends Component {
     render(){
         return(
@@ -19,19 +18,20 @@ class Landing extends Component {
                 <div>
                     <HeaderText />
                 </div>
-                <div className='goLink ph5 mt4 pt3'>
+          
+                <div className='ph5 mt4 pt3'> 
                     <a className='f6 grow no-underline br-pill ba bw1 ph3 pv2 mb2 dib dark-green' href={GOOGLE_MEET} target="_blank" rel="noopener noreferrer">
-                        GO Classroom
+                        MEET
                     </a>
                     <a className='f6 grow no-underline br-pill ba bw1 ph3 pv2 mb2 dib dark-green' href={ZOOM_MEET} target="_blank" rel="noopener noreferrer">
-                        Zoom Classroom
+                        ZOOM
                     </a>
                     <a className='f6 grow no-underline br-pill ba bw1 ph3 pv2 mb2 dib dark-green' href={GOTO_MEET} target="_blank" rel="noopener noreferrer">
-                        GOTO Classroom
+                        GOTOMEETING
                     </a>
                 </div>
-                <div className='tc ph3 mt4'> {/* container */}
-                    <img alt='cover' className='img-one' src={landingImage}/> {/* cover-img */}
+                <div className='pt5 tc ph3 mt4'>
+                    <img alt='cover' className='img-one' src={landingImage}/>
                 </div>
                 <div className='seImage landing-s-image'>
                     <h1>Nothing to Lose By Learing New Skills!</h1>
