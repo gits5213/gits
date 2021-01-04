@@ -1,8 +1,8 @@
 {
   "files": {
-    "main.css": "/ittciwebsite/static/css/main.e01367f1.chunk.css",
-    "main.js": "/ittciwebsite/static/js/main.b7202355.chunk.js",
-    "main.js.map": "/ittciwebsite/static/js/main.b7202355.chunk.js.map",
+    "main.css": "/ittciwebsite/static/css/main.dac802c4.chunk.css",
+    "main.js": "/ittciwebsite/static/js/main.264f538b.chunk.js",
+    "main.js.map": "/ittciwebsite/static/js/main.264f538b.chunk.js.map",
     "runtime-main.js": "/ittciwebsite/static/js/runtime-main.912ab8f2.js",
     "runtime-main.js.map": "/ittciwebsite/static/js/runtime-main.912ab8f2.js.map",
     "static/css/2.42449d2c.chunk.css": "/ittciwebsite/static/css/2.42449d2c.chunk.css",
@@ -10,7 +10,7 @@
     "static/js/2.5361e51b.chunk.js.map": "/ittciwebsite/static/js/2.5361e51b.chunk.js.map",
     "index.html": "/ittciwebsite/index.html",
     "static/css/2.42449d2c.chunk.css.map": "/ittciwebsite/static/css/2.42449d2c.chunk.css.map",
-    "static/css/main.e01367f1.chunk.css.map": "/ittciwebsite/static/css/main.e01367f1.chunk.css.map",
+    "static/css/main.dac802c4.chunk.css.map": "/ittciwebsite/static/css/main.dac802c4.chunk.css.map",
     "static/js/2.5361e51b.chunk.js.LICENSE.txt": "/ittciwebsite/static/js/2.5361e51b.chunk.js.LICENSE.txt",
     "static/media/about-pic.35c9381f.png": "/ittciwebsite/static/media/about-pic.35c9381f.png",
     "static/media/agileLogo.8624dbdd.png": "/ittciwebsite/static/media/agileLogo.8624dbdd.png",
@@ -57,7 +57,7 @@
     "static/js/runtime-main.912ab8f2.js",
     "static/css/2.42449d2c.chunk.css",
     "static/js/2.5361e51b.chunk.js",
-    "static/css/main.e01367f1.chunk.css",
-    "static/js/main.b7202355.chunk.js"
+    "static/css/main.dac802c4.chunk.css",
+    "static/js/main.264f538b.chunk.js"
   ]
 }
