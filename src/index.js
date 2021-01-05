@@ -10,7 +10,7 @@ import 'tachyons';
 
 ReactDOM.render(
   <React.StrictMode>
-    <BrowserRouter>
+    <BrowserRouter basename='/ittciwebsite'>
       <App />
     </BrowserRouter>
   </React.StrictMode>,
