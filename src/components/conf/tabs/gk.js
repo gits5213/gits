@@ -22,6 +22,7 @@ const gk = () => {
                 </h5>       
                 <p>
                     This is a really interesting question because it will get candidates talking about their previous company through the lens of how they were affected by the company’s culture. Getting candidates to talk about their past employer can be very telling. Do they openly throw the company under the bus? Do they recognize the positives even though it ultimately didn’t work out? <br />
+                    <br />
                     Asking specifically about the culture of their last company also tells you a lot about how they view the importance of culture. Their response will tell you if they’ve thought a lot about company culture or if they don’t really know what it is. The question will also reveal how they think they are empowered or disempowered, which will give you a look into their motivations.
                 </p>
             </div>
@@ -31,6 +32,7 @@ const gk = () => {
                 </h5>
                 <p>
                     I like this question as a follow-up to the culture question because it’s somewhat similar but from a different angle. If you didn’t get a sense for a candidate’s view on culture and what motivates him or her, you likely will from this question.
+                    <br />
                     <br />
                     Did the candidate thrive under a boss who was extremely direct and valued performance above all else? Did he or she thrive under a boss that put as much emphasis on communication and interpersonal skills as results within the role?
                 </p>
@@ -42,6 +44,7 @@ const gk = () => {
                 <p>
                     It’s always helpful to ask candidates about how they dealt with a conflict. As people, we tend to be more open and honest when recalling a specific event versus describing characteristics about ourselves. Understanding what the candidate perceives as a “conflict with a co-worker” will likely reveal information about the person’s level of self-awareness.
                     <br />
+                    <br />
                     Understanding how someone dealt with a conflict will also give you insights into what he or she perceives as a reasonable and positive response to a conflict. No matter how wonderful your culture is, conflicts will arise. How your team deals with conflicts are the true test of our culture.
                 </p>
             </div>
@@ -51,6 +54,7 @@ const gk = () => {
                 </h5>
                 <p>
                     Understanding a candidate’s desire or hesitation to receive feedback tells you a lot about the person’s expectations. The frequency and type of feedback that is shared within a company tends to be highly correlated to culture.
+                    <br />
                     <br />
                     Does the candidate expect feedback to be tied to core values? Does the person think feedback is only about performance in the role? Does he or she see feedback as a once-a-year HR formality or as part of a constant process of growth and improvement? More info visit – Culture Fit
                 </p>
@@ -65,10 +69,14 @@ const gk = () => {
             </div>
             <div>
                 <h5>
-                    You may ask Q to Interviewer
+                    End of the interview you may ask Question to Interviewer!
                 </h5>
                 <ul>
-                    <li>I want to know more about test environment in your company or project?</li>
+                    <li>I want to know more about environment set up in this current project?</li>
+                    <li>Is this project is already fully integrated with CI/CD?</li>
+                    <li>In this current set-up, how Manaul {'&'} Automation combined works?  </li>
+                    <li>Is there any Service Account as a test account to test?</li>
+                    <li>In this current set-up, Automation repo already integrated with CI Server? and Over-night job already set up for executing the Regression sute?</li>
                     <li>How do you feel my qualifications match your needs?</li>
                 </ul>
             </div>
@@ -172,14 +180,16 @@ const gk = () => {
                     How do you Coordinate with the team? | How do you coordinate the work of you automated and manual testing in our team?
                 </h5>
                 <ul>
-                    <li>I think that the key to maintaining a healthy manual-vs-automation relation in testing is TEAMWORK {'&'} COMMUNICATION</li>
-                    <li>I need to make sure both teams, the manual testers, and the automation engineers, are working based on the same agenda, coordinating their tasks based on the same priorities, and understanding how each player helps the other to fulfill the goals of the organization.  In simple terms, how they work together in order to make their testing process faster, broader and eventually more effective.</li>
+                    <li>I think that is the key to maintaining a healthy manual-vs-automation relation in testing is TEAMWORK {'&'} COMMUNICATION</li>
+                    <li>I need to make sure both teams, the manual testers, and the automation engineers, are working based on the same agenda, coordinating their tasks based on the same priorities, and understanding how each player helps the other to fulfill the goals of the organization.  
+                        <br />
+                        In simple terms, how they work together in order to make their testing process faster, broader and eventually more effective.</li>
                     <li>Make sure they are coordinated, by having regular update meetings and making sure there is active participation of both teams when planning the testing tasks for each project.</li>
                     <li>Have both teams work in an integrated environment where both manual and automated tests are managed and executed.  This will allow all testers, and also every other person in the company, to see the “full picture” and understand both on a planning and execution level what is been covered, what has been tested, and what are the results of these tests.  After all, no one really cares if the test was run manually or automatically, they care about the results of the test.</li>
                     <li>Have a process in place where automation is a tool to help a manual testing team.</li>
                     <li>The correct process is what will eventually make or break the relationship between manual and automatic tests.  Both teams need to understand that the idea of automation is to free the time of manual testers to run the more complex tests, those that are hard or expensive to automate.  Once they understand that they complement each other and not compete with one-another they will be able to focus on their shared challenges instead of their rivalries.</li>
                     <li>In short, I need to make sure my teams have both the agenda as well as the infrastructure required in order to coordinate their work.</li>
-                    <li>In the end, it is the work of the Manager/Lead and the Organization to create the environment and the “team rules” that will allow all members to feel like they provide their work and help drive the project forward TOGETHER.</li>
+                    <li>In the end, it is the work of the Manager/Lead and the Organization to create the environment and the “team norms ground rules” that will allow all members to feel like they provide their work and help drive the project forward TOGETHER.</li>
                 </ul>
             </div>
             
