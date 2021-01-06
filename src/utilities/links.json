@@ -1,36 +1,57 @@
 {
-    "API":"....................",
+    "HEADER":"............................................",
+    "WEB_DEV_SIGN_UP":"https://msz5213.github.io/student-subscription/",
+    "SQA_SIGN_UP":"https://msz5213.github.io/student-subscription/",
+    "CODE4KIDS_SIGN_UP":"https://mailchi.mp/93b0b3a7293e/code4kids",
+    "BD_SIGN_UP":"https://docs.google.com/forms/d/e/1FAIpQLScBX0mnlaMNJFhOGnfHcHV9TLvSK3L3aQTlYZO9LNVKidcY6w/viewform?usp=sf_link",
+    
+    "Footer":"............................................",
+    "ITNYCUSA":"http://itnycusa.com/",
+    "HEROKUAPP":"http://the-internet.herokuapp.com/",
+    "ZAMAN_PORTFOLIO":"https://msz5213.github.io/mdzamanportfolio/",
+    "JSON_API_WEBSITE":"http://jsonplaceholder.typicode.com/",
+    "REQRES_WEBSITE":"https://reqres.in/",
+    "QUESTIONS":"https://www.facebook.com/itnycusa/",
+    "ANSWERE":"https://www.linkedin.com/company/52147964/",
+    "HOW_IT_WORKS":"/courses",
+    "ITTCIWEBSITE":"/ittciwebsite",
+    "ABOUT":"/about",
+    "SERVICES":"https://msz5213.github.io/student-subscription/",
+    "CONTACT":"/contact",
+
+    "API":"............................................",
     "GITHUB_ICON": "http://www.protractortest.org/img/GitHub-Mark-Light-32px.png",
     "APPIUM_GITHUB":"https://github.com/appium/appium",
     "APPIUM_WEBSITE": "http://appium.io/",
 
-    "Frisby":"....................",
+    "Frisby":"............................................",
     "FRISBY_GITHUB":"https://github.com/vlucas/frisby",
     "FRISBY_WEBSITE ":"https://docs.frisbyjs.com/",
 
-    "Protractor":".................",
+    "Protractor":"............................................",
     "PROTRACTOR_GITHUB":"https://github.com/angular/protractor",
     "PROTRACTOR_WEBSITE ":"http://www.protractortest.org/#/",
 
-    "RestAssured":"................",
+    "RestAssured":"............................................",
     "RESTASSURED_GITHUB ":"https://rest-assured.io/",
     "RESTASSURED_WEBSITE":"https://github.com/rest-assured/rest-assured",
-    "Selenium":".................",
+
+    "Selenium":"............................................",
     "SELENIUM_GITHUB":"https://github.com/SeleniumHQ",
     "SELENIUM_WEBSITE":"https://www.selenium.dev/",
 
-    "SuperTest":"...............",
+    "SuperTest":"............................................",
     "SUPERTEST_GITHUB":"https://github.com/visionmedia/supertest",
     "SUPERTEST_WEBSITE ":"https://www.npmjs.com/package/supertest",
 
-    "WebDriverIO":"...............",
+    "WebDriverIO":"............................................",
     "WEBDRIVERIO_GITHUB":"https://github.com/visionmedia/supertest",
     "WEBDRIVERIO_WEBSITE ":"https://www.npmjs.com/package/supertest"   ,
     
-    "Courses":"..........",
+    "Courses":"............................................",
     "OBAMA_SPEACE":"https://www.youtube.com/embed/JDw1ii7aKwg",
 
-    "Docs/Tabn/resJava":"...................",
+    "Docs/Tabn/resJava":"............................................",
     "HOMEBREW":"https://brew.sh/",
     "JDK":"http://jdk.java.net/14/",
     "ADOPT_OPEN_JDK":"https://github.com/AdoptOpenJDK/homebrew-openjdk",
@@ -53,7 +74,7 @@
     "MAVEN_DOCS":"https://maven.apache.org/guides/getting-started/index.html",
     "MAVEN_GITHUB":"https://github.com/msz5213/Maven",
    
-    "Docs/Tab":"...................",
+    "Docs/Tab":"............................................",
     "AGILE_MENUFESTO":"https://www.mountaingoatsoftware.com/agile/new-to-agile-or-scrum",
     "AGILE_TOOLS_TECHN":"https://projectresources.cdt.ca.gov/agile/agile-tools-and-techniques/",
     "CSS_TRICKS":"https://css-tricks.com/snippets/css/",
@@ -81,5 +102,3 @@
 
 
 }   
-    
-   
