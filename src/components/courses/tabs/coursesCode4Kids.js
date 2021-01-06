@@ -1,8 +1,7 @@
 import React from 'react';
+import link from '../../../utilities/links.json';
 import GoogleAd from '../../../components/GoogleAd';
 import code4KidProgramOutline from '../../../images/code4KidsProgram.png';
-
-const OBAMA_SPEACE = 'https://www.youtube.com/embed/JDw1ii7aKwg';
 
 const coursesCode4Kids = () => {
     return(
@@ -26,7 +25,7 @@ const coursesCode4Kids = () => {
                 <iframe 
                     className='obama_talk' 
                     title='obama_speace' 
-                    src={OBAMA_SPEACE} 
+                    src={link.OBAMA_SPEACE} 
                     frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
                     allowfullscreen >
                 </iframe>

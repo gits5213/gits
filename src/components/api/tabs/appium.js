@@ -1,6 +1,6 @@
 import React from 'react';
 import GoogleAd from '../../GoogleAd';
-import link from '../links.json';
+import link from '../../../utilities/links.json';
 import appiumLogo from '../../../images/tabs/appiumLogo.png'; 
 
 const resAppium = ({path}) => {

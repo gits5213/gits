@@ -1,0 +1,85 @@
+{
+    "API":"....................",
+    "GITHUB_ICON": "http://www.protractortest.org/img/GitHub-Mark-Light-32px.png",
+    "APPIUM_GITHUB":"https://github.com/appium/appium",
+    "APPIUM_WEBSITE": "http://appium.io/",
+
+    "Frisby":"....................",
+    "FRISBY_GITHUB":"https://github.com/vlucas/frisby",
+    "FRISBY_WEBSITE ":"https://docs.frisbyjs.com/",
+
+    "Protractor":".................",
+    "PROTRACTOR_GITHUB":"https://github.com/angular/protractor",
+    "PROTRACTOR_WEBSITE ":"http://www.protractortest.org/#/",
+
+    "RestAssured":"................",
+    "RESTASSURED_GITHUB ":"https://rest-assured.io/",
+    "RESTASSURED_WEBSITE":"https://github.com/rest-assured/rest-assured",
+    "Selenium":".................",
+    "SELENIUM_GITHUB":"https://github.com/SeleniumHQ",
+    "SELENIUM_WEBSITE":"https://www.selenium.dev/",
+
+    "SuperTest":"...............",
+    "SUPERTEST_GITHUB":"https://github.com/visionmedia/supertest",
+    "SUPERTEST_WEBSITE ":"https://www.npmjs.com/package/supertest",
+
+    "WebDriverIO":"...............",
+    "WEBDRIVERIO_GITHUB":"https://github.com/visionmedia/supertest",
+    "WEBDRIVERIO_WEBSITE ":"https://www.npmjs.com/package/supertest"   ,
+    
+    "Courses":"..........",
+    "OBAMA_SPEACE":"https://www.youtube.com/embed/JDw1ii7aKwg",
+
+    "Docs/Tabn/resJava":"...................",
+    "HOMEBREW":"https://brew.sh/",
+    "JDK":"http://jdk.java.net/14/",
+    "ADOPT_OPEN_JDK":"https://github.com/AdoptOpenJDK/homebrew-openjdk",
+    "JRE":"https://www.jenv.be/",
+    "MAC_JAVA_SETUP":"https://docs.oracle.com/javase/10/install/installation-jdk-and-jre-macos.htm#JSJIG-GUID-2432241F-9517-4C0B-9CBB-489E6419C9C9",
+    "STEP_2":"https://www.w3schools.com/java/system1.png",
+    "STEP_3":"https://www.w3schools.com/java/path2.png",
+    "STEP_4":"https://www.w3schools.com/java/path3.png",
+    "WINDOW_SETUP":"https://docs.oracle.com/javase/10/install/installation-jdk-and-jre-microsoft-windows-platforms.htm#JSJIG-GUID-A7E27B90-A28D-4237-9383-A58B416071CA",
+    "MAVEN":"http://maven.apache.org/download.cgi",
+    "SETTINGS_XML":"https://maven.apache.org/settings.html",
+    "JAVA":"https://www.oracle.com/java/technologies/javase-downloads.html",
+    "MAVEN_INSTALLATION_INSTRUCTION":"https://maven.apache.org/install.html",
+    "CONFIGURATION_GUIDE":"https://maven.apache.org/guides/mini/guide-configuring-maven.html",
+    "WINDOWS_PRE":"https://maven.apache.org/guides/getting-started/windows-prerequisites.html",
+    "STANDARD_PROJECT_STRUCTURE":"https://maven.apache.org/guides/introduction/introduction-to-the-standard-directory-layout.html",
+    "POM":"https://maven.apache.org/guides/introduction/introduction-to-the-pom.html#:~:text=A%20Project%20Object%20Model%20or,default%20values%20for%20most%20projects",
+    "MVN_REPOSITORY":"https://mvnrepository.com/",
+    "MSZ_POM_XML":"https://github.com/msz5213/POM_TestNG_CompleteFramework/blob/master/pom.xml'",
+    "MAVEN_DOCS":"https://maven.apache.org/guides/getting-started/index.html",
+    "MAVEN_GITHUB":"https://github.com/msz5213/Maven",
+   
+    "Docs/Tab":"...................",
+    "AGILE_MENUFESTO":"https://www.mountaingoatsoftware.com/agile/new-to-agile-or-scrum",
+    "AGILE_TOOLS_TECHN":"https://projectresources.cdt.ca.gov/agile/agile-tools-and-techniques/",
+    "CSS_TRICKS":"https://css-tricks.com/snippets/css/",
+    "W3_CSS":"https://www.w3schools.com/css/css_syntax.asp",
+    "W3_CSS_HOWTO":"https://www.w3schools.com/howto/default.asp",
+    "TACHYONS":"'https://tachyons.io/docs/'",
+    "W3_CSS_F":"https://www.w3schools.com/w3css/default.asp",
+    "BOOTSTRAP":"https://getbootstrap.com/docs/5.0/getting-started/introduction/",
+    "MATERIAL":"https://material.io/components?platform=web",
+    "METERIAL_UI_F":"https://material-ui.com/",
+    "REACT_BOOTSTRAP":"https://react-bootstrap.github.io/components/alerts",
+    "FONT_AWESOME":"https://fontawesome.com/v4.7.0/",
+    "FONT_AWESOME_CHEATSHEET":"https://fontawesome.com/v4.7.0/cheatsheet/",
+    "CSS_FRAMEWORK_TOPICS":"https://github.com/topics/css-framework",
+    "REACT_CSS_FRAMEWORK_TOPICS":"https://gist.github.com/NyashaNziramasanga/f91a04e5f7385caa7cb868b68bdc267f",
+    "VSCODE":"https://code.visualstudio.com/download",
+    "HTML_TAGS":"https://www.w3schools.com/tags/ref_attributes.asp",
+    "HTML_FROMS":"https://www.w3schools.com/html/html_forms.asp",
+    "HTML_MEDIA":"https://www.w3schools.com/html/html_forms.asp",
+    "HTML_QUIZ":"https://www.w3schools.com/html/html_forms.asp",
+    "HTML_REFERENCES":"https://www.w3schools.com/html/html_forms.asp'",
+    "MATERIAL_UI":"https://material-ui.com/",
+    "GOOGLE_FONTS":"https://fonts.google.com/"
+   
+
+
+}   
+    
+   

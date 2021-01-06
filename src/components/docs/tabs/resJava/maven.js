@@ -1,17 +1,5 @@
 import React from 'react';
-
-const MAVEN = 'http://maven.apache.org/download.cgi';
-const SETTINGS_XML = 'https://maven.apache.org/settings.html';
-const JAVA = 'https://www.oracle.com/java/technologies/javase-downloads.html';
-const MAVEN_INSTALLATION_INSTRUCTION = 'https://maven.apache.org/install.html';
-const CONFIGURATION_GUIDE = 'https://maven.apache.org/guides/mini/guide-configuring-maven.html';
-const WINDOWS_PRE = 'https://maven.apache.org/guides/getting-started/windows-prerequisites.html';
-const STANDARD_PROJECT_STRUCTURE = 'https://maven.apache.org/guides/introduction/introduction-to-the-standard-directory-layout.html';
-const POM = 'https://maven.apache.org/guides/introduction/introduction-to-the-pom.html#:~:text=A%20Project%20Object%20Model%20or,default%20values%20for%20most%20projects.';
-const MVN_REPOSITORY = 'https://mvnrepository.com/';
-const MSZ_POM_XML = 'https://github.com/msz5213/POM_TestNG_CompleteFramework/blob/master/pom.xml';
-const MAVEN_DOCS = 'https://maven.apache.org/guides/getting-started/index.html';
-const MAVEN_GITHUB = 'https://github.com/msz5213/Maven';
+import link from '../../../../utilities/links.json';
 
 const maven = () => {
     return(
@@ -66,7 +54,7 @@ const maven = () => {
                 </p>
                 <h5>Download Maven</h5>
                 <p>
-                    Download the <a href={MAVEN} target="_blank" rel="noopener noreferrer">Maven</a>, for example 
+                    Download the <a href={link.MAVEN} target="_blank" rel="noopener noreferrer">Maven</a>, for example 
                     <code className='tag-Color'>apache-maven-3.6.3-bin.tar.gz</code> Extracts it,
                 </p>
                 <pre className='pre-code'>
@@ -109,7 +97,7 @@ const maven = () => {
                     OS name: "mac os x", version: "10.9", arch: "x86_64", family: "mac" 
                     </code>
                 </pre>
-                <h5>Post Configuration For <a href={SETTINGS_XML} target="_blank" rel="noopener noreferrer">Seetings.xml</a></h5>
+                <h5>Post Configuration For <a href={link.SETTINGS_XML} target="_blank" rel="noopener noreferrer">Seetings.xml</a></h5>
                 <p>
                     A common post-installation for Maven, change the local repository to another location.
                 </p>
@@ -142,10 +130,10 @@ const maven = () => {
                 <h3>Maven in 5 Minutes</h3>
                 <h5>Installation</h5>
                 <p>
-                    Maven is a Java tool, so you must have <a href={JAVA} target="_blank" rel="noopener noreferrer">Java</a> installed in order to proceed.
+                    Maven is a Java tool, so you must have <a href={link.JAVA} target="_blank" rel="noopener noreferrer">Java</a> installed in order to proceed.
                 </p>
                 <p>
-                    First, <a href={MAVEN} target="_blank" rel="noopener noreferrer">download Maven</a> and follow the <a href={MAVEN_INSTALLATION_INSTRUCTION} target="_blank" rel="noopener noreferrer">installation instructions</a>. After that, type the following in a terminal or in a command prompt:
+                    First, <a href={link.MAVEN} target="_blank" rel="noopener noreferrer">download Maven</a> and follow the <a href={link.MAVEN_INSTALLATION_INSTRUCTION} target="_blank" rel="noopener noreferrer">installation instructions</a>. After that, type the following in a terminal or in a command prompt:
                 </p>
                     <pre className='pre-code'>
                     <code>
@@ -161,10 +149,10 @@ const maven = () => {
                     </code>
                 </pre>
                 <p>
-                    Depending upon your network setup, you may require extra configuration. Check out the <a href={CONFIGURATION_GUIDE} target="_blank" rel="noopener noreferrer">Guide to Configuring Maven</a> if necessary.
+                    Depending upon your network setup, you may require extra configuration. Check out the <a href={link.CONFIGURATION_GUIDE} target="_blank" rel="noopener noreferrer">Guide to Configuring Maven</a> if necessary.
                 </p>
                 <p>
-                    If you are using Windows, you should look at <a href={WINDOWS_PRE} target="_blank" rel="noopener noreferrer"> Windows Prerequisites</a> to ensure that you are prepared to use Maven on Windows.
+                    If you are using Windows, you should look at <a href={link.WINDOWS_PRE} target="_blank" rel="noopener noreferrer"> Windows Prerequisites</a> to ensure that you are prepared to use Maven on Windows.
                 </p>
             </div>
             <div>
@@ -192,7 +180,7 @@ const maven = () => {
                     </code>
                 </pre>
                 <p>
-                    Under this directory you will notice the following <a href={STANDARD_PROJECT_STRUCTURE} target="_blank" rel="noopener noreferrer">standard project structure</a>.
+                    Under this directory you will notice the following <a href={link.STANDARD_PROJECT_STRUCTURE} target="_blank" rel="noopener noreferrer">standard project structure</a>.
                 </p>
                 <pre className='pre-code'>
                     <code>
@@ -216,9 +204,9 @@ const maven = () => {
                 <p>
                     The <code className='tag-Color'>src/main/java</code> directory contains the project source code, the <code className='tag-Color'>src/test/java</code> directory contains the test source, and the <code className='tag-Color'> pom.xml</code>file is the project's Project Object Model, or POM.
                 </p>
-                <h5>The <a href={POM} target="_blank" rel="noopener noreferrer">POM</a></h5>POM
+                <h5>The <a href={link.POM} target="_blank" rel="noopener noreferrer">POM</a></h5>POM
                 <p>
-                    The <code className='tag-Color'><a href={MSZ_POM_XML} target="_blank" rel="noopener noreferrer">pom.xml</a></code>  file is the core of a project's configuration in Maven. It is a single configuration file that contains the majority of information required to build a project in just the way you want. The POM is huge and can be daunting in its complexity, but it is not necessary to understand all of the intricacies just yet to use it effectively.
+                    The <code className='tag-Color'><a href={link.MSZ_POM_XML} target="_blank" rel="noopener noreferrer">pom.xml</a></code>  file is the core of a project's configuration in Maven. It is a single configuration file that contains the majority of information required to build a project in just the way you want. The POM is huge and can be daunting in its complexity, but it is not necessary to understand all of the intricacies just yet to use it effectively.
                 </p>
                 <h5>Importing project into Eclipse</h5>
                 <ul>
@@ -232,7 +220,7 @@ const maven = () => {
                     <li>Right Click on the Project {'>'} Configure {'>'} Convert to Maven Project</li>
                     <li>Right Click on the Project {'>'} Maven {'>'} Update Project</li>
                     <li>Right Click on the Project {'>'} Refresh</li>
-                    <li>Double Click on pom.xml file {'>'} Based on the Requirments Copy and Paste List of Dependencies From the <a href={MVN_REPOSITORY} target="_blank" rel="noopener noreferrer">MVN Repository</a></li>
+                    <li>Double Click on pom.xml file {'>'} Based on the Requirments Copy and Paste List of Dependencies From the <a href={link.MVN_REPOSITORY} target="_blank" rel="noopener noreferrer">MVN Repository</a></li>
                 </ul>
                 <h5>Dependencies List</h5>
                 <ul>
@@ -240,7 +228,7 @@ const maven = () => {
                     <li>Chrome | Firefox | Depends on the Requirments</li>
                     <li>Selenium</li>
                     <li>Depends on the Requirments</li>
-                    <li>Or Copy and paste from the <a href={MSZ_POM_XML} target="_blank" rel="noopener noreferrer">exisisting project</a></li>
+                    <li>Or Copy and paste from the <a href={link.MSZ_POM_XML} target="_blank" rel="noopener noreferrer">exisisting project</a></li>
                     <li>Right Click on the Project {'>'} Refresh</li>
                 </ul>
             </div>
@@ -248,10 +236,10 @@ const maven = () => {
                 <h3>References</h3>
             </div>
             <div className='pt4 scrummountain-btn'>
-                <a className='f6 grow no-underline br-pill ba bw1 ph3 pv2 mb2 dib dark-green' href={MAVEN_DOCS} target="_blank" rel="noopener noreferrer">
+                <a className='f6 grow no-underline br-pill ba bw1 ph3 pv2 mb2 dib dark-green' href={link.MAVEN_DOCS} target="_blank" rel="noopener noreferrer">
                     Maven Docs
                 </a>
-                <a className='f6 grow no-underline br-pill ba bw1 ph3 pv2 mb2 dib dark-green' href={MAVEN_GITHUB} target="_blank" rel="noopener noreferrer">
+                <a className='f6 grow no-underline br-pill ba bw1 ph3 pv2 mb2 dib dark-green' href={link.MAVEN_GITHUB} target="_blank" rel="noopener noreferrer">
                     Maven GitHub
                 </a>
             </div>

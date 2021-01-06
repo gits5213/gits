@@ -1,10 +1,5 @@
 import React from 'react';
-
-const HOMEBREW = 'https://brew.sh/';
-const JDK = 'http://jdk.java.net/14/';
-const ADOPT_OPEN_JDK = 'https://github.com/AdoptOpenJDK/homebrew-openjdk';
-const JRE = 'https://www.jenv.be/';
-const MAC_JAVA_SETUP = 'https://docs.oracle.com/javase/10/install/installation-jdk-and-jre-macos.htm#JSJIG-GUID-2432241F-9517-4C0B-9CBB-489E6419C9C9';
+import link from '../../../../utilities/links.json';
 
 const top = () => {
     return(
@@ -25,18 +20,18 @@ const top = () => {
             </pre>
             <div>
                 <h5>
-                    We will show you two ways to install Java JDK on Mac, via the popular <a href={HOMEBREW} target="_blank" rel="noopener noreferrer">Homebrew</a> package manager and manually installation. 
+                    We will show you two ways to install Java JDK on Mac, via the popular <a href={link.HOMEBREW} target="_blank" rel="noopener noreferrer">Homebrew</a> package manager and manually installation. 
                 </h5>
             </div>
             <div>
                 <h3>Option Number 1: Homebrew</h3>
-                <p>Install <a href={HOMEBREW} target="_blank" rel="noopener noreferrer">Homebrew</a> and update it.</p>
+                <p>Install <a href={link.HOMEBREW} target="_blank" rel="noopener noreferrer">Homebrew</a> and update it.</p>
                 <pre className='pre-code'>
                     <code>
                         $ brew update
                     </code>
                 </pre>
-                <p>Add <a href={HOMEBREW} target="_blank" rel="noopener noreferrer">adoptopenjdk/openjdk</a>.</p>
+                <p>Add <a href={link.HOMEBREW} target="_blank" rel="noopener noreferrer">adoptopenjdk/openjdk</a>.</p>
                 <pre className='pre-code'>
                     <code >
                         $ brew tap adoptopenjdk/openjdk
@@ -120,7 +115,7 @@ const top = () => {
                     <li>Add the JDK folder at <code className='tag-Color'>/Library/Java/JavaVirtualMachines</code></li>
                     <li>Export <code className='tag-Color'>JAVA_HOME</code></li>
                 </ul>
-                <p>Download the early access JDK 14 from the <a href={JDK} target="_blank" rel="noopener noreferrer">OpenJDK</a> website.</p>
+                <p>Download the early access JDK 14 from the <a href={link.JDK} target="_blank" rel="noopener noreferrer">OpenJDK</a> website.</p>
                 <p>
                     Extracts tar file to <code className='tag-Color'>/Library/Java/JavaVirtualMachines</code>
                 </p>
@@ -184,7 +179,7 @@ const top = () => {
             <div>
                 <h3>Version Switching</h3>
                 <p>
-                    In this tutorial, we installed the Java 8 and Java 11 via <a href={HOMEBREW} target="_blank" rel="noopener noreferrer">Homebrew</a> (Step 1), and Java 14 manually (Step 2), so this Mac has three versions now. And the Mac is using the JDK 14.
+                    In this tutorial, we installed the Java 8 and Java 11 via <a href={link.HOMEBREW} target="_blank" rel="noopener noreferrer">Homebrew</a> (Step 1), and Java 14 manually (Step 2), so this Mac has three versions now. And the Mac is using the JDK 14.
                 </p>
                 <pre className='pre-code'>
                     <code >
@@ -198,7 +193,7 @@ const top = () => {
                     </code>
                 </pre>
                 <p>
-                    <strong>Note:</strong> There are tools like <a href={JRE} target="_blank" rel="noopener noreferrer">jEnv</a> to manage the Java version switching, but I prefer to manage with <code className='tag-Color'>export JAVA_HOME</code> manually, it’s simple and easy to understand, no black box magic.
+                    <strong>Note:</strong> There are tools like <a href={link.JRE} target="_blank" rel="noopener noreferrer">jEnv</a> to manage the Java version switching, but I prefer to manage with <code className='tag-Color'>export JAVA_HOME</code> manually, it’s simple and easy to understand, no black box magic.
                 </p>
                 <p>
                     Create or edit the existing <code className='tag-Color'>~/.bash_profile</code> with a text editor like vim or nano, <code className='tag-Color'>export JAVA_HOME </code>to the specified JDK we want to use on Mac. 
@@ -254,16 +249,16 @@ const top = () => {
                 <h3>References</h3>
             </div>
             <div className='pt4'>
-                <a className='f6 grow no-underline br-pill ba bw1 ph3 pv2 mb2 dib dark-green' href={JDK} target="_blank" rel="noopener noreferrer">
+                <a className='f6 grow no-underline br-pill ba bw1 ph3 pv2 mb2 dib dark-green' href={link.JDK} target="_blank" rel="noopener noreferrer">
                     OpenJDK
                 </a>
-                <a className='f6 grow no-underline br-pill ba bw1 ph3 pv2 mb2 dib dark-green' href={ADOPT_OPEN_JDK} target="_blank" rel="noopener noreferrer">
+                <a className='f6 grow no-underline br-pill ba bw1 ph3 pv2 mb2 dib dark-green' href={link.ADOPT_OPEN_JDK} target="_blank" rel="noopener noreferrer">
                     AdoptOpenJDK – HomeBrew TAP
                 </a>
-                <a className='f6 grow no-underline br-pill ba bw1 ph3 pv2 mb2 dib dark-green' href={JRE} target="_blank" rel="noopener noreferrer">
+                <a className='f6 grow no-underline br-pill ba bw1 ph3 pv2 mb2 dib dark-green' href={link.JRE} target="_blank" rel="noopener noreferrer">
                     jEnv
                 </a>
-                <a className='f6 grow no-underline br-pill ba bw1 ph3 pv2 mb2 dib dark-green' href={MAC_JAVA_SETUP} target="_blank" rel="noopener noreferrer">
+                <a className='f6 grow no-underline br-pill ba bw1 ph3 pv2 mb2 dib dark-green' href={link.MAC_JAVA_SETUP} target="_blank" rel="noopener noreferrer">
                     MAC Setup More Info
                 </a>
             </div>

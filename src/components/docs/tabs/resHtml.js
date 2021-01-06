@@ -1,16 +1,8 @@
 import React from 'react';
+import link from '../../../utilities/links.json';
 import GoogleAd from '../../../components/GoogleAd';
 import HTML_LOGO from '../../../images/tabs/htmlLogo.png';
 import HTML_TAG from '../../../images/tabs/htmlTags.jpeg';
-
-const VSCODE = 'https://code.visualstudio.com/download';
-const HTML_TAGS = 'https://www.w3schools.com/tags/ref_attributes.asp';
-const HTML_FROMS = 'https://www.w3schools.com/html/html_forms.asp';
-const HTML_MEDIA = 'https://www.w3schools.com/html/html_forms.asp';
-const HTML_QUIZ = 'https://www.w3schools.com/html/html_forms.asp';
-const HTML_REFERENCES = 'https://www.w3schools.com/html/html_forms.asp';
-const MATERIAL_UI = 'https://material-ui.com/';
-const GOOGLE_FONTS = 'https://fonts.google.com/';
 
 const resHtml = () => {
     return(
@@ -107,7 +99,7 @@ const resHtml = () => {
             <div>
                 <h5>Step 1: Download and Install VS Code (PC/MAC)</h5>
                 <ul>
-                    <li>Navigat to the <a href={VSCODE} target="_blank" rel="noopener noreferrer"><strong>URL</strong></a></li>
+                    <li>Navigat to the <a href={link.VSCODE} target="_blank" rel="noopener noreferrer"><strong>URL</strong></a></li>
                     <li>Click on the <strong>Download Button</strong> according to your Operating System</li>
                     <li>Extract the Folder</li>
                     <li>Doubble click on the <strong>Visual Studio Code Icon</strong></li>
@@ -141,28 +133,28 @@ const resHtml = () => {
                 <h3>References</h3>
             </div>
             <div className='pt4 html-btn'>
-                <a className='f6 grow no-underline br-pill ba bw1 ph3 pv2 mb2 dib dark-green' href={HTML_TAGS} target="_blank" rel="noopener noreferrer">
+                <a className='f6 grow no-underline br-pill ba bw1 ph3 pv2 mb2 dib dark-green' href={link.HTML_TAGS} target="_blank" rel="noopener noreferrer">
                     HTML tags
                 </a>
-                <a className='f6 grow no-underline br-pill ba bw1 ph3 pv2 mb2 dib dark-green' href={HTML_FROMS} target="_blank" rel="noopener noreferrer">
+                <a className='f6 grow no-underline br-pill ba bw1 ph3 pv2 mb2 dib dark-green' href={link.HTML_FROMS} target="_blank" rel="noopener noreferrer">
                     HTML Forms
                 </a>
-                <a className='f6 grow no-underline br-pill ba bw1 ph3 pv2 mb2 dib dark-green' href={HTML_MEDIA} target="_blank" rel="noopener noreferrer">
+                <a className='f6 grow no-underline br-pill ba bw1 ph3 pv2 mb2 dib dark-green' href={link.HTML_MEDIA} target="_blank" rel="noopener noreferrer">
                     HTML Media
                 </a>
-                <a className='f6 grow no-underline br-pill ba bw1 ph3 pv2 mb2 dib dark-green' href={HTML_QUIZ} target="_blank" rel="noopener noreferrer">
+                <a className='f6 grow no-underline br-pill ba bw1 ph3 pv2 mb2 dib dark-green' href={link.HTML_QUIZ} target="_blank" rel="noopener noreferrer">
                     HTML Quiz
                 </a>
-                <a className='f6 grow no-underline br-pill ba bw1 ph3 pv2 mb2 dib dark-green' href={HTML_REFERENCES} target="_blank" rel="noopener noreferrer">
+                <a className='f6 grow no-underline br-pill ba bw1 ph3 pv2 mb2 dib dark-green' href={link.HTML_REFERENCES} target="_blank" rel="noopener noreferrer">
                     HTML References
                 </a>
             </div>
             <hr />
             <div>
-                <a className='f6 grow no-underline br-pill ba bw1 ph3 pv2 mb2 dib dark-green' href={MATERIAL_UI} target="_blank" rel="noopener noreferrer">
+                <a className='f6 grow no-underline br-pill ba bw1 ph3 pv2 mb2 dib dark-green' href={link.MATERIAL_UI} target="_blank" rel="noopener noreferrer">
                     ICONS - Material UI
                 </a>
-                <a className='f6 grow no-underline br-pill ba bw1 ph3 pv2 mb2 dib dark-green' href={GOOGLE_FONTS} target="_blank" rel="noopener noreferrer">
+                <a className='f6 grow no-underline br-pill ba bw1 ph3 pv2 mb2 dib dark-green' href={link.GOOGLE_FONTS} target="_blank" rel="noopener noreferrer">
                     Google Fonts
                 </a>
             </div>

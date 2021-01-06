@@ -1,23 +1,8 @@
 import React from 'react';
+import link from '../../../utilities/links.json';
 import GoogleAd from '../../../components/GoogleAd';
 import css_logo from '../../../images/tabs/cssLogo.png';
 import css_image from '../../../images/tabs/cssImage.jpeg';
-
-const CSS_TRICKS = 'https://css-tricks.com/snippets/css/';
-const W3_CSS = 'https://www.w3schools.com/css/css_syntax.asp';
-const W3_CSS_HOWTO = 'https://www.w3schools.com/howto/default.asp';
-const TACHYONS = 'https://tachyons.io/docs/';
-const W3_CSS_F = 'https://www.w3schools.com/w3css/default.asp';
-const BOOTSTRAP = 'https://getbootstrap.com/docs/5.0/getting-started/introduction/';
-const MATERIAL = 'https://material.io/components?platform=web';
-const METERIAL_UI_F = 'https://material-ui.com/';
-const REACT_BOOTSTRAP = 'https://react-bootstrap.github.io/components/alerts';
-const FONT_AWESOME = 'https://fontawesome.com/v4.7.0/';
-const FONT_AWESOME_CHEATSHEET = 'https://fontawesome.com/v4.7.0/cheatsheet/';
-
-const GITHUB_ICON ='http://www.protractortest.org/img/GitHub-Mark-Light-32px.png';
-const CSS_FRAMEWORK_TOPICS = 'https://github.com/topics/css-framework';
-const REACT_CSS_FRAMEWORK_TOPICS = 'https://gist.github.com/NyashaNziramasanga/f91a04e5f7385caa7cb868b68bdc267f';
 
 const resCss = () => {
     return(
@@ -29,12 +14,12 @@ const resCss = () => {
                 <img className='pr4 pt4 pb4 css-logo' src={css_logo} alt='css Logo'/>
             </div>
             <div className='tc pt3'>
-              <a class='f6 grow no-underline br-pill ph3 pv2 mb2 dib white bg-red' href={CSS_FRAMEWORK_TOPICS} target="_blank" rel="noopener noreferrer">
-                  <img className='pr2' src={GITHUB_ICON} alt='github log' /> 
+              <a class='f6 grow no-underline br-pill ph3 pv2 mb2 dib white bg-red' href={link.CSS_FRAMEWORK_TOPICS} target="_blank" rel="noopener noreferrer">
+                  <img className='pr2' src={link.GITHUB_ICON} alt='github log' /> 
                   CSS FW Topics on GitHub                 
               </a>
-              <a class='f6 grow no-underline br-pill ph3 pv2 mb2 dib white bg-red' href={REACT_CSS_FRAMEWORK_TOPICS} target="_blank" rel="noopener noreferrer">
-                  <img className='pr2' src={GITHUB_ICON} alt='github log' /> 
+              <a class='f6 grow no-underline br-pill ph3 pv2 mb2 dib white bg-red' href={link.REACT_CSS_FRAMEWORK_TOPICS} target="_blank" rel="noopener noreferrer">
+                  <img className='pr2' src={link.GITHUB_ICON} alt='github log' /> 
                   React CSS FW Topics on GitHub                 
               </a>
             </div>
@@ -90,16 +75,16 @@ const resCss = () => {
                 <h3>References</h3>
             </div>
             <div>
-                <a className='f6 grow no-underline br-pill ba bw1 ph3 pv2 mb2 dib dark-green' href={W3_CSS} target="_blank" rel="noopener noreferrer">
+                <a className='f6 grow no-underline br-pill ba bw1 ph3 pv2 mb2 dib dark-green' href={link.W3_CSS} target="_blank" rel="noopener noreferrer">
                     Learn More CSS
                 </a>
-                <a className='f6 grow no-underline br-pill ba bw1 ph3 pv2 mb2 dib dark-green' href={W3_CSS_HOWTO} target="_blank" rel="noopener noreferrer">
+                <a className='f6 grow no-underline br-pill ba bw1 ph3 pv2 mb2 dib dark-green' href={link.W3_CSS_HOWTO} target="_blank" rel="noopener noreferrer">
                     CSS - How To
                 </a>
-                <a className='f6 grow no-underline br-pill ba bw1 ph3 pv2 mb2 dib dark-green' href={CSS_TRICKS} target="_blank" rel="noopener noreferrer">
+                <a className='f6 grow no-underline br-pill ba bw1 ph3 pv2 mb2 dib dark-green' href={link.CSS_TRICKS} target="_blank" rel="noopener noreferrer">
                     CSS-TRICKS
                 </a>
-                <a className='f6 grow no-underline br-pill ba bw1 ph3 pv2 mb2 dib dark-green' href={W3_CSS_F} target="_blank" rel="noopener noreferrer">
+                <a className='f6 grow no-underline br-pill ba bw1 ph3 pv2 mb2 dib dark-green' href={link.W3_CSS_F} target="_blank" rel="noopener noreferrer">
                     CSS - W3CSS Framework
                 </a>
             </div>
@@ -108,16 +93,16 @@ const resCss = () => {
                 <h3>CSS Framework</h3>
             </div>
             <div>
-                <a className='f6 grow no-underline br-pill ba bw1 ph3 pv2 mb2 dib dark-green' href={BOOTSTRAP} target="_blank" rel="noopener noreferrer">
+                <a className='f6 grow no-underline br-pill ba bw1 ph3 pv2 mb2 dib dark-green' href={link.BOOTSTRAP} target="_blank" rel="noopener noreferrer">
                     BOOTSTRAP FW
                 </a>
-                <a className='f6 grow no-underline br-pill ba bw1 ph3 pv2 mb2 dib dark-green' href={MATERIAL} target="_blank" rel="noopener noreferrer">
+                <a className='f6 grow no-underline br-pill ba bw1 ph3 pv2 mb2 dib dark-green' href={link.MATERIAL} target="_blank" rel="noopener noreferrer">
                     MATERIAL FW
                 </a>
-                <a className='f6 grow no-underline br-pill ba bw1 ph3 pv2 mb2 dib dark-green' href={FONT_AWESOME} target="_blank" rel="noopener noreferrer">
+                <a className='f6 grow no-underline br-pill ba bw1 ph3 pv2 mb2 dib dark-green' href={link.FONT_AWESOME} target="_blank" rel="noopener noreferrer">
                     Font Awesome ICONIC CSS TOOLKID
                 </a>
-                <a className='f6 grow no-underline br-pill ba bw1 ph3 pv2 mb2 dib dark-green' href={FONT_AWESOME_CHEATSHEET} target="_blank" rel="noopener noreferrer">
+                <a className='f6 grow no-underline br-pill ba bw1 ph3 pv2 mb2 dib dark-green' href={link.FONT_AWESOME_CHEATSHEET} target="_blank" rel="noopener noreferrer">
                     F.A ICONIC CSS Cheatsheet
                 </a>
             </div>
@@ -126,13 +111,13 @@ const resCss = () => {
                 <h3>React CSS Framework</h3>
             </div>
             <div>
-                <a className='f6 grow no-underline br-pill ba bw1 ph3 pv2 mb2 dib dark-green' href={TACHYONS} target="_blank" rel="noopener noreferrer">
+                <a className='f6 grow no-underline br-pill ba bw1 ph3 pv2 mb2 dib dark-green' href={link.TACHYONS} target="_blank" rel="noopener noreferrer">
                     TECHYONS FW
                 </a>
-                <a className='f6 grow no-underline br-pill ba bw1 ph3 pv2 mb2 dib dark-green' href={METERIAL_UI_F} target="_blank" rel="noopener noreferrer">
+                <a className='f6 grow no-underline br-pill ba bw1 ph3 pv2 mb2 dib dark-green' href={link.METERIAL_UI_F} target="_blank" rel="noopener noreferrer">
                     METERIAL UI FW
                 </a>
-                <a className='f6 grow no-underline br-pill ba bw1 ph3 pv2 mb2 dib dark-green' href={REACT_BOOTSTRAP} target="_blank" rel="noopener noreferrer">
+                <a className='f6 grow no-underline br-pill ba bw1 ph3 pv2 mb2 dib dark-green' href={link.REACT_BOOTSTRAP} target="_blank" rel="noopener noreferrer">
                     REACT BOOTSTRAP FW
                 </a>
             </div>

@@ -1,9 +1,5 @@
 import React from 'react';
-
-const STEP_2 = 'https://www.w3schools.com/java/system1.png';
-const STEP_3 = 'https://www.w3schools.com/java/path2.png';
-const STEP_4 = 'https://www.w3schools.com/java/path3.png';
-const WINDOW_SETUP = 'https://docs.oracle.com/javase/10/install/installation-jdk-and-jre-microsoft-windows-platforms.htm#JSJIG-GUID-A7E27B90-A28D-4237-9383-A58B416071CA';
+import link from '../../../../utilities/links.json';
 
 const java_window = () => {
     return(
@@ -23,19 +19,19 @@ const java_window = () => {
             <div>
                 <h5>Step 2:</h5>
                 <div className='tc'>
-                    <img className='pr4 pt4 pb4 js-logo' src={STEP_2} alt='js Logo'/>
+                    <img className='pr4 pt4 pb4 js-logo' src={link.STEP_2} alt='js Logo'/>
                 </div>
             </div>
             <div>
                 <h5>Step 3:</h5>
                 <div className='tc'>
-                    <img className='pr4 pt4 pb4 js-logo' src={STEP_3} alt='js Logo'/>
+                    <img className='pr4 pt4 pb4 js-logo' src={link.STEP_3} alt='js Logo'/>
                 </div>
             </div>
             <div>
                 <h5>Step 4:</h5>
                 <div className='tc'>
-                    <img className='pr4 pt4 pb4 js-logo' src={STEP_4} alt='js Logo'/>
+                    <img className='pr4 pt4 pb4 js-logo' src={link.STEP_4} alt='js Logo'/>
                 </div>
             </div>
             <div>
@@ -62,7 +58,7 @@ const java_window = () => {
                 </pre>
             </div>
             <div className='pt4'>
-                <a className='f6 grow no-underline br-pill ba bw1 ph3 pv2 mb2 dib dark-green' href={WINDOW_SETUP} target="_blank" rel="noopener noreferrer">
+                <a className='f6 grow no-underline br-pill ba bw1 ph3 pv2 mb2 dib dark-green' href={link.WINDOW_SETUP} target="_blank" rel="noopener noreferrer">
                     Windows Setup More Info
                 </a>
             </div>

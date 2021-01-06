@@ -3,7 +3,6 @@ import GoogleAd from '../../../components/GoogleAd';
 import courseOutline from '../../../images/webDevProgram.png';
 import Frontend from '../tabs/frontend';
 
-
 const coursesWebDev = () => {
     return(
         <div className='page-tab-body'>

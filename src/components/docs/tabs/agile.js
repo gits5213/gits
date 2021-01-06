@@ -1,9 +1,8 @@
 import React from 'react';
+import link from '../../../utilities/links.json';
 import GoogleAd from '../../../components/GoogleAd';
-
 import AgilelLogo from '../../../images/tabs/agileLogo.png'; 
-const AGILE_MENUFESTO = 'https://www.mountaingoatsoftware.com/agile/new-to-agile-or-scrum';
-const AGILE_TOOLS_TECHN = ' https://projectresources.cdt.ca.gov/agile/agile-tools-and-techniques/';
+
 
 const agile = () => {
     return(
@@ -48,11 +47,11 @@ const agile = () => {
                 </ol>
             </div>
             <div className='pt4 agile-btn'>
-                <a class='f6 grow no-underline br-pill ba bw1 ph3 pv2 mb2 dib dark-green' href={AGILE_MENUFESTO} target="_blank" rel="noopener noreferrer">
+                <a class='f6 grow no-underline br-pill ba bw1 ph3 pv2 mb2 dib dark-green' href={link.AGILE_MENUFESTO} target="_blank" rel="noopener noreferrer">
                     New to Agile and Scrum
                 </a>
-                <a className='f6 grow no-underline br-pill ba bw1 ph3 pv2 mb2 dib dark-green' href={AGILE_TOOLS_TECHN} target="_blank" rel="noopener noreferrer">
-                    Agile Tools & techniques
+                <a className='f6 grow no-underline br-pill ba bw1 ph3 pv2 mb2 dib dark-green' href={link.AGILE_TOOLS_TECHN} target="_blank" rel="noopener noreferrer">
+                    Agile Tools {'&'} techniques
                 </a>
             </div>
 
