@@ -18,6 +18,10 @@ background: linear-gradient(to right, #FFE000, #799F0C, #00416A); /* W3C, IE 10+
   justify-content: center;
   align-self: flex-start;    
 }
+
+a {
+  text-decoration: none;
+}
 .container {
   display: flexbox;
   align-items: center;

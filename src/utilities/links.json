@@ -19,6 +19,23 @@
     "SERVICES":"https://msz5213.github.io/student-subscription/",
     "CONTACT":"/contact",
 
+    "SocialIcon":"............................................",
+    "FACEBOOK":"https://www.facebook.com/itnycusa",
+    "GITHUB":"https://github.com/msz5213/",
+    "INSTRAGRAM":"https://www.instagram.com/itnycusa/'",
+    "YOUTUBE":"https://www.youtube.com/channel/UCITyGuyGv5OzornDpgVBnDg?view_as=subscriber/",
+    "SLACK":"https://itnycusa.slack.com/",
+    "LINKEDIN":"https://www.linkedin.com/in/zamanmd/",
+    "FACEBOOK_IMAGE":"http://www.w3.org/2000/svg",
+    "GITHUB_IMAGE":"http://www.w3.org/2000/svg",
+    "INSTRAGRAM_IMAGE":"http://www.w3.org/2000/svg",
+    "YOUTUBE_IMAGE":"http://www.w3.org/2000/svg",
+    "SLACK_IMAGE":"http://www.w3.org/2000/svg",
+    "LINKEDIN_IMAGE":"http://www.w3.org/2000/svg",
+
+    "GoogleAd":"............................................",
+    "googleAdId":"ca-pub-yourGoogleAdId",
+
     "API":"............................................",
     "GITHUB_ICON": "http://www.protractortest.org/img/GitHub-Mark-Light-32px.png",
     "APPIUM_GITHUB":"https://github.com/appium/appium",
@@ -97,8 +114,52 @@
     "HTML_QUIZ":"https://www.w3schools.com/html/html_forms.asp",
     "HTML_REFERENCES":"https://www.w3schools.com/html/html_forms.asp'",
     "MATERIAL_UI":"https://material-ui.com/",
-    "GOOGLE_FONTS":"https://fonts.google.com/"
-   
+    "GOOGLE_FONTS":"https://fonts.google.com/",
+
+    "Scrum":"..................",
+    "SCRUM_LOGO1": "https://projectresources.cdt.ca.gov/wp-content/uploads/sites/50/2017/08/scrum-framework-at-a-glance.jpg",
+    "SCRUM_LOGO": "https://dmquickscrum.files.wordpress.com/2014/11/sprint-planning.png",
+    "SCRUM_ORGS": "https://www.scrum.org/resources/what-is-scrum",
+    "MOUNTAIN_GOATS": "https://www.mountaingoatsoftware.com/agile/scrum",
+    "SCRUM_GUIDE": "https://www.scrumguides.org/",
+    "WHAT_IS_PRODUCTOWNER": "https://www.scrum.org/resources/what-is-a-product-owner",
+    "WHAT_IS_DEVELOPMENT_TEAM": "https://www.scrum.org/resources/what-is-a-scrum-development-team",
+    "WHAT_IS_SCRUM_MASTER": "https://www.scrum.org/resources/what-is-a-scrum-master",
+    "WHAT_IS_SPRINT": "https://www.scrum.org/resources/what-is-a-sprint-in-scrum",
+    "WHAT_IS_SPRINT_PLANNING": "https://www.scrum.org/resources/what-is-sprint-planning",
+    "WHAT_IS_DAILY_SCRUM": "https://www.scrum.org/resources/what-is-a-daily-scrum",
+    "WHAT_IS_SPRINT_REVIEW": "https://www.scrum.org/resources/what-is-a-sprint-review",
+    "WHAT_IS_SPRINT_RETRPSECTIVE": "https://www.scrum.org/resources/what-is-a-sprint-retrospective",
+    "WHAT_IS_PRODUCT_BACKLOG": "https://www.scrum.org/resources/what-is-a-product-backlog",
+    "WHAT_IS_SPRINT_BACKLOG": "https://www.scrum.org/resources/what-is-a-sprint-backlog",
+    "WHAT_IS_INCRIMENT": "https://www.scrum.org/resources/what-is-an-increment",
+    "SCRUM_VALUES": "https://scrumorg-website-prod.s3.amazonaws.com/drupal/inline-images/2017-07/ScrumValues2017_thumb_2.png",
+    "WHATISSCRUM": "https://www.mountaingoatsoftware.com/agile/scrum",
+    "SCRUM_MASTER": "https://www.mountaingoatsoftware.com/agile/scrum/roles/scrummaster",
+    "SCRUM_TEAM": "https://www.mountaingoatsoftware.com/agile/scrum/roles/team",
+    "PRODUCT_OWNER": "https://www.mountaingoatsoftware.com/agile/scrum/roles/product-owner",
+    "STORY_EPICS": "https://www.mountaingoatsoftware.com/blog/stories-epics-and-themes",
+    "PROJECT_KICKOFF": "https://en.wikipedia.org/wiki/Kickoff_meeting",
+    "TEAM_NORM": "https://www.agileconnection.com/article/creating-team-norms",
+    "REFINMENT": "https://www.mountaingoatsoftware.com/blog/product-backlog-refinement-grooming",
+    "SPRINT_PLANNING": "https://www.mountaingoatsoftware.com/agile/scrum/meetings/sprint-planning-meeting",
+    "DAILY_SCRUM": "https://www.mountaingoatsoftware.com/agile/scrum/meetings/daily-scrum",
+    "SPRINT_REVIEW": "https://www.mountaingoatsoftware.com/agile/scrum/meetings/sprint-review-meeting",
+    "RETROSPECTIVE": "https://www.mountaingoatsoftware.com/agile/scrum/meetings/sprint-retrospective",
+    
+    "SQL":"......................",
+
+    "SQL_HISTORY": "https://en.wikipedia.org/wiki/SQL",
+    "SQL_W3SCHOOL": "https://www.w3schools.com/sql/default.asp",
+    "POSTGRESAPP": "https://postgresapp.com/downloads.html",
+    "PGADMIN": "https://www.pgadmin.org/",
+    "DVDRENTAL": "https://github.com/robconery/dvdrental", 
+    "SQL_CODEACADEMEY_COMMANDS": "https://www.codecademy.com/articles/sql-commands",
+    "SQL_W3SHCOOL": "https://www.w3schools.com/sql/sql_syntax.asp" ,
+
+    "React":"................",
+    "REACT_ORG": "https://gist.github.com/riipandi/3097780",
+    "REACT_GITHUB": "https://github.com/reactjs/reactjs.org"
 
 
 }   

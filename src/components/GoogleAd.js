@@ -1,8 +1,6 @@
-
 import React, { Component } from 'react';
+import link from '../utilities/links.json';
 import PropTypes from 'prop-types';
-
-const googleAdId = 'ca-pub-yourGoogleAdId';
 
 class GoogleAd extends Component {
   googleInit = null;
@@ -26,7 +24,7 @@ class GoogleAd extends Component {
         <ins
           className="adsbygoogle"
           style={{ display: 'block' }}
-          data-ad-client={googleAdId}
+          data-ad-client={link.googleAdId}
           data-ad-slot={slot}
           data-ad-format="auto"
           data-full-width-responsive="true"
