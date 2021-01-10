@@ -1,39 +1,7 @@
 import React from 'react';
+import link from '../../../utilities/links.json';
 import GoogleAd from '../../../components/GoogleAd';
 import javascript_logo from '../../../images/tabs/javascriptLogo.png';
-
-const HTML = 'https://www.w3schools.com/html/default.asp';
-const CSS = 'https://www.w3schools.com/css/default.asp';
-const JS_QUIZE = 'https://www.w3schools.com/css/default.asp';
-const WHERETO = 'https://www.w3schools.com/js/js_whereto.asp';
-const JAVA = 'https://www.w3schools.com/java/default.asp';
-const JS_VERSION= 'https://www.w3schools.com/js/js_versions.asp';
-const JS_2009_ES5 = 'https://www.w3schools.com/js/js_es5.asp';
-const JS_2015_ES6 = 'https://www.w3schools.com/js/js_es6.asp';
-const JS_2016_ES6 = 'https://www.w3schools.com/js/js_2016.asp';
-const JS_2017_ES6 = 'https://www.w3schools.com/js/js_2017.asp';
-const JS_JSON = 'https://www.w3schools.com/js/js_json.asp';
-const JS_FORM = 'https://www.w3schools.com/js/js_validation.asp';
-const JS_OBJECTS = 'https://www.w3schools.com/js/js_object_definition.asp';
-const JS_FUNCTION = 'https://www.w3schools.com/js/js_function_definition.asp';
-const JS_CLASSES = 'https://www.w3schools.com/js/js_class_intro.asp';
-const JS_ASYNC = 'https://www.w3schools.com/js/js_callback.asp';
-const JS_HTML_DOM = 'https://www.w3schools.com/js/js_htmldom.asp';
-const JS_BROWSER_DOM = 'https://www.w3schools.com/js/js_window.asp';
-const JS_AJAX = 'https://www.w3schools.com/js/js_ajax_intro.asp';
-const JS_WEBAPI = 'https://www.w3schools.com/js/js_api_intro.asp';
-const JS_JQUERY = 'https://www.w3schools.com/js/js_jquery_selectors.asp';
-const JS_EXAMPLE = 'https://www.w3schools.com/js/js_examples.asp';
-
-const REACT = 'https://reactjs.org/';
-const R_A_V = 'https://www.educative.io/blog/react-angular-vue-comparison?aid=5082902844932096&utm_source=google&utm_medium=cpc&utm_campaign=blog-dynamic&gclid=CjwKCAiA25v_BRBNEiwAZb4-ZXbgm4wYodvGTRWMG-iq13kw0n_TuTEF6IwTIYHdL4q6GqyZSeFwEBoCu6IQAvD_BwE';
-const REACT_NATIVE = 'https://reactnative.dev/';
-const REACT_MDL = 'https://tleunen.github.io/react-mdl/components/';
-const JS_ChEAT_SHEET = 'https://htmlcheatsheet.com/js/';
-
-const GITHUB_ICON ='http://www.protractortest.org/img/GitHub-Mark-Light-32px.png';
-const JAVASCRIPT_TOPICS = 'https://github.com/topics/javascript';
-const JAVASCRIPT_STYLEGUIDE = 'https://github.com/airbnb/javascript';
 
 const resJavascript = () => {
     return(
@@ -45,12 +13,12 @@ const resJavascript = () => {
                 <img className='pr4 pt4 pb4 js-logo' src={javascript_logo} alt='js Logo'/>
             </div>
             <div className='tc pt3'>
-              <a class='f6 grow no-underline br-pill ph3 pv2 mb2 dib white bg-red' href={JAVASCRIPT_TOPICS} target="_blank" rel="noopener noreferrer">
-                  <img className='pr2' src={GITHUB_ICON} alt='github log' /> 
+              <a class='f6 grow no-underline br-pill ph3 pv2 mb2 dib white bg-red' href={link.JAVASCRIPT_TOPICS} target="_blank" rel="noopener noreferrer">
+                  <img className='pr2' src={link.GITHUB_ICON} alt='github log' /> 
                   JavaScript Topics on GitHub                 
               </a>
-              <a class='f6 grow no-underline br-pill ph3 pv2 mb2 dib white bg-green' href={JAVASCRIPT_STYLEGUIDE} target="_blank" rel="noopener noreferrer">
-                  <img className='pr2' src={GITHUB_ICON} alt='github log' /> 
+              <a class='f6 grow no-underline br-pill ph3 pv2 mb2 dib white bg-green' href={link.JAVASCRIPT_STYLEGUIDE} target="_blank" rel="noopener noreferrer">
+                  <img className='pr2' src={link.GITHUB_ICON} alt='github log' /> 
                    Airbnb JavaScript Style Guide                
               </a>
           </div>
@@ -64,8 +32,8 @@ const resJavascript = () => {
             <div>
                 <h3>Why Study JavaScript?</h3>
                 <ol>
-                    <li><a href={HTML} target="_blank" rel="noopener noreferrer">HTML</a> to define the content of web pages</li>
-                    <li><a href={CSS} target="_blank" rel="noopener noreferrer">CSS</a> to specify the layout of web pages</li>
+                    <li><a href={link.HTML} target="_blank" rel="noopener noreferrer">HTML</a> to define the content of web pages</li>
+                    <li><a href={link.CSS} target="_blank" rel="noopener noreferrer">CSS</a> to specify the layout of web pages</li>
                     <li><strong>JavaScript</strong> to program the behavior of web pages</li>
                 </ol>
             </div>
@@ -120,13 +88,13 @@ const resJavascript = () => {
             <div>
                 <h5>Did You Know?</h5>
                 <p>
-                    - JavaScript and <a href={JAVA} target="_blank" rel="noopener noreferrer">JAVA</a> are completely different languages, both in concept and design. <br />
+                    - JavaScript and <a href={link.JAVA_W3} target="_blank" rel="noopener noreferrer">JAVA</a> are completely different languages, both in concept and design. <br />
                     - JavaScript was invented by Brendan Eich in 1995, and became an ECMA standard in 1997.<br />
                     - ECMA-262 is the official name of the standard. ECMAScript is the official name of the language. 
                 </p>
             </div>
             <div>
-                <p><a href={WHERETO} target="_blank" rel="noopener noreferrer">JavaScript Where To</a></p>
+                <p><a href={link.WHERETO} target="_blank" rel="noopener noreferrer">JavaScript Where To</a></p>
             </div>
             <hr />
             <div>
@@ -134,72 +102,72 @@ const resJavascript = () => {
             </div>
             <section>
                 <div className='pt4 JS-btn'>
-                    <a className='f6 grow no-underline br-pill ba bw1 ph3 pv2 mb2 dib dark-green' href={WHERETO} target="_blank" rel="noopener noreferrer">
+                    <a className='f6 grow no-underline br-pill ba bw1 ph3 pv2 mb2 dib dark-green' href={link.WHERETO} target="_blank" rel="noopener noreferrer">
                         JS Where to
                     </a>
 
-                    <a className='f6 grow no-underline br-pill ba bw1 ph3 pv2 mb2 dib dark-green' href={JS_VERSION} target="_blank" rel="noopener noreferrer">
+                    <a className='f6 grow no-underline br-pill ba bw1 ph3 pv2 mb2 dib dark-green' href={link.JS_VERSION} target="_blank" rel="noopener noreferrer">
                         JS Version
                     </a>
-                    <a className='f6 grow no-underline br-pill ba bw1 ph3 pv2 mb2 dib dark-green' href={JS_2009_ES5} target="_blank" rel="noopener noreferrer">
+                    <a className='f6 grow no-underline br-pill ba bw1 ph3 pv2 mb2 dib dark-green' href={link.JS_2009_ES5} target="_blank" rel="noopener noreferrer">
                         JS 2009 (ES5)
                     </a>
-                    <a className='f6 grow no-underline br-pill ba bw1 ph3 pv2 mb2 dib dark-green' href={JS_2015_ES6} target="_blank" rel="noopener noreferrer">
+                    <a className='f6 grow no-underline br-pill ba bw1 ph3 pv2 mb2 dib dark-green' href={link.JS_2015_ES6} target="_blank" rel="noopener noreferrer">
                         JS 2015 (ES6)
                     </a>
-                    <a className='f6 grow no-underline br-pill ba bw1 ph3 pv2 mb2 dib dark-green' href={JS_2016_ES6} target="_blank" rel="noopener noreferrer">
+                    <a className='f6 grow no-underline br-pill ba bw1 ph3 pv2 mb2 dib dark-green' href={link.JS_2016_ES6} target="_blank" rel="noopener noreferrer">
                         JS 2016 (ES6)
                     </a>
-                    <a className='f6 grow no-underline br-pill ba bw1 ph3 pv2 mb2 dib dark-green' href={JS_2017_ES6} target="_blank" rel="noopener noreferrer">
+                    <a className='f6 grow no-underline br-pill ba bw1 ph3 pv2 mb2 dib dark-green' href={link.JS_2017_ES6} target="_blank" rel="noopener noreferrer">
                         JS 2017 (ES6)
                     </a>
-                    <a className='f6 grow no-underline br-pill ba bw1 ph3 pv2 mb2 dib dark-green' href={JS_JSON} target="_blank" rel="noopener noreferrer">
+                    <a className='f6 grow no-underline br-pill ba bw1 ph3 pv2 mb2 dib dark-green' href={link.JS_JSON} target="_blank" rel="noopener noreferrer">
                         JS JSON
                     </a>
                 </div>
                 <div className='pt4 JS-btn'>
-                    <a className='f6 grow no-underline br-pill ba bw1 ph3 pv2 mb2 dib dark-green' href={JS_FORM} target="_blank" rel="noopener noreferrer">
+                    <a className='f6 grow no-underline br-pill ba bw1 ph3 pv2 mb2 dib dark-green' href={link.JS_FORM} target="_blank" rel="noopener noreferrer">
                         JS Form
                     </a>
-                    <a className='f6 grow no-underline br-pill ba bw1 ph3 pv2 mb2 dib dark-green' href={JS_OBJECTS} target="_blank" rel="noopener noreferrer">
+                    <a className='f6 grow no-underline br-pill ba bw1 ph3 pv2 mb2 dib dark-green' href={link.JS_OBJECTS} target="_blank" rel="noopener noreferrer">
                         JS Objects
                     </a>
-                    <a className='f6 grow no-underline br-pill ba bw1 ph3 pv2 mb2 dib dark-green' href={JS_FUNCTION} target="_blank" rel="noopener noreferrer">
+                    <a className='f6 grow no-underline br-pill ba bw1 ph3 pv2 mb2 dib dark-green' href={link.JS_FUNCTION} target="_blank" rel="noopener noreferrer">
                         JS Function
                     </a>
-                    <a className='f6 grow no-underline br-pill ba bw1 ph3 pv2 mb2 dib dark-green' href={JS_CLASSES} target="_blank" rel="noopener noreferrer">
+                    <a className='f6 grow no-underline br-pill ba bw1 ph3 pv2 mb2 dib dark-green' href={link.JS_CLASSES} target="_blank" rel="noopener noreferrer">
                         JS Classes
                     </a>
-                    <a className='f6 grow no-underline br-pill ba bw1 ph3 pv2 mb2 dib dark-green' href={JS_ASYNC} target="_blank" rel="noopener noreferrer">
+                    <a className='f6 grow no-underline br-pill ba bw1 ph3 pv2 mb2 dib dark-green' href={link.JS_ASYNC} target="_blank" rel="noopener noreferrer">
                         JS Async
                     </a>
-                    <a className='f6 grow no-underline br-pill ba bw1 ph3 pv2 mb2 dib dark-green' href={JS_HTML_DOM} target="_blank" rel="noopener noreferrer">
+                    <a className='f6 grow no-underline br-pill ba bw1 ph3 pv2 mb2 dib dark-green' href={link.JS_HTML_DOM} target="_blank" rel="noopener noreferrer">
                         JS HTML DOM
                     </a>
-                    <a className='f6 grow no-underline br-pill ba bw1 ph3 pv2 mb2 dib dark-green' href={JS_BROWSER_DOM} target="_blank" rel="noopener noreferrer">
+                    <a className='f6 grow no-underline br-pill ba bw1 ph3 pv2 mb2 dib dark-green' href={link.JS_BROWSER_DOM} target="_blank" rel="noopener noreferrer">
                         JS Browser DOM
                     </a>
-                    <a className='f6 grow no-underline br-pill ba bw1 ph3 pv2 mb2 dib dark-green' href={JS_AJAX} target="_blank" rel="noopener noreferrer">
+                    <a className='f6 grow no-underline br-pill ba bw1 ph3 pv2 mb2 dib dark-green' href={link.JS_AJAX} target="_blank" rel="noopener noreferrer">
                         JS AJAX
                     </a>
-                    <a className='f6 grow no-underline br-pill ba bw1 ph3 pv2 mb2 dib dark-green' href={JS_JSON} target="_blank" rel="noopener noreferrer">
+                    <a className='f6 grow no-underline br-pill ba bw1 ph3 pv2 mb2 dib dark-green' href={link.JS_JSON} target="_blank" rel="noopener noreferrer">
                         JS JSON
                     </a>
-                    <a className='f6 grow no-underline br-pill ba bw1 ph3 pv2 mb2 dib dark-green' href={JS_WEBAPI} target="_blank" rel="noopener noreferrer">
+                    <a className='f6 grow no-underline br-pill ba bw1 ph3 pv2 mb2 dib dark-green' href={link.JS_WEBAPI} target="_blank" rel="noopener noreferrer">
                         JS WEB API
                     </a>
-                    <a className='f6 grow no-underline br-pill ba bw1 ph3 pv2 mb2 dib dark-green' href={JS_JQUERY} target="_blank" rel="noopener noreferrer">
+                    <a className='f6 grow no-underline br-pill ba bw1 ph3 pv2 mb2 dib dark-green' href={link.JS_JQUERY} target="_blank" rel="noopener noreferrer">
                         JS vs jQuery
                     </a>
-                    <a className='f6 grow no-underline br-pill ba bw1 ph3 pv2 mb2 dib dark-green' href={JS_EXAMPLE} target="_blank" rel="noopener noreferrer">
+                    <a className='f6 grow no-underline br-pill ba bw1 ph3 pv2 mb2 dib dark-green' href={link.JS_EXAMPLE} target="_blank" rel="noopener noreferrer">
                         JS Example
                     </a>
                 </div>
                 <div className='pt4 JS-btn'>
-                    <a className='f6 grow no-underline br-pill ba bw1 ph3 pv2 mb2 dib dark-green' href={JS_ChEAT_SHEET} target="_blank" rel="noopener noreferrer">
+                    <a className='f6 grow no-underline br-pill ba bw1 ph3 pv2 mb2 dib dark-green' href={link.JS_ChEAT_SHEET} target="_blank" rel="noopener noreferrer">
                         JavaScript Cheat Sheet
                     </a>
-                    <a className='f6 grow no-underline br-pill ba bw1 ph3 pv2 mb2 dib dark-green' href={JS_QUIZE} target="_blank" rel="noopener noreferrer">
+                    <a className='f6 grow no-underline br-pill ba bw1 ph3 pv2 mb2 dib dark-green' href={link.JS_QUIZE} target="_blank" rel="noopener noreferrer">
                         JS Quiz
                     </a>
                 </div>
@@ -231,7 +199,7 @@ const resJavascript = () => {
                     </p>
                 </div>
                 <div>
-                    <a className='f6 grow no-underline br-pill ba bw1 ph3 pv2 mb2 dib dark-green' href={R_A_V} target="_blank" rel="noopener noreferrer">
+                    <a className='f6 grow no-underline br-pill ba bw1 ph3 pv2 mb2 dib dark-green' href={link.R_A_V} target="_blank" rel="noopener noreferrer">
                         Learn More About Comparison
                     </a>
                 </div>
@@ -239,7 +207,7 @@ const resJavascript = () => {
                     <h3>REACT</h3>
                     <h5>What is react?</h5>
                     <p>
-                        <a href={REACT} target="_blank" rel="noopener noreferrer">React</a> is a JavaScript library for building user interfaces.
+                        <a href={link.REACT} target="_blank" rel="noopener noreferrer">React</a> is a JavaScript library for building user interfaces.
                     </p>
                     <ul>
                         <li><strong>Declarative: </strong>
@@ -253,7 +221,7 @@ const resJavascript = () => {
                         <li><strong>Learn Once, Write Anywhere: </strong>
                             We don’t make assumptions about the rest of your technology stack, so you can develop new features in React without rewriting existing code.<br />
                             React can also render on the server using Node and power mobile apps using 
-                            <a href={REACT_NATIVE} target="_blank" rel="noopener noreferrer"> React Native</a>.
+                            <a href={link.REACT_NATIVE} target="_blank" rel="noopener noreferrer"> React Native</a>.
                         </li>
                     </ul>
                 </div>
@@ -261,13 +229,13 @@ const resJavascript = () => {
                     <h3>References</h3>
                 </div>
                 <div>
-                    <a className='f6 grow no-underline br-pill ba bw1 ph3 pv2 mb2 dib dark-green' href={REACT} target="_blank" rel="noopener noreferrer">
+                    <a className='f6 grow no-underline br-pill ba bw1 ph3 pv2 mb2 dib dark-green' href={link.REACT} target="_blank" rel="noopener noreferrer">
                         ReactJS.org
                     </a>
-                    <a className='f6 grow no-underline br-pill ba bw1 ph3 pv2 mb2 dib dark-green' href={REACT_NATIVE} target="_blank" rel="noopener noreferrer">
+                    <a className='f6 grow no-underline br-pill ba bw1 ph3 pv2 mb2 dib dark-green' href={link.REACT_NATIVE} target="_blank" rel="noopener noreferrer">
                         ReactNative.dev
                     </a>
-                    <a className='f6 grow no-underline br-pill ba bw1 ph3 pv2 mb2 dib dark-green' href={REACT_MDL} target="_blank" rel="noopener noreferrer">
+                    <a className='f6 grow no-underline br-pill ba bw1 ph3 pv2 mb2 dib dark-green' href={link.REACT_MDL} target="_blank" rel="noopener noreferrer">
                         ReactMDL
                     </a>
                 </div>
@@ -278,7 +246,7 @@ const resJavascript = () => {
                 </div>
             </section>
             <div className='pt4'>
-                <a className='f6 grow no-underline br-pill ba bw1 ph3 pv2 mb2 dib dark-red' href={JS_ChEAT_SHEET} target="_blank" rel="noopener noreferrer">
+                <a className='f6 grow no-underline br-pill ba bw1 ph3 pv2 mb2 dib dark-red' href={link.JS_ChEAT_SHEET} target="_blank" rel="noopener noreferrer">
                     JavaScript Cheat Sheet
                 </a>
             </div>

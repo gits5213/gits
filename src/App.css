@@ -22,6 +22,11 @@ background: linear-gradient(to right, #FFE000, #799F0C, #00416A); /* W3C, IE 10+
 a {
   text-decoration: none;
 }
+
+hr {
+  padding-top: 20px;
+  padding-bottom: 20px;
+}
 .container {
   display: flexbox;
   align-items: center;

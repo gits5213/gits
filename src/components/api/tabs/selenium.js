@@ -1,13 +1,7 @@
 import React from 'react';
+import identifier from '../../../utilities/elRef';
 import link from '../../../utilities/links.json';
-
 import GoogleAd from '../../GoogleAd';
-const approch_1 = "//div[@id='main']/table[1]/tbody/tr[1]/th[1]";
-const approach_2 = "//*[@id='main']/table[1]/tbody";
-const approach_3_1 = "//*[@id='username_123′]";
-const approach_3_2 = "//*[contains(@id,'username')]";
-const approach_3_3 = "//*[starts-with(@id,'user')]′] ";
-
 
 const selenium = () => {
     return(
@@ -146,7 +140,7 @@ const selenium = () => {
               </li>
             </ol>
             <ol>
-              <h5><u>CheckBox & Radio Button Operations</u></h5>
+              <h5><u>CheckBox {'&'} Radio Button Operations</u></h5>
               <li>
                 <strong>By ID</strong>
               </li>
@@ -161,7 +155,7 @@ const selenium = () => {
               </li>
             </ol>
             <ol>
-              <h5><u>DropDown & Multiple Select Operations | You can choose it by ID, Name, CSS & Xpath, etc.</u></h5>
+              <h5><u>DropDown {'&'} Multiple Select Operations | You can choose it by ID, Name, CSS {'&'} Xpath, etc.</u></h5>
               <li>
                 <strong>org.openqa.selenium.support.ui.Select</strong> package and to use it we need to create a new Select Object of class Select.
               </li>
@@ -213,14 +207,19 @@ const selenium = () => {
             <div>
               <pre className='pre-code'>
                   <code>
-                    {approch_1}
+                    {identifier.basic_xpath_5} <br />
+                    {identifier.basic_xpath_6}
                   </code>
               </pre>
             </div>        
             <p><strong>Approach #2:</strong> The first approach is best suitable for the table which doesn’t change its dimensions and always remains the same. Above approach will not be a perfect solution for dynamically changing web tables.</p>
               <pre className='pre-code'>
                 <code>
-                  {approach_2}
+                  {identifier.contains}
+                  {identifier.contains_1}
+                  {identifier.contains_2}
+                  {identifier.contains_3}
+                  {identifier.contains_4}
                 </code>
               </pre>
             <p>
@@ -234,22 +233,171 @@ const selenium = () => {
             <div>
               <pre className='pre-code'>
                 <code>
-                  {approach_3_1} <br />
-                  {approach_3_2} <br />
-                  {approach_3_3}
+                  {identifier.basic_xpath_1} <br />
+                  {identifier.basic_xpath_3} <br />
+                  {identifier.basic_xpath_4}
                 </code>
               </pre>
             </div>
+            <hr />
+            <div>
+              <h3 className='tc'>List of XPath can be use</h3>
+            </div>
+            <div>
+              <h5>Basic XPath</h5>
+              <pre className='pre-code'>
+                  <code>
+                    {identifier.basic_xpath_1} <br />
+                    {identifier.basic_xpath_2} <br />
+                    {identifier.basic_xpath_3} <br />
+                    {identifier.basic_xpath_4}
+                  </code>
+              </pre>
+            </div> 
+            <div>
+              <h5>XPath for Tables</h5>
+              <pre className='pre-code'>
+                  <code>
+                    {identifier.basic_xpath_5} <br />
+                    {identifier.basic_xpath_6}
+                  </code>
+              </pre>
+            </div> 
+            <div>
+              <h5>XPath using Text</h5>
+              <pre className='pre-code'>
+                  <code>
+                    {identifier.text} <br />
+                    {identifier.text_1}
+                  </code>
+              </pre>
+            </div> 
+            <div>
+              <h5>XPath using Index</h5>
+              <pre className='pre-code'>
+                  <code>
+                    {identifier.index}
+                  </code>
+              </pre>
+            </div> 
+            <div>
+              <h5>XPath using AND/OR operator</h5>
+              <pre className='pre-code'>
+                  <code>
+                    {identifier.xpath_and_1} <br />
+                    {identifier.xpath_and_2} <br />
+                    {identifier.xpath_or_1} <br />
+                    {identifier.xpath_or_2}
+                  </code>
+              </pre>
+            </div> 
+            <div>
+              <h5>XPath using Contains Keyword</h5>
+              <pre className='pre-code'>
+                  <code>
+                    {identifier.contains} <br />
+                    {identifier.contains_1} <br />
+                    {identifier.contains_2} <br />
+                    {identifier.contains_3} <br />
+                    {identifier.contains_4}
+                  </code>
+              </pre>
+            </div> 
+            <div>
+              <h5>XPath using Start-with Keyword</h5>
+              <pre className='pre-code'>
+                  <code>
+                    {identifier.start_with} <br />
+                    {identifier.start_with_1} <br />
+                    {identifier.start_with_2}
+                  </code>
+              </pre>
+            </div> 
+            <div>
+              <h5>XPath using Parent-Child</h5>
+              <pre className='pre-code'>
+                  <code>
+                    {identifier.paret_child}
+                  </code>
+              </pre>
+            </div> 
+            <div>
+              <h5>XPath using Following Siblings</h5>
+              <pre className='pre-code'>
+                  <code>
+                    {identifier.following_siblings}
+                  </code>
+              </pre>
+            </div> 
+            <div>
+              <h5>XPath using ANCESTOR</h5>
+              <pre className='pre-code'>
+                  <code>
+                    {identifier.xpath_ancestor_parent} <br />
+                    {identifier.xpath_ancestor_parentNode} <br />
+                    {identifier.xpath_ancestor_child} <br />
+                    {identifier.xpath_ancestor_childNode} <br />
+                    {identifier.xpath_descendant_axis} <br />
+                    {identifier.xpath_descendant_path} <br />
+                    {identifier.ancestor}
+                  </code>
+              </pre>
+            </div> 
+            <div>
+              <h5>XPath using Parent Axis</h5>
+              <pre className='pre-code'>
+                  <code>
+                    {identifier.xpath_parent_axis} <br />
+                    {identifier.xpath_parent_path}
+                  </code>
+              </pre>
+            </div> 
+            <div>
+              <h5>XPath using Following Axis</h5>
+              <pre className='pre-code'>
+                  <code>
+                    {identifier.xpath_following_axis} <br />
+                    {identifier.xpath_following_path}
+                  </code>
+              </pre>
+            </div> 
+            <div>
+              <h5>XPath using Following sibling Axis</h5>
+              <pre className='pre-code'>
+                  <code>
+                    {identifier.xpath_following_sibling_axis} <br />
+                    {identifier.xpath_following_sibling_path}
+                  </code>
+              </pre>
+            </div>
+            <div>
+              <h5>XPath using Preceding Axis</h5>
+              <pre className='pre-code'>
+                  <code>
+                    {identifier.xpath_precending_axis} <br />
+                    {identifier.xpath_precending_path}
+                  </code>
+              </pre>
+            </div>
+            <div className='pt4 links-btn'>
+                <a className='f6 grow no-underline br-pill ba bw1 ph3 pv2 mb2 dib dark-green' href={link.XPATH_LOCATOR_1} target="_blank" rel="noopener noreferrer">
+                  Locator Strategy 1
+                </a>
+                <a className='f6 grow no-underline br-pill ba bw1 ph3 pv2 mb2 dib dark-green' href={link.XPATH_LOCATOR_2} target="_blank" rel="noopener noreferrer">
+                  Locator Strategy 2
+                </a>
+            </div>
+            <hr />
             <ol>
               <h5><strong><u>Class Actions</u></strong></h5>
               <li>
-                <a href='https://www.selenium.dev/selenium/docs/api/java/org/openqa/selenium/interactions/Actions.html#Actions-org.openqa.selenium.interactions.Keyboard-'><strong>Actions(Keyboard keyboard)</strong></a>
+                <a href={link.ACTION_1}><strong>Actions(Keyboard keyboard)</strong></a>
               </li>
               <li>
-              <a href='https://www.selenium.dev/selenium/docs/api/java/org/openqa/selenium/interactions/Actions.html#Actions-org.openqa.selenium.interactions.Keyboard-org.openqa.selenium.interactions.Mouse-'><strong>Actions(Keyboard keyboard, Mouse mouse)</strong></a>
+              <a href={link.ACTION_2}><strong>Actions(Keyboard keyboard, Mouse mouse)</strong></a>
               </li>
               <li>
-              <a href='https://www.selenium.dev/selenium/docs/api/java/org/openqa/selenium/interactions/Actions.html#Actions-org.openqa.selenium.WebDriver-'><strong>Actions(WebDriver driver)</strong></a>
+              <a href={link.ACTION_3}><strong>Actions(WebDriver driver)</strong></a>
               </li>
               <li>
                 <strong>build() : Action</strong> 
@@ -336,8 +484,25 @@ const selenium = () => {
               <li>
                 <strong>tick(Interaction... actions) : Action</strong>
               </li>
-              <hr />
             </ol>
+            <hr /> 
+            <div>
+              <h3 className='tc'>List of CSS can be use</h3>
+            </div>
+            <div>
+              <h5>Basic CSS</h5>
+              <pre className='pre-code'>
+                  <code>
+                    {identifier.basic_css_1} <br />
+                    {identifier.basic_css_2} <br />
+                    {identifier.basic_css_3} <br />
+                    {identifier.basic_css_4} <br />
+                    {identifier.basic_css_5} <br />
+                    {identifier.basic_css_6}
+                  </code>
+              </pre>
+            </div>
+            <hr />
               
               <h5>
                 What are the list of Wait Command in Selenium? example?

@@ -1,12 +1,11 @@
 import React from 'react';
+import link from '../../../utilities/links.json';
 import ManualLogo from '../../../images/tabs/manualLogo.png';
 import DefectBugError from '../../../images/tabs/defectBugError.png';
 import BugLifeCycle from '../../../images/tabs/bugLifeCycle.png'
 import TestPyramid from '../../../images/tabs/testPyramid.png'
 import TestPyramid1 from '../../../images/tabs/testPyramid1.png'
 import GoogleAd from '../../../components/GoogleAd';
-
-const TypesOfSoftwareTesting = 'https://www.softwaretestinghelp.com/types-of-software-testing/';
 
 const resManual = () => {
     return(
@@ -757,7 +756,7 @@ const resManual = () => {
 
             <hr />
             <div className='pt4 diffTest-btn'>
-                <a className='f6 grow no-underline br-pill ba bw1 ph3 pv2 mb2 dib dark-green' href={TypesOfSoftwareTesting} target="_blank" rel="noopener noreferrer">
+                <a className='f6 grow no-underline br-pill ba bw1 ph3 pv2 mb2 dib dark-green' href={link.TypesOfSoftwareTesting} target="_blank" rel="noopener noreferrer">
                     Different Types Of Software Testing
                 </a>
             </div>

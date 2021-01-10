@@ -56,6 +56,11 @@
     "Selenium":"............................................",
     "SELENIUM_GITHUB":"https://github.com/SeleniumHQ",
     "SELENIUM_WEBSITE":"https://www.selenium.dev/",
+    "XPATH_LOCATOR_1":"https://www.lambdatest.com/blog/complete-guide-for-using-xpath-in-selenium-with-examples/",
+    "XPATH_LOCATOR_2":"https://www.softwaretestinghelp.com/xpath-functions/",
+    "ACTION_1":"https://www.selenium.dev/selenium/docs/api/java/org/openqa/selenium/interactions/Actions.html#Actions-org.openqa.selenium.interactions.Keyboard-",
+    "ACTION_2":"https://www.selenium.dev/selenium/docs/api/java/org/openqa/selenium/interactions/Actions.html#Actions-org.openqa.selenium.interactions.Keyboard-org.openqa.selenium.interactions.Mouse-",
+    "ACTION_3":"https://www.selenium.dev/selenium/docs/api/java/org/openqa/selenium/interactions/Actions.html#Actions-org.openqa.selenium.WebDriver-",
 
     "SuperTest":"............................................",
     "SUPERTEST_GITHUB":"https://github.com/visionmedia/supertest",
@@ -159,7 +164,77 @@
 
     "React":"................",
     "REACT_ORG": "https://gist.github.com/riipandi/3097780",
-    "REACT_GITHUB": "https://github.com/reactjs/reactjs.org"
+    "REACT_GITHUB": "https://github.com/reactjs/reactjs.org",
+
+    "Networking":".................",
+    "VPN": "https://upload.wikimedia.org/wikipedia/commons/thumb/e/e8/VPN_overview-en.svg/1200px-VPN_overview-en.svg.png",
+    "IP_ADDRESS": "https://en.wikipedia.org/wiki/IP_address",
+    "IPV4": "https://en.wikipedia.org/wiki/IPv4",
+    "IPV6": "https://en.wikipedia.org/wiki/IPv6",
+    "IPV4_POOL": "https://www.ripe.net/manage-ips-and-asns/ipv4/ipv4-pool",
+    "UNDECLLION": "https://www.edn.com/ipv6-how-many-ip-addresses-can-dance-on-the-head-of-a-pin/",
+    "TWO_PART": "https://www.cisco.com/c/dam/en/us/support/docs/ip/routing-information-protocol-rip/13788-3-00.gif",
+    "SUBNET": "https://en.wikipedia.org/wiki/Subnetwork",
+    "IP_WEBSITE": "https://blog.telegeography.com/how-do-ip-addresses-work",
+    "NUM_AUTHO": "https://www.iana.org/",
+    "HERE": "https://icannwiki.org/Internet_Assigned_Numbers_Authority#IP_Address",
+    "PROXY": "https://en.wikipedia.org/wiki/Proxy_server",
+    "PROXY_LOGO": "https://upload.wikimedia.org/wikipedia/commons/thumb/b/bb/Proxy_concept_en.svg/2560px-Proxy_concept_en.svg.png",
+    "FIND_IP": "https://www.avg.com/en/signal/find-ip-address#:~:text=Open%20the%20Apple%20menu%20and,be%20displayed%20in%20the%20middle",
+
+    "Manual":"............",
+    "TypesOfSoftwareTesting": "https://www.softwaretestinghelp.com/types-of-software-testing/",
+
+    "Linux": "...............",
+    "LINUX_": "https://gist.github.com/riipandi/3097780",
+
+    "Javascript":"....................",
+    "HTML": "https://www.w3schools.com/html/default.asp",
+    "CSS": "https://www.w3schools.com/css/default.asp",
+    "JS_QUIZE": "https://www.w3schools.com/css/default.asp",
+    "WHERETO": "https://www.w3schools.com/js/js_whereto.asp",
+    "JAVA_W3": "https://www.w3schools.com/java/default.asp",
+    "JS_VERSION": "https://www.w3schools.com/js/js_versions.asp",
+    "JS_2009_ES5": "https://www.w3schools.com/js/js_es5.asp",
+    "JS_2015_ES6": "https://www.w3schools.com/js/js_es6.asp",
+    "JS_2016_ES6": "https://www.w3schools.com/js/js_2016.asp",
+    "JS_2017_ES6": "https://www.w3schools.com/js/js_2017.asp",
+    "JS_JSON": "https://www.w3schools.com/js/js_json.asp",
+    "JS_FORM": "https://www.w3schools.com/js/js_validation.asp",
+    "JS_OBJECTS": "https://www.w3schools.com/js/js_object_definition.asp",
+    "JS_FUNCTION": "https://www.w3schools.com/js/js_function_definition.asp",
+    "JS_CLASSES": "https://www.w3schools.com/js/js_class_intro.asp",
+    "JS_ASYNC": "https://www.w3schools.com/js/js_callback.asp",
+    "JS_HTML_DOM": "https://www.w3schools.com/js/js_htmldom.asp",
+    "JS_BROWSER_DOM": "https://www.w3schools.com/js/js_window.asp",
+    "JS_AJAX": "https://www.w3schools.com/js/js_ajax_intro.asp",
+    "JS_WEBAPI": "https://www.w3schools.com/js/js_api_intro.asp",
+    "JS_JQUERY": "https://www.w3schools.com/js/js_jquery_selectors.asp",
+    "JS_EXAMPLE": "https://www.w3schools.com/js/js_examples.asp",
+    "REACT": "https://reactjs.org/",
+    "R_A_V": "https://www.educative.io/blog/react-angular-vue-comparison?aid=5082902844932096&utm_source=google&utm_medium=cpc&utm_campaign=blog-dynamic&gclid=CjwKCAiA25v_BRBNEiwAZb4-ZXbgm4wYodvGTRWMG-iq13kw0n_TuTEF6IwTIYHdL4q6GqyZSeFwEBoCu6IQAvD_BwE",
+    "REACT_NATIVE": "https://reactnative.dev/",
+    "REACT_MDL": "https://tleunen.github.io/react-mdl/components/",
+    "JS_ChEAT_SHEET": "https://htmlcheatsheet.com/js/",
+    "JAVASCRIPT_TOPICS": "https://github.com/topics/javascript",
+    "JAVASCRIPT_STYLEGUIDE": "https://github.com/airbnb/javascript",
+
+    "Java":"...............",
+    "ORACLE": "https://www.oracle.com/java/technologies/java-se-glance.html",
+    "JAVA_TOPICS": "https://github.com/topics/java",
+    "JAVA_CODE_STYLEGUIDE": "https://google.github.io/styleguide/javaguide.html",
+
+
+
+
+    "Links": "........Website.......",
+    "SWAGGER": "https://swagger.io/",
+    "JIRA_CLOUD": "https://id.atlassian.com/login?",
+
+    "GitHub": "........GitHub.......",
+    "Download": "........Download......."
+
+
 
 
 }   

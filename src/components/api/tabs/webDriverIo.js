@@ -3,7 +3,6 @@ import link from '../../../utilities/links.json';
 import GoogleAd from '../../GoogleAd';
 import webDriverIOLogo from '../../../images/tabs/webDriverIOLogo.png'; 
 
-
 const resWebIo = () => {
     return(
         <div className='page-tab-body'>

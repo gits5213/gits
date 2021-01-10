@@ -1,15 +1,11 @@
 import React from 'react';
+import link from '../../../utilities/links.json';
 import BackToTop from '../../backToTop';
 import JavaMac from './resJava/java_mac';
 import JavaWindow from './resJava/java_window';
 import Maven from './resJava/maven';
 import GoogleAd from '../../../components/GoogleAd';
 import java_logo from '../../../images/tabs/javaLogo.png';
-
-const ORACLE = 'https://www.oracle.com/java/technologies/java-se-glance.html';
-const GITHUB_ICON ='http://www.protractortest.org/img/GitHub-Mark-Light-32px.png';
-const JAVA_TOPICS = 'https://github.com/topics/java';
-const JAVA_CODE_STYLEGUIDE = 'https://google.github.io/styleguide/javaguide.html';
 
 const resJava = () => {
     return(
@@ -21,12 +17,12 @@ const resJava = () => {
                 <img className='pr4 pt4 pb4 js-logo' src={java_logo} alt='js Logo'/>
             </div>
             <div className='tc pt3'>
-              <a class='f6 grow no-underline br-pill ph3 pv2 mb2 dib white bg-red' href={JAVA_TOPICS} target="_blank" rel="noopener noreferrer">
-                  <img className='pr2' src={GITHUB_ICON} alt='github log' /> 
+              <a class='f6 grow no-underline br-pill ph3 pv2 mb2 dib white bg-red' href={link.JAVA_TOPICS} target="_blank" rel="noopener noreferrer">
+                  <img className='pr2' src={link.GITHUB_ICON} alt='github log' /> 
                   Java Topics on GitHub                 
               </a>
-              <a class='f6 grow no-underline br-pill ph3 pv2 mb2 dib white bg-green' href={JAVA_CODE_STYLEGUIDE} target="_blank" rel="noopener noreferrer">
-                  <img className='pr2' src={GITHUB_ICON} alt='github log' /> 
+              <a class='f6 grow no-underline br-pill ph3 pv2 mb2 dib white bg-green' href={link.JAVA_CODE_STYLEGUIDE} target="_blank" rel="noopener noreferrer">
+                  <img className='pr2' src={link.GITHUB_ICON} alt='github log' /> 
                    Google Java Style Guide              
               </a>
           </div>
@@ -91,7 +87,7 @@ const resJava = () => {
             </div>
             <div className='pt3'>
                 <p>
-                    If you do not have Java installed on your computer, you can download it for free at <a href={ORACLE} target="_blank" rel="noopener noreferrer"> oracle.com</a>.
+                    If you do not have Java installed on your computer, you can download it for free at <a href={link.ORACLE} target="_blank" rel="noopener noreferrer"> oracle.com</a>.
                 </p>
                 <p>
                     <strong>Note:</strong> In this tutorial, we will write Java code in a text editor. However, it is possible to write Java in an Integrated Development Environment, such as IntelliJ IDEA, Netbeans or Eclipse, which are particularly useful when managing larger collections of Java files.
