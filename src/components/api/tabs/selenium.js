@@ -5,7 +5,7 @@ import GoogleAd from '../../GoogleAd';
 
 const selenium = () => {
     return(
-        <div className = 'page-tab-body'>
+        <main className = 'page-tab-body'>
           <h3>Selenium API</h3>
           <section class='hero homepage'>
               <h1>Selenium automates browsers. That's it!</h1>
@@ -834,7 +834,7 @@ const selenium = () => {
               </ul>
             </div>
             <GoogleAd slot="1541085932" classNames="page-right-side" />
-        </div>
+        </main>
     );
   }   
 export default selenium;

@@ -6,6 +6,10 @@ import CardList from '../components/cardList';
 import {cardDetails}from '../components/cardDetails';
 import Footer from '../components/footer';
 
+import classromom from '../images/classroomClass.jpg'
+import online from '../images/onlineClass.jpg'
+
+
 
 const GOTO_MEET = 'https://global.gotomeeting.com/join/115264677';
 const GOOGLE_MEET = 'https://meet.google.com/wco-zfnf-swy';
@@ -14,7 +18,7 @@ const ZOOM_MEET = 'https://us04web.zoom.us/j/76185361138?pwd=QnJybGczamROdVpTVS9
 class Landing extends Component {
     render(){
         return(
-            <div className='landing-body'> 
+            <main className='landing-body'> 
                 <div>
                     <HeaderText />
                 </div>
@@ -49,7 +53,7 @@ class Landing extends Component {
                     </div>
                     <CardList cardDetails= {cardDetails} />
                 </section>
-                <div className='landing-t-image tc'>
+                <section className='landing-t-image tc'>
                     <h2 id='aboutUs-header'> 
                         WHO WE ARE
                         <p>
@@ -77,12 +81,12 @@ class Landing extends Component {
                         </Cell>
                         <Cell className='pl4 border-3 tl' col={4}>
                             <div className='pt4 scrummountain-btn'>
-                                <button className='b f6 link dim br-pill ph3 pv2 mb2 dib white bg-dark-red'>
+                                <button className='b f6 link dim br-pill ph3 pv2 mb2 dib white bg-dark-red' href='#classroomClass'>
                                     In-Person Training
                                 </button>
                             </div>
                             <div className='pt4 scrummountain-btn'>
-                                <button className='b f6 link dim br-pill ph3 pv2 mb2 dib white bg-dark-red'>
+                                <button className='b f6 link dim br-pill ph3 pv2 mb2 dib white bg-dark-red' href='#onlineClass'>
                                     Online Training
                                 </button>
                             </div>
@@ -98,14 +102,20 @@ class Landing extends Component {
                             </div>
                         </Cell>
                     </Grid>
-                </div>
-                <div className='pt4'>
+                </section>
+                <section>
+                    {/* pt5 tc ph3 mt4 */}
+                    <div className='classroom-img' id='classroomClass'>
+                        <img alt='cover' className='img-one' src={classromom}/>
+                    </div>
+                    <div className='classroom-img_' id='onlineClass'>
+                        <img alt='cover' className='img-two' src={online}/>
+                    </div>
+                </section>
+                <section className='pt4'>
                     <Footer />
-                </div>
-            </div>
-
-            
-
+                </section>
+            </main>
         )
     } 
 }

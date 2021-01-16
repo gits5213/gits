@@ -7,12 +7,12 @@ import uiAutoTest from '../images/uiAutoTest.png';
 import apiManualTest from '../images/apiManualTest.png';
 import apiAutoTest from '../images/apiAutoTest.png';
 
-const COURSES = '/ittciwebsite/courses/';
+const COURSES = '/courses';
 
 const cardList = ({cardDetails}) => {
     return(
         <div className='tc' >
-            <Card img={<a href={COURSES} target="_blank" rel="noopener noreferrer"><img alt='codeForkids' src={codeForkids} width='200' height='200'/></a>} id={cardDetails[4].id} courseName={cardDetails[4].courseName} techStack={cardDetails[4].techStack}/>
+            <Card img={<a href={COURSES} target="_blank" rel="noopener noreferrer" onclick="window.open(‘/courses’, ‘_self’);"><img alt='codeForkids' src={codeForkids} width='200' height='200'/></a>} id={cardDetails[4].id} courseName={cardDetails[4].courseName} techStack={cardDetails[4].techStack}/>
             <Card img={<a href={COURSES} target="_blank" rel="noopener noreferrer"><img alt='webDev' src={webDev} width='200' height='200'/></a>} id={cardDetails[5].id} courseName={cardDetails[5].courseName} techStack={cardDetails[5].techStack}/>
             <Card img={<a href={COURSES} target="_blank" rel="noopener noreferrer"><img alt='uiManualTest' src={uiManualTest} width='200' height='200'/></a>} id={cardDetails[0].id} courseName={cardDetails[0].courseName} techStack={cardDetails[0].techStack}/>
             <Card img={<a href={COURSES} target="_blank" rel="noopener noreferrer"><img alt='apiManualTest' src={apiManualTest} width='200' height='200'/></a>} id={cardDetails[1].id} courseName={cardDetails[1].courseName} techStack={cardDetails[1].techStack}/>
