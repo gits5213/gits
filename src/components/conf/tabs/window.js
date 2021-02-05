@@ -19,13 +19,20 @@ const window = () => {
                         <a href={link.screencastify}><li><strong>Screencastify (Chrome Plugin) </strong></li></a>
                         <p>Free: 5 minute limit per recording | Ultimate($29): Unlimited recording </p>
                     </ul>
-                    <div>
+                </div>
+                <div>
                     <h4>Windows Screen Recorder:</h4>
                     <ul>
                         <a href={link.screensy}><li><strong>Screensy (Chrome Plugin) </strong></li></a>
                         <p>Free: Unlimited recording </p>
                     </ul>
                 </div>
+                <div>
+                    <h4>Download Software:</h4>
+                    <ul>
+                        <a href={link.DownloadSoftware}><li><strong>Screensy (Chrome Plugin) </strong></li></a>
+                        <p>Free: Unlimited Software Downloading </p>
+                    </ul>
                 </div>
             </section>
             <section>
