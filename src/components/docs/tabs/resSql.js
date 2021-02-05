@@ -50,9 +50,9 @@ const resSql = () => {
             </div>
             <hr />
             <Grid className="border">
-                <Cell className='pl4 tr' col={6}>
+                <Cell className='pl4' col={6}>
                     <div>
-                        <h3 className='tc'> Postgres App for MAC</h3>
+                        <h3 className=''> Postgres App for MAC</h3>
                         <h5> Step 1: Download & Install POSTGRESQL</h5>
                         <ul>
                             <li>Navigate to the <a href={link.POSTGRESAPP_MAC} target="_blank" rel="noopener noreferrer">URL</a></li>
@@ -112,11 +112,10 @@ const resSql = () => {
                             <li>Start writing query <code className='tag-Color'>Select * FROM actor</code>; and click on run button</li>
                         </ul>
                     </div>
-
                 </Cell>
-                <Cell className='pl4 tr' col={6}>
+                <Cell className='pl4' col={6}>
                     <div>
-                        <h3 className='tc'> Postgres App for Windows</h3>
+                        <h3 className=''> Postgres App for Windows</h3>
                         <h5> Step 1: Download & Install POSTGRESQL</h5>
                         <ul>
                             <li>Navigate to the <a href={link.POSTGRESAPP_WINDOWS} target="_blank" rel="noopener noreferrer">URL</a></li>
@@ -173,7 +172,6 @@ const resSql = () => {
                             <li>Start writing query <code className='tag-Color'>Select * FROM actor</code>; and click on run button</li>
                         </ul>
                     </div>
-
                 </Cell>
             </Grid>
             <hr />
