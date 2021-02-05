@@ -28,9 +28,9 @@ const window = () => {
                     </ul>
                 </div>
                 <div>
-                    <h4>Download Software:</h4>
+                    <h4>Download Unlimited Software:</h4>
                     <ul>
-                        <a href={link.DownloadSoftware}><li><strong>Screensy (Chrome Plugin) </strong></li></a>
+                        <a href={link.DownloadSoftware}><li><strong>Download Software </strong></li></a>
                         <p>Free: Unlimited Software Downloading </p>
                     </ul>
                 </div>
