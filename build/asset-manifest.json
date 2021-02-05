@@ -1,15 +1,15 @@
 {
   "files": {
     "main.css": "/ittciwebsite/static/css/main.470ea0d7.chunk.css",
-    "main.js": "/ittciwebsite/static/js/main.a514d6dd.chunk.js",
-    "main.js.map": "/ittciwebsite/static/js/main.a514d6dd.chunk.js.map",
+    "main.js": "/ittciwebsite/static/js/main.2750a3ec.chunk.js",
+    "main.js.map": "/ittciwebsite/static/js/main.2750a3ec.chunk.js.map",
     "runtime-main.js": "/ittciwebsite/static/js/runtime-main.912ab8f2.js",
     "runtime-main.js.map": "/ittciwebsite/static/js/runtime-main.912ab8f2.js.map",
-    "static/css/2.42449d2c.chunk.css": "/ittciwebsite/static/css/2.42449d2c.chunk.css",
+    "static/css/2.bb0bb532.chunk.css": "/ittciwebsite/static/css/2.bb0bb532.chunk.css",
     "static/js/2.ce2f8b87.chunk.js": "/ittciwebsite/static/js/2.ce2f8b87.chunk.js",
     "static/js/2.ce2f8b87.chunk.js.map": "/ittciwebsite/static/js/2.ce2f8b87.chunk.js.map",
     "index.html": "/ittciwebsite/index.html",
-    "static/css/2.42449d2c.chunk.css.map": "/ittciwebsite/static/css/2.42449d2c.chunk.css.map",
+    "static/css/2.bb0bb532.chunk.css.map": "/ittciwebsite/static/css/2.bb0bb532.chunk.css.map",
     "static/css/main.470ea0d7.chunk.css.map": "/ittciwebsite/static/css/main.470ea0d7.chunk.css.map",
     "static/js/2.ce2f8b87.chunk.js.LICENSE.txt": "/ittciwebsite/static/js/2.ce2f8b87.chunk.js.LICENSE.txt",
     "static/media/about-pic.35c9381f.png": "/ittciwebsite/static/media/about-pic.35c9381f.png",
@@ -19,9 +19,10 @@
     "static/media/appiumLogo.83b8bada.png": "/ittciwebsite/static/media/appiumLogo.83b8bada.png",
     "static/media/basicLogo.39605889.png": "/ittciwebsite/static/media/basicLogo.39605889.png",
     "static/media/bugLifeCycle.8ba6cc50.png": "/ittciwebsite/static/media/bugLifeCycle.8ba6cc50.png",
+    "static/media/classroomClass.7e41b18c.jpg": "/ittciwebsite/static/media/classroomClass.7e41b18c.jpg",
     "static/media/code4KidsProgram.de18d3e1.png": "/ittciwebsite/static/media/code4KidsProgram.de18d3e1.png",
     "static/media/codeForKids.d0058eb3.png": "/ittciwebsite/static/media/codeForKids.d0058eb3.png",
-    "static/media/courseOutline.7c67271b.png": "/ittciwebsite/static/media/courseOutline.7c67271b.png",
+    "static/media/courseOutline.6d6b0af8.png": "/ittciwebsite/static/media/courseOutline.6d6b0af8.png",
     "static/media/cssImage.ad63ea32.jpeg": "/ittciwebsite/static/media/cssImage.ad63ea32.jpeg",
     "static/media/cssLogo.bbf01949.png": "/ittciwebsite/static/media/cssLogo.bbf01949.png",
     "static/media/defectBugError.0946ec0d.png": "/ittciwebsite/static/media/defectBugError.0946ec0d.png",
@@ -38,6 +39,7 @@
     "static/media/linuxLogo.7683b43e.png": "/ittciwebsite/static/media/linuxLogo.7683b43e.png",
     "static/media/macLogo.dd8e017f.png": "/ittciwebsite/static/media/macLogo.dd8e017f.png",
     "static/media/manualLogo.1c0c04d3.png": "/ittciwebsite/static/media/manualLogo.1c0c04d3.png",
+    "static/media/onlineClass.7cb9969d.jpg": "/ittciwebsite/static/media/onlineClass.7cb9969d.jpg",
     "static/media/protractorLog.9f37af94.png": "/ittciwebsite/static/media/protractorLog.9f37af94.png",
     "static/media/reactLogo.6b4e4275.png": "/ittciwebsite/static/media/reactLogo.6b4e4275.png",
     "static/media/restassuredLogo.f872e6c7.png": "/ittciwebsite/static/media/restassuredLogo.f872e6c7.png",
@@ -55,9 +57,9 @@
   },
   "entrypoints": [
     "static/js/runtime-main.912ab8f2.js",
-    "static/css/2.42449d2c.chunk.css",
+    "static/css/2.bb0bb532.chunk.css",
     "static/js/2.ce2f8b87.chunk.js",
     "static/css/main.470ea0d7.chunk.css",
-    "static/js/main.a514d6dd.chunk.js"
+    "static/js/main.2750a3ec.chunk.js"
   ]
 }

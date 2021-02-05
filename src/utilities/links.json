@@ -224,8 +224,9 @@
     "JAVA_TOPICS": "https://github.com/topics/java",
     "JAVA_CODE_STYLEGUIDE": "https://google.github.io/styleguide/javaguide.html",
 
-
-
+    "Window": "..............",
+    "screencastify": "https://www.screencastify.com/",
+    "screensy": "https://chrome.google.com/webstore/detail/screensy-screen-recording/jehgkfidilkpfbodnbjddbnmjnibhccn?hl=en-US",
 
     "Links": "........Website.......",
     "SWAGGER": "https://swagger.io/",
@@ -233,8 +234,5 @@
 
     "GitHub": "........GitHub.......",
     "Download": "........Download......."
-
-
-
 
 }   

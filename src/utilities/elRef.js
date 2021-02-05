@@ -59,6 +59,28 @@ export default {
     basic_css_3: "tagname#id",
     basic_css_4: "input#id",
     basic_css_5: ".class",
-    basic_css_6: "tag.class"
+    basic_css_6: "tag.class",
+    //Next sibling
+    css_1:"#username + input",
+    css_2:"input[name='username']", //"div[id='vendorId'][comp-id='305']"
+    css_3:"input[name='login'][type='submit']",
+    //Specific Match
+    css_4:"#recordlist li::nth-of-type(4)",
+    css_5:"#recordlist *::nth-child(4)",
+    //sub-string matches
+    css_6:"a[id^='id_prefix_']",
+    css_7:"a[id$='_id_sufix']",
+    css_8:"a[id*='id_pattern']",
+    //Inner Text
+    css_9:"div:contains('^lambdatest$')",
+    cssContainingText: ('tbody tr','my text'),
+    //Match
+    css_10: "nput#Passwd[name^=’Pass’]",
+    css_11:"input#Passwd[name$=’wd’]",
+    css_12:"input#Passwd[name$=’wd’]", //"div#vendorId[comp-id='305']"
+    //Attribute
+    css_13:"div[data-testid='input-items']",
+    css_14:"div[data-testid='input-items'] div input",
+    css_15:"div[data-testid='input-items'] button:nth-child(1)",
 
 }
