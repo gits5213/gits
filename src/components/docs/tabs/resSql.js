@@ -2,6 +2,7 @@ import React from 'react';
 import link from '../../../utilities/links.json';
 import GoogleAd from '../../../components/GoogleAd';
 import SQL_LOGO from '../../../images/tabs/sqlLogo.png';
+import { Grid, Cell } from 'react-mdl';
 
 const resSql = () => {
     return(
@@ -48,43 +49,133 @@ const resSql = () => {
                 </a>
             </div>
             <hr />
-            <div>
-                <h3> Postgres App</h3>
-                <ul>
-                    <li>Navigate to the <a href={link.POSTGRESAPP} target="_blank" rel="noopener noreferrer">URL</a></li>
-                    <li>Click on the <strong>Download</strong> Tab and download Latest Release </li>
-                    <li>Clik on the <strong>Introduction</strong> Tab and follow the Instruction</li>
-                </ul>
-            </div>
-            <div>
-                <h3> pgAdmin</h3>
-                <ul>
-                    <li>Navigate to the <a href={link.PGADMIN} target="_blank" rel="noopener noreferrer">URL</a></li>
-                    <li>Click on the <strong>Download</strong> and Select your Operating System </li>
-                    <li>Download <strong>pgAdmin 4</strong></li>
-                </ul>
-            </div>
-            <div>
-                <h3>DVDRental Postgres Sample DB Download</h3>
-                <ul>
-                    <li>Navigate to the <a href={link.DVDRENTAL} target="_blank" rel="noopener noreferrer">URL</a></li>
-                    <li>Click on the <strong>dvdrental.tar</strong> file </li>
-                    <li>Click on the <strong>Download</strong></li>
-                </ul>
-            </div>
-            <div>
-                <h3> DVDRental add into pgAdmin 4 </h3>
-                <ul>
-                    <li>Open up pgAdmin 4 and Connected with your password</li>
-                    <li>Right click on <strong>Databases</strong></li>
-                    <li>Click on <strong>Create</strong>  and then click on <strong>Databases</strong></li>
-                    <li>Enter Database name: <strong>DVDRental</strong> and click on <strong>Save</strong></li>
-                    <li>Rright click on DVDRental and click on <strong>Restore</strong> add <strong>dvdrental path</strong> and then click on <strong>Restore</strong></li>
-                    <li>Right click on DVDRental and click on <strong>Refresh</strong>and Validate Under Schemas there is a 15 tables</li>
-                    <li>Click on the Query Tools Icon (on the same panel top database icon)</li>
-                    <li>Start writing query <code className='tag-Color'>Select * FROM actor</code>; and click on run button</li>
-                </ul>
-            </div>
+            <Grid className="border">
+                <Cell className='pl4 tr' col={6}>
+                    <div>
+                        <h3 className='tc'> Postgres App for MAC</h3>
+                        <h5> Step 1: Download & Install POSTGRESQL</h5>
+                        <ul>
+                            <li>Navigate to the <a href={link.POSTGRESAPP_MAC} target="_blank" rel="noopener noreferrer">URL</a></li>
+                            <li>Click on the <strong>Download</strong> Based on the operating system</li>
+                            <li>Double clik on the <strong>Executable File</strong></li>
+                            <li>Warning: is an app downloaded from the internet! Are you sure you want to open it?</li>
+                            <li>Solution: Mac {'>'} System Preference {'>'} Privacy {'>'} General {'>'} Allow</li>
+                            <li>Click Open</li>
+                            <li>
+                                Next {'>'} Next {'>'} Select All {'>'} Next {'>'} <br />
+                                Default Directory {'>'} Create "password" (all lowercase) {'>'} <br />
+                                PORT (remember) {'>'} Next {'>'} By Default {'>'} <br />
+                                Next {'>'} Next {'>'} Finish.
+                            </li>
+                        </ul>
+                    </div>
+                    <div>
+                        <h5> Step 2: Download PGADMIN</h5>
+                        <ul>
+                            <li>Navigate to the <a href={link.PGADMIN_MAC} target="_blank" rel="noopener noreferrer">URL</a></li>
+                            <li>Click on the <strong>Latest Release link</strong></li>
+                            <li>Download <strong>.exe file</strong></li>
+                            <li>
+                                Double click on the Executable File <br />
+                                Next {'>'} Accept & Next {'>'} Next {'>'} Next {'>'} <br />
+                                Install {'>'} Uncheck box {'>'} Finish <br />
+                            </li>
+                        </ul>
+                    </div>
+                    <div>
+                        <h5>Step 3: Download DVDRental Postgres Sample DB Download</h5>
+                        <ul>
+                            <li>Navigate to the <a href={link.DVDRENTAL} target="_blank" rel="noopener noreferrer">URL</a></li>
+                            <li>Click on the <strong>dvdrental.tar</strong> file </li>
+                            <li>Click on the <strong>Download</strong></li>
+                        </ul>
+                    </div>
+                    <div>
+                        <h5> Step4: DVDRental add into pgAdmin 4 </h5>
+                        <ul>
+                            <li>Restart the Computer</li>
+                            <li>Search for "pgAdmin app"</li>
+                            <li>Open up pgAdmin 4 and set the same password </li>
+                            <li>Double click on the PostgreSQL {'>'} Enter your password & Save</li>
+                            <li>Right click on <strong>Databases</strong></li>
+                            <li>Click on <strong>Create</strong>  and then click on <strong>Databases</strong></li>
+                            <li>Enter Database name: <strong>DVDRental</strong> and click on <strong>Save</strong></li>
+                            <li>Rright click on DVDRental and click on <strong>Restore</strong> add <strong>dvdrental path</strong> 
+                                Select "Restore options" Tab {'>'} Select <br />
+                                Pre-data (Yes) <br />
+                                Data (Yes) <br />
+                                Post-data (Yes) <br />
+                                Click on <strong>Restore</strong>
+                            </li>
+                            <li>Right click on DVDRental and click on <strong>Refresh</strong>and Validate Under Schemas there is a 15 tables</li>
+                            <li>Click on the Query Tools Icon (on the same panel top database icon)</li>
+                            <li>Start writing query <code className='tag-Color'>Select * FROM actor</code>; and click on run button</li>
+                        </ul>
+                    </div>
+
+                </Cell>
+                <Cell className='pl4 tr' col={6}>
+                    <div>
+                        <h3 className='tc'> Postgres App for Windows</h3>
+                        <h5> Step 1: Download & Install POSTGRESQL</h5>
+                        <ul>
+                            <li>Navigate to the <a href={link.POSTGRESAPP_WINDOWS} target="_blank" rel="noopener noreferrer">URL</a></li>
+                            <li>Click on the <strong>Download</strong> Based on the operating system </li>
+                            <li>Double Click <strong>Executable File</strong></li>
+                            <li>
+                                Next {'>'} Next {'>'} Select All {'>'} Next {'>'} <br />
+                                Default Directory {'>'} Create "password" (all lowercase) {'>'} <br />
+                                PORT (remember) {'>'} Next {'>'} By Default {'>'} <br />
+                                Next {'>'} Next {'>'} Finish.
+                            </li>
+                        </ul>
+                    </div>
+                    <div>
+                        <h5> Step 2: Download PGADMIN</h5>
+                        <ul>
+                            <li>Navigate to the <a href={link.PGADMIN_WINDOWS} target="_blank" rel="noopener noreferrer">URL</a></li>
+                            <li>Click on the <strong>Latest Release link</strong></li>
+                            <li>Download <strong>.exe file</strong></li>
+                            <li>
+                                Double click on the Executable File <br />
+                                Next {'>'} Accept & Next {'>'} Next {'>'} Next {'>'} <br />
+                                Install {'>'} Uncheck box {'>'} Finish <br />
+                            </li>
+                        </ul>
+                    </div>
+                    <div>
+                        <h5>Step 3: Download DVDRental Postgres Sample DB Download</h5>
+                        <ul>
+                            <li>Navigate to the <a href={link.DVDRENTAL} target="_blank" rel="noopener noreferrer">URL</a></li>
+                            <li>Click on the <strong>dvdrental.tar</strong> file </li>
+                            <li>Click on the <strong>Download</strong></li>
+                        </ul>
+                    </div>
+                    <div>
+                        <h5> Step4: DVDRental add into pgAdmin 4 </h5>
+                        <ul>
+                            <li>Restart the Computer</li>
+                            <li>Search for "pgAdmin app"</li>
+                            <li>Open up pgAdmin 4 and set the same password </li>
+                            <li>Double click on the PostgreSQL {'>'} Enter your password & Save</li>
+                            <li>Right click on <strong>Databases</strong></li>
+                            <li>Click on <strong>Create</strong>  and then click on <strong>Databases</strong></li>
+                            <li>Enter Database name: <strong>DVDRental</strong> and click on <strong>Save</strong></li>
+                            <li>Rright click on DVDRental and click on <strong>Restore</strong> add <strong>dvdrental path</strong> 
+                                Select "Restore options" Tab {'>'} Select <br />
+                                Pre-data (Yes) <br />
+                                Data (Yes) <br />
+                                Post-data (Yes) <br />
+                                Click on <strong>Restore</strong>
+                            </li>
+                            <li>Right click on DVDRental and click on <strong>Refresh</strong>and Validate Under Schemas there is a 15 tables</li>
+                            <li>Click on the Query Tools Icon (on the same panel top database icon)</li>
+                            <li>Start writing query <code className='tag-Color'>Select * FROM actor</code>; and click on run button</li>
+                        </ul>
+                    </div>
+
+                </Cell>
+            </Grid>
             <hr />
             <div className='pt4 sql-btn'>
                 <a className='f6 grow no-underline br-pill ba bw1 ph3 pv2 mb2 dib dark-green' href={link.SQL_CODEACADEMEY_COMMANDS} target="_blank" rel="noopener noreferrer">

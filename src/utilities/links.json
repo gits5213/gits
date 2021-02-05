@@ -156,8 +156,10 @@
 
     "SQL_HISTORY": "https://en.wikipedia.org/wiki/SQL",
     "SQL_W3SCHOOL": "https://www.w3schools.com/sql/default.asp",
-    "POSTGRESAPP": "https://postgresapp.com/downloads.html",
-    "PGADMIN": "https://www.pgadmin.org/",
+    "POSTGRESAPP_MAC": "https://www.enterprisedb.com/downloads/postgres-postgresql-downloads",
+    "POSTGRESAPP_WINDOWS": "https://www.enterprisedb.com/downloads/postgres-postgresql-downloads",
+    "PGADMIN_MAC": "https://www.pgadmin.org/download/pgadmin-4-macos/",
+    "PGADMIN_WINDOWS":"https://www.pgadmin.org/download/pgadmin-4-windows/",
     "DVDRENTAL": "https://github.com/robconery/dvdrental", 
     "SQL_CODEACADEMEY_COMMANDS": "https://www.codecademy.com/articles/sql-commands",
     "SQL_W3SHCOOL": "https://www.w3schools.com/sql/sql_syntax.asp" ,
