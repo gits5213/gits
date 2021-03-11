@@ -1,5 +1,6 @@
 /* eslint import/no-anonymous-default-export: [2, {"allowObject": true}] */
 export default {
+    //https://devhints.io/xpath
     //XPath
     basic_xpath_1: "//input [@name:’password’]",
     basic_xpath_2: "//a [@href: ‘https://www.lambdatest.com/’]",
@@ -21,6 +22,7 @@ export default {
     //Contains
     contains : "//*[contains(@id,'username')]",
     contains_1 : "//*[contains(text(),'LogIn')]",
+    contains_5 : "//*[contains(string(), 'sign-up-input')]",
     contains_2 : "//*[contains (@placeholder, 'Organization')]",
     contains_3 : "//input[contains (@name, 'organization')]",
     contains_4 : "//*[contains(@class, 'sign-up-input')]",
@@ -53,6 +55,7 @@ export default {
     xpath_precending_axis :  "//node[attribute:'value of attribute']//preceding::attribute",
     xpath_precending_path :  "//input[@id:'userName']/preceding::label",
 
+    //https://devhints.io/css
     //CSS
     basic_css_1: "#id",
     basic_css_2: "#username",
@@ -82,5 +85,6 @@ export default {
     css_13:"div[data-testid='input-items']",
     css_14:"div[data-testid='input-items'] div input",
     css_15:"div[data-testid='input-items'] button:nth-child(1)",
+    css_16: "[ref=‘eCenterContainer’] [row-id=‘VENDR’] [col-id=‘navgrp_ID’]"
 
 }

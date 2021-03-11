@@ -47,6 +47,7 @@ class links extends Component {
                     <Tab>Basic</Tab>
                     <Tab>G.K</Tab>
                     <Tab>Help</Tab>
+                    <Tab>Git</Tab>
                 </Tabs>
                 <HeaderText /> 
                 <section>
