@@ -31,8 +31,9 @@ const window = () => {
                     <h4>Download Unlimited Software: Flashbackrecorder</h4>
                     <ul>
                         <a href={link.DownloadSoftware_bb}><li><strong>Download Software </strong></li></a>
-                        <p>Free: Unlimited Screen Recorder Downloading </p>
-                        <p>Screen Recorders For Everyone</p>
+                        <p>Free: Unlimited Screen Recorder Downloading -
+                         Screen Recorders For Everyone
+                        </p>
                     </ul>
                 </div>
                 <div>
