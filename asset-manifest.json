@@ -1,17 +1,17 @@
 {
   "files": {
     "main.css": "/ittciwebsite/static/css/main.470ea0d7.chunk.css",
-    "main.js": "/ittciwebsite/static/js/main.17b891fb.chunk.js",
-    "main.js.map": "/ittciwebsite/static/js/main.17b891fb.chunk.js.map",
+    "main.js": "/ittciwebsite/static/js/main.918ff856.chunk.js",
+    "main.js.map": "/ittciwebsite/static/js/main.918ff856.chunk.js.map",
     "runtime-main.js": "/ittciwebsite/static/js/runtime-main.912ab8f2.js",
     "runtime-main.js.map": "/ittciwebsite/static/js/runtime-main.912ab8f2.js.map",
     "static/css/2.bb0bb532.chunk.css": "/ittciwebsite/static/css/2.bb0bb532.chunk.css",
-    "static/js/2.ce2f8b87.chunk.js": "/ittciwebsite/static/js/2.ce2f8b87.chunk.js",
-    "static/js/2.ce2f8b87.chunk.js.map": "/ittciwebsite/static/js/2.ce2f8b87.chunk.js.map",
+    "static/js/2.8bf32fbd.chunk.js": "/ittciwebsite/static/js/2.8bf32fbd.chunk.js",
+    "static/js/2.8bf32fbd.chunk.js.map": "/ittciwebsite/static/js/2.8bf32fbd.chunk.js.map",
     "index.html": "/ittciwebsite/index.html",
     "static/css/2.bb0bb532.chunk.css.map": "/ittciwebsite/static/css/2.bb0bb532.chunk.css.map",
     "static/css/main.470ea0d7.chunk.css.map": "/ittciwebsite/static/css/main.470ea0d7.chunk.css.map",
-    "static/js/2.ce2f8b87.chunk.js.LICENSE.txt": "/ittciwebsite/static/js/2.ce2f8b87.chunk.js.LICENSE.txt",
+    "static/js/2.8bf32fbd.chunk.js.LICENSE.txt": "/ittciwebsite/static/js/2.8bf32fbd.chunk.js.LICENSE.txt",
     "static/media/about-pic.35c9381f.png": "/ittciwebsite/static/media/about-pic.35c9381f.png",
     "static/media/agileLogo.8624dbdd.png": "/ittciwebsite/static/media/agileLogo.8624dbdd.png",
     "static/media/apiAutoTest.4170e923.png": "/ittciwebsite/static/media/apiAutoTest.4170e923.png",
@@ -27,6 +27,7 @@
     "static/media/cssLogo.bbf01949.png": "/ittciwebsite/static/media/cssLogo.bbf01949.png",
     "static/media/defectBugError.0946ec0d.png": "/ittciwebsite/static/media/defectBugError.0946ec0d.png",
     "static/media/frisbyLogo.9b7fe979.png": "/ittciwebsite/static/media/frisbyLogo.9b7fe979.png",
+    "static/media/gitGitHub.42ff9193.png": "/ittciwebsite/static/media/gitGitHub.42ff9193.png",
     "static/media/gkLogo.452badc7.png": "/ittciwebsite/static/media/gkLogo.452badc7.png",
     "static/media/App.css": "/ittciwebsite/static/media/green-bg-opt.33c4b9e8.jpg",
     "static/media/helpLogo.04616733.png": "/ittciwebsite/static/media/helpLogo.04616733.png",
@@ -58,8 +59,8 @@
   "entrypoints": [
     "static/js/runtime-main.912ab8f2.js",
     "static/css/2.bb0bb532.chunk.css",
-    "static/js/2.ce2f8b87.chunk.js",
+    "static/js/2.8bf32fbd.chunk.js",
     "static/css/main.470ea0d7.chunk.css",
-    "static/js/main.17b891fb.chunk.js"
+    "static/js/main.918ff856.chunk.js"
   ]
 }
