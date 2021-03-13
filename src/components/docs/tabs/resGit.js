@@ -1,7 +1,9 @@
 import React from 'react';
 import link from '../../../utilities/links.json';
 import GoogleAd from '../../../components/GoogleAd';
-import SQL_LOGO from '../../../images/tabs/gitGitHub.png';
+import GIT_LOGO from '../../../images/tabs/gitGitHub.png';
+import  GIT_CHEATSHEET from '../../../images/tabs/gitCheatSheet.png';
+
 import { Grid, Cell } from 'react-mdl';
 
 const resSql = () => {
@@ -14,7 +16,7 @@ const resSql = () => {
             </section>
             <section>
                 <div className='tc'>
-                    <img className='pr4 pt4 pb4 sql-logo' src={SQL_LOGO} alt='SQL Logo'/>
+                    <img className='pr4 pt4 pb4 sql-logo' src={GIT_LOGO} alt='SQL Logo'/>
                 </div>
                 <div className='tc pt3'>
                 <a class='f6 grow no-underline br-pill ph3 pv2 mb2 dib white bg-red' href={link.git} target="_blank" rel="noopener noreferrer">
@@ -120,6 +122,12 @@ const resSql = () => {
                     <a className='f6 grow no-underline br-pill ba bw1 ph3 pv2 mb2 dib dark-green' href={link.SQL_W3SHCOOL} target="_blank" rel="noopener noreferrer">
                         SQL Commands W3Schools
                     </a>
+                </div>
+            </section>
+            <section>
+            <hr />
+                <div className='tc'>
+                    <img className='pr4 pt4 pb4 linux-logo' src={GIT_CHEATSHEET} alt='Linux Logo'/>
                 </div>
             </section>
             <section>
