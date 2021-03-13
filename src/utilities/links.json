@@ -238,7 +238,12 @@
     "SWAGGER": "https://swagger.io/",
     "JIRA_CLOUD": "https://id.atlassian.com/login?",
 
-    "GitHub": "........GitHub.......",
+    "Git": "........GitHub.......",
+    "git":"https://github.com/git/git",
+    "gtiDownload":"https://git-scm.com/",
+    "gitHubCli":"https://cli.github.com/manual/",
+    "gitHub":"https://github.com/",
+
     "Download": "........Download......."
 
 }   
