@@ -83,7 +83,7 @@ const resSql = () => {
                             <h3 className=''> GITHUB for MAC & WINDOWS</h3>
                             <h5> Step 1: Create a account</h5>
                             <ul>
-                                <li>Navigate to the <a href={link.gitHub} target="_blank" rel="noopener noreferrer">https://git-scm.com/</a></li>
+                                <li>Navigate to the <a href={link.gitHub} target="_blank" rel="noopener noreferrer">https://github.com/</a></li>
                                 <li>Clik on <strong>SIGN UP</strong></li>
                                 <li>Follow the Instruction</li>
                             </ul>
