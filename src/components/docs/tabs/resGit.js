@@ -6,7 +6,7 @@ import  GIT_CHEATSHEET from '../../../images/tabs/gitCheatSheet.png';
 
 import { Grid, Cell } from 'react-mdl';
 
-const resSql = () => {
+const resGit = () => {
     return(
         <div className='page-tab-body'>
             <section>
@@ -55,6 +55,10 @@ const resSql = () => {
                         <div>
                             <div>
                                 <h3 className=''> CMDER Install for WINDOWS</h3>
+                                <p>
+                                    <strong>What is CMDER: </strong>
+                                    Cmder is a software package created out of pure frustration over the absence of nice console emulators on Windows. It is based on amazing software, and spiced up with the Monokai color scheme and a custom prompt layout, looking sexy from the start.
+                                </p>
                                 <ul>
                                     <li><li>Navigate to the <a href={link.CMDER} target="_blank" rel="noopener noreferrer">https://cmder.net/</a></li></li>
                                     <li>Click on "Download Full"</li>
@@ -136,4 +140,4 @@ const resSql = () => {
         </div>
     )
 }
-export default resSql;
+export default resGit;

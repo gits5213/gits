@@ -126,11 +126,30 @@ const resLinux = () => {
                     <code><strong>man</strong></code>: Manual Instruction of any command<br />
                 </p>
             </div>
+            <section>
+                <div>
+                    <h3 className=''> CMDER Install for WINDOWS</h3>
+                    <p>
+                        <strong>What is CMDER: </strong>
+                        Cmder is a software package created out of pure frustration over the absence of nice console emulators on Windows. It is based on amazing software, and spiced up with the Monokai color scheme and a custom prompt layout, looking sexy from the start.
+                    </p>
+                    <ul>
+                        <li><li>Navigate to the <a href={link.CMDER} target="_blank" rel="noopener noreferrer">https://cmder.net/</a></li></li>
+                        <li>Click on "Download Full"</li>
+                        <li>Double click on the installed software</li>
+                        <li>Click, Click & Done!</li>
+                    </ul>
+                </div>
+            </section>
             <hr />
-            <div className='tc'>
-                <img className='pr4 pt4 pb4 linux-logo' src={linuxCheatSheet} alt='Linux Logo'/>
-            </div>
-            <GoogleAd slot="1541085932" classNames="page-right-side" />
+            <section>
+                <div className='tc'>
+                    <img className='pr4 pt4 pb4 linux-logo' src={linuxCheatSheet} alt='Linux Logo'/>
+                </div>
+            </section>
+            <section>
+                <GoogleAd slot="1541085932" classNames="page-right-side" />
+            </section>
         </div>
     )
 }
