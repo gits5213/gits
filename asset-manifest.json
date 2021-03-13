@@ -1,8 +1,8 @@
 {
   "files": {
     "main.css": "/ittciwebsite/static/css/main.470ea0d7.chunk.css",
-    "main.js": "/ittciwebsite/static/js/main.d71dd103.chunk.js",
-    "main.js.map": "/ittciwebsite/static/js/main.d71dd103.chunk.js.map",
+    "main.js": "/ittciwebsite/static/js/main.07f22c66.chunk.js",
+    "main.js.map": "/ittciwebsite/static/js/main.07f22c66.chunk.js.map",
     "runtime-main.js": "/ittciwebsite/static/js/runtime-main.912ab8f2.js",
     "runtime-main.js.map": "/ittciwebsite/static/js/runtime-main.912ab8f2.js.map",
     "static/css/2.bb0bb532.chunk.css": "/ittciwebsite/static/css/2.bb0bb532.chunk.css",
@@ -27,6 +27,7 @@
     "static/media/cssLogo.bbf01949.png": "/ittciwebsite/static/media/cssLogo.bbf01949.png",
     "static/media/defectBugError.0946ec0d.png": "/ittciwebsite/static/media/defectBugError.0946ec0d.png",
     "static/media/frisbyLogo.9b7fe979.png": "/ittciwebsite/static/media/frisbyLogo.9b7fe979.png",
+    "static/media/gitCheatSheet.be3c3e39.png": "/ittciwebsite/static/media/gitCheatSheet.be3c3e39.png",
     "static/media/gitGitHub.42ff9193.png": "/ittciwebsite/static/media/gitGitHub.42ff9193.png",
     "static/media/gkLogo.452badc7.png": "/ittciwebsite/static/media/gkLogo.452badc7.png",
     "static/media/App.css": "/ittciwebsite/static/media/green-bg-opt.33c4b9e8.jpg",
@@ -61,6 +62,6 @@
     "static/css/2.bb0bb532.chunk.css",
     "static/js/2.8bf32fbd.chunk.js",
     "static/css/main.470ea0d7.chunk.css",
-    "static/js/main.d71dd103.chunk.js"
+    "static/js/main.07f22c66.chunk.js"
   ]
 }
