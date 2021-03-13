@@ -48,26 +48,32 @@ const resSql = () => {
                                 <li>Navigate to the <a href={link.gtiDownload} target="_blank" rel="noopener noreferrer">https://git-scm.com/</a></li>
                                 <li>Clik on <strong>Download For MAC</strong></li>
                                 <li>Follow the Instruction</li>
-                                <li>
-                                    Next {'>'} Next {'>'} Select All {'>'} Next {'>'} <br />
-                                    Default Directory {'>'} Create "password" (all lowercase) {'>'} <br />
-                                    PORT (remember) {'>'} Next {'>'} By Default {'>'} <br />
-                                    Next {'>'} Next {'>'} Finish.
-                                </li>
                             </ul>
                         </div>
                         <div>
+                            <div>
+                                <h3 className=''> CMDER Install for WINDOWS</h3>
+                                <ul>
+                                    <li><li>Navigate to the <a href={link.CMDER} target="_blank" rel="noopener noreferrer">https://cmder.net/</a></li></li>
+                                    <li>Click on "Download Full"</li>
+                                    <li>Double click on the installed software</li>
+                                    <li>Click, Click & Done!</li>
+                                </ul>
+                            </div>
                             <h3 className=''> GIT for WINDOWS</h3>
                             <h5> Step 1: Download & Install GIT</h5>
                             <ul>
                                 <li>Navigate to the <a href={link.gtiDownload} target="_blank" rel="noopener noreferrer">https://git-scm.com/</a></li>
                                 <li>Clik on <strong>Download For WINDOWS</strong></li>
-                                <li>Follow the Instruction</li>
+                                <li>Double Click on the installed software</li>
+                                <li>Git For Windows {'>'} Yes</li>
                                 <li>
-                                    Next {'>'} Next {'>'} Select All {'>'} Next {'>'} <br />
-                                    Default Directory {'>'} Create "password" (all lowercase) {'>'} <br />
-                                    PORT (remember) {'>'} Next {'>'} By Default {'>'} <br />
-                                    Next {'>'} Next {'>'} Finish.
+                                    Next {'>'} Next {'>'} Next {'>'} Next {'>'} Next {'>'}<br />
+                                    Next {'>'} Next {'>'} Next {'>'} Next {'>'} <br />
+                                    Select "Use Windows default console window" {'>'} Next {'>'} <br />
+                                    Next {'>'} Next {'>'} Next {'>'} Install {'>'} Finish <br />
+                                    Validate: {'>'} Right Click on DeskTop {'>'} Git GUI Here & Git Bash Here <br />
+                                    That's mean Git Successfully Installed.
                                 </li>
                             </ul>
                         </div>
@@ -82,6 +88,26 @@ const resSql = () => {
                                 <li>Follow the Instruction</li>
                             </ul>
                         </div>
+                        <div>
+                            <h5> Step 2: Create a SSH Key</h5>
+                            <ul>
+                                <li>Navigate to the <a href={link.SSHKYGEN} target="_blank" rel="noopener noreferrer">Create a SSH KEY</a></li>
+                                <li>Follow the Instruction</li>
+                            </ul>
+                        </div>
+                        <div>
+                            <h5> Step 3: Add SSH Key into GITHUB Account</h5>
+                            <ul>
+                                <li>Log into the GITHUB account</li>
+                                <li>Click on Profile</li>
+                                <li>Click on Settings</li>
+                                <li>Click on SSH and GPG Keys</li>
+                                <li>Click on New SSH Key</li>
+                                <li>Past the SSH Key</li>
+                                <li>Save</li>
+                            </ul>
+                        </div>
+
                     </Cell>
                 </Grid>
             </section>
