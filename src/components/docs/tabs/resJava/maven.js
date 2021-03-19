@@ -235,7 +235,7 @@ const maven = () => {
             <div>
                 <h3>References</h3>
             </div>
-            <div className='pt4 scrummountain-btn'>
+            <div className='pt2 scrummountain-btn'>
                 <a className='f6 grow no-underline br-pill ba bw1 ph3 pv2 mb2 dib dark-green' href={link.MAVEN_DOCS} target="_blank" rel="noopener noreferrer">
                     Maven Docs
                 </a>

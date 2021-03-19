@@ -117,8 +117,10 @@ const resGit = () => {
                     </Cell>
                 </Grid>
             </section>
-            <hr />
             <section>
+                <div class="pr3"> 
+                    <h3>References</h3>
+                </div>
                 <div className='sql-btn'>
                     <a className='f6 grow no-underline br-pill ba bw1 ph3 pv2 mb2 dib dark-green' href={link.setUpGitGitHub} target="_blank" rel="noopener noreferrer">
                         Git GitHub SetUp

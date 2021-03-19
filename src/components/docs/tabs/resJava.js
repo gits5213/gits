@@ -6,6 +6,7 @@ import JavaWindow from './resJava/java_window';
 import Maven from './resJava/maven';
 import GoogleAd from '../../../components/GoogleAd';
 import java_logo from '../../../images/tabs/javaLogo.png';
+import java_CHEAT_SHEET from '../../../images/tabs/javaCheatsheet.jpeg';
 
 const resJava = () => {
     return(
@@ -114,8 +115,15 @@ const resJava = () => {
             <div>
                 <Maven />
             </div>
-
-            <GoogleAd slot="1541085932" classNames="page-right-side" />
+            <section>
+            <hr />
+                <div className='tc'>
+                    <img className='pr4 pt4 pb4 linux-logo' src={java_CHEAT_SHEET} alt='Linux Logo'/>
+                </div>
+            </section>
+            <section>
+                <GoogleAd slot="1541085932" classNames="page-right-side" />
+            </section>
         </div>
     )
 }
