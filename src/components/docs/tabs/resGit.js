@@ -119,7 +119,7 @@ const resGit = () => {
             </section>
             <hr />
             <section>
-                <div className='pt4 sql-btn'>
+                <div className='sql-btn'>
                     <a className='f6 grow no-underline br-pill ba bw1 ph3 pv2 mb2 dib dark-green' href={link.setUpGitGitHub} target="_blank" rel="noopener noreferrer">
                         Git GitHub SetUp
                     </a>
