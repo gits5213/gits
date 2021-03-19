@@ -1,17 +1,18 @@
 {
   "files": {
     "main.css": "/ittciwebsite/static/css/main.470ea0d7.chunk.css",
-    "main.js": "/ittciwebsite/static/js/main.b8e56833.chunk.js",
-    "main.js.map": "/ittciwebsite/static/js/main.b8e56833.chunk.js.map",
+    "main.js": "/ittciwebsite/static/js/main.3ce0cc50.chunk.js",
+    "main.js.map": "/ittciwebsite/static/js/main.3ce0cc50.chunk.js.map",
     "runtime-main.js": "/ittciwebsite/static/js/runtime-main.912ab8f2.js",
     "runtime-main.js.map": "/ittciwebsite/static/js/runtime-main.912ab8f2.js.map",
     "static/css/2.bb0bb532.chunk.css": "/ittciwebsite/static/css/2.bb0bb532.chunk.css",
-    "static/js/2.8bf32fbd.chunk.js": "/ittciwebsite/static/js/2.8bf32fbd.chunk.js",
-    "static/js/2.8bf32fbd.chunk.js.map": "/ittciwebsite/static/js/2.8bf32fbd.chunk.js.map",
+    "static/js/2.ce2f8b87.chunk.js": "/ittciwebsite/static/js/2.ce2f8b87.chunk.js",
+    "static/js/2.ce2f8b87.chunk.js.map": "/ittciwebsite/static/js/2.ce2f8b87.chunk.js.map",
     "index.html": "/ittciwebsite/index.html",
     "static/css/2.bb0bb532.chunk.css.map": "/ittciwebsite/static/css/2.bb0bb532.chunk.css.map",
     "static/css/main.470ea0d7.chunk.css.map": "/ittciwebsite/static/css/main.470ea0d7.chunk.css.map",
-    "static/js/2.8bf32fbd.chunk.js.LICENSE.txt": "/ittciwebsite/static/js/2.8bf32fbd.chunk.js.LICENSE.txt",
+    "static/js/2.ce2f8b87.chunk.js.LICENSE.txt": "/ittciwebsite/static/js/2.ce2f8b87.chunk.js.LICENSE.txt",
+    "static/media/Python_CheatSheet.6aba7449.jpeg": "/ittciwebsite/static/media/Python_CheatSheet.6aba7449.jpeg",
     "static/media/about-pic.35c9381f.png": "/ittciwebsite/static/media/about-pic.35c9381f.png",
     "static/media/agileLogo.8624dbdd.png": "/ittciwebsite/static/media/agileLogo.8624dbdd.png",
     "static/media/apiAutoTest.4170e923.png": "/ittciwebsite/static/media/apiAutoTest.4170e923.png",
@@ -34,6 +35,7 @@
     "static/media/helpLogo.04616733.png": "/ittciwebsite/static/media/helpLogo.04616733.png",
     "static/media/htmlLogo.bd7deb01.png": "/ittciwebsite/static/media/htmlLogo.bd7deb01.png",
     "static/media/htmlTags.6d059565.jpeg": "/ittciwebsite/static/media/htmlTags.6d059565.jpeg",
+    "static/media/javaCheatsheet.d894027c.jpeg": "/ittciwebsite/static/media/javaCheatsheet.d894027c.jpeg",
     "static/media/javaLogo.b9f08a56.png": "/ittciwebsite/static/media/javaLogo.b9f08a56.png",
     "static/media/javascriptLogo.011db036.png": "/ittciwebsite/static/media/javascriptLogo.011db036.png",
     "static/media/linkLogo.5fec91b1.png": "/ittciwebsite/static/media/linkLogo.5fec91b1.png",
@@ -43,6 +45,7 @@
     "static/media/manualLogo.1c0c04d3.png": "/ittciwebsite/static/media/manualLogo.1c0c04d3.png",
     "static/media/onlineClass.7cb9969d.jpg": "/ittciwebsite/static/media/onlineClass.7cb9969d.jpg",
     "static/media/protractorLog.9f37af94.png": "/ittciwebsite/static/media/protractorLog.9f37af94.png",
+    "static/media/python_logo.d1308958.png": "/ittciwebsite/static/media/python_logo.d1308958.png",
     "static/media/reactLogo.6b4e4275.png": "/ittciwebsite/static/media/reactLogo.6b4e4275.png",
     "static/media/restassuredLogo.f872e6c7.png": "/ittciwebsite/static/media/restassuredLogo.f872e6c7.png",
     "static/media/sdlcLogo.aa972071.png": "/ittciwebsite/static/media/sdlcLogo.aa972071.png",
@@ -60,8 +63,8 @@
   "entrypoints": [
     "static/js/runtime-main.912ab8f2.js",
     "static/css/2.bb0bb532.chunk.css",
-    "static/js/2.8bf32fbd.chunk.js",
+    "static/js/2.ce2f8b87.chunk.js",
     "static/css/main.470ea0d7.chunk.css",
-    "static/js/main.b8e56833.chunk.js"
+    "static/js/main.3ce0cc50.chunk.js"
   ]
 }
