@@ -120,11 +120,8 @@ const resGit = () => {
             <hr />
             <section>
                 <div className='pt4 sql-btn'>
-                    <a className='f6 grow no-underline br-pill ba bw1 ph3 pv2 mb2 dib dark-green' href={link.SQL_CODEACADEMEY_COMMANDS} target="_blank" rel="noopener noreferrer">
-                        SQL Commands CodeCademy
-                    </a>
-                    <a className='f6 grow no-underline br-pill ba bw1 ph3 pv2 mb2 dib dark-green' href={link.SQL_W3SHCOOL} target="_blank" rel="noopener noreferrer">
-                        SQL Commands W3Schools
+                    <a className='f6 grow no-underline br-pill ba bw1 ph3 pv2 mb2 dib dark-green' href={link.setUpGitGitHub} target="_blank" rel="noopener noreferrer">
+                        Git GitHub SetUp
                     </a>
                 </div>
             </section>
