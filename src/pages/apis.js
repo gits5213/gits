@@ -3,6 +3,7 @@ import { Tabs, Tab } from 'react-mdl';
 import HeaderText from '../components/header';
 
 import Selenium from '../components/api/tabs/selenium';
+import Cypress from '../components/api/tabs/cypress';
 import Protractor from '../components/api/tabs/protractor';
 import WebDriverIO from '../components/api/tabs/webDriverIo';
 import Appium from '../components/api/tabs/appium';
@@ -20,6 +21,10 @@ class apis extends Component {
         if(this.state.activeTab === 0) {
             return(
                 <Selenium />
+            )
+        } else if(this.state.activeTab === 1) {
+            return(
+                <Cypress />
             )
         } else if(this.state.activeTab === 1) {
             return(
@@ -55,6 +60,7 @@ class apis extends Component {
             <div className="category-tabs">
                 <Tabs activeTab={this.state.activeTab} onChange={(tabId) => this.setState({ activeTab: tabId })} ripple>
                     <Tab>Selenium</Tab>
+                    <Tab>CypressIO</Tab>
                     <Tab>Protractor</Tab>
                     <Tab>WebDriverIO</Tab>
                     <Tab>Appium</Tab>

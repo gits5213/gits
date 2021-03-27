@@ -50,8 +50,8 @@
     "PROTRACTOR_WEBSITE ":"http://www.protractortest.org/#/",
 
     "RestAssured":"............................................",
-    "RESTASSURED_GITHUB ":"https://rest-assured.io/",
-    "RESTASSURED_WEBSITE":"https://github.com/rest-assured/rest-assured",
+    "RESTASSURED_GITHUB ":"https://github.com/rest-assured/rest-assured",
+    "RESTASSURED_WEBSITE":"https://rest-assured.io/",
 
     "Selenium":"............................................",
     "SELENIUM_GITHUB":"https://github.com/SeleniumHQ",
@@ -67,8 +67,12 @@
     "SUPERTEST_WEBSITE ":"https://www.npmjs.com/package/supertest",
 
     "WebDriverIO":"............................................",
-    "WEBDRIVERIO_GITHUB":"https://github.com/visionmedia/supertest",
-    "WEBDRIVERIO_WEBSITE ":"https://www.npmjs.com/package/supertest"   ,
+    "WEBDRIVERIO_GITHUB":"https://github.com/webdriverio/webdriverio",
+    "WEBDRIVERIO_WEBSITE ":"https://webdriver.io/",
+
+    "Cypress":"............................................",
+    "CYPRESS_GITHUB":"https://github.com/cypress-io/cypress",
+    "CYPRESS_WEBSITE ":"https://www.cypress.io/",
     
     "Courses":"............................................",
     "OBAMA_SPEACE":"https://www.youtube.com/embed/JDw1ii7aKwg",
@@ -225,6 +229,10 @@
     "ORACLE": "https://www.oracle.com/java/technologies/java-se-glance.html",
     "JAVA_TOPICS": "https://github.com/topics/java",
     "JAVA_CODE_STYLEGUIDE": "https://google.github.io/styleguide/javaguide.html",
+
+    "Python":"...............",
+    "PY_GITHUB": "https://github.com/python",
+    "PY_STYLE_GUIDE": "https://github.com/google/styleguide/blob/gh-pages/pyguide.md",
 
     "Window": "..............",
     "screencastify": "https://www.screencastify.com/",

@@ -278,6 +278,8 @@ h1.sub-header {
   width: 450px;
   background-size: 100%;
 }
+/* ==============resLink==============*/
+
 /* ==============Contact==============*/
 .visit- {
   text-decoration: none;
@@ -303,6 +305,12 @@ h1.sub-header {
 .social-icon a{
   color: white;
 }
+
+
+
+
+
+
 /* .container {
     background-image: url(/images/codingImage.jpg);
     background-position: center;
