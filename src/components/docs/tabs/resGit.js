@@ -2,7 +2,7 @@ import React from 'react';
 import link from '../../../utilities/links.json';
 import GoogleAd from '../../../components/GoogleAd';
 import GIT_LOGO from '../../../images/tabs/gitGitHub.png';
-import  GIT_CHEATSHEET from '../../../images/tabs/gitCheatSheet.png';
+import  GIT_CHEATSHEET from '../../../images/tabs/gitCheatSheet.jpeg';
 
 import { Grid, Cell } from 'react-mdl';
 
