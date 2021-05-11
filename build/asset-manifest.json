@@ -1,8 +1,8 @@
 {
   "files": {
-    "main.css": "/ittciwebsite/static/css/main.470ea0d7.chunk.css",
-    "main.js": "/ittciwebsite/static/js/main.3ce0cc50.chunk.js",
-    "main.js.map": "/ittciwebsite/static/js/main.3ce0cc50.chunk.js.map",
+    "main.css": "/ittciwebsite/static/css/main.88f6e774.chunk.css",
+    "main.js": "/ittciwebsite/static/js/main.66035cfa.chunk.js",
+    "main.js.map": "/ittciwebsite/static/js/main.66035cfa.chunk.js.map",
     "runtime-main.js": "/ittciwebsite/static/js/runtime-main.912ab8f2.js",
     "runtime-main.js.map": "/ittciwebsite/static/js/runtime-main.912ab8f2.js.map",
     "static/css/2.bb0bb532.chunk.css": "/ittciwebsite/static/css/2.bb0bb532.chunk.css",
@@ -10,8 +10,9 @@
     "static/js/2.ce2f8b87.chunk.js.map": "/ittciwebsite/static/js/2.ce2f8b87.chunk.js.map",
     "index.html": "/ittciwebsite/index.html",
     "static/css/2.bb0bb532.chunk.css.map": "/ittciwebsite/static/css/2.bb0bb532.chunk.css.map",
-    "static/css/main.470ea0d7.chunk.css.map": "/ittciwebsite/static/css/main.470ea0d7.chunk.css.map",
+    "static/css/main.88f6e774.chunk.css.map": "/ittciwebsite/static/css/main.88f6e774.chunk.css.map",
     "static/js/2.ce2f8b87.chunk.js.LICENSE.txt": "/ittciwebsite/static/js/2.ce2f8b87.chunk.js.LICENSE.txt",
+    "static/media/CypressLogo.8cf6a780.png": "/ittciwebsite/static/media/CypressLogo.8cf6a780.png",
     "static/media/Python_CheatSheet.6aba7449.jpeg": "/ittciwebsite/static/media/Python_CheatSheet.6aba7449.jpeg",
     "static/media/about-pic.35c9381f.png": "/ittciwebsite/static/media/about-pic.35c9381f.png",
     "static/media/agileLogo.8624dbdd.png": "/ittciwebsite/static/media/agileLogo.8624dbdd.png",
@@ -28,7 +29,7 @@
     "static/media/cssLogo.bbf01949.png": "/ittciwebsite/static/media/cssLogo.bbf01949.png",
     "static/media/defectBugError.0946ec0d.png": "/ittciwebsite/static/media/defectBugError.0946ec0d.png",
     "static/media/frisbyLogo.9b7fe979.png": "/ittciwebsite/static/media/frisbyLogo.9b7fe979.png",
-    "static/media/gitCheatSheet.be3c3e39.png": "/ittciwebsite/static/media/gitCheatSheet.be3c3e39.png",
+    "static/media/gitCheatSheet.8a0fce14.jpeg": "/ittciwebsite/static/media/gitCheatSheet.8a0fce14.jpeg",
     "static/media/gitGitHub.42ff9193.png": "/ittciwebsite/static/media/gitGitHub.42ff9193.png",
     "static/media/gkLogo.452badc7.png": "/ittciwebsite/static/media/gkLogo.452badc7.png",
     "static/media/App.css": "/ittciwebsite/static/media/green-bg-opt.33c4b9e8.jpg",
@@ -64,7 +65,7 @@
     "static/js/runtime-main.912ab8f2.js",
     "static/css/2.bb0bb532.chunk.css",
     "static/js/2.ce2f8b87.chunk.js",
-    "static/css/main.470ea0d7.chunk.css",
-    "static/js/main.3ce0cc50.chunk.js"
+    "static/css/main.88f6e774.chunk.css",
+    "static/js/main.66035cfa.chunk.js"
   ]
 }
