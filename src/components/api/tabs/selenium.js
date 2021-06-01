@@ -833,7 +833,332 @@ const selenium = () => {
                 <li>For analyzing the exceptions in detail, one can also use methods like printStackTrace(), toString(), and getMessage()</li>
               </ul>
             </div>
-            <GoogleAd slot="1541085932" classNames="page-right-side" />
+            <section>
+              <div>
+                <h5>How do you launch IE | Chrome | Firefox (gecko driver) browser?</h5>
+                <pre className='pre-code'>
+                    <code>
+                      String basPath = System.getProperty("user.dir"); <br />
+                      String chromePath = basPath + "\\chromedriver.exe"; <br />
+                      System.setProperty("webdriver.chrome.driver", chromePath); <br />
+                      WebDriver driver = new ChromeDriver();
+                    </code>
+                </pre>
+              </div>
+              <div>
+                <h5>Difference between implicitly Wait, Explicit wait & Fluent Wait</h5>
+                <p>
+                  Implicit Wait - sets internally a timeout that will be used for all consecutive Web Element searches. It will try look up the element repeatedly for the specified amount of time before throwing a NoSuchElementException if the element could not have been found. It does only this and can't be forced into anything else - it waits for elements to show up. <br />
+                  Explicit Wait - or just Wait is a one-timer used for a particular search. I can set it up wait, for any condition I might like. Usually, I can use some of the prebuilt Expected Conditions to wait for elements to become clickable, visible, invisible, etc., or just write my own condition that suits my code needs. (when a particular element takes more than a minute to load). <br />
+                  Fluent Wait - Let’s say I have an element which sometimes appears in just 1 second and some time it takes minutes to appear. In that case, I have been using fluent wait, as this will try to find element again and again until it finds it or until the final timer runs out. <br />
+                </p>
+              </div>
+              <div>
+                <h5>What is the difference between find element and find elements?</h5>
+                <p>
+                  Both methods are an abstract method of WebDriver interface and used to find the WebElement in a web page. <br />
+
+                  find element() – is used to find the one web element. It returns only one WebElement type. <br />
+                  find elements()- is used to find more than one web element. It returns List of WebElements. <br />
+                </p>
+              </div>
+              <div>
+                <h5>Difference between single and double slash in X-path?</h5>
+                <p>
+                  <strong>Absolute Path: Single slash ‘/ ’</strong> <br />
+
+                  - Start selection from the document node <br />
+                  - Used to identify the immediate child <br />
+                  - It allows you to create ‘absolute’ path expressions <br />
+
+                  <strong>Relative Path: Double Slash ‘// ’</strong>
+                  - Start selection matching anywhere in the document & search in the entire structure. <br />
+                  - It enables to create ‘relative’ path expressions <br />
+                  - By writing Relative path can capture the Dynamic Element of the object.
+                </p>
+              </div>
+              <div>
+                <h5>Selenium WebDriver Exceptions</h5>
+                <p>
+                  - NoSuchElementException: FindBy method can’t find the element. <br />
+                  - StaleElementReferenceException: This tells that element is no longer appearing on the DOM page. <br />
+                  - TimeoutException: This tells that the execution is failed because the command did not complete in enough time. <br />
+                  - ElementNotVisibleException: Thrown to indicate that although an element is present on the DOM, it is not visible, and so is not able to be interacted with <br />
+                  - ElementNotSelectableException: Thrown to indicate that may be the element is disabled, and so is not able to select. <br />
+                  
+                  <strong>How to Handle Exception</strong>
+                  Try is the start of the block and Catch is at the end of try block to handle the exceptions <br />
+                  - Multiple Catch blocks: A try block can be followed by multiple catch blocks. <br />
+                  - Throw: Sometimes we want to generate exception explicitly in our code, for example in Selenium Automation Framework most of the time we print self-written logs, once we catch an exception and then we need to throw that exception back to the system so that the test case can be terminated. Throw keyword is used to throw exception to the runtime to handle it. <br />
+                  - Throws: When we are throwing any exception in a method and not handling it, then we need to use throws keyword in method signature to let caller program know the exceptions that might be thrown by the method. <br />
+                  <strong>The flow of control in try | catch | finally blocks: </strong><br />
+                  - If an exception occurs in try block’s body then control immediately transferred(skipping rest of the statements in try block) to the catch block. Once catch block finished execution then finally block and after that rest of the program. <br />
+                  - If there is no exception occurred in the code which is present in try block then first, the try block gets executed completely and then control gets transferred to finally block (skipping catch blocks). <br />
+                  - If a return statement is encountered either in a try or catch block. In such case also finally runs. Control first goes to finally and then it returned back to return statement. <br />
+                </p>
+                <pre className='pre-code'>
+                  <code>
+                    class TestExceptions {'{'} <br />
+                    static void myMethod(int testnum) throws Exception {'{'} <br />
+                      System.out.println ("start - myMethod"); <br />
+                        if (testnum == 12) <br />
+                        throw new Exception(); <br />
+                        System.out.println("end - myMethod"); <br />
+                      return; <br />
+                      {'}'} <br />
+                    public static void main(String  args[]) {'{'} <br />
+                      int testnum = 12; <br />
+                        try {'{'} <br />
+                          System.out.println("try - first statement"); <br />
+                          myMethod(testnum); <br />
+                          System.out.println("try - last statement"); <br />
+                        {'}'} <br />
+                        catch ( Exception ex) {'{'} <br />
+                          System.out.println("An Exception"); <br />
+                        {'}'} <br />
+                        finally {'{'} <br />
+                          System. out. println( "finally") ; <br />
+                      {'}'} <br />
+                        System.out.println("Out of try|catch|finally - statement"); <br />
+                      {'}'} <br />
+                      {'}'} <br />
+
+                        Output: <br />
+                          try - first statement <br />
+                          start - myMethod <br />
+                          An Exception <br />
+                          finally <br />
+                      Out of try|catch|finally - statement <br />
+                  </code>
+                </pre>
+                <div>
+                <h5>How to find total number of iFrames on a web page | Switch to Frames by Index</h5>
+                <pre className='pre-code'>
+                  <code>
+                    <strong>Switch between Window</strong> <br />
+                    Private void handlingMultipleWindows(String windowTitle) {'{'} <br />
+                      Set{'<'}String{'>'} windows = driver.getWindowHandles(); <br />
+                      for (String window : windows) {'{'} <br />
+                      driver.switchTo().window(window); <br />
+                        if (driver.getTitle().contains(windowTitle)) {'{'}  <br /> 
+                          return;   <br />
+                        {'}'}    <br /> 
+                      {'}'}   <br />  
+                    {'}'} <br />
+                    <br />
+                    <strong>Switch between the TAB </strong> <br />
+                    ArrayList{'<'}String{'>'} tabs2 = new ArrayList{'<'}String{'>'} (driver.getWindowHandles()); <br />
+                    driver.switchTo().window(tabs2.get(1)); <br />
+                    <br />
+                   <strong>Switch by frame name</strong> <br />
+                    driver.switchTo().frame("iframe1"); <br />
+                    <br />
+                    <strong>Switch by frame ID</strong> <br />
+                    driver.switchTo().frame("IF1");<br />
+                    <br />
+                    <strong>Now use the switch command</strong> <br />
+                    driver.switchTo().frame(iframeElement);<br />
+                    <br />
+                    <strong>Now use the switch command</strong> <br />
+                    driver.switchTo().frame(0);<br />
+                    <br />
+                    <strong>Do all the required tasks in the frame | Switch back to the main window</strong> <br />
+                    driver.switchTo().defaultContent();<br />
+                  </code>
+                </pre>
+                <div>
+                  <h5>How do you simulate scroll down action?</h5>
+                  <pre className='pre-code'>
+                    <code>
+                      JavascriptExecutor jsx = (JavascriptExecutor)driver; <br />
+                      jsx.executeScript("window.scrollBy(0,4500)", ""); <br />
+                      Thread.sleep(3000); <br />
+                      jsx.executeScript("window.scrollBy(450,0)", ""); <br />
+                    </code>
+                  </pre>
+                </div>
+              </div>
+              <div>
+                <h5>How can we get the font size, font color, font type used  for a particular text on a web page using Selenium web driver?</h5>
+                <pre className='pre-code'>
+                  <code>
+                    driver.findelement(By.Xpath("Xpath ").getcssvalue("font-size); <br />
+                    driver.findelement(By.Xpath("Xpath ").getcssvalue("font-colour); <br />
+                    driver.findelement(By.Xpath("Xpath ").getcssvalue("font-type); <br />
+                    driver.findelement(By.Xpath("Xpath ").getcssvalue("background-colour); <br />
+                  </code>
+                </pre>
+              </div>
+              </div>
+              <div>
+                <h5>How do you send ENTER/TAB keys in Web-Driver?</h5>
+                <p>
+                    - Use click () or submit () [submit () can be used only when type=’submit’]) method for ENTER. Or use Actions class to press keys. <br />
+                    - For Enter- act.sendKeys(Keys.RETURN); <br />
+                    - For Tab- act.sendKeys(Keys.ENTER); <br />
+                    - Where act is Actions class type. (Actions act = new Actions (driver);)<br />
+                  </p>
+              </div>
+              <div>
+                <h5>How to press Shift+Tab?</h5>
+                <pre className='pre-code'>
+                  <code>
+                    String press = Keys.chord(Keys.SHIFT,Keys.ENTER); <br />
+                    webelement.sendKeys(press); <br />
+                  </code>
+                </pre>
+              </div>
+              <div>
+                <h5>Explain how to iterate through options in test script?</h5>
+                <p>
+                  Iterate through options in test script you can loop features of the programming language, for example to type different test data in a text box you can use “for” loop in Java
+                </p>
+                <pre className='pre-code'>
+                  <code>
+                    String [ ] testData = {'{'} “test1” , “test2” , “test3” {'}'} ; <br />
+                    For  (string s: test data) {'{'} selenium.type ( “elementLocator”, testData) ; {'}'}
+                  </code>
+                </pre>
+              </div>
+              <div>
+                <h5>What are the four parameter you have to pass in Selenium?</h5>
+                <p>Four parameters that you have to pass in Selenium are</p> <br />
+                <p>
+                  - Host
+                  - Port Number
+                  - Browser
+                  - URL
+                </p>
+              </div>
+              <div>
+                <h5>How to run tests in multiple browser parallel?Is there any other option other than selenium grid?</h5>
+                <pre className='pre-code'>
+                  <code>
+                    You create a class with a method something like this: <br />
+                    public class LaunchBrowser {'{'} <br />
+                      WebDriver driver=null; <br />
+                      @Parameters(“browser”)  <br />
+                      public void initiateBrowser(String browser){'{'} <br />
+                        if(browser.equals(“Firefox”)){'{'} <br />
+                        driver = new FirefoxDriver(); <br />
+                      {'}'}else{'{'} <br />
+                      set path to the IE driver correctly here <br />
+                      System.setProperty("webdriver.ie.driver", "\iexploredriver.exe"); <br />
+                      driver =new InternetExplorerDriver(); <br />
+                        {'}'} <br />
+                      {'}'} <br />
+                      Now create YourClassName class and call extend the above class something like this <br />
+                      @Test <br />
+                      public class YourClassName extends LaunchBrowser {'{'} <br />
+                        public void gotoGoogle(){'{'} <br />
+                            driver.get(“http://www.google.com"); <br />
+                        {'}'} <br />
+                      {'}'} <br />
+                  </code>
+                </pre>
+              </div>
+              
+            </section>
+            <section>
+              <h5>===Selenium Grid====</h5>
+              <h5>What is Selenium Grid?</h5>
+              <p>
+                Selenium-Grid allows you to run your tests on different machines against different browsers in parallel. That is, running multiple tests at the same time against different machines, different browsers, and operating systems. Essentially, Selenium-Grid support distributed test execution. It allows for running your tests in a distributed test execution environment.
+              </p>
+              <h5>Configuration of Selenium Grid</h5>
+              <pre className='pre-code'>
+                  <code>
+                    <strong>Starting a hub</strong> <br />
+                    java -jar selenium-server-standalone-3.1.2.jar -role hub <br />
+                    <br />
+                    <strong>Registering a node to the hub </strong> <br />
+                    java -jar selenium-server-standalone-3.1.2.jar -role webdriver hub <br />
+                    http://localhost:4444/grid/register -port 5555 <br />
+                    <br />
+                    <strong>Setting up supported browser names</strong> <br />
+                    java -jar selenium-server-standalone-3.1.2.jar -role webdriver hub <br />
+                    http://localhost:4444/grid/register -port 5555 -browser browserName=firefox -browser <br />
+                    browserName=iexplore -browser browserName=chrome <br />
+                    <br />
+                    <strong>Setting up max instances</strong> <br />
+                    java -jar selenium-server-standalone-3.1.2.jar -role webdriver r hub <br />
+                    http://localhost:4444/grid/register -port 5555 <br />
+                    -browser browserName=firefox, maxInstances=2 <br />
+                    -browser browserName=iexplore, maxInstances=2 <br />
+                    -browser browserName=chrome, maxInstances=2 -maxSession 6 <br />
+                    <br /> 
+                    <strong>Setting up chrome|Firfox|IE driver</strong> <br />
+                    -Dwebdriver.chrome.driver=Cl\Softwares\chromedriver.exe <br />
+                    -Dwebdriver.gecko.driver=Cl\Softwares\geckoDriverServer.exe <br />
+                    -Dwebdriver.ie.driver=Cl\Softwares\IEDriverServer.exe <br />
+                    <br />
+                    <strong>Final Command</strong> <br />
+                    Java <br />
+                    -Dwebdriver.chrome.driver= C:\Softwares\chromedriver.exe <br />
+                    -Dwebdriver.gecko.driver=Cl\Softwares\geckoDriverServer.exe <br />
+                    -Dwebdriver.ie.driver= C:\Softwares\IEDriverServer.exe <br />
+                    -jar selenium-server-standalone-2.32.0.jar -role webdriver <br />
+                    -hub http://localhost:4444/grid/register -port 5555 -browser <br />
+                    browserName=firefox,maxInstances=2 -browser browserName=iexplore -browser <br />
+                    browserName=chrome,maxInstances=3 -maxSession 5 <br />
+                  </code>
+              </pre>
+            </section>
+
+            <section>
+              <div>
+                <h2>=====JAVA & TestNG====</h2>
+              </div>
+              <div>
+                <h5> TestNG annotations vs JUnit annotations</h5>
+                <p> TestNG: 
+                  @Test,@Parameters,@Listeners,@BeforeSuite,@AfterSuite,@BeforeTest,@AfterTest, @DataProvider,@BeforeGroups,@AfterGroups,@BeforeClass,@AfterClass, @BeforeMethod, @AfterMethod, @Factory
+                </p>
+                <p>JUnit: 
+                  @Test @Before @After @AfterClass @BeforeClass @Ignore @Runwith
+                </p>
+              </div>
+              <div>
+                <h5>6 assertions of TestNG to be used in a Selenium WebDriver software testing tool?</h5>
+                <p>
+                There are multiple assertions available In TestNG but generally we use the following assertions in out test cases. <br />
+                </p>
+                <p>
+                  - assertEquals <br />
+                  - assertNotEquals <br />
+                  - assertTrue <br />
+                  - assertFalse <br />
+                  - assertNull <br />
+                  - assertNotNull <br />
+                </p>
+              </div>
+              <div>
+                <h5>In TestNG how can you disable a test?</h5>
+                <p>To disable the test case, you can use the following annotation.</p> <br />
+                <p>
+                  - @Test(enabled = false). <br />
+                  - Exclude key word in testNG.xml file inside the method <br />
+                </p>
+              </div>
+              <div>
+                <h5>How do you read data from excel?</h5>
+                <pre className='pre-code'>
+                    <code>
+                      File f = new File(“c://excel.xlsx”); <br />
+                      FileInputStream fis = new FileInputStream (f); <br />
+                      Workbook wb = WorkbookFactory.create(fis); <br />
+                      Sheet s = wb.getSheet(“sheetName”); <br />
+                      Row r = s.getRow(0); <br />
+                      Cell c = r.getCell(0);
+                    </code>
+                </pre>
+              </div>
+
+            </section>
+            <div>
+              <GoogleAd slot="1541085932" classNames="page-right-side" />
+            </div>
+            
         </main>
     );
   }   
