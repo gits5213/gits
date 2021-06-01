@@ -7,10 +7,10 @@ import 'react-mdl/extra/material.css';
 import 'react-mdl/extra/material.js';
 import {BrowserRouter} from 'react-router-dom';
 import 'tachyons';
-
+// basename='/ittciwebsite'
 ReactDOM.render(
   <React.StrictMode>
-    <BrowserRouter basename='/ittciwebsite'>
+    <BrowserRouter> 
       <App />
     </BrowserRouter>
   </React.StrictMode>,
