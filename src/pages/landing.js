@@ -9,7 +9,7 @@ import Footer from '../components/footer';
 import classromom from '../images/classroomClass.jpg'
 import online from '../images/onlineClass.jpg'
 
-const ZOOM_MEET = 'https://us02web.zoom.us/j/85420814980';
+const ZOOM_MEET = 'https://us02web.zoom.us/j/89986207051';
 
 class Landing extends Component {
     render(){

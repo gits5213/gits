@@ -16,7 +16,7 @@ class App extends Component {
     return (
       <div>
         <Layout fixedHeader>
-          <Header className='header-color sticky' title={<h2><strong>ITTCI</strong></h2>} scroll>
+          <Header className='header-color sticky' title={<h2><strong>GITS</strong></h2>} scroll>
             <Navigation className='top-link'>
               <Link to='/'>Home</Link>
               <Link to={COURSES}>Courses</Link>
@@ -25,7 +25,7 @@ class App extends Component {
               <Link to={CONFS}>Conf</Link>
             </Navigation>
           </Header>
-          <Drawer className='side-header-color' title= {<h2><strong>ITTCI</strong></h2>} >
+          <Drawer className='side-header-color' title= {<h2><strong>GITS</strong></h2>} >
             <Navigation className='side-link'>
               <Link to='/'>Home</Link>
               <Link to={COURSES}>Courses</Link>
