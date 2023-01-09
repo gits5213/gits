@@ -1,8 +1,8 @@
 {
   "files": {
     "main.css": "/ittciwebsite/static/css/main.88f6e774.chunk.css",
-    "main.js": "/ittciwebsite/static/js/main.ae3ea873.chunk.js",
-    "main.js.map": "/ittciwebsite/static/js/main.ae3ea873.chunk.js.map",
+    "main.js": "/ittciwebsite/static/js/main.f1f2772d.chunk.js",
+    "main.js.map": "/ittciwebsite/static/js/main.f1f2772d.chunk.js.map",
     "runtime-main.js": "/ittciwebsite/static/js/runtime-main.912ab8f2.js",
     "runtime-main.js.map": "/ittciwebsite/static/js/runtime-main.912ab8f2.js.map",
     "static/css/2.bb0bb532.chunk.css": "/ittciwebsite/static/css/2.bb0bb532.chunk.css",
@@ -66,6 +66,6 @@
     "static/css/2.bb0bb532.chunk.css",
     "static/js/2.c1c949d5.chunk.js",
     "static/css/main.88f6e774.chunk.css",
-    "static/js/main.ae3ea873.chunk.js"
+    "static/js/main.f1f2772d.chunk.js"
   ]
 }
