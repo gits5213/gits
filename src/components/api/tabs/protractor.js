@@ -7,7 +7,7 @@ const resProtractor = () => {
     return(
         <div className='page-tab-body'>
             <div>
-                <h3>SAT Framework</h3>
+                <h3>Protractor Framework</h3>
             </div>
             <div className='tc'>
                 <img className='protractor-logo' src={ProtractorLog} alt='protractor Logo' />

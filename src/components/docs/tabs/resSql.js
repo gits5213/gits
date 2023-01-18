@@ -176,6 +176,9 @@ const resSql = () => {
             </Grid>
             <hr />
             <div className='pt4 sql-btn'>
+                <a className='f6 grow no-underline br-pill ba bw1 ph3 pv2 mb2 dib dark-green' href={link.DBEAVER_INSTALL} target="_blank" rel="noopener noreferrer">
+                    DBeaver Universal Database Tool
+                </a>
                 <a className='f6 grow no-underline br-pill ba bw1 ph3 pv2 mb2 dib dark-green' href={link.SQL_CODEACADEMEY_COMMANDS} target="_blank" rel="noopener noreferrer">
                     SQL Commands CodeCademy
                 </a>
@@ -183,9 +186,10 @@ const resSql = () => {
                     SQL Commands W3Schools
                 </a>
             </div>
-
             
-            <GoogleAd slot="1541085932" classNames="page-right-side" />
+            <div>
+                <GoogleAd slot="1541085932" classNames="page-right-side" />
+            </div>
         </div>
     )
 }

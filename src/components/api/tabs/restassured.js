@@ -7,7 +7,7 @@ const resRestassured = () => {
     return(
         <div className='page-tab-body'>
             <div>
-                <h3>SAT Framework</h3>
+                <h3>RestAssured Framework</h3>
             </div>
             <div className='tc'>
                 <img className='appium-logo' src={restassuredLogo} alt='appium Logo'/>

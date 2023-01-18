@@ -7,7 +7,7 @@ const resAppium = ({path}) => {
     return(
         <div className='page-tab-body'>
             <div>
-                <h3>SAT Framework</h3>
+                <h3>Appium Framework</h3>
             </div>
             <div className='tc'>
                 <img className='appium-logo' src={appiumLogo} alt='appium Logo'/>
