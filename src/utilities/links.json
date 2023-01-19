@@ -71,6 +71,10 @@
     "WEBDRIVERIO_GITHUB":"https://github.com/webdriverio/webdriverio",
     "WEBDRIVERIO_WEBSITE ":"https://webdriver.io/",
 
+    "PlayWright":"-------------------------",
+    "PLAYWRIGHT_GITHUB":"https://github.com/microsoft/playwright",
+    "PLAYWRIGHT_DOCS":"https://playwright.dev/docs/api/class-playwright",
+
     "Cypress":"............................................",
     "CYPRESS_GITHUB":"https://github.com/cypress-io/cypress",
     "CYPRESS_WEBSITE ":"https://www.cypress.io/",

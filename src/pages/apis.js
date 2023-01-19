@@ -10,6 +10,7 @@ import Appium from '../components/api/tabs/appium';
 import RestAssured from '../components/api/tabs/restassured';
 import Frisby from '../components/api/tabs/frisby';
 import SuperTest from '../components/api/tabs/superTest';
+import Playwright from '../components/api/tabs/playwright';
 
 class apis extends Component {
     constructor(props) {
@@ -26,31 +27,36 @@ class apis extends Component {
             return(
                 <Cypress />
             )
-        } else if(this.state.activeTab === 1) {
+        } else if(this.state.activeTab === 2) {
             return(
                 <Protractor />
             )
-        } else if(this.state.activeTab === 2) {
+        } else if(this.state.activeTab === 3) {
             return(
                 <WebDriverIO />
             )
         }
-        else if(this.state.activeTab === 3) {
+        else if(this.state.activeTab === 4) {
             return(
                 <Appium />
             )
-        } else if(this.state.activeTab === 4) {
+        } else if(this.state.activeTab === 5) {
             return(
                 <RestAssured />
             )
-        } else if(this.state.activeTab === 5) {
+        } else if(this.state.activeTab === 6) {
             return(
                 <SuperTest />
             )
         }
-        else if(this.state.activeTab === 6) {
+        else if(this.state.activeTab === 7) {
             return(
                 <Frisby />
+            )
+        }
+        else if(this.state.activeTab === 8) {
+            return(
+                <Playwright />
             )
         }
     }
@@ -67,6 +73,7 @@ class apis extends Component {
                     <Tab>RestAssured</Tab>
                     <Tab>SuperTest</Tab>
                     <Tab>FrisBy</Tab>
+                    <Tab>Playwright</Tab>
                 </Tabs>
                 <HeaderText /> 
                 <section>
