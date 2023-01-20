@@ -60,7 +60,7 @@ class apis extends Component {
                 <Playwright />
             )
         }
-        else if(this.state.activeTab === 8) {
+        else if(this.state.activeTab === 9) {
             return(
                 <ReadyAPI />
             )
