@@ -1,7 +1,7 @@
 {
   "files": {
     "main.css": "/ittciwebsite/static/css/main.d0754756.css",
-    "main.js": "/ittciwebsite/static/js/main.1d15a9d8.js",
+    "main.js": "/ittciwebsite/static/js/main.64a4ee74.js",
     "static/media/classroomClass.jpg": "/ittciwebsite/static/media/classroomClass.7e41b18c7d9b14fc36c4.jpg",
     "static/media/onlineClass.jpg": "/ittciwebsite/static/media/onlineClass.7cb9969dda864d997a2d.jpg",
     "static/media/gitGitHub.png": "/ittciwebsite/static/media/gitGitHub.42ff9193b5481141b296.png",
@@ -54,10 +54,10 @@
     "static/media/defectBugError.png": "/ittciwebsite/static/media/defectBugError.0946ec0d4610f19696e5.png",
     "index.html": "/ittciwebsite/index.html",
     "main.d0754756.css.map": "/ittciwebsite/static/css/main.d0754756.css.map",
-    "main.1d15a9d8.js.map": "/ittciwebsite/static/js/main.1d15a9d8.js.map"
+    "main.64a4ee74.js.map": "/ittciwebsite/static/js/main.64a4ee74.js.map"
   },
   "entrypoints": [
     "static/css/main.d0754756.css",
-    "static/js/main.1d15a9d8.js"
+    "static/js/main.64a4ee74.js"
   ]
 }
