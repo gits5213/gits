@@ -42,6 +42,9 @@
     "APPIUM_GITHUB":"https://github.com/appium/appium",
     "APPIUM_WEBSITE": "http://appium.io/",
 
+    "READYAPI": "https://smartbear.com/product/ready-api/",
+    "READYAPI_DOCS":"https://support.smartbear.com/readyapi/?utm_medium=referral&utm_source=smartbear.com&utm_campaign=supnav&_ga=2.156949311.565754009.1674251103-1481822201.1670351940&_gac=1.216505700.1674251489.Cj0KCQiAlKmeBhCkARIsAHy7WVsC2WNRY1wBfvWAtAEjjRA2PcKWYU9n9ydYbDVC0aObShNw_8eF9pYaAjgoEALw_wcB",
+
     "Frisby":"............................................",
     "FRISBY_GITHUB":"https://github.com/vlucas/frisby",
     "FRISBY_WEBSITE ":"https://docs.frisbyjs.com/",

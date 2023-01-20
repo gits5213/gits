@@ -11,6 +11,7 @@ import RestAssured from '../components/api/tabs/restassured';
 import Frisby from '../components/api/tabs/frisby';
 import SuperTest from '../components/api/tabs/superTest';
 import Playwright from '../components/api/tabs/playwright';
+import ReadyAPI from '../components/api/tabs/readyapi';
 
 class apis extends Component {
     constructor(props) {
@@ -59,6 +60,11 @@ class apis extends Component {
                 <Playwright />
             )
         }
+        else if(this.state.activeTab === 8) {
+            return(
+                <ReadyAPI />
+            )
+        }
     }
 
     render() {
@@ -74,6 +80,7 @@ class apis extends Component {
                     <Tab>SuperTest</Tab>
                     <Tab>FrisBy</Tab>
                     <Tab>Playwright</Tab>
+                    <Tab>ReadyAPI</Tab>
                 </Tabs>
                 <HeaderText /> 
                 <section>
