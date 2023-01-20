@@ -1,7 +1,7 @@
 {
   "files": {
     "main.css": "/ittciwebsite/static/css/main.d0754756.css",
-    "main.js": "/ittciwebsite/static/js/main.48feaa7c.js",
+    "main.js": "/ittciwebsite/static/js/main.1d15a9d8.js",
     "static/media/classroomClass.jpg": "/ittciwebsite/static/media/classroomClass.7e41b18c7d9b14fc36c4.jpg",
     "static/media/onlineClass.jpg": "/ittciwebsite/static/media/onlineClass.7cb9969dda864d997a2d.jpg",
     "static/media/gitGitHub.png": "/ittciwebsite/static/media/gitGitHub.42ff9193b5481141b296.png",
@@ -38,6 +38,7 @@
     "static/media/webDev.png": "/ittciwebsite/static/media/webDev.3307fb6ecef7cdfa8873.png",
     "static/media/testPyramid.png": "/ittciwebsite/static/media/testPyramid.140a20ce0f34687760ee.png",
     "static/media/basicLogo.png": "/ittciwebsite/static/media/basicLogo.396058894a85b0932b79.png",
+    "static/media/readyapiLogo.png": "/ittciwebsite/static/media/readyapiLogo.e1a2b3af2785d768afb4.png",
     "static/media/playwrightLogo.png": "/ittciwebsite/static/media/playwrightLogo.bbc55d2add2733ca2ca0.png",
     "static/media/reactLogo.png": "/ittciwebsite/static/media/reactLogo.6b4e42753c55f5c01dfd.png",
     "static/media/gitCheatSheet.jpeg": "/ittciwebsite/static/media/gitCheatSheet.8a0fce1452320c08b410.jpeg",
@@ -53,10 +54,10 @@
     "static/media/defectBugError.png": "/ittciwebsite/static/media/defectBugError.0946ec0d4610f19696e5.png",
     "index.html": "/ittciwebsite/index.html",
     "main.d0754756.css.map": "/ittciwebsite/static/css/main.d0754756.css.map",
-    "main.48feaa7c.js.map": "/ittciwebsite/static/js/main.48feaa7c.js.map"
+    "main.1d15a9d8.js.map": "/ittciwebsite/static/js/main.1d15a9d8.js.map"
   },
   "entrypoints": [
     "static/css/main.d0754756.css",
-    "static/js/main.48feaa7c.js"
+    "static/js/main.1d15a9d8.js"
   ]
 }
