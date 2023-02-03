@@ -6,6 +6,8 @@ import Mac from '../components/conf/tabs/mac';
 import Basic from '../components/conf/tabs/basic';
 import Gk from '../components/conf/tabs/gk';
 import Help from '../components/conf/tabs/help';
+import Frontend from '../components/conf/tabs/frontend';
+
 
 
 class links extends Component {
@@ -35,6 +37,10 @@ class links extends Component {
             return(
                 <Help />
             )
+        }else if(this.state.activeTab === 5) {
+            return(
+                <Frontend />
+            )
         }
     }
 
@@ -47,6 +53,7 @@ class links extends Component {
                     <Tab>Basic</Tab>
                     <Tab>G.K</Tab>
                     <Tab>Help</Tab>
+                    <Tab>Frontend</Tab>
                 </Tabs>
                 <HeaderText /> 
                 <section>
