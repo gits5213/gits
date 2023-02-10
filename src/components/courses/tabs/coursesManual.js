@@ -1,6 +1,6 @@
 import React from 'react';
 import GoogleAd from '../../../components/GoogleAd';
-import courseOutline from '../../../images/courseOutline.png';
+import courseOutline from '../../../images/CourseOutline.png';
 import QaCareer from '../tabs/qaCareer';
 
 const coursesManual = () => {
