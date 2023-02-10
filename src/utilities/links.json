@@ -266,6 +266,10 @@
 
     "Download": "........Download.......",
 
-    "frontendTools": "https://murtazajoo.me/tools/"
+    "Frontend":"............",
+    "frontendTools": "https://murtazajoo.me/tools/",
+
+    "Help":"............",
+    "chatGPT": "https://chat.openai.com/chat"
 
 }   
