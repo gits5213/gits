@@ -1,12 +1,12 @@
 {
   "files": {
     "main.css": "/gits/static/css/main.c5e4ab89.css",
-    "main.js": "/gits/static/js/main.d7077dd3.js",
+    "main.js": "/gits/static/js/main.38152315.js",
     "static/media/classroomClass.jpg": "/gits/static/media/classroomClass.7e41b18c7d9b14fc36c4.jpg",
     "static/media/onlineClass.jpg": "/gits/static/media/onlineClass.7cb9969dda864d997a2d.jpg",
     "static/media/gitGitHub.png": "/gits/static/media/gitGitHub.42ff9193b5481141b296.png",
     "static/media/agileLogo.png": "/gits/static/media/agileLogo.8624dbddb591207cc57f.png",
-    "static/media/courseOutline.png": "/gits/static/media/courseOutline.7d738a2804d027a61ca9.png",
+    "static/media/CourseOutline.png": "/gits/static/media/CourseOutline.7d738a2804d027a61ca9.png",
     "static/media/javaCheatsheet.jpeg": "/gits/static/media/javaCheatsheet.d894027c42064c0d17e3.jpeg",
     "static/media/appiumLogo.png": "/gits/static/media/appiumLogo.83b8badaaa2a1350022d.png",
     "static/media/code4KidsProgram.png": "/gits/static/media/code4KidsProgram.de18d3e1cab9885ef1c6.png",
@@ -54,10 +54,10 @@
     "static/media/defectBugError.png": "/gits/static/media/defectBugError.0946ec0d4610f19696e5.png",
     "index.html": "/gits/index.html",
     "main.c5e4ab89.css.map": "/gits/static/css/main.c5e4ab89.css.map",
-    "main.d7077dd3.js.map": "/gits/static/js/main.d7077dd3.js.map"
+    "main.38152315.js.map": "/gits/static/js/main.38152315.js.map"
   },
   "entrypoints": [
     "static/css/main.c5e4ab89.css",
-    "static/js/main.d7077dd3.js"
+    "static/js/main.38152315.js"
   ]
 }
