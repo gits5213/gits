@@ -8,27 +8,15 @@ import Conf from '../pages/conf';
 import About from '../pages/about';
 import Contact from '../pages/contact';
 
-// const Main = () => (
-//     <Switch>
-//         <Route exact path='/' component={Landing} />
-//         <Route exact path='/courses' component={Courses} />
-//         <Route exact path='/docs' component={Docs} />
-//         <Route exact path='/apis' component={APIS} />
-//         <Route exact path='/conf' component={Conf} />
-//         <Route exact path='/about' component={About} />
-//         <Route exact path='/contact' component={Contact} />
-//     </Switch>
-// );
-
 const Main = () => (
     <Switch>
         <Route exact path='/' component={Landing} />
-        <Route exact path='https://gits5213.github.io/gits/courses' component={Courses} />
-        <Route exact path='https://gits5213.github.io/gits/docs' component={Docs} />
-        <Route exact path='https://gits5213.github.io/gits/apis' component={APIS} />
-        <Route exact path='https://gits5213.github.io/gits/conf' component={Conf} />
-        <Route exact path='https://gits5213.github.io/gits/about' component={About} />
-        <Route exact path='https://gits5213.github.io/gits/contact' component={Contact} />
+        <Route exact path='/courses' component={Courses} />
+        <Route exact path='/docs' component={Docs} />
+        <Route exact path='/apis' component={APIS} />
+        <Route exact path='/conf' component={Conf} />
+        <Route exact path='/about' component={About} />
+        <Route exact path='/contact' component={Contact} />
     </Switch>
 );
 export default Main; 
