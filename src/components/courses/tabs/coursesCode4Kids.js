@@ -2,6 +2,7 @@ import React from 'react';
 import link from '../../../utilities/links.json';
 import GoogleAd from '../../../components/GoogleAd';
 import code4KidProgramOutline from '../../../images/code4KidsProgram.png';
+import Footer from '../../../components/footer';
 
 const coursesCode4Kids = () => {
     return(
@@ -88,7 +89,12 @@ const coursesCode4Kids = () => {
                 <h1 className= 'tc'>Web Development Code4Kids Course Outline</h1>
                 <img className='courseOutline' src={code4KidProgramOutline} alt="Course Outline"></img>
             </div>
-            <GoogleAd slot="1541085932" classNames="page-right-side" />
+            <div>
+                <GoogleAd slot="1541085932" classNames="page-right-side" />
+            </div>
+            <section className='pt4'>
+                <Footer />
+            </section>
         </div>
     )
 }

@@ -1,6 +1,7 @@
 import React from 'react';
 import GoogleAd from '../../GoogleAd';
 import gkLogo from '../../../images/tabs/gkLogo.png';
+import Footer from '../../../components/footer';
 
 const gk = () => {
     return(
@@ -192,10 +193,12 @@ const gk = () => {
                     <li>In the end, it is the work of the Manager/Lead and the Organization to create the environment and the “team norms ground rules” that will allow all members to feel like they provide their work and help drive the project forward TOGETHER.</li>
                 </ul>
             </div>
-            
-
-           
-            <GoogleAd slot="1541085932" classNames="page-right-side" />
+            <div>
+                <GoogleAd slot="1541085932" classNames="page-right-side" />
+            </div>
+            <section className='pt4'>
+                <Footer />
+            </section>
         </div>
     )
 }

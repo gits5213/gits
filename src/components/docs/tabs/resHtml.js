@@ -3,6 +3,7 @@ import link from '../../../utilities/links.json';
 import GoogleAd from '../../../components/GoogleAd';
 import HTML_LOGO from '../../../images/tabs/htmlLogo.png';
 import HTML_TAG from '../../../images/tabs/htmlTags.jpeg';
+import Footer from '../../../components/footer';
 
 const resHtml = () => {
     return(
@@ -158,7 +159,12 @@ const resHtml = () => {
                     Google Fonts
                 </a>
             </div>
-           <GoogleAd slot="1541085932" classNames="page-right-side" /> 
+            <div>
+                <GoogleAd slot="1541085932" classNames="page-right-side" />
+            </div>
+            <section className='pt4'>
+                <Footer />
+            </section>
         </div>
     )
 }

@@ -2,6 +2,7 @@ import React from 'react';
 import link from '../../../utilities/links.json';
 import GoogleAd from '../../GoogleAd';
 import frisByLogo from '../../../images/tabs/frisbyLogo.png'; 
+import Footer from '../../../components/footer';
 
 const resFrisby = () => {
     return(
@@ -22,8 +23,12 @@ const resFrisby = () => {
                     FrisBy Org                 
                 </a>
             </div>
-            
-            <GoogleAd slot="1541085932" classNames="page-right-side" />
+            <div>
+                <GoogleAd slot="1541085932" classNames="page-right-side" />
+            </div>
+            <section className='pt4'>
+                <Footer />
+            </section>
         </div>
     )
 }

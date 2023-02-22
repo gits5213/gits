@@ -2,6 +2,7 @@ import React from 'react';
 import GoogleAd from '../../GoogleAd';
 import helpLogo from '../../../images/tabs/helpLogo.png';
 import link from '../../../utilities/links.json';
+import Footer from '../../../components/footer';
 
 const frontend = () => {
     return(
@@ -17,8 +18,12 @@ const frontend = () => {
                    Frontend engineering tools for Design, UI, Code                
                 </a>
             </div>
-           
-            <GoogleAd slot="1541085932" classNames="page-right-side" />
+            <div>
+                <GoogleAd slot="1541085932" classNames="page-right-side" />
+            </div>
+            <section className='pt4'>
+                <Footer />
+            </section>
         </div>
     )
 }

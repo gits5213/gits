@@ -2,6 +2,7 @@ import React from 'react';
 import link from '../../../utilities/links.json';
 import GoogleAd from '../../GoogleAd';
 import superTestLogo from '../../../images/tabs/supertestLogo.png'; 
+import Footer from '../../../components/footer';
 
 const resSuperTest = () => {
     return(
@@ -22,9 +23,12 @@ const resSuperTest = () => {
                      SuperTest Org                 
                 </a>
             </div>
-
-            
-            <GoogleAd slot="1541085932" classNames="page-right-side" />
+            <div>
+                <GoogleAd slot="1541085932" classNames="page-right-side" />
+            </div>
+            <section className='pt4'>
+                <Footer />
+            </section>
         </div>
     )
 }

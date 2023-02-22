@@ -2,6 +2,7 @@ import React from 'react';
 import link from '../../../utilities/links.json';
 import GoogleAd from '../../GoogleAd';
 import readyapiLogo from '../../../images/tabs/readyapiLogo.png'; 
+import Footer from '../../../components/footer';
 
 const readyapi = () => {
     return(
@@ -22,12 +23,12 @@ const readyapi = () => {
                     ReadyAPI Org                 
                 </a>
             </div>
-
-
-
-
-
-            <GoogleAd slot="1541085932" classNames="page-right-side" />
+            <div>
+                <GoogleAd slot="1541085932" classNames="page-right-side" />
+            </div>
+            <section className='pt4'>
+                <Footer />
+            </section>
         </div>
     )
 }

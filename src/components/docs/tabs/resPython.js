@@ -4,6 +4,7 @@ import BackToTop from '../../backToTop';
 import GoogleAd from '../../../components/GoogleAd';
 import python_logo from '../../../images/tabs/python_logo.png';
 import python_CHEAT_SHEET from '../../../images/tabs/Python_CheatSheet.jpeg';
+import Footer from '../../../components/footer';
 
 const resJava = () => {
     return(
@@ -68,10 +69,15 @@ const resJava = () => {
                 </div>
             </section>
             <section>
-                <GoogleAd slot="1541085932" classNames="page-right-side" />
                 <div>
                     <BackToTop />
                 </div> 
+            </section>
+            <div>
+                <GoogleAd slot="1541085932" classNames="page-right-side" />
+            </div>
+            <section className='pt4'>
+                <Footer />
             </section>
             
         </div>

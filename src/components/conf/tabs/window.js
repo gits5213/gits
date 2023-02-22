@@ -2,6 +2,7 @@ import React from 'react';
 import GoogleAd from '../../GoogleAd';
 import windowsLogo from '../../../images/tabs/winLogo.png';
 import link from '../../../utilities/links.json';
+import Footer from '../../../components/footer';
 
 const window = () => {
     return(
@@ -51,9 +52,12 @@ const window = () => {
                     </ul>
                 </div>
             </section>
-
-           
-            <GoogleAd slot="1541085932" classNames="page-right-side" />
+            <div>
+                <GoogleAd slot="1541085932" classNames="page-right-side" />
+            </div>
+            <section className='pt4'>
+                <Footer />
+            </section>
         </div>
     )
 }

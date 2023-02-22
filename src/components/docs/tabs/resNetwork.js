@@ -1,6 +1,7 @@
 import React from 'react';
 import link from '../../../utilities/links.json';
 import GoogleAd from '../../../components/GoogleAd';
+import Footer from '../../../components/footer';
 
 const resNetwork = () => {
     return(
@@ -77,7 +78,12 @@ const resNetwork = () => {
                     A <a href={link.PROXY} target="_blank" rel="noopener noreferrer">proxy server </a>provides a gateway between users and the internet. It is a server, referred to as an “intermediary” because it goes between end-users and the web pages they visit online. When a computer connects to the internet, it uses an IP address.
                 </p>
             </div>
-            <GoogleAd slot="1541085932" classNames="page-right-side" />
+            <div>
+                <GoogleAd slot="1541085932" classNames="page-right-side" />
+            </div>
+            <section className='pt4'>
+                <Footer />
+            </section>
         </div>
     )
 }

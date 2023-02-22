@@ -6,6 +6,8 @@ import selenium4Logo from '../../../images/architecture/selenium-4-Architecture.
 import cypressLogo from '../../../images/architecture/cypressArchitecture.png'; 
 import palywrightLogo from '../../../images/architecture/playwrightArchitecture.jpeg'; 
 import webDriverIOLogo from '../../../images/architecture/webdriverIO-Architecture.png'; 
+import Footer from '../../../components/footer';
+import GoogleAd from '../../GoogleAd';
 
 const Architecture = () => {
     return(
@@ -118,12 +120,14 @@ const Architecture = () => {
             <hr/>
             <div>
                 <p>More info coming soon!</p>
-                <br/>
-                <br/>
-                <br/>
-                <br/>
-                <br/>
+
             </div>
+            <div>
+                <GoogleAd slot="1541085932" classNames="page-right-side" />
+            </div>
+            <section className='pt4'>
+                <Footer />
+            </section>
         </section>
     )
 }

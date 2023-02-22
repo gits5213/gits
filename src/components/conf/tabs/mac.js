@@ -1,6 +1,7 @@
 import React from 'react';
 import GoogleAd from '../../GoogleAd';
 import macLogo from '../../../images/tabs/macLogo.png';
+import Footer from '../../../components/footer';
 
 const mac = () => {
     return(
@@ -11,8 +12,12 @@ const mac = () => {
             <div className='tc'>
                 <img className='mac-logo' src={macLogo} alt='mac Logo'/>
             </div>
-           
-            <GoogleAd slot="1541085932" classNames="page-right-side" />
+            <div>
+                <GoogleAd slot="1541085932" classNames="page-right-side" />
+            </div>
+            <section className='pt4'>
+                <Footer />
+            </section>
         </div>
     )
 }

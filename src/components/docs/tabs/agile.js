@@ -2,6 +2,7 @@ import React from 'react';
 import link from '../../../utilities/links.json';
 import GoogleAd from '../../../components/GoogleAd';
 import AgilelLogo from '../../../images/tabs/agileLogo.png'; 
+import Footer from '../../../components/footer';
 
 const agile = () => {
     return(
@@ -53,8 +54,12 @@ const agile = () => {
                     Agile Tools {'&'} techniques
                 </a>
             </div>
-
-            <GoogleAd slot="1541085932" classNames="page-right-side" />
+            <div>
+                <GoogleAd slot="1541085932" classNames="page-right-side" />
+            </div>
+            <section className='pt4'>
+                <Footer />
+            </section>
         </div>
     )
 }

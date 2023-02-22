@@ -2,6 +2,7 @@ import React from 'react';
 import GoogleAd from '../../GoogleAd';
 import link from '../../../utilities/links.json';
 import appiumLogo from '../../../images/tabs/appiumLogo.png'; 
+import Footer from '../../../components/footer';
 
 const resAppium = ({path}) => {
     return(
@@ -22,8 +23,12 @@ const resAppium = ({path}) => {
                     Appium Org                 
                 </a>
             </div>
-
-            <GoogleAd slot="1541085932" classNames="page-right-side" />
+            <div>
+                <GoogleAd slot="1541085932" classNames="page-right-side" />
+            </div>
+            <section className='pt4'>
+                <Footer />
+            </section>
         </div>
     )
 }

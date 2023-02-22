@@ -2,6 +2,7 @@ import React from 'react';
 import link from '../../../utilities/links.json';
 import GoogleAd from '../../GoogleAd';
 import restassuredLogo from '../../../images/tabs/restassuredLogo.png'; 
+import Footer from '../../../components/footer';
 
 const resRestassured = () => {
     return(
@@ -22,9 +23,12 @@ const resRestassured = () => {
                     RestAssured Org                 
                 </a>
             </div>
-
-
-            <GoogleAd slot="1541085932" classNames="page-right-side" />
+            <div>
+                <GoogleAd slot="1541085932" classNames="page-right-side" />
+            </div>
+            <section className='pt4'>
+                <Footer />
+            </section>
         </div>
     )
 }

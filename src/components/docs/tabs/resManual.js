@@ -6,6 +6,7 @@ import BugLifeCycle from '../../../images/tabs/bugLifeCycle.png'
 import TestPyramid from '../../../images/tabs/testPyramid.png'
 import TestPyramid1 from '../../../images/tabs/testPyramid1.png'
 import GoogleAd from '../../../components/GoogleAd';
+import Footer from '../../../components/footer';
 
 const resManual = () => {
     return(
@@ -760,7 +761,12 @@ const resManual = () => {
                     Different Types Of Software Testing
                 </a>
             </div>
-            <GoogleAd slot="1541085932" classNames="page-right-side" />
+            <div>
+                <GoogleAd slot="1541085932" classNames="page-right-side" />
+            </div>
+            <section className='pt4'>
+                <Footer />
+            </section>
         </div>
     )
 }

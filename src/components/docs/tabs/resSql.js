@@ -3,6 +3,7 @@ import link from '../../../utilities/links.json';
 import GoogleAd from '../../../components/GoogleAd';
 import SQL_LOGO from '../../../images/tabs/sqlLogo.png';
 import { Grid, Cell } from 'react-mdl';
+import Footer from '../../../components/footer';
 
 const resSql = () => {
     return(
@@ -186,10 +187,12 @@ const resSql = () => {
                     SQL Commands W3Schools
                 </a>
             </div>
-            
             <div>
                 <GoogleAd slot="1541085932" classNames="page-right-side" />
             </div>
+            <section className='pt4'>
+                <Footer />
+            </section>
         </div>
     )
 }

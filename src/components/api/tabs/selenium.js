@@ -1,6 +1,7 @@
 import React from 'react';
 import identifier from '../../../utilities/elRef';
 import link from '../../../utilities/links.json';
+import Footer from '../../../components/footer';
 import GoogleAd from '../../GoogleAd';
 
 const selenium = () => {
@@ -1156,8 +1157,11 @@ const selenium = () => {
 
             </section>
             <div>
-              <GoogleAd slot="1541085932" classNames="page-right-side" />
+                <GoogleAd slot="1541085932" classNames="page-right-side" />
             </div>
+            <section className='pt4'>
+                <Footer />
+            </section>
             
         </main>
     );

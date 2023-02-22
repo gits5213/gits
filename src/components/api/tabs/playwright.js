@@ -2,6 +2,7 @@ import React from 'react';
 import link from '../../../utilities/links.json';
 import GoogleAd from '../../GoogleAd';
 import webDriverIOLogo from '../../../images/tabs/playwrightLogo.png'; 
+import Footer from '../../../components/footer';
 
 const resPlaywright = () => {
     return(
@@ -22,7 +23,12 @@ const resPlaywright = () => {
                     PlayWright API                 
                 </a>
             </div>
-            <GoogleAd slot="1541085932" classNames="page-right-side" />N
+            <div>
+                <GoogleAd slot="1541085932" classNames="page-right-side" />
+            </div>
+            <section className='pt4'>
+                <Footer />
+            </section>
         </div>
     )
 }

@@ -1,6 +1,7 @@
 import React from 'react';
 import GoogleAd from '../../GoogleAd';
 import basicLogo from '../../../images/tabs/basicLogo.png';
+import Footer from '../../../components/footer';
 
 const basic = () => {
     return(
@@ -11,8 +12,12 @@ const basic = () => {
             <div className='tc'>
                 <img className='basic-logo' src={basicLogo} alt='basic Logo' />
             </div>
-           
-            <GoogleAd slot="1541085932" classNames="page-right-side" />
+            <div>
+                <GoogleAd slot="1541085932" classNames="page-right-side" />
+            </div>
+            <section className='pt4'>
+                <Footer />
+            </section>
         </div>
     )
 }

@@ -3,6 +3,7 @@ import link from '../../../utilities/links.json';
 import GoogleAd from '../../../components/GoogleAd';
 import GIT_LOGO from '../../../images/tabs/gitGitHub.png';
 import  GIT_CHEATSHEET from '../../../images/tabs/gitCheatSheet.jpeg';
+import Footer from '../../../components/footer';
 
 import { Grid, Cell } from 'react-mdl';
 
@@ -133,8 +134,11 @@ const resGit = () => {
                     <img className='pr4 pt4 pb4 linux-logo' src={GIT_CHEATSHEET} alt='Linux Logo'/>
                 </div>
             </section>
-            <section>
+            <div>
                 <GoogleAd slot="1541085932" classNames="page-right-side" />
+            </div>
+            <section className='pt4'>
+                <Footer />
             </section>
         </div>
     )
