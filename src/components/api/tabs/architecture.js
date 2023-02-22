@@ -11,13 +11,13 @@ const Architecture = () => {
     return(
         <section className='page-tab-body'>
             <div>
-                <h3>Framework Architecture</h3>
+                <h3>{architecData.componentName.frameworkArchitecture}</h3>
             </div>
             
             <Grid className="border">
                 <Cell className='pl4' col={3}>
                     <div>
-                        <h3>Seelenium</h3>
+                        <h3>{architecData.componentName.selenium4}</h3>
                         <hr/>
                     </div>
                    <div>
@@ -35,13 +35,13 @@ const Architecture = () => {
                     </div>
                     <div>
                         <h6>More info</h6>
-                        <a href='https://blog.testproject.io/2021/06/01/selenium-3-vs-selenium-4/'>Test Project</a>
-                        <a href='https://www.selenium.dev/documentation/overview/components/'> | Selenium</a>
+                        <a href={architecData.links.seleniumArchDiagram_2}>{architecData.componentName.testProject}</a>
+                        <a href={architecData.componentName.seleniumArchDiagram_2}> | {architecData.componentName.selenium}</a>
                     </div>
                 </Cell>
                 <Cell className='pl4 verticalLine' col={3}>
                     <div>
-                        <h3>CypressIO</h3>
+                        <h3>{architecData.componentName.cypressIO}</h3>
                         <hr/>
                     </div>
                    <div>
@@ -61,13 +61,13 @@ const Architecture = () => {
                     </div>
                     <div>
                         <h6>More info</h6>
-                            <a href='https://docs.cypress.io/guides/overview/key-differences'>CypressIO Architecture</a>
-                            <a href='https://www.tutorialspoint.com/cypress-architecture-test-automation'> | TutorialsPoint</a>
+                            <a href={architecData.links.cypressArchDiagram_1}>{architecData.componentName.cypressIOArchitecture}</a>
+                            <a href={architecData.links.cypressArchDiagram_2}> | {architecData.componentName.tutorialsPoint}</a>
                     </div>
                 </Cell>
                 <Cell className='pl4 verticalLine' col={3}>
                     <div>
-                        <h3>PlayWright</h3>
+                        <h3>{architecData.componentName.playWright}</h3>
                         <hr/>
                     </div>
                    <div>
@@ -86,13 +86,13 @@ const Architecture = () => {
                     </div>
                     <div>
                         <h6>More info</h6>
-                        <a href='https://medium.com/version-1/playwright-vs-selenium-which-is-faster-and-more-stable-c41ba1a89c0a'>PlayWright Architecture</a>
-                        <a href='https://www.programsbuzz.com/article/playwright-architecture'> | ProgramsBuzz</a>
+                        <a href={architecData.links.playwrightArchDiagram_1}>{architecData.componentName.playWrightArchitecture}</a>
+                        <a href={architecData.links.playwrightArchDiagram_2}> | {architecData.componentName.programsBuzz}</a>
                     </div>
                 </Cell>
                 <Cell className='pl4 verticalLine' col={3}>
                     <div>
-                        <h3>WebDriverIO</h3>
+                        <h3>{architecData.componentName.webDriverIO}</h3>
                         <hr/>
                         
                     </div>
@@ -110,8 +110,8 @@ const Architecture = () => {
                     </div>
                     <div>
                         <h6>More info</h6>
-                            <a href='https://www.browserstack.com/guide/webdriverio-tutorial-for-selenium-automation#:~:text=for%20automation%20testers.-,WebdriverIO%20Architecture%3A%20How%20does%20it%20work%3F,architecture%20to%20conduct%20automation%20testing.'>WebDriver Architecture</a>
-                            <a href='https://www.tutorialspoint.com/webdriverio/webdriverio_architecture.htm'> | TutorialsPoint</a>
+                            <a href={architecData.links.webDriverIOArchDiagram_1}>{architecData.componentName.webDriverArchitecture}</a>
+                            <a href={architecData.links.webDriverIOArchDiagram_2}> | {architecData.componentName.tutorialsPoint}</a>
                     </div>
                 </Cell>
             </Grid>

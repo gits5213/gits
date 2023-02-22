@@ -1,4 +1,18 @@
 {
+    "componentName":{
+        "frameworkArchitecture":"Framework Architecture",
+        "selenium4":"Selenium 4",
+        "cypressIO":"CypressIO",
+        "playWright":"PlayWright",
+        "webDriverIO":"WebDriverIO",
+        "testProject":"Test Project",
+        "selenium":"Selenium Architecture",
+        "cypressIOArchitecture":"CypressIO Architecture",
+        "tutorialsPoint":"TutorialsPoint",
+        "playWrightArchitecture":"PlayWright Architecture",
+        "programsBuzz":"ProgramsBuzz",
+        "webDriverArchitecture":"WebDriver Architecture"
+    },
     "architecData": [
         { 
             "SeleniumDescription": "Unlike Selenium 3, Selenium 4 has direct communication between the client and server. The client still has 2 parts (Selenium Client & WebDriver Language Bindings) while Browser Drivers are the server.", 
@@ -29,6 +43,17 @@
     "webDriverIODescription": {
         "wd1":"Thus the JavaScript implemented by the end-user passes a request using the WebdriverIO via Nodejs to the Services (in the format of an HTTP command). The entire process is done following the JSON Wire Protocol.",
         "wd2":"Services send the request to the browsers like Chrome, Firefox, and so on to execute a test against the application under test. Thus the Services can be termed as a middle-layer between the browser and the automation framework."
+    },
+    "links":{
+        "seleniumArchDiagram_1":"https://blog.testproject.io/2021/06/01/selenium-3-vs-selenium-4/",
+        "seleniumArchDiagram_2":"https://www.selenium.dev/documentation/overview/components/",
+        "cypressArchDiagram_1":"https://docs.cypress.io/guides/overview/key-differences",
+        "cypressArchDiagram_2":"https://www.tutorialspoint.com/cypress-architecture-test-automation",
+        "playwrightArchDiagram_1":"https://medium.com/version-1/playwright-vs-selenium-which-is-faster-and-more-stable-c41ba1a89c0a",
+        "playwrightArchDiagram_2":"https://www.programsbuzz.com/article/playwright-architecture",
+        "webDriverIOArchDiagram_1":"https://www.browserstack.com/guide/webdriverio-tutorial-for-selenium-automation#:~:text=for%20automation%20testers.-,WebdriverIO%20Architecture%3A%20How%20does%20it%20work%3F,architecture%20to%20conduct%20automation%20testing.",
+        "webDriverIOArchDiagram_2":"https://www.tutorialspoint.com/webdriverio/webdriverio_architecture.htm"
     }
+
 
 }
