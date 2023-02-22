@@ -306,29 +306,8 @@ h1.sub-header {
   color: white;
 }
 
+/* =============VerticalLine==============*/
+.verticalLine {
+  border-left: 0.5px solid #06c96b;
+}
 
-
-
-
-
-/* .container {
-    background-image: url(/images/codingImage.jpg);
-    background-position: center;
-    background-repeat: no-repeat;
-    background-size: cover;
-    position: relative;
-    color: #fff;
-    padding: 20px 20px;
-    margin: 20px;
-    text-align: center;
-  } */
-  /* #htext{
-  margin-left: 50px;
-  text-align: center;
-  font-family: monospace;
-  text-justify: auto;
-  text-transform: capitalize;
-  font-size: x-large;
-  float: left;
-
-} */

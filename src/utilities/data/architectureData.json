@@ -1,0 +1,34 @@
+{
+    "architecData": [
+        { 
+            "SeleniumDescription": "Unlike Selenium 3, Selenium 4 has direct communication between the client and server. The client still has 2 parts (Selenium Client & WebDriver Language Bindings) while Browser Drivers are the server.", 
+            "playWrightDescription": "The Playwright is aligned with the architecture of the modern browsers and runs tests out-of-process, and it is free of the typical in-process test runner limitations of Cypress. Playwright communicates all requests between client and server through a single WebSocket connection which is comparatively better than the Selenium HTTP Connection protocol for automation.", 
+            "cypressIOdescription": "In short, we can say that Cypress works inside the browser and it is the browser that is running our test code. It can change the browser behavior at the run time by handling DOM and modifying the requests and responses of the network on the fly.", 
+            "webDriverIODescription": "Nodejs is enabled to execute the JavaScript runtime environment. It is actually an open-source project. WebdriverIO is developed on Nodejs and JavaScript is the script implemented by the end-user using the WebdriverIO library." 
+        }
+    ],
+
+    "seleniumDescription": {
+        "sd1":"Selenium Client sends out a request to perform a command.",
+        "sd2":"The WebDriver Language Bindings is a code library designed to drive actions.",
+        "sd3":"Browser Drivers receive the request and then return a response after an automation Test Script executes on the Web Browser:"
+    },
+    "cypressIOdescription": {
+        "cd1":"Cypress is sitting on the browser itself. In the background of Cypress, there exists the Node.js server. The Node server and the Cypress interacts constantly, adjusts and executes actions in support of each other.",
+        "cd2":"Thus Cypress has access to both the front and back end of the application. This helps it to act on the real time incidents on the application at the same time execute tasks outside of the browser that need greater privilege.",
+        "cd3":"Cypress has the capability to act on the network layer by monitoring and updating the web traffic. This helps it to not only regulate traffic in and out of the browser but also update the code that deals with browser automation.",
+        "cd4":"Cypress has the power to control the full automation process thus it can comprehend what is happening within and outside of the browser. Cypress is installed on our machine locally.",
+        "cd5":"This makes it instrumental for performing actions like recording videos, capturing screenshots, basic file system and network related operations. Cypress can access DOM, window objects, local storage, network layer, browser dev tools and so on."
+    },
+    "playWrightDescription": {
+        "pd1":"Client: At the client end, you have your code written in different programming languages like JavaScript, Java, Python, C#, etc.",
+        "pd2":"Server: The Playwright Server communicates with the client and different web browser engines. Browser Protocols: The Playwright uses the Chrome DevTools Protocol (CDP) to communicate with Chromium. For Firefox and WebKit, Playwright implemented their own protocols similar to CDP.",
+        "pd3":"WebSocket Protocol: A WebSocket connection is established by sending a request to the server from a client through a process called the WebSocket handshake. WebSockets have a much lower latency in terms of messages being sent to their clients due to the open connection, which is contrary to the long polling where the connection has to be reestablished with each request. WebSockets, send the response as soon as it gets it in real time. The WebSocket connection uses WebSocket communication protocol which provides a full-duplex communication channel over a single TCP connection. A full-duplex system allows communication in both directions. All modern browsers support this protocol. It is a stateful protocol where the connection between the client and server will stay alive until either client or server terminates it.",
+        "pd4":"Client Server Communication: Once you will trigger your test, the code will be converted into JSON format, and then it will be sent to the server using Web Socket Protocol. The Playwright communicates all requests through a single web socket connection, which stays in place until all test execution is completed. Since commands are sent on a single connection, chances of test failure or flakiness are less, and commands are executed quickly. This architecture is contrary to Selenium, which uses HTTP connection protocol and sends each command like browser opening, clicking, sending keys, or closing the browser as a separate HTTP request. Also, in Selenium, the connection between the server and the client will be terminated after each request and re-established for the next request. This is the reason why Playwright is faster than Selenium."
+    },
+    "webDriverIODescription": {
+        "wd1":"Thus the JavaScript implemented by the end-user passes a request using the WebdriverIO via Nodejs to the Services (in the format of an HTTP command). The entire process is done following the JSON Wire Protocol.",
+        "wd2":"Services send the request to the browsers like Chrome, Firefox, and so on to execute a test against the application under test. Thus the Services can be termed as a middle-layer between the browser and the automation framework."
+    }
+
+}

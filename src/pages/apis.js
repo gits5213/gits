@@ -12,6 +12,7 @@ import Frisby from '../components/api/tabs/frisby';
 import SuperTest from '../components/api/tabs/superTest';
 import Playwright from '../components/api/tabs/playwright';
 import ReadyAPI from '../components/api/tabs/readyapi';
+import Architecture from '../components/api/tabs/architecture';
 
 class apis extends Component {
     constructor(props) {
@@ -65,6 +66,11 @@ class apis extends Component {
                 <ReadyAPI />
             )
         }
+        else if(this.state.activeTab === 10) {
+            return(
+                <Architecture />
+            )
+        }
     }
 
     render() {
@@ -81,6 +87,7 @@ class apis extends Component {
                     <Tab>FrisBy</Tab>
                     <Tab>Playwright</Tab>
                     <Tab>ReadyAPI</Tab>
+                    <Tab>Architecture</Tab>
                 </Tabs>
                 <HeaderText /> 
                 <section>
