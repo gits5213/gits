@@ -2,7 +2,7 @@ import React, {Component} from 'react';
 import HeaderText from '../components/header';
 import { Grid, Cell} from 'react-mdl';
 import GoogleAd from '../components/GoogleAd';
-import SocialIcon from '../components/socialIcon';
+import Footer from '../components/footer';
 
 const Docs = '/docs';
 const SQA_SIGN_UP = 'https://msz5213.github.io/student-subscription/';
@@ -51,12 +51,14 @@ class Contact extends Component {
                                 </a>
                             </div>
                         </div>
-                        <div>
-                            <SocialIcon />
-                        </div>
-                        <GoogleAd slot="1541085932" classNames="page-right-side" />
                     </Cell>
             </Grid>
+            <div>
+                <GoogleAd slot="1541085932" classNames="page-right-side" />
+            </div>
+            <section className='pt4'>
+                <Footer />
+            </section>
             </div>
         );
     }
