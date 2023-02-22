@@ -2,6 +2,10 @@
     "HEADER":"............................................",
     "PERSONAL_GITHUB": "https://github.com/gits5213/gits5213/blob/master/README.md",
     "PERSONAL_PORTFOLIO": "https://gits5213.github.io/mdzamanportfolio/",
+
+    "HOW_IT_WORKS":"https://gits5213.github.io/gits/courses",
+    "ABOUT":"/about",
+    "CONTACT":"/contact",
     
     "WEB_DEV_SIGN_UP":"https://gits5213.github.io/student-subscription/",
     "SQA_SIGN_UP":"https://forms.gle/9NPaXHeKifgm4uPm7",
@@ -17,10 +21,7 @@
     "REQRES_WEBSITE":"https://reqres.in/",
     "QUESTIONS":"https://www.facebook.com/globalitechsol",
     "ANSWERE":"https://www.linkedin.com/company/52147964/",
-    "HOW_IT_WORKS":"https://gits5213.github.io/gits/courses",
-    "ABOUT":"/about",
-    "CONTACT":"/contact",
-
+    
     "SocialIcon":"............................................",
     "FACEBOOK":"https://www.facebook.com/globalitechsol",
     "GITHUB":"https://github.com/gits5213/",
