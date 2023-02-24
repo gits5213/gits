@@ -5,9 +5,9 @@ import landingImage from '../images/sdlcLogo.png'
 import CardList from '../components/cardList';
 import {cardDetails}from '../components/cardDetails';
 import Footer from '../components/footer';
-
-import classromom from '../images/classroomClass.jpg'
-import online from '../images/onlineClass.jpg'
+import classromom from '../images/classroomClass.jpg';
+import online from '../images/onlineClass.jpg';
+import landingPageData from '../utilities/data/landingPage.json';
 
 const ZOOM_MEET = 'https://us06web.zoom.us/j/9803798160';
 
@@ -21,7 +21,7 @@ class Landing extends Component {
           
                 <div className='ph4 mt4 pt3'> 
                     <a className='f6 grow no-underline br-pill ba bw1 ph3 pv2 mb2 dib dark-green' href={ZOOM_MEET} target="_blank" rel="noopener noreferrer">
-                        ZOOM MEETING
+                        {landingPageData.zoomMeeting}
                     </a>
                 </div>
                 <div className='pt5 tc ph3 mt4'>
