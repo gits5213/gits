@@ -7,7 +7,6 @@ import cypressLogo from '../../../images/architecture/cypressArchitecture.png';
 import palywrightLogo from '../../../images/architecture/playwrightArchitecture.jpeg'; 
 import webDriverIOLogo from '../../../images/architecture/webdriverIO-Architecture.png'; 
 import Footer from '../../../components/footer';
-import GoogleAd from '../../GoogleAd';
 
 const Architecture = () => {
     return(
@@ -118,13 +117,24 @@ const Architecture = () => {
                 </Cell>
             </Grid>
             <hr/>
-            <div>
-                <p>More info coming soon!</p>
-
-            </div>
-            <div>
-                <GoogleAd slot="1541085932" classNames="page-right-side" />
-            </div>
+            <section>
+            <Grid className="border">
+                <Cell className='pl4' col={3}>
+                    <Footer />
+            
+                </Cell>
+                <Cell className='pl4 verticalLine' col={3}>
+                    <Footer />
+                    
+                </Cell>
+                <Cell className='pl4 verticalLine' col={3}>
+                    <Footer />
+                </Cell>
+                <Cell className='pl4 verticalLine' col={3}>
+                    <Footer />
+                </Cell>
+            </Grid>
+            </section>
             <section className='pt4'>
                 <Footer />
             </section>
