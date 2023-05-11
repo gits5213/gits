@@ -1,12 +1,13 @@
 import React, {Component} from 'react';
 import { Tabs, Tab } from 'react-mdl';
 import HeaderText from '../components/header';
-import Window from '../components/conf/tabs/window';
-import Mac from '../components/conf/tabs/mac';
-import Basic from '../components/conf/tabs/basic';
-import Gk from '../components/conf/tabs/gk';
-import Help from '../components/conf/tabs/help';
-import Frontend from '../components/conf/tabs/frontend';
+import Window from '../components/aid/tabs/window';
+import Mac from '../components/aid/tabs/mac';
+import Basic from '../components/aid/tabs/basic';
+import Gk from '../components/aid/tabs/gk';
+import Help from '../components/aid/tabs/help';
+import Frontend from '../components/aid/tabs/frontend';
+import CodeSnippet from '../components/aid/tabs/code-snippet';
 
 
 
@@ -41,6 +42,10 @@ class links extends Component {
             return(
                 <Frontend />
             )
+        }else if(this.state.activeTab === 6) {
+            return(
+                <CodeSnippet />
+            )
         }
     }
 
@@ -54,6 +59,7 @@ class links extends Component {
                     <Tab>G.K</Tab>
                     <Tab>Help</Tab>
                     <Tab>Frontend</Tab>
+                    <Tab>CodeSnippet</Tab>
                 </Tabs>
                 <HeaderText /> 
                 <section>
