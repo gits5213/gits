@@ -186,6 +186,11 @@ const CodeSnippet = () => {
                             <hr/>
                         </div>
                         <div id="inherittance">
+                            <div>
+                                <code>
+                                    - For 
+                                </code>
+                            </div>
                             <div id="accessmodifier">
                                 <code>
                                     ======Access Modifier======<br/>
@@ -195,12 +200,25 @@ const CodeSnippet = () => {
                                     - Private: within class  <br/>
                                 </code>
                             </div>
+                            <div id="dfadss">
+                                <div>
+                                    <code>
+                                        
+                                    </code>
+                                </div>
+                            </div>
                         </div>
+
                     </section>
                     <section id="collection">
                         <div>
                             <h5>Collection</h5>
                             <hr/>
+                        </div>
+                    </section>
+                    <section>
+                        <div>
+                            <a href='programiz.com/java-programming/online-compiler/'>Java onlie coding</a>
                         </div>
                     </section>
                 </Cell>
