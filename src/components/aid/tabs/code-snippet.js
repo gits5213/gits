@@ -188,7 +188,9 @@ const CodeSnippet = () => {
                         <div id="inherittance">
                             <div>
                                 <code>
-                                    - For 
+                                    class Subclass-name extends Superclass-name {'{'} <br/>
+                                    '//methods and fields'  <br/>
+                                    {'}'}
                                 </code>
                             </div>
                             <div id="accessmodifier">
