@@ -12,6 +12,7 @@ import Frisby from '../components/api/tabs/frisby';
 import SuperTest from '../components/api/tabs/superTest';
 import Playwright from '../components/api/tabs/playwright';
 import ReadyAPI from '../components/api/tabs/readyapi';
+import PerformaceTest from '../components/api/tabs/performance';
 import Architecture from '../components/api/tabs/architecture';
 
 class apis extends Component {
@@ -27,48 +28,53 @@ class apis extends Component {
             )
         } else if(this.state.activeTab === 1) {
             return(
-                <Cypress />
+                <Playwright />
             )
         } else if(this.state.activeTab === 2) {
             return(
-                <Protractor />
+                <Cypress />
             )
         } else if(this.state.activeTab === 3) {
             return(
-                <WebDriverIO />
+                <Protractor />
             )
         }
         else if(this.state.activeTab === 4) {
             return(
-                <Appium />
+                <RestAssured />
             )
         } else if(this.state.activeTab === 5) {
             return(
-                <RestAssured />
+                <ReadyAPI />
             )
         } else if(this.state.activeTab === 6) {
             return(
-                <SuperTest />
+                <PerformaceTest />
             )
         }
         else if(this.state.activeTab === 7) {
             return(
-                <Frisby />
+                <Architecture />
             )
         }
         else if(this.state.activeTab === 8) {
             return(
-                <Playwright />
+                <Appium />
             )
         }
         else if(this.state.activeTab === 9) {
             return(
-                <ReadyAPI />
+                <WebDriverIO />
             )
         }
         else if(this.state.activeTab === 10) {
             return(
-                <Architecture />
+                <SuperTest />
+            )
+        }
+        else if(this.state.activeTab === 11) {
+            return(
+                <Frisby />
             )
         }
     }
@@ -78,16 +84,17 @@ class apis extends Component {
             <div className="category-tabs">
                 <Tabs activeTab={this.state.activeTab} onChange={(tabId) => this.setState({ activeTab: tabId })} ripple>
                     <Tab>Selenium</Tab>
+                    <Tab>Playwright</Tab>
                     <Tab>CypressIO</Tab>
                     <Tab>Protractor</Tab>
-                    <Tab>WebDriverIO</Tab>
-                    <Tab>Appium</Tab>
                     <Tab>RestAssured</Tab>
+                    <Tab>ReadyAPI</Tab>
+                    <Tab>PerformaceTest</Tab>
+                    <Tab>Architecture</Tab>
+                    <Tab>Appium</Tab>
+                    <Tab>WebDriverIO</Tab>
                     <Tab>SuperTest</Tab>
                     <Tab>FrisBy</Tab>
-                    <Tab>Playwright</Tab>
-                    <Tab>ReadyAPI</Tab>
-                    <Tab>Architecture</Tab>
                 </Tabs>
                 <HeaderText /> 
                 <section>
