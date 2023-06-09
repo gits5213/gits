@@ -8,7 +8,7 @@ const resRestassured = () => {
     return(
         <div className='page-tab-body'>
             <div>
-                <h3>RestAssured Framework</h3>
+                <h3>RESTAssured Framework</h3>
             </div>
             <div className='tc'>
                 <img className='appium-logo' src={restassuredLogo} alt='appium Logo'/>
@@ -16,11 +16,11 @@ const resRestassured = () => {
             <div className='tc pt4'>
                 <a class='f6 grow no-underline br-pill ph3 pv2 mb2 dib white bg-red' href={link.RESTASSURED_GITHUB} target="_blank" rel="noopener noreferrer">
                     <img className='pr2' src={link.GITHUB_ICON} alt='github log' /> 
-                    RestAssured on GitHub                 
+                    RESTAssured on GitHub                 
                 </a>
                 <a class='f6 grow no-underline br-pill ph3 pv2 mb2 dib white bg-green' href={link.RESTASSURED_WEBSITE} target="_blank" rel="noopener noreferrer">
                     <img className='pr2' src={link.GITHUB_ICON} alt='github log' /> 
-                    RestAssured Org                 
+                    RESTAssured Org                 
                 </a>
             </div>
             <div>

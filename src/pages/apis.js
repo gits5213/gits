@@ -7,7 +7,7 @@ import Cypress from '../components/api/tabs/cypress';
 import Protractor from '../components/api/tabs/protractor';
 import WebDriverIO from '../components/api/tabs/webDriverIo';
 import Appium from '../components/api/tabs/appium';
-import RestAssured from '../components/api/tabs/restassured';
+import RESTAssured from '../components/api/tabs/restassured';
 import Frisby from '../components/api/tabs/frisby';
 import SuperTest from '../components/api/tabs/superTest';
 import Playwright from '../components/api/tabs/playwright';
@@ -41,7 +41,7 @@ class apis extends Component {
         }
         else if(this.state.activeTab === 4) {
             return(
-                <RestAssured />
+                <RESTAssured />
             )
         } else if(this.state.activeTab === 5) {
             return(
@@ -87,7 +87,7 @@ class apis extends Component {
                     <Tab>Playwright</Tab>
                     <Tab>CypressIO</Tab>
                     <Tab>Protractor</Tab>
-                    <Tab>RestAssured</Tab>
+                    <Tab>RESTAssured</Tab>
                     <Tab>ReadyAPI</Tab>
                     <Tab>PerformaceTest</Tab>
                     <Tab>Architecture</Tab>

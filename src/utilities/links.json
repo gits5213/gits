@@ -272,6 +272,15 @@
     "frontendTools": "https://murtazajoo.me/tools/",
 
     "Help":"............",
-    "chatGPT": "https://chat.openai.com/chat"
+    "chatGPT": "https://chat.openai.com/chat",
+    "roadmap": "https://roadmap.sh/",
+    "htmlCompiler": "https://www.programiz.com/html/online-compiler/",
+    "codePedHtmlCssJs": "https://codepad.co/playground",
+    "codePenHtmlCssJS": "https://codepen.io/knox97/pen/zKEvre",
+    "javaCompiler": "https://www.programiz.com/java-programming/online-compiler/",
+    "cSharpCompiler": "https://www.programiz.com/csharp-programming/online-compiler/",
+    "pythonCompiler": "https://www.programiz.com/python-programming/online-compiler/",
+    "javascriptCompiler": "https://www.programiz.com/javascript/online-compiler/"
+    
 
 }   
