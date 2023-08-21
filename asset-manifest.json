@@ -1,7 +1,7 @@
 {
   "files": {
     "main.css": "/gits/static/css/main.e86e2f6c.css",
-    "main.js": "/gits/static/js/main.b56d07c7.js",
+    "main.js": "/gits/static/js/main.36dc26c1.js",
     "static/media/classroomClass.jpg": "/gits/static/media/classroomClass.7e41b18c7d9b14fc36c4.jpg",
     "static/media/onlineClass.jpg": "/gits/static/media/onlineClass.7cb9969dda864d997a2d.jpg",
     "static/media/gitGitHub.png": "/gits/static/media/gitGitHub.42ff9193b5481141b296.png",
@@ -47,7 +47,9 @@
     "static/media/gitCheatSheet.jpeg": "/gits/static/media/gitCheatSheet.8a0fce1452320c08b410.jpeg",
     "static/media/protractorLog.png": "/gits/static/media/protractorLog.9f37af94a05a05a4738c.png",
     "static/media/supertestLogo.png": "/gits/static/media/supertestLogo.9e385c731e33f70b6ed6.png",
+    "static/media/cypressIO.png": "/gits/static/media/cypressIO.f17cc738d4b528f1538e.png",
     "static/media/javascriptLogo.png": "/gits/static/media/javascriptLogo.011db0360c583af7d674.png",
+    "static/media/playwright.png": "/gits/static/media/playwright.74ada93c4e9bc7037e77.png",
     "static/media/sqlLogo.png": "/gits/static/media/sqlLogo.45ebbaf605475f92d93f.png",
     "static/media/htmlLogo.png": "/gits/static/media/htmlLogo.bd7deb017a9ce7b20973.png",
     "static/media/cssLogo.png": "/gits/static/media/cssLogo.bbf01949060418a7ce89.png",
@@ -57,10 +59,10 @@
     "static/media/defectBugError.png": "/gits/static/media/defectBugError.0946ec0d4610f19696e5.png",
     "index.html": "/gits/index.html",
     "main.e86e2f6c.css.map": "/gits/static/css/main.e86e2f6c.css.map",
-    "main.b56d07c7.js.map": "/gits/static/js/main.b56d07c7.js.map"
+    "main.36dc26c1.js.map": "/gits/static/js/main.36dc26c1.js.map"
   },
   "entrypoints": [
     "static/css/main.e86e2f6c.css",
-    "static/js/main.b56d07c7.js"
+    "static/js/main.36dc26c1.js"
   ]
 }
