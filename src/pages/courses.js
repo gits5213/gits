@@ -31,7 +31,7 @@ class Courses extends Component {
                 <CoursesManual />
             )
         }
-        else if(this.state.activeTab === 3) {
+        else if(this.state.activeTab === 4) {
             return(
                 <Accessibility />
             )
@@ -46,7 +46,7 @@ class Courses extends Component {
                     <Tab>WebDevelopment</Tab>
                     <Tab>Automation</Tab>
                     <Tab>Manual</Tab>
-                    <Tab>AccessibilityTest</Tab>
+                    <Tab>Accessibility</Tab>
                 </Tabs>
                 <HeaderText /> 
                 <section>

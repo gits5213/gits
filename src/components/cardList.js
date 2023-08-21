@@ -8,6 +8,7 @@ import apiManualTest from '../images/apiManualTest.png';
 import apiAutoTest from '../images/apiAutoTest.png';
 import cypressIO from '../images/cypressIO.png';
 import playwright from '../images/playwright.png';
+import webAccessibility from '../images/webAccessibility.png';
 
 const COURSES = '/courses';
 
@@ -23,6 +24,7 @@ const cardList = ({cardDetails}) => {
 
             <Card img={<a href={COURSES} target="_blank" rel="noopener noreferrer"><img alt='cypressIO' src={cypressIO} width='200' height='200'/></a>} id={cardDetails[6].id} courseName={cardDetails[6].courseName} techStack={cardDetails[6].techStack}/>
             <Card img={<a href={COURSES} target="_blank" rel="noopener noreferrer"><img alt='playwright' src={playwright} width='200' height='200'/></a>} id={cardDetails[7].id} courseName={cardDetails[7].courseName} techStack={cardDetails[7].techStack}/>
+            <Card img={<a href={COURSES} target="_blank" rel="noopener noreferrer"><img alt='playwwebAccessibilityright' src={webAccessibility} width='200' height='200'/></a>} id={cardDetails[8].id} courseName={cardDetails[8].courseName} techStack={cardDetails[8].techStack}/>
         </div> 
     );
 }
