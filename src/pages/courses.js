@@ -5,6 +5,7 @@ import CoursesCode4Kids from '../components/courses/tabs/coursesCode4Kids';
 import CoursesWebDev from '../components/courses/tabs/coursesWebDev';
 import CoursesAutomation from '../components/courses/tabs/coursesAutomation';
 import CoursesManual from '../components/courses/tabs/coursesManual';
+import Accessibility from '../components/courses/tabs/accessibility';
 
 class Courses extends Component {
     constructor(props) {
@@ -30,6 +31,11 @@ class Courses extends Component {
                 <CoursesManual />
             )
         }
+        else if(this.state.activeTab === 3) {
+            return(
+                <Accessibility />
+            )
+        }
     }
 
     render() {
@@ -40,6 +46,7 @@ class Courses extends Component {
                     <Tab>WebDevelopment</Tab>
                     <Tab>Automation</Tab>
                     <Tab>Manual</Tab>
+                    <Tab>AccessibilityTest</Tab>
                 </Tabs>
                 <HeaderText /> 
                 <section>

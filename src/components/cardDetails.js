@@ -30,5 +30,15 @@ export const cardDetails = [
         id: 6,
         courseName: 'Web Development',
         techStack: 'HTML, CSS, Javascript, NodeJS, ReactJS'
+    },
+    {
+        id: 7,
+        courseName: 'CypressIO UI, API & Middleware Test',
+        techStack: 'JS, Data, Keyword Driven, POM Concept, Github Action'
+    },
+    {
+        id: 8,
+        courseName: 'Playwright UI, API & Middleware Test',
+        techStack: 'JS, Data, Keyword Driven, POM Concept, Github Action'
     }
 ]
