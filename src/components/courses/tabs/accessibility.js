@@ -13,9 +13,10 @@ const accessibility = () => {
             <div className='programOutline'>
                 <img className='courseOutline' src={courseOutline} alt="Course Outline"></img>
             </div>
+            <hr/>
             <secton>
             <h5>
-                The following acronyms and abbreviations relevant in the world of web accessiblity,
+                The following acronyms and abbreviations relevant in the world of web accessiblity.
             </h5>
                 <ul>
                     <li>WAI-ARIA = Web Accessibility Initiative – Accessible Rich Internet Applications</li>
@@ -167,12 +168,12 @@ const accessibility = () => {
                         Key points regarding 508 compliance include:
                     </p>
                     <ul>
-                        <li>Web Accessibility: Section 508 requires that federal websites and web applications be designed, developed, and maintained in a way that allows individuals with disabilities to access the content using assistive technologies, such as screen readers.</li>
-                        <li>Document Accessibility: Documents produced by federal agencies, such as PDFs, must be made accessible to people with disabilities. This involves providing alternative text for images, using proper document structure, and ensuring compatibility with screen readers.</li>
-                        <li>Multimedia Accessibility: Multimedia content, such as videos and audio files, must include captions, transcripts, and audio descriptions to ensure that individuals with hearing or visual impairments can access the content.</li>
-                        <li>Software Accessibility: Software applications used by federal agencies should be designed to accommodate people with disabilities, allowing them to effectively use the software's features.</li>
-                        <li>Procurement of Accessible Technology: Federal agencies are required to consider accessibility when procuring new technology, ensuring that the technology they purchase is usable by individuals with disabilities.</li>
-                        <li>Exceptions: Section 508 does include some exceptions for situations where achieving full accessibility is not feasible due to specific limitations or security concerns.</li>
+                        <li><strong>Web Accessibility:</strong> Section 508 requires that federal websites and web applications be designed, developed, and maintained in a way that allows individuals with disabilities to access the content using assistive technologies, such as screen readers.</li>
+                        <li><strong>Document Accessibility:</strong> Documents produced by federal agencies, such as PDFs, must be made accessible to people with disabilities. This involves providing alternative text for images, using proper document structure, and ensuring compatibility with screen readers.</li>
+                        <li><strong>Multimedia Accessibility:</strong> Multimedia content, such as videos and audio files, must include captions, transcripts, and audio descriptions to ensure that individuals with hearing or visual impairments can access the content.</li>
+                        <li><strong>Software Accessibility:</strong> Software applications used by federal agencies should be designed to accommodate people with disabilities, allowing them to effectively use the software's features.</li>
+                        <li><strong>Procurement of Accessible Technology:</strong> Federal agencies are required to consider accessibility when procuring new technology, ensuring that the technology they purchase is usable by individuals with disabilities.</li>
+                        <li><strong>Exceptions:</strong> Section 508 does include some exceptions for situations where achieving full accessibility is not feasible due to specific limitations or security concerns.</li>
                     </ul>
                     <p>
                         While Section 508 specifically applies to U.S. federal agencies, its principles and guidelines have influenced accessibility standards globally. Many organizations, both in the public and private sectors, follow similar accessibility standards to ensure that their digital content is usable by everyone, regardless of their abilities. The Web Content Accessibility Guidelines (WCAG), developed by the Web Accessibility Initiative (WAI) of the World Wide Web Consortium (W3C), have become the internationally recognized standard for web accessibility and are closely aligned with Section 508 guidelines.
