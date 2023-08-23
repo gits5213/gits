@@ -658,7 +658,7 @@ const accessibility = () => {
                         Where do I find accessibility?
                     </h3>
                     <p>
-                        Accessibility is present in specific menus in mobile or computer. Microsoft has accessibility feature for screen reading, etc and Android/iPhone also have accessibility feature. It is usually at Settings -> Accessibility.
+                        Accessibility is present in specific menus in mobile or computer. Microsoft has accessibility feature for screen reading, etc and Android/iPhone also have accessibility feature. It is usually at Settings - Accessibility.
                     </p>
                     <h3>
                         Why is ADA compliant?
