@@ -14,7 +14,7 @@ class About extends Component {
                 </div>
                 <div>
                 <h5>
-                    Inperson & Online <br />
+                    In-person & Online <br />
                     Interactive & Innovative Trainig Center for <br />
                     Code4Kids | WebDevelopment | Full Stack Quality Assurance Courses
                 </h5>
@@ -38,14 +38,14 @@ class About extends Component {
                     </div>
                     <div className='instructor-details-first'>
                         <p>
-                            I’m Md Shahnewaz Zaman(Shanto) and I’m Head of Quality Assurance at Raytheon Technology.
+                            I’m Md Shahnewaz Zaman(Shanto) and I’m Tech Lead of Software Development at Global iTech Solutions(GITS).
                         </p>
                         <p>
-                            I've got 14+ years of diverse industry experience. Practicing Software Quality Assurance principles, methodologies, mentoring and leading full-stack testing efforts and hands-on coding, leading with the ability to collaborate with software development in all phases of the SDLC and STLC, including planning, coding, testing, troubleshooting, deploying, and ongoing SQA full-stack automation code maintenance and delivering right product on time.
+                            I've got 14+ years of diverse industry experience. Practicing Software Development principles, methodologies, mentoring and leading full-stack testing efforts and hands-on coding, leading with the ability to collaborate with software development in all phases of the SDLC and STLC, including planning, coding, testing, troubleshooting, deploying, and ongoing full-stack code maintenance and delivering right product on time.
                         </p>
                         <p>
                             I am Certified in
-                            SAFe4Agilist, ASTQB-ISTQB - CTFL & CTAL-TAE, Scrum Master(Scrum.org) and an expert in creating automation 
+                            SAFe4Agilist, ASTQB-ISTQB - CTFL & CTAL-TAE, CT-AI, Scrum Master(Scrum.org) and an expert in creating automation 
                             solutions and frameworks for large scale complex digital functions. 
                             Expert in automation across tech stacks (HTML, CSS, Javascript, Java, C#.Net, Python, Selenium, Protractor, 
                             CypressIO, PlayWright, WebDriverIO, Appium, API's) and so on and 
@@ -54,7 +54,7 @@ class About extends Component {
                     </div>
                     <div className='instructor-details-second'>
                         <p>
-                            In my current role, as Head of Quality Assurance Engineer, I am responsible to build, 
+                            In my current role, as Tech Lead of Software Dev Engineer, I am responsible to build, 
                             design, implement and maintain the automation framework and integrate it with 
                             CI/CD pipeline. I am also responsible for bringing in the best industry practices 
                             for SQA practices, coding standards, extensible framework design, and low maintenance automation 
@@ -64,7 +64,7 @@ class About extends Component {
                         </p>
                         <p>
                             I am also the Founder of Global iTech Solutions Inc., Over the years I have trained hundreds 
-                            of Quality Assurance folks to make a successful transition to automation. I am actively involved in mentoring 
+                            of Quality Assurance folks to make a successful transition to Dev and Automation Engineer. I am actively involved in mentoring 
                             entry-level professionals and fresher to make a successful career in Tech Engineering industry.
                         </p>
                         <p>
