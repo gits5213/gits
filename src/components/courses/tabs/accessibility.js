@@ -97,14 +97,13 @@ const accessibility = () => {
                     <ul>
                         <li>Electronic content produced at HHS must be made accessible to all users regardless of disability.</li>
                         <li>Electronic content includes:<br/>
-                            -  Electronic documents
-                            -  Web sites and pages
-                            -  Applications
-                            -  Multimedia
+                            -  Electronic documents <br/>
+                            -  Web sites and pages<br/>
+                            -  Applications<br/>
+                            -  Multimedia<br/>
                             -  Agency-wide emails
                         </li>
                         <li>Before the content can be made public, it must be accessible per section 508.</li>
-                        <li></li>
                     </ul>
                     <h3><a href='#508section'>508 Section</a></h3>
                     <h3>
@@ -679,10 +678,10 @@ const accessibility = () => {
                         What is Section 508?
                     </h3>
                     <ul>
-                        <li>• Section 508 is part of a 1998 amendment to the Rehabilitation Act of 1973.</li>
-                        <li>• It requires all Federal electronic content to be accessible.</li>
-                        <li>• The U.S. Access Board is an independent Federal agency which develops and maintains standards that must be met to achieve 508 compliance.</li>
-                        <li>• The most applicable standards for electronic content are:<br/>
+                        <li>Section 508 is part of a 1998 amendment to the Rehabilitation Act of 1973.</li>
+                        <li>It requires all Federal electronic content to be accessible.</li>
+                        <li>The U.S. Access Board is an independent Federal agency which develops and maintains standards that must be met to achieve 508 compliance.</li>
+                        <li>The most applicable standards for electronic content are:<br/>
                             - 1194.21 Software applications and operating systems
                             - 1194.22 Web-based intranet and internet information and applications
                             - 1194.24 Video and multimedia products
@@ -721,15 +720,15 @@ const accessibility = () => {
                     <h3>What is Electronic Content?</h3>
                     <ul>
                         <li>Electronic content, or “information and communication technology” (ICT) is the message (information) you are trying to get across (communicate).</li>
-                        <li>• Modern technology allows us to separate the content from the “presentation” (how it looks, or how it is conveyed).</li>
-                        <li>• Content alone can be inaccessible no matter what the presentation, or delivery format.</li>
-                        <li>• Section 508 says you have to choose a presentation so the content is accessible to everyone.</li>
+                        <li>Modern technology allows us to separate the content from the “presentation” (how it looks, or how it is conveyed).</li>
+                        <li>Content alone can be inaccessible no matter what the presentation, or delivery format.</li>
+                        <li>Section 508 says you have to choose a presentation so the content is accessible to everyone.</li>
                     </ul>
                     <h3>Using Electronic Content</h3>
                     <ul>
                         <li>When using content that is not your own, don’t assume it’s accessible.</li>
-                        <li>• Creating complex content can cause problems for developers and thus delays in publishing.</li>
-                        <li>• It is much easier to create content that is accessible in the first place (bake it in), than to remediate content after the fact (bolt it on).</li>
+                        <li>Creating complex content can cause problems for developers and thus delays in publishing.</li>
+                        <li>It is much easier to create content that is accessible in the first place (bake it in), than to remediate content after the fact (bolt it on).</li>
                     </ul>
 
                 </div>
@@ -889,10 +888,7 @@ const accessibility = () => {
                             - <a href='https://www.accessibilityassociation.org/s/wascertification'>Web Accessibility Specialist (WAS)</a>
                             - <a href='https://www.accessibilityassociation.org/s/certified-professional-web-accessibility'>Certified Professional in Web Accessibility (CPWA)</a>
                         </li>
-                        <li></li>
-                        <li></li>
                     </ul>
-                    
                 </div>
                 <br/>
                 <br/>
