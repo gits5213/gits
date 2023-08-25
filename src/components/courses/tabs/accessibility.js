@@ -885,7 +885,7 @@ const accessibility = () => {
                     <ul>
                         <li><a href={accessibilityGuide}><strong>Accessibility Training Guide:</strong> Introduction to Accessibility and Section 508</a></li>
                         <li><strong>Certification:</strong> International Association of Accessibility Professionals (IAAP)<br/>
-                            - <a href='https://www.accessibilityassociation.org/s/wascertification'>Web Accessibility Specialist (WAS)</a>
+                            - <a href='https://www.accessibilityassociation.org/s/wascertification'>Web Accessibility Specialist (WAS)</a> <br/>
                             - <a href='https://www.accessibilityassociation.org/s/certified-professional-web-accessibility'>Certified Professional in Web Accessibility (CPWA)</a>
                         </li>
                     </ul>
