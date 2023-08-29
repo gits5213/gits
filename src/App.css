@@ -173,9 +173,10 @@ h6 {
 }
 /* ============Course-Manual-Automation========= */
 .courseOutline {
-  width: 100%;
-  height: auto;
+  width: auto;
+  height: 50%;
   border-radius: 5%;
+
 }
 /* ==============Course-code4Kids==============*/
 .obama_talk{

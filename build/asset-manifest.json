@@ -1,7 +1,7 @@
 {
   "files": {
     "main.css": "/gits/static/css/main.e86e2f6c.css",
-    "main.js": "/gits/static/js/main.836f6fda.js",
+    "main.js": "/gits/static/js/main.d166905c.js",
     "static/media/classroomClass.jpg": "/gits/static/media/classroomClass.7e41b18c7d9b14fc36c4.jpg",
     "static/media/onlineClass.jpg": "/gits/static/media/onlineClass.7cb9969dda864d997a2d.jpg",
     "static/media/gitGitHub.png": "/gits/static/media/gitGitHub.42ff9193b5481141b296.png",
@@ -12,6 +12,7 @@
     "static/media/appiumLogo.png": "/gits/static/media/appiumLogo.83b8badaaa2a1350022d.png",
     "static/media/code4KidsProgram.png": "/gits/static/media/code4KidsProgram.de18d3e1cab9885ef1c6.png",
     "static/media/webDevProgram.png": "/gits/static/media/webDevProgram.c9df7b96233999bcaef0.png",
+    "static/media/AccessibilityTest.png": "/gits/static/media/AccessibilityTest.c5ecad0c21cf52f1a844.png",
     "static/media/webDriverIOLogo.png": "/gits/static/media/webDriverIOLogo.9d19d6c44ad60b6529a8.png",
     "static/media/linuxCheatSheet.png": "/gits/static/media/linuxCheatSheet.75dba89d9647972eacb2.png",
     "static/media/linkLogo.png": "/gits/static/media/linkLogo.5fec91b1344b75b0c9e3.png",
@@ -61,10 +62,10 @@
     "static/media/defectBugError.png": "/gits/static/media/defectBugError.0946ec0d4610f19696e5.png",
     "index.html": "/gits/index.html",
     "main.e86e2f6c.css.map": "/gits/static/css/main.e86e2f6c.css.map",
-    "main.836f6fda.js.map": "/gits/static/js/main.836f6fda.js.map"
+    "main.d166905c.js.map": "/gits/static/js/main.d166905c.js.map"
   },
   "entrypoints": [
     "static/css/main.e86e2f6c.css",
-    "static/js/main.836f6fda.js"
+    "static/js/main.d166905c.js"
   ]
 }
