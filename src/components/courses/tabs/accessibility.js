@@ -1,6 +1,6 @@
 import React from 'react';
 import GoogleAd from '../../GoogleAd';
-import courseOutline from '../../../images/CourseOutline.png';
+import courseOutline from '../../../images/AccessibilityTest.png';
 import Footer from '../../footer';
 import accessibilityGuide from '../../../images/files/Accessibilityand508.pdf';
 
