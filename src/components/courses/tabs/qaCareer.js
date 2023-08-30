@@ -4,7 +4,7 @@ const qaCareer = () => {
     return(
         <div className='tj qa-talks'>
             <h3>
-                Why Software QA Is a Good Career Choice?
+                Why software QA is a good career choice?
             </h3>
             <p>
                 SQA Engineer are in demand. It’s a lucrative career. SQA Engineer pays well. Flexibility. As a SQA Engineer, you can work from anywhere, including home. Creativity. SQA Engineer is all about creativity and creative problem-solving.Many career options. A constantly evolving field. SQA Engineer is an exciting career because it's always evolving and constantly changing. This means you'll always have the opportunity to interact with new tools and learn new skills, keeping you engaged in your career. It's a field that provides many opportunities for hands-on learning.

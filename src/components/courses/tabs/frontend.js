@@ -4,7 +4,7 @@ const frontend = () => {
     return(
         <div className='tj qa-talks'>
             <h3>
-                Why Front-end web development Is a Good Career Choice?
+                Why Front-end web development is a good career choice?
             </h3>
             <p>
                 Front-end web developers are in demand. It’s a lucrative career. Front-end web development pays well. Flexibility. As a front-end developer, you can work from anywhere, including home. Creativity. Front-end web development is all about creativity and creative problem-solving.Many career options. A constantly evolving field. 

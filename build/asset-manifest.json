@@ -1,6 +1,6 @@
 {
   "files": {
-    "main.css": "/gits/static/css/main.e86e2f6c.css",
+    "main.css": "/gits/static/css/main.a93fe595.css",
     "main.js": "/gits/static/js/main.d166905c.js",
     "static/media/classroomClass.jpg": "/gits/static/media/classroomClass.7e41b18c7d9b14fc36c4.jpg",
     "static/media/onlineClass.jpg": "/gits/static/media/onlineClass.7cb9969dda864d997a2d.jpg",
@@ -61,11 +61,11 @@
     "static/media/manualLogo.png": "/gits/static/media/manualLogo.1c0c04d3bc3f1f2d2b15.png",
     "static/media/defectBugError.png": "/gits/static/media/defectBugError.0946ec0d4610f19696e5.png",
     "index.html": "/gits/index.html",
-    "main.e86e2f6c.css.map": "/gits/static/css/main.e86e2f6c.css.map",
+    "main.a93fe595.css.map": "/gits/static/css/main.a93fe595.css.map",
     "main.d166905c.js.map": "/gits/static/js/main.d166905c.js.map"
   },
   "entrypoints": [
-    "static/css/main.e86e2f6c.css",
+    "static/css/main.a93fe595.css",
     "static/js/main.d166905c.js"
   ]
 }
