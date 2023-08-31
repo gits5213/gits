@@ -71,11 +71,12 @@ const accessibility = () => {
                 <ul>
                     <li>WAI-ARIA = Web Accessibility Initiative – Accessible Rich Internet Applications</li>
                     <li>WCAG = Web Content Accessibility Guidelines</li>
+                    <li>ATAG = Authoring Tool Accessibility Guidelines</li>
                     <li>W3C = World Wide Web Consortium</li>
                     <li>SRAT = Seizure Risk Analysis Tool</li>
                     <li>JAWS = Job Access With Speech</li>
-                    <li>NVDA = NonVisual Desktop Access</li>
-                    <li>TTS = text-to-speech</li>
+                    <li>NVDA = Non Visual Desktop Access</li>
+                    <li>TTS = Text-To-Speech</li>
                     <li>WebAIM = Web Accessibility In Mind</li>
                     <li>XHTML = Extensible HyperText Markup Language</li>
                     <li>DHTML = Dynamic HyperText Markup Language</li>
@@ -83,6 +84,7 @@ const accessibility = () => {
                     <li>ALT = Alternative Text (Alt Text)</li>
                     <li>CSS = Cascading Style Sheets</li>
                     <li>HCI = Human-Computer Interaction</li>
+                    <li>CMS = Content Management Systems</li>
                 </ul>
             </secton>
             <hr/>
