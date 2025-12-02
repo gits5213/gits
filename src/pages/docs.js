@@ -1,5 +1,6 @@
 import React, {Component} from 'react';
 import { Tabs, Tab } from 'react-mdl';
+import { withRouter } from 'react-router-dom';
 import HeaderText from '../components/header';
 import ResManual from '../components/docs/tabs/resManual';
 import ResLinux from '../components/docs/tabs/resLinux';
@@ -19,7 +20,61 @@ import Links from '../components/docs/tabs/resLinks';
 class docs extends Component {
     constructor(props) {
         super(props)
-        this.state = { activeTab: 0 };
+        this.state = { activeTab: this.getActiveTabFromPath() };
+    }
+
+    getActiveTabFromPath() {
+        const path = this.props.location.pathname;
+        if (path.includes('/agile')) return 0;
+        if (path.includes('/scrum')) return 1;
+        if (path.includes('/network')) return 2;
+        if (path.includes('/sql')) return 3;
+        if (path.includes('/manual') && !path.includes('/courses')) return 4;
+        if (path.includes('/linux')) return 5;
+        if (path.includes('/git')) return 6;
+        if (path.includes('/html')) return 7;
+        if (path.includes('/css')) return 8;
+        if (path.includes('/java')) return 9;
+        if (path.includes('/python')) return 10;
+        if (path.includes('/javascript')) return 11;
+        if (path.includes('/reactjs')) return 12;
+        if (path.includes('/links')) return 13;
+        // Default to agile if just /docs
+        return 0;
+    }
+
+    componentDidMount() {
+        // Redirect /docs to /docs/agile if no specific tab
+        if (this.props.location.pathname === '/docs') {
+            this.props.history.replace('/docs/agile');
+        }
+    }
+
+    componentDidUpdate(prevProps) {
+        // Update active tab when URL changes
+        if (prevProps.location.pathname !== this.props.location.pathname) {
+            this.setState({ activeTab: this.getActiveTabFromPath() });
+        }
+    }
+
+    handleTabChange = (tabId) => {
+        const tabRoutes = [
+            '/docs/agile',
+            '/docs/scrum',
+            '/docs/network',
+            '/docs/sql',
+            '/docs/manual',
+            '/docs/linux',
+            '/docs/git',
+            '/docs/html',
+            '/docs/css',
+            '/docs/java',
+            '/docs/python',
+            '/docs/javascript',
+            '/docs/reactjs',
+            '/docs/links'
+        ];
+        this.props.history.push(tabRoutes[tabId]);
     }
 
     toggleCategories() {
@@ -87,7 +142,7 @@ class docs extends Component {
     render() {
         return (
             <div className="category-tabs">
-                <Tabs activeTab={this.state.activeTab} onChange={(tabId) => this.setState({ activeTab: tabId })} ripple>
+                <Tabs activeTab={this.state.activeTab} onChange={this.handleTabChange} ripple>
                     <Tab>Agile</Tab>
                     <Tab>Scrum</Tab>
                     <Tab>Net</Tab>
@@ -111,4 +166,4 @@ class docs extends Component {
         );
     }
 }
-export default docs;
+export default withRouter(docs);
