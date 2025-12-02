@@ -6,6 +6,7 @@ import CoursesWebDev from '../components/courses/tabs/coursesWebDev';
 import CoursesAutomation from '../components/courses/tabs/coursesAutomation';
 import CoursesManual from '../components/courses/tabs/coursesManual';
 import Accessibility from '../components/courses/tabs/accessibility';
+import SdetRoadmap from '../components/courses/tabs/sdetRoadmap';
 
 class Courses extends Component {
     constructor(props) {
@@ -36,6 +37,11 @@ class Courses extends Component {
                 <Accessibility />
             )
         }
+        else if(this.state.activeTab === 5) {
+            return(
+                <SdetRoadmap />
+            )
+        }
     }
 
     render() {
@@ -47,6 +53,7 @@ class Courses extends Component {
                     <Tab>Automation</Tab>
                     <Tab>Manual</Tab>
                     <Tab>Accessibility</Tab>
+                    <Tab>SDET ROADMAP</Tab>
                 </Tabs>
                 <HeaderText /> 
                 <section>
