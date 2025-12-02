@@ -1,4 +1,5 @@
 import React, {Component} from 'react';
+import { Link } from 'react-router-dom';
 import HeaderText from '../components/header';
 import GoogleAd from '../components/GoogleAd';
 import Footer from '../components/footer';
@@ -235,6 +236,41 @@ class HowItWorks extends Component {
                             </ul>
                         </div>
                     </div>
+                </div>
+
+                {/* Contact Us Button */}
+                <div style={{
+                    textAlign: 'center',
+                    margin: '60px 0 40px 0'
+                }}>
+                    <Link 
+                        to="/contact"
+                        style={{
+                            display: 'inline-block',
+                            padding: '15px 40px',
+                            fontSize: '18px',
+                            fontWeight: 'bold',
+                            color: '#ffffff',
+                            backgroundColor: '#00416A',
+                            textDecoration: 'none',
+                            borderRadius: '8px',
+                            boxShadow: '0 4px 6px rgba(0,0,0,0.1)',
+                            transition: 'all 0.3s ease',
+                            border: '2px solid #00416A'
+                        }}
+                        onMouseEnter={(e) => {
+                            e.target.style.backgroundColor = '#005a8a';
+                            e.target.style.transform = 'translateY(-2px)';
+                            e.target.style.boxShadow = '0 6px 12px rgba(0,0,0,0.15)';
+                        }}
+                        onMouseLeave={(e) => {
+                            e.target.style.backgroundColor = '#00416A';
+                            e.target.style.transform = 'translateY(0)';
+                            e.target.style.boxShadow = '0 4px 6px rgba(0,0,0,0.1)';
+                        }}
+                    >
+                        Contact Us
+                    </Link>
                 </div>
 
                 <div>
