@@ -1,4 +1,5 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
 import link from '../utilities/links.json';
 import SocialIcon from '../components/socialIcon';
 import {Footer, FooterSection, FooterDropDownSection, FooterLinkList} from 'react-mdl';
@@ -37,7 +38,7 @@ const footer = () => {
                     <FooterLinkList>
                         <a className='f6 grow no-underline br-pill ba bw1 ph3 pv2 mb2 dib dark-green' href={link.QUESTIONS} target="_blank" rel="noopener noreferrer">Questions</a>
                         <a className='f6 grow no-underline br-pill ba bw1 ph3 pv2 mb2 dib dark-green' href={link.ANSWERE} target="_blank" rel="noopener noreferrer">Answers</a>
-                        <a className='f6 grow no-underline br-pill ba bw1 ph3 pv2 mb2 dib dark-green' href={link.CONTACT} target="_blank" rel="noopener noreferrer">Contact Us</a>
+                        <Link className='f6 grow no-underline br-pill ba bw1 ph3 pv2 mb2 dib dark-green' to="/contact">Contact Us</Link>
                     </FooterLinkList>
                 </FooterDropDownSection>
             </FooterSection>
