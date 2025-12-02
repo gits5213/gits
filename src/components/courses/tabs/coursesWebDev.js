@@ -13,8 +13,25 @@ const coursesWebDev = () => {
             <div>
                 <Frontend />
             </div>
-            <div className='programOutline'>
-                <img className='pt4 courseOutline' src={courseOutline} alt="Course Outline"></img>
+            <div style={{ 
+                overflow: 'auto', 
+                padding: '20px 0', 
+                width: '100%',
+                margin: '20px 0',
+                textAlign: 'center'
+            }}>
+                <img 
+                    src={courseOutline} 
+                    alt="Course Outline"
+                    style={{ 
+                        width: '100%', 
+                        height: 'auto',
+                        display: 'block',
+                        margin: '0 auto',
+                        maxWidth: '100%',
+                        minWidth: '100%'
+                    }}
+                />
             </div>
             <div>
                 <GoogleAd slot="1541085932" classNames="page-right-side" />

@@ -60,8 +60,25 @@ const accessibility = () => {
                     Overall, a career in accessibility 508 compliance testing allows you to blend technical expertise with social responsibility, making a difference in the lives of individuals with disabilities while advancing your professional growth. It's a field where you can apply your skills to a noble cause and contribute positively to the ever-evolving digital landscape. 
                 </p>
             </div>
-            <div className='programOutline'>
-                <img className='courseOutline' src={courseOutline} alt="Course Outline"></img>
+            <div style={{ 
+                overflow: 'auto', 
+                padding: '20px 0', 
+                width: '100%',
+                margin: '20px 0',
+                textAlign: 'center'
+            }}>
+                <img 
+                    src={courseOutline} 
+                    alt="Course Outline"
+                    style={{ 
+                        width: '100%', 
+                        height: 'auto',
+                        display: 'block',
+                        margin: '0 auto',
+                        maxWidth: '100%',
+                        minWidth: '100%'
+                    }}
+                />
             </div>
             <hr/>
             <secton>

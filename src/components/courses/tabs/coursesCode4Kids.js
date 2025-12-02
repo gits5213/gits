@@ -85,9 +85,28 @@ const coursesCode4Kids = () => {
                 </p>
                 <hr />
             </div>
-            <div className='programOutline'>
+            <div>
                 <h1 className= 'tc'>Web Development Code4Kids Course Outline</h1>
-                <img className='courseOutline' src={code4KidProgramOutline} alt="Course Outline"></img>
+            </div>
+            <div style={{ 
+                overflow: 'auto', 
+                padding: '20px 0', 
+                width: '100%',
+                margin: '20px 0',
+                textAlign: 'center'
+            }}>
+                <img 
+                    src={code4KidProgramOutline} 
+                    alt="Course Outline"
+                    style={{ 
+                        width: '100%', 
+                        height: 'auto',
+                        display: 'block',
+                        margin: '0 auto',
+                        maxWidth: '100%',
+                        minWidth: '100%'
+                    }}
+                />
             </div>
             <div>
                 <GoogleAd slot="1541085932" classNames="page-right-side" />
