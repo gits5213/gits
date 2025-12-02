@@ -20,21 +20,22 @@ const footer = () => {
                 </FooterDropDownSection>
                 <FooterDropDownSection title="Details">
                     <FooterLinkList>
+                    <Link className='f6 grow no-underline br-pill ba bw1 ph3 pv2 mb2 dib dark-green' to="/courses/manual">UI Manual</Link>
+                    <Link className='f6 grow no-underline br-pill ba bw1 ph3 pv2 mb2 dib dark-green' to="/courses/manual">API Manual</Link>
                         <Link className='f6 grow no-underline br-pill ba bw1 ph3 pv2 mb2 dib dark-green' to="/courses/sdet-roadmap">SDET ROADMAP</Link>
-                        <Link className='f6 grow no-underline br-pill ba bw1 ph3 pv2 mb2 dib dark-green' to="/courses/webdevelopment">Web Development</Link>
-                        <Link className='f6 grow no-underline br-pill ba bw1 ph3 pv2 mb2 dib dark-green' to="/courses/code4kids">Code4Kids</Link>
-                        <Link className='f6 grow no-underline br-pill ba bw1 ph3 pv2 mb2 dib dark-green' to="/courses/accessibility">508 Compliance</Link>
                         <Link className='f6 grow no-underline br-pill ba bw1 ph3 pv2 mb2 dib dark-green' to="/courses/automation">UI Automation</Link>
                         <Link className='f6 grow no-underline br-pill ba bw1 ph3 pv2 mb2 dib dark-green' to="/courses/automation">API Automation</Link>
-                        <Link className='f6 grow no-underline br-pill ba bw1 ph3 pv2 mb2 dib dark-green' to="/courses/manual">UI Manual</Link>
-                        <Link className='f6 grow no-underline br-pill ba bw1 ph3 pv2 mb2 dib dark-green' to="/courses/manual">API Manual</Link>
+                        <Link className='f6 grow no-underline br-pill ba bw1 ph3 pv2 mb2 dib dark-green' to="/courses/accessibility">508 Compliance</Link>
+                        <Link className='f6 grow no-underline br-pill ba bw1 ph3 pv2 mb2 dib dark-green' to="/courses/webdevelopment">Web Development</Link>
+                        <Link className='f6 grow no-underline br-pill ba bw1 ph3 pv2 mb2 dib dark-green' to="/courses/code4kids">Code4Kids</Link>
+                        
                     </FooterLinkList>
                 </FooterDropDownSection>
                 <FooterDropDownSection title="Technology">
                     <FooterLinkList>
                         <a className='f6 grow no-underline br-pill ba bw1 ph3 pv2 mb2 dib dark-green' href={link.HOW_IT_WORKS} rel="noopener noreferrer">How it works</a>
                         <a className='f6 grow no-underline br-pill ba bw1 ph3 pv2 mb2 dib dark-green' href="https://gitsics.com/" target="_blank" rel="noopener noreferrer">Services</a>
-                        <a className='f6 grow no-underline br-pill ba bw1 ph3 pv2 mb2 dib dark-green' href={link.ABOUT} target="_blank" rel="noopener noreferrer">About</a> 
+                        <Link className='f6 grow no-underline br-pill ba bw1 ph3 pv2 mb2 dib dark-green' to="/about">About</Link> 
                     </FooterLinkList>
                 </FooterDropDownSection>
                 <FooterDropDownSection title="FAQ">
