@@ -2,60 +2,449 @@ import React from 'react';
 import { Link } from 'react-router-dom';
 import link from '../utilities/links.json';
 import SocialIcon from '../components/socialIcon';
-import {Footer, FooterSection, FooterDropDownSection, FooterLinkList} from 'react-mdl';
 
 const footer = () => {
     return(
-        <Footer size="mega">
-            <FooterSection type="middle" className='tc'>
-                <FooterDropDownSection title="Features">
-                    <FooterLinkList>
-                        <a className='f6 grow no-underline br-pill ba bw1 ph3 pv2 mb2 dib dark-green' href="https://gitsics.com/" target="_blank" rel="noopener noreferrer">Global iTech Solutions</a>
-                        <a className='f6 grow no-underline br-pill ba bw1 ph3 pv2 mb2 dib dark-green' href={link.ITNYCUSA} target="_blank" rel="noopener noreferrer">React website</a>
-                        <a className='f6 grow no-underline br-pill ba bw1 ph3 pv2 mb2 dib dark-green' href={link.HEROKUAPP} target="_blank" rel="noopener noreferrer">Internet Website</a>
-                        <a className='f6 grow no-underline br-pill ba bw1 ph3 pv2 mb2 dib dark-green' href={link.REQRES_WEBSITE} target="_blank" rel="noopener noreferrer">ReqRes Website</a>
-                        <a className='f6 grow no-underline br-pill ba bw1 ph3 pv2 mb2 dib dark-green' href={link.ZAMAN_PORTFOLIO} target="_blank" rel="noopener noreferrer">Md's Portfolio</a>
-                        <a className='f6 grow no-underline br-pill ba bw1 ph3 pv2 mb2 dib dark-green' href={link.JSON_API_WEBSITE} target="_blank" rel="noopener noreferrer">JL Website</a>
-                    </FooterLinkList>
-                </FooterDropDownSection>
-                <FooterDropDownSection title="Details">
-                    <FooterLinkList>
-                    <Link className='f6 grow no-underline br-pill ba bw1 ph3 pv2 mb2 dib dark-green' to="/courses/manual">UI Manual</Link>
-                    <Link className='f6 grow no-underline br-pill ba bw1 ph3 pv2 mb2 dib dark-green' to="/courses/manual">API Manual</Link>
-                        <Link className='f6 grow no-underline br-pill ba bw1 ph3 pv2 mb2 dib dark-green' to="/courses/sdet-roadmap">SDET ROADMAP</Link>
-                        <Link className='f6 grow no-underline br-pill ba bw1 ph3 pv2 mb2 dib dark-green' to="/courses/automation">UI Automation</Link>
-                        <Link className='f6 grow no-underline br-pill ba bw1 ph3 pv2 mb2 dib dark-green' to="/courses/automation">API Automation</Link>
-                        <Link className='f6 grow no-underline br-pill ba bw1 ph3 pv2 mb2 dib dark-green' to="/courses/accessibility">508 Compliance</Link>
-                        <Link className='f6 grow no-underline br-pill ba bw1 ph3 pv2 mb2 dib dark-green' to="/courses/webdevelopment">Web Development</Link>
-                        <Link className='f6 grow no-underline br-pill ba bw1 ph3 pv2 mb2 dib dark-green' to="/courses/code4kids">Code4Kids</Link>
-                        
-                    </FooterLinkList>
-                </FooterDropDownSection>
-                <FooterDropDownSection title="Technology">
-                    <FooterLinkList>
-                        <Link className='f6 grow no-underline br-pill ba bw1 ph3 pv2 mb2 dib dark-green' to="/how-it-works">How it works</Link>
-                        <a className='f6 grow no-underline br-pill ba bw1 ph3 pv2 mb2 dib dark-green' href="https://gitsics.com/" target="_blank" rel="noopener noreferrer">Services</a>
-                        <Link className='f6 grow no-underline br-pill ba bw1 ph3 pv2 mb2 dib dark-green' to="/about">About</Link> 
-                    </FooterLinkList>
-                </FooterDropDownSection>
-                <FooterDropDownSection title="FAQ">
-                    <FooterLinkList>
-                        <a className='f6 grow no-underline br-pill ba bw1 ph3 pv2 mb2 dib dark-green' href={link.QUESTIONS} target="_blank" rel="noopener noreferrer">Questions</a>
-                        <a className='f6 grow no-underline br-pill ba bw1 ph3 pv2 mb2 dib dark-green' href={link.ANSWERE} target="_blank" rel="noopener noreferrer">Answers</a>
-                        <Link className='f6 grow no-underline br-pill ba bw1 ph3 pv2 mb2 dib dark-green' to="/contact">Contact Us</Link>
-                    </FooterLinkList>
-                </FooterDropDownSection>
-            </FooterSection>
-            
-                <div className='social-icon mt4'>
-                <SocialIcon />
-                    <p className='all-right f7 white-70 mt4 tc copyIcon'>
-                        Copyright  &copy; {new Date().getFullYear()}
-                        <a href={link.ITNYCUSA} target="_blank" rel="noopener noreferrer"> Global iTech {'&'} Solutions Inc., </a> 
-                        All Rights Reserved
-                    </p>
+        <footer style={{
+            backgroundColor: '#1a1a1a',
+            color: '#ffffff',
+            padding: '60px 20px 30px',
+            marginTop: '60px'
+        }}>
+            <div style={{
+                maxWidth: '1200px',
+                margin: '0 auto',
+                display: 'grid',
+                gridTemplateColumns: 'repeat(auto-fit, minmax(250px, 1fr))',
+                gap: '40px',
+                marginBottom: '40px'
+            }}>
+                {/* Features Section */}
+                <div>
+                    <h3 style={{
+                        color: '#00416A',
+                        fontSize: '20px',
+                        marginBottom: '20px',
+                        fontWeight: 'bold',
+                        textTransform: 'uppercase'
+                    }}>
+                        Features
+                    </h3>
+                    <ul style={{
+                        listStyle: 'none',
+                        padding: 0,
+                        margin: 0
+                    }}>
+                        <li style={{ marginBottom: '12px' }}>
+                            <a 
+                                href="https://gitsics.com/" 
+                                target="_blank" 
+                                rel="noopener noreferrer"
+                                style={{
+                                    color: '#cccccc',
+                                    textDecoration: 'none',
+                                    fontSize: '16px',
+                                    transition: 'color 0.3s ease'
+                                }}
+                                onMouseEnter={(e) => e.target.style.color = '#00416A'}
+                                onMouseLeave={(e) => e.target.style.color = '#cccccc'}
+                            >
+                                Global iTech Solutions
+                            </a>
+                        </li>
+                        <li style={{ marginBottom: '12px' }}>
+                            <a 
+                                href={link.ITNYCUSA} 
+                                target="_blank" 
+                                rel="noopener noreferrer"
+                                style={{
+                                    color: '#cccccc',
+                                    textDecoration: 'none',
+                                    fontSize: '16px',
+                                    transition: 'color 0.3s ease'
+                                }}
+                                onMouseEnter={(e) => e.target.style.color = '#00416A'}
+                                onMouseLeave={(e) => e.target.style.color = '#cccccc'}
+                            >
+                                React website
+                            </a>
+                        </li>
+                        <li style={{ marginBottom: '12px' }}>
+                            <a 
+                                href={link.HEROKUAPP} 
+                                target="_blank" 
+                                rel="noopener noreferrer"
+                                style={{
+                                    color: '#cccccc',
+                                    textDecoration: 'none',
+                                    fontSize: '16px',
+                                    transition: 'color 0.3s ease'
+                                }}
+                                onMouseEnter={(e) => e.target.style.color = '#00416A'}
+                                onMouseLeave={(e) => e.target.style.color = '#cccccc'}
+                            >
+                                Internet Website
+                            </a>
+                        </li>
+                        <li style={{ marginBottom: '12px' }}>
+                            <a 
+                                href={link.REQRES_WEBSITE} 
+                                target="_blank" 
+                                rel="noopener noreferrer"
+                                style={{
+                                    color: '#cccccc',
+                                    textDecoration: 'none',
+                                    fontSize: '16px',
+                                    transition: 'color 0.3s ease'
+                                }}
+                                onMouseEnter={(e) => e.target.style.color = '#00416A'}
+                                onMouseLeave={(e) => e.target.style.color = '#cccccc'}
+                            >
+                                ReqRes Website
+                            </a>
+                        </li>
+                        <li style={{ marginBottom: '12px' }}>
+                            <a 
+                                href={link.ZAMAN_PORTFOLIO} 
+                                target="_blank" 
+                                rel="noopener noreferrer"
+                                style={{
+                                    color: '#cccccc',
+                                    textDecoration: 'none',
+                                    fontSize: '16px',
+                                    transition: 'color 0.3s ease'
+                                }}
+                                onMouseEnter={(e) => e.target.style.color = '#00416A'}
+                                onMouseLeave={(e) => e.target.style.color = '#cccccc'}
+                            >
+                                Md's Portfolio
+                            </a>
+                        </li>
+                        <li style={{ marginBottom: '12px' }}>
+                            <a 
+                                href={link.JSON_API_WEBSITE} 
+                                target="_blank" 
+                                rel="noopener noreferrer"
+                                style={{
+                                    color: '#cccccc',
+                                    textDecoration: 'none',
+                                    fontSize: '16px',
+                                    transition: 'color 0.3s ease'
+                                }}
+                                onMouseEnter={(e) => e.target.style.color = '#00416A'}
+                                onMouseLeave={(e) => e.target.style.color = '#cccccc'}
+                            >
+                                JL Website
+                            </a>
+                        </li>
+                    </ul>
                 </div>
-        </Footer>
+
+                {/* Details Section */}
+                <div>
+                    <h3 style={{
+                        color: '#00416A',
+                        fontSize: '20px',
+                        marginBottom: '20px',
+                        fontWeight: 'bold',
+                        textTransform: 'uppercase'
+                    }}>
+                        Details
+                    </h3>
+                    <ul style={{
+                        listStyle: 'none',
+                        padding: 0,
+                        margin: 0
+                    }}>
+                        <li style={{ marginBottom: '12px' }}>
+                            <Link 
+                                to="/courses/sdet-roadmap"
+                                style={{
+                                    color: '#cccccc',
+                                    textDecoration: 'none',
+                                    fontSize: '16px',
+                                    transition: 'color 0.3s ease'
+                                }}
+                                onMouseEnter={(e) => e.target.style.color = '#00416A'}
+                                onMouseLeave={(e) => e.target.style.color = '#cccccc'}
+                            >
+                                SDET ROADMAP
+                            </Link>
+                        </li>
+                        <li style={{ marginBottom: '12px' }}>
+                            <Link 
+                                to="/courses/webdevelopment"
+                                style={{
+                                    color: '#cccccc',
+                                    textDecoration: 'none',
+                                    fontSize: '16px',
+                                    transition: 'color 0.3s ease'
+                                }}
+                                onMouseEnter={(e) => e.target.style.color = '#00416A'}
+                                onMouseLeave={(e) => e.target.style.color = '#cccccc'}
+                            >
+                                Web Development
+                            </Link>
+                        </li>
+                        <li style={{ marginBottom: '12px' }}>
+                            <Link 
+                                to="/courses/code4kids"
+                                style={{
+                                    color: '#cccccc',
+                                    textDecoration: 'none',
+                                    fontSize: '16px',
+                                    transition: 'color 0.3s ease'
+                                }}
+                                onMouseEnter={(e) => e.target.style.color = '#00416A'}
+                                onMouseLeave={(e) => e.target.style.color = '#cccccc'}
+                            >
+                                Code4Kids
+                            </Link>
+                        </li>
+                        <li style={{ marginBottom: '12px' }}>
+                            <Link 
+                                to="/courses/automation"
+                                style={{
+                                    color: '#cccccc',
+                                    textDecoration: 'none',
+                                    fontSize: '16px',
+                                    transition: 'color 0.3s ease'
+                                }}
+                                onMouseEnter={(e) => e.target.style.color = '#00416A'}
+                                onMouseLeave={(e) => e.target.style.color = '#cccccc'}
+                            >
+                                UI Automation
+                            </Link>
+                        </li>
+                        <li style={{ marginBottom: '12px' }}>
+                            <Link 
+                                to="/courses/automation"
+                                style={{
+                                    color: '#cccccc',
+                                    textDecoration: 'none',
+                                    fontSize: '16px',
+                                    transition: 'color 0.3s ease'
+                                }}
+                                onMouseEnter={(e) => e.target.style.color = '#00416A'}
+                                onMouseLeave={(e) => e.target.style.color = '#cccccc'}
+                            >
+                                API Automation
+                            </Link>
+                        </li>
+                        <li style={{ marginBottom: '12px' }}>
+                            <Link 
+                                to="/courses/manual"
+                                style={{
+                                    color: '#cccccc',
+                                    textDecoration: 'none',
+                                    fontSize: '16px',
+                                    transition: 'color 0.3s ease'
+                                }}
+                                onMouseEnter={(e) => e.target.style.color = '#00416A'}
+                                onMouseLeave={(e) => e.target.style.color = '#cccccc'}
+                            >
+                                UI Manual
+                            </Link>
+                        </li>
+                        <li style={{ marginBottom: '12px' }}>
+                            <Link 
+                                to="/courses/manual"
+                                style={{
+                                    color: '#cccccc',
+                                    textDecoration: 'none',
+                                    fontSize: '16px',
+                                    transition: 'color 0.3s ease'
+                                }}
+                                onMouseEnter={(e) => e.target.style.color = '#00416A'}
+                                onMouseLeave={(e) => e.target.style.color = '#cccccc'}
+                            >
+                                API Manual
+                            </Link>
+                        </li>
+                        <li style={{ marginBottom: '12px' }}>
+                            <Link 
+                                to="/courses/accessibility"
+                                style={{
+                                    color: '#cccccc',
+                                    textDecoration: 'none',
+                                    fontSize: '16px',
+                                    transition: 'color 0.3s ease'
+                                }}
+                                onMouseEnter={(e) => e.target.style.color = '#00416A'}
+                                onMouseLeave={(e) => e.target.style.color = '#cccccc'}
+                            >
+                                508 Compliance
+                            </Link>
+                        </li>
+                    </ul>
+                </div>
+
+                {/* Technology Section */}
+                <div>
+                    <h3 style={{
+                        color: '#00416A',
+                        fontSize: '20px',
+                        marginBottom: '20px',
+                        fontWeight: 'bold',
+                        textTransform: 'uppercase'
+                    }}>
+                        Technology
+                    </h3>
+                    <ul style={{
+                        listStyle: 'none',
+                        padding: 0,
+                        margin: 0
+                    }}>
+                        <li style={{ marginBottom: '12px' }}>
+                            <Link 
+                                to="/how-it-works"
+                                style={{
+                                    color: '#cccccc',
+                                    textDecoration: 'none',
+                                    fontSize: '16px',
+                                    transition: 'color 0.3s ease'
+                                }}
+                                onMouseEnter={(e) => e.target.style.color = '#00416A'}
+                                onMouseLeave={(e) => e.target.style.color = '#cccccc'}
+                            >
+                                How it works
+                            </Link>
+                        </li>
+                        <li style={{ marginBottom: '12px' }}>
+                            <a 
+                                href="https://gitsics.com/" 
+                                target="_blank" 
+                                rel="noopener noreferrer"
+                                style={{
+                                    color: '#cccccc',
+                                    textDecoration: 'none',
+                                    fontSize: '16px',
+                                    transition: 'color 0.3s ease'
+                                }}
+                                onMouseEnter={(e) => e.target.style.color = '#00416A'}
+                                onMouseLeave={(e) => e.target.style.color = '#cccccc'}
+                            >
+                                Services
+                            </a>
+                        </li>
+                        <li style={{ marginBottom: '12px' }}>
+                            <Link 
+                                to="/about"
+                                style={{
+                                    color: '#cccccc',
+                                    textDecoration: 'none',
+                                    fontSize: '16px',
+                                    transition: 'color 0.3s ease'
+                                }}
+                                onMouseEnter={(e) => e.target.style.color = '#00416A'}
+                                onMouseLeave={(e) => e.target.style.color = '#cccccc'}
+                            >
+                                About
+                            </Link>
+                        </li>
+                    </ul>
+                </div>
+
+                {/* FAQ Section */}
+                <div>
+                    <h3 style={{
+                        color: '#00416A',
+                        fontSize: '20px',
+                        marginBottom: '20px',
+                        fontWeight: 'bold',
+                        textTransform: 'uppercase'
+                    }}>
+                        FAQ
+                    </h3>
+                    <ul style={{
+                        listStyle: 'none',
+                        padding: 0,
+                        margin: 0
+                    }}>
+                        <li style={{ marginBottom: '12px' }}>
+                            <a 
+                                href={link.QUESTIONS} 
+                                target="_blank" 
+                                rel="noopener noreferrer"
+                                style={{
+                                    color: '#cccccc',
+                                    textDecoration: 'none',
+                                    fontSize: '16px',
+                                    transition: 'color 0.3s ease'
+                                }}
+                                onMouseEnter={(e) => e.target.style.color = '#00416A'}
+                                onMouseLeave={(e) => e.target.style.color = '#cccccc'}
+                            >
+                                Questions
+                            </a>
+                        </li>
+                        <li style={{ marginBottom: '12px' }}>
+                            <a 
+                                href={link.ANSWERE} 
+                                target="_blank" 
+                                rel="noopener noreferrer"
+                                style={{
+                                    color: '#cccccc',
+                                    textDecoration: 'none',
+                                    fontSize: '16px',
+                                    transition: 'color 0.3s ease'
+                                }}
+                                onMouseEnter={(e) => e.target.style.color = '#00416A'}
+                                onMouseLeave={(e) => e.target.style.color = '#cccccc'}
+                            >
+                                Answers
+                            </a>
+                        </li>
+                        <li style={{ marginBottom: '12px' }}>
+                            <Link 
+                                to="/contact"
+                                style={{
+                                    color: '#cccccc',
+                                    textDecoration: 'none',
+                                    fontSize: '16px',
+                                    transition: 'color 0.3s ease'
+                                }}
+                                onMouseEnter={(e) => e.target.style.color = '#00416A'}
+                                onMouseLeave={(e) => e.target.style.color = '#cccccc'}
+                            >
+                                Contact Us
+                            </Link>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+
+            {/* Social Icons Section */}
+            <div style={{
+                borderTop: '1px solid #333',
+                paddingTop: '30px',
+                textAlign: 'center'
+            }}>
+                <div style={{ marginBottom: '20px' }}>
+                    <SocialIcon />
+                </div>
+                <p style={{
+                    fontSize: '14px',
+                    color: '#888',
+                    margin: 0,
+                    lineHeight: '1.6'
+                }}>
+                    Copyright &copy; {new Date().getFullYear()}{' '}
+                    <a 
+                        href={link.ITNYCUSA} 
+                        target="_blank" 
+                        rel="noopener noreferrer"
+                        style={{
+                            color: '#00416A',
+                            textDecoration: 'none'
+                        }}
+                    >
+                        Global iTech & Solutions Inc.
+                    </a>
+                    {' '}All Rights Reserved
+                </p>
+            </div>
+        </footer>
     );
 }
 export default footer;
