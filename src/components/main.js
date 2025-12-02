@@ -7,6 +7,7 @@ import APIS from '../pages/apis';
 import AID from '../pages/aid';
 import About from '../pages/about';
 import Contact from '../pages/contact';
+import HowItWorks from '../pages/howItWorks';
 
 const Main = () => (
     <Switch>
@@ -56,6 +57,7 @@ const Main = () => (
         <Route path='/aid/codesnippet' component={AID} />
         <Route exact path='/about' component={About} />
         <Route exact path='/contact' component={Contact} />
+        <Route exact path='/how-it-works' component={HowItWorks} />
     </Switch>
 );
 export default Main; 

@@ -33,7 +33,7 @@ const footer = () => {
                 </FooterDropDownSection>
                 <FooterDropDownSection title="Technology">
                     <FooterLinkList>
-                        <a className='f6 grow no-underline br-pill ba bw1 ph3 pv2 mb2 dib dark-green' href={link.HOW_IT_WORKS} rel="noopener noreferrer">How it works</a>
+                        <Link className='f6 grow no-underline br-pill ba bw1 ph3 pv2 mb2 dib dark-green' to="/how-it-works">How it works</Link>
                         <a className='f6 grow no-underline br-pill ba bw1 ph3 pv2 mb2 dib dark-green' href="https://gitsics.com/" target="_blank" rel="noopener noreferrer">Services</a>
                         <Link className='f6 grow no-underline br-pill ba bw1 ph3 pv2 mb2 dib dark-green' to="/about">About</Link> 
                     </FooterLinkList>
