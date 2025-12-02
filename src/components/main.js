@@ -12,6 +12,12 @@ const Main = () => (
     <Switch>
         <Route exact path='/' component={Landing} />
         <Route exact path='/courses' component={Courses} />
+        <Route path='/courses/code4kids' component={Courses} />
+        <Route path='/courses/webdevelopment' component={Courses} />
+        <Route path='/courses/automation' component={Courses} />
+        <Route path='/courses/manual' component={Courses} />
+        <Route path='/courses/accessibility' component={Courses} />
+        <Route path='/courses/sdet-roadmap' component={Courses} />
         <Route exact path='/docs' component={Docs} />
         <Route exact path='/apis' component={APIS} />
         <Route exact path='/aid' component={AID} />

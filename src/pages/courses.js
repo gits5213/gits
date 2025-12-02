@@ -1,5 +1,6 @@
 import React, {Component} from 'react';
 import { Tabs, Tab } from 'react-mdl';
+import { withRouter } from 'react-router-dom';
 import HeaderText from '../components/header';
 import CoursesCode4Kids from '../components/courses/tabs/coursesCode4Kids';
 import CoursesWebDev from '../components/courses/tabs/coursesWebDev';
@@ -11,7 +12,45 @@ import SdetRoadmap from '../components/courses/tabs/sdetRoadmap';
 class Courses extends Component {
     constructor(props) {
         super(props)
-        this.state = { activeTab: 0 };
+        this.state = { activeTab: this.getActiveTabFromPath() };
+    }
+
+    getActiveTabFromPath() {
+        const path = this.props.location.pathname;
+        if (path.includes('/code4kids')) return 0;
+        if (path.includes('/webdevelopment')) return 1;
+        if (path.includes('/automation')) return 2;
+        if (path.includes('/manual')) return 3;
+        if (path.includes('/accessibility')) return 4;
+        if (path.includes('/sdet-roadmap')) return 5;
+        // Default to code4kids if just /courses
+        return 0;
+    }
+
+    componentDidMount() {
+        // Redirect /courses to /courses/code4kids if no specific tab
+        if (this.props.location.pathname === '/courses') {
+            this.props.history.replace('/courses/code4kids');
+        }
+    }
+
+    componentDidUpdate(prevProps) {
+        // Update active tab when URL changes
+        if (prevProps.location.pathname !== this.props.location.pathname) {
+            this.setState({ activeTab: this.getActiveTabFromPath() });
+        }
+    }
+
+    handleTabChange = (tabId) => {
+        const tabRoutes = [
+            '/courses/code4kids',
+            '/courses/webdevelopment',
+            '/courses/automation',
+            '/courses/manual',
+            '/courses/accessibility',
+            '/courses/sdet-roadmap'
+        ];
+        this.props.history.push(tabRoutes[tabId]);
     }
 
     toggleCategories() {
@@ -47,7 +86,7 @@ class Courses extends Component {
     render() {
         return (
             <div className="category-tabs">
-                <Tabs activeTab={this.state.activeTab} onChange={(tabId) => this.setState({ activeTab: tabId })} ripple>
+                <Tabs activeTab={this.state.activeTab} onChange={this.handleTabChange} ripple>
                     <Tab>Code4Kids</Tab>
                     <Tab>WebDevelopment</Tab>
                     <Tab>Automation</Tab>
@@ -63,4 +102,4 @@ class Courses extends Component {
         );
     }
 }
-export default Courses;
+export default withRouter(Courses);
