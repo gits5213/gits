@@ -20,11 +20,14 @@ const footer = () => {
                 </FooterDropDownSection>
                 <FooterDropDownSection title="Details">
                     <FooterLinkList>
-                        <a className='f6 grow no-underline br-pill ba bw1 ph3 pv2 mb2 dib dark-green' href={link.ITNYCUSA} target="_blank" rel="noopener noreferrer">UI Automation</a>
-                        <a className='f6 grow no-underline br-pill ba bw1 ph3 pv2 mb2 dib dark-green' href={link.ITNYCUSA} target="_blank" rel="noopener noreferrer">API Automation</a>
-                        <a className='f6 grow no-underline br-pill ba bw1 ph3 pv2 mb2 dib dark-green' href={link.ITNYCUSA} target="_blank" rel="noopener noreferrer">UI Manual</a>
-                        <a className='f6 grow no-underline br-pill ba bw1 ph3 pv2 mb2 dib dark-green' href={link.ITNYCUSA} target="_blank" rel="noopener noreferrer">API Manual</a>
-                        
+                        <Link className='f6 grow no-underline br-pill ba bw1 ph3 pv2 mb2 dib dark-green' to="/courses/sdet-roadmap">SDET ROADMAP</Link>
+                        <Link className='f6 grow no-underline br-pill ba bw1 ph3 pv2 mb2 dib dark-green' to="/courses/webdevelopment">Web Development</Link>
+                        <Link className='f6 grow no-underline br-pill ba bw1 ph3 pv2 mb2 dib dark-green' to="/courses/code4kids">Code4Kids</Link>
+                        <Link className='f6 grow no-underline br-pill ba bw1 ph3 pv2 mb2 dib dark-green' to="/courses/accessibility">508 Compliance</Link>
+                        <Link className='f6 grow no-underline br-pill ba bw1 ph3 pv2 mb2 dib dark-green' to="/courses/automation">UI Automation</Link>
+                        <Link className='f6 grow no-underline br-pill ba bw1 ph3 pv2 mb2 dib dark-green' to="/courses/automation">API Automation</Link>
+                        <Link className='f6 grow no-underline br-pill ba bw1 ph3 pv2 mb2 dib dark-green' to="/courses/manual">UI Manual</Link>
+                        <Link className='f6 grow no-underline br-pill ba bw1 ph3 pv2 mb2 dib dark-green' to="/courses/manual">API Manual</Link>
                     </FooterLinkList>
                 </FooterDropDownSection>
                 <FooterDropDownSection title="Technology">
