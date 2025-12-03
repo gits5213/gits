@@ -1,5 +1,4 @@
 import React, {Component} from 'react';
-import { Tabs, Tab } from 'react-mdl';
 import { withRouter } from 'react-router-dom';
 import HeaderText from '../components/header';
 import ResManual from '../components/docs/tabs/resManual';
@@ -140,25 +139,89 @@ class docs extends Component {
     }
 
     render() {
+        const tabs = [
+            { label: 'Agile', id: 0 },
+            { label: 'Scrum', id: 1 },
+            { label: 'Net', id: 2 },
+            { label: 'SQL', id: 3 },
+            { label: 'Manual', id: 4 },
+            { label: 'Linux', id: 5 },
+            { label: 'Git', id: 6 },
+            { label: 'HTML', id: 7 },
+            { label: 'CSS', id: 8 },
+            { label: 'Java', id: 9 },
+            { label: 'PY', id: 10 },
+            { label: 'JS', id: 11 },
+            { label: 'ReactJS', id: 12 },
+            { label: 'Links', id: 13 }
+        ];
+
         return (
             <div className="category-tabs">
-                <Tabs activeTab={this.state.activeTab} onChange={this.handleTabChange} ripple>
-                    <Tab>Agile</Tab>
-                    <Tab>Scrum</Tab>
-                    <Tab>Net</Tab>
-                    <Tab>SQL</Tab>
-                    <Tab>Manual</Tab>
-                    <Tab>Linux</Tab>
-                    <Tab>Git</Tab>
-                    <Tab>HTML</Tab>
-                    <Tab>CSS</Tab>
-                    <Tab>Java</Tab>
-                    <Tab>PY</Tab>
-                    <Tab>JS</Tab>
-                    <Tab>ReactJS</Tab>
-                    <Tab>Links</Tab>
-                </Tabs>
-                <HeaderText /> 
+                <HeaderText />
+                
+                {/* Custom Tabs */}
+                <div style={{
+                    backgroundColor: '#ffffff',
+                    borderBottom: '2px solid #e0e0e0',
+                    marginBottom: '20px',
+                    position: 'sticky',
+                    top: '64px',
+                    zIndex: 100,
+                    boxShadow: '0 2px 4px rgba(0,0,0,0.1)'
+                }}>
+                    <div style={{
+                        maxWidth: '1400px',
+                        margin: '0 auto',
+                        padding: '0 20px',
+                        overflowX: 'auto',
+                        overflowY: 'hidden',
+                        WebkitOverflowScrolling: 'touch',
+                        scrollbarWidth: 'thin'
+                    }}>
+                        <div style={{
+                            display: 'flex',
+                            gap: '4px',
+                            minWidth: 'min-content'
+                        }}>
+                            {tabs.map((tab) => (
+                                <button
+                                    key={tab.id}
+                                    onClick={() => this.handleTabChange(tab.id)}
+                                    style={{
+                                        padding: '16px 24px',
+                                        fontSize: '16px',
+                                        fontWeight: this.state.activeTab === tab.id ? '600' : '400',
+                                        color: this.state.activeTab === tab.id ? '#00416A' : '#666666',
+                                        backgroundColor: 'transparent',
+                                        border: 'none',
+                                        borderBottom: this.state.activeTab === tab.id ? '3px solid #00416A' : '3px solid transparent',
+                                        cursor: 'pointer',
+                                        transition: 'all 0.3s ease',
+                                        whiteSpace: 'nowrap',
+                                        fontFamily: 'inherit',
+                                        outline: 'none'
+                                    }}
+                                    onMouseEnter={(e) => {
+                                        if (this.state.activeTab !== tab.id) {
+                                            e.target.style.color = '#00416A';
+                                            e.target.style.backgroundColor = '#f0f7fa';
+                                        }
+                                    }}
+                                    onMouseLeave={(e) => {
+                                        if (this.state.activeTab !== tab.id) {
+                                            e.target.style.color = '#666666';
+                                            e.target.style.backgroundColor = 'transparent';
+                                        }
+                                    }}
+                                >
+                                    {tab.label}
+                                </button>
+                            ))}
+                        </div>
+                    </div>
+                </div>
+
                 <section>
                     <div className="content">{this.toggleCategories()}</div>
                 </section>

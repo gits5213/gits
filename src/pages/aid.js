@@ -1,5 +1,4 @@
 import React, {Component} from 'react';
-import { Tabs, Tab } from 'react-mdl';
 import { withRouter } from 'react-router-dom';
 import HeaderText from '../components/header';
 import Window from '../components/aid/tabs/window';
@@ -89,18 +88,82 @@ class links extends Component {
     }
 
     render() {
+        const tabs = [
+            { label: 'Window', id: 0 },
+            { label: 'MAC', id: 1 },
+            { label: 'Basic', id: 2 },
+            { label: 'G.K', id: 3 },
+            { label: 'Help', id: 4 },
+            { label: 'Frontend', id: 5 },
+            { label: 'CodeSnippet', id: 6 }
+        ];
+
         return (
             <div className="category-tabs">
-                <Tabs activeTab={this.state.activeTab} onChange={this.handleTabChange} ripple>
-                    <Tab>Window</Tab>
-                    <Tab>MAC</Tab>
-                    <Tab>Basic</Tab>
-                    <Tab>G.K</Tab>
-                    <Tab>Help</Tab>
-                    <Tab>Frontend</Tab>
-                    <Tab>CodeSnippet</Tab>
-                </Tabs>
-                <HeaderText /> 
+                <HeaderText />
+                
+                {/* Custom Tabs */}
+                <div style={{
+                    backgroundColor: '#ffffff',
+                    borderBottom: '2px solid #e0e0e0',
+                    marginBottom: '20px',
+                    position: 'sticky',
+                    top: '64px',
+                    zIndex: 100,
+                    boxShadow: '0 2px 4px rgba(0,0,0,0.1)'
+                }}>
+                    <div style={{
+                        maxWidth: '1400px',
+                        margin: '0 auto',
+                        padding: '0 20px',
+                        overflowX: 'auto',
+                        overflowY: 'hidden',
+                        WebkitOverflowScrolling: 'touch',
+                        scrollbarWidth: 'thin'
+                    }}>
+                        <div style={{
+                            display: 'flex',
+                            gap: '4px',
+                            minWidth: 'min-content'
+                        }}>
+                            {tabs.map((tab) => (
+                                <button
+                                    key={tab.id}
+                                    onClick={() => this.handleTabChange(tab.id)}
+                                    style={{
+                                        padding: '16px 24px',
+                                        fontSize: '16px',
+                                        fontWeight: this.state.activeTab === tab.id ? '600' : '400',
+                                        color: this.state.activeTab === tab.id ? '#00416A' : '#666666',
+                                        backgroundColor: 'transparent',
+                                        border: 'none',
+                                        borderBottom: this.state.activeTab === tab.id ? '3px solid #00416A' : '3px solid transparent',
+                                        cursor: 'pointer',
+                                        transition: 'all 0.3s ease',
+                                        whiteSpace: 'nowrap',
+                                        fontFamily: 'inherit',
+                                        outline: 'none'
+                                    }}
+                                    onMouseEnter={(e) => {
+                                        if (this.state.activeTab !== tab.id) {
+                                            e.target.style.color = '#00416A';
+                                            e.target.style.backgroundColor = '#f0f7fa';
+                                        }
+                                    }}
+                                    onMouseLeave={(e) => {
+                                        if (this.state.activeTab !== tab.id) {
+                                            e.target.style.color = '#666666';
+                                            e.target.style.backgroundColor = 'transparent';
+                                        }
+                                    }}
+                                >
+                                    {tab.label}
+                                </button>
+                            ))}
+                        </div>
+                    </div>
+                </div>
+
                 <section>
                     <div className="content">{this.toggleCategories()}</div>
                 </section>
