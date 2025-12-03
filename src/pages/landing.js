@@ -7,15 +7,12 @@ import {cardDetails}from '../components/cardDetails';
 import Footer from '../components/footer';
 import classromom from '../images/classroomClass.jpg';
 import online from '../images/onlineClass.jpg';
-import landingPageData from '../utilities/data/landingPage.json';
-
-const ZOOM_MEET = 'https://us06web.zoom.us/j/9803798160';
 
 class Landing extends Component {
     render(){
         return(
             <main className='landing-body'> 
-                <HeaderText />
+                    <HeaderText />
                 
                 {/* Hero Section */}
                 <div style={{
@@ -31,45 +28,32 @@ class Landing extends Component {
                         fontWeight: 'bold',
                         lineHeight: '1.2'
                     }}>
-                        Nothing to Lose By Learning New Skills!
+                        You Have Nothing to Lose — But a Lifetime of Opportunity to Gain.
                     </h1>
                     <h2 style={{
                         fontSize: '32px',
-                        marginBottom: '30px',
+                        marginBottom: '20px',
                         fontWeight: '400',
                         opacity: '0.95'
                     }}>
-                        Give us 2 Days Will Give You The World!
+                        Start Your QA Journey Today and Open Doors Worldwide.
                     </h2>
-                    <a 
-                        href={ZOOM_MEET} 
-                        target="_blank" 
-                        rel="noopener noreferrer"
-                        style={{
-                            display: 'inline-block',
-                            padding: '15px 40px',
-                            fontSize: '18px',
-                            fontWeight: 'bold',
-                            color: '#00416A',
-                            backgroundColor: '#ffffff',
-                            textDecoration: 'none',
-                            borderRadius: '8px',
-                            transition: 'all 0.3s ease',
-                            boxShadow: '0 4px 15px rgba(0,0,0,0.2)'
-                        }}
-                        onMouseEnter={(e) => {
-                            e.target.style.backgroundColor = '#f0f0f0';
-                            e.target.style.transform = 'translateY(-2px)';
-                            e.target.style.boxShadow = '0 6px 20px rgba(0,0,0,0.3)';
-                        }}
-                        onMouseLeave={(e) => {
-                            e.target.style.backgroundColor = '#ffffff';
-                            e.target.style.transform = 'translateY(0)';
-                            e.target.style.boxShadow = '0 4px 15px rgba(0,0,0,0.2)';
-                        }}
-                    >
-                        {landingPageData.zoomMeeting}
-                    </a>
+                    <h2 style={{
+                        fontSize: '32px',
+                        marginBottom: '20px',
+                        fontWeight: '400',
+                        opacity: '0.95'
+                    }}>
+                        Give Us 2 Days — We'll Give You a Career You Never Thought Possible.
+                    </h2>
+                    <p style={{
+                        fontSize: '24px',
+                        marginBottom: '30px',
+                        fontWeight: '400',
+                        opacity: '0.9'
+                    }}>
+                        Quality Assurance Training That Truly Delivers.
+                    </p>
                 </div>
 
                 {/* Main Content Container */}
@@ -107,7 +91,7 @@ class Landing extends Component {
                                     objectFit: 'contain'
                                 }}
                             />
-                        </div>
+                </div>
                     </section>
 
                     {/* Training Programs Section */}
@@ -133,9 +117,9 @@ class Landing extends Component {
                             }}>
                                 Own your future by learning new skills!
                             </p>
-                        </div>
+                    </div>
                         <CardList cardDetails={cardDetails} />
-                    </section>
+                </section>
 
                     {/* Who We Are Section */}
                     <section style={{
@@ -154,7 +138,7 @@ class Landing extends Component {
                                 fontWeight: 'bold',
                                 textAlign: 'center'
                             }}>
-                                WHO WE ARE
+                        WHO WE ARE
                             </h2>
                             <p style={{
                                 fontSize: '18px',
@@ -165,7 +149,7 @@ class Landing extends Component {
                                 margin: '0 auto 40px'
                             }}>
                                 Code4Kids and Full Stack Quality Assurance Engineering and Web Developer Training Center.
-                            </p>
+                        </p>
 
                             <div style={{
                                 display: 'grid',
@@ -211,7 +195,7 @@ class Landing extends Component {
                                             Frontend Web Developer (Software Engineer)
                                         </li>
                                     </ul>
-                                </div>
+                            </div>
 
                                 <div style={{
                                     backgroundColor: '#ffffff',
@@ -235,7 +219,7 @@ class Landing extends Component {
                                         margin: 0
                                     }}>
                                         We are the leaders in providing quality Training's of Web Development, Full Stack Quality Assurance Engineering and Code4Kids to Corporate and Individuals. This is the best In-person and Online training center at Queens, Hollis-NY. Our main intention is to let our students learn through practice and provide as much detailed information as possible. Our training's are divided in three modules - <strong style={{ color: '#00416A' }}>Full Stack SQA Engineering Program - Frontend Web Development Program - Code4Kids Program</strong>.
-                                    </p>
+                                </p>
                                 </div>
 
                                 <div style={{
@@ -425,8 +409,8 @@ class Landing extends Component {
                                     }}
                                 />
                             </div>
-                        </div>
-                    </section>
+                    </div>
+                </section>
                 </div>
 
                 <section className='pt4'>

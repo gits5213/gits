@@ -491,6 +491,23 @@ const footer = () => {
                                 Career Pathways
                             </a>
                         </li>
+                        <li style={{ marginBottom: '12px' }}>
+                            <a 
+                                href="https://us06web.zoom.us/j/9803798160" 
+                                target="_blank" 
+                                rel="noopener noreferrer"
+                                style={{
+                                    color: '#cccccc',
+                                    textDecoration: 'none',
+                                    fontSize: '16px',
+                                    transition: 'color 0.3s ease'
+                                }}
+                                onMouseEnter={(e) => e.target.style.color = '#00416A'}
+                                onMouseLeave={(e) => e.target.style.color = '#cccccc'}
+                            >
+                                ZOOM MEETING
+                            </a>
+                        </li>
                     </ul>
                 </div>
 
