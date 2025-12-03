@@ -8,6 +8,7 @@ import AID from '../pages/aid';
 import About from '../pages/about';
 import Contact from '../pages/contact';
 import HowItWorks from '../pages/howItWorks';
+import TermsOfUse from '../pages/termsOfUse';
 
 const Main = () => (
     <Switch>
@@ -58,6 +59,7 @@ const Main = () => (
         <Route exact path='/about' component={About} />
         <Route exact path='/contact' component={Contact} />
         <Route exact path='/how-it-works' component={HowItWorks} />
+        <Route exact path='/terms-of-use' component={TermsOfUse} />
     </Switch>
 );
 export default Main; 

@@ -346,6 +346,21 @@ const footer = () => {
                                 About
                             </Link>
                         </li>
+                        <li style={{ marginBottom: '12px' }}>
+                            <Link 
+                                to="/terms-of-use"
+                                style={{
+                                    color: '#cccccc',
+                                    textDecoration: 'none',
+                                    fontSize: '16px',
+                                    transition: 'color 0.3s ease'
+                                }}
+                                onMouseEnter={(e) => e.target.style.color = '#00416A'}
+                                onMouseLeave={(e) => e.target.style.color = '#cccccc'}
+                            >
+                                Terms of Use
+                            </Link>
+                        </li>
                     </ul>
                 </div>
 
