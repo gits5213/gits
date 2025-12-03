@@ -9,15 +9,19 @@ const footer = () => {
             backgroundColor: '#1a1a1a',
             color: '#ffffff',
             padding: '60px 20px 30px',
-            marginTop: '60px'
+            marginTop: '60px',
+            width: '100%',
+            boxSizing: 'border-box'
         }}>
             <div style={{
-                maxWidth: '1200px',
+                maxWidth: '1400px',
                 margin: '0 auto',
                 display: 'grid',
-                gridTemplateColumns: 'repeat(auto-fit, minmax(250px, 1fr))',
+                gridTemplateColumns: 'repeat(auto-fit, minmax(220px, 1fr))',
                 gap: '40px',
-                marginBottom: '40px'
+                marginBottom: '40px',
+                width: '100%',
+                boxSizing: 'border-box'
             }}>
                 {/* Features Section */}
                 <div>
@@ -418,7 +422,11 @@ const footer = () => {
             <div style={{
                 borderTop: '1px solid #333',
                 paddingTop: '30px',
-                textAlign: 'center'
+                textAlign: 'center',
+                maxWidth: '1400px',
+                margin: '0 auto',
+                width: '100%',
+                boxSizing: 'border-box'
             }}>
                 <div style={{ marginBottom: '20px' }}>
                 <SocialIcon />
@@ -427,7 +435,8 @@ const footer = () => {
                     fontSize: '14px',
                     color: '#888',
                     margin: 0,
-                    lineHeight: '1.6'
+                    lineHeight: '1.6',
+                    padding: '0 20px'
                 }}>
                     Copyright &copy; {new Date().getFullYear()}{' '}
                     <a 
@@ -436,8 +445,11 @@ const footer = () => {
                         rel="noopener noreferrer"
                         style={{
                             color: '#00416A',
-                            textDecoration: 'none'
+                            textDecoration: 'none',
+                            transition: 'color 0.3s ease'
                         }}
+                        onMouseEnter={(e) => e.target.style.color = '#68dca8'}
+                        onMouseLeave={(e) => e.target.style.color = '#00416A'}
                     >
                         Global iTech & Solutions Inc.
                     </a>
