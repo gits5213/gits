@@ -16,44 +16,133 @@ class Landing extends Component {
                 
                 {/* Hero Section */}
                 <div style={{
-                    background: 'linear-gradient(135deg, #00416A 0%, #005a8a 100%)',
+                    background: 'linear-gradient(135deg, #00416A 0%, #005a8a 50%, #006ba8 100%)',
                     color: '#ffffff',
-                    padding: '80px 20px',
-                    textAlign: 'center',
-                    marginBottom: '40px'
+                    padding: '100px 20px',
+                    marginBottom: '60px',
+                    position: 'relative',
+                    overflow: 'hidden'
                 }}>
-                    <h1 style={{ 
-                        fontSize: '56px', 
-                        marginBottom: '20px',
-                        fontWeight: 'bold',
-                        lineHeight: '1.2'
+                    {/* Decorative Background Elements */}
+                    <div style={{
+                        position: 'absolute',
+                        top: '-50%',
+                        right: '-10%',
+                        width: '500px',
+                        height: '500px',
+                        background: 'radial-gradient(circle, rgba(255,255,255,0.1) 0%, transparent 70%)',
+                        borderRadius: '50%',
+                        pointerEvents: 'none'
+                    }}></div>
+                    <div style={{
+                        position: 'absolute',
+                        bottom: '-30%',
+                        left: '-5%',
+                        width: '400px',
+                        height: '400px',
+                        background: 'radial-gradient(circle, rgba(255,255,255,0.08) 0%, transparent 70%)',
+                        borderRadius: '50%',
+                        pointerEvents: 'none'
+                    }}></div>
+
+                    <div style={{
+                        maxWidth: '1400px',
+                        margin: '0 auto',
+                        position: 'relative',
+                        zIndex: 1
                     }}>
-                        You Have Nothing to Lose — But a Lifetime of Opportunity to Gain.
-                    </h1>
-                    <h2 style={{
-                        fontSize: '32px',
-                        marginBottom: '20px',
-                        fontWeight: '400',
-                        opacity: '0.95'
-                    }}>
-                        Start Your QA Journey Today and Open Doors Worldwide.
-                    </h2>
-                    <h2 style={{
-                        fontSize: '32px',
-                        marginBottom: '20px',
-                        fontWeight: '400',
-                        opacity: '0.95'
-                    }}>
-                        Give Us 2 Days — We'll Give You a Career You Never Thought Possible.
-                    </h2>
-                    <p style={{
-                        fontSize: '24px',
-                        marginBottom: '30px',
-                        fontWeight: '400',
-                        opacity: '0.9'
-                    }}>
-                        Quality Assurance Training That Truly Delivers.
-                    </p>
+                        {/* 2-Column Layout */}
+                        <div style={{
+                            display: 'grid',
+                            gridTemplateColumns: 'repeat(auto-fit, minmax(300px, 1fr))',
+                            gap: '40px',
+                            alignItems: 'center'
+                        }}>
+                            {/* Left Column */}
+                            <div style={{
+                                textAlign: 'left'
+                            }}>
+                                <div style={{
+                                    backgroundColor: 'rgba(255,255,255,0.1)',
+                                    backdropFilter: 'blur(10px)',
+                                    padding: '40px',
+                                    borderRadius: '20px',
+                                    border: '1px solid rgba(255,255,255,0.2)',
+                                    boxShadow: '0 8px 32px rgba(0,0,0,0.15)',
+                                    transition: 'transform 0.3s ease',
+                                    height: '100%',
+                                    display: 'flex',
+                                    flexDirection: 'column',
+                                    justifyContent: 'center'
+                                }}
+                                onMouseEnter={(e) => e.target.style.transform = 'translateY(-8px)'}
+                                onMouseLeave={(e) => e.target.style.transform = 'translateY(0)'}
+                                >
+                                    <h1 style={{ 
+                                        fontSize: 'clamp(32px, 4vw, 48px)', 
+                                        marginBottom: '20px',
+                                        fontWeight: '800',
+                                        lineHeight: '1.2',
+                                        letterSpacing: '-0.02em',
+                                        textShadow: '0 2px 20px rgba(0,0,0,0.2)'
+                                    }}>
+                                        No Experience? No Problem.
+                                    </h1>
+                                    <p style={{
+                                        fontSize: 'clamp(18px, 2vw, 24px)',
+                                        margin: 0,
+                                        fontWeight: '400',
+                                        lineHeight: '1.6',
+                                        opacity: '0.95'
+                                    }}>
+                                        Our QA Engineering Training Turns Absolute Beginners into Job-Ready Professionals.
+                                    </p>
+                                </div>
+                            </div>
+
+                            {/* Right Column */}
+                            <div style={{
+                                textAlign: 'left'
+                            }}>
+                                <div style={{
+                                    backgroundColor: 'rgba(255,255,255,0.15)',
+                                    backdropFilter: 'blur(10px)',
+                                    padding: '40px',
+                                    borderRadius: '20px',
+                                    border: '1px solid rgba(255,255,255,0.25)',
+                                    boxShadow: '0 8px 32px rgba(0,0,0,0.15)',
+                                    transition: 'transform 0.3s ease',
+                                    height: '100%',
+                                    display: 'flex',
+                                    flexDirection: 'column',
+                                    justifyContent: 'center',
+                                    gap: '24px'
+                                }}
+                                onMouseEnter={(e) => e.target.style.transform = 'translateY(-8px)'}
+                                onMouseLeave={(e) => e.target.style.transform = 'translateY(0)'}
+                                >
+                                    <h2 style={{
+                                        fontSize: 'clamp(28px, 3.5vw, 42px)',
+                                        margin: 0,
+                                        fontWeight: '700',
+                                        lineHeight: '1.3',
+                                        letterSpacing: '-0.01em'
+                                    }}>
+                                        Rise with New Skills.
+                                    </h2>
+                                    <p style={{
+                                        fontSize: 'clamp(18px, 2vw, 24px)',
+                                        margin: 0,
+                                        fontWeight: '400',
+                                        lineHeight: '1.6',
+                                        opacity: '0.95'
+                                    }}>
+                                        QA Engineering is Your Path to Stability, Growth, and Financial Freedom.
+                                    </p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
                 </div>
 
                 {/* Main Content Container */}
