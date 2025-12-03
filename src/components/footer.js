@@ -283,7 +283,7 @@ const footer = () => {
                     </ul>
                 </div>
 
-                {/* Technology Section */}
+                {/* Helpful Resources Section */}
                 <div>
                     <h3 style={{
                         color: '#00416A',
@@ -292,7 +292,7 @@ const footer = () => {
                         fontWeight: 'bold',
                         textTransform: 'uppercase'
                     }}>
-                        Technology
+                        Helpful Resources
                     </h3>
                     <ul style={{
                         listStyle: 'none',
