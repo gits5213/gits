@@ -414,7 +414,95 @@ const footer = () => {
                                 Contact Us
                             </Link>
                         </li>
+                        <li style={{ marginBottom: '12px' }}>
+                            <a 
+                                href="https://jobright.ai/jobs/" 
+                                target="_blank" 
+                                rel="noopener noreferrer"
+                                style={{
+                                    color: '#cccccc',
+                                    textDecoration: 'none',
+                                    fontSize: '16px',
+                                    transition: 'color 0.3s ease'
+                                }}
+                                onMouseEnter={(e) => e.target.style.color = '#00416A'}
+                                onMouseLeave={(e) => e.target.style.color = '#cccccc'}
+                            >
+                                Career Pathways
+                            </a>
+                        </li>
                     </ul>
+                </div>
+
+                {/* Contact/Location Section */}
+                <div>
+                    <h3 style={{
+                        color: '#00416A',
+                        fontSize: '20px',
+                        marginBottom: '20px',
+                        fontWeight: 'bold',
+                        textTransform: 'uppercase'
+                    }}>
+                        Location
+                    </h3>
+                    <div style={{
+                        color: '#cccccc',
+                        fontSize: '16px',
+                        lineHeight: '1.6',
+                        marginBottom: '20px'
+                    }}>
+                        <p style={{
+                            margin: '0 0 12px 0',
+                            fontWeight: '500'
+                        }}>
+                            8905 202nd Street
+                        </p>
+                        <p style={{
+                            margin: '0 0 12px 0'
+                        }}>
+                            Hollis, NY 11423
+                        </p>
+                    </div>
+                    <div style={{
+                        width: '100%',
+                        height: '200px',
+                        borderRadius: '8px',
+                        overflow: 'hidden',
+                        boxShadow: '0 2px 8px rgba(0,0,0,0.3)'
+                    }}>
+                        <iframe
+                            title="GITS Location Map"
+                            src="https://www.google.com/maps?q=8905+202nd+Street,+Hollis,+NY+11423&output=embed"
+                            width="100%"
+                            height="200"
+                            style={{
+                                border: 0,
+                                width: '100%',
+                                height: '100%'
+                            }}
+                            allowFullScreen=""
+                            loading="lazy"
+                            referrerPolicy="no-referrer-when-downgrade"
+                        ></iframe>
+                    </div>
+                    <a
+                        href="https://www.google.com/maps/search/?api=1&query=8905+202nd+Street,+Hollis,+NY+11423"
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        style={{
+                            display: 'inline-block',
+                            marginTop: '12px',
+                            color: '#00416A',
+                            textDecoration: 'none',
+                            fontSize: '14px',
+                            fontWeight: '500',
+                            transition: 'color 0.3s ease'
+                        }}
+                        onMouseEnter={(e) => e.target.style.color = '#68dca8'}
+                        onMouseLeave={(e) => e.target.style.color = '#00416A'}
+                    >
+                        View on Google Maps →
+                    </a>
                 </div>
             </div>
 
