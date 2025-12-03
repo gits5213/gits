@@ -331,7 +331,7 @@ const coursesAutomation = () => {
                         >
                             Sign Up Now
                         </a>
-                    </div>
+            </div>
                 </section>
             </div>
 
@@ -341,7 +341,7 @@ const coursesAutomation = () => {
             <section className='pt4'>
                 <Footer />
             </section>
-        </div> 
+        </div>
     );
 }
 export default coursesAutomation;

@@ -303,7 +303,7 @@ const coursesWebDev = () => {
                             Join our comprehensive Web Development program and build the skills you need for a successful career.
                         </p>
                         <a 
-                            href={link.WEB_DEV_SIGN_UP}
+                            href={link.SQA_SIGN_UP}
                             target="_blank"
                             rel="noopener noreferrer"
                             style={{
@@ -331,7 +331,7 @@ const coursesWebDev = () => {
                         >
                             Sign Up Now
                         </a>
-                    </div>
+            </div>
                 </section>
             </div>
 
@@ -341,7 +341,7 @@ const coursesWebDev = () => {
             <section className='pt4'>
                 <Footer />
             </section>
-        </div> 
+        </div>
     );
 }
 export default coursesWebDev;

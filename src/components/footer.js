@@ -421,7 +421,7 @@ const footer = () => {
                 textAlign: 'center'
             }}>
                 <div style={{ marginBottom: '20px' }}>
-                    <SocialIcon />
+                <SocialIcon />
                 </div>
                 <p style={{
                     fontSize: '14px',

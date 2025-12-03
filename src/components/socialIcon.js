@@ -219,5 +219,5 @@ const socialIcon = () => {
             </a>
         </div>
     );
-}
+  }   
 export default socialIcon;

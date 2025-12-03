@@ -1,6 +1,5 @@
 import React from 'react';
 import '../../../App.css';
-import { Grid, Cell } from 'react-mdl';
 import architecData from '../../../utilities/data/architectureData.json';
 import selenium4Logo from '../../../images/architecture/selenium-4-Architecture.png'; 
 import cypressLogo from '../../../images/architecture/cypressArchitecture.png'; 
@@ -10,135 +9,390 @@ import Footer from '../../../components/footer';
 
 const Architecture = () => {
     return(
-        <section className='page-tab-body'>
-            <div>
-                <h3>{architecData.componentName.frameworkArchitecture}</h3>
+        <div style={{
+            maxWidth: '1400px',
+            margin: '0 auto',
+            padding: '40px 20px'
+        }}>
+            {/* Hero Section */}
+            <div style={{
+                background: 'linear-gradient(135deg, #00416A 0%, #005a8a 100%)',
+                color: '#ffffff',
+                padding: '60px 20px',
+                textAlign: 'center',
+                borderRadius: '12px',
+                marginBottom: '40px',
+                boxShadow: '0 4px 15px rgba(0,0,0,0.2)'
+            }}>
+                <h1 style={{
+                    fontSize: '48px',
+                    marginBottom: '20px',
+                    fontWeight: 'bold'
+                }}>
+                    Framework Architecture
+                </h1>
+                <p style={{
+                    fontSize: '20px',
+                    opacity: '0.95'
+                }}>
+                    Understanding the Architecture of Modern Test Automation Frameworks
+                </p>
             </div>
-            
-            <Grid className="border">
-                <Cell className='pl4' col={3}>
-                    <div>
-                        <h3>{architecData.componentName.selenium4}</h3>
-                        <hr/>
-                    </div>
-                   <div>
+
+            {/* Architecture Grid */}
+            <div style={{
+                display: 'grid',
+                gridTemplateColumns: 'repeat(auto-fit, minmax(300px, 1fr))',
+                gap: '30px',
+                marginBottom: '40px'
+            }}>
+                {/* Selenium 4 */}
+                <div style={{
+                    backgroundColor: '#ffffff',
+                    padding: '30px',
+                    borderRadius: '12px',
+                    boxShadow: '0 2px 10px rgba(0,0,0,0.1)',
+                    border: '1px solid #e0e0e0'
+                }}>
+                    <h3 style={{
+                        color: '#00416A',
+                        fontSize: '24px',
+                        marginBottom: '20px',
+                        fontWeight: 'bold'
+                    }}>
+                        {architecData.componentName.selenium4}
+                    </h3>
+                    <p style={{
+                        fontSize: '16px',
+                        lineHeight: '1.8',
+                        color: '#333',
+                        marginBottom: '20px'
+                    }}>
                         {architecData.architecData[0].SeleniumDescription}
-                   </div>
-                   <div>
-                        <ul>
-                            <li>{architecData.seleniumDescription.sd1}</li>
-                            <li>{architecData.seleniumDescription.sd2}</li>
-                            <li>{architecData.seleniumDescription.sd3}</li>
-                        </ul>
-                   </div>
-                    <div className='tc'>
-                        <img className='appium-logo' src={selenium4Logo} alt='appium Logo'/>
+                    </p>
+                    <ul style={{
+                        fontSize: '14px',
+                        lineHeight: '2',
+                        color: '#333',
+                        paddingLeft: '20px',
+                        marginBottom: '20px'
+                    }}>
+                        <li>{architecData.seleniumDescription.sd1}</li>
+                        <li>{architecData.seleniumDescription.sd2}</li>
+                        <li>{architecData.seleniumDescription.sd3}</li>
+                    </ul>
+                    <div style={{
+                        textAlign: 'center',
+                        marginBottom: '20px',
+                        backgroundColor: '#f8f9fa',
+                        padding: '20px',
+                        borderRadius: '8px'
+                    }}>
+                        <img 
+                            src={selenium4Logo} 
+                            alt='Selenium 4 Architecture'
+                            style={{
+                                width: '100%',
+                                height: 'auto',
+                                borderRadius: '8px'
+                            }}
+                        />
                     </div>
-                    <div>
-                        <h6>More info</h6>
-                        <a href={architecData.links.seleniumArchDiagram_2}>{architecData.componentName.testProject}</a>
-                        <a href={architecData.componentName.seleniumArchDiagram_2}> | {architecData.componentName.selenium}</a>
+                    <div style={{
+                        display: 'flex',
+                        flexWrap: 'wrap',
+                        gap: '10px'
+                    }}>
+                        <a 
+                            href={architecData.links.seleniumArchDiagram_2}
+                            target="_blank"
+                            rel="noopener noreferrer"
+                            style={{
+                                fontSize: '14px',
+                                color: '#00416A',
+                                textDecoration: 'underline'
+                            }}
+                        >
+                            {architecData.componentName.testProject}
+                        </a>
+                        <span style={{ color: '#666' }}>|</span>
+                        <a 
+                            href={architecData.links.seleniumArchDiagram_2}
+                            target="_blank"
+                            rel="noopener noreferrer"
+                            style={{
+                                fontSize: '14px',
+                                color: '#00416A',
+                                textDecoration: 'underline'
+                            }}
+                        >
+                            {architecData.componentName.selenium}
+                        </a>
                     </div>
-                </Cell>
-                <Cell className='pl4 verticalLine' col={3}>
-                    <div>
-                        <h3>{architecData.componentName.cypressIO}</h3>
-                        <hr/>
+                </div>
+
+                {/* CypressIO */}
+                <div style={{
+                    backgroundColor: '#ffffff',
+                    padding: '30px',
+                    borderRadius: '12px',
+                    boxShadow: '0 2px 10px rgba(0,0,0,0.1)',
+                    border: '1px solid #e0e0e0'
+                }}>
+                    <h3 style={{
+                        color: '#00416A',
+                        fontSize: '24px',
+                        marginBottom: '20px',
+                        fontWeight: 'bold'
+                    }}>
+                        {architecData.componentName.cypressIO}
+                    </h3>
+                    <p style={{
+                        fontSize: '16px',
+                        lineHeight: '1.8',
+                        color: '#333',
+                        marginBottom: '20px'
+                    }}>
+                        {architecData.architecData[0].cypressIOdescription}
+                    </p>
+                    <ul style={{
+                        fontSize: '14px',
+                        lineHeight: '2',
+                        color: '#333',
+                        paddingLeft: '20px',
+                        marginBottom: '20px'
+                    }}>
+                        <li>{architecData.cypressIOdescription.cd1}</li>
+                        <li>{architecData.cypressIOdescription.cd2}</li>
+                        <li>{architecData.cypressIOdescription.cd3}</li>
+                        <li>{architecData.cypressIOdescription.cd4}</li>
+                        <li>{architecData.cypressIOdescription.cd5}</li>
+                    </ul>
+                    <div style={{
+                        textAlign: 'center',
+                        marginBottom: '20px',
+                        backgroundColor: '#f8f9fa',
+                        padding: '20px',
+                        borderRadius: '8px'
+                    }}>
+                        <img 
+                            src={cypressLogo} 
+                            alt='CypressIO Architecture'
+                            style={{
+                                width: '100%',
+                                height: 'auto',
+                                borderRadius: '8px'
+                            }}
+                        />
                     </div>
-                   <div>
-                        {architecData.architecData[0].SeleniumDescription}
-                   </div>
-                   <div>
-                        <ul>
-                            <li>{architecData.cypressIOdescription.cd1}</li>
-                            <li>{architecData.cypressIOdescription.cd2}</li>
-                            <li>{architecData.cypressIOdescription.cd3}</li>
-                            <li>{architecData.cypressIOdescription.cd4}</li>
-                            <li>{architecData.cypressIOdescription.cd5}</li>
-                        </ul>
-                   </div>
-                    <div className='tc'>
-                        <img className='appium-logo' src={cypressLogo} alt='appium Logo'/>
+                    <div style={{
+                        display: 'flex',
+                        flexWrap: 'wrap',
+                        gap: '10px'
+                    }}>
+                        <a 
+                            href={architecData.links.cypressArchDiagram_1}
+                            target="_blank"
+                            rel="noopener noreferrer"
+                            style={{
+                                fontSize: '14px',
+                                color: '#00416A',
+                                textDecoration: 'underline'
+                            }}
+                        >
+                            {architecData.componentName.cypressIOArchitecture}
+                        </a>
+                        <span style={{ color: '#666' }}>|</span>
+                        <a 
+                            href={architecData.links.cypressArchDiagram_2}
+                            target="_blank"
+                            rel="noopener noreferrer"
+                            style={{
+                                fontSize: '14px',
+                                color: '#00416A',
+                                textDecoration: 'underline'
+                            }}
+                        >
+                            {architecData.componentName.tutorialsPoint}
+                        </a>
                     </div>
-                    <div>
-                        <h6>More info</h6>
-                            <a href={architecData.links.cypressArchDiagram_1}>{architecData.componentName.cypressIOArchitecture}</a>
-                            <a href={architecData.links.cypressArchDiagram_2}> | {architecData.componentName.tutorialsPoint}</a>
-                    </div>
-                </Cell>
-                <Cell className='pl4 verticalLine' col={3}>
-                    <div>
-                        <h3>{architecData.componentName.playWright}</h3>
-                        <hr/>
-                    </div>
-                   <div>
+                </div>
+
+                {/* Playwright */}
+                <div style={{
+                    backgroundColor: '#ffffff',
+                    padding: '30px',
+                    borderRadius: '12px',
+                    boxShadow: '0 2px 10px rgba(0,0,0,0.1)',
+                    border: '1px solid #e0e0e0'
+                }}>
+                    <h3 style={{
+                        color: '#00416A',
+                        fontSize: '24px',
+                        marginBottom: '20px',
+                        fontWeight: 'bold'
+                    }}>
+                        {architecData.componentName.playWright}
+                    </h3>
+                    <p style={{
+                        fontSize: '16px',
+                        lineHeight: '1.8',
+                        color: '#333',
+                        marginBottom: '20px'
+                    }}>
                         {architecData.architecData[0].playWrightDescription}
-                   </div>
-                   <div>
-                        <ul>
-                            <li>{architecData.playWrightDescription.pd1}</li>
-                            <li>{architecData.playWrightDescription.pd2}</li>
-                            <li>{architecData.playWrightDescription.pd3}</li>
-                            <li>{architecData.playWrightDescription.pd4}</li>
-                        </ul>
-                   </div>
-                    <div className='tc'>
-                        <img className='appium-logo' src={palywrightLogo} alt='appium Logo'/>
+                    </p>
+                    <ul style={{
+                        fontSize: '14px',
+                        lineHeight: '2',
+                        color: '#333',
+                        paddingLeft: '20px',
+                        marginBottom: '20px'
+                    }}>
+                        <li>{architecData.playWrightDescription.pd1}</li>
+                        <li>{architecData.playWrightDescription.pd2}</li>
+                        <li>{architecData.playWrightDescription.pd3}</li>
+                        <li>{architecData.playWrightDescription.pd4}</li>
+                    </ul>
+                    <div style={{
+                        textAlign: 'center',
+                        marginBottom: '20px',
+                        backgroundColor: '#f8f9fa',
+                        padding: '20px',
+                        borderRadius: '8px'
+                    }}>
+                        <img 
+                            src={palywrightLogo} 
+                            alt='Playwright Architecture'
+                            style={{
+                                width: '100%',
+                                height: 'auto',
+                                borderRadius: '8px'
+                            }}
+                        />
                     </div>
-                    <div>
-                        <h6>More info</h6>
-                        <a href={architecData.links.playwrightArchDiagram_1}>{architecData.componentName.playWrightArchitecture}</a>
-                        <a href={architecData.links.playwrightArchDiagram_2}> | {architecData.componentName.programsBuzz}</a>
+                    <div style={{
+                        display: 'flex',
+                        flexWrap: 'wrap',
+                        gap: '10px'
+                    }}>
+                        <a 
+                            href={architecData.links.playwrightArchDiagram_1}
+                            target="_blank"
+                            rel="noopener noreferrer"
+                            style={{
+                                fontSize: '14px',
+                                color: '#00416A',
+                                textDecoration: 'underline'
+                            }}
+                        >
+                            {architecData.componentName.playWrightArchitecture}
+                        </a>
+                        <span style={{ color: '#666' }}>|</span>
+                        <a 
+                            href={architecData.links.playwrightArchDiagram_2}
+                            target="_blank"
+                            rel="noopener noreferrer"
+                            style={{
+                                fontSize: '14px',
+                                color: '#00416A',
+                                textDecoration: 'underline'
+                            }}
+                        >
+                            {architecData.componentName.programsBuzz}
+                        </a>
                     </div>
-                </Cell>
-                <Cell className='pl4 verticalLine' col={3}>
-                    <div>
-                        <h3>{architecData.componentName.webDriverIO}</h3>
-                        <hr/>
-                        
-                    </div>
-                   <div>
+                </div>
+
+                {/* WebDriverIO */}
+                <div style={{
+                    backgroundColor: '#ffffff',
+                    padding: '30px',
+                    borderRadius: '12px',
+                    boxShadow: '0 2px 10px rgba(0,0,0,0.1)',
+                    border: '1px solid #e0e0e0'
+                }}>
+                    <h3 style={{
+                        color: '#00416A',
+                        fontSize: '24px',
+                        marginBottom: '20px',
+                        fontWeight: 'bold'
+                    }}>
+                        {architecData.componentName.webDriverIO}
+                    </h3>
+                    <p style={{
+                        fontSize: '16px',
+                        lineHeight: '1.8',
+                        color: '#333',
+                        marginBottom: '20px'
+                    }}>
                         {architecData.architecData[0].webDriverIODescription}
-                   </div>
-                   <div>
-                        <ul>
-                            <li>{architecData.webDriverIODescription.wd1}</li>
-                            <li>{architecData.webDriverIODescription.wd2}</li>
-                        </ul>
-                   </div>
-                    <div className='tc'>
-                        <img className='appium-logo' src={webDriverIOLogo} alt='appium Logo'/>
+                    </p>
+                    <ul style={{
+                        fontSize: '14px',
+                        lineHeight: '2',
+                        color: '#333',
+                        paddingLeft: '20px',
+                        marginBottom: '20px'
+                    }}>
+                        <li>{architecData.webDriverIODescription.wd1}</li>
+                        <li>{architecData.webDriverIODescription.wd2}</li>
+                    </ul>
+                    <div style={{
+                        textAlign: 'center',
+                        marginBottom: '20px',
+                        backgroundColor: '#f8f9fa',
+                        padding: '20px',
+                        borderRadius: '8px'
+                    }}>
+                        <img 
+                            src={webDriverIOLogo} 
+                            alt='WebDriverIO Architecture'
+                            style={{
+                                width: '100%',
+                                height: 'auto',
+                                borderRadius: '8px'
+                            }}
+                        />
                     </div>
-                    <div>
-                        <h6>More info</h6>
-                            <a href={architecData.links.webDriverIOArchDiagram_1}>{architecData.componentName.webDriverArchitecture}</a>
-                            <a href={architecData.links.webDriverIOArchDiagram_2}> | {architecData.componentName.tutorialsPoint}</a>
+                    <div style={{
+                        display: 'flex',
+                        flexWrap: 'wrap',
+                        gap: '10px'
+                    }}>
+                        <a 
+                            href={architecData.links.webDriverIOArchDiagram_1}
+                            target="_blank"
+                            rel="noopener noreferrer"
+                            style={{
+                                fontSize: '14px',
+                                color: '#00416A',
+                                textDecoration: 'underline'
+                            }}
+                        >
+                            {architecData.componentName.webDriverArchitecture}
+                        </a>
+                        <span style={{ color: '#666' }}>|</span>
+                        <a 
+                            href={architecData.links.webDriverIOArchDiagram_2}
+                            target="_blank"
+                            rel="noopener noreferrer"
+                            style={{
+                                fontSize: '14px',
+                                color: '#00416A',
+                                textDecoration: 'underline'
+                            }}
+                        >
+                            {architecData.componentName.tutorialsPoint}
+                        </a>
                     </div>
-                </Cell>
-            </Grid>
-            <hr/>
-            <section>
-            <Grid className="border">
-                <Cell className='pl4' col={3}>
-                    <Footer />
-            
-                </Cell>
-                <Cell className='pl4 verticalLine' col={3}>
-                    <Footer />
-                    
-                </Cell>
-                <Cell className='pl4 verticalLine' col={3}>
-                    <Footer />
-                </Cell>
-                <Cell className='pl4 verticalLine' col={3}>
-                    <Footer />
-                </Cell>
-            </Grid>
-            </section>
-            <section className='pt4'>
+                </div>
+            </div>
+
+            <section style={{ marginTop: '40px' }}>
                 <Footer />
             </section>
-        </section>
+        </div>
     )
 }
 export default Architecture;

@@ -6,81 +6,260 @@ import python_logo from '../../../images/tabs/python_logo.png';
 import python_CHEAT_SHEET from '../../../images/tabs/Python_CheatSheet.jpeg';
 import Footer from '../../../components/footer';
 
-const resJava = () => {
+const resPython = () => {
     return(
-        <div className='page-tab-body'>
-            <section>
-                <div id='top'>
-                    <h3>PYTHON</h3>
-                </div>
-                <div className='tc'>
-                    <img className='pr4 pt4 pb4 js-logo' src={python_logo} alt='js Logo'/>
-                </div>
-                <div className='tc pt3'>
-                    <a class='f6 grow no-underline br-pill ph3 pv2 mb2 dib white bg-red' href={link.PY_GITHUB} target="_blank" rel="noopener noreferrer">
-                        <img className='pr2' src={link.GITHUB_ICON} alt='github log' /> 
-                        Python on GitHub                 
-                    </a>
-                    <a class='f6 grow no-underline br-pill ph3 pv2 mb2 dib white bg-green' href={link.PY_STYLE_GUIDE} target="_blank" rel="noopener noreferrer">
-                        <img className='pr2' src={link.GITHUB_ICON} alt='github log' /> 
-                        Google Python Style Guide              
-                    </a>
-                </div>
-            </section>
-            <section>
-                <div>
-                    <h3>What is Python?</h3>
-                    <p>
-                        Python is a popular programming language. It was created by Guido van Rossum, and released in 1991.
-                    </p>
-                    <p>It is used for:</p>
-                    <ul>
-                        <li>Web development (server-side)</li>
-                        <li>Software development</li>
-                        <li>Mathematics</li>
-                        <li>System scripting</li>
-                    </ul>
-                </div>
-                <div>
-                    <h3>Why Can Python do?</h3>
-                    <ul>
-                        <li>Python can be used on a server to create web applications.</li>
-                        <li>Python can be used alongside software to create workflows.</li>
-                        <li>Python can connect to database systems. It can also read and modify files.</li>
-                        <li>Python can be used to handle big data and perform complex mathematics.</li>
-                        <li>Python can be used for rapid prototyping, or for production-ready software development.</li>
-                    </ul>
-                </div>
-                <div>
-                    <h3>Why Python?</h3>
-                    <ul>
-                        <li>Python works on different platforms (Windows, Mac, Linux, Raspberry Pi, etc).</li>
-                        <li>Python has a simple syntax similar to the English language.</li>
-                        <li>Python has syntax that allows developers to write programs with fewer lines than some other programming languages.</li>
-                        <li>Python runs on an interpreter system, meaning that code can be executed as soon as it is written. This means that prototyping can be very quick.</li>
-                        <li>Python can be treated in a procedural way, an object-oriented way or a functional way.</li>
-                    </ul>
-                </div>
-            </section>
-            <section>
-                <hr />
-                <div className='tc'>
-                    <img className='pr4 pt4 pb4 linux-logo' src={python_CHEAT_SHEET} alt='Linux Logo'/>
-                </div>
-            </section>
-            <section>
-                <div>
-                    <BackToTop />
-                </div> 
-            </section>
+        <div style={{
+            maxWidth: '1200px',
+            margin: '0 auto',
+            padding: '40px 20px'
+        }}>
+            {/* Hero Section */}
+            <div style={{
+                background: 'linear-gradient(135deg, #00416A 0%, #005a8a 100%)',
+                color: '#ffffff',
+                padding: '60px 20px',
+                textAlign: 'center',
+                borderRadius: '12px',
+                marginBottom: '40px',
+                boxShadow: '0 4px 15px rgba(0,0,0,0.2)'
+            }}>
+                <h1 style={{
+                    fontSize: '48px',
+                    marginBottom: '20px',
+                    fontWeight: 'bold'
+                }}>
+                    PYTHON
+                </h1>
+                <p style={{
+                    fontSize: '20px',
+                    opacity: '0.95'
+                }}>
+                    A Popular Programming Language for Web Development and More
+                </p>
+            </div>
+
+            {/* Image Section */}
+            <div style={{
+                textAlign: 'center',
+                marginBottom: '40px',
+                backgroundColor: '#f8f9fa',
+                padding: '40px',
+                borderRadius: '12px',
+                boxShadow: '0 2px 10px rgba(0,0,0,0.1)'
+            }}>
+                <img 
+                    src={python_logo} 
+                    alt='Python Logo'
+                    style={{
+                        width: '100%',
+                        maxWidth: '400px',
+                        height: 'auto',
+                        borderRadius: '8px'
+                    }}
+                />
+            </div>
+
+            {/* GitHub Links */}
+            <div style={{
+                display: 'flex',
+                flexWrap: 'wrap',
+                gap: '15px',
+                justifyContent: 'center',
+                marginBottom: '40px'
+            }}>
+                <a 
+                    href={link.PY_GITHUB} 
+                    target="_blank" 
+                    rel="noopener noreferrer"
+                    style={{
+                        display: 'inline-flex',
+                        alignItems: 'center',
+                        padding: '12px 30px',
+                        fontSize: '16px',
+                        fontWeight: '600',
+                        color: '#ffffff',
+                        backgroundColor: '#dc3545',
+                        textDecoration: 'none',
+                        borderRadius: '8px',
+                        transition: 'all 0.3s ease',
+                        boxShadow: '0 2px 8px rgba(0,0,0,0.15)'
+                    }}
+                    onMouseEnter={(e) => {
+                        e.target.style.backgroundColor = '#c82333';
+                        e.target.style.transform = 'translateY(-2px)';
+                    }}
+                    onMouseLeave={(e) => {
+                        e.target.style.backgroundColor = '#dc3545';
+                        e.target.style.transform = 'translateY(0)';
+                    }}
+                >
+                    <img src={link.GITHUB_ICON} alt='github' style={{ marginRight: '10px', width: '20px', height: '20px' }} />
+                    Python on GitHub
+                </a>
+                <a 
+                    href={link.PY_STYLE_GUIDE} 
+                    target="_blank" 
+                    rel="noopener noreferrer"
+                    style={{
+                        display: 'inline-flex',
+                        alignItems: 'center',
+                        padding: '12px 30px',
+                        fontSize: '16px',
+                        fontWeight: '600',
+                        color: '#ffffff',
+                        backgroundColor: '#28a745',
+                        textDecoration: 'none',
+                        borderRadius: '8px',
+                        transition: 'all 0.3s ease',
+                        boxShadow: '0 2px 8px rgba(0,0,0,0.15)'
+                    }}
+                    onMouseEnter={(e) => {
+                        e.target.style.backgroundColor = '#218838';
+                        e.target.style.transform = 'translateY(-2px)';
+                    }}
+                    onMouseLeave={(e) => {
+                        e.target.style.backgroundColor = '#28a745';
+                        e.target.style.transform = 'translateY(0)';
+                    }}
+                >
+                    <img src={link.GITHUB_ICON} alt='github' style={{ marginRight: '10px', width: '20px', height: '20px' }} />
+                    Google Python Style Guide
+                </a>
+            </div>
+
+            {/* Main Content */}
+            <div style={{
+                backgroundColor: '#ffffff',
+                padding: '40px',
+                borderRadius: '12px',
+                boxShadow: '0 2px 10px rgba(0,0,0,0.1)',
+                marginBottom: '40px'
+            }}>
+                <h2 style={{
+                    color: '#00416A',
+                    fontSize: '32px',
+                    marginBottom: '20px',
+                    fontWeight: 'bold'
+                }}>
+                    What is Python?
+                </h2>
+                <p style={{
+                    fontSize: '16px',
+                    lineHeight: '1.8',
+                    color: '#333',
+                    marginBottom: '30px'
+                }}>
+                    Python is a popular programming language. It was created by Guido van Rossum, and released in 1991.
+                </p>
+
+                <h3 style={{
+                    color: '#00416A',
+                    fontSize: '24px',
+                    marginBottom: '15px',
+                    marginTop: '30px',
+                    fontWeight: 'bold'
+                }}>
+                    It is used for:
+                </h3>
+                <ul style={{
+                    fontSize: '16px',
+                    lineHeight: '2',
+                    color: '#333',
+                    paddingLeft: '20px',
+                    marginBottom: '30px'
+                }}>
+                    <li>Web development (server-side)</li>
+                    <li>Software development</li>
+                    <li>Mathematics</li>
+                    <li>System scripting</li>
+                </ul>
+
+                <h2 style={{
+                    color: '#00416A',
+                    fontSize: '32px',
+                    marginBottom: '20px',
+                    marginTop: '40px',
+                    fontWeight: 'bold'
+                }}>
+                    What Can Python do?
+                </h2>
+                <ul style={{
+                    fontSize: '16px',
+                    lineHeight: '2',
+                    color: '#333',
+                    paddingLeft: '20px',
+                    marginBottom: '30px'
+                }}>
+                    <li>Python can be used on a server to create web applications.</li>
+                    <li>Python can be used alongside software to create workflows.</li>
+                    <li>Python can connect to database systems. It can also read and modify files.</li>
+                    <li>Python can be used to handle big data and perform complex mathematics.</li>
+                    <li>Python can be used for rapid prototyping, or for production-ready software development.</li>
+                </ul>
+
+                <h2 style={{
+                    color: '#00416A',
+                    fontSize: '32px',
+                    marginBottom: '20px',
+                    marginTop: '40px',
+                    fontWeight: 'bold'
+                }}>
+                    Why Python?
+                </h2>
+                <ul style={{
+                    fontSize: '16px',
+                    lineHeight: '2',
+                    color: '#333',
+                    paddingLeft: '20px'
+                }}>
+                    <li>Python works on different platforms (Windows, Mac, Linux, Raspberry Pi, etc).</li>
+                    <li>Python has a simple syntax similar to the English language.</li>
+                    <li>Python has syntax that allows developers to write programs with fewer lines than some other programming languages.</li>
+                    <li>Python runs on an interpreter system, meaning that code can be executed as soon as it is written. This means that prototyping can be very quick.</li>
+                    <li>Python can be treated in a procedural way, an object-oriented way or a functional way.</li>
+                </ul>
+            </div>
+
+            {/* Python Cheat Sheet */}
+            <div style={{
+                textAlign: 'center',
+                marginBottom: '40px',
+                backgroundColor: '#f8f9fa',
+                padding: '40px',
+                borderRadius: '12px',
+                boxShadow: '0 2px 10px rgba(0,0,0,0.1)'
+            }}>
+                <h2 style={{
+                    color: '#00416A',
+                    fontSize: '32px',
+                    marginBottom: '30px',
+                    fontWeight: 'bold'
+                }}>
+                    Python Cheat Sheet
+                </h2>
+                <img 
+                    src={python_CHEAT_SHEET} 
+                    alt='Python Cheat Sheet'
+                    style={{
+                        width: '100%',
+                        maxWidth: '800px',
+                        height: 'auto',
+                        borderRadius: '8px',
+                        boxShadow: '0 2px 8px rgba(0,0,0,0.1)'
+                    }}
+                />
+            </div>
+
+            <div>
+                <BackToTop />
+            </div>
             <div>
                 <GoogleAd slot="1541085932" classNames="page-right-side" />
             </div>
-            <section className='pt4'>
+            <section style={{ marginTop: '40px' }}>
                 <Footer />
             </section>
-            
         </div>
     )
 }
-export default resJava;
+export default resPython;

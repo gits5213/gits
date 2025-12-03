@@ -320,7 +320,7 @@ const coursesCode4Kids = () => {
                             Enroll your child in our Code4Kids program today and give them the skills for tomorrow.
                         </p>
                         <a 
-                            href={link.CODE4KIDS_SIGN_UP}
+                            href={link.SQA_SIGN_UP}
                             target="_blank"
                             rel="noopener noreferrer"
                             style={{

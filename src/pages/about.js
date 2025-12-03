@@ -233,10 +233,10 @@ class About extends Component {
                                             ACCELQ (Test Automation / Continuous Testing Tool)
                                         </li>
                                     </ul>
-                                </div>
+                </div>
 
                                 {/* Tech Stack */}
-                                <div>
+                    <div>
                                     <h3 style={{
                                         color: '#00416A',
                                         fontSize: '20px',
@@ -251,9 +251,9 @@ class About extends Component {
                                         color: '#333'
                                     }}>
                                         Expert in automation across tech stacks (HTML, CSS, Javascript, Java, C#.Net, Python, Selenium, Protractor, CypressIO, PlayWright, WebDriverIO, Appium, API's, Subject7, Katalon Studio, Tricentis Tosca, ACCELQ, Postman, Jmeter, JMeter, Gatling, JUnit, TestNG, Maven, SVN, Git, GitHub, CI Server Jenkins, Quality Center (ALM), JIRA, SQL, and Language-based: JAVA, JavaScript, HTML, CSS, XML, JQuery, JAVA Servlet, JSP) and different types of application (Web, Middleware, APIs and Mobile apps).
-                                    </p>
-                                </div>
-                            </div>
+                        </p>
+                    </div>
+                    </div>
 
                             {/* Role Description */}
                             <div style={{
@@ -284,7 +284,7 @@ class About extends Component {
                                     color: '#333'
                                 }}>
                                     I enabled product owners and Agile teams to adopt Best practices & process in their projects and establish Software Quality Assurance first approach. I take immense pride in cultivating a culture of individual & company growth and actively mentor my team to maximize their potential.
-                                </p>
+                        </p>
                             </div>
 
                             {/* Founder & Training */}
@@ -316,8 +316,8 @@ class About extends Component {
                                     color: '#333'
                                 }}>
                                     I am actively involved in mentoring, Training, and Coaching, entry-level professionals and fresher to make a successful career in Tech Engineering industry.
-                                </p>
-                            </div>
+                        </p>
+                    </div>
 
                             {/* Personal Note */}
                             <div style={{
@@ -587,7 +587,7 @@ class About extends Component {
                                     marginBottom: '20px'
                                 }}>
                                     GITS's service offerings go beyond standard QA — they include advanced testing capabilities such as penetration testing (security testing), network/web application security audits, and comprehensive test automation. Their expertise spans both functional and security aspects, making them a strong partner for businesses seeking high quality and robust software releases.
-                                </p>
+                        </p>
                             </div>
 
                             <div style={{
@@ -600,8 +600,8 @@ class About extends Component {
                                     lineHeight: '1.8'
                                 }}>
                                     As a comparatively small but focused company (reported ~10–50 employees), GITS offers specialized QA, automation, and resourcing services — which makes them nimble, personal, and ideal for organizations that want flexible, high-touch partnership rather than large-scale outsourcing.
-                                </p>
-                            </div>
+                        </p>
+                    </div>
                         </div>
                     </section>
 

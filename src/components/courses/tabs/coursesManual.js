@@ -331,7 +331,7 @@ const coursesManual = () => {
                         >
                             Sign Up Now
                         </a>
-                    </div>
+            </div>
                 </section>
             </div>
 
@@ -341,7 +341,7 @@ const coursesManual = () => {
             <section className='pt4'>
                 <Footer />
             </section>
-        </div> 
+        </div>
     );
 }
 export default coursesManual;
