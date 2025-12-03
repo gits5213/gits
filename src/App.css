@@ -321,3 +321,22 @@ h1.sub-header {
   border-left: 0.5px solid #06c96b;
 }
 
+/* =============Responsive Navigation==============*/
+.desktop-nav {
+  display: flex;
+}
+
+.mobile-menu-button {
+  display: none;
+}
+
+@media (max-width: 768px) {
+  .desktop-nav {
+    display: none !important;
+  }
+  
+  .mobile-menu-button {
+    display: flex !important;
+  }
+}
+
