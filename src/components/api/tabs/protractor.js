@@ -92,7 +92,7 @@ const resProtractor = () => {
                     }}
                 >
                     <img src={link.GITHUB_ICON} alt='github' style={{ marginRight: '10px', width: '20px', height: '20px' }} />
-                    Protractor on GitHub
+                    Protractor on GitHub                 
                 </a>
                 <a 
                     href={link.PROTRACTOR_WEBSITE} 
@@ -121,7 +121,7 @@ const resProtractor = () => {
                     }}
                 >
                     <img src={link.GITHUB_ICON} alt='github' style={{ marginRight: '10px', width: '20px', height: '20px' }} />
-                    Protractor Org
+                    Protractor Org                 
                 </a>
             </div>
 

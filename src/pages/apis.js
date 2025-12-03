@@ -14,6 +14,8 @@ import Playwright from '../components/api/tabs/playwright';
 import ReadyAPI from '../components/api/tabs/readyapi';
 import PerformaceTest from '../components/api/tabs/performance';
 import Architecture from '../components/api/tabs/architecture';
+import '../styles/base.css';
+import '../styles/apis.css';
 
 class apis extends Component {
     constructor(props) {
@@ -147,7 +149,7 @@ class apis extends Component {
 
         return (
             <div className="category-tabs">
-                <HeaderText />
+                <HeaderText /> 
                 
                 {/* Custom Tabs */}
                 <div style={{

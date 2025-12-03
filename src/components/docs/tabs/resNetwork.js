@@ -155,7 +155,7 @@ const resNetwork = () => {
                     color: '#333',
                     marginBottom: '20px'
                 }}>
-                    To do this successfully, your computer uses internet protocol, and your IP address is used as a virtual return address to establish a connection.
+                    To do this successfully, your computer uses internet protocol, and your IP address is used as a virtual return address to establish a connection.  
                 </p>
 
                 <h3 style={{
@@ -173,7 +173,7 @@ const resNetwork = () => {
                     color: '#333',
                     marginBottom: '20px'
                 }}>
-                    The blocks of hexadecimal digits that make up an address are called octets. These octets create an addressing scheme that accommodates different network types.
+                    The blocks of hexadecimal digits that make up an address are called octets. These octets create an addressing scheme that accommodates different network types. 
                 </p>
                 <p style={{
                     fontSize: '16px',

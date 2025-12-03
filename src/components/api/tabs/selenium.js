@@ -55,13 +55,13 @@ const selenium = () => {
                     lineHeight: '1.8'
                 }}>
                     <p style={{ marginBottom: '15px' }}>
-                        Primarily it is for automating web applications for testing purposes,
-                        but is certainly not limited to just that.
-                    </p>
+                  Primarily it is for automating web applications for testing purposes,
+                  but is certainly not limited to just that.
+                </p>
                     <p>
-                        Boring web-based administration tasks can (and should) also be automated as well.
-                    </p>
-                </div>
+                  Boring web-based administration tasks can (and should) also be automated as well.
+                </p>
+              </div>
             </div>
 
             {/* GitHub Links */}
@@ -99,8 +99,8 @@ const selenium = () => {
                     }}
                 >
                     <img src={link.GITHUB_ICON} alt='github' style={{ marginRight: '10px', width: '20px', height: '20px' }} />
-                    SeleniumHQ on GitHub
-                </a>
+                  SeleniumHQ on GitHub                 
+              </a>
                 <a 
                     href={link.SELENIUM_WEBSITE} 
                     target="_blank" 
@@ -128,9 +128,9 @@ const selenium = () => {
                     }}
                 >
                     <img src={link.GITHUB_ICON} alt='github' style={{ marginRight: '10px', width: '20px', height: '20px' }} />
-                    SeleniumHQ Org
+                    SeleniumHQ Org                 
                 </a>
-            </div>
+          </div>
 
             {/* Main Content Container */}
             <div style={{
@@ -149,7 +149,7 @@ const selenium = () => {
                 }}>
                     Selenium WebDriver Commands
                 </h2>
-
+          
                 {/* Browser Commands */}
                 <div style={{
                     marginBottom: '40px',
@@ -179,7 +179,7 @@ const selenium = () => {
                         <li><strong>getPageSource(): String</strong> – This method returns the Source Code of the page.</li>
                         <li><strong>close(): void</strong> – This method Close only the current window the WebDriver is currently controlling.</li>
                         <li><strong>quit(): void</strong> – This method Closes all windows opened by the WebDriver.</li>
-                    </ol>
+            </ol>
                 </div>
 
                 {/* Navigation Commands */}
@@ -209,7 +209,7 @@ const selenium = () => {
                         <li><strong>navigate().forward() : void</strong> – This method does the same operation as clicking on the Forward Button of any browser.</li>
                         <li><strong>navigate().back() : void</strong> – This method does the same operation as clicking on the Back Button of any browser.</li>
                         <li><strong>navigate().refresh() : void</strong> – This method Refresh the current page. It neither accepts nor returns anything.</li>
-                    </ol>
+            </ol>
                 </div>
 
                 {/* WebElement Commands */}
@@ -248,7 +248,7 @@ const selenium = () => {
                         <li><strong>getAttribute(String Name) : String</strong> – This method gets the value of the given attribute of the element.</li>
                         <li><strong>getSize( ) : Dimension</strong> – This method fetch the width and height of the rendered element.</li>
                         <li><strong>getLocation( ) : Point</strong> – This method locate the location of the element on the page.</li>
-                    </ol>
+            </ol>
                 </div>
 
                 {/* Finding Elements */}
@@ -290,7 +290,7 @@ const selenium = () => {
                         <li><strong>partialLinkText(String linkText) : By</strong> – With this you can find elements of "a" tags(Link) with the partial link names.</li>
                         <li><strong>xpath(String xpathexpression) : By</strong> – It is the most popular and majorly used locating element technique or the easiest way to locate an element in WebDriver.</li>
                         <li><strong>cssSelector(String cssexpression) : By</strong> - Locates elements matching a CSS selector.</li>
-                    </ol>
+            </ol>
                 </div>
 
                 {/* CheckBox & Radio Button */}
@@ -365,7 +365,7 @@ const selenium = () => {
                         <li><strong>deselectByValue(String arg0) : void</strong> – Deselect all options that have a value matching the argument.</li>
                         <li><strong>deselectByVisibleText(String arg0) : void</strong> – Deselect all options that display text matching the argument.</li>
                         <li><strong>isMultiple( ) : boolean</strong> – This tells whether the SELECT element support multiple selecting options at the same time or not.</li>
-                    </ol>
+            </ol>
                 </div>
 
                 {/* Handling Web Tables, Frames, And Dynamic Elements */}
@@ -408,39 +408,39 @@ const selenium = () => {
                         <h4 style={{ color: '#00416A', fontSize: '18px', marginBottom: '10px', fontWeight: '600' }}>Approach #1:</h4>
                         <p style={{ fontSize: '16px', color: '#333', marginBottom: '10px' }}>Below is the xpath of one of the cell in html table.</p>
                         <div style={codeBlockStyle}>
-                            <code>
+                  <code>
                                 {identifier.basic_xpath_5}<br />
-                                {identifier.basic_xpath_6}
-                            </code>
-                        </div>
+                    {identifier.basic_xpath_6}
+                  </code>
+            </div>        
                     </div>
                     <div style={{ marginBottom: '20px' }}>
                         <h4 style={{ color: '#00416A', fontSize: '18px', marginBottom: '10px', fontWeight: '600' }}>Approach #2:</h4>
                         <p style={{ fontSize: '16px', color: '#333', marginBottom: '10px' }}>The first approach is best suitable for the table which doesn't change its dimensions and always remains the same. Above approach will not be a perfect solution for dynamically changing web tables.</p>
                         <div style={codeBlockStyle}>
-                            <code>
+                <code>
                                 {identifier.contains}<br />
                                 {identifier.contains_1}<br />
                                 {identifier.contains_2}<br />
                                 {identifier.contains_3}<br />
-                                {identifier.contains_4}
-                            </code>
+                  {identifier.contains_4}
+                </code>
                         </div>
                     </div>
                     <div>
                         <h4 style={{ color: '#00416A', fontSize: '18px', marginBottom: '10px', fontWeight: '600' }}>Approach #3:</h4>
                         <p style={{ fontSize: '16px', color: '#333', marginBottom: '10px' }}>
-                            In this section we will learn different ways to handle dynamic element and construct generic Xpath.
+              In this section we will learn different ways to handle dynamic element and construct generic Xpath.
                             In few scenarios, element attributes change dynamically. It can be 'id', 'name' etc.
-                        </p>
+            </p>
                         <div style={codeBlockStyle}>
-                            <code>
+                <code>
                                 {identifier.basic_xpath_1}<br />
                                 {identifier.basic_xpath_3}<br />
-                                {identifier.basic_xpath_4}
-                            </code>
-                        </div>
-                    </div>
+                  {identifier.basic_xpath_4}
+                </code>
+            </div>
+            </div>
                 </div>
             </div>
 
@@ -470,34 +470,34 @@ const selenium = () => {
                     <div style={{ padding: '20px', backgroundColor: '#f8f9fa', borderRadius: '8px' }}>
                         <h4 style={{ color: '#00416A', fontSize: '18px', marginBottom: '15px', fontWeight: '600' }}>Basic XPath</h4>
                         <div style={codeBlockStyle}>
-                            <code>
+                  <code>
                                 {identifier.basic_xpath_1}<br />
                                 {identifier.basic_xpath_2}<br />
                                 {identifier.basic_xpath_3}<br />
-                                {identifier.basic_xpath_4}
-                            </code>
-                        </div>
+                    {identifier.basic_xpath_4}
+                  </code>
+            </div> 
                     </div>
 
                     <div style={{ padding: '20px', backgroundColor: '#f8f9fa', borderRadius: '8px' }}>
                         <h4 style={{ color: '#00416A', fontSize: '18px', marginBottom: '15px', fontWeight: '600' }}>XPath for Tables</h4>
                         <div style={codeBlockStyle}>
-                            <code>
+                  <code>
                                 {identifier.basic_xpath_5}<br />
-                                {identifier.basic_xpath_6}
-                            </code>
-                        </div>
+                    {identifier.basic_xpath_6}
+                  </code>
+            </div> 
                     </div>
 
                     <div style={{ padding: '20px', backgroundColor: '#f8f9fa', borderRadius: '8px' }}>
                         <h4 style={{ color: '#00416A', fontSize: '18px', marginBottom: '15px', fontWeight: '600' }}>XPath using Text</h4>
                         <div style={codeBlockStyle}>
-                            <code>
+                  <code>
                                 {identifier.text}<br />
-                                {identifier.text_1}
-                            </code>
-                        </div>
-                    </div>
+                    {identifier.text_1}
+                  </code>
+            </div> 
+            </div> 
 
                     <div style={{ padding: '20px', backgroundColor: '#f8f9fa', borderRadius: '8px' }}>
                         <h4 style={{ color: '#00416A', fontSize: '18px', marginBottom: '15px', fontWeight: '600' }}>XPath using Index</h4>
@@ -509,44 +509,44 @@ const selenium = () => {
                     <div style={{ padding: '20px', backgroundColor: '#f8f9fa', borderRadius: '8px' }}>
                         <h4 style={{ color: '#00416A', fontSize: '18px', marginBottom: '15px', fontWeight: '600' }}>XPath using AND/OR operator</h4>
                         <div style={codeBlockStyle}>
-                            <code>
+                  <code>
                                 {identifier.xpath_and_1}<br />
                                 {identifier.xpath_and_2}<br />
                                 {identifier.xpath_or_1}<br />
-                                {identifier.xpath_or_2}
-                            </code>
-                        </div>
+                    {identifier.xpath_or_2}
+                  </code>
+            </div> 
                     </div>
 
                     <div style={{ padding: '20px', backgroundColor: '#f8f9fa', borderRadius: '8px' }}>
                         <h4 style={{ color: '#00416A', fontSize: '18px', marginBottom: '15px', fontWeight: '600' }}>XPath using Contains Keyword</h4>
                         <div style={codeBlockStyle}>
-                            <code>
+                  <code>
                                 {identifier.contains}<br />
                                 {identifier.contains_1}<br />
                                 {identifier.contains_2}<br />
                                 {identifier.contains_3}<br />
-                                {identifier.contains_4}
-                            </code>
-                        </div>
+                    {identifier.contains_4}
+                  </code>
+            </div> 
                     </div>
 
                     <div style={{ padding: '20px', backgroundColor: '#f8f9fa', borderRadius: '8px' }}>
                         <h4 style={{ color: '#00416A', fontSize: '18px', marginBottom: '15px', fontWeight: '600' }}>XPath using Start-with Keyword</h4>
                         <div style={codeBlockStyle}>
-                            <code>
+                  <code>
                                 {identifier.start_with}<br />
                                 {identifier.start_with_1}<br />
-                                {identifier.start_with_2}
-                            </code>
-                        </div>
-                    </div>
+                    {identifier.start_with_2}
+                  </code>
+            </div> 
+            </div> 
 
                     <div style={{ padding: '20px', backgroundColor: '#f8f9fa', borderRadius: '8px' }}>
                         <h4 style={{ color: '#00416A', fontSize: '18px', marginBottom: '15px', fontWeight: '600' }}>XPath using Parent-Child</h4>
                         <div style={codeBlockStyle}>
                             <code>{identifier.paret_child}</code>
-                        </div>
+            </div> 
                     </div>
 
                     <div style={{ padding: '20px', backgroundColor: '#f8f9fa', borderRadius: '8px' }}>
@@ -559,56 +559,56 @@ const selenium = () => {
                     <div style={{ padding: '20px', backgroundColor: '#f8f9fa', borderRadius: '8px' }}>
                         <h4 style={{ color: '#00416A', fontSize: '18px', marginBottom: '15px', fontWeight: '600' }}>XPath using ANCESTOR</h4>
                         <div style={codeBlockStyle}>
-                            <code>
+                  <code>
                                 {identifier.xpath_ancestor_parent}<br />
                                 {identifier.xpath_ancestor_parentNode}<br />
                                 {identifier.xpath_ancestor_child}<br />
                                 {identifier.xpath_ancestor_childNode}<br />
                                 {identifier.xpath_descendant_axis}<br />
                                 {identifier.xpath_descendant_path}<br />
-                                {identifier.ancestor}
-                            </code>
-                        </div>
+                    {identifier.ancestor}
+                  </code>
+            </div> 
                     </div>
 
                     <div style={{ padding: '20px', backgroundColor: '#f8f9fa', borderRadius: '8px' }}>
                         <h4 style={{ color: '#00416A', fontSize: '18px', marginBottom: '15px', fontWeight: '600' }}>XPath using Parent Axis</h4>
                         <div style={codeBlockStyle}>
-                            <code>
+                  <code>
                                 {identifier.xpath_parent_axis}<br />
-                                {identifier.xpath_parent_path}
-                            </code>
-                        </div>
+                    {identifier.xpath_parent_path}
+                  </code>
+            </div> 
                     </div>
 
                     <div style={{ padding: '20px', backgroundColor: '#f8f9fa', borderRadius: '8px' }}>
                         <h4 style={{ color: '#00416A', fontSize: '18px', marginBottom: '15px', fontWeight: '600' }}>XPath using Following Axis</h4>
                         <div style={codeBlockStyle}>
-                            <code>
+                  <code>
                                 {identifier.xpath_following_axis}<br />
-                                {identifier.xpath_following_path}
-                            </code>
-                        </div>
+                    {identifier.xpath_following_path}
+                  </code>
+            </div> 
                     </div>
 
                     <div style={{ padding: '20px', backgroundColor: '#f8f9fa', borderRadius: '8px' }}>
                         <h4 style={{ color: '#00416A', fontSize: '18px', marginBottom: '15px', fontWeight: '600' }}>XPath using Following sibling Axis</h4>
                         <div style={codeBlockStyle}>
-                            <code>
+                  <code>
                                 {identifier.xpath_following_sibling_axis}<br />
-                                {identifier.xpath_following_sibling_path}
-                            </code>
-                        </div>
+                    {identifier.xpath_following_sibling_path}
+                  </code>
+            </div>
                     </div>
 
                     <div style={{ padding: '20px', backgroundColor: '#f8f9fa', borderRadius: '8px' }}>
                         <h4 style={{ color: '#00416A', fontSize: '18px', marginBottom: '15px', fontWeight: '600' }}>XPath using Preceding Axis</h4>
                         <div style={codeBlockStyle}>
-                            <code>
+                  <code>
                                 {identifier.xpath_precending_axis}<br />
-                                {identifier.xpath_precending_path}
-                            </code>
-                        </div>
+                    {identifier.xpath_precending_path}
+                  </code>
+            </div>
                     </div>
                 </div>
 
@@ -645,8 +645,8 @@ const selenium = () => {
                             e.target.style.transform = 'translateY(0)';
                         }}
                     >
-                        Locator Strategy 1
-                    </a>
+                  Locator Strategy 1
+                </a>
                     <a 
                         href={link.XPATH_LOCATOR_2} 
                         target="_blank" 
@@ -672,9 +672,9 @@ const selenium = () => {
                             e.target.style.transform = 'translateY(0)';
                         }}
                     >
-                        Locator Strategy 2
-                    </a>
-                </div>
+                  Locator Strategy 2
+                </a>
+            </div>
             </div>
 
             {/* Actions Class Section */}
@@ -846,15 +846,15 @@ const selenium = () => {
                 }}>
                     <h4 style={{ color: '#00416A', fontSize: '20px', marginBottom: '15px', fontWeight: '600' }}>Basic CSS</h4>
                     <div style={codeBlockStyle}>
-                        <code>
+                  <code>
                             {identifier.basic_css_1}<br />
                             {identifier.basic_css_2}<br />
                             {identifier.basic_css_3}<br />
                             {identifier.basic_css_4}<br />
                             {identifier.basic_css_5}<br />
-                            {identifier.basic_css_6}
-                        </code>
-                    </div>
+                    {identifier.basic_css_6}
+                  </code>
+            </div>
                 </div>
             </div>
 
@@ -919,11 +919,11 @@ const selenium = () => {
                             color: '#333',
                             marginBottom: '15px'
                         }}>
-                            Implicit Wait directs the Selenium WebDriver to wait for a certain measure of time before throwing an exception. Once this time is set, WebDriver will wait for the element before the exception occurs.
-                        </p>
+                    Implicit Wait directs the Selenium WebDriver to wait for a certain measure of time before throwing an exception. Once this time is set, WebDriver will wait for the element before the exception occurs.
+                  </p>
                         <div style={codeBlockStyle}>
                             <code>driver.manage().timeouts().implicitlywait(20L,Timeunit.sec);</code>
-                        </div>
+                  </div>
                     </div>
 
                     {/* Explicit Wait */}
@@ -955,8 +955,8 @@ const selenium = () => {
                             color: '#333',
                             marginBottom: '15px'
                         }}>
-                            By using Explicit Wait command, the WebDriver is directed to wait until a certain condition occurs before proceeding with executing the code.
-                        </p>
+                    By using Explicit Wait command, the WebDriver is directed to wait until a certain condition occurs before proceeding with executing the code.
+                  </p>
                         <div style={{ marginBottom: '15px' }}>
                             <strong style={{ color: '#00416A' }}>Expected Conditions:</strong>
                             <ul style={{
@@ -966,21 +966,21 @@ const selenium = () => {
                                 paddingLeft: '20px',
                                 marginTop: '10px'
                             }}>
-                                <li>alertIsPresent()</li>
-                                <li>elementToBeClickable()</li>
-                                <li>presenceOfElementLocated()</li>
+                    <li>alertIsPresent()</li>
+                    <li>elementToBeClickable()</li>
+                    <li>presenceOfElementLocated()</li>
                                 <li>visibilityOfElementLocated()</li>
-                                <li>textToBePresentInElement()</li>
-                                <li>titleIs()</li>
+                    <li>textToBePresentInElement()</li>
+                    <li>titleIs()</li>
                                 <li>And more...</li>
-                            </ul>
+                  </ul>
                         </div>
                         <div style={codeBlockStyle}>
-                            <code>
-                                WebDriverWait wait = new WebDriverWait(driver,30);<br />
-                                wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath("//div[contains(text(),'COMPOSE')]")));
-                            </code>
-                        </div>
+                      <code>
+                          WebDriverWait wait = new WebDriverWait(driver,30);<br />
+                          wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath("//div[contains(text(),'COMPOSE')]")));
+                      </code>
+                  </div>
                     </div>
 
                     {/* Fluent Wait */}
@@ -1013,15 +1013,15 @@ const selenium = () => {
                             marginBottom: '15px'
                         }}>
                             The Fluent Wait command defines the maximum amount of time for Selenium WebDriver to wait for a certain condition to appear. It also defines the frequency with which WebDriver will check if the condition appears.
-                        </p>
+                  </p>
                         <div style={codeBlockStyle}>
-                            <code>
+                      <code>
                                 Wait wait = new FluentWait (WebDriver)(driver)<br />
                                 .withTimeout(50, TimeUnit.SECONDS)<br />
                                 .pollingevery(3, TimeUnit.SECONDS)<br />
-                                .ignoring(NoSuchElementException.class);
-                            </code>
-                        </div>
+                        .ignoring(NoSuchElementException.class); 
+                      </code>
+                  </div>
                     </div>
                 </div>
             </div>
@@ -1056,7 +1056,7 @@ const selenium = () => {
                         marginBottom: '15px',
                         fontWeight: 'bold'
                     }}>
-                        What is an Exception?
+                What is an Exception?
                     </h3>
                     <p style={{
                         fontSize: '16px',
@@ -1065,7 +1065,7 @@ const selenium = () => {
                         marginBottom: '15px'
                     }}>
                         "Exception" is a standard term used by software programmers regardless of any programming language that is used to write the code. "Exception" as the name suggests is an unusual event or an uncommon case that disrupts the normal flow of program execution.
-                    </p>
+              </p>
                     <p style={{
                         fontSize: '16px',
                         lineHeight: '1.8',
@@ -1097,7 +1097,7 @@ const selenium = () => {
                         marginBottom: '15px',
                         fontWeight: 'bold'
                     }}>
-                        10 Common Exceptions in Selenium WebDriver
+                  10 Common Exceptions in Selenium WebDriver
                     </h3>
                     <ol style={{
                         fontSize: '16px',
@@ -1115,7 +1115,7 @@ const selenium = () => {
                         <li><strong>SessionNotFoundException:</strong> Webdriver is acting immediately after 'quitting' the browser</li>
                         <li><strong>TimeoutException:</strong> The command did not complete in the specified time</li>
                         <li><strong>WebDriverException:</strong> Webdriver is acting immediately after 'closing' the browser</li>
-                    </ol>
+                </ol>
                 </div>
 
                 <div style={{
@@ -1130,7 +1130,7 @@ const selenium = () => {
                         marginBottom: '15px',
                         fontWeight: 'bold'
                     }}>
-                        Handling Exceptions In Selenium WebDriver
+                  Handling Exceptions In Selenium WebDriver
                     </h3>
                     <p style={{
                         fontSize: '16px',
@@ -1138,8 +1138,8 @@ const selenium = () => {
                         color: '#333',
                         marginBottom: '20px'
                     }}>
-                        Following are a few standard ways using which one can handle Exceptions in Selenium WebDriver:
-                    </p>
+                  Following are a few standard ways using which one can handle Exceptions in Selenium WebDriver:
+                </p>
 
                     <div style={{ marginBottom: '20px' }}>
                         <h4 style={{ color: '#00416A', fontSize: '18px', marginBottom: '10px', fontWeight: '600' }}>Try-catch:</h4>
@@ -1147,15 +1147,15 @@ const selenium = () => {
                             This method can catch Exceptions by using a combination of the try and catch keywords.
                         </p>
                         <div style={codeBlockStyle}>
-                            <code>
+                      <code>
                                 try {'{'}<br />
                                 &nbsp;&nbsp;//Some code -<br />
                                 {'}'}<br />
                                 catch(Exception e) {'{'}<br />
                                 &nbsp;&nbsp;//Code for Handling the exception -<br />
-                                {'}'}
-                            </code>
-                        </div>
+                            {'}'}
+                      </code>
+                  </div>
                     </div>
 
                     <div style={{ marginBottom: '20px' }}>
@@ -1164,7 +1164,7 @@ const selenium = () => {
                             There are various types of Exceptions, and one can expect more than one exception from a single block of code.
                         </p>
                         <div style={codeBlockStyle}>
-                            <code>
+                      <code>
                                 try {'{'}<br />
                                 &nbsp;&nbsp;//Some code -<br />
                                 {'}'}<br />
@@ -1173,9 +1173,9 @@ const selenium = () => {
                                 {'}'}<br />
                                 catch(ExceptionType2 e2) {'{'}<br />
                                 &nbsp;&nbsp;//Code for Handling the Exception 2 -<br />
-                                {'}'}
-                            </code>
-                        </div>
+                        {'}'}
+                      </code>
+                  </div>
                     </div>
 
                     <div style={{ marginBottom: '20px' }}>
@@ -1184,7 +1184,7 @@ const selenium = () => {
                             When a programmer wants to generate an Exception explicitly, the Throw keyword is used.
                         </p>
                         <div style={codeBlockStyle}>
-                            <code>
+                    <code>
                                 public static void anyFunction() throws Exception {'{'}<br />
                                 &nbsp;&nbsp;//try {'{'} write your code here<br />
                                 {'}'}<br />
@@ -1193,8 +1193,8 @@ const selenium = () => {
                                 &nbsp;&nbsp;&nbsp;&nbsp;//Now throw the exception back to the system<br />
                                 &nbsp;&nbsp;&nbsp;&nbsp;//throw(e);<br />
                                 &nbsp;&nbsp;{'}'}<br />
-                                {'}'}
-                            </code>
+                        {'}'}
+                    </code>
                         </div>
                     </div>
 
@@ -1204,7 +1204,7 @@ const selenium = () => {
                             The Final keyword is used to create a block of code under the try block. This final code block always executes irrespective of the occurrence of an exception.
                         </p>
                         <div style={codeBlockStyle}>
-                            <code>
+                      <code>
                                 try {'{'}<br />
                                 &nbsp;&nbsp;//Protected code -<br />
                                 {'}'}<br />
@@ -1213,8 +1213,8 @@ const selenium = () => {
                                 {'}'}<br />
                                 finally {'{'}<br />
                                 &nbsp;&nbsp;//The finally block always executes. -<br />
-                                {'}'}
-                            </code>
+                            {'}'}
+                      </code>
                         </div>
                     </div>
                 </div>
@@ -1235,8 +1235,8 @@ const selenium = () => {
                         <li><strong>printStackTrace():</strong> It prints the stack trace, name of the exception, and other useful description</li>
                         <li><strong>toString():</strong> It returns a text message describing the exception name and description</li>
                         <li><strong>getMessage():</strong> It displays the description of the exception</li>
-                    </ul>
-                </div>
+              </ul>
+            </div>
             </div>
 
             {/* FAQ Section */}
@@ -1271,14 +1271,14 @@ const selenium = () => {
                             How do you launch IE | Chrome | Firefox (gecko driver) browser?
                         </h4>
                         <div style={codeBlockStyle}>
-                            <code>
+                    <code>
                                 String basPath = System.getProperty("user.dir");<br />
                                 String chromePath = basPath + "\\chromedriver.exe";<br />
                                 System.setProperty("webdriver.chrome.driver", chromePath);<br />
-                                WebDriver driver = new ChromeDriver();
-                            </code>
-                        </div>
-                    </div>
+                      WebDriver driver = new ChromeDriver();
+                    </code>
+              </div>
+              </div>
 
                     <div style={{
                         padding: '20px',
@@ -1292,8 +1292,8 @@ const selenium = () => {
                             <strong>Implicit Wait</strong> - sets internally a timeout that will be used for all consecutive Web Element searches.<br />
                             <strong>Explicit Wait</strong> - or just Wait is a one-timer used for a particular search. I can set it up wait, for any condition I might like.<br />
                             <strong>Fluent Wait</strong> - Let's say I have an element which sometimes appears in just 1 second and some time it takes minutes to appear.
-                        </p>
-                    </div>
+                </p>
+              </div>
 
                     <div style={{
                         padding: '20px',
@@ -1306,8 +1306,8 @@ const selenium = () => {
                         <p style={{ fontSize: '14px', lineHeight: '1.8', color: '#333' }}>
                             <strong>find element()</strong> – is used to find the one web element. It returns only one WebElement type.<br />
                             <strong>find elements()</strong> - is used to find more than one web element. It returns List of WebElements.
-                        </p>
-                    </div>
+                </p>
+              </div>
 
                     <div style={{
                         padding: '20px',
@@ -1320,7 +1320,7 @@ const selenium = () => {
                         <p style={{ fontSize: '14px', lineHeight: '1.8', color: '#333' }}>
                             <strong>Absolute Path: Single slash '/'</strong> - Start selection from the document node, Used to identify the immediate child<br />
                             <strong>Relative Path: Double Slash '//'</strong> - Start selection matching anywhere in the document & search in the entire structure. By writing Relative path can capture the Dynamic Element of the object.
-                        </p>
+                </p>
                     </div>
 
                     <div style={{
@@ -1332,7 +1332,7 @@ const selenium = () => {
                             How to find total number of iFrames on a web page | Switch to Frames
                         </h4>
                         <div style={codeBlockStyle}>
-                            <code>
+                  <code>
                                 <strong>Switch between Window</strong><br />
                                 Private void handlingMultipleWindows(String windowTitle) {'{'}<br />
                                 &nbsp;&nbsp;Set{'<'}String{'>'} windows = driver.getWindowHandles();<br />
@@ -1341,18 +1341,18 @@ const selenium = () => {
                                 &nbsp;&nbsp;&nbsp;&nbsp;if (driver.getTitle().contains(windowTitle)) {'{'} return; {'}'}<br />
                                 &nbsp;&nbsp;{'}'}<br />
                                 {'}'}<br />
-                                <br />
+                    <br />
                                 <strong>Switch by frame name</strong><br />
                                 driver.switchTo().frame("iframe1");<br />
-                                <br />
+                    <br />
                                 <strong>Switch by frame ID</strong><br />
-                                driver.switchTo().frame("IF1");<br />
-                                <br />
+                    driver.switchTo().frame("IF1");<br />
+                    <br />
                                 <strong>Switch back to the main window</strong><br />
                                 driver.switchTo().defaultContent();
-                            </code>
-                        </div>
-                    </div>
+                  </code>
+                </div>
+              </div>
 
                     <div style={{
                         padding: '20px',
@@ -1363,17 +1363,17 @@ const selenium = () => {
                             How do you simulate scroll down action?
                         </h4>
                         <div style={codeBlockStyle}>
-                            <code>
+                  <code>
                                 JavascriptExecutor jsx = (JavascriptExecutor)driver;<br />
                                 jsx.executeScript("window.scrollBy(0,4500)", "");<br />
                                 Thread.sleep(3000);<br />
                                 jsx.executeScript("window.scrollBy(450,0)", "");
-                            </code>
-                        </div>
-                    </div>
-                </div>
-            </div>
-
+                  </code>
+              </div>
+              </div>
+              </div>
+              </div>
+              
             {/* Selenium Grid Section */}
             <div style={{
                 backgroundColor: '#ffffff',
@@ -1410,8 +1410,8 @@ const selenium = () => {
                         lineHeight: '1.8',
                         color: '#333'
                     }}>
-                        Selenium-Grid allows you to run your tests on different machines against different browsers in parallel. That is, running multiple tests at the same time against different machines, different browsers, and operating systems. Essentially, Selenium-Grid support distributed test execution. It allows for running your tests in a distributed test execution environment.
-                    </p>
+                Selenium-Grid allows you to run your tests on different machines against different browsers in parallel. That is, running multiple tests at the same time against different machines, different browsers, and operating systems. Essentially, Selenium-Grid support distributed test execution. It allows for running your tests in a distributed test execution environment.
+              </p>
                 </div>
                 <div style={{
                     padding: '25px',
@@ -1427,31 +1427,31 @@ const selenium = () => {
                         Configuration of Selenium Grid
                     </h3>
                     <div style={codeBlockStyle}>
-                        <code>
+                  <code>
                             <strong>Starting a hub</strong><br />
                             java -jar selenium-server-standalone-3.1.2.jar -role hub<br />
-                            <br />
+                    <br />
                             <strong>Registering a node to the hub</strong><br />
                             java -jar selenium-server-standalone-3.1.2.jar -role webdriver hub<br />
                             http://localhost:4444/grid/register -port 5555<br />
-                            <br />
+                    <br />
                             <strong>Setting up supported browser names</strong><br />
                             java -jar selenium-server-standalone-3.1.2.jar -role webdriver hub<br />
                             http://localhost:4444/grid/register -port 5555 -browser browserName=firefox -browser<br />
                             browserName=iexplore -browser browserName=chrome<br />
-                            <br />
+                    <br />
                             <strong>Setting up max instances</strong><br />
                             java -jar selenium-server-standalone-3.1.2.jar -role webdriver r hub<br />
                             http://localhost:4444/grid/register -port 5555<br />
                             -browser browserName=firefox, maxInstances=2<br />
                             -browser browserName=iexplore, maxInstances=2<br />
                             -browser browserName=chrome, maxInstances=2 -maxSession 6<br />
-                            <br />
+                    <br /> 
                             <strong>Setting up chrome|Firfox|IE driver</strong><br />
                             -Dwebdriver.chrome.driver=Cl\Softwares\chromedriver.exe<br />
                             -Dwebdriver.gecko.driver=Cl\Softwares\geckoDriverServer.exe<br />
                             -Dwebdriver.ie.driver=Cl\Softwares\IEDriverServer.exe<br />
-                            <br />
+                    <br />
                             <strong>Final Command</strong><br />
                             Java<br />
                             -Dwebdriver.chrome.driver= C:\Softwares\chromedriver.exe<br />
@@ -1461,9 +1461,9 @@ const selenium = () => {
                             -hub http://localhost:4444/grid/register -port 5555 -browser<br />
                             browserName=firefox,maxInstances=2 -browser browserName=iexplore -browser<br />
                             browserName=chrome,maxInstances=3 -maxSession 5
-                        </code>
-                    </div>
-                </div>
+                  </code>
+              </div>
+              </div>
             </div>
 
             {/* Java & TestNG Section */}
@@ -1507,8 +1507,8 @@ const selenium = () => {
                         </p>
                         <p style={{ fontSize: '16px', color: '#333' }}>
                             <strong>JUnit:</strong> @Test @Before @After @AfterClass @BeforeClass @Ignore @Runwith
-                        </p>
-                    </div>
+                </p>
+              </div>
 
                     <div style={{
                         padding: '25px',
@@ -1563,7 +1563,7 @@ const selenium = () => {
                             <li>@Test(enabled = false)</li>
                             <li>Exclude key word in testNG.xml file inside the method</li>
                         </ul>
-                    </div>
+              </div>
 
                     <div style={{
                         padding: '25px',
@@ -1579,18 +1579,18 @@ const selenium = () => {
                             How do you read data from excel?
                         </h3>
                         <div style={codeBlockStyle}>
-                            <code>
+                    <code>
                                 File f = new File("c://excel.xlsx");<br />
                                 FileInputStream fis = new FileInputStream (f);<br />
                                 Workbook wb = WorkbookFactory.create(fis);<br />
                                 Sheet s = wb.getSheet("sheetName");<br />
                                 Row r = s.getRow(0);<br />
-                                Cell c = r.getCell(0);
-                            </code>
+                      Cell c = r.getCell(0);
+                    </code>
                         </div>
                     </div>
                 </div>
-            </div>
+              </div>
 
             <div>
                 <GoogleAd slot="1541085932" classNames="page-right-side" />
@@ -1600,5 +1600,5 @@ const selenium = () => {
             </section>
         </div>
     );
-}
+  }   
 export default selenium;

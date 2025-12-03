@@ -4,7 +4,7 @@ import Footer from '../components/footer';
 import '../styles/base.css';
 import '../styles/legalPages.css';
 
-class TermsOfUse extends Component {
+class PrivacyPolicy extends Component {
     render(){
         return(
             <div className='page-tab-body'>
@@ -23,7 +23,7 @@ class TermsOfUse extends Component {
                         marginBottom: '20px',
                         fontWeight: 'bold'
                     }}>
-                        Terms of Use
+                        Privacy Policy
                     </h1>
                     <p style={{ 
                         fontSize: '20px', 
@@ -62,7 +62,7 @@ class TermsOfUse extends Component {
                             color: '#333',
                             margin: 0
                         }}>
-                            Welcome to the Global I Tech Solutions Inc. ("GITSICS", "we", "our", "us") website. By accessing or using our website, training services, staffing services, learning materials, and any other digital or in-person offerings provided by Global I Tech Solutions Inc., you agree to comply with and be bound by the following Terms of Use.
+                            Global I Tech Solutions Inc. ("GITSICS," "we," "our," or "us") is committed to protecting your privacy. This Privacy Policy explains how we collect, use, store, and safeguard your personal information when you visit our website, enroll in training programs, participate in coaching sessions, or use our consulting and staffing services.
                         </p>
                         <p style={{
                             fontSize: '18px',
@@ -71,11 +71,11 @@ class TermsOfUse extends Component {
                             marginTop: '15px',
                             fontWeight: '500'
                         }}>
-                            If you do not agree with these terms, please discontinue use of our services immediately.
+                            By using our website or engaging with our services, you consent to the practices described in this Privacy Policy.
                         </p>
                     </section>
 
-                    {/* Section 1: Company Information */}
+                    {/* Section 1: Information We Collect */}
                     <section style={{
                         marginBottom: '40px'
                     }}>
@@ -87,15 +87,59 @@ class TermsOfUse extends Component {
                             borderBottom: '2px solid #00416A',
                             paddingBottom: '10px'
                         }}>
-                            1. Company Information
+                            1. Information We Collect
                         </h2>
+                        <p style={{
+                            fontSize: '16px',
+                            lineHeight: '1.8',
+                            color: '#333',
+                            marginBottom: '20px'
+                        }}>
+                            We may collect the following types of information:
+                        </p>
+
+                        <h3 style={{
+                            color: '#00416A',
+                            fontSize: '22px',
+                            marginBottom: '15px',
+                            marginTop: '25px',
+                            fontWeight: '600'
+                        }}>
+                            a. Personal Information Provided by You
+                        </h3>
+                        <ul style={{
+                            fontSize: '16px',
+                            lineHeight: '1.8',
+                            color: '#333',
+                            paddingLeft: '30px',
+                            marginTop: '15px'
+                        }}>
+                            <li style={{ marginBottom: '10px' }}>Full name</li>
+                            <li style={{ marginBottom: '10px' }}>Email address</li>
+                            <li style={{ marginBottom: '10px' }}>Phone number</li>
+                            <li style={{ marginBottom: '10px' }}>Mailing address (optional)</li>
+                            <li style={{ marginBottom: '10px' }}>Payment and billing information</li>
+                            <li style={{ marginBottom: '10px' }}>Employment background and resume details (for staffing or career support)</li>
+                            <li style={{ marginBottom: '10px' }}>Training enrollment information</li>
+                            <li style={{ marginBottom: '10px' }}>Social media or messaging contact information when voluntarily provided</li>
+                        </ul>
+
+                        <h3 style={{
+                            color: '#00416A',
+                            fontSize: '22px',
+                            marginBottom: '15px',
+                            marginTop: '25px',
+                            fontWeight: '600'
+                        }}>
+                            b. Automatically Collected Information
+                        </h3>
                         <p style={{
                             fontSize: '16px',
                             lineHeight: '1.8',
                             color: '#333',
                             marginBottom: '15px'
                         }}>
-                            Global I Tech Solutions Inc. is a New York State registered corporation providing <strong>IT Training, Consulting, and Staffing Services</strong>. Our services include, but are not limited to:
+                            When using our website, our system may automatically collect:
                         </p>
                         <ul style={{
                             fontSize: '16px',
@@ -104,17 +148,32 @@ class TermsOfUse extends Component {
                             paddingLeft: '30px',
                             marginTop: '15px'
                         }}>
-                            <li style={{ marginBottom: '10px' }}>Software QA & Automation Training</li>
-                            <li style={{ marginBottom: '10px' }}>SDET / Full-Stack QA Training</li>
-                            <li style={{ marginBottom: '10px' }}>Corporate Training Programs</li>
-                            <li style={{ marginBottom: '10px' }}>Career Development Coaching</li>
-                            <li style={{ marginBottom: '10px' }}>IT Staffing & Placement Services</li>
-                            <li style={{ marginBottom: '10px' }}>AI-Driven QA and Automation Framework Development</li>
-                            <li style={{ marginBottom: '10px' }}>Consulting Services for Software Quality Engineering</li>
+                            <li style={{ marginBottom: '10px' }}>IP address</li>
+                            <li style={{ marginBottom: '10px' }}>Browser type and device information</li>
+                            <li style={{ marginBottom: '10px' }}>Pages visited on our site</li>
+                            <li style={{ marginBottom: '10px' }}>Date/time of your visit</li>
+                            <li style={{ marginBottom: '10px' }}>Cookies and tracking pixels for analytics</li>
                         </ul>
+
+                        <h3 style={{
+                            color: '#00416A',
+                            fontSize: '22px',
+                            marginBottom: '15px',
+                            marginTop: '25px',
+                            fontWeight: '600'
+                        }}>
+                            c. Information From Third-Party Tools
+                        </h3>
+                        <p style={{
+                            fontSize: '16px',
+                            lineHeight: '1.8',
+                            color: '#333'
+                        }}>
+                            If you use third-party platforms integrated with our services (Zoom, Google Meet, LMS systems, GitHub, payment processors), they may share limited information with us according to their privacy policies.
+                        </p>
                     </section>
 
-                    {/* Section 2: Acceptance of Terms */}
+                    {/* Section 2: How We Use Your Information */}
                     <section style={{
                         marginBottom: '40px'
                     }}>
@@ -126,18 +185,484 @@ class TermsOfUse extends Component {
                             borderBottom: '2px solid #00416A',
                             paddingBottom: '10px'
                         }}>
-                            2. Acceptance of Terms
+                            2. How We Use Your Information
+                        </h2>
+                        <p style={{
+                            fontSize: '16px',
+                            lineHeight: '1.8',
+                            color: '#333',
+                            marginBottom: '15px'
+                        }}>
+                            We use your information for:
+                        </p>
+                        <ul style={{
+                            fontSize: '16px',
+                            lineHeight: '1.8',
+                            color: '#333',
+                            paddingLeft: '30px',
+                            marginTop: '15px'
+                        }}>
+                            <li style={{ marginBottom: '10px' }}>Enrolling you in training programs</li>
+                            <li style={{ marginBottom: '10px' }}>Providing access to course materials and learning platforms</li>
+                            <li style={{ marginBottom: '10px' }}>Delivering IT consulting, QA, or automation services</li>
+                            <li style={{ marginBottom: '10px' }}>Providing staffing assistance and career coaching</li>
+                            <li style={{ marginBottom: '10px' }}>Processing payments and invoices</li>
+                            <li style={{ marginBottom: '10px' }}>Communicating updates, schedules, or service announcements</li>
+                            <li style={{ marginBottom: '10px' }}>Improving our website, content, and training experience</li>
+                            <li style={{ marginBottom: '10px' }}>Maintaining legal and regulatory compliance</li>
+                            <li style={{ marginBottom: '10px' }}>Sending marketing or promotional content (only if you opt-in)</li>
+                        </ul>
+                        <p style={{
+                            fontSize: '16px',
+                            lineHeight: '1.8',
+                            color: '#333',
+                            marginTop: '20px',
+                            fontWeight: '600'
+                        }}>
+                            We <strong>do not sell or rent your personal information</strong> to third parties.
+                        </p>
+                    </section>
+
+                    {/* Section 3: How We Share Information */}
+                    <section style={{
+                        marginBottom: '40px'
+                    }}>
+                        <h2 style={{
+                            color: '#00416A',
+                            fontSize: '28px',
+                            marginBottom: '20px',
+                            fontWeight: 'bold',
+                            borderBottom: '2px solid #00416A',
+                            paddingBottom: '10px'
+                        }}>
+                            3. How We Share Information
+                        </h2>
+                        <p style={{
+                            fontSize: '16px',
+                            lineHeight: '1.8',
+                            color: '#333',
+                            marginBottom: '20px'
+                        }}>
+                            We may share your information only with:
+                        </p>
+
+                        <h3 style={{
+                            color: '#00416A',
+                            fontSize: '22px',
+                            marginBottom: '15px',
+                            marginTop: '25px',
+                            fontWeight: '600'
+                        }}>
+                            a. Service Providers
+                        </h3>
+                        <p style={{
+                            fontSize: '16px',
+                            lineHeight: '1.8',
+                            color: '#333',
+                            marginBottom: '15px'
+                        }}>
+                            Trusted third parties who help us operate:
+                        </p>
+                        <ul style={{
+                            fontSize: '16px',
+                            lineHeight: '1.8',
+                            color: '#333',
+                            paddingLeft: '30px',
+                            marginTop: '15px'
+                        }}>
+                            <li style={{ marginBottom: '10px' }}>Payment processors</li>
+                            <li style={{ marginBottom: '10px' }}>Learning management systems (LMS)</li>
+                            <li style={{ marginBottom: '10px' }}>Cloud platforms</li>
+                            <li style={{ marginBottom: '10px' }}>Communication tools (email, video conferencing)</li>
+                            <li style={{ marginBottom: '10px' }}>Background screening tools for staffing (only with your consent)</li>
+                        </ul>
+                        <p style={{
+                            fontSize: '16px',
+                            lineHeight: '1.8',
+                            color: '#333',
+                            marginTop: '15px',
+                            fontStyle: 'italic'
+                        }}>
+                            Each provider is required to safeguard your data.
+                        </p>
+
+                        <h3 style={{
+                            color: '#00416A',
+                            fontSize: '22px',
+                            marginBottom: '15px',
+                            marginTop: '25px',
+                            fontWeight: '600'
+                        }}>
+                            b. Legal Compliance
+                        </h3>
+                        <p style={{
+                            fontSize: '16px',
+                            lineHeight: '1.8',
+                            color: '#333',
+                            marginBottom: '15px'
+                        }}>
+                            We may disclose personal information if required by:
+                        </p>
+                        <ul style={{
+                            fontSize: '16px',
+                            lineHeight: '1.8',
+                            color: '#333',
+                            paddingLeft: '30px',
+                            marginTop: '15px'
+                        }}>
+                            <li style={{ marginBottom: '10px' }}>New York State law</li>
+                            <li style={{ marginBottom: '10px' }}>Federal regulations</li>
+                            <li style={{ marginBottom: '10px' }}>Court orders or subpoenas</li>
+                            <li style={{ marginBottom: '10px' }}>Preventing fraud or unauthorized access</li>
+                        </ul>
+
+                        <h3 style={{
+                            color: '#00416A',
+                            fontSize: '22px',
+                            marginBottom: '15px',
+                            marginTop: '25px',
+                            fontWeight: '600'
+                        }}>
+                            c. Potential Employers (Staffing Purposes)
+                        </h3>
+                        <p style={{
+                            fontSize: '16px',
+                            lineHeight: '1.8',
+                            color: '#333'
+                        }}>
+                            If you voluntarily submit your resume or request job placement assistance, we may share relevant information with employers <strong>only with your permission</strong>.
+                        </p>
+                    </section>
+
+                    {/* Section 4: Data Security */}
+                    <section style={{
+                        marginBottom: '40px'
+                    }}>
+                        <h2 style={{
+                            color: '#00416A',
+                            fontSize: '28px',
+                            marginBottom: '20px',
+                            fontWeight: 'bold',
+                            borderBottom: '2px solid #00416A',
+                            paddingBottom: '10px'
+                        }}>
+                            4. Data Security
+                        </h2>
+                        <p style={{
+                            fontSize: '16px',
+                            lineHeight: '1.8',
+                            color: '#333',
+                            marginBottom: '15px'
+                        }}>
+                            We use industry-standard security measures to protect your personal data, including:
+                        </p>
+                        <ul style={{
+                            fontSize: '16px',
+                            lineHeight: '1.8',
+                            color: '#333',
+                            paddingLeft: '30px',
+                            marginTop: '15px'
+                        }}>
+                            <li style={{ marginBottom: '10px' }}>Encrypted storage</li>
+                            <li style={{ marginBottom: '10px' }}>Secure payment gateways</li>
+                            <li style={{ marginBottom: '10px' }}>Multi-factor authentication on sensitive systems</li>
+                            <li style={{ marginBottom: '10px' }}>Controlled access to training platforms</li>
+                            <li style={{ marginBottom: '10px' }}>Regular security reviews</li>
+                        </ul>
+                        <p style={{
+                            fontSize: '16px',
+                            lineHeight: '1.8',
+                            color: '#333',
+                            marginTop: '20px',
+                            fontStyle: 'italic'
+                        }}>
+                            However, no online system is 100% secure, and we cannot guarantee absolute protection.
+                        </p>
+                    </section>
+
+                    {/* Section 5: Cookies and Tracking Technologies */}
+                    <section style={{
+                        marginBottom: '40px'
+                    }}>
+                        <h2 style={{
+                            color: '#00416A',
+                            fontSize: '28px',
+                            marginBottom: '20px',
+                            fontWeight: 'bold',
+                            borderBottom: '2px solid #00416A',
+                            paddingBottom: '10px'
+                        }}>
+                            5. Cookies and Tracking Technologies
+                        </h2>
+                        <p style={{
+                            fontSize: '16px',
+                            lineHeight: '1.8',
+                            color: '#333',
+                            marginBottom: '15px'
+                        }}>
+                            We use cookies to:
+                        </p>
+                        <ul style={{
+                            fontSize: '16px',
+                            lineHeight: '1.8',
+                            color: '#333',
+                            paddingLeft: '30px',
+                            marginTop: '15px'
+                        }}>
+                            <li style={{ marginBottom: '10px' }}>Improve website performance</li>
+                            <li style={{ marginBottom: '10px' }}>Analyze visitor behavior</li>
+                            <li style={{ marginBottom: '10px' }}>Personalize user experience</li>
+                            <li style={{ marginBottom: '10px' }}>Support marketing and remarketing campaigns</li>
+                        </ul>
+                        <p style={{
+                            fontSize: '16px',
+                            lineHeight: '1.8',
+                            color: '#333',
+                            marginTop: '20px'
+                        }}>
+                            You may disable cookies in your browser settings, but some features may not work properly.
+                        </p>
+                    </section>
+
+                    {/* Section 6: Data Retention */}
+                    <section style={{
+                        marginBottom: '40px'
+                    }}>
+                        <h2 style={{
+                            color: '#00416A',
+                            fontSize: '28px',
+                            marginBottom: '20px',
+                            fontWeight: 'bold',
+                            borderBottom: '2px solid #00416A',
+                            paddingBottom: '10px'
+                        }}>
+                            6. Data Retention
+                        </h2>
+                        <p style={{
+                            fontSize: '16px',
+                            lineHeight: '1.8',
+                            color: '#333',
+                            marginBottom: '15px'
+                        }}>
+                            We retain your personal information only as long as necessary for:
+                        </p>
+                        <ul style={{
+                            fontSize: '16px',
+                            lineHeight: '1.8',
+                            color: '#333',
+                            paddingLeft: '30px',
+                            marginTop: '15px'
+                        }}>
+                            <li style={{ marginBottom: '10px' }}>Training access</li>
+                            <li style={{ marginBottom: '10px' }}>Legal compliance</li>
+                            <li style={{ marginBottom: '10px' }}>Financial recordkeeping</li>
+                            <li style={{ marginBottom: '10px' }}>Staffing or consulting services</li>
+                        </ul>
+                        <p style={{
+                            fontSize: '16px',
+                            lineHeight: '1.8',
+                            color: '#333',
+                            marginTop: '20px'
+                        }}>
+                            Upon request, you may ask for your data to be deleted (see Section 10).
+                        </p>
+                    </section>
+
+                    {/* Section 7: Children's Privacy */}
+                    <section style={{
+                        marginBottom: '40px'
+                    }}>
+                        <h2 style={{
+                            color: '#00416A',
+                            fontSize: '28px',
+                            marginBottom: '20px',
+                            fontWeight: 'bold',
+                            borderBottom: '2px solid #00416A',
+                            paddingBottom: '10px'
+                        }}>
+                            7. Children's Privacy
+                        </h2>
+                        <p style={{
+                            fontSize: '16px',
+                            lineHeight: '1.8',
+                            color: '#333',
+                            marginBottom: '15px'
+                        }}>
+                            Our services are not intended for individuals under <strong>18 years of age</strong>.
+                        </p>
+                        <p style={{
+                            fontSize: '16px',
+                            lineHeight: '1.8',
+                            color: '#333'
+                        }}>
+                            We do not knowingly collect information from minors.
+                        </p>
+                    </section>
+
+                    {/* Section 8: Links to Third-Party Websites */}
+                    <section style={{
+                        marginBottom: '40px'
+                    }}>
+                        <h2 style={{
+                            color: '#00416A',
+                            fontSize: '28px',
+                            marginBottom: '20px',
+                            fontWeight: 'bold',
+                            borderBottom: '2px solid #00416A',
+                            paddingBottom: '10px'
+                        }}>
+                            8. Links to Third-Party Websites
+                        </h2>
+                        <p style={{
+                            fontSize: '16px',
+                            lineHeight: '1.8',
+                            color: '#333',
+                            marginBottom: '15px'
+                        }}>
+                            Our website may contain external links.
+                        </p>
+                        <p style={{
+                            fontSize: '16px',
+                            lineHeight: '1.8',
+                            color: '#333',
+                            marginBottom: '15px'
+                        }}>
+                            We are not responsible for the privacy practices of third-party platforms.
+                        </p>
+                        <p style={{
+                            fontSize: '16px',
+                            lineHeight: '1.8',
+                            color: '#333'
+                        }}>
+                            Please review their policies before providing personal information.
+                        </p>
+                    </section>
+
+                    {/* Section 9: Marketing Communications */}
+                    <section style={{
+                        marginBottom: '40px'
+                    }}>
+                        <h2 style={{
+                            color: '#00416A',
+                            fontSize: '28px',
+                            marginBottom: '20px',
+                            fontWeight: 'bold',
+                            borderBottom: '2px solid #00416A',
+                            paddingBottom: '10px'
+                        }}>
+                            9. Marketing Communications
+                        </h2>
+                        <p style={{
+                            fontSize: '16px',
+                            lineHeight: '1.8',
+                            color: '#333',
+                            marginBottom: '15px'
+                        }}>
+                            If you opt into newsletters or updates:
+                        </p>
+                        <ul style={{
+                            fontSize: '16px',
+                            lineHeight: '1.8',
+                            color: '#333',
+                            paddingLeft: '30px',
+                            marginTop: '15px'
+                        }}>
+                            <li style={{ marginBottom: '10px' }}>We may send training alerts, job opportunities, and service announcements</li>
+                            <li style={{ marginBottom: '10px' }}>You can unsubscribe at any time using the link in the email</li>
+                        </ul>
+                        <p style={{
+                            fontSize: '16px',
+                            lineHeight: '1.8',
+                            color: '#333',
+                            marginTop: '20px'
+                        }}>
+                            We do not send spam or sell subscriber lists.
+                        </p>
+                    </section>
+
+                    {/* Section 10: Your Rights */}
+                    <section style={{
+                        marginBottom: '40px'
+                    }}>
+                        <h2 style={{
+                            color: '#00416A',
+                            fontSize: '28px',
+                            marginBottom: '20px',
+                            fontWeight: 'bold',
+                            borderBottom: '2px solid #00416A',
+                            paddingBottom: '10px'
+                        }}>
+                            10. Your Rights (Under New York State & General Privacy Standards)
+                        </h2>
+                        <p style={{
+                            fontSize: '16px',
+                            lineHeight: '1.8',
+                            color: '#333',
+                            marginBottom: '15px'
+                        }}>
+                            You have the right to:
+                        </p>
+                        <ul style={{
+                            fontSize: '16px',
+                            lineHeight: '1.8',
+                            color: '#333',
+                            paddingLeft: '30px',
+                            marginTop: '15px'
+                        }}>
+                            <li style={{ marginBottom: '10px' }}>Access your personal data</li>
+                            <li style={{ marginBottom: '10px' }}>Request corrections</li>
+                            <li style={{ marginBottom: '10px' }}>Request deletion</li>
+                            <li style={{ marginBottom: '10px' }}>Opt out of marketing</li>
+                            <li style={{ marginBottom: '10px' }}>Withdraw consent</li>
+                            <li style={{ marginBottom: '10px' }}>Request a copy of your stored data</li>
+                        </ul>
+                        <p style={{
+                            fontSize: '16px',
+                            lineHeight: '1.8',
+                            color: '#333',
+                            marginTop: '20px'
+                        }}>
+                            To make a request, contact us at:
+                        </p>
+                        <div style={{
+                            fontSize: '16px',
+                            lineHeight: '1.8',
+                            color: '#333',
+                            marginTop: '15px'
+                        }}>
+                            <p style={{ marginBottom: '10px' }}>
+                                Email: <a href="mailto:mdzaman.gits@gmail.com" style={{ color: '#00416A', textDecoration: 'none' }}>mdzaman.gits@gmail.com</a>
+                            </p>
+                            <p style={{ marginBottom: '10px' }}>
+                                Phone: <a href="tel:+19175616554" style={{ color: '#00416A', textDecoration: 'none' }}>+1(917)561-6554</a>
+                            </p>
+                        </div>
+                    </section>
+
+                    {/* Section 11: Data Transfer */}
+                    <section style={{
+                        marginBottom: '40px'
+                    }}>
+                        <h2 style={{
+                            color: '#00416A',
+                            fontSize: '28px',
+                            marginBottom: '20px',
+                            fontWeight: 'bold',
+                            borderBottom: '2px solid #00416A',
+                            paddingBottom: '10px'
+                        }}>
+                            11. Data Transfer
                         </h2>
                         <p style={{
                             fontSize: '16px',
                             lineHeight: '1.8',
                             color: '#333'
                         }}>
-                            By using our website, enrolling in training, or engaging in staffing/consulting services, you acknowledge that you are at least 18 years old and legally able to enter into this agreement. These Terms of Use apply to all visitors, clients, trainees, and partners.
+                            If we transfer data outside the United States (e.g., cloud services), we ensure compliance with applicable privacy regulations to protect your information.
                         </p>
                     </section>
 
-                    {/* Section 3: Use of Website & Services */}
+                    {/* Section 12: Updates to This Privacy Policy */}
                     <section style={{
                         marginBottom: '40px'
                     }}>
@@ -149,7 +674,7 @@ class TermsOfUse extends Component {
                             borderBottom: '2px solid #00416A',
                             paddingBottom: '10px'
                         }}>
-                            3. Use of Website & Services
+                            12. Updates to This Privacy Policy
                         </h2>
                         <p style={{
                             fontSize: '16px',
@@ -157,52 +682,7 @@ class TermsOfUse extends Component {
                             color: '#333',
                             marginBottom: '15px'
                         }}>
-                            You agree to use the website and services for lawful purposes only. You must not:
-                        </p>
-                        <ul style={{
-                            fontSize: '16px',
-                            lineHeight: '1.8',
-                            color: '#333',
-                            paddingLeft: '30px',
-                            marginTop: '15px'
-                        }}>
-                            <li style={{ marginBottom: '10px' }}>Misuse, hack, or attempt unauthorized access to any part of the website.</li>
-                            <li style={{ marginBottom: '10px' }}>Copy, reproduce, or distribute training materials without written permission.</li>
-                            <li style={{ marginBottom: '10px' }}>Use GITSICS content for commercial purposes without authorization.</li>
-                            <li style={{ marginBottom: '10px' }}>Engage in any activity that disrupts the performance of our platform or services.</li>
-                        </ul>
-                        <p style={{
-                            fontSize: '16px',
-                            lineHeight: '1.8',
-                            color: '#333',
-                            marginTop: '15px',
-                            fontStyle: 'italic'
-                        }}>
-                            GITSICS reserves the right to suspend or terminate access for violation of these terms.
-                        </p>
-                    </section>
-
-                    {/* Section 4: Training Materials & Intellectual Property */}
-                    <section style={{
-                        marginBottom: '40px'
-                    }}>
-                        <h2 style={{
-                            color: '#00416A',
-                            fontSize: '28px',
-                            marginBottom: '20px',
-                            fontWeight: 'bold',
-                            borderBottom: '2px solid #00416A',
-                            paddingBottom: '10px'
-                        }}>
-                            4. Training Materials & Intellectual Property
-                        </h2>
-                        <p style={{
-                            fontSize: '16px',
-                            lineHeight: '1.8',
-                            color: '#333',
-                            marginBottom: '15px'
-                        }}>
-                            All training videos, lectures, documents, frameworks, automation code templates, slides, branding assets, and digital resources are the <strong>exclusive intellectual property of Global I Tech Solutions Inc.</strong>
+                            We may update this Privacy Policy periodically.
                         </p>
                         <p style={{
                             fontSize: '16px',
@@ -210,414 +690,18 @@ class TermsOfUse extends Component {
                             color: '#333',
                             marginBottom: '15px'
                         }}>
-                            You are granted a <strong>limited, non-transferable, non-exclusive license</strong> to use these materials for personal education only.
+                            Changes become effective immediately once posted on this page.
                         </p>
-                        <p style={{
-                            fontSize: '16px',
-                            lineHeight: '1.8',
-                            color: '#333',
-                            marginBottom: '15px'
-                        }}>
-                            You may <strong>not</strong>:
-                        </p>
-                        <ul style={{
-                            fontSize: '16px',
-                            lineHeight: '1.8',
-                            color: '#333',
-                            paddingLeft: '30px',
-                            marginTop: '15px'
-                        }}>
-                            <li style={{ marginBottom: '10px' }}>Share paid course content publicly or privately</li>
-                            <li style={{ marginBottom: '10px' }}>Record training sessions without permission</li>
-                            <li style={{ marginBottom: '10px' }}>Sell, distribute, or republish GITSICS materials</li>
-                            <li style={{ marginBottom: '10px' }}>Claim ownership of any training or automation framework templates</li>
-                        </ul>
-                        <p style={{
-                            fontSize: '16px',
-                            lineHeight: '1.8',
-                            color: '#333',
-                            marginTop: '15px',
-                            fontStyle: 'italic'
-                        }}>
-                            Violation of IP rights may result in legal action.
-                        </p>
-                    </section>
-
-                    {/* Section 5: Staffing & Consulting Services */}
-                    <section style={{
-                        marginBottom: '40px'
-                    }}>
-                        <h2 style={{
-                            color: '#00416A',
-                            fontSize: '28px',
-                            marginBottom: '20px',
-                            fontWeight: 'bold',
-                            borderBottom: '2px solid #00416A',
-                            paddingBottom: '10px'
-                        }}>
-                            5. Staffing & Consulting Services
-                        </h2>
-                        <p style={{
-                            fontSize: '16px',
-                            lineHeight: '1.8',
-                            color: '#333',
-                            marginBottom: '15px'
-                        }}>
-                            GITSICS provides IT staffing and consultation services based on availability and client requirements. We do not guarantee job placement.
-                        </p>
-                        <p style={{
-                            fontSize: '16px',
-                            lineHeight: '1.8',
-                            color: '#333',
-                            marginBottom: '15px'
-                        }}>
-                            Clients engaging staffing services agree to:
-                        </p>
-                        <ul style={{
-                            fontSize: '16px',
-                            lineHeight: '1.8',
-                            color: '#333',
-                            paddingLeft: '30px',
-                            marginTop: '15px'
-                        }}>
-                            <li style={{ marginBottom: '10px' }}>Provide accurate job descriptions and requirements</li>
-                            <li style={{ marginBottom: '10px' }}>Comply with applicable employment laws</li>
-                            <li style={{ marginBottom: '10px' }}>Abide by the terms of any staffing contract executed between both parties</li>
-                        </ul>
-                    </section>
-
-                    {/* Section 6: Payments, Refunds & Enrollment */}
-                    <section style={{
-                        marginBottom: '40px'
-                    }}>
-                        <h2 style={{
-                            color: '#00416A',
-                            fontSize: '28px',
-                            marginBottom: '20px',
-                            fontWeight: 'bold',
-                            borderBottom: '2px solid #00416A',
-                            paddingBottom: '10px'
-                        }}>
-                            6. Payments, Refunds & Enrollment
-                        </h2>
-                        <p style={{
-                            fontSize: '16px',
-                            lineHeight: '1.8',
-                            color: '#333',
-                            marginBottom: '15px'
-                        }}>
-                            Payment terms for training, consulting, and staffing services will be displayed during checkout or on the invoice.
-                        </p>
-                        <p style={{
-                            fontSize: '16px',
-                            lineHeight: '1.8',
-                            color: '#333',
-                            marginBottom: '15px'
-                        }}>
-                            Unless stated otherwise in a specific program agreement:
-                        </p>
-                        <ul style={{
-                            fontSize: '16px',
-                            lineHeight: '1.8',
-                            color: '#333',
-                            paddingLeft: '30px',
-                            marginTop: '15px'
-                        }}>
-                            <li style={{ marginBottom: '10px' }}>All training fees are <strong>non-refundable</strong> once course materials or live sessions have been accessed</li>
-                            <li style={{ marginBottom: '10px' }}>Refund requests are evaluated on a case-by-case basis</li>
-                            <li style={{ marginBottom: '10px' }}>Installment plans must be paid on schedule</li>
-                            <li style={{ marginBottom: '10px' }}>Failure to pay may result in removal from course access</li>
-                        </ul>
-                    </section>
-
-                    {/* Section 7: AI-Based Tools & Automation Frameworks */}
-                    <section style={{
-                        marginBottom: '40px'
-                    }}>
-                        <h2 style={{
-                            color: '#00416A',
-                            fontSize: '28px',
-                            marginBottom: '20px',
-                            fontWeight: 'bold',
-                            borderBottom: '2px solid #00416A',
-                            paddingBottom: '10px'
-                        }}>
-                            7. AI-Based Tools & Automation Frameworks
-                        </h2>
-                        <p style={{
-                            fontSize: '16px',
-                            lineHeight: '1.8',
-                            color: '#333',
-                            marginBottom: '15px'
-                        }}>
-                            Some of our training programs and consulting services may include the use of AI tools for:
-                        </p>
-                        <ul style={{
-                            fontSize: '16px',
-                            lineHeight: '1.8',
-                            color: '#333',
-                            paddingLeft: '30px',
-                            marginTop: '15px'
-                        }}>
-                            <li style={{ marginBottom: '10px' }}>Test generation</li>
-                            <li style={{ marginBottom: '10px' }}>Code review</li>
-                            <li style={{ marginBottom: '10px' }}>Automation development</li>
-                            <li style={{ marginBottom: '10px' }}>Predictive analytics</li>
-                        </ul>
-                        <p style={{
-                            fontSize: '16px',
-                            lineHeight: '1.8',
-                            color: '#333',
-                            marginTop: '15px'
-                        }}>
-                            You understand and agree that AI tools may provide suggestions but do not replace human judgment.
-                        </p>
-                        <p style={{
-                            fontSize: '16px',
-                            lineHeight: '1.8',
-                            color: '#333',
-                            marginTop: '15px',
-                            fontStyle: 'italic'
-                        }}>
-                            GITSICS is not responsible for outcomes resulting from misuse of AI-generated code or recommendations.
-                        </p>
-                    </section>
-
-                    {/* Section 8: Third-Party Services & Tools */}
-                    <section style={{
-                        marginBottom: '40px'
-                    }}>
-                        <h2 style={{
-                            color: '#00416A',
-                            fontSize: '28px',
-                            marginBottom: '20px',
-                            fontWeight: 'bold',
-                            borderBottom: '2px solid #00416A',
-                            paddingBottom: '10px'
-                        }}>
-                            8. Third-Party Services & Tools
-                        </h2>
-                        <p style={{
-                            fontSize: '16px',
-                            lineHeight: '1.8',
-                            color: '#333',
-                            marginBottom: '15px'
-                        }}>
-                            We may use third-party platforms such as Zoom, Google Meet, LMS systems, project management boards, or code repositories.
-                        </p>
-                        <p style={{
-                            fontSize: '16px',
-                            lineHeight: '1.8',
-                            color: '#333',
-                            marginBottom: '15px'
-                        }}>
-                            Your use of these tools is subject to their individual terms and privacy policies.
-                        </p>
-                        <p style={{
-                            fontSize: '16px',
-                            lineHeight: '1.8',
-                            color: '#333',
-                            marginTop: '15px',
-                            fontStyle: 'italic'
-                        }}>
-                            GITSICS is not responsible for downtime, data loss, or performance issues of third-party tools.
-                        </p>
-                    </section>
-
-                    {/* Section 9: Privacy & Data Handling */}
-                    <section style={{
-                        marginBottom: '40px'
-                    }}>
-                        <h2 style={{
-                            color: '#00416A',
-                            fontSize: '28px',
-                            marginBottom: '20px',
-                            fontWeight: 'bold',
-                            borderBottom: '2px solid #00416A',
-                            paddingBottom: '10px'
-                        }}>
-                            9. Privacy & Data Handling
-                        </h2>
-                        <p style={{
-                            fontSize: '16px',
-                            lineHeight: '1.8',
-                            color: '#333',
-                            marginBottom: '15px'
-                        }}>
-                            We may collect personal information during enrollment, including your name, email, phone number, and professional details.
-                        </p>
-                        <p style={{
-                            fontSize: '16px',
-                            lineHeight: '1.8',
-                            color: '#333',
-                            marginBottom: '15px'
-                        }}>
-                            We use this information only for:
-                        </p>
-                        <ul style={{
-                            fontSize: '16px',
-                            lineHeight: '1.8',
-                            color: '#333',
-                            paddingLeft: '30px',
-                            marginTop: '15px'
-                        }}>
-                            <li style={{ marginBottom: '10px' }}>Communication</li>
-                            <li style={{ marginBottom: '10px' }}>Enrollment processing</li>
-                            <li style={{ marginBottom: '10px' }}>Career placement support</li>
-                            <li style={{ marginBottom: '10px' }}>Regulatory compliance (New York State business laws)</li>
-                        </ul>
-                        <p style={{
-                            fontSize: '16px',
-                            lineHeight: '1.8',
-                            color: '#333',
-                            marginTop: '15px'
-                        }}>
-                            We do not sell personal information to third parties.
-                        </p>
-                        <p style={{
-                            fontSize: '16px',
-                            lineHeight: '1.8',
-                            color: '#333',
-                            marginTop: '15px'
-                        }}>
-                            See our <strong>Privacy Policy</strong> for full details (I can write this for you as well).
-                        </p>
-                    </section>
-
-                    {/* Section 10: Limitation of Liability */}
-                    <section style={{
-                        marginBottom: '40px'
-                    }}>
-                        <h2 style={{
-                            color: '#00416A',
-                            fontSize: '28px',
-                            marginBottom: '20px',
-                            fontWeight: 'bold',
-                            borderBottom: '2px solid #00416A',
-                            paddingBottom: '10px'
-                        }}>
-                            10. Limitation of Liability
-                        </h2>
-                        <p style={{
-                            fontSize: '16px',
-                            lineHeight: '1.8',
-                            color: '#333',
-                            marginBottom: '15px'
-                        }}>
-                            To the fullest extent permitted by New York State law, Global I Tech Solutions Inc. is <strong>not liable</strong> for:
-                        </p>
-                        <ul style={{
-                            fontSize: '16px',
-                            lineHeight: '1.8',
-                            color: '#333',
-                            paddingLeft: '30px',
-                            marginTop: '15px'
-                        }}>
-                            <li style={{ marginBottom: '10px' }}>Loss of data</li>
-                            <li style={{ marginBottom: '10px' }}>Job placement outcomes</li>
-                            <li style={{ marginBottom: '10px' }}>Business interruption</li>
-                            <li style={{ marginBottom: '10px' }}>Errors in third-party systems</li>
-                            <li style={{ marginBottom: '10px' }}>Damages resulting from use of training materials or consulting deliverables</li>
-                            <li style={{ marginBottom: '10px' }}>Any indirect, incidental, or consequential damages</li>
-                        </ul>
-                    </section>
-
-                    {/* Section 11: No Guarantee of Employment */}
-                    <section style={{
-                        marginBottom: '40px'
-                    }}>
-                        <h2 style={{
-                            color: '#00416A',
-                            fontSize: '28px',
-                            marginBottom: '20px',
-                            fontWeight: 'bold',
-                            borderBottom: '2px solid #00416A',
-                            paddingBottom: '10px'
-                        }}>
-                            11. No Guarantee of Employment
-                        </h2>
-                        <p style={{
-                            fontSize: '16px',
-                            lineHeight: '1.8',
-                            color: '#333',
-                            marginBottom: '15px'
-                        }}>
-                            While we provide hands-on training, mentorship, and staffing support, we do not guarantee employment or interview selection.
-                        </p>
-                        <p style={{
-                            fontSize: '16px',
-                            lineHeight: '1.8',
-                            color: '#333',
-                            marginTop: '15px'
-                        }}>
-                            Career outcomes depend on individual skills, effort, and market conditions.
-                        </p>
-                    </section>
-
-                    {/* Section 12: Updates to Terms */}
-                    <section style={{
-                        marginBottom: '40px'
-                    }}>
-                        <h2 style={{
-                            color: '#00416A',
-                            fontSize: '28px',
-                            marginBottom: '20px',
-                            fontWeight: 'bold',
-                            borderBottom: '2px solid #00416A',
-                            paddingBottom: '10px'
-                        }}>
-                            12. Updates to Terms
-                        </h2>
-                        <p style={{
-                            fontSize: '16px',
-                            lineHeight: '1.8',
-                            color: '#333',
-                            marginBottom: '15px'
-                        }}>
-                            GITSICS may update these Terms of Use at any time.
-                        </p>
-                        <p style={{
-                            fontSize: '16px',
-                            lineHeight: '1.8',
-                            color: '#333',
-                            marginBottom: '15px'
-                        }}>
-                            Changes become effective immediately once posted.
-                        </p>
-                        <p style={{
-                            fontSize: '16px',
-                            lineHeight: '1.8',
-                            color: '#333',
-                            marginTop: '15px'
-                        }}>
-                            It is your responsibility to review these terms periodically.
-                        </p>
-                    </section>
-
-                    {/* Section 13: Governing Law */}
-                    <section style={{
-                        marginBottom: '40px'
-                    }}>
-                        <h2 style={{
-                            color: '#00416A',
-                            fontSize: '28px',
-                            marginBottom: '20px',
-                            fontWeight: 'bold',
-                            borderBottom: '2px solid #00416A',
-                            paddingBottom: '10px'
-                        }}>
-                            13. Governing Law
-                        </h2>
                         <p style={{
                             fontSize: '16px',
                             lineHeight: '1.8',
                             color: '#333'
                         }}>
-                            These Terms of Use are governed by the <strong>laws of the State of New York</strong>, including all rules applicable to corporations and service providers in the technology and training industry.
+                            Continued use of the website after changes indicates acceptance.
                         </p>
                     </section>
 
-                    {/* Section 14: Contact Information */}
+                    {/* Section 13: Contact Us */}
                     <section style={{
                         marginBottom: '40px',
                         backgroundColor: '#f8f9fa',
@@ -633,15 +717,15 @@ class TermsOfUse extends Component {
                             borderBottom: '2px solid #00416A',
                             paddingBottom: '10px'
                         }}>
-                            14. Contact Information
+                            13. Contact Us
                         </h2>
                         <p style={{
                             fontSize: '16px',
                             lineHeight: '1.8',
                             color: '#333',
-                            marginBottom: '15px'
+                            marginBottom: '20px'
                         }}>
-                            For questions or concerns regarding these terms, please contact:
+                            If you have questions regarding this Privacy Policy or want to exercise your data rights, contact:
                         </p>
                         <div style={{
                             fontSize: '16px',
@@ -670,5 +754,5 @@ class TermsOfUse extends Component {
     }
 }
 
-export default TermsOfUse;
+export default PrivacyPolicy;
 

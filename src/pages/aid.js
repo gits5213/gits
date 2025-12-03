@@ -8,6 +8,8 @@ import Gk from '../components/aid/tabs/gk';
 import Help from '../components/aid/tabs/help';
 import Frontend from '../components/aid/tabs/frontend';
 import CodeSnippet from '../components/aid/tabs/code-snippet';
+import '../styles/base.css';
+import '../styles/aid.css';
 
 class links extends Component {
     constructor(props) {
@@ -100,7 +102,7 @@ class links extends Component {
 
         return (
             <div className="category-tabs">
-                <HeaderText />
+                <HeaderText /> 
                 
                 {/* Custom Tabs */}
                 <div style={{

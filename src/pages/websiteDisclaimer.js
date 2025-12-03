@@ -1,6 +1,8 @@
 import React, {Component} from 'react';
 import HeaderText from '../components/header';
 import Footer from '../components/footer';
+import '../styles/base.css';
+import '../styles/legalPages.css';
 
 class WebsiteDisclaimer extends Component {
     render(){

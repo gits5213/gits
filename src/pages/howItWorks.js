@@ -3,6 +3,8 @@ import { Link } from 'react-router-dom';
 import HeaderText from '../components/header';
 import GoogleAd from '../components/GoogleAd';
 import Footer from '../components/footer';
+import '../styles/base.css';
+import '../styles/howItWorks.css';
 
 class HowItWorks extends Component {
     render(){

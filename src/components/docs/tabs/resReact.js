@@ -92,7 +92,7 @@ const resReact = () => {
                     }}
                 >
                     <img src={link.GITHUB_ICON} alt='github' style={{ marginRight: '10px', width: '20px', height: '20px' }} />
-                    ReactJS on GitHub
+                    ReactJS on GitHub                 
                 </a>
                 <a 
                     href={link.REACT_ORG} 
@@ -121,7 +121,7 @@ const resReact = () => {
                     }}
                 >
                     <img src={link.GITHUB_ICON} alt='github' style={{ marginRight: '10px', width: '20px', height: '20px' }} />
-                    ReactJS Org
+                    ReactJS Org                 
                 </a>
             </div>
 

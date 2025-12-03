@@ -246,9 +246,9 @@ const card = ({img, courseName, techStack, link, category}) => {
                             </svg>
                         </div>
                     </div>
-                </div>
+            </div>
             </div>
         </Link>
     );
-}
+  }   
 export default card;

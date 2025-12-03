@@ -7,6 +7,8 @@ import {cardDetails}from '../components/cardDetails';
 import Footer from '../components/footer';
 import classromom from '../images/classroomClass.jpg';
 import online from '../images/onlineClass.jpg';
+import '../styles/base.css';
+import '../styles/landing.css';
 
 class Landing extends Component {
     render(){

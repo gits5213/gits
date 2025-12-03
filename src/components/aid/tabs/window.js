@@ -255,7 +255,7 @@ const window = () => {
                         >
                             Download Software
                         </a>
-                    </div>
+                </div>
 
                     {/* General Software Download */}
                     <div style={{
@@ -308,7 +308,7 @@ const window = () => {
                         >
                             Download Software
                         </a>
-                    </div>
+                </div>
                 </div>
             </div>
 

@@ -92,7 +92,7 @@ const resAppium = ({path}) => {
                     }}
                 >
                     <img src={link.GITHUB_ICON} alt='github' style={{ marginRight: '10px', width: '20px', height: '20px' }} />
-                    Appium on GitHub
+                    Appium on GitHub                 
                 </a>
                 <a 
                     href={link.APPIUM_WEBSITE} 
@@ -121,7 +121,7 @@ const resAppium = ({path}) => {
                     }}
                 >
                     <img src={link.GITHUB_ICON} alt='github' style={{ marginRight: '10px', width: '20px', height: '20px' }} />
-                    Appium Org
+                    Appium Org                 
                 </a>
             </div>
 

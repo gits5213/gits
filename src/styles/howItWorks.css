@@ -1,0 +1,124 @@
+/* =============How It Works Page Specific Styles==============*/
+
+.how-it-works-container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 20px;
+  text-align: center;
+}
+
+.how-it-works-title {
+  color: #00416A;
+  margin-bottom: 40px;
+}
+
+.how-it-works-workflow {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 20px;
+  margin-bottom: 60px;
+  align-items: stretch;
+}
+
+.how-it-works-step {
+  flex: 1 1 250px;
+  max-width: 280px;
+  background-color: #ffffff;
+  border-radius: 12px;
+  padding: 30px 20px;
+  box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  border-top: 4px solid #00416A;
+}
+
+.how-it-works-step:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 8px 25px rgba(0,0,0,0.15);
+}
+
+.how-it-works-step-number {
+  background-color: #00416A;
+  color: #ffffff;
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 24px;
+  font-weight: bold;
+  margin: 0 auto 20px;
+}
+
+.how-it-works-step-title {
+  color: #00416A;
+  font-size: 20px;
+  font-weight: bold;
+  margin-bottom: 15px;
+}
+
+.how-it-works-step-list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  text-align: left;
+}
+
+.how-it-works-step-item {
+  padding: 8px 0;
+  color: #666;
+  font-size: 14px;
+  border-bottom: 1px solid #f0f0f0;
+}
+
+.how-it-works-step-item:last-child {
+  border-bottom: none;
+}
+
+.how-it-works-arrow {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 32px;
+  color: #00416A;
+  font-weight: bold;
+  margin: 0 10px;
+}
+
+.how-it-works-cta-button {
+  display: inline-block;
+  padding: 18px 50px;
+  font-size: 20px;
+  font-weight: bold;
+  color: #ffffff;
+  background-color: #00416A;
+  text-decoration: none;
+  border-radius: 8px;
+  transition: all 0.3s ease;
+  box-shadow: 0 4px 15px rgba(0,0,0,0.2);
+  margin-top: 40px;
+}
+
+.how-it-works-cta-button:hover {
+  background-color: #005a8a;
+  transform: translateY(-3px);
+  box-shadow: 0 6px 20px rgba(0,0,0,0.3);
+}
+
+@media (max-width: 768px) {
+  .how-it-works-workflow {
+    flex-direction: column;
+    align-items: center;
+  }
+  
+  .how-it-works-step {
+    max-width: 100%;
+  }
+  
+  .how-it-works-arrow {
+    transform: rotate(90deg);
+    margin: 10px 0;
+  }
+}
+

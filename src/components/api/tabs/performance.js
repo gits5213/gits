@@ -50,7 +50,7 @@ const performance = () => {
                     marginBottom: '30px'
                 }}>
                     <a href='https://stackify.com/ultimate-guide-performance-testing-and-software-testing/' target="_blank" rel="noopener noreferrer" style={{ color: '#00416A', textDecoration: 'underline' }}>Performance testing</a> is a series of tests conducted to identify issues that inhibit a software's speed, scalability, and stability. This is the ideal way to ensure that the software system is built with the capacity to meet business demand while simultaneously serving all necessary users in a timely and reliable manner.
-                </p>
+          </p>
 
                 <h2 style={{
                     color: '#00416A',
@@ -68,13 +68,13 @@ const performance = () => {
                     paddingLeft: '20px',
                     marginBottom: '30px'
                 }}>
-                    <li>Identify glitches and eliminate bottlenecks</li>
-                    <li>Provide visibility for stakeholders</li>
-                    <li>Deliver a higher quality UI and functionality</li>
-                    <li>Unlock greater scalability</li>
-                    <li>Generate more revenue</li>
-                    <li>Create sound benchmarks for future regression testing</li>
-                </ol>
+            <li>Identify glitches and eliminate bottlenecks</li>
+            <li>Provide visibility for stakeholders</li>
+            <li>Deliver a higher quality UI and functionality</li>
+            <li>Unlock greater scalability</li>
+            <li>Generate more revenue</li>
+            <li>Create sound benchmarks for future regression testing</li>
+          </ol>
 
                 <h2 style={{
                     color: '#00416A',
@@ -93,12 +93,12 @@ const performance = () => {
                     marginBottom: '30px'
                 }}>
                     <li>Issues with DNS and network connectivity</li>
-                    <li>Poor code</li>
-                    <li>Poor load balance</li>
+              <li>Poor code</li>
+              <li>Poor load balance</li>
                     <li>Slower servers</li>
-                    <li>Spikes in traffic</li>
-                    <li>Unoptimized databases</li>
-                </ul>
+              <li>Spikes in traffic</li>
+              <li>Unoptimized databases</li>
+            </ul>
 
                 <h2 style={{
                     color: '#00416A',
@@ -117,12 +117,12 @@ const performance = () => {
                     marginBottom: '30px'
                 }}>
                     <li>Start recording a new scenario from the web browser's start</li>
-                    <li>Clear browser cache and cookies before recording traffic</li>
-                    <li>Parameterize scenarios to simulate more realistic load on the server</li>
-                    <li>Verify user scenarios</li>
-                    <li>Arrange user scenarios in your tests so that critical functionality is tested first. And remember to analyze and report on your results!</li>
-                    <li>During test runs, monitor the tested server metrics as well as resource usage on the client computer</li>
-                </ol>
+            <li>Clear browser cache and cookies before recording traffic</li>
+            <li>Parameterize scenarios to simulate more realistic load on the server</li>
+            <li>Verify user scenarios</li>
+            <li>Arrange user scenarios in your tests so that critical functionality is tested first. And remember to analyze and report on your results!</li>
+            <li>During test runs, monitor the tested server metrics as well as resource usage on the client computer</li>
+          </ol>
 
                 <h2 style={{
                     color: '#00416A',
@@ -139,8 +139,8 @@ const performance = () => {
                     color: '#333',
                     marginBottom: '20px'
                 }}>
-                    During performance testing of software, developers are looking for performance symptoms and issues. Speed issues — slow responses and long load times for example — often are observed and addressed. Other performance problems can be observed:
-                </p>
+            During performance testing of software, developers are looking for performance symptoms and issues. Speed issues — slow responses and long load times for example — often are observed and addressed. Other performance problems can be observed:
+          </p>
                 <ul style={{
                     fontSize: '16px',
                     lineHeight: '2',
@@ -151,18 +151,18 @@ const performance = () => {
                     <li><strong>Bottlenecking</strong> — This occurs when data flow is interrupted or halted because there is not enough capacity to handle the workload.</li>
                     <li><strong>Poor scalability</strong> — If software cannot handle the desired number of concurrent tasks, results could be delayed, errors could increase, or other unexpected behavior could happen that affects:
                         <ul style={{ paddingLeft: '20px', marginTop: '10px' }}>
-                            <li>Disk usage</li>
-                            <li>CPU usage</li>
-                            <li>Memory leaks</li>
-                            <li>Operating system limitations</li>
-                            <li>Poor network configuration</li>
-                        </ul>
+                <li>Disk usage</li>
+                <li>CPU usage</li>
+                <li>Memory leaks</li>
+                <li>Operating system limitations</li>
+                <li>Poor network configuration</li>
+              </ul>
                     </li>
                     <li><strong>Software configuration issues</strong> — Often settings are not set at a sufficient level to handle the workload.</li>
                     <li><strong>Insufficient hardware resources</strong> — Performance testing may reveal physical memory constraints or low-performing CPUs.</li>
-                </ul>
-            </div>
-
+          </ul>
+          </div>
+      
             {/* Resources Section */}
             <div style={{
                 backgroundColor: '#ffffff',
@@ -277,7 +277,7 @@ const performance = () => {
                     More Details
                 </a>
             </div>
-
+            
             <div>
                 <GoogleAd slot="1541085932" classNames="page-right-side" />
             </div>
@@ -286,5 +286,5 @@ const performance = () => {
             </section>
         </div>
     );
-}
+  }   
 export default performance;

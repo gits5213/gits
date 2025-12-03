@@ -1,5 +1,6 @@
 import React, {Component} from 'react';
 import './App.css';
+import './styles/base.css';
 import Main from './components/main';
 import {Link, withRouter} from 'react-router-dom';
 import websiteLogo from './images/websiteLogo.png';
@@ -483,7 +484,7 @@ class App extends Component {
               fontWeight: '600',
               letterSpacing: '0.5px'
             }}>
-              🎯 Don't wait! Only a few seats left. Join now and start your QA Engineer career journey. 🎯
+              🎯 Don't wait! Only a few seats left. Join now and start your QA Engineer career journey. 🎯 Call +1(917)561-6554 for more details.
             </span>
             <span style={{
               paddingRight: '100px',
@@ -491,7 +492,7 @@ class App extends Component {
               fontWeight: '600',
               letterSpacing: '0.5px'
             }}>
-              🎯 Don't wait! Only a few seats left. Join now and start your QA Engineer career journey. 🎯
+              🎯 Don't wait! Only a few seats left. Join now and start your QA Engineer career journey. 🎯 Call +1(917)561-6554 for more details.
             </span>
             <span style={{
               paddingRight: '100px',
@@ -499,7 +500,7 @@ class App extends Component {
               fontWeight: '600',
               letterSpacing: '0.5px'
             }}>
-              🎯 Don't wait! Only a few seats left. Join now and start your QA Engineer career journey. 🎯
+              🎯 Don't wait! Only a few seats left. Join now and start your QA Engineer career journey. 🎯 Call +1(917)561-6554 for more details.
             </span>
           </div>
         </div>

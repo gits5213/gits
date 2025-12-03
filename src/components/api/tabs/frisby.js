@@ -92,7 +92,7 @@ const resFrisby = () => {
                     }}
                 >
                     <img src={link.GITHUB_ICON} alt='github' style={{ marginRight: '10px', width: '20px', height: '20px' }} />
-                    FrisBy on GitHub
+                    FrisBy on GitHub                 
                 </a>
                 <a 
                     href={link.FRISBY_WEBSITE} 
@@ -121,7 +121,7 @@ const resFrisby = () => {
                     }}
                 >
                     <img src={link.GITHUB_ICON} alt='github' style={{ marginRight: '10px', width: '20px', height: '20px' }} />
-                    FrisBy Org
+                    FrisBy Org                 
                 </a>
             </div>
 

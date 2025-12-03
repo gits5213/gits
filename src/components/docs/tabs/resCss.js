@@ -113,8 +113,8 @@ const resCss = () => {
                     }}
                 >
                     <img src={link.GITHUB_ICON} alt='github' style={{ marginRight: '10px', width: '20px', height: '20px' }} />
-                    CSS FW Topics on GitHub
-                </a>
+                  CSS FW Topics on GitHub                 
+              </a>
                 <a 
                     href={link.REACT_CSS_FRAMEWORK_TOPICS} 
                     target="_blank" 
@@ -142,8 +142,8 @@ const resCss = () => {
                     }}
                 >
                     <img src={link.GITHUB_ICON} alt='github' style={{ marginRight: '10px', width: '20px', height: '20px' }} />
-                    React CSS FW Topics on GitHub
-                </a>
+                  React CSS FW Topics on GitHub                 
+              </a>
             </div>
 
             {/* Main Content */}
@@ -252,8 +252,8 @@ const resCss = () => {
                         fontWeight: '600'
                     }}>
                         CSS Saves a Lot of Work! With an external stylesheet file, you can change the look of an entire website by changing just one file!
-                    </p>
-                </div>
+                </p>
+            </div>
             </div>
 
             {/* CSS Image */}
@@ -328,7 +328,7 @@ const resCss = () => {
                             {item.name}
                         </a>
                     ))}
-                </div>
+            </div>
             </div>
 
             {/* CSS Framework */}
@@ -381,7 +381,7 @@ const resCss = () => {
                             {item.name}
                         </a>
                     ))}
-                </div>
+            </div>
             </div>
 
             {/* React CSS Framework */}

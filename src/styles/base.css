@@ -1,0 +1,327 @@
+/* =============Base Styles - Common Across All Pages==============*/
+
+/* Color Variables */
+:root {
+  --primary-color: #00416A;
+  --primary-dark: #005a8a;
+  --primary-light: #006ba8;
+  --secondary-color: #68dca8;
+  --text-dark: #333333;
+  --text-light: #666666;
+  --text-white: #ffffff;
+  --bg-light: #f8f9fa;
+  --bg-dark: #1a1a1a;
+  --border-color: #e0e0e0;
+  --shadow-sm: 0 2px 10px rgba(0,0,0,0.1);
+  --shadow-md: 0 4px 15px rgba(0,0,0,0.2);
+  --shadow-lg: 0 8px 32px rgba(0,0,0,0.15);
+}
+
+/* Reset and Base Typography */
+* {
+  box-sizing: border-box;
+}
+
+a {
+  text-decoration: none;
+}
+
+/* Common Container Styles */
+.container {
+  max-width: 1400px;
+  margin: 0 auto;
+  padding: 0 20px;
+}
+
+.container-medium {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 20px;
+}
+
+.container-small {
+  max-width: 1000px;
+  margin: 0 auto;
+  padding: 0 20px;
+}
+
+/* Common Hero Section Styles */
+.hero-section {
+  background: linear-gradient(135deg, var(--primary-color) 0%, var(--primary-dark) 100%);
+  color: var(--text-white);
+  padding: 60px 20px;
+  text-align: center;
+  margin-bottom: 40px;
+}
+
+.hero-section-extended {
+  background: linear-gradient(135deg, var(--primary-color) 0%, var(--primary-dark) 50%, var(--primary-light) 100%);
+  color: var(--text-white);
+  padding: 100px 20px;
+  margin-bottom: 60px;
+  position: relative;
+  overflow: hidden;
+}
+
+.hero-title {
+  font-size: clamp(36px, 5vw, 64px);
+  margin-bottom: 20px;
+  font-weight: 800;
+  line-height: 1.2;
+  letter-spacing: -0.02em;
+  text-shadow: 0 2px 20px rgba(0,0,0,0.2);
+}
+
+.hero-title-medium {
+  font-size: 48px;
+  margin-bottom: 20px;
+  font-weight: bold;
+}
+
+.hero-subtitle {
+  font-size: clamp(20px, 2.5vw, 28px);
+  max-width: 800px;
+  margin: 0 auto;
+  line-height: 1.6;
+  opacity: 0.95;
+}
+
+/* Common Section Styles */
+.section {
+  margin-bottom: 40px;
+}
+
+.section-large {
+  margin-bottom: 60px;
+}
+
+.section-title {
+  color: var(--primary-color);
+  font-size: 36px;
+  margin-bottom: 30px;
+  font-weight: bold;
+  text-align: center;
+}
+
+.section-title-left {
+  color: var(--primary-color);
+  font-size: 28px;
+  margin-bottom: 20px;
+  font-weight: bold;
+  border-bottom: 2px solid var(--primary-color);
+  padding-bottom: 10px;
+}
+
+/* Common Card Styles */
+.card {
+  background-color: var(--bg-light);
+  padding: 30px;
+  border-radius: 8px;
+  box-shadow: var(--shadow-sm);
+}
+
+.card-large {
+  background-color: var(--bg-light);
+  padding: 40px;
+  border-radius: 8px;
+  box-shadow: var(--shadow-sm);
+}
+
+.card-glass {
+  background-color: rgba(255, 255, 255, 0.1);
+  backdrop-filter: blur(10px);
+  padding: 24px 32px;
+  border-radius: 16px;
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  box-shadow: var(--shadow-lg);
+  transition: transform 0.3s ease;
+}
+
+.card-glass:hover {
+  transform: translateY(-4px);
+}
+
+/* Common Button Styles */
+.btn-primary {
+  display: inline-block;
+  padding: 15px 40px;
+  font-size: 18px;
+  font-weight: bold;
+  color: var(--primary-color);
+  background-color: var(--text-white);
+  text-decoration: none;
+  border-radius: 8px;
+  transition: all 0.3s ease;
+  box-shadow: var(--shadow-md);
+  border: none;
+  cursor: pointer;
+}
+
+.btn-primary:hover {
+  background-color: #f0f0f0;
+  transform: translateY(-2px);
+  box-shadow: 0 6px 20px rgba(0,0,0,0.3);
+}
+
+.btn-secondary {
+  display: inline-block;
+  padding: 12px 30px;
+  font-size: 16px;
+  font-weight: 600;
+  color: var(--text-white);
+  background-color: var(--primary-color);
+  text-decoration: none;
+  border-radius: 6px;
+  transition: all 0.3s ease;
+  border: none;
+  cursor: pointer;
+}
+
+.btn-secondary:hover {
+  background-color: var(--primary-dark);
+  transform: translateY(-2px);
+}
+
+/* Common Text Styles */
+.text-large {
+  font-size: 18px;
+  line-height: 1.8;
+  color: var(--text-dark);
+}
+
+.text-medium {
+  font-size: 16px;
+  line-height: 1.8;
+  color: var(--text-dark);
+}
+
+.text-center {
+  text-align: center;
+}
+
+.text-left {
+  text-align: left;
+}
+
+/* Common Link Styles */
+.link-primary {
+  color: var(--primary-color);
+  text-decoration: none;
+  transition: color 0.3s ease;
+  font-weight: 500;
+}
+
+.link-primary:hover {
+  color: var(--primary-dark);
+}
+
+.link-white {
+  color: var(--text-white);
+  text-decoration: none;
+  transition: color 0.3s ease;
+}
+
+.link-white:hover {
+  color: var(--secondary-color);
+}
+
+/* Common List Styles */
+.list-unstyled {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.list-item-spaced {
+  margin-bottom: 12px;
+}
+
+.list-item-large {
+  margin-bottom: 20px;
+}
+
+/* Common Grid Styles */
+.grid-2-col {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 40px;
+  align-items: center;
+}
+
+.grid-3-col {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 30px;
+}
+
+/* Common Spacing Utilities */
+.mb-small {
+  margin-bottom: 15px;
+}
+
+.mb-medium {
+  margin-bottom: 30px;
+}
+
+.mb-large {
+  margin-bottom: 40px;
+}
+
+.mb-xlarge {
+  margin-bottom: 60px;
+}
+
+.p-small {
+  padding: 20px;
+}
+
+.p-medium {
+  padding: 30px;
+}
+
+.p-large {
+  padding: 40px;
+}
+
+/* Common Responsive Utilities */
+@media (max-width: 768px) {
+  .hero-title-medium {
+    font-size: 36px;
+  }
+  
+  .section-title {
+    font-size: 28px;
+  }
+  
+  .grid-2-col,
+  .grid-3-col {
+    grid-template-columns: 1fr;
+  }
+}
+
+/* Common Page Body Styles */
+.page-tab-body {
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  width: 100%;
+  margin-left: 1em;
+  height: 100vh;
+  padding-left: 40px;
+  padding-right: 40px;
+  text-align: left;
+  color: black;
+}
+
+.category-tabs {
+  font-family: monospace;
+  text-align: center;
+  margin: auto;
+  padding-top: 1em;
+}
+
+/* Common Content Wrapper */
+.content {
+  max-width: 1400px;
+  margin: 0 auto;
+  padding: 0 20px;
+}
+

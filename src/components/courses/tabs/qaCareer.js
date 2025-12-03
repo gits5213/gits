@@ -162,7 +162,7 @@ const qaCareer = () => {
                             fontWeight: 'bold'
                         }}>
                             Constantly Evolving
-                        </h3>
+            </h3>
                         <p style={{
                             fontSize: '16px',
                             color: '#333',
@@ -196,8 +196,8 @@ const qaCareer = () => {
                         margin: 0,
                         marginBottom: '20px'
                     }}>
-                        A rise in tech companies often brings a rise of software engineers, including engineers that specialize in software quality assurance (SQA or QA). While every company works differently with quality control QA engineers (ex. some have an independent QA team, some have one or two people within the company, and some embed QA personnel with every development team), it's safe to say there is need for these kind of software specialists.
-                    </p>
+                A rise in tech companies often brings a rise of software engineers, including engineers that specialize in software quality assurance (SQA or QA). While every company works differently with quality control QA engineers (ex. some have an independent QA team, some have one or two people within the company, and some embed QA personnel with every development team), it's safe to say there is need for these kind of software specialists.
+            </p>
                     <div style={{
                         backgroundColor: 'rgba(255,255,255,0.1)',
                         padding: '20px',
@@ -246,7 +246,7 @@ const qaCareer = () => {
                         margin: 0
                     }}>
                         Without QA engineers, there are clunkier workflows and broken processes. Being in the tech driven world we live in today, tech companies that want to remain in business really can't afford the absence of QA engineers.
-                    </p>
+            </p>
                 </div>
 
                 {/* Call to Action */}
@@ -264,8 +264,8 @@ const qaCareer = () => {
                         margin: 0,
                         fontWeight: 'bold'
                     }}>
-                        If you love technology, enjoy breaking software and are looking for an exciting career with a lot of growth potential, SQA Engineer might be just the career for you.
-                    </p>
+                If you love technology, enjoy breaking software and are looking for an exciting career with a lot of growth potential, SQA Engineer might be just the career for you.
+            </p>
                 </div>
             </div>
         </div>

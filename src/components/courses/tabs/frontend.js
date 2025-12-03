@@ -163,7 +163,7 @@ const frontend = () => {
                             fontWeight: 'bold'
                         }}>
                             Constantly Evolving
-                        </h3>
+            </h3>
                         <p style={{
                             fontSize: '16px',
                             color: '#333',
@@ -187,16 +187,16 @@ const frontend = () => {
                         margin: 0,
                         marginBottom: '20px'
                     }}>
-                        Front-end web development is an exciting career because it's always evolving and constantly changing. This means you'll always have the opportunity to interact with new tools and learn new skills, keeping you engaged in your career. It's a field that provides many opportunities for hands-on learning.
-                    </p>
+                Front-end web development is an exciting career because it's always evolving and constantly changing. This means you'll always have the opportunity to interact with new tools and learn new skills, keeping you engaged in your career. It's a field that provides many opportunities for hands-on learning.
+            </p>
                     <p style={{
                         fontSize: '18px',
                         lineHeight: '1.8',
                         margin: 0,
                         fontWeight: 'bold'
                     }}>
-                        If you love technology, enjoy creating a great user experience and are looking for an exciting career with a lot of growth potential, front-end web development might be just the career for you.
-                    </p>
+                If you love technology, enjoy creating a great user experience and are looking for an exciting career with a lot of growth potential, front-end web development might be just the career for you.
+            </p>
                 </div>
             </div>
         </div>

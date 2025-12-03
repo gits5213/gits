@@ -92,7 +92,7 @@ const resWebIo = () => {
                     }}
                 >
                     <img src={link.GITHUB_ICON} alt='github' style={{ marginRight: '10px', width: '20px', height: '20px' }} />
-                    WebDriverIO on GitHub
+                    WebDriverIO on GitHub                 
                 </a>
                 <a 
                     href={link.WEBDRIVERIO_WEBSITE} 
@@ -121,7 +121,7 @@ const resWebIo = () => {
                     }}
                 >
                     <img src={link.GITHUB_ICON} alt='github' style={{ marginRight: '10px', width: '20px', height: '20px' }} />
-                    WebDriverIO Org
+                    WebDriverIO Org                 
                 </a>
             </div>
 

@@ -92,7 +92,7 @@ const resCypress = () => {
                     }}
                 >
                     <img src={link.GITHUB_ICON} alt='github' style={{ marginRight: '10px', width: '20px', height: '20px' }} />
-                    Cypress on GitHub
+                    Cypress on GitHub                 
                 </a>
                 <a 
                     href={link.CYPRESS_WEBSITE} 
@@ -121,7 +121,7 @@ const resCypress = () => {
                     }}
                 >
                     <img src={link.GITHUB_ICON} alt='github' style={{ marginRight: '10px', width: '20px', height: '20px' }} />
-                    Cypress Org
+                    Cypress Org                 
                 </a>
             </div>
 

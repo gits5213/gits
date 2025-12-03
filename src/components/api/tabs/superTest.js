@@ -92,7 +92,7 @@ const resSuperTest = () => {
                     }}
                 >
                     <img src={link.GITHUB_ICON} alt='github' style={{ marginRight: '10px', width: '20px', height: '20px' }} />
-                    SuperTest on GitHub
+                    SuperTest on GitHub                 
                 </a>
                 <a 
                     href={link.SUPERTEST_WEBSITE} 
@@ -121,7 +121,7 @@ const resSuperTest = () => {
                     }}
                 >
                     <img src={link.GITHUB_ICON} alt='github' style={{ marginRight: '10px', width: '20px', height: '20px' }} />
-                    SuperTest Org
+                     SuperTest Org                 
                 </a>
             </div>
 

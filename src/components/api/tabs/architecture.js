@@ -38,7 +38,7 @@ const Architecture = () => {
                     Understanding the Architecture of Modern Test Automation Frameworks
                 </p>
             </div>
-
+            
             {/* Architecture Grid */}
             <div style={{
                 display: 'grid',
@@ -77,10 +77,10 @@ const Architecture = () => {
                         paddingLeft: '20px',
                         marginBottom: '20px'
                     }}>
-                        <li>{architecData.seleniumDescription.sd1}</li>
-                        <li>{architecData.seleniumDescription.sd2}</li>
-                        <li>{architecData.seleniumDescription.sd3}</li>
-                    </ul>
+                            <li>{architecData.seleniumDescription.sd1}</li>
+                            <li>{architecData.seleniumDescription.sd2}</li>
+                            <li>{architecData.seleniumDescription.sd3}</li>
+                        </ul>
                     <div style={{
                         textAlign: 'center',
                         marginBottom: '20px',
@@ -129,7 +129,7 @@ const Architecture = () => {
                             {architecData.componentName.selenium}
                         </a>
                     </div>
-                </div>
+                    </div>
 
                 {/* CypressIO */}
                 <div style={{
@@ -162,12 +162,12 @@ const Architecture = () => {
                         paddingLeft: '20px',
                         marginBottom: '20px'
                     }}>
-                        <li>{architecData.cypressIOdescription.cd1}</li>
-                        <li>{architecData.cypressIOdescription.cd2}</li>
-                        <li>{architecData.cypressIOdescription.cd3}</li>
-                        <li>{architecData.cypressIOdescription.cd4}</li>
-                        <li>{architecData.cypressIOdescription.cd5}</li>
-                    </ul>
+                            <li>{architecData.cypressIOdescription.cd1}</li>
+                            <li>{architecData.cypressIOdescription.cd2}</li>
+                            <li>{architecData.cypressIOdescription.cd3}</li>
+                            <li>{architecData.cypressIOdescription.cd4}</li>
+                            <li>{architecData.cypressIOdescription.cd5}</li>
+                        </ul>
                     <div style={{
                         textAlign: 'center',
                         marginBottom: '20px',
@@ -216,7 +216,7 @@ const Architecture = () => {
                             {architecData.componentName.tutorialsPoint}
                         </a>
                     </div>
-                </div>
+                    </div>
 
                 {/* Playwright */}
                 <div style={{
@@ -249,11 +249,11 @@ const Architecture = () => {
                         paddingLeft: '20px',
                         marginBottom: '20px'
                     }}>
-                        <li>{architecData.playWrightDescription.pd1}</li>
-                        <li>{architecData.playWrightDescription.pd2}</li>
-                        <li>{architecData.playWrightDescription.pd3}</li>
-                        <li>{architecData.playWrightDescription.pd4}</li>
-                    </ul>
+                            <li>{architecData.playWrightDescription.pd1}</li>
+                            <li>{architecData.playWrightDescription.pd2}</li>
+                            <li>{architecData.playWrightDescription.pd3}</li>
+                            <li>{architecData.playWrightDescription.pd4}</li>
+                        </ul>
                     <div style={{
                         textAlign: 'center',
                         marginBottom: '20px',
@@ -335,9 +335,9 @@ const Architecture = () => {
                         paddingLeft: '20px',
                         marginBottom: '20px'
                     }}>
-                        <li>{architecData.webDriverIODescription.wd1}</li>
-                        <li>{architecData.webDriverIODescription.wd2}</li>
-                    </ul>
+                            <li>{architecData.webDriverIODescription.wd1}</li>
+                            <li>{architecData.webDriverIODescription.wd2}</li>
+                        </ul>
                     <div style={{
                         textAlign: 'center',
                         marginBottom: '20px',

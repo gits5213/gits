@@ -7,6 +7,8 @@ import CoursesAutomation from '../components/courses/tabs/coursesAutomation';
 import CoursesManual from '../components/courses/tabs/coursesManual';
 import Accessibility from '../components/courses/tabs/accessibility';
 import SdetRoadmap from '../components/courses/tabs/sdetRoadmap';
+import '../styles/base.css';
+import '../styles/courses.css';
 
 class Courses extends Component {
     constructor(props) {

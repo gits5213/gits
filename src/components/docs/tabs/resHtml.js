@@ -140,7 +140,7 @@ const resHtml = () => {
                         &nbsp;&nbsp;{'</'}body{'>'} <br />
                         {'</'}html{'>'}
                     </code>
-                </div>
+            </div>
 
                 <h2 style={{
                     color: '#00416A',
@@ -242,11 +242,11 @@ const resHtml = () => {
                         paddingLeft: '20px'
                     }}>
                         <li>Navigate to the <a href={link.VSCODE} target="_blank" rel="noopener noreferrer" style={{ color: '#00416A', textDecoration: 'underline' }}><strong>URL</strong></a></li>
-                        <li>Click on the <strong>Download Button</strong> according to your Operating System</li>
-                        <li>Extract the Folder</li>
+                    <li>Click on the <strong>Download Button</strong> according to your Operating System</li>
+                    <li>Extract the Folder</li>
                         <li>Double click on the <strong>Visual Studio Code Icon</strong></li>
-                    </ul>
-                </div>
+                </ul>
+            </div>
 
                 <div style={{
                     backgroundColor: '#f8f9fa',
@@ -268,12 +268,12 @@ const resHtml = () => {
                         color: '#333',
                         paddingLeft: '20px'
                     }}>
-                        <li>Right click on the Desktop</li>
-                        <li>Create New Folder</li>
-                        <li>Rename the Folder Name to <strong>website</strong></li>
+                    <li>Right click on the Desktop</li>
+                    <li>Create New Folder</li>
+                    <li>Rename the Folder Name to <strong>website</strong></li>
                         <li>Drag and Drop <strong>website</strong> Folder to VS Code</li>
-                    </ul>
-                </div>
+                </ul>
+            </div>
 
                 <div style={{
                     backgroundColor: '#f8f9fa',
@@ -295,13 +295,13 @@ const resHtml = () => {
                         color: '#333',
                         paddingLeft: '20px'
                     }}>
-                        <li>Mouse hover on the <strong>Folder called website</strong> on the VS Code</li>
-                        <li>Click on <strong>File with Plus Icon</strong></li>
-                        <li>Enter your file name <strong>sample.html</strong></li>
-                        <li>Open <strong>sample.html</strong> file and enter some html code</li>
+                    <li>Mouse hover on the <strong>Folder called website</strong> on the VS Code</li>
+                    <li>Click on <strong>File with Plus Icon</strong></li>
+                    <li>Enter your file name <strong>sample.html</strong></li>
+                    <li>Open <strong>sample.html</strong> file and enter some html code</li>
                         <li>Enter <strong>!</strong> and hit <strong>tab</strong> from the keyboard</li>
-                    </ul>
-                </div>
+                </ul>
+            </div>
             </div>
 
             {/* HTML Tags Cheat Sheet */}
@@ -384,7 +384,7 @@ const resHtml = () => {
                             {item.name}
                         </a>
                     ))}
-                </div>
+            </div>
                 <div style={{
                     display: 'flex',
                     justifyContent: 'center',
@@ -416,8 +416,8 @@ const resHtml = () => {
                             e.target.style.transform = 'translateY(0)';
                         }}
                     >
-                        ICONS - Material UI
-                    </a>
+                    ICONS - Material UI
+                </a>
                     <a
                         href={link.GOOGLE_FONTS}
                         target="_blank"
@@ -443,8 +443,8 @@ const resHtml = () => {
                             e.target.style.transform = 'translateY(0)';
                         }}
                     >
-                        Google Fonts
-                    </a>
+                    Google Fonts
+                </a>
                 </div>
             </div>
 

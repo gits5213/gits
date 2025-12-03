@@ -36,7 +36,7 @@ const resPython = () => {
                 }}>
                     A Popular Programming Language for Web Development and More
                 </p>
-            </div>
+                </div>
 
             {/* Image Section */}
             <div style={{
@@ -57,7 +57,7 @@ const resPython = () => {
                         borderRadius: '8px'
                     }}
                 />
-            </div>
+                </div>
 
             {/* GitHub Links */}
             <div style={{
@@ -94,8 +94,8 @@ const resPython = () => {
                     }}
                 >
                     <img src={link.GITHUB_ICON} alt='github' style={{ marginRight: '10px', width: '20px', height: '20px' }} />
-                    Python on GitHub
-                </a>
+                        Python on GitHub                 
+                    </a>
                 <a 
                     href={link.PY_STYLE_GUIDE} 
                     target="_blank" 
@@ -123,9 +123,9 @@ const resPython = () => {
                     }}
                 >
                     <img src={link.GITHUB_ICON} alt='github' style={{ marginRight: '10px', width: '20px', height: '20px' }} />
-                    Google Python Style Guide
-                </a>
-            </div>
+                        Google Python Style Guide              
+                    </a>
+                </div>
 
             {/* Main Content */}
             <div style={{
@@ -149,8 +149,8 @@ const resPython = () => {
                     color: '#333',
                     marginBottom: '30px'
                 }}>
-                    Python is a popular programming language. It was created by Guido van Rossum, and released in 1991.
-                </p>
+                        Python is a popular programming language. It was created by Guido van Rossum, and released in 1991.
+                    </p>
 
                 <h3 style={{
                     color: '#00416A',
@@ -168,11 +168,11 @@ const resPython = () => {
                     paddingLeft: '20px',
                     marginBottom: '30px'
                 }}>
-                    <li>Web development (server-side)</li>
-                    <li>Software development</li>
-                    <li>Mathematics</li>
-                    <li>System scripting</li>
-                </ul>
+                        <li>Web development (server-side)</li>
+                        <li>Software development</li>
+                        <li>Mathematics</li>
+                        <li>System scripting</li>
+                    </ul>
 
                 <h2 style={{
                     color: '#00416A',
@@ -190,12 +190,12 @@ const resPython = () => {
                     paddingLeft: '20px',
                     marginBottom: '30px'
                 }}>
-                    <li>Python can be used on a server to create web applications.</li>
-                    <li>Python can be used alongside software to create workflows.</li>
-                    <li>Python can connect to database systems. It can also read and modify files.</li>
-                    <li>Python can be used to handle big data and perform complex mathematics.</li>
-                    <li>Python can be used for rapid prototyping, or for production-ready software development.</li>
-                </ul>
+                        <li>Python can be used on a server to create web applications.</li>
+                        <li>Python can be used alongside software to create workflows.</li>
+                        <li>Python can connect to database systems. It can also read and modify files.</li>
+                        <li>Python can be used to handle big data and perform complex mathematics.</li>
+                        <li>Python can be used for rapid prototyping, or for production-ready software development.</li>
+                    </ul>
 
                 <h2 style={{
                     color: '#00416A',
@@ -212,13 +212,13 @@ const resPython = () => {
                     color: '#333',
                     paddingLeft: '20px'
                 }}>
-                    <li>Python works on different platforms (Windows, Mac, Linux, Raspberry Pi, etc).</li>
-                    <li>Python has a simple syntax similar to the English language.</li>
-                    <li>Python has syntax that allows developers to write programs with fewer lines than some other programming languages.</li>
-                    <li>Python runs on an interpreter system, meaning that code can be executed as soon as it is written. This means that prototyping can be very quick.</li>
-                    <li>Python can be treated in a procedural way, an object-oriented way or a functional way.</li>
-                </ul>
-            </div>
+                        <li>Python works on different platforms (Windows, Mac, Linux, Raspberry Pi, etc).</li>
+                        <li>Python has a simple syntax similar to the English language.</li>
+                        <li>Python has syntax that allows developers to write programs with fewer lines than some other programming languages.</li>
+                        <li>Python runs on an interpreter system, meaning that code can be executed as soon as it is written. This means that prototyping can be very quick.</li>
+                        <li>Python can be treated in a procedural way, an object-oriented way or a functional way.</li>
+                    </ul>
+                </div>
 
             {/* Python Cheat Sheet */}
             <div style={{
@@ -248,11 +248,11 @@ const resPython = () => {
                         boxShadow: '0 2px 8px rgba(0,0,0,0.1)'
                     }}
                 />
-            </div>
+                </div>
 
-            <div>
-                <BackToTop />
-            </div>
+                <div>
+                    <BackToTop />
+                </div> 
             <div>
                 <GoogleAd slot="1541085932" classNames="page-right-side" />
             </div>

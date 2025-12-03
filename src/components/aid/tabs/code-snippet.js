@@ -46,7 +46,7 @@ const CodeSnippet = () => {
                     {codeSnippetData.codeSnippent}
                 </p>
             </div>
-
+            
             {/* Programming Languages Grid */}
             <div style={{
                 display: 'grid',
@@ -89,20 +89,20 @@ const CodeSnippet = () => {
                         <div style={{ marginBottom: '20px' }}>
                             <h4 style={{ color: '#00416A', fontSize: '16px', marginBottom: '10px', fontWeight: '600' }}>Variable</h4>
                             <div style={codeBlockStyle}>
-                                <code>
-                                    ======Variable======<br/>
+                            <code>
+                                ======Variable======<br/>
                                     Variable type: local, instance, static<br/>
                                     int number = 25;<br/>
-                                    static int number = 25;
-                                </code>
+                                static int number = 25;
+                            </code>
                             </div>
                         </div>
 
                         <div style={{ marginBottom: '20px' }}>
                             <h4 style={{ color: '#00416A', fontSize: '16px', marginBottom: '10px', fontWeight: '600' }}>DataTypes</h4>
                             <div style={codeBlockStyle}>
-                                <code>
-                                    ======DataTypes======<br/>
+                            <code>
+                                ======DataTypes======<br/>
                                     Data type: Primitive & Non-primitive<br/>
                                     * Primitive: Define by the Program.<br/>
                                     * Non-primitive define by the programmer.<br/>
@@ -112,22 +112,22 @@ const CodeSnippet = () => {
                                     - double decimalNumber = 232.4;<br/>
                                     - char leter = "A";<br/>
                                     - boolean onlyOne = false;
-                                </code>
+                            </code>
                             </div>
                         </div>
 
                         <div style={{ marginBottom: '20px' }}>
                             <h4 style={{ color: '#00416A', fontSize: '16px', marginBottom: '10px', fontWeight: '600' }}>Operators</h4>
                             <div style={codeBlockStyle}>
-                                <code>
-                                    ======Operators======<br/>
-                                    Arithmetic: Addition(+), Subtraction(-), Multiplication(x), Division(/), Modulus(%), Increment(++), Decrement(--)<br/>
+                            <code>
+                                ======Operators======<br/>
+                                Arithmetic: Addition(+), Subtraction(-), Multiplication(x), Division(/), Modulus(%), Increment(++), Decrement(--)<br/>
                                     Assignment: =, +=, -=, *=, /=, %=, &=, |=, ^=<br/>
                                     Comparison: ==, !=<br/>
                                     Logical: &&, ||, !<br/>
                                     Bitwise:
-                                </code>
-                            </div>
+                            </code>
+                        </div>
                         </div>
                     </div>
 
@@ -147,23 +147,23 @@ const CodeSnippet = () => {
                         <div style={{ marginBottom: '20px' }}>
                             <h4 style={{ color: '#00416A', fontSize: '16px', marginBottom: '10px', fontWeight: '600' }}>ifElseIfElse</h4>
                             <div style={codeBlockStyle}>
-                                <code>
-                                    ======ifElseIfElseIfElse======<br/>
+                            <code>
+                                ======ifElseIfElseIfElse======<br/>
                                     - if: if(condition) {'{'} /* code goes here */ {'}'}<br/>
                                     - if-else: if(condition) {'{'}/* code goes here */{'}'}else {'{'}/* code goes here */{'}'}<br/>
                                     - if-else-if: if(condition1) {'{'}/* code goes here */{'}'}else if(condition2) {'{'}/* code goes here */{'}'}else if(condition3) {'{'}/* code goes here */{'}'}else {'{'}/* code goes here */{'}'}<br/>
                                     - nested if: if(condition1) {'{'} /* code goes here */<br/>
                                     &nbsp;&nbsp;if(condition1) {'{'}/* code goes here */{'}'}<br/>
                                     {'}'}
-                                </code>
+                            </code>
                             </div>
                         </div>
 
                         <div style={{ marginBottom: '20px' }}>
                             <h4 style={{ color: '#00416A', fontSize: '16px', marginBottom: '10px', fontWeight: '600' }}>Loops</h4>
                             <div style={codeBlockStyle}>
-                                <code>
-                                    ======Loops======<br/>
+                            <code>
+                                ======Loops======<br/>
                                     - for-loop: for(initialization; condition; increment) {'{'}<br/>
                                     &nbsp;&nbsp;//code to executed<br/>
                                     {'}'}<br/>
@@ -175,16 +175,16 @@ const CodeSnippet = () => {
                                     {'}'}<br/>
                                     - for-each-loop: for(dataType variable : array_name) {'{'}<br/>
                                     &nbsp;&nbsp;//code to executed<br/>
-                                    {'}'}
-                                </code>
+                                {'}'}
+                            </code>
                             </div>
                         </div>
 
                         <div style={{ marginBottom: '20px' }}>
                             <h4 style={{ color: '#00416A', fontSize: '16px', marginBottom: '10px', fontWeight: '600' }}>Switch</h4>
                             <div style={codeBlockStyle}>
-                                <code>
-                                    ======Switch======<br/>
+                            <code>
+                                ======Switch======<br/>
                                     - switch(expression) {'{'}<br/>
                                     &nbsp;&nbsp;case value1:<br/>
                                     &nbsp;&nbsp;&nbsp;&nbsp;//code to be executed<br/>
@@ -194,11 +194,11 @@ const CodeSnippet = () => {
                                     &nbsp;&nbsp;&nbsp;&nbsp;break //optional<br/>
                                     &nbsp;&nbsp;default:<br/>
                                     &nbsp;&nbsp;&nbsp;&nbsp;//code to be executed<br/>
-                                    {'}'}
-                                </code>
+                                {'}'}
+                            </code>
                             </div>
                         </div>
-                    </div>
+                        </div>
 
                     {/* Object Class Section */}
                     <div style={{ marginBottom: '30px' }}>
@@ -216,27 +216,27 @@ const CodeSnippet = () => {
                         <div style={{ marginBottom: '20px' }}>
                             <h4 style={{ color: '#00416A', fontSize: '16px', marginBottom: '10px', fontWeight: '600' }}>This keyword</h4>
                             <div style={codeBlockStyle}>
-                                <code>
-                                    ====This keyword===<br/>
+                            <code>
+                            ====This keyword===<br/>
                                     - Reference variable that refers to the current object.<br/>
                                     - "this" can be used to refer current class instance variable.<br/>
                                     - "this" can be used to invoke current class method(implicitly).<br/>
                                     - "this()" can be used to invoke current class constructor.
-                                </code>
-                            </div>
+                            </code>
+                        </div>
                         </div>
 
                         <div style={{ marginBottom: '20px' }}>
                             <h4 style={{ color: '#00416A', fontSize: '16px', marginBottom: '10px', fontWeight: '600' }}>Method</h4>
                             <div style={codeBlockStyle}>
-                                <code>
+                            <code>
                                     ======Method======<br/>
                                     - Reusability<br/>
                                     - Easy to modification<br/>
                                     - Readability<br/>
                                     * Pre defined method: print()<br/>
                                     * User defined method: sum()<br/>
-                                    <br/>
+                                <br/>
                                     Method Declaration:<br/>
                                     - non-return type non-parameterize method: void sum() {'{'}<br/>
                                     &nbsp;&nbsp;//method body | Method Signature<br/>
@@ -245,11 +245,11 @@ const CodeSnippet = () => {
                                     - return type parameterize method: int sum (int a, int b) {'{'}<br/>
                                     &nbsp;&nbsp;//method body | Method Signature<br/>
                                     &nbsp;&nbsp;return a+b;<br/>
-                                    {'}'}
-                                </code>
+                                {'}'}
+                            </code>
                             </div>
                         </div>
-
+                        
                         <div style={{ marginBottom: '20px' }}>
                             <h4 style={{ color: '#00416A', fontSize: '16px', marginBottom: '10px', fontWeight: '600' }}>Constructor</h4>
                             <div style={codeBlockStyle}>
@@ -318,7 +318,7 @@ const CodeSnippet = () => {
                                 </code>
                             </div>
                         </div>
-                    </div>
+                        </div>
 
                     {/* Collection Section */}
                     <div>
@@ -358,7 +358,7 @@ const CodeSnippet = () => {
                             Java Online Coding →
                         </a>
                     </div>
-                </div>
+                        </div>
 
                 {/* C# Section */}
                 <div style={{
@@ -393,7 +393,7 @@ const CodeSnippet = () => {
                         <div style={codeBlockStyle}>
                             <code>int number = 25;</code>
                         </div>
-                    </div>
+                        </div>
 
                     <div style={{ marginBottom: '30px' }}>
                         <h3 style={{
@@ -407,7 +407,7 @@ const CodeSnippet = () => {
                             Control Statement
                         </h3>
                         <p style={{ fontSize: '16px', color: '#666', fontStyle: 'italic' }}>Control statement content...</p>
-                    </div>
+                        </div>
 
                     <div style={{ marginBottom: '30px' }}>
                         <h3 style={{
@@ -421,7 +421,7 @@ const CodeSnippet = () => {
                             Object Class
                         </h3>
                         <p style={{ fontSize: '16px', color: '#666', fontStyle: 'italic' }}>Object class content...</p>
-                    </div>
+                        </div>
 
                     <div style={{ marginBottom: '30px' }}>
                         <h3 style={{
@@ -435,7 +435,7 @@ const CodeSnippet = () => {
                             OOPs Concept
                         </h3>
                         <p style={{ fontSize: '16px', color: '#666', fontStyle: 'italic' }}>OOPs concept content...</p>
-                    </div>
+                        </div>
 
                     <div>
                         <h3 style={{
@@ -450,7 +450,7 @@ const CodeSnippet = () => {
                         </h3>
                         <p style={{ fontSize: '16px', color: '#666', fontStyle: 'italic' }}>Collection framework content...</p>
                     </div>
-                </div>
+                        </div>
 
                 {/* JavaScript Section */}
                 <div style={{
@@ -489,7 +489,7 @@ const CodeSnippet = () => {
                                 const number = 25;
                             </code>
                         </div>
-                    </div>
+                        </div>
 
                     <div style={{ marginBottom: '30px' }}>
                         <h3 style={{
@@ -503,7 +503,7 @@ const CodeSnippet = () => {
                             Control Statement
                         </h3>
                         <p style={{ fontSize: '16px', color: '#666', fontStyle: 'italic' }}>Control statement content...</p>
-                    </div>
+                        </div>
 
                     <div style={{ marginBottom: '30px' }}>
                         <h3 style={{
@@ -517,7 +517,7 @@ const CodeSnippet = () => {
                             Object Class
                         </h3>
                         <p style={{ fontSize: '16px', color: '#666', fontStyle: 'italic' }}>Object class content...</p>
-                    </div>
+                        </div>
 
                     <div style={{ marginBottom: '30px' }}>
                         <h3 style={{
@@ -531,7 +531,7 @@ const CodeSnippet = () => {
                             OOPs Concept
                         </h3>
                         <p style={{ fontSize: '16px', color: '#666', fontStyle: 'italic' }}>OOPs concept content...</p>
-                    </div>
+                        </div>
 
                     <div>
                         <h3 style={{
@@ -609,7 +609,7 @@ const CodeSnippet = () => {
                             Object Class
                         </h3>
                         <p style={{ fontSize: '16px', color: '#666', fontStyle: 'italic' }}>Object class content...</p>
-                    </div>
+                        </div>
 
                     <div style={{ marginBottom: '30px' }}>
                         <h3 style={{
@@ -623,9 +623,9 @@ const CodeSnippet = () => {
                             OOPs Concept
                         </h3>
                         <p style={{ fontSize: '16px', color: '#666', fontStyle: 'italic' }}>OOPs concept content...</p>
-                    </div>
+                        </div>
 
-                    <div>
+                        <div>
                         <h3 style={{
                             color: '#00416A',
                             fontSize: '20px',
@@ -637,9 +637,9 @@ const CodeSnippet = () => {
                             Collection
                         </h3>
                         <p style={{ fontSize: '16px', color: '#666', fontStyle: 'italic' }}>Collection framework content...</p>
-                    </div>
-                </div>
-            </div>
+                        </div>
+                        </div>
+                        </div>
 
             <section style={{ marginTop: '40px' }}>
                 <Footer />

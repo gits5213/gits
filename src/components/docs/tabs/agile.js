@@ -113,7 +113,7 @@ const agile = () => {
                         borderLeft: '4px solid #00416A'
                     }}>
                         <strong style={{ color: '#00416A' }}>Working software</strong> over comprehensive documentation
-                    </div>
+            </div>
                     <div style={{
                         backgroundColor: '#f8f9fa',
                         padding: '20px',
@@ -121,7 +121,7 @@ const agile = () => {
                         borderLeft: '4px solid #00416A'
                     }}>
                         <strong style={{ color: '#00416A' }}>Customer collaboration</strong> over contract negotiation
-                    </div>
+            </div>
                     <div style={{
                         backgroundColor: '#f8f9fa',
                         padding: '20px',
@@ -129,8 +129,8 @@ const agile = () => {
                         borderLeft: '4px solid #00416A'
                     }}>
                         <strong style={{ color: '#00416A' }}>Responding to change</strong> over following a plan
-                    </div>
-                </div>
+            </div>
+            </div>
 
                 <p style={{
                     fontSize: '16px',

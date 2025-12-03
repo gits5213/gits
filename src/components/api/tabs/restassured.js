@@ -92,7 +92,7 @@ const resRestassured = () => {
                     }}
                 >
                     <img src={link.GITHUB_ICON} alt='github' style={{ marginRight: '10px', width: '20px', height: '20px' }} />
-                    RESTAssured on GitHub
+                    RESTAssured on GitHub                 
                 </a>
                 <a 
                     href={link.RESTASSURED_WEBSITE} 
@@ -121,7 +121,7 @@ const resRestassured = () => {
                     }}
                 >
                     <img src={link.GITHUB_ICON} alt='github' style={{ marginRight: '10px', width: '20px', height: '20px' }} />
-                    RESTAssured Org
+                    RESTAssured Org                 
                 </a>
             </div>
 

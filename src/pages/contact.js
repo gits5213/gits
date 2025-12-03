@@ -4,6 +4,8 @@ import { Grid, Cell} from 'react-mdl';
 import GoogleAd from '../components/GoogleAd';
 import Footer from '../components/footer';
 import emailjs from '@emailjs/browser';
+import '../styles/base.css';
+import '../styles/contact.css';
 
 const WHATSAPP_NUMBER = '+1(917)561-6554';
 const WHATSAPP_LINK = `https://wa.me/+19175616554`;

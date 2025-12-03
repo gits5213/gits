@@ -124,11 +124,11 @@ const scrum = () => {
                 }}>
                     <p style={{ margin: 0, fontSize: '18px', fontWeight: '600', color: '#00416A' }}>Scrum is:</p>
                     <ul style={{ marginTop: '10px', paddingLeft: '20px' }}>
-                        <li>Lightweight</li>
-                        <li>Simple to understand</li>
-                        <li>Difficult to master</li>
-                    </ul>
-                </div>
+                    <li>Lightweight</li>
+                    <li>Simple to understand</li>
+                    <li>Difficult to master</li>
+                </ul>
+            </div>
             </div>
 
             {/* The Scrum Framework */}
@@ -347,7 +347,7 @@ const scrum = () => {
                             {item.name}
                         </a>
                     ))}
-                </div>
+            </div>
                 <div style={{
                     display: 'flex',
                     justifyContent: 'center',
@@ -379,8 +379,8 @@ const scrum = () => {
                             e.target.style.transform = 'translateY(0)';
                         }}
                     >
-                        Scrum.org
-                    </a>
+                    Scrum.org
+                </a>
                     <a
                         href={link.MOUNTAIN_GOATS}
                         target="_blank"
@@ -406,8 +406,8 @@ const scrum = () => {
                             e.target.style.transform = 'translateY(0)';
                         }}
                     >
-                        ScrumMountainGoat
-                    </a>
+                    ScrumMountainGoat
+                </a>
                 </div>
             </div>
 

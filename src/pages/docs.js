@@ -15,6 +15,8 @@ import ResPython from '../components/docs/tabs/resPython';
 import Agile from '../components/docs/tabs/agile';
 import Scrum from '../components/docs/tabs/scrum';
 import Links from '../components/docs/tabs/resLinks';
+import '../styles/base.css';
+import '../styles/docs.css';
 
 class docs extends Component {
     constructor(props) {

@@ -134,8 +134,8 @@ const coursesCode4Kids = () => {
                             boxShadow: '0 4px 15px rgba(0,0,0,0.2)',
                             marginBottom: '30px'
                         }}>
-                            <iframe 
-                                src={link.OBAMA_SPEACE}
+                <iframe 
+                    src={link.OBAMA_SPEACE} 
                                 frameBorder="0"
                                 allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
                                 allowFullScreen
@@ -148,7 +148,7 @@ const coursesCode4Kids = () => {
                                     borderRadius: '8px'
                                 }}
                             ></iframe>
-                        </div>
+            </div>
                         <div style={{
                             backgroundColor: '#ffffff',
                             padding: '30px',
@@ -163,7 +163,7 @@ const coursesCode4Kids = () => {
                                 marginBottom: '20px',
                                 fontWeight: 'bold'
                             }}>
-                                CS For All
+                    CS For All 
                             </h3>
                             <p style={{
                                 fontSize: '16px',
@@ -180,15 +180,15 @@ const coursesCode4Kids = () => {
                                 marginBottom: '15px'
                             }}>
                                 Our economy is rapidly shifting, and both educators and business leaders are increasingly recognizing that computer science (CS) is a "new basic" skill necessary for economic opportunity and social mobility.
-                            </p>
+                </p>
                             <p style={{
                                 fontSize: '16px',
                                 lineHeight: '1.8',
                                 color: '#333'
                             }}>
                                 CS for All builds on efforts already being led by parents, teachers, school districts, states, and private sector leaders from across the country.
-                            </p>
-                        </div>
+                </p>
+            </div>
                     </div>
                 </section>
 
@@ -223,21 +223,21 @@ const coursesCode4Kids = () => {
                                 marginBottom: '20px'
                             }}>
                                 Welcome to our Hour of Code - an introduction to the basics of computer programming or as it's commonly called Code4Kids coding.
-                            </p>
+                </p>
                             <p style={{
                                 fontSize: '18px',
                                 color: '#333',
                                 marginBottom: '20px'
                             }}>
                                 Code is all around you and the results of coding are everywhere whether you're posting a tweet, watching a YouTube video, or even swiping a debit card - whatever happens because of lines of code. In fact, just about anything with a plug or battery uses code or computer programs to do things. Lots of everyday items - phones, watches, microwaves, cars - have computers in them and they all rely on code to make them work.
-                            </p>
+                </p>
                             <p style={{
                                 fontSize: '18px',
                                 color: '#333',
                                 marginBottom: '20px'
                             }}>
                                 So what is code exactly? Code is a precise set of instructions a computer can understand. Think of it as a recipe - the instructions need to be precise so whatever you're making turns out the way it should. And just like people in different parts of the world speak different languages, computers understand many different languages - with names like Python, C#, Ruby, Java, Javascript and Perl. They're all different in their own way, similar to spoken languages, they share many of the same basic features.
-                            </p>
+                </p>
                             <p style={{
                                 fontSize: '18px',
                                 color: '#333'
@@ -318,7 +318,7 @@ const coursesCode4Kids = () => {
                             opacity: '0.9'
                         }}>
                             Enroll your child in our Code4Kids program today and give them the skills for tomorrow.
-                        </p>
+                </p>
                         <a 
                             href={link.SQA_SIGN_UP}
                             target="_blank"
@@ -348,7 +348,7 @@ const coursesCode4Kids = () => {
                         >
                             Sign Up Now
                         </a>
-                    </div>
+            </div>
                 </section>
             </div>
 
@@ -358,7 +358,7 @@ const coursesCode4Kids = () => {
             <section className='pt4'>
                 <Footer />
             </section>
-        </div> 
+        </div>
     );
 }
 export default coursesCode4Kids;

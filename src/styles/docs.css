@@ -1,0 +1,60 @@
+/* =============Docs Page Specific Styles==============*/
+
+.docs-tabs-container {
+  background-color: #ffffff;
+  border-bottom: 2px solid #e0e0e0;
+  margin-bottom: 20px;
+  position: sticky;
+  top: 100px;
+  z-index: 100;
+  box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+}
+
+.docs-tabs-wrapper {
+  max-width: 1400px;
+  margin: 0 auto;
+  padding: 0 20px;
+  overflow-x: auto;
+  overflow-y: hidden;
+  -webkit-overflow-scrolling: touch;
+  scrollbar-width: thin;
+}
+
+.docs-tabs-list {
+  display: flex;
+  gap: 4px;
+  min-width: min-content;
+}
+
+.docs-tab-button {
+  padding: 16px 24px;
+  font-size: 16px;
+  font-weight: 400;
+  color: #666666;
+  background-color: transparent;
+  border: none;
+  border-bottom: 3px solid transparent;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  white-space: nowrap;
+  font-family: inherit;
+  outline: none;
+}
+
+.docs-tab-button.active {
+  font-weight: 600;
+  color: #00416A;
+  border-bottom-color: #00416A;
+}
+
+.docs-tab-button:hover:not(.active) {
+  color: #00416A;
+  background-color: #f0f7fa;
+}
+
+@media (max-width: 768px) {
+  .docs-tabs-container {
+    top: 100px;
+  }
+}
+

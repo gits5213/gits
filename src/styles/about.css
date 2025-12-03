@@ -1,0 +1,89 @@
+/* =============About Page Specific Styles==============*/
+
+.about-profile-image {
+  border-radius: 50%;
+  width: auto;
+  height: 200px;
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  padding-bottom: 1em;
+}
+
+.about-certifications-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 20px;
+  margin-top: 30px;
+}
+
+.about-certification-card {
+  background-color: #ffffff;
+  padding: 20px;
+  border-radius: 8px;
+  border: 2px solid #00416A;
+  text-align: center;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.about-certification-card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 4px 15px rgba(0,0,0,0.2);
+}
+
+.about-expertise-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 15px;
+  margin-top: 20px;
+}
+
+.about-expertise-item {
+  background-color: #f8f9fa;
+  padding: 15px;
+  border-radius: 6px;
+  text-align: center;
+  font-weight: 500;
+  color: #00416A;
+}
+
+.about-social-grid {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 15px;
+  justify-content: center;
+  margin-top: 30px;
+}
+
+.about-cta-section {
+  background: linear-gradient(135deg, #00416A 0%, #005a8a 100%);
+  color: #ffffff;
+  padding: 50px 30px;
+  border-radius: 12px;
+  text-align: center;
+  margin-top: 60px;
+}
+
+.about-cta-buttons {
+  display: flex;
+  gap: 20px;
+  justify-content: center;
+  flex-wrap: wrap;
+  margin-top: 30px;
+}
+
+@media (max-width: 768px) {
+  .about-certifications-grid {
+    grid-template-columns: 1fr;
+  }
+  
+  .about-expertise-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+  
+  .about-cta-buttons {
+    flex-direction: column;
+    align-items: center;
+  }
+}
+

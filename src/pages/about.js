@@ -5,6 +5,8 @@ import GoogleAd from '../components/GoogleAd';
 import aboutPic from '../images/about-pic.png';
 import Footer from '../components/footer';
 import link from '../utilities/links.json';
+import '../styles/base.css';
+import '../styles/about.css';
 
 class About extends Component {
     render(){

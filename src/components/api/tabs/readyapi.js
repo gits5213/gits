@@ -91,7 +91,7 @@ const readyapi = () => {
                         e.target.style.transform = 'translateY(0)';
                     }}
                 >
-                    ReadyAPI Docs
+                    ReadyAPI Docs                
                 </a>
                 <a 
                     href={link.READYAPI} 
@@ -119,7 +119,7 @@ const readyapi = () => {
                         e.target.style.transform = 'translateY(0)';
                     }}
                 >
-                    ReadyAPI Org
+                    ReadyAPI Org                 
                 </a>
             </div>
 

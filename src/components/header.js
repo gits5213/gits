@@ -118,5 +118,5 @@ const headerText = () => {
             </div>
         </div>
     );
-}
+  }   
 export default headerText;
