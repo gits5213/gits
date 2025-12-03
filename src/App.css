@@ -340,3 +340,13 @@ h1.sub-header {
   }
 }
 
+/* =============Scrolling Announcement Banner==============*/
+@keyframes scrollText {
+  0% {
+    transform: translateX(0);
+  }
+  100% {
+    transform: translateX(-33.333%);
+  }
+}
+

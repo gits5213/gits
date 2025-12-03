@@ -459,10 +459,55 @@ class App extends Component {
           </div>
         </header>
 
+        {/* Sticky Announcement Banner */}
+        <div style={{
+          position: 'fixed',
+          top: '64px',
+          left: 0,
+          right: 0,
+          zIndex: 999,
+          backgroundColor: '#ff6b6b',
+          color: '#ffffff',
+          padding: '12px 0',
+          overflow: 'hidden',
+          boxShadow: '0 2px 8px rgba(0,0,0,0.15)'
+        }}>
+          <div style={{
+            display: 'flex',
+            animation: 'scrollText 30s linear infinite',
+            whiteSpace: 'nowrap'
+          }}>
+            <span style={{
+              paddingRight: '100px',
+              fontSize: '16px',
+              fontWeight: '600',
+              letterSpacing: '0.5px'
+            }}>
+              🎯 Don't wait! Only a few seats left. Join now and start your QA Engineer career journey. 🎯
+            </span>
+            <span style={{
+              paddingRight: '100px',
+              fontSize: '16px',
+              fontWeight: '600',
+              letterSpacing: '0.5px'
+            }}>
+              🎯 Don't wait! Only a few seats left. Join now and start your QA Engineer career journey. 🎯
+            </span>
+            <span style={{
+              paddingRight: '100px',
+              fontSize: '16px',
+              fontWeight: '600',
+              letterSpacing: '0.5px'
+            }}>
+              🎯 Don't wait! Only a few seats left. Join now and start your QA Engineer career journey. 🎯
+            </span>
+          </div>
+        </div>
+
         {/* Main Content */}
         <main style={{
-          marginTop: '64px',
-          minHeight: 'calc(100vh - 64px)'
+          marginTop: '100px',
+          minHeight: 'calc(100vh - 100px)'
         }}>
           <Main />
         </main>
