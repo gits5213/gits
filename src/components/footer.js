@@ -361,6 +361,51 @@ const footer = () => {
                                 Terms of Use
                             </Link>
                         </li>
+                        <li style={{ marginBottom: '12px' }}>
+                            <Link 
+                                to="/privacy-policy"
+                                style={{
+                                    color: '#cccccc',
+                                    textDecoration: 'none',
+                                    fontSize: '16px',
+                                    transition: 'color 0.3s ease'
+                                }}
+                                onMouseEnter={(e) => e.target.style.color = '#00416A'}
+                                onMouseLeave={(e) => e.target.style.color = '#cccccc'}
+                            >
+                                Privacy Policy
+                            </Link>
+                        </li>
+                        <li style={{ marginBottom: '12px' }}>
+                            <Link 
+                                to="/copyright-notice"
+                                style={{
+                                    color: '#cccccc',
+                                    textDecoration: 'none',
+                                    fontSize: '16px',
+                                    transition: 'color 0.3s ease'
+                                }}
+                                onMouseEnter={(e) => e.target.style.color = '#00416A'}
+                                onMouseLeave={(e) => e.target.style.color = '#cccccc'}
+                            >
+                                Copyright Notice
+                            </Link>
+                        </li>
+                        <li style={{ marginBottom: '12px' }}>
+                            <Link 
+                                to="/website-disclaimer"
+                                style={{
+                                    color: '#cccccc',
+                                    textDecoration: 'none',
+                                    fontSize: '16px',
+                                    transition: 'color 0.3s ease'
+                                }}
+                                onMouseEnter={(e) => e.target.style.color = '#00416A'}
+                                onMouseLeave={(e) => e.target.style.color = '#cccccc'}
+                            >
+                                Website Disclaimer
+                            </Link>
+                        </li>
                     </ul>
                 </div>
 

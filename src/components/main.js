@@ -9,6 +9,9 @@ import About from '../pages/about';
 import Contact from '../pages/contact';
 import HowItWorks from '../pages/howItWorks';
 import TermsOfUse from '../pages/termsOfUse';
+import PrivacyPolicy from '../pages/privacyPolicy';
+import CopyrightNotice from '../pages/copyrightNotice';
+import WebsiteDisclaimer from '../pages/websiteDisclaimer';
 
 const Main = () => (
     <Switch>
@@ -60,6 +63,9 @@ const Main = () => (
         <Route exact path='/contact' component={Contact} />
         <Route exact path='/how-it-works' component={HowItWorks} />
         <Route exact path='/terms-of-use' component={TermsOfUse} />
+        <Route exact path='/privacy-policy' component={PrivacyPolicy} />
+        <Route exact path='/copyright-notice' component={CopyrightNotice} />
+        <Route exact path='/website-disclaimer' component={WebsiteDisclaimer} />
     </Switch>
 );
 export default Main; 
