@@ -1,5 +1,4 @@
 import React from 'react';
-import link from '../../../utilities/links.json';
 import Footer from '../../footer';
 import GoogleAd from '../../GoogleAd';
 

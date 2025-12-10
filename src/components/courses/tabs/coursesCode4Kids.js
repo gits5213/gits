@@ -1,5 +1,4 @@
 import React from 'react';
-import { Link } from 'react-router-dom';
 import link from '../../../utilities/links.json';
 import GoogleAd from '../../../components/GoogleAd';
 import code4KidProgramOutline from '../../../images/code4KidsProgram.png';
@@ -135,6 +134,7 @@ const coursesCode4Kids = () => {
                             marginBottom: '30px'
                         }}>
                 <iframe 
+                    title="Code4Kids Video"
                     src={link.OBAMA_SPEACE} 
                                 frameBorder="0"
                                 allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"

@@ -267,7 +267,7 @@ const resCss = () => {
             }}>
                 <img 
                     src={css_image} 
-                    alt='CSS Image'
+                    alt='CSS'
                     style={{
                         width: '100%',
                         maxWidth: '800px',

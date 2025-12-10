@@ -149,11 +149,11 @@ const CodeSnippet = () => {
                             <div style={codeBlockStyle}>
                             <code>
                                 ======ifElseIfElseIfElse======<br/>
-                                    - if: if(condition) {'{'} /* code goes here */ {'}'}<br/>
-                                    - if-else: if(condition) {'{'}/* code goes here */{'}'}else {'{'}/* code goes here */{'}'}<br/>
-                                    - if-else-if: if(condition1) {'{'}/* code goes here */{'}'}else if(condition2) {'{'}/* code goes here */{'}'}else if(condition3) {'{'}/* code goes here */{'}'}else {'{'}/* code goes here */{'}'}<br/>
-                                    - nested if: if(condition1) {'{'} /* code goes here */<br/>
-                                    &nbsp;&nbsp;if(condition1) {'{'}/* code goes here */{'}'}<br/>
+                                    - if: if(condition) {'{'} {/* code goes here */} {'}'}<br/>
+                                    - if-else: if(condition) {'{'}{/* code goes here */}{'}'}else {'{'}{/* code goes here */}{'}'}<br/>
+                                    - if-else-if: if(condition1) {'{'}{/* code goes here */}{'}'}else if(condition2) {'{'}{/* code goes here */}{'}'}else if(condition3) {'{'}{/* code goes here */}{'}'}else {'{'}{/* code goes here */}{'}'}<br/>
+                                    - nested if: if(condition1) {'{'} {/* code goes here */}<br/>
+                                    &nbsp;&nbsp;if(condition1) {'{'}{/* code goes here */}{'}'}<br/>
                                     {'}'}
                             </code>
                             </div>

@@ -1,5 +1,4 @@
 import React, {Component} from 'react';
-import { Link } from 'react-router-dom';
 import HeaderText from '../components/header';
 import landingImage from '../images/sdlcLogo.png'
 import CardList from '../components/cardList';

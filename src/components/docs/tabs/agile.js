@@ -1,5 +1,4 @@
 import React from 'react';
-import { Link } from 'react-router-dom';
 import link from '../../../utilities/links.json';
 import GoogleAd from '../../../components/GoogleAd';
 import AgilelLogo from '../../../images/tabs/agileLogo.png'; 
