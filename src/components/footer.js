@@ -508,6 +508,40 @@ const footer = () => {
                                 ZOOM MEETING
                             </a>
                         </li>
+                        <li style={{ marginBottom: '12px' }}>
+                            <a 
+                                href="https://gits5213.github.io/gits/" 
+                                target="_blank" 
+                                rel="noopener noreferrer"
+                                style={{
+                                    color: '#cccccc',
+                                    textDecoration: 'none',
+                                    fontSize: '16px',
+                                    transition: 'color 0.3s ease'
+                                }}
+                                onMouseEnter={(e) => e.target.style.color = '#00416A'}
+                                onMouseLeave={(e) => e.target.style.color = '#cccccc'}
+                            >
+                                Education Website
+                            </a>
+                        </li>
+                        <li style={{ marginBottom: '12px' }}>
+                            <a 
+                                href="http://visiblehomeinspections.com/" 
+                                target="_blank" 
+                                rel="noopener noreferrer"
+                                style={{
+                                    color: '#cccccc',
+                                    textDecoration: 'none',
+                                    fontSize: '16px',
+                                    transition: 'color 0.3s ease'
+                                }}
+                                onMouseEnter={(e) => e.target.style.color = '#00416A'}
+                                onMouseLeave={(e) => e.target.style.color = '#cccccc'}
+                            >
+                                Visible Home Inspections LLC
+                            </a>
+                        </li>
                     </ul>
                 </div>
 
