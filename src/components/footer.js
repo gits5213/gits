@@ -70,7 +70,7 @@ const footer = () => {
                                 onMouseEnter={(e) => e.target.style.color = '#00416A'}
                                 onMouseLeave={(e) => e.target.style.color = '#cccccc'}
                             >
-                                React website
+                                Educational Website
                             </a>
                         </li>
                         <li style={{ marginBottom: '12px' }}>
@@ -121,7 +121,7 @@ const footer = () => {
                                 onMouseEnter={(e) => e.target.style.color = '#00416A'}
                                 onMouseLeave={(e) => e.target.style.color = '#cccccc'}
                             >
-                                Md's Portfolio
+                                Md Shahnewaz Zaman | Portfolio
                             </a>
                         </li>
                         <li style={{ marginBottom: '12px' }}>
@@ -139,6 +139,23 @@ const footer = () => {
                                 onMouseLeave={(e) => e.target.style.color = '#cccccc'}
                             >
                                 JL Website
+                            </a>
+                        </li>
+                        <li style={{ marginBottom: '12px' }}>
+                            <a 
+                                href="http://visiblehomeinspections.com/" 
+                                target="_blank" 
+                                rel="noopener noreferrer"
+                                style={{
+                                    color: '#cccccc',
+                                    textDecoration: 'none',
+                                    fontSize: '16px',
+                                    transition: 'color 0.3s ease'
+                                }}
+                                onMouseEnter={(e) => e.target.style.color = '#00416A'}
+                                onMouseLeave={(e) => e.target.style.color = '#cccccc'}
+                            >
+                                Visible Home Inspections LLC
                             </a>
                         </li>
                     </ul>
