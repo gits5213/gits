@@ -3,6 +3,7 @@ import { Link } from 'react-router-dom';
 import HeaderText from '../components/header';
 import GoogleAd from '../components/GoogleAd';
 import Footer from '../components/footer';
+import { containers, sectionStyles, cardStyles, buttonStyles, listStyles, colors, shadows, hoverHandlers } from '../utils/globalStyles';
 import '../styles/base.css';
 import '../styles/howItWorks.css';
 
@@ -12,13 +13,11 @@ class HowItWorks extends Component {
             <div className='page-tab-body'>
                 <HeaderText />
                 <div>
-                    <h1 className='tc pt4' style={{ color: '#00416A', marginBottom: '40px' }}>How It Works</h1>
+                    <h1 className='tc pt4' style={{ ...sectionStyles.title, marginBottom: '40px' }}>How It Works</h1>
                 </div>
                 
                 <div style={{ 
-                    maxWidth: '1200px', 
-                    margin: '0 auto', 
-                    padding: '20px',
+                    ...containers.medium,
                     textAlign: 'center'
                 }}>
                     {/* Workflow Diagram */}
@@ -27,7 +26,7 @@ class HowItWorks extends Component {
                         flexWrap: 'wrap',
                         justifyContent: 'center',
                         gap: '20px',
-                        marginBottom: '60px',
+                        ...sectionStyles.large,
                         alignItems: 'stretch'
                     }}>
                         {/* Step 1 */}
@@ -36,15 +35,13 @@ class HowItWorks extends Component {
                             minWidth: '250px',
                             maxWidth: '280px',
                             padding: '30px 20px',
-                            backgroundColor: '#f8f9fa',
-                            borderRadius: '8px',
-                            boxShadow: '0 2px 8px rgba(0,0,0,0.1)',
-                            border: '2px solid #00416A'
+                            ...cardStyles.base,
+                            border: `2px solid ${colors.primary}`
                         }}>
                             <div style={{
                                 fontSize: '24px',
                                 fontWeight: 'bold',
-                                color: '#00416A',
+                                color: colors.primary,
                                 marginBottom: '20px',
                                 padding: '15px',
                                 backgroundColor: '#e8f4f8',
@@ -52,22 +49,17 @@ class HowItWorks extends Component {
                             }}>
                                 DISCOVER & ANALYZE
                             </div>
-                            <ul style={{
-                                textAlign: 'left',
-                                listStyle: 'none',
-                                padding: 0,
-                                margin: 0
-                            }}>
-                                <li style={{ marginBottom: '12px', paddingLeft: '20px', position: 'relative' }}>
-                                    <span style={{ position: 'absolute', left: 0, color: '#00416A' }}>•</span>
+                            <ul style={listStyles.unstyled}>
+                                <li style={{ ...listStyles.itemSpaced, ...listStyles.itemWithBullet }}>
+                                    <span style={listStyles.bullet}>•</span>
                                     Requirements review
                                 </li>
-                                <li style={{ marginBottom: '12px', paddingLeft: '20px', position: 'relative' }}>
-                                    <span style={{ position: 'absolute', left: 0, color: '#00416A' }}>•</span>
+                                <li style={{ ...listStyles.itemSpaced, ...listStyles.itemWithBullet }}>
+                                    <span style={listStyles.bullet}>•</span>
                                     Risk analysis
                                 </li>
-                                <li style={{ marginBottom: '12px', paddingLeft: '20px', position: 'relative' }}>
-                                    <span style={{ position: 'absolute', left: 0, color: '#00416A' }}>•</span>
+                                <li style={{ ...listStyles.itemSpaced, ...listStyles.itemWithBullet }}>
+                                    <span style={listStyles.bullet}>•</span>
                                     Test strategy
                                 </li>
                             </ul>
@@ -78,7 +70,7 @@ class HowItWorks extends Component {
                             display: 'flex',
                             alignItems: 'center',
                             fontSize: '40px',
-                            color: '#00416A',
+                            color: colors.primary,
                             fontWeight: 'bold',
                             margin: '0 10px'
                         }}>
@@ -91,15 +83,13 @@ class HowItWorks extends Component {
                             minWidth: '250px',
                             maxWidth: '280px',
                             padding: '30px 20px',
-                            backgroundColor: '#f8f9fa',
-                            borderRadius: '8px',
-                            boxShadow: '0 2px 8px rgba(0,0,0,0.1)',
-                            border: '2px solid #00416A'
+                            ...cardStyles.base,
+                            border: `2px solid ${colors.primary}`
                         }}>
                             <div style={{
                                 fontSize: '24px',
                                 fontWeight: 'bold',
-                                color: '#00416A',
+                                color: colors.primary,
                                 marginBottom: '20px',
                                 padding: '15px',
                                 backgroundColor: '#e8f4f8',
@@ -107,22 +97,17 @@ class HowItWorks extends Component {
                             }}>
                                 DESIGN QA & AUTOMATION
                             </div>
-                            <ul style={{
-                                textAlign: 'left',
-                                listStyle: 'none',
-                                padding: 0,
-                                margin: 0
-                            }}>
-                                <li style={{ marginBottom: '12px', paddingLeft: '20px', position: 'relative' }}>
-                                    <span style={{ position: 'absolute', left: 0, color: '#00416A' }}>•</span>
+                            <ul style={listStyles.unstyled}>
+                                <li style={{ ...listStyles.itemSpaced, ...listStyles.itemWithBullet }}>
+                                    <span style={listStyles.bullet}>•</span>
                                     Framework setup
                                 </li>
-                                <li style={{ marginBottom: '12px', paddingLeft: '20px', position: 'relative' }}>
-                                    <span style={{ position: 'absolute', left: 0, color: '#00416A' }}>•</span>
+                                <li style={{ ...listStyles.itemSpaced, ...listStyles.itemWithBullet }}>
+                                    <span style={listStyles.bullet}>•</span>
                                     Tool selection
                                 </li>
-                                <li style={{ marginBottom: '12px', paddingLeft: '20px', position: 'relative' }}>
-                                    <span style={{ position: 'absolute', left: 0, color: '#00416A' }}>•</span>
+                                <li style={{ ...listStyles.itemSpaced, ...listStyles.itemWithBullet }}>
+                                    <span style={listStyles.bullet}>•</span>
                                     AI-enabled automation
                                 </li>
                             </ul>
@@ -133,7 +118,7 @@ class HowItWorks extends Component {
                             display: 'flex',
                             alignItems: 'center',
                             fontSize: '40px',
-                            color: '#00416A',
+                            color: colors.primary,
                             fontWeight: 'bold',
                             margin: '0 10px'
                         }}>
@@ -146,15 +131,13 @@ class HowItWorks extends Component {
                             minWidth: '250px',
                             maxWidth: '280px',
                             padding: '30px 20px',
-                            backgroundColor: '#f8f9fa',
-                            borderRadius: '8px',
-                            boxShadow: '0 2px 8px rgba(0,0,0,0.1)',
-                            border: '2px solid #00416A'
+                            ...cardStyles.base,
+                            border: `2px solid ${colors.primary}`
                         }}>
                             <div style={{
                                 fontSize: '24px',
                                 fontWeight: 'bold',
-                                color: '#00416A',
+                                color: colors.primary,
                                 marginBottom: '20px',
                                 padding: '15px',
                                 backgroundColor: '#e8f4f8',
@@ -162,22 +145,17 @@ class HowItWorks extends Component {
                             }}>
                                 EXECUTE & VALIDATE QUALITY
                             </div>
-                            <ul style={{
-                                textAlign: 'left',
-                                listStyle: 'none',
-                                padding: 0,
-                                margin: 0
-                            }}>
-                                <li style={{ marginBottom: '12px', paddingLeft: '20px', position: 'relative' }}>
-                                    <span style={{ position: 'absolute', left: 0, color: '#00416A' }}>•</span>
+                            <ul style={listStyles.unstyled}>
+                                <li style={{ ...listStyles.itemSpaced, ...listStyles.itemWithBullet }}>
+                                    <span style={listStyles.bullet}>•</span>
                                     Manual + automation
                                 </li>
-                                <li style={{ marginBottom: '12px', paddingLeft: '20px', position: 'relative' }}>
-                                    <span style={{ position: 'absolute', left: 0, color: '#00416A' }}>•</span>
+                                <li style={{ ...listStyles.itemSpaced, ...listStyles.itemWithBullet }}>
+                                    <span style={listStyles.bullet}>•</span>
                                     Security & API tests
                                 </li>
-                                <li style={{ marginBottom: '12px', paddingLeft: '20px', position: 'relative' }}>
-                                    <span style={{ position: 'absolute', left: 0, color: '#00416A' }}>•</span>
+                                <li style={{ ...listStyles.itemSpaced, ...listStyles.itemWithBullet }}>
+                                    <span style={listStyles.bullet}>•</span>
                                     Continuous execution
                                 </li>
                             </ul>
@@ -188,7 +166,7 @@ class HowItWorks extends Component {
                             display: 'flex',
                             alignItems: 'center',
                             fontSize: '40px',
-                            color: '#00416A',
+                            color: colors.primary,
                             fontWeight: 'bold',
                             margin: '0 10px'
                         }}>
@@ -201,15 +179,13 @@ class HowItWorks extends Component {
                             minWidth: '250px',
                             maxWidth: '280px',
                             padding: '30px 20px',
-                            backgroundColor: '#f8f9fa',
-                            borderRadius: '8px',
-                            boxShadow: '0 2px 8px rgba(0,0,0,0.1)',
-                            border: '2px solid #00416A'
+                            ...cardStyles.base,
+                            border: `2px solid ${colors.primary}`
                         }}>
                             <div style={{
                                 fontSize: '24px',
                                 fontWeight: 'bold',
-                                color: '#00416A',
+                                color: colors.primary,
                                 marginBottom: '20px',
                                 padding: '15px',
                                 backgroundColor: '#e8f4f8',
@@ -217,22 +193,17 @@ class HowItWorks extends Component {
                             }}>
                                 REPORT & OPTIMIZE
                             </div>
-                            <ul style={{
-                                textAlign: 'left',
-                                listStyle: 'none',
-                                padding: 0,
-                                margin: 0
-                            }}>
-                                <li style={{ marginBottom: '12px', paddingLeft: '20px', position: 'relative' }}>
-                                    <span style={{ position: 'absolute', left: 0, color: '#00416A' }}>•</span>
+                            <ul style={listStyles.unstyled}>
+                                <li style={{ ...listStyles.itemSpaced, ...listStyles.itemWithBullet }}>
+                                    <span style={listStyles.bullet}>•</span>
                                     Dashboards
                                 </li>
-                                <li style={{ marginBottom: '12px', paddingLeft: '20px', position: 'relative' }}>
-                                    <span style={{ position: 'absolute', left: 0, color: '#00416A' }}>•</span>
+                                <li style={{ ...listStyles.itemSpaced, ...listStyles.itemWithBullet }}>
+                                    <span style={listStyles.bullet}>•</span>
                                     Defect insights
                                 </li>
-                                <li style={{ marginBottom: '12px', paddingLeft: '20px', position: 'relative' }}>
-                                    <span style={{ position: 'absolute', left: 0, color: '#00416A' }}>•</span>
+                                <li style={{ ...listStyles.itemSpaced, ...listStyles.itemWithBullet }}>
+                                    <span style={listStyles.bullet}>•</span>
                                     Release confidence
                                 </li>
                             </ul>
@@ -248,28 +219,13 @@ class HowItWorks extends Component {
                     <Link 
                         to="/contact"
                         style={{
-                            display: 'inline-block',
+                            ...buttonStyles.secondary,
                             padding: '15px 40px',
                             fontSize: '18px',
-                            fontWeight: 'bold',
-                            color: '#ffffff',
-                            backgroundColor: '#00416A',
-                            textDecoration: 'none',
-                            borderRadius: '8px',
-                            boxShadow: '0 4px 6px rgba(0,0,0,0.1)',
-                            transition: 'all 0.3s ease',
-                            border: '2px solid #00416A'
+                            border: `2px solid ${colors.primary}`,
+                            boxShadow: shadows.sm
                         }}
-                        onMouseEnter={(e) => {
-                            e.target.style.backgroundColor = '#005a8a';
-                            e.target.style.transform = 'translateY(-2px)';
-                            e.target.style.boxShadow = '0 6px 12px rgba(0,0,0,0.15)';
-                        }}
-                        onMouseLeave={(e) => {
-                            e.target.style.backgroundColor = '#00416A';
-                            e.target.style.transform = 'translateY(0)';
-                            e.target.style.boxShadow = '0 4px 6px rgba(0,0,0,0.1)';
-                        }}
+                        {...hoverHandlers.buttonSecondary}
                     >
                         Contact Us
                     </Link>

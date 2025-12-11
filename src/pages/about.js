@@ -5,6 +5,7 @@ import GoogleAd from '../components/GoogleAd';
 import aboutPic from '../images/about-pic.png';
 import Footer from '../components/footer';
 import link from '../utilities/links.json';
+import { containers, heroStyles, sectionStyles, cardStyles, buttonStyles, textStyles, colors, shadows, socialButtonStyles, hoverHandlers } from '../utils/globalStyles';
 import '../styles/base.css';
 import '../styles/about.css';
 
@@ -15,69 +16,36 @@ class About extends Component {
                 <HeaderText />
                 
                 {/* Hero Section */}
-                <div style={{
-                    background: 'linear-gradient(135deg, #00416A 0%, #005a8a 100%)',
-                    color: '#ffffff',
-                    padding: '60px 20px',
-                    textAlign: 'center',
-                    marginBottom: '40px'
-                }}>
-                    <h1 style={{ 
-                        fontSize: '48px', 
-                        marginBottom: '20px',
-                        fontWeight: 'bold'
-                    }}>
+                <div style={heroStyles.base}>
+                    <h1 style={heroStyles.titleMedium}>
                         About Us
                     </h1>
-                    <p style={{ 
-                        fontSize: '20px', 
-                        maxWidth: '800px',
-                        margin: '0 auto',
-                        lineHeight: '1.6'
-                    }}>
+                    <p style={heroStyles.subtitle}>
                         In-person & Online Interactive & Innovative Training Center for Code4Kids | WebDevelopment | Full Stack Quality Assurance Courses
                     </p>
                 </div>
 
                 {/* Main Content Container */}
-                <div style={{
-                    maxWidth: '1200px',
-                    margin: '0 auto',
-                    padding: '0 20px'
-                }}>
+                <div style={containers.medium}>
                     {/* Who We Are Section */}
                     <section style={{
-                        marginBottom: '60px',
+                        ...sectionStyles.large,
                         textAlign: 'center'
                     }}>
-                        <h2 style={{
-                            color: '#00416A',
-                            fontSize: '36px',
-                            marginBottom: '30px',
-                            fontWeight: 'bold'
-                        }}>
+                        <h2 style={sectionStyles.title}>
                             WHO WE ARE
                         </h2>
                         <div style={{
-                            backgroundColor: '#f8f9fa',
-                            padding: '40px',
-                            borderRadius: '8px',
-                            boxShadow: '0 2px 10px rgba(0,0,0,0.1)',
+                            ...cardStyles.large,
                             textAlign: 'left'
                         }}>
                             <p style={{
-                                fontSize: '18px',
-                                lineHeight: '1.8',
-                                color: '#333',
+                                ...textStyles.large,
                                 marginBottom: '20px'
                             }}>
                                 We are the leaders in providing quality training's of Code4Kids (5th Grade to 12th Grade) Web|UI|Frontend Development and Full Stack SQA Courses Training to Corporate and Individuals. This is the best In-person and Online training center at Hollis, Queens-NY.
                             </p>
-                            <p style={{
-                                fontSize: '18px',
-                                lineHeight: '1.8',
-                                color: '#333'
-                            }}>
+                            <p style={textStyles.large}>
                                 Our main intention is to let our students learn through the Interactive process, practice and provide as much as detailed information as possible. Our training's are divided in three modules - Code4Kids program, Web|UI|Frontend Development program and Full Stack Quality Assurance Program.
                             </p>
                         </div>
@@ -85,7 +53,7 @@ class About extends Component {
 
                     {/* Instructor Section */}
                     <section style={{
-                        marginBottom: '60px',
+                        ...sectionStyles.large,
                         display: 'flex',
                         flexWrap: 'wrap',
                         gap: '40px',
@@ -103,8 +71,8 @@ class About extends Component {
                                     width: '100%',
                                     maxWidth: '300px',
                                     borderRadius: '50%',
-                                    border: '5px solid #00416A',
-                                    boxShadow: '0 4px 15px rgba(0,0,0,0.2)'
+                                    border: `5px solid ${colors.primary}`,
+                                    boxShadow: shadows.md
                                 }}
                             />
                         </div>
@@ -115,7 +83,7 @@ class About extends Component {
                             minWidth: '300px'
                         }}>
                             <h2 style={{
-                                color: '#00416A',
+                                color: colors.primary,
                                 fontSize: '32px',
                                 marginBottom: '20px',
                                 fontWeight: 'bold'
@@ -124,7 +92,7 @@ class About extends Component {
                             </h2>
                             <p style={{
                                 fontSize: '18px',
-                                color: '#666',
+                                color: colors.textLight,
                                 marginBottom: '10px',
                                 fontWeight: '500'
                             }}>
@@ -135,24 +103,13 @@ class About extends Component {
                                     href="https://www.linkedin.com/in/zamanmd/" 
                                     target="_blank" 
                                     rel="noopener noreferrer"
-                                    style={{
-                                        display: 'inline-flex',
-                                        alignItems: 'center',
-                                        padding: '8px 16px',
-                                        backgroundColor: '#0077b5',
-                                        color: '#ffffff',
-                                        textDecoration: 'none',
-                                        borderRadius: '6px',
-                                        fontSize: '16px',
-                                        fontWeight: '500',
-                                        transition: 'all 0.3s ease'
-                                    }}
+                                    style={socialButtonStyles.linkedin}
                                     onMouseEnter={(e) => {
-                                        e.target.style.backgroundColor = '#005885';
+                                        e.target.style.backgroundColor = colors.linkedinDark;
                                         e.target.style.transform = 'translateY(-2px)';
                                     }}
                                     onMouseLeave={(e) => {
-                                        e.target.style.backgroundColor = '#0077b5';
+                                        e.target.style.backgroundColor = colors.linkedin;
                                         e.target.style.transform = 'translateY(0)';
                                     }}
                                 >
@@ -170,15 +127,11 @@ class About extends Component {
                             </div>
                             
                             <div style={{
-                                backgroundColor: '#f8f9fa',
-                                padding: '30px',
-                                borderRadius: '8px',
+                                ...cardStyles.base,
                                 marginBottom: '30px'
                             }}>
                                 <p style={{
-                                    fontSize: '16px',
-                                    lineHeight: '1.8',
-                                    color: '#333',
+                                    ...textStyles.medium,
                                     marginBottom: '20px'
                                 }}>
                                     I've got 16+ years of diverse industry experience. Practicing Software Development principles, methodologies, mentoring and leading full-stack testing efforts and hands-on coding, leading with the ability to collaborate with software development in all phases of the SDLC and STLC, including planning, coding, testing, troubleshooting, deploying, and ongoing full-stack code maintenance and delivering right product on time.
@@ -187,7 +140,7 @@ class About extends Component {
                                 {/* Certifications */}
                                 <div style={{ marginBottom: '20px' }}>
                                     <h3 style={{
-                                        color: '#00416A',
+                                        color: colors.primary,
                                         fontSize: '20px',
                                         marginBottom: '15px',
                                         fontWeight: 'bold'
@@ -240,18 +193,14 @@ class About extends Component {
                                 {/* Tech Stack */}
                     <div>
                                     <h3 style={{
-                                        color: '#00416A',
+                                        color: colors.primary,
                                         fontSize: '20px',
                                         marginBottom: '15px',
                                         fontWeight: 'bold'
                                     }}>
                                         Expertise:
                                     </h3>
-                                    <p style={{
-                                        fontSize: '16px',
-                                        lineHeight: '1.8',
-                                        color: '#333'
-                                    }}>
+                                    <p style={textStyles.medium}>
                                         Expert in automation across tech stacks (HTML, CSS, Javascript, Java, C#.Net, Python, Selenium, Protractor, CypressIO, PlayWright, WebDriverIO, Appium, API's, Subject7, Katalon Studio, Tricentis Tosca, ACCELQ, Postman, Jmeter, JMeter, Gatling, JUnit, TestNG, Maven, SVN, Git, GitHub, CI Server Jenkins, Quality Center (ALM), JIRA, SQL, and Language-based: JAVA, JavaScript, HTML, CSS, XML, JQuery, JAVA Servlet, JSP) and different types of application (Web, Middleware, APIs and Mobile apps).
                         </p>
                     </div>
@@ -265,7 +214,7 @@ class About extends Component {
                                 marginBottom: '30px'
                             }}>
                                 <h3 style={{
-                                    color: '#00416A',
+                                    color: colors.primary,
                                     fontSize: '20px',
                                     marginBottom: '15px',
                                     fontWeight: 'bold'
@@ -273,31 +222,23 @@ class About extends Component {
                                     Current Role
                                 </h3>
                                 <p style={{
-                                    fontSize: '16px',
-                                    lineHeight: '1.8',
-                                    color: '#333',
+                                    ...textStyles.medium,
                                     marginBottom: '15px'
                                 }}>
                                     In my current role, as Software Dev Architect Engineer, I am responsible to build, design, implement and maintain the automation framework and integrate it with CI/CD pipeline. I am also responsible for bringing in the best industry practices for Software Quality Assurance SMEs practices, coding standards, extensible framework design, and low maintenance automation solutions.
                                 </p>
-                                <p style={{
-                                    fontSize: '16px',
-                                    lineHeight: '1.8',
-                                    color: '#333'
-                                }}>
+                                <p style={textStyles.medium}>
                                     I enabled product owners and Agile teams to adopt Best practices & process in their projects and establish Software Quality Assurance first approach. I take immense pride in cultivating a culture of individual & company growth and actively mentor my team to maximize their potential.
                         </p>
                             </div>
 
                             {/* Founder & Training */}
                             <div style={{
-                                backgroundColor: '#f8f9fa',
-                                padding: '30px',
-                                borderRadius: '8px',
+                                ...cardStyles.base,
                                 marginBottom: '30px'
                             }}>
                                 <h3 style={{
-                                    color: '#00416A',
+                                    color: colors.primary,
                                     fontSize: '20px',
                                     marginBottom: '15px',
                                     fontWeight: 'bold'
@@ -305,18 +246,12 @@ class About extends Component {
                                     Founder & Mentor
                                 </h3>
                                 <p style={{
-                                    fontSize: '16px',
-                                    lineHeight: '1.8',
-                                    color: '#333',
+                                    ...textStyles.medium,
                                     marginBottom: '15px'
                                 }}>
                                     I am also the Founder of Global iTech Solutions Inc. Over the years I have trained hundreds of Quality Assurance Engineers to make a successful transition to Dev and Automation Engineer.
                                 </p>
-                                <p style={{
-                                    fontSize: '16px',
-                                    lineHeight: '1.8',
-                                    color: '#333'
-                                }}>
+                                <p style={textStyles.medium}>
                                     I am actively involved in mentoring, Training, and Coaching, entry-level professionals and fresher to make a successful career in Tech Engineering industry.
                         </p>
                     </div>
@@ -382,24 +317,13 @@ class About extends Component {
                                         href={link.GITHUB}
                                         target="_blank"
                                         rel="noopener noreferrer"
-                                        style={{
-                                            display: 'inline-flex',
-                                            alignItems: 'center',
-                                            padding: '10px 20px',
-                                            backgroundColor: '#333',
-                                            color: '#ffffff',
-                                            textDecoration: 'none',
-                                            borderRadius: '6px',
-                                            fontSize: '16px',
-                                            fontWeight: '500',
-                                            transition: 'all 0.3s ease'
-                                        }}
+                                        style={socialButtonStyles.github}
                                         onMouseEnter={(e) => {
-                                            e.target.style.backgroundColor = '#24292e';
+                                            e.target.style.backgroundColor = colors.githubDark;
                                             e.target.style.transform = 'translateY(-2px)';
                                         }}
                                         onMouseLeave={(e) => {
-                                            e.target.style.backgroundColor = '#333';
+                                            e.target.style.backgroundColor = colors.github;
                                             e.target.style.transform = 'translateY(0)';
                                         }}
                                     >
@@ -442,24 +366,13 @@ class About extends Component {
                                         href={link.YOUTUBE}
                                         target="_blank"
                                         rel="noopener noreferrer"
-                                        style={{
-                                            display: 'inline-flex',
-                                            alignItems: 'center',
-                                            padding: '10px 20px',
-                                            backgroundColor: '#ff0000',
-                                            color: '#ffffff',
-                                            textDecoration: 'none',
-                                            borderRadius: '6px',
-                                            fontSize: '16px',
-                                            fontWeight: '500',
-                                            transition: 'all 0.3s ease'
-                                        }}
+                                        style={socialButtonStyles.youtube}
                                         onMouseEnter={(e) => {
-                                            e.target.style.backgroundColor = '#cc0000';
+                                            e.target.style.backgroundColor = colors.youtubeDark;
                                             e.target.style.transform = 'translateY(-2px)';
                                         }}
                                         onMouseLeave={(e) => {
-                                            e.target.style.backgroundColor = '#ff0000';
+                                            e.target.style.backgroundColor = colors.youtube;
                                             e.target.style.transform = 'translateY(0)';
                                         }}
                                     >
@@ -502,24 +415,13 @@ class About extends Component {
                                         href="https://www.linkedin.com/in/zamanmd/"
                                         target="_blank"
                                         rel="noopener noreferrer"
-                                        style={{
-                                            display: 'inline-flex',
-                                            alignItems: 'center',
-                                            padding: '10px 20px',
-                                            backgroundColor: '#0077b5',
-                                            color: '#ffffff',
-                                            textDecoration: 'none',
-                                            borderRadius: '6px',
-                                            fontSize: '16px',
-                                            fontWeight: '500',
-                                            transition: 'all 0.3s ease'
-                                        }}
+                                        style={socialButtonStyles.linkedin}
                                         onMouseEnter={(e) => {
-                                            e.target.style.backgroundColor = '#005885';
+                                            e.target.style.backgroundColor = colors.linkedinDark;
                                             e.target.style.transform = 'translateY(-2px)';
                                         }}
                                         onMouseLeave={(e) => {
-                                            e.target.style.backgroundColor = '#0077b5';
+                                            e.target.style.backgroundColor = colors.linkedin;
                                             e.target.style.transform = 'translateY(0)';
                                         }}
                                     >
@@ -584,8 +486,7 @@ class About extends Component {
                                 marginBottom: '20px'
                             }}>
                                 <p style={{
-                                    fontSize: '18px',
-                                    lineHeight: '1.8',
+                                    ...textStyles.large,
                                     marginBottom: '20px'
                                 }}>
                                     GITS's service offerings go beyond standard QA — they include advanced testing capabilities such as penetration testing (security testing), network/web application security audits, and comprehensive test automation. Their expertise spans both functional and security aspects, making them a strong partner for businesses seeking high quality and robust software releases.
@@ -597,10 +498,7 @@ class About extends Component {
                                 padding: '30px',
                                 borderRadius: '8px'
                             }}>
-                                <p style={{
-                                    fontSize: '18px',
-                                    lineHeight: '1.8'
-                                }}>
+                                <p style={textStyles.large}>
                                     As a comparatively small but focused company (reported ~10–50 employees), GITS offers specialized QA, automation, and resourcing services — which makes them nimble, personal, and ideal for organizations that want flexible, high-touch partnership rather than large-scale outsourcing.
                         </p>
                     </div>
@@ -610,16 +508,14 @@ class About extends Component {
                     {/* Call to Action */}
                     <section style={{
                         textAlign: 'center',
-                        marginBottom: '60px'
+                        ...sectionStyles.large
                     }}>
                         <div style={{
-                            backgroundColor: '#f8f9fa',
-                            padding: '40px',
-                            borderRadius: '8px',
-                            border: '2px solid #00416A'
+                            ...cardStyles.large,
+                            border: `2px solid ${colors.primary}`
                         }}>
                             <h2 style={{
-                                color: '#00416A',
+                                color: colors.primary,
                                 fontSize: '28px',
                                 marginBottom: '20px',
                                 fontWeight: 'bold'
@@ -627,8 +523,8 @@ class About extends Component {
                                 Ready to Get Started?
                             </h2>
                             <p style={{
-                                fontSize: '18px',
-                                color: '#666',
+                                ...textStyles.large,
+                                color: colors.textLight,
                                 marginBottom: '30px'
                             }}>
                                 Explore our courses, learn about our services, or get in touch with us.
@@ -642,48 +538,28 @@ class About extends Component {
                                 <Link 
                                     to="/courses"
                                     style={{
-                                        display: 'inline-block',
+                                        ...buttonStyles.secondary,
                                         padding: '15px 30px',
                                         fontSize: '18px',
-                                        fontWeight: 'bold',
-                                        color: '#ffffff',
-                                        backgroundColor: '#00416A',
-                                        textDecoration: 'none',
-                                        borderRadius: '8px',
-                                        transition: 'all 0.3s ease',
-                                        border: '2px solid #00416A'
+                                        border: `2px solid ${colors.primary}`
                                     }}
-                                    onMouseEnter={(e) => {
-                                        e.target.style.backgroundColor = '#005a8a';
-                                        e.target.style.transform = 'translateY(-2px)';
-                                    }}
-                                    onMouseLeave={(e) => {
-                                        e.target.style.backgroundColor = '#00416A';
-                                        e.target.style.transform = 'translateY(0)';
-                                    }}
+                                    {...hoverHandlers.buttonSecondary}
                                 >
                                     View Courses
                                 </Link>
                                 <Link 
                                     to="/how-it-works"
                                     style={{
-                                        display: 'inline-block',
+                                        ...buttonStyles.outline,
                                         padding: '15px 30px',
-                                        fontSize: '18px',
-                                        fontWeight: 'bold',
-                                        color: '#00416A',
-                                        backgroundColor: '#ffffff',
-                                        textDecoration: 'none',
-                                        borderRadius: '8px',
-                                        transition: 'all 0.3s ease',
-                                        border: '2px solid #00416A'
+                                        fontSize: '18px'
                                     }}
                                     onMouseEnter={(e) => {
                                         e.target.style.backgroundColor = '#f0f0f0';
                                         e.target.style.transform = 'translateY(-2px)';
                                     }}
                                     onMouseLeave={(e) => {
-                                        e.target.style.backgroundColor = '#ffffff';
+                                        e.target.style.backgroundColor = colors.textWhite;
                                         e.target.style.transform = 'translateY(0)';
                                     }}
                                 >
@@ -692,25 +568,12 @@ class About extends Component {
                                 <Link 
                                     to="/contact"
                                     style={{
-                                        display: 'inline-block',
+                                        ...buttonStyles.secondary,
                                         padding: '15px 30px',
                                         fontSize: '18px',
-                                        fontWeight: 'bold',
-                                        color: '#ffffff',
-                                        backgroundColor: '#00416A',
-                                        textDecoration: 'none',
-                                        borderRadius: '8px',
-                                        transition: 'all 0.3s ease',
-                                        border: '2px solid #00416A'
+                                        border: `2px solid ${colors.primary}`
                                     }}
-                                    onMouseEnter={(e) => {
-                                        e.target.style.backgroundColor = '#005a8a';
-                                        e.target.style.transform = 'translateY(-2px)';
-                                    }}
-                                    onMouseLeave={(e) => {
-                                        e.target.style.backgroundColor = '#00416A';
-                                        e.target.style.transform = 'translateY(0)';
-                                    }}
+                                    {...hoverHandlers.buttonSecondary}
                                 >
                                     Contact Us
                                 </Link>
