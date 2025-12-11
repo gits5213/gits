@@ -1,4 +1,5 @@
 import React from 'react';
+// eslint-disable-next-line no-unused-vars
 import link from '../../../utilities/links.json';
 import GoogleAd from '../../../components/GoogleAd';
 import AgilelLogo from '../../../images/tabs/agileLogo.png'; 
