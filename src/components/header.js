@@ -81,40 +81,6 @@ const headerText = () => {
                     </svg>
                     Portfolio
                 </a>
-                
-                <a 
-                    href={link.SQA_SIGN_UP} 
-                    target="_blank" 
-                    rel="noopener noreferrer"
-                    style={{
-                        display: 'inline-flex',
-                        alignItems: 'center',
-                        padding: '10px 20px',
-                        fontSize: '16px',
-                        fontWeight: '600',
-                        color: '#00416A',
-                        backgroundColor: '#ffffff',
-                        textDecoration: 'none',
-                        borderRadius: '6px',
-                        transition: 'all 0.3s ease',
-                        boxShadow: '0 2px 6px rgba(0,0,0,0.15)'
-                    }}
-                    onMouseEnter={(e) => {
-                        e.target.style.backgroundColor = '#f0f0f0';
-                        e.target.style.transform = 'translateY(-2px)';
-                        e.target.style.boxShadow = '0 4px 12px rgba(0,0,0,0.2)';
-                    }}
-                    onMouseLeave={(e) => {
-                        e.target.style.backgroundColor = '#ffffff';
-                        e.target.style.transform = 'translateY(0)';
-                        e.target.style.boxShadow = '0 2px 6px rgba(0,0,0,0.15)';
-                    }}
-                >
-                    <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor" style={{ marginRight: '8px' }}>
-                        <path d="M19 13h-6v6h-2v-6H5v-2h6V5h2v6h6v2z"/>
-                    </svg>
-                    SQA Sign Up
-                </a>
             </div>
         </div>
     );
