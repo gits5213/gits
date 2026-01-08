@@ -1,5 +1,5 @@
 import React from 'react';
-import { colors, shadows } from '../../utils/globalStyles';
+import { colors } from '../../utils/globalStyles';
 
 /**
  * Reusable PDF Download Component

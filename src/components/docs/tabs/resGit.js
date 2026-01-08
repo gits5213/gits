@@ -6,7 +6,7 @@ import  GIT_CHEATSHEET from '../../../images/tabs/gitCheatSheet.jpeg';
 import Footer from '../../../components/footer';
 import PdfDownload from '../../shared/PdfDownload';
 import { scrollToGitCommand } from '../../../utils/scrollHelpers';
-import { checklistGridStyles, checklistLinkStyles, modernCardStyles } from '../../../utils/globalStyles';
+import { checklistGridStyles, checklistLinkStyles } from '../../../utils/globalStyles';
 
 import { Grid, Cell } from 'react-mdl';
 
