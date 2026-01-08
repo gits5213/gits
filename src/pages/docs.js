@@ -12,6 +12,7 @@ import ResJavascript from '../components/docs/tabs/resJavascript';
 import ResReact from '../components/docs/tabs/resReact';
 import ResJava from '../components/docs/tabs/resJava';
 import ResPython from '../components/docs/tabs/resPython';
+import ResTypeScript from '../components/docs/tabs/resTypeScript';
 import Agile from '../components/docs/tabs/agile';
 import Scrum from '../components/docs/tabs/scrum';
 import Links from '../components/docs/tabs/resLinks';
@@ -39,7 +40,8 @@ class docs extends Component {
         if (path.includes('/python')) return 10;
         if (path.includes('/javascript')) return 11;
         if (path.includes('/reactjs')) return 12;
-        if (path.includes('/links')) return 13;
+        if (path.includes('/typescript')) return 13;
+        if (path.includes('/links')) return 14;
         // Default to agile if just /docs
         return 0;
     }
@@ -73,6 +75,7 @@ class docs extends Component {
             '/docs/python',
             '/docs/javascript',
             '/docs/reactjs',
+            '/docs/typescript',
             '/docs/links'
         ];
         this.props.history.push(tabRoutes[tabId]);
@@ -132,7 +135,11 @@ class docs extends Component {
             return(
                 <ResReact />
             )
-        }else if(this.state.activeTab === 13) {
+        } else if(this.state.activeTab === 13) {
+            return(
+                <ResTypeScript />
+            )
+        }else if(this.state.activeTab === 14) {
             return(
                 <Links />
             )
@@ -155,7 +162,8 @@ class docs extends Component {
             { label: 'PY', id: 10 },
             { label: 'JS', id: 11 },
             { label: 'ReactJS', id: 12 },
-            { label: 'Links', id: 13 }
+            { label: 'TS', id: 13 },
+            { label: 'Links', id: 14 }
         ];
 
         return (

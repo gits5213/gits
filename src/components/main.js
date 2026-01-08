@@ -37,6 +37,7 @@ const Main = () => (
         <Route path='/docs/python' component={Docs} />
         <Route path='/docs/javascript' component={Docs} />
         <Route path='/docs/reactjs' component={Docs} />
+        <Route path='/docs/typescript' component={Docs} />
         <Route path='/docs/links' component={Docs} />
         <Route exact path='/apis' component={APIS} />
         <Route path='/apis/selenium' component={APIS} />

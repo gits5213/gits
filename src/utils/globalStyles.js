@@ -373,3 +373,336 @@ export const spacing = {
   pMedium: { padding: '30px' },
   pLarge: { padding: '40px' },
 };
+
+// Code block styles
+export const codeBlockStyles = {
+  dark: {
+    backgroundColor: '#1e293b',
+    color: '#e2e8f0',
+    padding: '16px',
+    borderRadius: '8px',
+    overflow: 'auto',
+    fontSize: '14px',
+    fontFamily: 'Monaco, "Courier New", monospace',
+    lineHeight: '1.6',
+    border: '1px solid #334155',
+    marginTop: '12px',
+    marginBottom: '12px',
+    textAlign: 'left',
+  },
+  light: {
+    backgroundColor: '#f4f4f4',
+    color: '#333333',
+    padding: '15px',
+    borderRadius: '5px',
+    overflow: 'auto',
+    fontSize: '14px',
+    fontFamily: 'Monaco, "Courier New", monospace',
+    lineHeight: '1.6',
+    border: '1px solid #e0e0e0',
+    marginTop: '12px',
+    marginBottom: '12px',
+    textAlign: 'left',
+  },
+};
+
+// Modern card styles (for checklist pages)
+export const modernCardStyles = {
+  base: {
+    backgroundColor: '#ffffff',
+    borderRadius: '12px',
+    padding: '24px',
+    marginBottom: '24px',
+    boxShadow: '0 2px 8px rgba(0,0,0,0.08)',
+    border: '1px solid #e5e7eb',
+    transition: 'all 0.3s ease',
+    textAlign: 'left',
+  },
+  expandable: {
+    backgroundColor: '#ffffff',
+    borderRadius: '12px',
+    padding: '24px',
+    marginBottom: '24px',
+    boxShadow: '0 2px 8px rgba(0,0,0,0.08)',
+    border: '1px solid #e5e7eb',
+  },
+  grid: {
+    backgroundColor: '#ffffff',
+    borderRadius: '12px',
+    padding: '20px',
+    boxShadow: '0 2px 8px rgba(0,0,0,0.08)',
+    border: '1px solid #e5e7eb',
+    transition: 'all 0.3s ease',
+    textAlign: 'left',
+    cursor: 'pointer',
+  },
+};
+
+// Section header styles
+export const sectionHeaderStyles = {
+  primary: {
+    color: colors.primary,
+    fontSize: '20px',
+    fontWeight: '600',
+    marginBottom: '16px',
+    paddingBottom: '12px',
+    borderBottom: '2px solid #e5e7eb',
+    textAlign: 'left',
+  },
+  large: {
+    color: colors.primary,
+    fontSize: '24px',
+    fontWeight: '600',
+    marginBottom: '24px',
+    textAlign: 'left',
+  },
+};
+
+// Item header styles (for code examples)
+export const itemHeaderStyles = {
+  base: {
+    fontSize: '16px',
+    fontWeight: '600',
+    color: '#1e293b',
+    marginBottom: '8px',
+    marginTop: '20px',
+    textAlign: 'left',
+  },
+};
+
+// Page container styles
+export const pageContainerStyles = {
+  modern: {
+    maxWidth: '1200px',
+    margin: '0 auto',
+    padding: '32px 20px',
+    backgroundColor: '#f8fafc',
+    textAlign: 'left',
+  },
+  standard: {
+    fontFamily: "'Segoe UI', Tahoma, Geneva, Verdana, sans-serif",
+    width: '100%',
+    marginLeft: '1em',
+    height: '100vh',
+    paddingLeft: '40px',
+    paddingRight: '40px',
+    textAlign: 'left',
+    color: 'black',
+  },
+};
+
+// Hero section styles (modern variant)
+export const modernHeroStyles = {
+  base: {
+    background: `linear-gradient(135deg, ${colors.primary} 0%, ${colors.primaryDark} 100%)`,
+    color: colors.textWhite,
+    padding: '48px 32px',
+    textAlign: 'center',
+    borderRadius: '16px',
+    marginBottom: '48px',
+    boxShadow: '0 8px 24px rgba(0,65,106,0.3)',
+  },
+  title: {
+    fontSize: '42px',
+    marginBottom: '16px',
+    fontWeight: '700',
+    letterSpacing: '-0.5px',
+  },
+  subtitle: {
+    fontSize: '18px',
+    opacity: '0.95',
+    fontWeight: '300',
+  },
+};
+
+// PDF Download section styles
+export const pdfDownloadStyles = {
+  container: {
+    marginBottom: '40px',
+    textAlign: 'center',
+  },
+  card: {
+    backgroundColor: '#f8fafc',
+    borderRadius: '12px',
+    padding: '32px',
+    border: '2px dashed #cbd5e1',
+    marginBottom: '24px',
+  },
+  title: {
+    marginBottom: '16px',
+    color: '#1e293b',
+    fontSize: '24px',
+    fontWeight: '600',
+  },
+  description: {
+    marginBottom: '24px',
+    color: '#64748b',
+    fontSize: '16px',
+    lineHeight: '1.6',
+  },
+  button: {
+    display: 'inline-block',
+    backgroundColor: colors.primary,
+    color: colors.textWhite,
+    padding: '14px 32px',
+    borderRadius: '8px',
+    textDecoration: 'none',
+    fontSize: '16px',
+    fontWeight: '600',
+    transition: 'all 0.3s ease',
+    boxShadow: '0 4px 6px rgba(0, 65, 106, 0.2)',
+    border: 'none',
+    cursor: 'pointer',
+  },
+};
+
+// Grid layout styles for checklists
+export const checklistGridStyles = {
+  modern: {
+    display: 'grid',
+    gridTemplateColumns: 'repeat(auto-fit, minmax(300px, 1fr))',
+    gap: '20px',
+    marginTop: '24px',
+  },
+  compact: {
+    display: 'grid',
+    gridTemplateColumns: 'repeat(auto-fit, minmax(250px, 1fr))',
+    gap: '16px',
+    marginTop: '16px',
+  },
+};
+
+// Link styles for checklist items
+export const checklistLinkStyles = {
+  base: {
+    color: colors.primary,
+    textDecoration: 'none',
+    borderBottom: '1px dotted',
+    borderBottomColor: colors.primary,
+    cursor: 'pointer',
+    transition: 'all 0.2s ease',
+  },
+  hover: {
+    color: colors.primaryDark,
+    borderBottomColor: colors.primaryDark,
+  },
+};
+
+// Footer styles - Reusable footer component styles template
+export const footerStyles = {
+  base: {
+    backgroundColor: '#0f172a',
+    color: '#e2e8f0',
+    padding: '64px 20px 32px',
+    marginTop: 0,
+    width: '100vw',
+    position: 'relative',
+    left: '50%',
+    transform: 'translateX(-50%)',
+    boxSizing: 'border-box',
+    borderTop: '1px solid rgba(255, 255, 255, 0.1)',
+    display: 'block',
+  },
+  container: {
+    ...containers.main,
+    width: '100%',
+    boxSizing: 'border-box',
+  },
+  grid: {
+    ...gridStyles.threeCol,
+    gap: '48px',
+    marginBottom: '48px',
+    alignItems: 'flex-start',
+    gridTemplateColumns: 'repeat(auto-fit, minmax(240px, 1fr))',
+    textAlign: 'left',
+  },
+  section: {
+    display: 'flex',
+    flexDirection: 'column',
+    alignItems: 'flex-start',
+    width: '100%',
+    minWidth: 0,
+    textAlign: 'left',
+  },
+  heading: {
+    color: colors.textWhite,
+    fontSize: '18px',
+    fontWeight: '700',
+    marginBottom: spacing.mbMedium.marginBottom,
+    letterSpacing: '0.5px',
+    textTransform: 'uppercase',
+    position: 'relative',
+    paddingBottom: '12px',
+    display: 'block',
+    width: '100%',
+    textAlign: 'left',
+    lineHeight: '1.2',
+  },
+  headingUnderline: {
+    position: 'absolute',
+    bottom: 0,
+    left: 0,
+    width: '40px',
+    height: '3px',
+    backgroundColor: colors.primary,
+    borderRadius: '2px',
+    display: 'block',
+  },
+  list: {
+    ...listStyles.unstyled,
+    display: 'flex',
+    flexDirection: 'column',
+    gap: '12px',
+    textAlign: 'left',
+    alignItems: 'flex-start',
+  },
+  link: {
+    ...linkStyles.footer,
+    fontSize: '15px',
+    display: 'inline-block',
+    lineHeight: '1.6',
+    position: 'relative',
+    paddingLeft: '0',
+    color: '#cbd5e1',
+  },
+  divider: {
+    borderTop: '1px solid rgba(255, 255, 255, 0.1)',
+    paddingTop: '32px',
+    ...spacing.mbMedium,
+  },
+  bottomSection: {
+    display: 'flex',
+    flexDirection: 'column',
+    alignItems: 'center',
+    gap: '24px',
+    textAlign: 'center',
+  },
+  copyright: {
+    fontSize: '14px',
+    color: '#94a3b8',
+    margin: 0,
+    lineHeight: '1.6',
+  },
+  copyrightLink: {
+    ...linkStyles.primary,
+    fontSize: '14px',
+  },
+};
+
+// Footer hover handlers - Reusable hover functions
+export const footerHoverHandlers = {
+  linkHover: (e) => {
+    e.target.style.color = colors.primary;
+    e.target.style.transform = 'translateX(4px)';
+  },
+  linkLeave: (e) => {
+    e.target.style.color = '#cbd5e1';
+    e.target.style.transform = 'translateX(0)';
+  },
+  copyrightLinkHover: (e) => {
+    e.target.style.color = colors.primaryDark;
+  },
+  copyrightLinkLeave: (e) => {
+    e.target.style.color = colors.primary;
+  },
+};
