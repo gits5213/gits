@@ -27,6 +27,8 @@ const PdfDownload = ({
     };
 
     const downloadName = downloadFileName || pdfPath;
+    const baseUrl = process.env.PUBLIC_URL || '';
+    const pdfUrl = `${baseUrl}/resources/${pdfPath}`.replace(/\/+/g, '/');
 
     return (
         <section style={{ 
@@ -57,7 +59,7 @@ const PdfDownload = ({
                     {description}
                 </p>
                 <a
-                    href={`/resources/${pdfPath}`}
+                    href={pdfUrl}
                     download={downloadName}
                     style={{
                         display: 'inline-block',
