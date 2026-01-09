@@ -538,7 +538,7 @@ reporter: [
 
             {/* PDF Download Section */}
             <PdfDownload
-                pdfPath="Playwright_TS_REST_API_Automation_Handout.pdfpdf"
+                pdfPath="Playwright_TS_REST_API_Automation_Handout.pdf"
                 title="📥 Download REST API Automation PDF Handout"
                 description="Download the complete REST API automation checklist for Playwright TypeScript (PDF format)"
                 downloadFileName="Playwright_TS_REST_API_Automation_Handout.pdf"
