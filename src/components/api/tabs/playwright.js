@@ -16,6 +16,10 @@ const ResPlaywright = () => {
     const [isRoleAuthExpanded, setIsRoleAuthExpanded] = useState(false);
     // State for user events master list section collapse/expand
     const [isUserEventsExpanded, setIsUserEventsExpanded] = useState(false);
+    // State for Cucumber section collapse/expand
+    const [isCucumberExpanded, setIsCucumberExpanded] = useState(false);
+    // State for Cucumber Gherkin E2E section collapse/expand
+    const [isCucumberGherkinExpanded, setIsCucumberGherkinExpanded] = useState(false);
 
     // Toggle checklist section
     const toggleChecklist = () => {
@@ -35,6 +39,44 @@ const ResPlaywright = () => {
     // Toggle user events master list section
     const toggleUserEvents = () => {
         setIsUserEventsExpanded(!isUserEventsExpanded);
+    };
+
+    // Toggle Cucumber section
+    const toggleCucumber = () => {
+        setIsCucumberExpanded(!isCucumberExpanded);
+    };
+
+    // Toggle Cucumber Gherkin E2E section
+    const toggleCucumberGherkin = () => {
+        setIsCucumberGherkinExpanded(!isCucumberGherkinExpanded);
+    };
+
+    // Map checklist items to their corresponding section IDs
+    const getChecklistItemLink = (item) => {
+        const linkMap = {
+            'Use Node LTS and TypeScript': 'cucumber-section-1',
+            'Install: @cucumber/cucumber, playwright, ts-node, typescript': 'cucumber-section-1',
+            'Keep .feature files under features/': 'cucumber-section-0',
+            'Keep step definitions under features/step-definitions/': 'cucumber-section-0',
+            'Keep hooks under features/support/': 'cucumber-section-0',
+            'Use a World (context) to share page, context, and state': 'cucumber-section-3',
+            'Use playwright.config or a custom config file for Cucumber runs': 'cucumber-section-2',
+            'Generate reports (HTML/JUnit) and attach screenshots/traces on failure': 'cucumber-section-4',
+            'Each scenario has 1 clear business intent': 'cucumber-section-5',
+            'Use Given / When / Then correctly (setup / action / expected result)': 'cucumber-section-5',
+            'Prefer Background for common preconditions': 'cucumber-section-6',
+            'Use Scenario Outline for data-driven variations': 'cucumber-section-8',
+            'Use Data Tables for structured inputs': 'cucumber-section-9',
+            'Use Doc Strings for long text (payloads, expected messages)': 'cucumber-section-10',
+            'Use Tags for suite control (@smoke, @regression, @wip)': 'cucumber-section-7',
+            'No waitForTimeout() unless approved (use auto-waits / assertions)': null,
+            'Use stable locators: getByRole, getByLabel, getByTestId': null,
+            'Steps should be thin (call page objects / helper methods)': 'cucumber-page-objects',
+            'Assertions live in Then (or in helper assertions) and must be meaningful': 'cucumber-section-5',
+            'Capture failure evidence: screenshot + trace (optional video)': 'cucumber-section-4',
+            'Keep secrets out of repo (use .env + environment variables)': null
+        };
+        return linkMap[item] || null;
     };
 
     // Helper function to remove markdown syntax
@@ -3019,6 +3061,1213 @@ use: {
                         ))}
                     </div>
                 </div>
+                    </div>
+                )}
+            </div>
+
+            {/* Playwright + Cucumber (TypeScript) Checklist Section */}
+            <div style={{
+                ...cardStyle,
+                marginBottom: '48px'
+            }}>
+                <div
+                    onClick={toggleCucumber}
+                    style={{
+                        cursor: 'pointer',
+                        display: 'flex',
+                        justifyContent: 'space-between',
+                        alignItems: 'center',
+                        marginBottom: isCucumberExpanded ? '24px' : '0',
+                        paddingBottom: isCucumberExpanded ? '20px' : '0',
+                        borderBottom: isCucumberExpanded ? '2px solid #00416A' : 'none',
+                        transition: 'all 0.3s ease'
+                    }}
+                    onMouseEnter={(e) => {
+                        if (!isCucumberExpanded) {
+                            e.currentTarget.style.backgroundColor = '#f0f7fa';
+                        }
+                    }}
+                    onMouseLeave={(e) => {
+                        if (!isCucumberExpanded) {
+                            e.currentTarget.style.backgroundColor = 'transparent';
+                        }
+                    }}
+                >
+                    <div>
+                        <h2 style={{ 
+                            color: '#00416A', 
+                            fontSize: '32px', 
+                            marginBottom: '8px',
+                            fontWeight: '700',
+                            textAlign: 'left',
+                            margin: 0
+                        }}>
+                            Playwright + Cucumber (TypeScript) Checklist
+                        </h2>
+                        <p style={{ 
+                            fontSize: '16px', 
+                            color: '#64748b',
+                            marginBottom: 0,
+                            lineHeight: '1.6',
+                            textAlign: 'left'
+                        }}>
+                            Below is an <strong>end-to-end Playwright + Cucumber (TypeScript) checklist</strong>, then the <strong>definitions + one-by-one examples</strong> your students can reuse throughout the course.
+                        </p>
+                        <p style={{ 
+                            fontSize: '14px', 
+                            color: '#94a3b8',
+                            marginTop: '8px',
+                            marginBottom: 0,
+                            lineHeight: '1.6',
+                            textAlign: 'left',
+                            fontStyle: 'italic'
+                        }}>
+                            Note: Using the common stack <strong>@cucumber/cucumber + Playwright</strong> (not @playwright/test runner). This is the "classic" Playwright+Cucumber integration.
+                        </p>
+                    </div>
+                    <span style={{
+                        fontSize: '32px',
+                        color: '#00416A',
+                        fontWeight: 'bold',
+                        marginLeft: '20px',
+                        flexShrink: 0,
+                        transition: 'transform 0.3s ease'
+                    }}>
+                        {isCucumberExpanded ? '−' : '+'}
+                    </span>
+                </div>
+
+                {isCucumberExpanded && (
+                    <div>
+                        {/* Master Checklist */}
+                        <div style={{ marginBottom: '48px' }}>
+                            <h3 style={{
+                                color: '#00416A',
+                                fontSize: '28px',
+                                fontWeight: '600',
+                                marginBottom: '24px',
+                                textAlign: 'left'
+                            }}>
+                                1) Master Checklist (Students should follow all course)
+                            </h3>
+                            
+                            <div style={checklistGridStyles.modern}>
+                                {[
+                                    {
+                                        title: 'A. Project & Tooling',
+                                        items: [
+                                            'Node.js LTS installed',
+                                            'TypeScript enabled (tsconfig.json)',
+                                            'Packages installed: playwright, @cucumber/cucumber, ts-node, typescript',
+                                            'Playwright browsers installed (npx playwright install)',
+                                            'Lint/format optional (ESLint/Prettier)'
+                                        ]
+                                    },
+                                    {
+                                        title: 'B. Folder Structure Standard',
+                                        items: [
+                                            'features/ (Gherkin .feature files)',
+                                            'features/step-definitions/ (TS step files)',
+                                            'features/support/ (hooks, world, config)',
+                                            'src/pages/ (Page Objects)',
+                                            'src/utils/ (helpers, waits, data)',
+                                            'reports/ (html/json/junit outputs)',
+                                            'screenshots/ + traces/ (optional artifacts)'
+                                        ]
+                                    },
+                                    {
+                                        title: 'C. Cucumber Config & Execution',
+                                        items: [
+                                            'cucumber.js config created (paths, ts-node/register, formats)',
+                                            'Tags supported (@smoke, @regression, @wip)',
+                                            'Parallel execution configured (optional)',
+                                            'Clean npm scripts (npm run test:smoke, npm run test:regression)'
+                                        ]
+                                    },
+                                    {
+                                        title: 'D. Playwright Lifecycle',
+                                        items: [
+                                            'Browser launched in BeforeAll',
+                                            'New context/page created in Before per scenario (isolation)',
+                                            'Page closed in After',
+                                            'Browser closed in AfterAll'
+                                        ]
+                                    },
+                                    {
+                                        title: 'E. Hooks & Evidence',
+                                        items: [
+                                            'Screenshot on failure',
+                                            'Attach screenshot to report',
+                                            'Optional: video/trace strategy (if using Playwright context options)'
+                                        ]
+                                    },
+                                    {
+                                        title: 'F. Step Definition Quality',
+                                        items: [
+                                            'Steps are small and readable (avoid too many actions in one step)',
+                                            'Assertions only in Then (recommended)',
+                                            'No hard waits (waitForTimeout) unless last resort',
+                                            'Use stable locators (getByRole, getByLabel, data-testid)'
+                                        ]
+                                    },
+                                    {
+                                        title: 'G. Data Strategy',
+                                        items: [
+                                            'Scenario Outline for data-driven tests',
+                                            'Data Tables for structured input',
+                                            'Test data separated from steps (fixtures/json/env)'
+                                        ]
+                                    },
+                                    {
+                                        title: 'H. Page Object Pattern',
+                                        items: [
+                                            'Page objects hold selectors/actions',
+                                            'Steps call page methods, not raw selectors everywhere'
+                                        ]
+                                    },
+                                    {
+                                        title: 'I. CI Readiness',
+                                        items: [
+                                            'Headless mode supported',
+                                            'Exit codes correct',
+                                            'Reports generated (json/junit/html)',
+                                            'Artifacts archived (reports + screenshots)'
+                                        ]
+                                    }
+                                ].map((section, idx) => (
+                                    <div key={idx} style={{
+                                        backgroundColor: '#ffffff',
+                                        borderRadius: '12px',
+                                        padding: '24px',
+                                        border: '1px solid #e5e7eb',
+                                        boxShadow: '0 2px 4px rgba(0,0,0,0.05)'
+                                    }}>
+                                        <h4 style={{
+                                            color: '#00416A',
+                                            fontSize: '20px',
+                                            fontWeight: '600',
+                                            marginBottom: '16px',
+                                            marginTop: 0
+                                        }}>
+                                            {section.title}
+                                        </h4>
+                                        <ul style={{
+                                            margin: 0,
+                                            paddingLeft: '20px',
+                                            listStyleType: 'none'
+                                        }}>
+                                            {section.items.map((item, itemIdx) => (
+                                                <li key={itemIdx} style={{
+                                                    marginBottom: '10px',
+                                                    color: '#475569',
+                                                    fontSize: '14px',
+                                                    lineHeight: '1.6',
+                                                    position: 'relative',
+                                                    paddingLeft: '24px'
+                                                }}>
+                                                    <span style={{
+                                                        position: 'absolute',
+                                                        left: 0,
+                                                        color: '#00416A',
+                                                        fontWeight: 'bold'
+                                                    }}>☐</span>
+                                                    {item}
+                                                </li>
+                                            ))}
+                                        </ul>
+                                    </div>
+                                ))}
+                            </div>
+                        </div>
+
+                        {/* Definitions + Examples */}
+                        <div style={{ marginBottom: '48px' }}>
+                            <h3 style={{
+                                color: '#00416A',
+                                fontSize: '28px',
+                                fontWeight: '600',
+                                marginBottom: '24px',
+                                textAlign: 'left'
+                            }}>
+                                2) Definitions + Examples (one-by-one)
+                            </h3>
+
+                            {/* 2.1 Feature File */}
+                            <div style={{ marginBottom: '32px' }}>
+                                <h4 style={itemHeaderStyle}>2.1 Feature File</h4>
+                                <p style={{ marginBottom: '12px', color: '#475569', lineHeight: '1.6', textAlign: 'left' }}>
+                                    <strong style={{ color: '#1e293b' }}>Definition:</strong> A .feature file contains business-readable acceptance criteria in <strong>Gherkin</strong>.
+                                </p>
+                                <p style={{ marginBottom: '12px', color: '#475569', lineHeight: '1.6', textAlign: 'left' }}>
+                                    <strong style={{ color: '#1e293b' }}>Example: features/login.feature</strong>
+                                </p>
+                                <pre style={codeBlockStyle}>{`@smoke
+Feature: Login
+
+  As a registered user
+  I want to log in
+  So that I can access the dashboard
+
+  Scenario: Successful login
+    Given I am on the login page
+    When I login with username "standard_user" and password "secret"
+    Then I should see the dashboard`}</pre>
+                            </div>
+
+                            {/* 2.2 Steps */}
+                            <div style={{ marginBottom: '32px' }}>
+                                <h4 style={itemHeaderStyle}>2.2 Steps (Given / When / Then)</h4>
+                                <p style={{ marginBottom: '12px', color: '#475569', lineHeight: '1.6', textAlign: 'left' }}>
+                                    <strong style={{ color: '#1e293b' }}>Definition:</strong>
+                                </p>
+                                <ul style={{ marginBottom: '12px', color: '#475569', lineHeight: '1.6', paddingLeft: '24px' }}>
+                                    <li><strong>Given</strong> = precondition / starting state</li>
+                                    <li><strong>When</strong> = action</li>
+                                    <li><strong>Then</strong> = expected result (assertion)</li>
+                                </ul>
+                                <p style={{ marginBottom: '12px', color: '#475569', lineHeight: '1.6', textAlign: 'left' }}>
+                                    <strong style={{ color: '#1e293b' }}>Example: features/step-definitions/login.steps.ts</strong>
+                                </p>
+                                <pre style={codeBlockStyle}>{`import { Given, When, Then } from "@cucumber/cucumber";
+import { expect } from "@playwright/test";
+import { getPage } from "../support/world";
+
+Given("I am on the login page", async () => {
+  const page = getPage();
+  await page.goto(process.env.BASE_URL + "/login");
+});
+
+When(
+  "I login with username {string} and password {string}",
+  async (username: string, password: string) => {
+    const page = getPage();
+    await page.getByLabel("Username").fill(username);
+    await page.getByLabel("Password").fill(password);
+    await page.getByRole("button", { name: "Sign in" }).click();
+  }
+);
+
+Then("I should see the dashboard", async () => {
+  const page = getPage();
+  await expect(page.getByRole("heading", { name: "Dashboard" })).toBeVisible();
+});`}</pre>
+                            </div>
+
+                            {/* 2.3 Background */}
+                            <div style={{ marginBottom: '32px' }}>
+                                <h4 style={itemHeaderStyle}>2.3 Background</h4>
+                                <p style={{ marginBottom: '12px', color: '#475569', lineHeight: '1.6', textAlign: 'left' }}>
+                                    <strong style={{ color: '#1e293b' }}>Definition:</strong> Steps that run <strong>before every scenario</strong> in the same feature.
+                                </p>
+                                <p style={{ marginBottom: '12px', color: '#475569', lineHeight: '1.6', textAlign: 'left' }}>
+                                    <strong style={{ color: '#1e293b' }}>Example</strong>
+                                </p>
+                                <pre style={codeBlockStyle}>{`Feature: Account
+
+  Background:
+    Given I am logged in as "standard_user"
+
+  Scenario: View profile
+    When I open the profile page
+    Then I should see my profile info`}</pre>
+                            </div>
+
+                            {/* 2.4 Scenario Outline */}
+                            <div style={{ marginBottom: '32px' }}>
+                                <h4 style={itemHeaderStyle}>2.4 Scenario Outline (Data-driven)</h4>
+                                <p style={{ marginBottom: '12px', color: '#475569', lineHeight: '1.6', textAlign: 'left' }}>
+                                    <strong style={{ color: '#1e293b' }}>Definition:</strong> Run the same scenario multiple times with different input data.
+                                </p>
+                                <p style={{ marginBottom: '12px', color: '#475569', lineHeight: '1.6', textAlign: 'left' }}>
+                                    <strong style={{ color: '#1e293b' }}>Example</strong>
+                                </p>
+                                <pre style={codeBlockStyle}>{`@regression
+Scenario Outline: Login validation
+  Given I am on the login page
+  When I login with username "<username>" and password "<password>"
+  Then I should see "<message>"
+
+Examples:
+  | username       | password | message              |
+  | standard_user  | secret   | Dashboard            |
+  | wrong_user     | secret   | Invalid credentials  |`}</pre>
+                            </div>
+
+                            {/* 2.5 Data Tables */}
+                            <div style={{ marginBottom: '32px' }}>
+                                <h4 style={itemHeaderStyle}>2.5 Data Tables</h4>
+                                <p style={{ marginBottom: '12px', color: '#475569', lineHeight: '1.6', textAlign: 'left' }}>
+                                    <strong style={{ color: '#1e293b' }}>Definition:</strong> Pass structured data (multiple fields/rows) to a step.
+                                </p>
+                                <p style={{ marginBottom: '12px', color: '#475569', lineHeight: '1.6', textAlign: 'left' }}>
+                                    <strong style={{ color: '#1e293b' }}>Example</strong>
+                                </p>
+                                <pre style={codeBlockStyle}>{`Scenario: Create user
+  Given I create a user with details:
+    | field    | value         |
+    | name     | John          |
+    | email    | john@test.com |
+    | role     | admin         |
+  Then the user should be created successfully`}</pre>
+                                <p style={{ marginBottom: '12px', color: '#475569', lineHeight: '1.6', textAlign: 'left', marginTop: '16px' }}>
+                                    <strong style={{ color: '#1e293b' }}>Step Example</strong>
+                                </p>
+                                <pre style={codeBlockStyle}>{`import { Given } from "@cucumber/cucumber";
+import { DataTable } from "@cucumber/cucumber";
+
+Given("I create a user with details:", async (table: DataTable) => {
+  const data = table.rowsHash(); // { field: value }
+  // Use data.name, data.email, data.role ...
+});`}</pre>
+                            </div>
+
+                            {/* 2.6 Doc Strings */}
+                            <div style={{ marginBottom: '32px' }}>
+                                <h4 style={itemHeaderStyle}>2.6 Doc Strings</h4>
+                                <p style={{ marginBottom: '12px', color: '#475569', lineHeight: '1.6', textAlign: 'left' }}>
+                                    <strong style={{ color: '#1e293b' }}>Definition:</strong> Multi-line text payloads for APIs, large inputs, etc.
+                                </p>
+                                <p style={{ marginBottom: '12px', color: '#475569', lineHeight: '1.6', textAlign: 'left' }}>
+                                    <strong style={{ color: '#1e293b' }}>Example</strong>
+                                </p>
+                                <pre style={codeBlockStyle}>{`Scenario: Submit JSON payload
+  When I send payload:
+    """
+    { "name": "John", "role": "admin" }
+    """
+  Then the response status should be 201`}</pre>
+                            </div>
+
+                            {/* 2.7 Tags */}
+                            <div style={{ marginBottom: '32px' }}>
+                                <h4 style={itemHeaderStyle}>2.7 Tags</h4>
+                                <p style={{ marginBottom: '12px', color: '#475569', lineHeight: '1.6', textAlign: 'left' }}>
+                                    <strong style={{ color: '#1e293b' }}>Definition:</strong> Labels to filter scenarios during execution.
+                                </p>
+                                <p style={{ marginBottom: '12px', color: '#475569', lineHeight: '1.6', textAlign: 'left' }}>
+                                    <strong style={{ color: '#1e293b' }}>Common tags</strong>
+                                </p>
+                                <ul style={{ marginBottom: '12px', color: '#475569', lineHeight: '1.6', paddingLeft: '24px' }}>
+                                    <li><code>@smoke</code> (fast critical)</li>
+                                    <li><code>@regression</code> (full suite)</li>
+                                    <li><code>@wip</code> (work in progress)</li>
+                                    <li><code>@skip</code> (skip intentionally)</li>
+                                </ul>
+                                <p style={{ marginBottom: '12px', color: '#475569', lineHeight: '1.6', textAlign: 'left' }}>
+                                    <strong style={{ color: '#1e293b' }}>Example</strong>
+                                </p>
+                                <pre style={codeBlockStyle}>{`@smoke @login
+Scenario: Successful login
+  ...
+
+Run:
+npx cucumber-js --tags "@smoke"`}</pre>
+                            </div>
+
+                            {/* 2.8 Hooks */}
+                            <div style={{ marginBottom: '32px' }}>
+                                <h4 style={itemHeaderStyle}>2.8 Hooks (Before/After)</h4>
+                                <p style={{ marginBottom: '12px', color: '#475569', lineHeight: '1.6', textAlign: 'left' }}>
+                                    <strong style={{ color: '#1e293b' }}>Definition:</strong> Code that runs automatically around scenarios.
+                                </p>
+                                <p style={{ marginBottom: '12px', color: '#475569', lineHeight: '1.6', textAlign: 'left' }}>
+                                    <strong style={{ color: '#1e293b' }}>Example: features/support/hooks.ts</strong>
+                                </p>
+                                <pre style={codeBlockStyle}>{`import { BeforeAll, AfterAll, Before, After, Status } from "@cucumber/cucumber";
+import { chromium, Browser, BrowserContext, Page } from "playwright";
+import { setWorldPage } from "./world";
+
+let browser: Browser;
+let context: BrowserContext;
+let page: Page;
+
+BeforeAll(async () => {
+  browser = await chromium.launch({ headless: true });
+});
+
+Before(async () => {
+  context = await browser.newContext();
+  page = await context.newPage();
+  setWorldPage(page);
+});
+
+After(async function (scenario) {
+  if (scenario.result?.status === Status.FAILED) {
+    const screenshot = await page.screenshot({ fullPage: true });
+    await this.attach(screenshot, "image/png");
+  }
+  await page.close();
+  await context.close();
+});
+
+AfterAll(async () => {
+  await browser.close();
+});`}</pre>
+                            </div>
+
+                            {/* 2.9 World */}
+                            <div style={{ marginBottom: '32px' }}>
+                                <h4 style={itemHeaderStyle}>2.9 World (Shared Context Per Scenario)</h4>
+                                <p style={{ marginBottom: '12px', color: '#475569', lineHeight: '1.6', textAlign: 'left' }}>
+                                    <strong style={{ color: '#1e293b' }}>Definition:</strong> A per-scenario container to store state like page, created entities, tokens, etc.
+                                </p>
+                                <p style={{ marginBottom: '12px', color: '#475569', lineHeight: '1.6', textAlign: 'left' }}>
+                                    <strong style={{ color: '#1e293b' }}>Example: features/support/world.ts</strong>
+                                </p>
+                                <pre style={codeBlockStyle}>{`import { setWorldConstructor, World } from "@cucumber/cucumber";
+import type { Page } from "playwright";
+
+let _page: Page | undefined;
+
+export function setWorldPage(page: Page) {
+  _page = page;
+}
+export function getPage(): Page {
+  if (!_page) throw new Error("Page not initialized. Did hooks run?");
+  return _page;
+}
+
+class CustomWorld extends World {
+  public createdUserId?: string;
+}
+setWorldConstructor(CustomWorld);`}</pre>
+                            </div>
+
+                            {/* 2.10 Page Object */}
+                            <div style={{ marginBottom: '32px' }}>
+                                <h4 style={itemHeaderStyle}>2.10 Page Object (Recommended)</h4>
+                                <p style={{ marginBottom: '12px', color: '#475569', lineHeight: '1.6', textAlign: 'left' }}>
+                                    <strong style={{ color: '#1e293b' }}>Definition:</strong> Encapsulate UI locators + actions in a class.
+                                </p>
+                                <p style={{ marginBottom: '12px', color: '#475569', lineHeight: '1.6', textAlign: 'left' }}>
+                                    <strong style={{ color: '#1e293b' }}>Example: src/pages/LoginPage.ts</strong>
+                                </p>
+                                <pre style={codeBlockStyle}>{`import type { Page } from "playwright";
+
+export class LoginPage {
+  constructor(private page: Page) {}
+
+  async goto(baseUrl: string) {
+    await this.page.goto(\`\${baseUrl}/login\`);
+  }
+
+  async login(username: string, password: string) {
+    await this.page.getByLabel("Username").fill(username);
+    await this.page.getByLabel("Password").fill(password);
+    await this.page.getByRole("button", { name: "Sign in" }).click();
+  }
+}`}</pre>
+                                <p style={{ marginBottom: '12px', color: '#475569', lineHeight: '1.6', textAlign: 'left', marginTop: '16px' }}>
+                                    <strong style={{ color: '#1e293b' }}>Step uses it</strong>
+                                </p>
+                                <pre style={codeBlockStyle}>{`import { When } from "@cucumber/cucumber";
+import { LoginPage } from "../../src/pages/LoginPage";
+import { getPage } from "../support/world";
+
+When("I login as {string} with {string}", async (u: string, p: string) => {
+  const page = getPage();
+  const login = new LoginPage(page);
+  await login.login(u, p);
+});`}</pre>
+                            </div>
+                        </div>
+
+                        {/* Run Configuration */}
+                        <div style={{ marginBottom: '48px' }}>
+                            <h3 style={{
+                                color: '#00416A',
+                                fontSize: '28px',
+                                fontWeight: '600',
+                                marginBottom: '24px',
+                                textAlign: 'left'
+                            }}>
+                                3) Run Configuration (So students can run suites easily)
+                            </h3>
+
+                            <div style={{ marginBottom: '32px' }}>
+                                <h4 style={itemHeaderStyle}>cucumber.js (basic and standard)</h4>
+                                <pre style={codeBlockStyle}>{`module.exports = {
+  default: {
+    require: [
+      "features/step-definitions/**/*.ts",
+      "features/support/**/*.ts"
+    ],
+    requireModule: ["ts-node/register"],
+    format: [
+      "progress",
+      "json:reports/cucumber-report.json"
+    ],
+    parallel: 2,
+    tags: "not @skip"
+  }
+};`}</pre>
+                            </div>
+
+                            <div style={{ marginBottom: '32px' }}>
+                                <h4 style={itemHeaderStyle}>package.json scripts</h4>
+                                <pre style={codeBlockStyle}>{`{
+  "scripts": {
+    "test": "cucumber-js",
+    "test:smoke": "cucumber-js --tags \"@smoke\"",
+    "test:regression": "cucumber-js --tags \"@regression\"",
+    "test:wip": "cucumber-js --tags \"@wip\""
+  }
+}`}</pre>
+                            </div>
+                        </div>
+
+                        {/* Golden Path */}
+                        <div style={{ marginBottom: '32px' }}>
+                            <h3 style={{
+                                color: '#00416A',
+                                fontSize: '28px',
+                                fontWeight: '600',
+                                marginBottom: '24px',
+                                textAlign: 'left'
+                            }}>
+                                4) Minimal "Golden Path" Example (What students should memorize)
+                            </h3>
+                            <p style={{ marginBottom: '16px', color: '#475569', lineHeight: '1.6', textAlign: 'left' }}>
+                                <strong style={{ color: '#1e293b' }}>Feature → Step defs → Hooks → Run by tags</strong>
+                            </p>
+                            <ol style={{ marginBottom: '16px', color: '#475569', lineHeight: '1.8', paddingLeft: '24px' }}>
+                                <li>Write .feature</li>
+                                <li>Implement step definitions</li>
+                                <li>Use hooks to create/close Playwright page per scenario</li>
+                                <li>Add tags</li>
+                                <li>Run <code>npm run test:smoke</code></li>
+                            </ol>
+                        </div>
+                    </div>
+                )}
+            </div>
+
+            {/* Cucumber (Gherkin) + Playwright TypeScript E2E Checklist Section */}
+            <div style={{
+                ...cardStyle,
+                marginBottom: '48px'
+            }}>
+                <div
+                    onClick={toggleCucumberGherkin}
+                    style={{
+                        cursor: 'pointer',
+                        display: 'flex',
+                        justifyContent: 'space-between',
+                        alignItems: 'center',
+                        marginBottom: isCucumberGherkinExpanded ? '24px' : '0',
+                        paddingBottom: isCucumberGherkinExpanded ? '20px' : '0',
+                        borderBottom: isCucumberGherkinExpanded ? '2px solid #00416A' : 'none',
+                        transition: 'all 0.3s ease'
+                    }}
+                    onMouseEnter={(e) => {
+                        if (!isCucumberGherkinExpanded) {
+                            e.currentTarget.style.backgroundColor = '#f0f7fa';
+                        }
+                    }}
+                    onMouseLeave={(e) => {
+                        if (!isCucumberGherkinExpanded) {
+                            e.currentTarget.style.backgroundColor = 'transparent';
+                        }
+                    }}
+                >
+                    <div>
+                        <h2 style={{ 
+                            color: '#00416A', 
+                            fontSize: '32px', 
+                            marginBottom: '8px',
+                            fontWeight: '700',
+                            textAlign: 'left',
+                            margin: 0
+                        }}>
+                            Cucumber (Gherkin) + Playwright TypeScript E2E Checklist
+                        </h2>
+                        <p style={{ 
+                            fontSize: '16px', 
+                            color: '#64748b',
+                            marginBottom: 0,
+                            lineHeight: '1.6',
+                            textAlign: 'left'
+                        }}>
+                            Below is an <strong>end-to-end Cucumber (Gherkin) + Playwright TypeScript</strong> checklist your students can follow throughout the course, followed by <strong>definitions</strong> and then <strong>one-by-one examples</strong> (each syntax feature shown with a working example).
+                        </p>
+                    </div>
+                    <span style={{
+                        fontSize: '32px',
+                        color: '#00416A',
+                        fontWeight: 'bold',
+                        marginLeft: '20px',
+                        flexShrink: 0,
+                        transition: 'transform 0.3s ease'
+                    }}>
+                        {isCucumberGherkinExpanded ? '−' : '+'}
+                    </span>
+                </div>
+
+                {isCucumberGherkinExpanded && (
+                    <div>
+                        {/* E2E Checklist */}
+                        <div style={{ marginBottom: '48px' }}>
+                            <h3 style={{
+                                color: '#00416A',
+                                fontSize: '28px',
+                                fontWeight: '600',
+                                marginBottom: '24px',
+                                textAlign: 'left'
+                            }}>
+                                Cucumber + Playwright E2E Checklist (Students Must Follow)
+                            </h3>
+                            
+                            <div style={checklistGridStyles.modern}>
+                                {[
+                                    {
+                                        title: 'Project & tooling',
+                                        items: [
+                                            'Use Node LTS and TypeScript',
+                                            'Install: @cucumber/cucumber, playwright, ts-node, typescript',
+                                            'Keep .feature files under features/',
+                                            'Keep step definitions under features/step-definitions/',
+                                            'Keep hooks under features/support/',
+                                            'Use a World (context) to share page, context, and state',
+                                            'Use playwright.config or a custom config file for Cucumber runs',
+                                            'Generate reports (HTML/JUnit) and attach screenshots/traces on failure'
+                                        ]
+                                    },
+                                    {
+                                        title: 'Gherkin authoring rules',
+                                        items: [
+                                            'Each scenario has 1 clear business intent',
+                                            'Use Given / When / Then correctly (setup / action / expected result)',
+                                            'Prefer Background for common preconditions',
+                                            'Use Scenario Outline for data-driven variations',
+                                            'Use Data Tables for structured inputs',
+                                            'Use Doc Strings for long text (payloads, expected messages)',
+                                            'Use Tags for suite control (@smoke, @regression, @wip)'
+                                        ]
+                                    },
+                                    {
+                                        title: 'Automation engineering rules',
+                                        items: [
+                                            'No waitForTimeout() unless approved (use auto-waits / assertions)',
+                                            'Use stable locators: getByRole, getByLabel, getByTestId',
+                                            'Steps should be thin (call page objects / helper methods)',
+                                            'Assertions live in Then (or in helper assertions) and must be meaningful',
+                                            'Capture failure evidence: screenshot + trace (optional video)',
+                                            'Keep secrets out of repo (use .env + environment variables)'
+                                        ]
+                                    }
+                                ].map((section, idx) => (
+                                    <div key={idx} style={{
+                                        backgroundColor: '#ffffff',
+                                        borderRadius: '12px',
+                                        padding: '24px',
+                                        border: '1px solid #e5e7eb',
+                                        boxShadow: '0 2px 4px rgba(0,0,0,0.05)'
+                                    }}>
+                                        <h4 style={{
+                                            color: '#00416A',
+                                            fontSize: '20px',
+                                            fontWeight: '600',
+                                            marginBottom: '16px',
+                                            marginTop: 0
+                                        }}>
+                                            {section.title}
+                                        </h4>
+                                        <ul style={{
+                                            margin: 0,
+                                            paddingLeft: '20px',
+                                            listStyleType: 'none'
+                                        }}>
+                                            {section.items.map((item, itemIdx) => {
+                                                const linkId = getChecklistItemLink(item);
+                                                const isClickable = linkId !== null;
+                                                return (
+                                                    <li key={itemIdx} style={{
+                                                        marginBottom: '10px',
+                                                        color: '#475569',
+                                                        fontSize: '14px',
+                                                        lineHeight: '1.6',
+                                                        position: 'relative',
+                                                        paddingLeft: '24px'
+                                                    }}>
+                                                        <span style={{
+                                                            position: 'absolute',
+                                                            left: 0,
+                                                            color: '#00416A',
+                                                            fontWeight: 'bold'
+                                                        }}>☐</span>
+                                                        {isClickable ? (
+                                                            <span
+                                                                onClick={() => {
+                                                                    if (!isCucumberGherkinExpanded) {
+                                                                        setIsCucumberGherkinExpanded(true);
+                                                                        setTimeout(() => {
+                                                                            scrollToElement(linkId);
+                                                                        }, 100);
+                                                                    } else {
+                                                                        scrollToElement(linkId);
+                                                                    }
+                                                                }}
+                                                                style={{
+                                                                    color: '#00416A',
+                                                                    cursor: 'pointer',
+                                                                    textDecoration: 'underline',
+                                                                    textDecorationColor: '#cbd5e1',
+                                                                    transition: 'all 0.2s ease'
+                                                                }}
+                                                                onMouseEnter={(e) => {
+                                                                    e.target.style.color = '#002d4d';
+                                                                    e.target.style.textDecorationColor = '#00416A';
+                                                                }}
+                                                                onMouseLeave={(e) => {
+                                                                    e.target.style.color = '#00416A';
+                                                                    e.target.style.textDecorationColor = '#cbd5e1';
+                                                                }}
+                                                            >
+                                                                {item}
+                                                            </span>
+                                                        ) : (
+                                                            <span>{item}</span>
+                                                        )}
+                                                    </li>
+                                                );
+                                            })}
+                                        </ul>
+                                    </div>
+                                ))}
+                            </div>
+                        </div>
+
+                        {/* Definitions */}
+                        <div id="cucumber-definitions" style={{ marginBottom: '48px', scrollMarginTop: '100px' }}>
+                            <h3 style={{
+                                color: '#00416A',
+                                fontSize: '28px',
+                                fontWeight: '600',
+                                marginBottom: '24px',
+                                textAlign: 'left'
+                            }}>
+                                Definitions (What each syntax means)
+                            </h3>
+                            
+                            <div style={{
+                                backgroundColor: '#f8fafc',
+                                borderRadius: '12px',
+                                padding: '24px',
+                                border: '1px solid #e5e7eb'
+                            }}>
+                                <dl style={{
+                                    margin: 0,
+                                    display: 'grid',
+                                    gridTemplateColumns: 'repeat(auto-fit, minmax(300px, 1fr))',
+                                    gap: '16px'
+                                }}>
+                                    <div>
+                                        <dt style={{ fontWeight: '600', color: '#1e293b', marginBottom: '4px' }}>Feature:</dt>
+                                        <dd style={{ margin: 0, color: '#475569', lineHeight: '1.6' }}>High-level capability (business readable).</dd>
+                                    </div>
+                                    <div>
+                                        <dt style={{ fontWeight: '600', color: '#1e293b', marginBottom: '4px' }}>Rule:</dt>
+                                        <dd style={{ margin: 0, color: '#475569', lineHeight: '1.6' }}>Business rule under a feature (optional grouping).</dd>
+                                    </div>
+                                    <div>
+                                        <dt style={{ fontWeight: '600', color: '#1e293b', marginBottom: '4px' }}>Background:</dt>
+                                        <dd style={{ margin: 0, color: '#475569', lineHeight: '1.6' }}>Steps that run before every scenario in the feature.</dd>
+                                    </div>
+                                    <div>
+                                        <dt style={{ fontWeight: '600', color: '#1e293b', marginBottom: '4px' }}>Scenario:</dt>
+                                        <dd style={{ margin: 0, color: '#475569', lineHeight: '1.6' }}>One test case (a single behavior).</dd>
+                                    </div>
+                                    <div>
+                                        <dt style={{ fontWeight: '600', color: '#1e293b', marginBottom: '4px' }}>Scenario Outline:</dt>
+                                        <dd style={{ margin: 0, color: '#475569', lineHeight: '1.6' }}>A scenario template with multiple datasets (Examples).</dd>
+                                    </div>
+                                    <div>
+                                        <dt style={{ fontWeight: '600', color: '#1e293b', marginBottom: '4px' }}>Examples:</dt>
+                                        <dd style={{ margin: 0, color: '#475569', lineHeight: '1.6' }}>The datasets that feed a Scenario Outline.</dd>
+                                    </div>
+                                    <div>
+                                        <dt style={{ fontWeight: '600', color: '#1e293b', marginBottom: '4px' }}>Given:</dt>
+                                        <dd style={{ margin: 0, color: '#475569', lineHeight: '1.6' }}>Precondition/state (setup).</dd>
+                                    </div>
+                                    <div>
+                                        <dt style={{ fontWeight: '600', color: '#1e293b', marginBottom: '4px' }}>When:</dt>
+                                        <dd style={{ margin: 0, color: '#475569', lineHeight: '1.6' }}>The action performed by the user/system.</dd>
+                                    </div>
+                                    <div>
+                                        <dt style={{ fontWeight: '600', color: '#1e293b', marginBottom: '4px' }}>Then:</dt>
+                                        <dd style={{ margin: 0, color: '#475569', lineHeight: '1.6' }}>The expected outcome (assertions).</dd>
+                                    </div>
+                                    <div>
+                                        <dt style={{ fontWeight: '600', color: '#1e293b', marginBottom: '4px' }}>And/But:</dt>
+                                        <dd style={{ margin: 0, color: '#475569', lineHeight: '1.6' }}>Continuation words (don't change meaning).</dd>
+                                    </div>
+                                    <div>
+                                        <dt style={{ fontWeight: '600', color: '#1e293b', marginBottom: '4px' }}>Data Table:</dt>
+                                        <dd style={{ margin: 0, color: '#475569', lineHeight: '1.6' }}>Structured parameters (rows/columns).</dd>
+                                    </div>
+                                    <div>
+                                        <dt style={{ fontWeight: '600', color: '#1e293b', marginBottom: '4px' }}>Doc String:</dt>
+                                        <dd style={{ margin: 0, color: '#475569', lineHeight: '1.6' }}>Multi-line string literal (payload/notes/messages).</dd>
+                                    </div>
+                                    <div>
+                                        <dt style={{ fontWeight: '600', color: '#1e293b', marginBottom: '4px' }}>Tags:</dt>
+                                        <dd style={{ margin: 0, color: '#475569', lineHeight: '1.6' }}>Labels to filter execution and organize suites.</dd>
+                                    </div>
+                                    <div>
+                                        <dt style={{ fontWeight: '600', color: '#1e293b', marginBottom: '4px' }}>Hooks:</dt>
+                                        <dd style={{ margin: 0, color: '#475569', lineHeight: '1.6' }}>Code that runs before/after scenarios/steps (setup/cleanup).</dd>
+                                    </div>
+                                    <div>
+                                        <dt style={{ fontWeight: '600', color: '#1e293b', marginBottom: '4px' }}>World:</dt>
+                                        <dd style={{ margin: 0, color: '#475569', lineHeight: '1.6' }}>Per-scenario container for shared objects (browser/page/test data).</dd>
+                                    </div>
+                                </dl>
+                            </div>
+                        </div>
+
+                        {/* End-to-end Examples */}
+                        <div style={{ marginBottom: '48px' }}>
+                            <h3 style={{
+                                color: '#00416A',
+                                fontSize: '28px',
+                                fontWeight: '600',
+                                marginBottom: '24px',
+                                textAlign: 'left'
+                            }}>
+                                End-to-end Example (One-by-one syntax + full working skeleton)
+                            </h3>
+
+                            {/* 0) Project Structure */}
+                            <div id="cucumber-section-0" style={{ marginBottom: '32px', scrollMarginTop: '100px' }}>
+                                <h4 style={itemHeaderStyle}>0) Minimal project structure (recommended)</h4>
+                                <pre style={codeBlockStyle}>{`project/
+  features/
+    login.feature
+    step-definitions/
+      login.steps.ts
+    support/
+      hooks.ts
+      world.ts
+  src/
+    pages/
+      LoginPage.ts
+      DashboardPage.ts
+  reports/
+  package.json
+  tsconfig.json`}</pre>
+                            </div>
+
+                            {/* 1) Install dependencies */}
+                            <div id="cucumber-section-1" style={{ marginBottom: '32px', scrollMarginTop: '100px' }}>
+                                <h4 style={itemHeaderStyle}>1) Install dependencies (students do once)</h4>
+                                <pre style={codeBlockStyle}>{`npm init -y
+npm i -D typescript ts-node @types/node
+npm i -D @cucumber/cucumber
+npm i playwright
+npx playwright install`}</pre>
+                                <p style={{ marginTop: '12px', marginBottom: '12px', color: '#475569', lineHeight: '1.6', textAlign: 'left' }}>
+                                    <strong style={{ color: '#1e293b' }}>Optional reporters (nice for IBM/enterprise):</strong>
+                                </p>
+                                <pre style={codeBlockStyle}>{`npm i -D cucumber-html-reporter`}</pre>
+                            </div>
+
+                            {/* 2) Cucumber run script */}
+                            <div id="cucumber-section-2" style={{ marginBottom: '32px', scrollMarginTop: '100px' }}>
+                                <h4 style={itemHeaderStyle}>2) Cucumber run script (package.json)</h4>
+                                <pre style={codeBlockStyle}>{`{
+  "scripts": {
+    "test:bdd": "cucumber-js --require-module ts-node/register --require features/**/*.ts --publish-quiet",
+    "test:bdd:smoke": "cucumber-js --require-module ts-node/register --require features/**/*.ts --tags \"@smoke\" --publish-quiet"
+  }
+}`}</pre>
+                            </div>
+
+                            {/* 3) World */}
+                            <div id="cucumber-section-3" style={{ marginBottom: '32px', scrollMarginTop: '100px' }}>
+                                <h4 style={itemHeaderStyle}>3) World (shared context per scenario)</h4>
+                                <p style={{ marginBottom: '12px', color: '#475569', lineHeight: '1.6', textAlign: 'left' }}>
+                                    <strong style={{ color: '#1e293b' }}>features/support/world.ts</strong>
+                                </p>
+                                <pre style={codeBlockStyle}>{`import { setWorldConstructor, World, IWorldOptions } from "@cucumber/cucumber";
+import { Browser, BrowserContext, Page, chromium } from "playwright";
+
+export class PWWorld extends World {
+  browser!: Browser;
+  context!: BrowserContext;
+  page!: Page;
+
+  // shared test state (optional)
+  baseUrl: string = process.env.BASE_URL ?? "https://example.com";
+  lastCreatedId?: string;
+
+  constructor(options: IWorldOptions) {
+    super(options);
+  }
+
+  async init(): Promise<void> {
+    this.browser = await chromium.launch({ headless: true });
+    this.context = await this.browser.newContext();
+    this.page = await this.context.newPage();
+  }
+
+  async cleanup(): Promise<void> {
+    await this.page?.close().catch(() => {});
+    await this.context?.close().catch(() => {});
+    await this.browser?.close().catch(() => {});
+  }
+}
+
+setWorldConstructor(PWWorld);`}</pre>
+                            </div>
+
+                            {/* 4) Hooks */}
+                            <div id="cucumber-section-4" style={{ marginBottom: '32px', scrollMarginTop: '100px' }}>
+                                <h4 style={itemHeaderStyle}>4) Hooks (Before/After) + failure evidence attachments</h4>
+                                <p style={{ marginBottom: '12px', color: '#475569', lineHeight: '1.6', textAlign: 'left' }}>
+                                    <strong style={{ color: '#1e293b' }}>features/support/hooks.ts</strong>
+                                </p>
+                                <pre style={codeBlockStyle}>{`import { Before, After, Status } from "@cucumber/cucumber";
+import type { PWWorld } from "./world";
+
+Before(async function (this: PWWorld) {
+  await this.init();
+});
+
+After(async function (this: PWWorld, scenario) {
+  // Attach screenshot on failure
+  if (scenario.result?.status === Status.FAILED) {
+    const png = await this.page.screenshot({ fullPage: true });
+    await this.attach(png, "image/png");
+  }
+  await this.cleanup();
+});`}</pre>
+                            </div>
+
+                            {/* Gherkin Syntax Examples */}
+                            <div style={{ marginBottom: '32px' }}>
+                                <h3 style={{
+                                    color: '#00416A',
+                                    fontSize: '28px',
+                                    fontWeight: '600',
+                                    marginBottom: '24px',
+                                    textAlign: 'left'
+                                }}>
+                                    Gherkin Syntax Examples (each one shown clearly)
+                                </h3>
+                            </div>
+
+                            {/* 5) Feature + Scenario */}
+                            <div id="cucumber-section-5" style={{ marginBottom: '32px', scrollMarginTop: '100px' }}>
+                                <h4 style={itemHeaderStyle}>5) Feature + Scenario + Given/When/Then</h4>
+                                <p style={{ marginBottom: '12px', color: '#475569', lineHeight: '1.6', textAlign: 'left' }}>
+                                    <strong style={{ color: '#1e293b' }}>features/login.feature</strong>
+                                </p>
+                                <pre style={codeBlockStyle}>{`Feature: Login
+  Users must be able to sign in to access the dashboard
+
+  Scenario: Successful login
+    Given the user is on the login page
+    When the user logs in with username "demo" and password "demo123"
+    Then the dashboard should be visible`}</pre>
+                                <p style={{ marginTop: '16px', marginBottom: '12px', color: '#475569', lineHeight: '1.6', textAlign: 'left' }}>
+                                    <strong style={{ color: '#1e293b' }}>Step definitions:</strong>
+                                </p>
+                                <p style={{ marginBottom: '12px', color: '#475569', lineHeight: '1.6', textAlign: 'left' }}>
+                                    <strong style={{ color: '#1e293b' }}>features/step-definitions/login.steps.ts</strong>
+                                </p>
+                                <pre style={codeBlockStyle}>{`import { Given, When, Then } from "@cucumber/cucumber";
+import { expect } from "playwright/test";
+import type { PWWorld } from "../support/world";
+import { LoginPage } from "../../src/pages/LoginPage";
+import { DashboardPage } from "../../src/pages/DashboardPage";
+
+Given("the user is on the login page", async function (this: PWWorld) {
+  const login = new LoginPage(this.page);
+  await login.goto(this.baseUrl);
+});
+
+When(
+  'the user logs in with username {string} and password {string}',
+  async function (this: PWWorld, username: string, password: string) {
+    const login = new LoginPage(this.page);
+    await login.login(username, password);
+  }
+);
+
+Then("the dashboard should be visible", async function (this: PWWorld) {
+  const dash = new DashboardPage(this.page);
+  await expect(dash.heading()).toBeVisible();
+});`}</pre>
+                            </div>
+
+                            {/* 6) Background */}
+                            <div id="cucumber-section-6" style={{ marginBottom: '32px', scrollMarginTop: '100px' }}>
+                                <h4 style={itemHeaderStyle}>6) Background (common precondition)</h4>
+                                <pre style={codeBlockStyle}>{`Feature: Dashboard access
+
+  Background:
+    Given the user is logged in
+
+  Scenario: Dashboard loads
+    When the user navigates to the dashboard
+    Then the dashboard should be visible`}</pre>
+                            </div>
+
+                            {/* 7) Tags */}
+                            <div id="cucumber-section-7" style={{ marginBottom: '32px', scrollMarginTop: '100px' }}>
+                                <h4 style={itemHeaderStyle}>7) Tags (suite control)</h4>
+                                <pre style={codeBlockStyle}>{`@smoke
+Scenario: Successful login
+  Given the user is on the login page
+  When the user logs in with username "demo" and password "demo123"
+  Then the dashboard should be visible`}</pre>
+                                <p style={{ marginTop: '12px', marginBottom: '12px', color: '#475569', lineHeight: '1.6', textAlign: 'left' }}>
+                                    <strong style={{ color: '#1e293b' }}>Run:</strong>
+                                </p>
+                                <pre style={codeBlockStyle}>{`npm run test:bdd:smoke`}</pre>
+                            </div>
+
+                            {/* 8) Scenario Outline */}
+                            <div id="cucumber-section-8" style={{ marginBottom: '32px', scrollMarginTop: '100px' }}>
+                                <h4 style={itemHeaderStyle}>8) Scenario Outline + Examples (data-driven)</h4>
+                                <pre style={codeBlockStyle}>{`Scenario Outline: Login validation
+  Given the user is on the login page
+  When the user logs in with username "<username>" and password "<password>"
+  Then an error message "<message>" should be shown
+
+  Examples:
+    | username | password  | message                     |
+    | demo     | wrongpass | Invalid username or password |
+    | wrong    | demo123   | Invalid username or password |`}</pre>
+                            </div>
+
+                            {/* 9) Data Tables */}
+                            <div id="cucumber-section-9" style={{ marginBottom: '32px', scrollMarginTop: '100px' }}>
+                                <h4 style={itemHeaderStyle}>9) Data Tables (structured inputs)</h4>
+                                <pre style={codeBlockStyle}>{`Scenario: Create a user profile
+  Given the user is logged in
+  When the user updates the profile with:
+    | field     | value        |
+    | FirstName | MD           |
+    | LastName  | Zaman        |
+    | City      | New York     |
+  Then the profile should be updated successfully`}</pre>
+                                <p style={{ marginTop: '16px', marginBottom: '12px', color: '#475569', lineHeight: '1.6', textAlign: 'left' }}>
+                                    <strong style={{ color: '#1e293b' }}>Step example:</strong>
+                                </p>
+                                <pre style={codeBlockStyle}>{`import { When } from "@cucumber/cucumber";
+import type { PWWorld } from "../support/world";
+
+When("the user updates the profile with:", async function (this: PWWorld, table) {
+  const rows = table.hashes() as Array<{ field: string; value: string }>;
+  // Example usage: fill fields based on "field" name
+  for (const row of rows) {
+    await this.page.getByLabel(row.field).fill(row.value);
+  }
+  await this.page.getByRole("button", { name: "Save" }).click();
+});`}</pre>
+                            </div>
+
+                            {/* 10) Doc Strings */}
+                            <div id="cucumber-section-10" style={{ marginBottom: '32px', scrollMarginTop: '100px' }}>
+                                <h4 style={itemHeaderStyle}>10) Doc Strings (long text/payloads)</h4>
+                                <pre style={codeBlockStyle}>{`Scenario: Submit feedback
+  Given the user is logged in
+  When the user submits feedback:
+    """
+    The UI is fast, but the search results need better sorting.
+    Please review the relevance logic.
+    """
+  Then a confirmation message should be visible`}</pre>
+                                <p style={{ marginTop: '16px', marginBottom: '12px', color: '#475569', lineHeight: '1.6', textAlign: 'left' }}>
+                                    <strong style={{ color: '#1e293b' }}>Step example:</strong>
+                                </p>
+                                <pre style={codeBlockStyle}>{`import { When } from "@cucumber/cucumber";
+import type { PWWorld } from "../support/world";
+
+When("the user submits feedback:", async function (this: PWWorld, message: string) {
+  await this.page.getByLabel("Feedback").fill(message);
+  await this.page.getByRole("button", { name: "Submit" }).click();
+});`}</pre>
+                            </div>
+
+                            {/* 11) Hooks by tag */}
+                            <div id="cucumber-section-11" style={{ marginBottom: '32px', scrollMarginTop: '100px' }}>
+                                <h4 style={itemHeaderStyle}>11) Hooks by tag (e.g., API setup only for certain scenarios)</h4>
+                                <pre style={codeBlockStyle}>{`import { Before } from "@cucumber/cucumber";
+import type { PWWorld } from "./world";
+
+Before({ tags: "@api" }, async function (this: PWWorld) {
+  // Example: seed data via API before UI scenario
+});`}</pre>
+                            </div>
+
+                            {/* Page Objects */}
+                            <div id="cucumber-page-objects" style={{ marginBottom: '32px', scrollMarginTop: '100px' }}>
+                                <h3 style={{
+                                    color: '#00416A',
+                                    fontSize: '24px',
+                                    fontWeight: '600',
+                                    marginBottom: '20px',
+                                    textAlign: 'left'
+                                }}>
+                                    Page Objects (keep steps thin)
+                                </h3>
+                                
+                                <p style={{ marginBottom: '12px', color: '#475569', lineHeight: '1.6', textAlign: 'left' }}>
+                                    <strong style={{ color: '#1e293b' }}>src/pages/LoginPage.ts</strong>
+                                </p>
+                                <pre style={codeBlockStyle}>{`import type { Page } from "playwright";
+
+export class LoginPage {
+  constructor(private page: Page) {}
+
+  async goto(baseUrl: string): Promise<void> {
+    await this.page.goto(\`\${baseUrl}/login\`);
+  }
+
+  async login(username: string, password: string): Promise<void> {
+    await this.page.getByLabel("Username").fill(username);
+    await this.page.getByLabel("Password").fill(password);
+    await this.page.getByRole("button", { name: "Sign in" }).click();
+  }
+}`}</pre>
+                                
+                                <p style={{ marginTop: '16px', marginBottom: '12px', color: '#475569', lineHeight: '1.6', textAlign: 'left' }}>
+                                    <strong style={{ color: '#1e293b' }}>src/pages/DashboardPage.ts</strong>
+                                </p>
+                                <pre style={codeBlockStyle}>{`import type { Page, Locator } from "playwright";
+
+export class DashboardPage {
+  constructor(private page: Page) {}
+
+  heading(): Locator {
+    return this.page.getByRole("heading", { name: /dashboard/i });
+  }
+}`}</pre>
+                            </div>
+
+                            {/* Recommended Conventions */}
+                            <div style={{ marginBottom: '32px' }}>
+                                <h3 style={{
+                                    color: '#00416A',
+                                    fontSize: '24px',
+                                    fontWeight: '600',
+                                    marginBottom: '20px',
+                                    textAlign: 'left'
+                                }}>
+                                    Recommended "Cucumber conventions" students should memorize
+                                </h3>
+                                <ul style={{ marginBottom: '16px', color: '#475569', lineHeight: '1.8', paddingLeft: '24px' }}>
+                                    <li><strong>Feature names</strong> = business capability</li>
+                                    <li><strong>Scenario names</strong> = clear behavior (not implementation)</li>
+                                    <li>Steps are <strong>reusable phrases</strong> (avoid duplicates with tiny wording changes)</li>
+                                    <li>No UI technical details in Gherkin (keep "click #btn123" out of features)</li>
+                                    <li>Use tags to control execution: <code>@smoke @regression @wip @api</code></li>
+                                    <li>Every scenario produces evidence on failure (screenshot/trace)</li>
+                                </ul>
+                            </div>
+                        </div>
                     </div>
                 )}
             </div>
