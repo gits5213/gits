@@ -1,6 +1,7 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 import link from '../utilities/links.json';
+// eslint-disable-next-line no-unused-vars
 import SocialIcon from '../components/socialIcon';
 import { footerStyles, footerHoverHandlers } from '../utils/globalStyles';
 
