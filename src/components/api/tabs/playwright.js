@@ -3608,9 +3608,9 @@ When("I login as {string} with {string}", async (u: string, p: string) => {
                                 <pre style={codeBlockStyle}>{`{
   "scripts": {
     "test": "cucumber-js",
-    "test:smoke": "cucumber-js --tags \"@smoke\"",
-    "test:regression": "cucumber-js --tags \"@regression\"",
-    "test:wip": "cucumber-js --tags \"@wip\""
+    "test:smoke": "cucumber-js --tags "@smoke"",
+    "test:regression": "cucumber-js --tags "@regression"",
+    "test:wip": "cucumber-js --tags "@wip""
   }
 }`}</pre>
                             </div>
@@ -3977,7 +3977,7 @@ npx playwright install`}</pre>
                                 <pre style={codeBlockStyle}>{`{
   "scripts": {
     "test:bdd": "cucumber-js --require-module ts-node/register --require features/**/*.ts --publish-quiet",
-    "test:bdd:smoke": "cucumber-js --require-module ts-node/register --require features/**/*.ts --tags \"@smoke\" --publish-quiet"
+    "test:bdd:smoke": "cucumber-js --require-module ts-node/register --require features/**/*.ts --tags "@smoke" --publish-quiet"
   }
 }`}</pre>
                             </div>
