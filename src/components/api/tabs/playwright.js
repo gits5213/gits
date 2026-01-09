@@ -274,8 +274,8 @@ const ResPlaywright = () => {
                             Download the complete Playwright TypeScript Hooks & Checklist handout
                         </p>
                         <a
-                            href={`${process.env.PUBLIC_URL || ''}/resources/Playwright_TS_Hooks_Checklist_Handout.pdf.pdfpdf`.replace(/\/+/g, '/')}
-                            download="Playwright_TS_Hooks_Checklist_Handout.pdf.pdfpdf"
+                            href={`${process.env.PUBLIC_URL || ''}/resources/Playwright_TS_Hooks_Checklist_Handout.pdf`.replace(/\/+/g, '/')}
+                            download="Playwright_TS_Hooks_Checklist_Handout.pdf"
                             style={{
                                 display: 'inline-block',
                                 backgroundColor: colors.primary,
@@ -1086,10 +1086,10 @@ test.describe("E2E: Purchase Flow", () => {
 
             {/* Additional PDF Download Section */}
             <PdfDownload
-                pdfPath="Playwright_TS_Hooks_Checklist_Handout.pdf.pdfpdf"
+                pdfPath="Playwright_TS_Hooks_Checklist_Handout.pdf"
                 title="📥 Download Playwright Hooks & Checklist Handout"
                 description="Download the complete Playwright TypeScript Hooks & Checklist handout"
-                downloadFileName="Playwright_TS_Hooks_Checklist_Handout.pdf.pdfpdf"
+                downloadFileName="Playwright_TS_Hooks_Checklist_Handout.pdf"
             />
 
             {/* Playwright Fixtures Package Section */}
