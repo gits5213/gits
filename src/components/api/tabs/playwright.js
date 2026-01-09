@@ -1,13 +1,50 @@
-import React from 'react';
+import React, { useState } from 'react';
 import link from '../../../utilities/links.json';
 import GoogleAd from '../../GoogleAd';
 import webDriverIOLogo from '../../../images/tabs/playwrightLogo.png'; 
 import Footer from '../../../components/footer';
 import PdfDownload from '../../shared/PdfDownload';
-import { scrollToItem, scrollToIntroSection } from '../../../utils/scrollHelpers';
-import { modernCardStyles, codeBlockStyles, sectionHeaderStyles, itemHeaderStyles, pageContainerStyles, modernHeroStyles, checklistGridStyles, checklistLinkStyles } from '../../../utils/globalStyles';
+import { scrollToItem, scrollToIntroSection, scrollToElement } from '../../../utils/scrollHelpers';
+import { modernCardStyles, codeBlockStyles, sectionHeaderStyles, itemHeaderStyles, pageContainerStyles, modernHeroStyles, checklistGridStyles, checklistLinkStyles, colors } from '../../../utils/globalStyles';
 
-const resPlaywright = () => {
+const ResPlaywright = () => {
+    // State for checklist section collapse/expand
+    const [isChecklistExpanded, setIsChecklistExpanded] = useState(false);
+    // State for fixtures section collapse/expand
+    const [isFixturesExpanded, setIsFixturesExpanded] = useState(false);
+    // State for role-based auth section collapse/expand
+    const [isRoleAuthExpanded, setIsRoleAuthExpanded] = useState(false);
+    // State for user events master list section collapse/expand
+    const [isUserEventsExpanded, setIsUserEventsExpanded] = useState(false);
+
+    // Toggle checklist section
+    const toggleChecklist = () => {
+        setIsChecklistExpanded(!isChecklistExpanded);
+    };
+
+    // Toggle fixtures section
+    const toggleFixtures = () => {
+        setIsFixturesExpanded(!isFixturesExpanded);
+    };
+
+    // Toggle role-based auth section
+    const toggleRoleAuth = () => {
+        setIsRoleAuthExpanded(!isRoleAuthExpanded);
+    };
+
+    // Toggle user events master list section
+    const toggleUserEvents = () => {
+        setIsUserEventsExpanded(!isUserEventsExpanded);
+    };
+
+    // Helper function to remove markdown syntax
+    const removeMarkdown = (text) => {
+        if (!text) return '';
+        return text
+            .replace(/\*\*(.*?)\*\*/g, '$1') // Remove bold **text**
+            .replace(/`(.*?)`/g, '$1') // Remove code `text`
+            .replace(/\*(.*?)\*/g, '$1'); // Remove italic *text*
+    };
 
     // Use shared styles from globalStyles
     const cardStyle = modernCardStyles.base;
@@ -117,12 +154,158 @@ const resPlaywright = () => {
                 </a>
             </div>
 
-            {/* PDF Download Section */}
-            <PdfDownload
-                pdfPath="Playwright_TS_User_Actions_Handout.pdf"
-                title="📥 Download Playwright User Actions Handout"
-                description="Download the complete Playwright TypeScript User Events & Actions handout"
-            />
+            {/* PDF Download Section - Grid Layout */}
+            <div style={{
+                ...cardStyle,
+                marginBottom: '32px'
+            }}>
+                <h3 style={{ 
+                    color: '#00416A', 
+                    fontSize: '24px', 
+                    marginBottom: '24px',
+                    fontWeight: '600',
+                    textAlign: 'left'
+                }}>
+                    📥 Download Playwright Resources
+                </h3>
+                <div style={{
+                    display: 'grid',
+                    gridTemplateColumns: 'repeat(auto-fit, minmax(300px, 1fr))',
+                    gap: '20px'
+                }}>
+                    {/* Download Option 1 */}
+                    <div style={{
+                        backgroundColor: '#f8fafc',
+                        borderRadius: '12px',
+                        padding: '24px',
+                        border: '2px dashed #cbd5e1',
+                        textAlign: 'center',
+                        transition: 'all 0.3s ease'
+                    }}
+                    onMouseEnter={(e) => {
+                        e.currentTarget.style.borderColor = colors.primary;
+                        e.currentTarget.style.transform = 'translateY(-2px)';
+                    }}
+                    onMouseLeave={(e) => {
+                        e.currentTarget.style.borderColor = '#cbd5e1';
+                        e.currentTarget.style.transform = 'translateY(0)';
+                    }}
+                    >
+                        <h4 style={{ 
+                            marginBottom: '12px',
+                            color: '#1e293b',
+                            fontSize: '18px',
+                            fontWeight: '600'
+                        }}>
+                            Playwright User Actions Handout
+                        </h4>
+                        <p style={{
+                            marginBottom: '20px',
+                            color: '#64748b',
+                            fontSize: '14px',
+                            lineHeight: '1.6'
+                        }}>
+                            Download the complete Playwright TypeScript User Events & Actions handout
+                        </p>
+                        <a
+                            href={`${process.env.PUBLIC_URL || ''}/resources/Playwright_TS_User_Actions_Handout.pdf`.replace(/\/+/g, '/')}
+                            download="Playwright_TS_User_Actions_Handout.pdf"
+                            style={{
+                                display: 'inline-block',
+                                backgroundColor: colors.primary,
+                                color: colors.textWhite,
+                                padding: '12px 24px',
+                                borderRadius: '8px',
+                                textDecoration: 'none',
+                                fontSize: '14px',
+                                fontWeight: '600',
+                                transition: 'all 0.3s ease',
+                                boxShadow: '0 4px 6px rgba(0, 65, 106, 0.2)',
+                                border: 'none',
+                                cursor: 'pointer'
+                            }}
+                            onMouseEnter={(e) => {
+                                e.target.style.backgroundColor = colors.primaryDark;
+                                e.target.style.transform = 'translateY(-2px)';
+                                e.target.style.boxShadow = '0 6px 12px rgba(0, 65, 106, 0.3)';
+                            }}
+                            onMouseLeave={(e) => {
+                                e.target.style.backgroundColor = colors.primary;
+                                e.target.style.transform = 'translateY(0)';
+                                e.target.style.boxShadow = '0 4px 6px rgba(0, 65, 106, 0.2)';
+                            }}
+                        >
+                            📄 Download PDF
+                        </a>
+                    </div>
+
+                    {/* Download Option 2 */}
+                    <div style={{
+                        backgroundColor: '#f8fafc',
+                        borderRadius: '12px',
+                        padding: '24px',
+                        border: '2px dashed #cbd5e1',
+                        textAlign: 'center',
+                        transition: 'all 0.3s ease'
+                    }}
+                    onMouseEnter={(e) => {
+                        e.currentTarget.style.borderColor = colors.primary;
+                        e.currentTarget.style.transform = 'translateY(-2px)';
+                    }}
+                    onMouseLeave={(e) => {
+                        e.currentTarget.style.borderColor = '#cbd5e1';
+                        e.currentTarget.style.transform = 'translateY(0)';
+                    }}
+                    >
+                        <h4 style={{ 
+                            marginBottom: '12px',
+                            color: '#1e293b',
+                            fontSize: '18px',
+                            fontWeight: '600'
+                        }}>
+                            Playwright Hooks & Checklist Handout
+                        </h4>
+                        <p style={{
+                            marginBottom: '20px',
+                            color: '#64748b',
+                            fontSize: '14px',
+                            lineHeight: '1.6'
+                        }}>
+                            Download the complete Playwright TypeScript Hooks & Checklist handout
+                        </p>
+                        <a
+                            href={`${process.env.PUBLIC_URL || ''}/resources/Playwright_TS_Hooks_Checklist_Handout.pdf.pdfpdf`.replace(/\/+/g, '/')}
+                            download="Playwright_TS_Hooks_Checklist_Handout.pdf.pdfpdf"
+                            style={{
+                                display: 'inline-block',
+                                backgroundColor: colors.primary,
+                                color: colors.textWhite,
+                                padding: '12px 24px',
+                                borderRadius: '8px',
+                                textDecoration: 'none',
+                                fontSize: '14px',
+                                fontWeight: '600',
+                                transition: 'all 0.3s ease',
+                                boxShadow: '0 4px 6px rgba(0, 65, 106, 0.2)',
+                                border: 'none',
+                                cursor: 'pointer'
+                            }}
+                            onMouseEnter={(e) => {
+                                e.target.style.backgroundColor = colors.primaryDark;
+                                e.target.style.transform = 'translateY(-2px)';
+                                e.target.style.boxShadow = '0 6px 12px rgba(0, 65, 106, 0.3)';
+                            }}
+                            onMouseLeave={(e) => {
+                                e.target.style.backgroundColor = colors.primary;
+                                e.target.style.transform = 'translateY(0)';
+                                e.target.style.boxShadow = '0 4px 6px rgba(0, 65, 106, 0.2)';
+                            }}
+                        >
+                            📄 Download PDF
+                        </a>
+                    </div>
+                </div>
+            </div>
 
             {/* Playwright Introduction Checklist */}
             <div style={{
@@ -494,30 +677,1942 @@ npx playwright install --with-deps`}
                 </div>
             </div>
 
-            {/* Main Content Section */}
-            <div style={{ marginBottom: '48px' }}>
-                <div style={{
-                    textAlign: 'left',
-                    marginBottom: '40px'
-                }}>
-                    <h2 style={{ 
-                        color: '#00416A', 
-                        fontSize: '32px', 
-                        marginBottom: '12px',
-                        fontWeight: '700'
+            {/* Playwright TS Course Checklist Section */}
+            <div style={{
+                ...cardStyle,
+                marginBottom: '48px'
+            }}>
+                <div
+                    onClick={toggleChecklist}
+                    style={{
+                        cursor: 'pointer',
+                        display: 'flex',
+                        justifyContent: 'space-between',
+                        alignItems: 'center',
+                        marginBottom: isChecklistExpanded ? '24px' : '0',
+                        paddingBottom: isChecklistExpanded ? '20px' : '0',
+                        borderBottom: isChecklistExpanded ? '2px solid #00416A' : 'none',
+                        transition: 'all 0.3s ease'
+                    }}
+                    onMouseEnter={(e) => {
+                        if (!isChecklistExpanded) {
+                            e.currentTarget.style.backgroundColor = '#f0f7fa';
+                        }
+                    }}
+                    onMouseLeave={(e) => {
+                        if (!isChecklistExpanded) {
+                            e.currentTarget.style.backgroundColor = 'transparent';
+                        }
+                    }}
+                >
+                    <div>
+                        <h2 style={{ 
+                            color: '#00416A', 
+                            fontSize: '32px', 
+                            marginBottom: '8px',
+                            fontWeight: '700',
+                            textAlign: 'left',
+                            margin: 0
+                        }}>
+                            Playwright TS Course Checklist
+                        </h2>
+                        <p style={{ 
+                            fontSize: '16px', 
+                            color: '#64748b',
+                            marginBottom: 0,
+                            lineHeight: '1.6',
+                            textAlign: 'left'
+                        }}>
+                            Below is a <strong>course-wide Playwright TypeScript checklist</strong>, followed by <strong>clear definitions</strong> and <strong>one-by-one examples</strong> for each item. Everything is written in a way you can hand to students and reuse throughout the training.
+                        </p>
+                    </div>
+                    <span style={{
+                        fontSize: '32px',
+                        color: '#00416A',
+                        fontWeight: 'bold',
+                        marginLeft: '20px',
+                        flexShrink: 0,
+                        transition: 'transform 0.3s ease'
                     }}>
-                        Playwright TypeScript User Events & Actions Master List
-                    </h2>
-                    <p style={{ 
-                        fontSize: '16px', 
-                        color: '#64748b',
-                        maxWidth: '800px',
-                        margin: '0',
-                        lineHeight: '1.6'
-                    }}>
-                        Below is an <strong>end-to-end Playwright TypeScript "User Events & Actions" master list</strong> you can use throughout the course.
-                    </p>
+                        {isChecklistExpanded ? '−' : '+'}
+                    </span>
                 </div>
+
+                {isChecklistExpanded && (
+                    <div>
+                        {/* Checklist Grid */}
+                        <div style={checklistGridStyles.modern}>
+                            {[
+                                { 
+                                    id: 'checklist-a',
+                                    title: 'A) Test Structure & Organization',
+                                    items: [
+                                        'Use `test.describe()` to group tests by feature/module',
+                                        'Use consistent naming: **Feature → Scenario → Expected Result**',
+                                        'Keep tests **independent** (no hidden dependency on previous test)',
+                                        'Use tags/annotations when needed (`@smoke`, `@regression`) *(optional)*'
+                                    ]
+                                },
+                                { 
+                                    id: 'checklist-b',
+                                    title: 'B) Hooks & Lifecycle',
+                                    items: [
+                                        'Use `beforeAll()` for **one-time setup** (seed data, login once, create users)',
+                                        'Use `afterAll()` for **one-time cleanup** (delete test data, close resources)',
+                                        'Use `beforeEach()` to prepare state **per test** (navigate, login via storageState, reset mocks)',
+                                        'Use `afterEach()` to capture **evidence** on failure (screenshot/trace/logs)'
+                                    ]
+                                },
+                                { 
+                                    id: 'checklist-c',
+                                    title: 'C) Execution Control',
+                                    items: [
+                                        'Use `test.only()` **only locally** for debugging, never commit it',
+                                        'Use `test.skip()` for known blocked tests (include reason + ticket)',
+                                        'Prefer `test.fixme()` when it\'s a known bug and you want visibility *(optional but recommended)*'
+                                    ]
+                                },
+                                { 
+                                    id: 'checklist-d',
+                                    title: 'D) Quality & Stability',
+                                    items: [
+                                        'Prefer `getByRole()` / `getByLabel()` / `getByTestId()` locators',
+                                        'Avoid `waitForTimeout()` unless absolutely unavoidable',
+                                        'Ensure every test has at least **one meaningful assertion**',
+                                        'Keep UI tests fast—use API setup when possible'
+                                    ]
+                                }
+                            ].map((section) => (
+                                <div key={section.id} style={{
+                                    backgroundColor: '#f8fafc',
+                                    border: '1px solid #e5e7eb',
+                                    borderRadius: '8px',
+                                    padding: '16px',
+                                    transition: 'all 0.2s ease'
+                                }}
+                                onMouseEnter={(e) => {
+                                    e.currentTarget.style.borderColor = colors.primary;
+                                    e.currentTarget.style.backgroundColor = '#f0f7fa';
+                                }}
+                                onMouseLeave={(e) => {
+                                    e.currentTarget.style.borderColor = '#e5e7eb';
+                                    e.currentTarget.style.backgroundColor = '#f8fafc';
+                                }}
+                                >
+                                    <h3 style={{
+                                        color: '#00416A',
+                                        textDecoration: 'none',
+                                        fontSize: '16px',
+                                        fontWeight: '600',
+                                        display: 'block',
+                                        width: '100%',
+                                        margin: 0
+                                    }}>
+                                        {section.title}
+                                    </h3>
+                                </div>
+                            ))}
+                        </div>
+
+                        {/* Definitions & Examples Sections */}
+                        {[
+                            {
+                                id: 'checklist-a',
+                                title: 'A) Test Structure & Organization',
+                                content: [
+                                    {
+                                        subtitle: '2.1 `test.describe()` — Group related tests',
+                                        definition: '`test.describe()` creates a logical group (suite) of tests. Hooks inside it apply to tests in that block.',
+                                        example: `import { test, expect } from "@playwright/test";
+
+test.describe("Login Feature", () => {
+  test("should login with valid credentials", async ({ page }) => {
+    await page.goto("https://example.com/login");
+    await page.getByLabel("Username").fill("demo");
+    await page.getByLabel("Password").fill("demo123");
+    await page.getByRole("button", { name: "Sign in" }).click();
+
+    await expect(page.getByRole("heading", { name: "Dashboard" })).toBeVisible();
+  });
+});`
+                                    }
+                                ]
+                            },
+                            {
+                                id: 'checklist-b',
+                                title: 'B) Hooks & Lifecycle',
+                                content: [
+                                    {
+                                        subtitle: '2.2 `test.beforeAll()` — One-time setup for the describe block',
+                                        definition: 'Runs **once** before all tests in the current `describe` block. Good for: seeding data, creating test users via API, generating auth state (`storageState`) once.',
+                                        example: `import { test, expect } from "@playwright/test";
+
+test.describe("Authenticated Area", () => {
+  test.beforeAll(async ({ browser }) => {
+    const page = await browser.newPage();
+    await page.goto("https://example.com/login");
+    await page.getByLabel("Username").fill("demo");
+    await page.getByLabel("Password").fill("demo123");
+    await page.getByRole("button", { name: "Sign in" }).click();
+
+    // Save login session for reuse
+    await page.context().storageState({ path: "storage/auth.json" });
+    await page.close();
+  });
+
+  test("should open profile page", async ({ page }) => {
+    // (In real project you'd load storageState in config or context)
+    await page.goto("https://example.com/profile");
+    await expect(page.getByRole("heading", { name: "Profile" })).toBeVisible();
+  });
+});`
+                                    },
+                                    {
+                                        subtitle: '2.3 `test.afterAll()` — One-time cleanup for the describe block',
+                                        definition: 'Runs **once** after all tests in the current `describe` block. Good for: deleting test data, closing DB connections, cleaning up users created in `beforeAll`.',
+                                        example: `import { test } from "@playwright/test";
+
+test.describe("Data Setup/Cleanup Example", () => {
+  let createdUserId: string;
+
+  test.beforeAll(async ({ request }) => {
+    const res = await request.post("https://api.example.com/users", {
+      data: { name: "PW User" },
+    });
+    const body = await res.json();
+    createdUserId = body.id;
+  });
+
+  test.afterAll(async ({ request }) => {
+    if (createdUserId) {
+      await request.delete(\`https://api.example.com/users/\${createdUserId}\`);
+    }
+  });
+
+  test("uses the created user", async ({ page }) => {
+    // test steps...
+  });
+});`
+                                    },
+                                    {
+                                        subtitle: '2.4 `test.beforeEach()` — Per-test setup',
+                                        definition: 'Runs **before each test** in the `describe` block. Use it to: navigate to start page, reset application state, set test-specific context (like intercepts/mocks), ensure consistent starting condition.',
+                                        example: `import { test, expect } from "@playwright/test";
+
+test.describe("Cart Module", () => {
+  test.beforeEach(async ({ page }) => {
+    await page.goto("https://example.com");
+    await expect(page.getByRole("navigation")).toBeVisible();
+  });
+
+  test("should add item to cart", async ({ page }) => {
+    await page.getByRole("link", { name: "Products" }).click();
+    await page.getByRole("button", { name: "Add to cart" }).first().click();
+
+    await expect(page.getByRole("link", { name: /Cart/i })).toContainText("Cart");
+  });
+});`
+                                    },
+                                    {
+                                        subtitle: '2.5 `test.afterEach()` — Per-test teardown/evidence',
+                                        definition: 'Runs **after each test**. Perfect place to: capture screenshot on failure, attach logs, clean temporary state if needed.',
+                                        example: `import { test } from "@playwright/test";
+
+test.describe("Evidence Capture", () => {
+  test.afterEach(async ({ page }, testInfo) => {
+    if (testInfo.status !== testInfo.expectedStatus) {
+      await page.screenshot({
+        path: \`test-results/\${testInfo.title}-failed.png\`,
+        fullPage: true,
+      });
+    }
+  });
+
+  test("example test", async ({ page }) => {
+    await page.goto("https://example.com");
+    // steps...
+  });
+});`
+                                    }
+                                ]
+                            },
+                            {
+                                id: 'checklist-c',
+                                title: 'C) Execution Control',
+                                content: [
+                                    {
+                                        subtitle: '2.7 `test.only()` — Run only this test (debugging)',
+                                        definition: 'Runs only the marked test(s). Used for quick debugging **locally**. Rules: ✅ OK on your machine, ❌ Never commit into repo (breaks CI by running only one test).',
+                                        example: `import { test, expect } from "@playwright/test";
+
+test.only("debug this test only", async ({ page }) => {
+  await page.goto("https://example.com");
+  await expect(page).toHaveTitle(/Example/);
+});`
+                                    },
+                                    {
+                                        subtitle: '2.8 `test.skip()` — Skip a test (blocked/irrelevant)',
+                                        definition: 'Skips the test. Use it when: blocked by known bug, environment limitation, not applicable for current run. Best practice: Always include a reason + ticket/bug id.',
+                                        example: `import { test } from "@playwright/test";
+
+test.skip("Blocked by BUG-1234: login service returns 500", async ({ page }) => {
+  await page.goto("https://example.com/login");
+});`
+                                    }
+                                ]
+                            },
+                            {
+                                id: 'checklist-d',
+                                title: 'D) Quality & Stability',
+                                content: [
+                                    {
+                                        subtitle: '2.6 `test()` — The actual test case',
+                                        definition: 'Defines a test. The callback receives fixtures like `{ page, request, browser }`.',
+                                        example: `import { test, expect } from "@playwright/test";
+
+test("home page should show heading", async ({ page }) => {
+  await page.goto("https://example.com");
+  await expect(page.getByRole("heading", { name: "Welcome" })).toBeVisible();
+});`
+                                    }
+                                ]
+                            }
+                        ].map((section) => (
+                            <div key={section.id} id={section.id} style={{
+                                marginTop: '32px',
+                                marginBottom: '24px',
+                                scrollMarginTop: '100px'
+                            }}>
+                                <h3 style={{
+                                    color: '#00416A',
+                                    fontSize: '22px',
+                                    fontWeight: '600',
+                                    marginBottom: '20px',
+                                    textAlign: 'left',
+                                    paddingBottom: '12px',
+                                    borderBottom: '2px solid #e5e7eb'
+                                }}>
+                                    {section.title}
+                                </h3>
+                                {section.content.map((item, idx) => (
+                                    <div key={idx} style={{ marginBottom: idx < section.content.length - 1 ? '32px' : '0' }}>
+                                        <h4 style={{
+                                            color: '#00416A',
+                                            fontSize: '18px',
+                                            fontWeight: '600',
+                                            marginBottom: '12px',
+                                            textAlign: 'left'
+                                        }}>
+                                            {item.subtitle}
+                                        </h4>
+                                        <p style={{
+                                            marginBottom: '16px',
+                                            color: '#475569',
+                                            lineHeight: '1.8',
+                                            textAlign: 'left'
+                                        }}>
+                                            <strong style={{ color: '#1e293b' }}>Definition:</strong> {item.definition}
+                                        </p>
+                                        <pre style={codeBlockStyle}>{item.example}</pre>
+                                    </div>
+                                ))}
+                            </div>
+                        ))}
+
+                        {/* Complete E2E Example */}
+                        <div style={{
+                            marginTop: '32px',
+                            padding: '24px',
+                            backgroundColor: '#f0f7fa',
+                            borderRadius: '8px',
+                            border: '1px solid #cbd5e1'
+                        }}>
+                            <h3 style={{
+                                color: '#00416A',
+                                fontSize: '20px',
+                                fontWeight: '600',
+                                marginBottom: '16px',
+                                textAlign: 'left'
+                            }}>
+                                3) One Complete "End-to-End" Example Using All of Them Together
+                            </h3>
+                            <pre style={codeBlockStyle}>{`import { test, expect } from "@playwright/test";
+
+test.describe("E2E: Purchase Flow", () => {
+  test.beforeAll(async ({ request }) => {
+    // One-time setup example: seed required data
+    await request.post("https://api.example.com/test/seed", { data: { scenario: "purchase" } });
+  });
+
+  test.afterAll(async ({ request }) => {
+    // One-time cleanup example
+    await request.post("https://api.example.com/test/cleanup", { data: { scenario: "purchase" } });
+  });
+
+  test.beforeEach(async ({ page }) => {
+    // Per-test start condition
+    await page.goto("https://example.com");
+    await expect(page.getByRole("navigation")).toBeVisible();
+  });
+
+  test.afterEach(async ({ page }, testInfo) => {
+    // Evidence on failure
+    if (testInfo.status !== testInfo.expectedStatus) {
+      await page.screenshot({ path: \`test-results/\${testInfo.title}-failed.png\`, fullPage: true });
+    }
+  });
+
+  test("should complete checkout successfully", async ({ page }) => {
+    await page.getByRole("link", { name: "Products" }).click();
+    await page.getByRole("button", { name: "Add to cart" }).first().click();
+    await page.getByRole("link", { name: /Cart/i }).click();
+    await page.getByRole("button", { name: "Checkout" }).click();
+
+    await expect(page.getByText("Order confirmed")).toBeVisible();
+  });
+
+  test.skip("Blocked by BUG-2222: payment gateway test env unavailable", async ({ page }) => {
+    // placeholder test
+  });
+
+  // test.only("debug checkout issue", async ({ page }) => {
+  //   // use locally only; do not commit
+  // });
+});`}</pre>
+                        </div>
+                    </div>
+                )}
+            </div>
+
+            {/* Additional PDF Download Section */}
+            <PdfDownload
+                pdfPath="Playwright_TS_Hooks_Checklist_Handout.pdf.pdfpdf"
+                title="📥 Download Playwright Hooks & Checklist Handout"
+                description="Download the complete Playwright TypeScript Hooks & Checklist handout"
+                downloadFileName="Playwright_TS_Hooks_Checklist_Handout.pdf.pdfpdf"
+            />
+
+            {/* Playwright Fixtures Package Section */}
+            <div style={{
+                ...cardStyle,
+                marginBottom: '48px'
+            }}>
+                <div
+                    onClick={toggleFixtures}
+                    style={{
+                        cursor: 'pointer',
+                        display: 'flex',
+                        justifyContent: 'space-between',
+                        alignItems: 'center',
+                        marginBottom: isFixturesExpanded ? '24px' : '0',
+                        paddingBottom: isFixturesExpanded ? '20px' : '0',
+                        borderBottom: isFixturesExpanded ? '2px solid #00416A' : 'none',
+                        transition: 'all 0.3s ease'
+                    }}
+                    onMouseEnter={(e) => {
+                        if (!isFixturesExpanded) {
+                            e.currentTarget.style.backgroundColor = '#f0f7fa';
+                        }
+                    }}
+                    onMouseLeave={(e) => {
+                        if (!isFixturesExpanded) {
+                            e.currentTarget.style.backgroundColor = 'transparent';
+                        }
+                    }}
+                >
+                    <div>
+                        <h2 style={{ 
+                            color: '#00416A', 
+                            fontSize: '32px', 
+                            marginBottom: '8px',
+                            fontWeight: '700',
+                            textAlign: 'left',
+                            margin: 0
+                        }}>
+                            Playwright Fixtures Package (Course-Ready)
+                        </h2>
+                        <p style={{ 
+                            fontSize: '16px', 
+                            color: '#64748b',
+                            marginBottom: 0,
+                            lineHeight: '1.6',
+                            textAlign: 'left'
+                        }}>
+                            Below is an <strong>end-to-end Playwright fixtures package</strong> your students can use <strong>throughout the entire course</strong> (UI + API + auth + pages + test data + environment config).
+                        </p>
+                    </div>
+                    <span style={{
+                        fontSize: '32px',
+                        color: '#00416A',
+                        fontWeight: 'bold',
+                        marginLeft: '20px',
+                        flexShrink: 0,
+                        transition: 'transform 0.3s ease'
+                    }}>
+                        {isFixturesExpanded ? '−' : '+'}
+                    </span>
+                </div>
+
+                {isFixturesExpanded && (
+                    <div>
+                        {/* Fixtures Checklist */}
+                        <div style={{ marginBottom: '32px' }}>
+                            <h3 style={{
+                                color: '#00416A',
+                                fontSize: '24px',
+                                fontWeight: '600',
+                                marginBottom: '20px',
+                                textAlign: 'left'
+                            }}>
+                                1) Fixtures Checklist (Course-Ready)
+                            </h3>
+                            
+                            <div style={checklistGridStyles.modern}>
+                                {[
+                                    {
+                                        title: 'Core',
+                                        items: [
+                                            { text: 'baseURL + env config (dev/qa/prod, timeouts, retries)', id: 'fixture-env-config' },
+                                            { text: 'page baseline fixture (already provided by Playwright)', id: 'fixture-base-test' },
+                                            { text: 'testInfo usage (attachments, logging)', id: 'fixture-base-test' }
+                                        ]
+                                    },
+                                    {
+                                        title: 'Auth & Roles',
+                                        items: [
+                                            { text: 'storageState auth (login once, reuse session)', id: 'fixture-global-setup' },
+                                            { text: 'Role-based users: adminUser, standardUser, readonlyUser', id: 'fixture-auth' },
+                                            { text: 'loggedInPage fixture (pre-authenticated browser context)', id: 'fixture-auth' },
+                                            { text: 'logout/cleanup (optional)', id: 'fixture-seed' }
+                                        ]
+                                    },
+                                    {
+                                        title: 'Page Objects',
+                                        items: [
+                                            { text: 'pages fixture: loginPage, dashboardPage, usersPage, etc.', id: 'fixture-pages' },
+                                            { text: 'app / ui fixture: high-level actions (loginAsAdmin, createUser…)', id: 'fixture-pages' }
+                                        ]
+                                    },
+                                    {
+                                        title: 'API & Test Data',
+                                        items: [
+                                            { text: 'api fixture (request wrapper with helper methods)', id: 'fixture-api' },
+                                            { text: 'testData fixture (randomized but controlled data factory)', id: 'fixture-test-data' },
+                                            { text: 'seed fixture (create data via API before UI tests)', id: 'fixture-seed' },
+                                            { text: 'cleanup fixture (delete what you created)', id: 'fixture-seed' }
+                                        ]
+                                    },
+                                    {
+                                        title: 'Observability / Debugging',
+                                        items: [
+                                            { text: 'Auto screenshots/video/trace rules', id: 'fixture-config' },
+                                            { text: 'traceOnFailure fixture (optional manual control)', id: 'fixture-config' },
+                                            { text: 'Network logging (optional)', id: 'fixture-network' }
+                                        ]
+                                    },
+                                    {
+                                        title: 'Network Control (Advanced)',
+                                        items: [
+                                            { text: 'mockServer / networkMock fixture (route mocking)', id: 'fixture-network' },
+                                            { text: 'blockAds/analytics fixture (reduce noise + speed)', id: 'fixture-network' }
+                                        ]
+                                    },
+                                    {
+                                        title: 'CI-ready',
+                                        items: [
+                                            { text: 'Separate globalSetup for auth state generation', id: 'fixture-global-setup' },
+                                            { text: 'Reporters + artifacts + output folder conventions', id: 'fixture-config' }
+                                        ]
+                                    }
+                                ].map((section, idx) => (
+                                    <div key={idx} style={{
+                                        backgroundColor: '#f8fafc',
+                                        border: '1px solid #e5e7eb',
+                                        borderRadius: '8px',
+                                        padding: '20px',
+                                        height: '100%',
+                                        display: 'flex',
+                                        flexDirection: 'column'
+                                    }}>
+                                        <h4 style={{
+                                            color: '#00416A',
+                                            fontSize: '18px',
+                                            fontWeight: '600',
+                                            marginBottom: '16px',
+                                            paddingBottom: '12px',
+                                            borderBottom: '2px solid #e5e7eb',
+                                            textAlign: 'left'
+                                        }}>
+                                            {section.title}
+                                        </h4>
+                                        <ul style={{ 
+                                            lineHeight: '1.8', 
+                                            fontSize: '14px',
+                                            color: '#475569',
+                                            paddingLeft: '20px',
+                                            margin: 0,
+                                            flex: 1,
+                                            textAlign: 'left'
+                                        }}>
+                                            {section.items.map((item, itemIdx) => (
+                                                <li key={itemIdx} style={{ marginBottom: '8px' }}>
+                                                    <a
+                                                        href={`#${item.id}`}
+                                                        onClick={(e) => {
+                                                            e.preventDefault();
+                                                            scrollToElement(item.id);
+                                                        }}
+                                                        style={checklistLinkStyles.base}
+                                                        onMouseEnter={(e) => {
+                                                            e.target.style.color = checklistLinkStyles.hover.color;
+                                                            e.target.style.borderBottomColor = checklistLinkStyles.hover.borderBottomColor;
+                                                        }}
+                                                        onMouseLeave={(e) => {
+                                                            e.target.style.color = checklistLinkStyles.base.color;
+                                                            e.target.style.borderBottomColor = checklistLinkStyles.base.borderBottomColor;
+                                                        }}
+                                                    >
+                                                        {item.text}
+                                                    </a>
+                                                </li>
+                                            ))}
+                                        </ul>
+                                    </div>
+                                ))}
+                            </div>
+                        </div>
+
+                        {/* Definitions Section */}
+                        <div style={{ marginBottom: '32px' }}>
+                            <h3 style={{
+                                color: '#00416A',
+                                fontSize: '24px',
+                                fontWeight: '600',
+                                marginBottom: '20px',
+                                textAlign: 'left'
+                            }}>
+                                2) Definitions (What each fixture is)
+                            </h3>
+                            
+                            {[
+                                {
+                                    title: 'baseTest fixture set',
+                                    definition: 'A custom test object created with test.extend() so every spec can share the same setup patterns.'
+                                },
+                                {
+                                    title: 'storageState (Auth state)',
+                                    definition: 'A JSON file containing cookies/localStorage that lets you skip logging in every test.'
+                                },
+                                {
+                                    title: 'loggedInPage',
+                                    definition: 'A Page created from a pre-authenticated context (using storageState). Tests start already logged in.'
+                                },
+                                {
+                                    title: 'pages (Page Object fixture)',
+                                    definition: 'A single fixture that constructs and returns your Page Objects. Keeps test files clean.'
+                                },
+                                {
+                                    title: 'api fixture',
+                                    definition: 'A thin wrapper around Playwright\'s request to do API setup/teardown reliably.'
+                                },
+                                {
+                                    title: 'testData',
+                                    definition: 'A factory that generates consistent data for forms (emails, names, IDs) without collisions.'
+                                },
+                                {
+                                    title: 'seed / cleanup',
+                                    definition: 'Ensures tests are independent and repeatable: create what you need, then delete it.'
+                                },
+                                {
+                                    title: 'networkMock',
+                                    definition: 'Allows stable tests when external services are unreliable.'
+                                }
+                            ].map((item, idx) => (
+                                <div key={idx} style={{
+                                    marginBottom: '16px',
+                                    padding: '16px',
+                                    backgroundColor: '#f8fafc',
+                                    borderRadius: '8px',
+                                    border: '1px solid #e5e7eb'
+                                }}>
+                                    <h4 style={{
+                                        color: '#00416A',
+                                        fontSize: '18px',
+                                        fontWeight: '600',
+                                        marginBottom: '8px',
+                                        textAlign: 'left'
+                                    }}>
+                                        {item.title}
+                                    </h4>
+                                    <p style={{
+                                        color: '#475569',
+                                        lineHeight: '1.8',
+                                        margin: 0,
+                                        textAlign: 'left'
+                                    }}>
+                                        {item.definition}
+                                    </p>
+                                </div>
+                            ))}
+                        </div>
+
+                        {/* Recommended Folder Structure */}
+                        <div style={{ marginBottom: '32px' }}>
+                            <h3 style={{
+                                color: '#00416A',
+                                fontSize: '24px',
+                                fontWeight: '600',
+                                marginBottom: '20px',
+                                textAlign: 'left'
+                            }}>
+                                3) End-to-End Example (One-by-one)
+                            </h3>
+                            
+                            <h4 style={{
+                                color: '#00416A',
+                                fontSize: '20px',
+                                fontWeight: '600',
+                                marginBottom: '12px',
+                                textAlign: 'left'
+                            }}>
+                                Recommended folder structure
+                            </h4>
+                            <pre style={codeBlockStyle}>{`playwright/
+  auth/
+    admin.storageState.json
+  fixtures/
+    baseTest.ts
+    auth.fixtures.ts
+    pages.fixtures.ts
+    api.fixtures.ts
+    data.fixtures.ts
+    network.fixtures.ts
+  pages/
+    LoginPage.ts
+    DashboardPage.ts
+  utils/
+    env.ts
+    dataFactory.ts
+global-setup.ts
+playwright.config.ts
+tests/
+  smoke.login.spec.ts`}</pre>
+                        </div>
+
+                        {/* Code Examples */}
+                        {[
+                            {
+                                id: 'fixture-env-config',
+                                section: 'A) Environment Config (utility)',
+                                title: 'utils/env.ts',
+                                code: `export type EnvName = "dev" | "qa" | "prod";
+
+export const ENV: EnvName = (process.env.ENV as EnvName) ?? "qa";
+
+export const BASE_URL =
+  process.env.BASE_URL ??
+  (ENV === "dev"
+    ? "https://dev.example.com"
+    : ENV === "prod"
+      ? "https://example.com"
+      : "https://qa.example.com");
+
+export const ADMIN_USERNAME = process.env.ADMIN_USERNAME ?? "admin";
+export const ADMIN_PASSWORD = process.env.ADMIN_PASSWORD ?? "Password123!";`
+                            },
+                            {
+                                id: 'fixture-config',
+                                section: 'B) Playwright Config (CI-friendly)',
+                                title: 'playwright.config.ts',
+                                code: `import { defineConfig } from "@playwright/test";
+import { BASE_URL } from "./utils/env";
+
+export default defineConfig({
+  testDir: "./tests",
+  timeout: 60_000,
+  expect: { timeout: 10_000 },
+
+  retries: process.env.CI ? 1 : 0,
+  workers: process.env.CI ? 2 : undefined,
+
+  use: {
+    baseURL: BASE_URL,
+    headless: true,
+    actionTimeout: 10_000,
+    navigationTimeout: 30_000,
+
+    // Artifacts (good for training + debugging)
+    screenshot: "only-on-failure",
+    video: "retain-on-failure",
+    trace: "retain-on-failure",
+  },
+
+  reporter: [
+    ["html", { open: "never" }],
+    ["list"],
+  ],
+});`
+                            },
+                            {
+                                id: 'fixture-global-setup',
+                                section: 'C) Global Setup (Create Admin Auth State Once)',
+                                title: 'global-setup.ts',
+                                code: `import { chromium, FullConfig } from "@playwright/test";
+import path from "path";
+import { ADMIN_USERNAME, ADMIN_PASSWORD, BASE_URL } from "./utils/env";
+
+export default async function globalSetup(_config: FullConfig) {
+  const browser = await chromium.launch();
+  const page = await browser.newPage();
+
+  // Example login flow (adjust selectors/URL to your app)
+  await page.goto(\`\${BASE_URL}/login\`);
+  await page.getByLabel("Username").fill(ADMIN_USERNAME);
+  await page.getByLabel("Password").fill(ADMIN_PASSWORD);
+  await page.getByRole("button", { name: "Sign in" }).click();
+
+  // Ensure login is complete (adjust to your app)
+  await page.getByRole("heading", { name: /dashboard/i }).waitFor();
+
+  const storagePath = path.resolve("playwright/auth/admin.storageState.json");
+  await page.context().storageState({ path: storagePath });
+
+  await browser.close();
+}`
+                            },
+                            {
+                                id: 'fixture-base-test',
+                                section: 'D) Base Test (your custom test object)',
+                                title: 'fixtures/baseTest.ts',
+                                code: `import { test as base, expect } from "@playwright/test";
+
+export const test = base;
+export { expect };`
+                            },
+                            {
+                                id: 'fixture-auth',
+                                section: 'E) Auth Fixture (logged-in page)',
+                                title: 'fixtures/auth.fixtures.ts',
+                                code: `import { test as base } from "@playwright/test";
+import path from "path";
+
+type AuthFixtures = {
+  loggedInPage: import("@playwright/test").Page;
+};
+
+export const test = base.extend<AuthFixtures>({
+  // Creates a *new* authenticated context per test (clean + isolated)
+  loggedInPage: async ({ browser }, use) => {
+    const storageStatePath = path.resolve("playwright/auth/admin.storageState.json");
+
+    const context = await browser.newContext({
+      storageState: storageStatePath,
+    });
+
+    const page = await context.newPage();
+    await use(page);
+
+    await context.close();
+  },
+});`
+                            },
+                            {
+                                id: 'fixture-pages',
+                                section: 'F) Page Object Fixture (pages)',
+                                title: 'pages/LoginPage.ts',
+                                code: `import { Page, expect } from "@playwright/test";
+
+export class LoginPage {
+  constructor(private page: Page) {}
+
+  async goto() {
+    await this.page.goto("/login");
+  }
+
+  async login(username: string, password: string) {
+    await this.page.getByLabel("Username").fill(username);
+    await this.page.getByLabel("Password").fill(password);
+    await this.page.getByRole("button", { name: "Sign in" }).click();
+  }
+
+  async assertOnDashboard() {
+    await expect(this.page.getByRole("heading", { name: /dashboard/i })).toBeVisible();
+  }
+}`
+                            },
+                            {
+                                id: 'fixture-pages',
+                                section: 'F) Page Object Fixture (pages)',
+                                title: 'pages/DashboardPage.ts',
+                                code: `import { Page, expect } from "@playwright/test";
+
+export class DashboardPage {
+  constructor(private page: Page) {}
+
+  async assertLoaded() {
+    await expect(this.page.getByRole("heading", { name: /dashboard/i })).toBeVisible();
+  }
+}`
+                            },
+                            {
+                                id: 'fixture-pages',
+                                section: 'F) Page Object Fixture (pages)',
+                                title: 'fixtures/pages.fixtures.ts',
+                                code: `import { test as base } from "@playwright/test";
+import { LoginPage } from "../pages/LoginPage";
+import { DashboardPage } from "../pages/DashboardPage";
+
+type PagesFixtures = {
+  loginPage: LoginPage;
+  dashboardPage: DashboardPage;
+};
+
+export const test = base.extend<PagesFixtures>({
+  loginPage: async ({ page }, use) => {
+    await use(new LoginPage(page));
+  },
+  dashboardPage: async ({ page }, use) => {
+    await use(new DashboardPage(page));
+  },
+});`
+                            },
+                            {
+                                id: 'fixture-api',
+                                section: 'G) API Fixture (setup data via API)',
+                                title: 'fixtures/api.fixtures.ts',
+                                code: `import { test as base, APIRequestContext, expect } from "@playwright/test";
+
+type ApiFixtures = {
+  api: {
+    request: APIRequestContext;
+    createUser: (payload: { name: string; email: string }) => Promise<{ id: string }>;
+    deleteUser: (id: string) => Promise<void>;
+  };
+};
+
+export const test = base.extend<ApiFixtures>({
+  api: async ({ request }, use) => {
+    const api = {
+      request,
+      async createUser(payload: { name: string; email: string }) {
+        const res = await request.post("/api/users", { data: payload });
+        expect(res.ok()).toBeTruthy();
+        return (await res.json()) as { id: string };
+      },
+      async deleteUser(id: string) {
+        const res = await request.delete(\`/api/users/\${id}\`);
+        expect(res.ok()).toBeTruthy();
+      },
+    };
+
+    await use(api);
+  },
+});`
+                            },
+                            {
+                                id: 'fixture-test-data',
+                                section: 'H) Test Data Fixture (reusable data factory)',
+                                title: 'utils/dataFactory.ts',
+                                code: `export function uniqueEmail(prefix = "student") {
+  const stamp = Date.now();
+  return \`\${prefix}.\${stamp}@example.com\`;
+}
+
+export function personName(prefix = "Student") {
+  const stamp = Date.now().toString().slice(-6);
+  return \`\${prefix} \${stamp}\`;
+}`
+                            },
+                            {
+                                id: 'fixture-test-data',
+                                section: 'H) Test Data Fixture (reusable data factory)',
+                                title: 'fixtures/data.fixtures.ts',
+                                code: `import { test as base } from "@playwright/test";
+import { uniqueEmail, personName } from "../utils/dataFactory";
+
+type DataFixtures = {
+  testData: {
+    name: string;
+    email: string;
+  };
+};
+
+export const test = base.extend<DataFixtures>({
+  testData: async ({}, use) => {
+    await use({
+      name: personName(),
+      email: uniqueEmail(),
+    });
+  },
+});`
+                            },
+                            {
+                                id: 'fixture-seed',
+                                section: 'I) Seed & Cleanup Fixture (create once, cleanup always)',
+                                title: 'fixtures/seed.fixtures.ts',
+                                code: `import { test as base } from "@playwright/test";
+
+type SeedFixtures = {
+  seededUserId: string;
+};
+
+export const test = base.extend<SeedFixtures>({
+  seededUserId: async ({ api, testData }, use) => {
+    const created = await api.createUser({ name: testData.name, email: testData.email });
+    await use(created.id);
+    await api.deleteUser(created.id);
+  },
+});`
+                            },
+                            {
+                                id: 'fixture-network',
+                                section: 'J) Network Mock Fixture (Advanced)',
+                                title: 'fixtures/network.fixtures.ts',
+                                code: `import { test as base } from "@playwright/test";
+
+type NetworkFixtures = {
+  mockUserList: boolean;
+};
+
+export const test = base.extend<NetworkFixtures>({
+  mockUserList: [false, { option: true }], // default off; can override per test
+});
+
+export const applyNetworkMocks = async (page: import("@playwright/test").Page, enabled: boolean) => {
+  if (!enabled) return;
+
+  await page.route("**/api/users", async (route) => {
+    await route.fulfill({
+      status: 200,
+      contentType: "application/json",
+      body: JSON.stringify([{ id: "1", name: "Mock User", email: "mock@example.com" }]),
+    });
+  });
+};`
+                            },
+                            {
+                                id: 'fixture-course-test',
+                                section: 'K) Combine Everything into ONE Course Test Fixture',
+                                title: 'fixtures/courseTest.ts',
+                                code: `import { test as base, expect } from "@playwright/test";
+import path from "path";
+import { LoginPage } from "../pages/LoginPage";
+import { DashboardPage } from "../pages/DashboardPage";
+import { uniqueEmail, personName } from "../utils/dataFactory";
+import { applyNetworkMocks } from "./network.fixtures";
+
+type CourseFixtures = {
+  // Auth
+  loggedInPage: import("@playwright/test").Page;
+
+  // Page objects (on default page)
+  loginPage: LoginPage;
+  dashboardPage: DashboardPage;
+
+  // API helper
+  api: {
+    createUser: (payload: { name: string; email: string }) => Promise<{ id: string }>;
+    deleteUser: (id: string) => Promise<void>;
+  };
+
+  // Test data
+  testData: { name: string; email: string };
+
+  // Seeded entities
+  seededUserId: string;
+
+  // Network control
+  mockUserList: boolean;
+};
+
+export const test = base.extend<CourseFixtures>({
+  // network toggle
+  mockUserList: [false, { option: true }],
+
+  // auth page
+  loggedInPage: async ({ browser }, use) => {
+    const storageStatePath = path.resolve("playwright/auth/admin.storageState.json");
+    const context = await browser.newContext({ storageState: storageStatePath });
+    const page = await context.newPage();
+    await use(page);
+    await context.close();
+  },
+
+  // page objects (default page fixture)
+  loginPage: async ({ page }, use) => await use(new LoginPage(page)),
+  dashboardPage: async ({ page }, use) => await use(new DashboardPage(page)),
+
+  // test data
+  testData: async ({}, use) => {
+    await use({ name: personName(), email: uniqueEmail() });
+  },
+
+  // api helpers (use built-in request fixture)
+  api: async ({ request }, use) => {
+    const api = {
+      async createUser(payload: { name: string; email: string }) {
+        const res = await request.post("/api/users", { data: payload });
+        expect(res.ok()).toBeTruthy();
+        return (await res.json()) as { id: string };
+      },
+      async deleteUser(id: string) {
+        const res = await request.delete(\`/api/users/\${id}\`);
+        expect(res.ok()).toBeTruthy();
+      },
+    };
+    await use(api);
+  },
+
+  // seeded user lifecycle
+  seededUserId: async ({ api, testData }, use) => {
+    const created = await api.createUser({ name: testData.name, email: testData.email });
+    await use(created.id);
+    await api.deleteUser(created.id);
+  },
+});
+
+export { expect, applyNetworkMocks };`
+                            },
+                            {
+                                id: 'fixture-example-1',
+                                section: 'L) Example Usage (One by one)',
+                                title: 'Example 1: Normal UI test with page objects',
+                                code: `import { test, expect } from "../playwright/fixtures/courseTest";
+
+test("Day-2: dashboard loads", async ({ page, loginPage, dashboardPage }) => {
+  await loginPage.goto();
+  await loginPage.login("admin", "Password123!");
+  await dashboardPage.assertLoaded();
+  await expect(page).toHaveURL(/dashboard/);
+});`
+                            },
+                            {
+                                id: 'fixture-example-2',
+                                section: 'L) Example Usage (One by one)',
+                                title: 'Example 2: Authenticated test (skips login)',
+                                code: `import { test, expect } from "../playwright/fixtures/courseTest";
+
+test("Day-4: authenticated user can open dashboard", async ({ loggedInPage }) => {
+  await loggedInPage.goto("/dashboard");
+  await expect(loggedInPage.getByRole("heading", { name: /dashboard/i })).toBeVisible();
+});`
+                            },
+                            {
+                                id: 'fixture-example-3',
+                                section: 'L) Example Usage (One by one)',
+                                title: 'Example 3: API seed + UI validate (best for stable E2E)',
+                                code: `import { test, expect } from "../playwright/fixtures/courseTest";
+
+test("Day-6: create user via API, verify in UI", async ({ loggedInPage, seededUserId }) => {
+  await loggedInPage.goto("/users");
+  await expect(loggedInPage.getByText(seededUserId)).toBeVisible(); // replace with real UI assertion
+});`
+                            },
+                            {
+                                id: 'fixture-example-4',
+                                section: 'L) Example Usage (One by one)',
+                                title: 'Example 4: Network mocking (advanced)',
+                                code: `import { test, expect, applyNetworkMocks } from "../playwright/fixtures/courseTest";
+
+test("Day-8: users list uses mock data", async ({ page }, testInfo) => {
+  await applyNetworkMocks(page, true);
+  await page.goto("/users");
+  await expect(page.getByText("Mock User")).toBeVisible();
+});`
+                            }
+                        ].map((item, idx) => (
+                            <div key={idx} id={item.id || `fixture-example-${idx}`} style={{ 
+                                marginBottom: '32px',
+                                scrollMarginTop: '100px'
+                            }}>
+                                <h4 style={{
+                                    color: '#00416A',
+                                    fontSize: '20px',
+                                    fontWeight: '600',
+                                    marginBottom: '12px',
+                                    textAlign: 'left',
+                                    paddingBottom: '8px',
+                                    borderBottom: '2px solid #e5e7eb'
+                                }}>
+                                    {removeMarkdown(item.section)}
+                                </h4>
+                                <h5 style={{
+                                    color: '#00416A',
+                                    fontSize: '18px',
+                                    fontWeight: '600',
+                                    marginBottom: '12px',
+                                    textAlign: 'left'
+                                }}>
+                                    {removeMarkdown(item.title)}
+                                </h5>
+                                <pre style={codeBlockStyle}>{item.code}</pre>
+                            </div>
+                        ))}
+                    </div>
+                )}
+            </div>
+
+            {/* Role-Based Auth & BDD Integration Section */}
+            <div style={{
+                ...cardStyle,
+                marginBottom: '48px'
+            }}>
+                <div
+                    onClick={toggleRoleAuth}
+                    style={{
+                        cursor: 'pointer',
+                        display: 'flex',
+                        justifyContent: 'space-between',
+                        alignItems: 'center',
+                        marginBottom: isRoleAuthExpanded ? '24px' : '0',
+                        paddingBottom: isRoleAuthExpanded ? '20px' : '0',
+                        borderBottom: isRoleAuthExpanded ? '2px solid #00416A' : 'none',
+                        transition: 'all 0.3s ease'
+                    }}
+                    onMouseEnter={(e) => {
+                        if (!isRoleAuthExpanded) {
+                            e.currentTarget.style.backgroundColor = '#f0f7fa';
+                        }
+                    }}
+                    onMouseLeave={(e) => {
+                        if (!isRoleAuthExpanded) {
+                            e.currentTarget.style.backgroundColor = 'transparent';
+                        }
+                    }}
+                >
+                    <div>
+                        <h2 style={{ 
+                            color: '#00416A', 
+                            fontSize: '32px', 
+                            marginBottom: '8px',
+                            fontWeight: '700',
+                            textAlign: 'left',
+                            margin: 0
+                        }}>
+                            Role-Based Auth & BDD Integration (Course-Ready)
+                        </h2>
+                        <p style={{ 
+                            fontSize: '16px', 
+                            color: '#64748b',
+                            marginBottom: 0,
+                            lineHeight: '1.6',
+                            textAlign: 'left'
+                        }}>
+                            Complete fixture system with <strong>role-based auth states</strong> (Admin / Manager / User), works for <strong>any environment</strong> (demo app or real client app) via ENV/BASE_URL, and includes <strong>BDD (Cucumber) integration</strong> with Playwright fixtures.
+                        </p>
+                    </div>
+                    <span style={{
+                        fontSize: '32px',
+                        color: '#00416A',
+                        fontWeight: 'bold',
+                        marginLeft: '20px',
+                        flexShrink: 0,
+                        transition: 'transform 0.3s ease'
+                    }}>
+                        {isRoleAuthExpanded ? '−' : '+'}
+                    </span>
+                </div>
+
+                {isRoleAuthExpanded && (
+                    <div>
+                        {/* Checklist */}
+                        <div style={{ marginBottom: '32px' }}>
+                            <h3 style={{
+                                color: '#00416A',
+                                fontSize: '24px',
+                                fontWeight: '600',
+                                marginBottom: '20px',
+                                textAlign: 'left'
+                            }}>
+                                1) Checklist (End-to-End Course Fixtures)
+                            </h3>
+                            
+                            <div style={checklistGridStyles.modern}>
+                                {[
+                                    {
+                                        title: 'A) Environment + Configuration',
+                                        items: [
+                                            { text: 'ENV + BASE_URL (demo/qa/prod switch)', id: 'role-auth-env' },
+                                            { text: 'Centralized timeouts/retries/reporting', id: 'role-auth-config' },
+                                            { text: 'Credentials per role from env vars (no hardcoding)', id: 'role-auth-env' }
+                                        ]
+                                    },
+                                    {
+                                        title: 'B) Role-Based Authentication',
+                                        items: [
+                                            { text: 'globalSetup generates storageState files', id: 'role-auth-global-setup' },
+                                            { text: 'admin.storageState.json', id: 'role-auth-global-setup' },
+                                            { text: 'manager.storageState.json', id: 'role-auth-global-setup' },
+                                            { text: 'user.storageState.json', id: 'role-auth-global-setup' },
+                                            { text: 'Fixture option role to choose which auth state to use', id: 'role-auth-course-test' },
+                                            { text: 'authedPage (page already logged in based on role)', id: 'role-auth-course-test' }
+                                        ]
+                                    },
+                                    {
+                                        title: 'C) Core Automation Fixtures',
+                                        items: [
+                                            { text: 'pages (Page Objects) injected into tests', id: 'role-auth-pages' },
+                                            { text: 'api helper (create/delete test data)', id: 'role-auth-course-test' },
+                                            { text: 'testData factory (unique names/emails)', id: 'role-auth-data-factory' },
+                                            { text: 'seededUser (create via API → cleanup after)', id: 'role-auth-course-test' }
+                                        ]
+                                    },
+                                    {
+                                        title: 'D) BDD (Cucumber) Fixtures',
+                                        items: [
+                                            { text: 'World holds page/context/request/testData', id: 'role-auth-bdd-world' },
+                                            { text: 'Hooks: create browser context per scenario', id: 'role-auth-bdd-hooks' },
+                                            { text: 'load role storageState based on tags (@admin, @manager, @user)', id: 'role-auth-bdd-hooks' },
+                                            { text: 'attach screenshot on failure', id: 'role-auth-bdd-hooks' }
+                                        ]
+                                    }
+                                ].map((section, idx) => (
+                                    <div key={idx} style={{
+                                        backgroundColor: '#f8fafc',
+                                        border: '1px solid #e5e7eb',
+                                        borderRadius: '8px',
+                                        padding: '20px',
+                                        height: '100%',
+                                        display: 'flex',
+                                        flexDirection: 'column'
+                                    }}>
+                                        <h4 style={{
+                                            color: '#00416A',
+                                            fontSize: '18px',
+                                            fontWeight: '600',
+                                            marginBottom: '16px',
+                                            paddingBottom: '12px',
+                                            borderBottom: '2px solid #e5e7eb',
+                                            textAlign: 'left'
+                                        }}>
+                                            {section.title}
+                                        </h4>
+                                        <ul style={{ 
+                                            lineHeight: '1.8', 
+                                            fontSize: '14px',
+                                            color: '#475569',
+                                            paddingLeft: '20px',
+                                            margin: 0,
+                                            flex: 1,
+                                            textAlign: 'left'
+                                        }}>
+                                            {section.items.map((item, itemIdx) => (
+                                                <li key={itemIdx} style={{ marginBottom: '8px' }}>
+                                                    <a
+                                                        href={`#${item.id}`}
+                                                        onClick={(e) => {
+                                                            e.preventDefault();
+                                                            scrollToElement(item.id);
+                                                        }}
+                                                        style={checklistLinkStyles.base}
+                                                        onMouseEnter={(e) => {
+                                                            e.target.style.color = checklistLinkStyles.hover.color;
+                                                            e.target.style.borderBottomColor = checklistLinkStyles.hover.borderBottomColor;
+                                                        }}
+                                                        onMouseLeave={(e) => {
+                                                            e.target.style.color = checklistLinkStyles.base.color;
+                                                            e.target.style.borderBottomColor = checklistLinkStyles.base.borderBottomColor;
+                                                        }}
+                                                    >
+                                                        {item.text}
+                                                    </a>
+                                                </li>
+                                            ))}
+                                        </ul>
+                                    </div>
+                                ))}
+                            </div>
+                        </div>
+
+                        {/* Definitions Section */}
+                        <div style={{ marginBottom: '32px' }}>
+                            <h3 style={{
+                                color: '#00416A',
+                                fontSize: '24px',
+                                fontWeight: '600',
+                                marginBottom: '20px',
+                                textAlign: 'left'
+                            }}>
+                                2) Definitions (What each fixture means)
+                            </h3>
+                            
+                            {[
+                                {
+                                    title: 'ENV / BASE_URL',
+                                    definition: 'lets you run the same suite against demo or client env without code changes.'
+                                },
+                                {
+                                    title: 'storageState',
+                                    definition: 'saves login cookies/localStorage so tests start authenticated.'
+                                },
+                                {
+                                    title: 'role',
+                                    definition: 'a test option that selects which storageState to use.'
+                                },
+                                {
+                                    title: 'authedPage',
+                                    definition: 'a Page already logged in as the selected role.'
+                                },
+                                {
+                                    title: 'pages',
+                                    definition: 'Page Objects (LoginPage, DashboardPage, etc.) injected into tests.'
+                                },
+                                {
+                                    title: 'api',
+                                    definition: 'wrapper around Playwright request used for setup/teardown (fast + stable).'
+                                },
+                                {
+                                    title: 'testData',
+                                    definition: 'factory to generate unique but readable data.'
+                                },
+                                {
+                                    title: 'BDD World/Hooks',
+                                    definition: 'Cucumber-compatible injection of Playwright context/page + role selection via tags.'
+                                }
+                            ].map((item, idx) => (
+                                <div key={idx} style={{
+                                    marginBottom: '16px',
+                                    padding: '16px',
+                                    backgroundColor: '#f8fafc',
+                                    borderRadius: '8px',
+                                    border: '1px solid #e5e7eb'
+                                }}>
+                                    <h4 style={{
+                                        color: '#00416A',
+                                        fontSize: '18px',
+                                        fontWeight: '600',
+                                        marginBottom: '8px',
+                                        textAlign: 'left'
+                                    }}>
+                                        {item.title}
+                                    </h4>
+                                    <p style={{
+                                        color: '#475569',
+                                        lineHeight: '1.8',
+                                        margin: 0,
+                                        textAlign: 'left'
+                                    }}>
+                                        {item.definition}
+                                    </p>
+                                </div>
+                            ))}
+                        </div>
+
+                        {/* Recommended Structure */}
+                        <div style={{ marginBottom: '32px' }}>
+                            <h3 style={{
+                                color: '#00416A',
+                                fontSize: '24px',
+                                fontWeight: '600',
+                                marginBottom: '20px',
+                                textAlign: 'left'
+                            }}>
+                                3) Full Example (One-by-one, copy/paste)
+                            </h3>
+                            
+                            <h4 style={{
+                                color: '#00416A',
+                                fontSize: '20px',
+                                fontWeight: '600',
+                                marginBottom: '12px',
+                                textAlign: 'left'
+                            }}>
+                                Recommended structure
+                            </h4>
+                            <pre style={codeBlockStyle}>{`playwright/
+  auth/
+    admin.storageState.json
+    manager.storageState.json
+    user.storageState.json
+  fixtures/
+    courseTest.ts
+  pages/
+    LoginPage.ts
+    DashboardPage.ts
+  utils/
+    env.ts
+    dataFactory.ts
+bdd/
+  cucumber.js
+  features/
+    login.feature
+  steps/
+    login.steps.ts
+  support/
+    world.ts
+    hooks.ts
+global-setup.ts
+playwright.config.ts
+tests/
+  smoke.dashboard.spec.ts`}</pre>
+                        </div>
+
+                        {/* Code Examples */}
+                        {[
+                            {
+                                id: 'role-auth-env',
+                                section: 'A) Env + Credentials (demo OR client env)',
+                                title: 'playwright/utils/env.ts',
+                                code: `export type EnvName = "demo" | "qa" | "prod";
+
+export const ENV: EnvName = (process.env.ENV as EnvName) ?? "qa";
+export const BASE_URL =
+  process.env.BASE_URL ??
+  (ENV === "demo"
+    ? "https://demo.example.com"
+    : ENV === "prod"
+      ? "https://client.example.com"
+      : "https://qa.example.com");
+
+// Role credentials (set in pipeline or .env; never hardcode in real projects)
+export const ADMIN_USER = process.env.ADMIN_USER ?? "admin";
+export const ADMIN_PASS = process.env.ADMIN_PASS ?? "Password123!";
+
+export const MANAGER_USER = process.env.MANAGER_USER ?? "manager";
+export const MANAGER_PASS = process.env.MANAGER_PASS ?? "Password123!";
+
+export const STANDARD_USER = process.env.STANDARD_USER ?? "user";
+export const STANDARD_PASS = process.env.STANDARD_PASS ?? "Password123!";`
+                            },
+                            {
+                                id: 'role-auth-config',
+                                section: 'B) Playwright Config',
+                                title: 'playwright.config.ts',
+                                code: `import { defineConfig } from "@playwright/test";
+import { BASE_URL } from "./playwright/utils/env";
+
+export default defineConfig({
+  testDir: "./tests",
+  timeout: 60_000,
+  expect: { timeout: 10_000 },
+
+  retries: process.env.CI ? 1 : 0,
+  workers: process.env.CI ? 2 : undefined,
+
+  globalSetup: require.resolve("./global-setup"),
+
+  use: {
+    baseURL: BASE_URL,
+    headless: true,
+    screenshot: "only-on-failure",
+    video: "retain-on-failure",
+    trace: "retain-on-failure",
+  },
+
+  reporter: [["html", { open: "never" }], ["list"]],
+});`
+                            },
+                            {
+                                id: 'role-auth-global-setup',
+                                section: 'C) Global Setup: Create storageState for ALL roles',
+                                title: 'global-setup.ts',
+                                code: `import { chromium, FullConfig } from "@playwright/test";
+import path from "path";
+import {
+  BASE_URL,
+  ADMIN_USER, ADMIN_PASS,
+  MANAGER_USER, MANAGER_PASS,
+  STANDARD_USER, STANDARD_PASS,
+} from "./playwright/utils/env";
+
+type Role = "admin" | "manager" | "user";
+
+async function loginAndSaveState(role: Role, username: string, password: string) {
+  const browser = await chromium.launch();
+  const page = await browser.newPage();
+
+  await page.goto(\`\${BASE_URL}/login\`);
+
+  // Adjust selectors to match your app
+  await page.getByLabel("Username").fill(username);
+  await page.getByLabel("Password").fill(password);
+  await page.getByRole("button", { name: /sign in/i }).click();
+
+  // Adjust "logged-in proof" selector
+  await page.getByRole("heading", { name: /dashboard/i }).waitFor();
+
+  const storagePath = path.resolve(\`playwright/auth/\${role}.storageState.json\`);
+  await page.context().storageState({ path: storagePath });
+
+  await browser.close();
+}
+
+export default async function globalSetup(_config: FullConfig) {
+  await loginAndSaveState("admin", ADMIN_USER, ADMIN_PASS);
+  await loginAndSaveState("manager", MANAGER_USER, MANAGER_PASS);
+  await loginAndSaveState("user", STANDARD_USER, STANDARD_PASS);
+}`
+                            },
+                            {
+                                id: 'role-auth-pages',
+                                section: 'D) Page Objects (example)',
+                                title: 'playwright/pages/LoginPage.ts',
+                                code: `import { Page, expect } from "@playwright/test";
+
+export class LoginPage {
+  constructor(private page: Page) {}
+
+  async goto() {
+    await this.page.goto("/login");
+  }
+
+  async login(username: string, password: string) {
+    await this.page.getByLabel("Username").fill(username);
+    await this.page.getByLabel("Password").fill(password);
+    await this.page.getByRole("button", { name: /sign in/i }).click();
+  }
+
+  async assertDashboardLoaded() {
+    await expect(this.page.getByRole("heading", { name: /dashboard/i })).toBeVisible();
+  }
+}`
+                            },
+                            {
+                                id: 'role-auth-pages',
+                                section: 'D) Page Objects (example)',
+                                title: 'playwright/pages/DashboardPage.ts',
+                                code: `import { Page, expect } from "@playwright/test";
+
+export class DashboardPage {
+  constructor(private page: Page) {}
+
+  async assertLoaded() {
+    await expect(this.page.getByRole("heading", { name: /dashboard/i })).toBeVisible();
+  }
+}`
+                            },
+                            {
+                                id: 'role-auth-data-factory',
+                                section: 'E) Data factory (unique but readable)',
+                                title: 'playwright/utils/dataFactory.ts',
+                                code: `export function uniqueEmail(prefix = "student") {
+  return \`\${prefix}.\${Date.now()}@example.com\`;
+}
+export function personName(prefix = "Student") {
+  return \`\${prefix} \${Date.now().toString().slice(-6)}\`;
+}`
+                            },
+                            {
+                                id: 'role-auth-course-test',
+                                section: 'F) ONE "Course Test" with all fixtures (roles + pages + api + data)',
+                                title: 'playwright/fixtures/courseTest.ts',
+                                code: `import { test as base, expect, Page, APIRequestContext } from "@playwright/test";
+import path from "path";
+import { LoginPage } from "../pages/LoginPage";
+import { DashboardPage } from "../pages/DashboardPage";
+import { uniqueEmail, personName } from "../utils/dataFactory";
+
+export type Role = "admin" | "manager" | "user";
+
+type CourseFixtures = {
+  role: Role;                 // option
+  authedPage: Page;           // page already logged in for selected role
+
+  loginPage: LoginPage;       // page objects (default page)
+  dashboardPage: DashboardPage;
+
+  api: {
+    request: APIRequestContext;
+    createUser: (p: { name: string; email: string }) => Promise<{ id: string }>;
+    deleteUser: (id: string) => Promise<void>;
+  };
+
+  testData: { name: string; email: string };
+  seededUserId: string;
+};
+
+export const test = base.extend<CourseFixtures>({
+  // Role is configurable per test/suite
+  role: ["admin", { option: true }],
+
+  // authedPage uses storageState based on role
+  authedPage: async ({ browser, role }, use) => {
+    const storageStatePath = path.resolve(\`playwright/auth/\${role}.storageState.json\`);
+    const context = await browser.newContext({ storageState: storageStatePath });
+    const page = await context.newPage();
+
+    await use(page);
+
+    await context.close();
+  },
+
+  // Page objects using default \`page\` fixture
+  loginPage: async ({ page }, use) => await use(new LoginPage(page)),
+  dashboardPage: async ({ page }, use) => await use(new DashboardPage(page)),
+
+  // Test data
+  testData: async ({}, use) => {
+    await use({ name: personName(), email: uniqueEmail() });
+  },
+
+  // API wrapper
+  api: async ({ request }, use) => {
+    const api = {
+      request,
+      async createUser(payload: { name: string; email: string }) {
+        const res = await request.post("/api/users", { data: payload });
+        expect(res.ok()).toBeTruthy();
+        return (await res.json()) as { id: string };
+      },
+      async deleteUser(id: string) {
+        const res = await request.delete(\`/api/users/\${id}\`);
+        expect(res.ok()).toBeTruthy();
+      },
+    };
+    await use(api);
+  },
+
+  // Seed user, ensure cleanup after
+  seededUserId: async ({ api, testData }, use) => {
+    const created = await api.createUser({ name: testData.name, email: testData.email });
+    await use(created.id);
+    await api.deleteUser(created.id);
+  },
+});
+
+export { expect };`
+                            },
+                            {
+                                id: 'role-auth-example-1',
+                                section: 'UI Examples (one by one)',
+                                title: 'Example 1: default role (admin)',
+                                code: `import { test, expect } from "../playwright/fixtures/courseTest";
+
+test("Dashboard loads for admin", async ({ authedPage }) => {
+  await authedPage.goto("/dashboard");
+  await expect(authedPage.getByRole("heading", { name: /dashboard/i })).toBeVisible();
+});`
+                            },
+                            {
+                                id: 'role-auth-example-2',
+                                section: 'UI Examples (one by one)',
+                                title: 'Example 2: manager role',
+                                code: `import { test, expect } from "../playwright/fixtures/courseTest";
+
+test.use({ role: "manager" });
+
+test("Manager can access dashboard", async ({ authedPage }) => {
+  await authedPage.goto("/dashboard");
+  await expect(authedPage.getByRole("heading", { name: /dashboard/i })).toBeVisible();
+});`
+                            },
+                            {
+                                id: 'role-auth-example-3',
+                                section: 'UI Examples (one by one)',
+                                title: 'Example 3: API seed + UI verify (best E2E style)',
+                                code: `import { test, expect } from "../playwright/fixtures/courseTest";
+
+test("Seed user via API, verify in UI", async ({ authedPage, seededUserId }) => {
+  await authedPage.goto("/users");
+  await expect(authedPage.getByText(seededUserId)).toBeVisible(); // replace with real UI assertion
+});`
+                            },
+                            {
+                                id: 'role-auth-bdd-world',
+                                section: 'G) BDD (Cucumber) Integration (All 3 categories included)',
+                                title: 'bdd/support/world.ts',
+                                code: `import { IWorldOptions, setWorldConstructor, World } from "@cucumber/cucumber";
+import { BrowserContext, Page, APIRequestContext, request } from "@playwright/test";
+import { uniqueEmail, personName } from "../../playwright/utils/dataFactory";
+import { BASE_URL } from "../../playwright/utils/env";
+
+export type Role = "admin" | "manager" | "user";
+
+export class PWWorld extends World {
+  context!: BrowserContext;
+  page!: Page;
+  api!: APIRequestContext;
+  role: Role = "admin";
+
+  testData = {
+    name: personName(),
+    email: uniqueEmail(),
+  };
+
+  constructor(options: IWorldOptions) {
+    super(options);
+  }
+
+  async initApi() {
+    this.api = await request.newContext({ baseURL: BASE_URL });
+  }
+}
+
+setWorldConstructor(PWWorld);`
+                            },
+                            {
+                                id: 'role-auth-bdd-hooks',
+                                section: 'G) BDD (Cucumber) Integration',
+                                title: 'bdd/support/hooks.ts',
+                                code: `import { Before, After, Status } from "@cucumber/cucumber";
+import { chromium } from "@playwright/test";
+import path from "path";
+import { PWWorld } from "./world";
+import { BASE_URL } from "../../playwright/utils/env";
+
+Before(async function (this: PWWorld, scenario) {
+  // Role selection via tags: @admin @manager @user
+  const tags = scenario.pickle.tags.map(t => t.name);
+  if (tags.includes("@manager")) this.role = "manager";
+  else if (tags.includes("@user")) this.role = "user";
+  else this.role = "admin";
+
+  await this.initApi();
+
+  const browser = await chromium.launch();
+  const storageStatePath = path.resolve(\`playwright/auth/\${this.role}.storageState.json\`);
+  this.context = await browser.newContext({ storageState: storageStatePath, baseURL: BASE_URL });
+  this.page = await this.context.newPage();
+});
+
+After(async function (this: PWWorld, scenario) {
+  if (scenario.result?.status === Status.FAILED) {
+    const screenshot = await this.page.screenshot();
+    await this.attach(screenshot, "image/png");
+  }
+  await this.context?.close();
+  await this.api?.dispose();
+});`
+                            },
+                            {
+                                id: 'role-auth-bdd-feature',
+                                section: 'G) BDD (Cucumber) Integration',
+                                title: 'bdd/features/login.feature',
+                                code: `@admin
+Feature: Dashboard Access
+
+  Scenario: Admin can open dashboard
+    Given I open the dashboard
+    Then I should see the dashboard title`
+                            },
+                            {
+                                id: 'role-auth-bdd-steps',
+                                section: 'G) BDD (Cucumber) Integration',
+                                title: 'bdd/steps/login.steps.ts',
+                                code: `import { Given, Then } from "@cucumber/cucumber";
+import { expect } from "@playwright/test";
+import { PWWorld } from "../support/world";
+
+Given("I open the dashboard", async function (this: PWWorld) {
+  await this.page.goto("/dashboard");
+});
+
+Then("I should see the dashboard title", async function (this: PWWorld) {
+  await expect(this.page.getByRole("heading", { name: /dashboard/i })).toBeVisible();
+});`
+                            },
+                            {
+                                id: 'role-auth-bdd-config',
+                                section: 'G) BDD (Cucumber) Integration',
+                                title: 'bdd/cucumber.js',
+                                code: `module.exports = {
+  default: {
+    require: [
+      "bdd/support/world.ts",
+      "bdd/support/hooks.ts",
+      "bdd/steps/**/*.ts"
+    ],
+    requireModule: ["ts-node/register"],
+    format: ["progress", "html:playwright-report/cucumber.html"],
+    publishQuiet: true
+  }
+};`
+                            }
+                        ].map((item, idx) => (
+                            <div key={idx} id={item.id || `role-auth-example-${idx}`} style={{ 
+                                marginBottom: '32px',
+                                scrollMarginTop: '100px'
+                            }}>
+                                <h4 style={{
+                                    color: '#00416A',
+                                    fontSize: '20px',
+                                    fontWeight: '600',
+                                    marginBottom: '12px',
+                                    textAlign: 'left',
+                                    paddingBottom: '8px',
+                                    borderBottom: '2px solid #e5e7eb'
+                                }}>
+                                    {removeMarkdown(item.section)}
+                                </h4>
+                                <h5 style={{
+                                    color: '#00416A',
+                                    fontSize: '18px',
+                                    fontWeight: '600',
+                                    marginBottom: '12px',
+                                    textAlign: 'left'
+                                }}>
+                                    {removeMarkdown(item.title)}
+                                </h5>
+                                <pre style={codeBlockStyle}>{item.code}</pre>
+                            </div>
+                        ))}
+                    </div>
+                )}
+            </div>
+
+            {/* Playwright TypeScript User Events & Actions Master List Section */}
+            <div style={{
+                ...cardStyle,
+                marginBottom: '48px'
+            }}>
+                <div
+                    onClick={toggleUserEvents}
+                    style={{
+                        cursor: 'pointer',
+                        display: 'flex',
+                        justifyContent: 'space-between',
+                        alignItems: 'center',
+                        marginBottom: isUserEventsExpanded ? '24px' : '0',
+                        paddingBottom: isUserEventsExpanded ? '20px' : '0',
+                        borderBottom: isUserEventsExpanded ? '2px solid #00416A' : 'none',
+                        transition: 'all 0.3s ease'
+                    }}
+                    onMouseEnter={(e) => {
+                        if (!isUserEventsExpanded) {
+                            e.currentTarget.style.backgroundColor = '#f0f7fa';
+                        }
+                    }}
+                    onMouseLeave={(e) => {
+                        if (!isUserEventsExpanded) {
+                            e.currentTarget.style.backgroundColor = 'transparent';
+                        }
+                    }}
+                >
+                    <div>
+                        <h2 style={{ 
+                            color: '#00416A', 
+                            fontSize: '32px', 
+                            marginBottom: '8px',
+                            fontWeight: '700',
+                            textAlign: 'left',
+                            margin: 0
+                        }}>
+                            Playwright TypeScript User Events & Actions Master List
+                        </h2>
+                        <p style={{ 
+                            fontSize: '16px', 
+                            color: '#64748b',
+                            marginBottom: 0,
+                            lineHeight: '1.6',
+                            textAlign: 'left'
+                        }}>
+                            Below is an <strong>end-to-end Playwright TypeScript "User Events & Actions" master list</strong> you can use throughout the course.
+                        </p>
+                    </div>
+                    <span style={{
+                        fontSize: '32px',
+                        color: '#00416A',
+                        fontWeight: 'bold',
+                        marginLeft: '20px',
+                        flexShrink: 0,
+                        transition: 'transform 0.3s ease'
+                    }}>
+                        {isUserEventsExpanded ? '−' : '+'}
+                    </span>
+                </div>
+
+                {isUserEventsExpanded && (
+                    <div>
 
                 {/* Master Checklist Card */}
                 <div style={cardStyle}>
@@ -924,6 +3019,8 @@ use: {
                         ))}
                     </div>
                 </div>
+                    </div>
+                )}
             </div>
 
             <div>
@@ -935,4 +3032,4 @@ use: {
         </div>
     )
 }
-export default resPlaywright;
+export default ResPlaywright;
