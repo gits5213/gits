@@ -706,3 +706,605 @@ export const footerHoverHandlers = {
     e.target.style.color = colors.primary;
   },
 };
+
+// Test Cases Page Styles
+export const testCaseStyles = {
+  // Main container
+  mainContainer: {
+    minHeight: '100vh',
+    backgroundColor: colors.bgLight,
+    padding: '40px 20px',
+  },
+  contentContainer: {
+    maxWidth: '1400px',
+    margin: '0 auto',
+  },
+  // Header section
+  headerSection: {
+    textAlign: 'center',
+    marginBottom: '40px',
+  },
+  headerTitle: {
+    fontSize: '42px',
+    color: colors.primary,
+    marginBottom: '15px',
+    fontWeight: 'bold',
+    textAlign: 'center',
+  },
+  headerSubtitle: {
+    fontSize: '18px',
+    color: colors.textLight,
+    margin: 0,
+    textAlign: 'center',
+  },
+  // Test case card
+  testCaseCard: {
+    backgroundColor: colors.textWhite,
+    borderRadius: '8px',
+    padding: '25px',
+    boxShadow: '0 2px 8px rgba(0,0,0,0.1)',
+    border: '1px solid',
+    borderColor: colors.borderColor,
+    cursor: 'pointer',
+    transition: 'all 0.3s ease',
+  },
+  testCaseCardHover: {
+    borderColor: colors.primary,
+    boxShadow: '0 4px 12px rgba(0,65,106,0.2)',
+  },
+  // Test case header
+  testCaseHeader: {
+    display: 'flex',
+    justifyContent: 'space-between',
+    alignItems: 'flex-start',
+    marginBottom: '15px',
+  },
+  testCaseHeaderContent: {
+    flex: 1,
+  },
+  // Badge styles
+  badgeContainer: {
+    display: 'flex',
+    alignItems: 'center',
+    gap: '15px',
+    marginBottom: '10px',
+    flexWrap: 'wrap',
+  },
+  badgeId: {
+    backgroundColor: colors.primary,
+    color: colors.textWhite,
+    padding: '6px 12px',
+    borderRadius: '4px',
+    fontSize: '14px',
+    fontWeight: '600',
+  },
+  badgePriority: (priority) => ({
+    backgroundColor: priority === 'High' ? '#dc3545' : priority === 'Medium' ? '#ffc107' : '#28a745',
+    color: colors.textWhite,
+    padding: '6px 12px',
+    borderRadius: '4px',
+    fontSize: '12px',
+    fontWeight: '600',
+  }),
+  badgeType: {
+    backgroundColor: '#f0f8ff',
+    color: colors.primary,
+    padding: '6px 12px',
+    borderRadius: '4px',
+    fontSize: '12px',
+    fontWeight: '600',
+  },
+  // Test case title
+  testCaseTitle: {
+    color: colors.primary,
+    fontSize: '20px',
+    marginBottom: '8px',
+    fontWeight: '600',
+    textAlign: 'left',
+  },
+  testCaseMeta: {
+    color: colors.textLight,
+    fontSize: '14px',
+    margin: 0,
+    lineHeight: '1.5',
+    textAlign: 'left',
+  },
+  // Expand icon
+  expandIcon: (isExpanded) => ({
+    fontSize: '24px',
+    color: colors.primary,
+    fontWeight: 'bold',
+    transition: 'transform 0.3s ease',
+    transform: isExpanded ? 'rotate(180deg)' : 'rotate(0deg)',
+  }),
+  // Expanded content
+  expandedContent: {
+    marginTop: '20px',
+    paddingTop: '20px',
+    borderTop: '2px solid',
+    borderColor: colors.borderColor,
+    animation: 'fadeIn 0.3s ease',
+  },
+  // Story Acceptance Criteria section
+  acceptanceCriteriaSection: {
+    fontSize: '14px',
+    lineHeight: '1.8',
+    color: colors.textDark,
+    textAlign: 'left',
+  },
+  acceptanceCriteriaTitle: {
+    color: colors.primary,
+    fontSize: '16px',
+    marginBottom: '10px',
+    fontWeight: '600',
+    textAlign: 'left',
+  },
+  userStoryBox: {
+    fontStyle: 'italic',
+    backgroundColor: '#f0f8ff',
+    padding: '12px',
+    borderRadius: '6px',
+    borderLeft: '4px solid',
+    borderLeftColor: colors.primary,
+    marginBottom: '15px',
+    textAlign: 'left',
+  },
+  gherkinBox: {
+    backgroundColor: '#fff3cd',
+    padding: '12px',
+    borderRadius: '6px',
+    borderLeft: '4px solid',
+    borderLeftColor: '#ffc107',
+    marginBottom: '10px',
+    textAlign: 'left',
+  },
+  gherkinLine: {
+    margin: '5px 0',
+    fontWeight: '600',
+    color: '#856404',
+    textAlign: 'left',
+  },
+  severityText: {
+    marginTop: '10px',
+    textAlign: 'left',
+  },
+  // Objective section
+  objectiveSection: {
+    textAlign: 'left',
+  },
+  objectiveTitle: {
+    color: colors.primary,
+    fontSize: '16px',
+    marginBottom: '10px',
+    fontWeight: '600',
+    textAlign: 'left',
+  },
+  objectiveText: {
+    fontSize: '14px',
+    lineHeight: '1.6',
+    color: colors.textDark,
+    textAlign: 'left',
+  },
+  // Preconditions section
+  preconditionsSection: {
+    marginBottom: '25px',
+    textAlign: 'left',
+  },
+  preconditionsTitle: {
+    color: colors.primary,
+    fontSize: '16px',
+    marginBottom: '10px',
+    fontWeight: '600',
+    textAlign: 'left',
+  },
+  preconditionsList: {
+    margin: 0,
+    paddingLeft: '20px',
+    fontSize: '14px',
+    lineHeight: '1.8',
+    color: colors.textDark,
+    textAlign: 'left',
+  },
+  preconditionsItem: {
+    textAlign: 'left',
+  },
+  // Test Data section
+  testDataSection: {
+    marginBottom: '25px',
+    backgroundColor: '#f0f8ff',
+    padding: '15px',
+    borderRadius: '6px',
+    textAlign: 'left',
+  },
+  testDataTitle: {
+    color: colors.primary,
+    fontSize: '16px',
+    marginBottom: '10px',
+    fontWeight: '600',
+    textAlign: 'left',
+  },
+  testDataGrid: {
+    display: 'grid',
+    gridTemplateColumns: 'repeat(auto-fit, minmax(200px, 1fr))',
+    gap: '10px',
+    fontSize: '14px',
+    color: colors.textDark,
+    textAlign: 'left',
+  },
+  testDataItem: {
+    textAlign: 'left',
+  },
+  // Test Steps section
+  testStepsSection: {
+    marginBottom: '25px',
+    textAlign: 'left',
+  },
+  testStepsTitle: {
+    color: colors.primary,
+    fontSize: '16px',
+    marginBottom: '15px',
+    fontWeight: '600',
+    textAlign: 'left',
+  },
+  testStepsTable: {
+    width: '100%',
+    borderCollapse: 'collapse',
+    fontSize: '14px',
+  },
+  testStepsTableHeader: {
+    backgroundColor: colors.primary,
+    color: colors.textWhite,
+  },
+  testStepsTableHeaderCell: {
+    padding: '12px',
+    textAlign: 'left',
+    border: '1px solid',
+    borderColor: colors.borderColor,
+  },
+  testStepsTableRow: (index) => ({
+    backgroundColor: index % 2 === 0 ? colors.textWhite : colors.bgLight,
+  }),
+  testStepsTableCell: {
+    padding: '12px',
+    border: '1px solid',
+    borderColor: colors.borderColor,
+    textAlign: 'left',
+  },
+  testStepsTableCellBold: {
+    padding: '12px',
+    border: '1px solid',
+    borderColor: colors.borderColor,
+    fontWeight: '600',
+    textAlign: 'left',
+  },
+  testStepsTableCellItalic: {
+    padding: '12px',
+    border: '1px solid',
+    borderColor: colors.borderColor,
+    fontStyle: 'italic',
+    textAlign: 'left',
+  },
+  // Postconditions section
+  postconditionsSection: {
+    marginBottom: '25px',
+    textAlign: 'left',
+  },
+  postconditionsTitle: {
+    color: colors.primary,
+    fontSize: '16px',
+    marginBottom: '10px',
+    fontWeight: '600',
+    textAlign: 'left',
+  },
+  postconditionsList: {
+    margin: 0,
+    paddingLeft: '20px',
+    fontSize: '14px',
+    lineHeight: '1.8',
+    color: colors.textDark,
+    textAlign: 'left',
+  },
+  postconditionsItem: {
+    textAlign: 'left',
+  },
+  // Environment section
+  environmentSection: {
+    backgroundColor: '#fff3cd',
+    padding: '15px',
+    borderRadius: '6px',
+    textAlign: 'left',
+  },
+  environmentTitle: {
+    color: colors.primary,
+    fontSize: '16px',
+    marginBottom: '10px',
+    fontWeight: '600',
+    textAlign: 'left',
+  },
+  environmentGrid: {
+    display: 'grid',
+    gridTemplateColumns: 'repeat(auto-fit, minmax(200px, 1fr))',
+    gap: '10px',
+    fontSize: '14px',
+    color: colors.textDark,
+    textAlign: 'left',
+  },
+  environmentItem: {
+    textAlign: 'left',
+  },
+  // Grid layout for test case details
+  detailsGrid: {
+    display: 'grid',
+    gridTemplateColumns: 'repeat(auto-fit, minmax(300px, 1fr))',
+    gap: '20px',
+    marginBottom: '25px',
+  },
+  // Test cases list container
+  testCasesList: {
+    display: 'flex',
+    flexDirection: 'column',
+    gap: '20px',
+    marginBottom: '40px',
+  },
+};
+
+// Left-aligned text content styles for docs, API, AID, and Practice tabs
+export const leftAlignStyles = {
+  // Main page container
+  pageContainer: {
+    maxWidth: '1400px',
+    margin: '0 auto',
+    padding: '40px 20px',
+    textAlign: 'left',
+  },
+  // Hero section
+  heroSection: {
+    background: `linear-gradient(135deg, ${colors.primary} 0%, ${colors.primaryDark} 100%)`,
+    color: colors.textWhite,
+    padding: '60px 20px',
+    textAlign: 'left',
+    borderRadius: '12px',
+    marginBottom: '40px',
+    boxShadow: shadows.md,
+  },
+  heroTitle: {
+    fontSize: '48px',
+    marginBottom: '20px',
+    fontWeight: 'bold',
+    textAlign: 'left',
+  },
+  heroSubtitle: {
+    fontSize: '20px',
+    opacity: '0.95',
+    textAlign: 'left',
+  },
+  // Image section
+  imageSection: {
+    textAlign: 'left',
+    marginBottom: '40px',
+    backgroundColor: colors.bgLight,
+    padding: '40px',
+    borderRadius: '12px',
+    boxShadow: shadows.sm,
+  },
+  // Main content section
+  mainContent: {
+    backgroundColor: colors.textWhite,
+    padding: '40px',
+    borderRadius: '12px',
+    boxShadow: shadows.sm,
+    marginBottom: '40px',
+    textAlign: 'left',
+  },
+  // Section headings
+  sectionHeading: {
+    color: colors.primary,
+    fontSize: '32px',
+    marginBottom: '20px',
+    fontWeight: 'bold',
+    textAlign: 'left',
+  },
+  sectionHeadingWithMargin: {
+    color: colors.primary,
+    fontSize: '32px',
+    marginBottom: '20px',
+    marginTop: '40px',
+    fontWeight: 'bold',
+    textAlign: 'left',
+  },
+  // Paragraphs
+  paragraph: {
+    fontSize: '16px',
+    lineHeight: '1.8',
+    color: colors.textDark,
+    marginBottom: '20px',
+    textAlign: 'left',
+  },
+  paragraphNoMargin: {
+    fontSize: '16px',
+    lineHeight: '1.8',
+    color: colors.textDark,
+    textAlign: 'left',
+  },
+  // Lists
+  list: {
+    fontSize: '16px',
+    lineHeight: '2',
+    color: colors.textDark,
+    paddingLeft: '20px',
+    marginBottom: '30px',
+    textAlign: 'left',
+  },
+  // Code blocks
+  codeBlock: {
+    backgroundColor: colors.bgLight,
+    padding: '15px',
+    borderRadius: '8px',
+    marginBottom: '20px',
+    fontFamily: 'monospace',
+    fontSize: '16px',
+    textAlign: 'left',
+  },
+  // Highlighted box
+  highlightedBox: {
+    backgroundColor: '#e7f3ff',
+    padding: '20px',
+    borderRadius: '8px',
+    borderLeft: '4px solid',
+    borderLeftColor: colors.primary,
+    marginTop: '20px',
+    textAlign: 'left',
+  },
+  highlightedBoxText: {
+    fontSize: '16px',
+    lineHeight: '1.8',
+    color: colors.textDark,
+    margin: 0,
+    fontWeight: '600',
+    textAlign: 'left',
+  },
+  // Links container
+  linksContainer: {
+    display: 'flex',
+    flexWrap: 'wrap',
+    gap: '15px',
+    justifyContent: 'flex-start',
+    marginBottom: '40px',
+  },
+  // Section container
+  sectionContainer: {
+    marginBottom: '40px',
+    textAlign: 'left',
+  },
+  // Grid links (for reference links, frameworks, etc.)
+  gridLinks: {
+    display: 'grid',
+    gridTemplateColumns: 'repeat(auto-fit, minmax(200px, 1fr))',
+    gap: '15px',
+    marginBottom: '40px',
+  },
+  gridLink: {
+    display: 'block',
+    padding: '12px 20px',
+    fontSize: '14px',
+    fontWeight: '600',
+    color: colors.textWhite,
+    backgroundColor: colors.primary,
+    textDecoration: 'none',
+    borderRadius: '8px',
+    textAlign: 'left',
+    transition: 'all 0.3s ease',
+    boxShadow: '0 2px 8px rgba(0,0,0,0.15)',
+  },
+};
+
+// Collapsible Question Styles - Reusable for FAQ, Interview Questions, etc.
+export const collapsibleQuestionStyles = {
+  // Container for each collapsible question
+  questionContainer: {
+    marginBottom: '40px',
+    padding: '25px',
+    backgroundColor: colors.bgLight,
+    borderRadius: '8px',
+    textAlign: 'left',
+  },
+  // Alternative container style (e.g., for highlighted questions)
+  questionContainerHighlighted: {
+    marginBottom: '40px',
+    padding: '25px',
+    backgroundColor: '#e7f3ff',
+    borderRadius: '8px',
+    borderLeft: '4px solid',
+    borderLeftColor: colors.primary,
+    textAlign: 'left',
+  },
+  // Clickable question header/title
+  questionHeader: {
+    color: colors.primary,
+    fontSize: '24px',
+    marginBottom: '20px',
+    fontWeight: 'bold',
+    borderBottom: '2px solid',
+    borderBottomColor: colors.primary,
+    paddingBottom: '10px',
+    textAlign: 'left',
+    cursor: 'pointer',
+    display: 'flex',
+    alignItems: 'center',
+    justifyContent: 'space-between',
+    userSelect: 'none',
+    transition: 'color 0.2s ease',
+  },
+  // Question header without border (for highlighted containers)
+  questionHeaderNoBorder: {
+    color: colors.primary,
+    fontSize: '24px',
+    marginBottom: '20px',
+    fontWeight: 'bold',
+    textAlign: 'left',
+    cursor: 'pointer',
+    display: 'flex',
+    alignItems: 'center',
+    justifyContent: 'space-between',
+    userSelect: 'none',
+    transition: 'color 0.2s ease',
+  },
+  // Question title text wrapper
+  questionTitle: {
+    flex: 1,
+  },
+  // Expand/collapse icon
+  expandIcon: {
+    fontSize: '20px',
+    marginLeft: '10px',
+    transition: 'transform 0.3s ease',
+  },
+  // Content wrapper (shown when expanded)
+  contentWrapper: {
+    animation: 'fadeIn 0.3s ease',
+  },
+  // Paragraph style within question content
+  contentParagraph: {
+    fontSize: '16px',
+    lineHeight: '1.8',
+    color: colors.textDark,
+    textAlign: 'left',
+    marginBottom: '15px',
+  },
+  // Paragraph style with no margin
+  contentParagraphNoMargin: {
+    fontSize: '16px',
+    lineHeight: '1.8',
+    color: colors.textDark,
+    textAlign: 'left',
+  },
+  // List style within question content
+  contentList: {
+    fontSize: '16px',
+    lineHeight: '2',
+    color: colors.textDark,
+    paddingLeft: '20px',
+    textAlign: 'left',
+  },
+  // Highlighted text box within content
+  contentHighlightedBox: {
+    fontSize: '16px',
+    lineHeight: '1.8',
+    color: colors.textDark,
+    padding: '15px',
+    backgroundColor: '#e7f3ff',
+    borderRadius: '8px',
+    borderLeft: '4px solid',
+    borderLeftColor: colors.primary,
+    textAlign: 'left',
+  },
+  // Warning/caution text style
+  contentWarningText: {
+    fontSize: '14px',
+    lineHeight: '1.8',
+    color: '#dc3545',
+    marginTop: '15px',
+    fontStyle: 'italic',
+    textAlign: 'left',
+  },
+};

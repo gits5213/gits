@@ -1,7 +1,6 @@
 import React from 'react';
 import link from '../../../utilities/links.json';
 import { Grid, Cell } from 'react-mdl';
-import GoogleAd from '../../../components/GoogleAd';
 import linklogo from '../../../images/tabs/linkLogo.png';
 import Footer from '../../../components/footer';
 
@@ -195,7 +194,6 @@ const resLinks = () => {
             </div>
             <hr />
             <div>
-                <GoogleAd slot="1541085932" classNames="page-right-side" />
             </div>
             <section className='pt4'>
                 <Footer />

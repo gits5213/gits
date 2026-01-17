@@ -1,6 +1,5 @@
 import React from 'react';
 import link from '../../../utilities/links.json';
-import GoogleAd from '../../../components/GoogleAd';
 import javascript_logo from '../../../images/tabs/javascriptLogo.png';
 import Footer from '../../../components/footer';
 
@@ -252,7 +251,6 @@ const resJavascript = () => {
                 </a>
             </div>
             <div>
-                <GoogleAd slot="1541085932" classNames="page-right-side" />
             </div>
             <section className='pt4'>
                 <Footer />

@@ -9,6 +9,7 @@ const COURSES = '/courses';
 const AID = '/aid';
 const DOCS = '/docs';
 const APIS = '/apis';
+const PRACTICE = '/practice';
 const ABOUT = '/about';
 const CONTACT = '/contact';
 
@@ -220,6 +221,30 @@ class App extends Component {
               >
                 AID
               </Link>
+              <Link 
+                to={PRACTICE}
+                style={{
+                  padding: '10px 16px',
+                  textDecoration: 'none',
+                  color: '#ffffff',
+                  fontWeight: currentPath.startsWith(PRACTICE) ? '600' : '400',
+                  borderRadius: '6px',
+                  transition: 'all 0.3s ease',
+                  backgroundColor: currentPath.startsWith(PRACTICE) ? 'rgba(255,255,255,0.2)' : 'transparent'
+                }}
+                onMouseEnter={(e) => {
+                  if (!currentPath.startsWith(PRACTICE)) {
+                    e.target.style.backgroundColor = 'rgba(255,255,255,0.1)';
+                  }
+                }}
+                onMouseLeave={(e) => {
+                  if (!currentPath.startsWith(PRACTICE)) {
+                    e.target.style.backgroundColor = 'transparent';
+                  }
+                }}
+              >
+                Practice
+              </Link>
             </nav>
 
             {/* Hamburger Menu Button */}
@@ -405,6 +430,31 @@ class App extends Component {
                 }}
               >
                 AID
+              </Link>
+              <Link 
+                to={PRACTICE}
+                onClick={this.closeMobileMenu}
+                style={{
+                  padding: '12px 16px',
+                  textDecoration: 'none',
+                  color: '#ffffff',
+                  fontWeight: currentPath.startsWith(PRACTICE) ? '600' : '400',
+                  borderRadius: '6px',
+                  backgroundColor: currentPath.startsWith(PRACTICE) ? 'rgba(255,255,255,0.2)' : 'transparent',
+                  transition: 'all 0.3s ease'
+                }}
+                onMouseEnter={(e) => {
+                  if (!currentPath.startsWith(PRACTICE)) {
+                    e.target.style.backgroundColor = 'rgba(255,255,255,0.1)';
+                  }
+                }}
+                onMouseLeave={(e) => {
+                  if (!currentPath.startsWith(PRACTICE)) {
+                    e.target.style.backgroundColor = 'transparent';
+                  }
+                }}
+              >
+                Practice
               </Link>
               <Link 
                 to={ABOUT}

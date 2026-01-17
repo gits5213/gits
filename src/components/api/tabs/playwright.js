@@ -1,6 +1,5 @@
 import React, { useState } from 'react';
 import link from '../../../utilities/links.json';
-import GoogleAd from '../../GoogleAd';
 import webDriverIOLogo from '../../../images/tabs/playwrightLogo.png'; 
 import Footer from '../../../components/footer';
 import PdfDownload from '../../shared/PdfDownload';
@@ -97,31 +96,41 @@ const ResPlaywright = () => {
     return(
         <div style={pageContainerStyles.modern}>
             {/* Hero Section */}
-            <div style={modernHeroStyles.base}>
-                <h1 style={modernHeroStyles.title}>
-                    Playwright Framework
-                </h1>
-                <p style={modernHeroStyles.subtitle}>
-                    Fast and Reliable End-to-End Testing for Modern Web Apps
-                </p>
-            </div>
-
-            {/* Image Section */}
             <div style={{
-                ...cardStyle,
-                textAlign: 'center',
-                padding: '32px'
+                ...modernHeroStyles.base,
+                display: 'flex',
+                alignItems: 'center',
+                justifyContent: 'space-between',
+                gap: '40px',
+                flexWrap: 'wrap',
+                textAlign: 'left'
             }}>
-                <img 
-                    src={webDriverIOLogo} 
-                    alt='Playwright Logo'
-                    style={{
-                        width: '100%',
-                        maxWidth: '500px',
-                        height: 'auto',
-                        borderRadius: '8px'
-                    }}
-                />
+                <div style={{ flex: '1', minWidth: '300px' }}>
+                    <h1 style={modernHeroStyles.title}>
+                        Playwright Framework
+                    </h1>
+                    <p style={modernHeroStyles.subtitle}>
+                        Fast and Reliable End-to-End Testing for Modern Web Apps
+                    </p>
+                </div>
+                <div style={{
+                    flex: '0 0 auto',
+                    display: 'flex',
+                    alignItems: 'center',
+                    justifyContent: 'flex-end'
+                }}>
+                    <img 
+                        src={webDriverIOLogo} 
+                        alt='Playwright Logo'
+                        style={{
+                            maxWidth: '300px',
+                            width: '100%',
+                            height: 'auto',
+                            borderRadius: '8px',
+                            filter: 'brightness(1.1)'
+                        }}
+                    />
+                </div>
             </div>
 
             {/* GitHub Links */}
@@ -221,7 +230,7 @@ const ResPlaywright = () => {
                         borderRadius: '12px',
                         padding: '24px',
                         border: '2px dashed #cbd5e1',
-                        textAlign: 'center',
+                        textAlign: 'left',
                         transition: 'all 0.3s ease'
                     }}
                     onMouseEnter={(e) => {
@@ -237,7 +246,8 @@ const ResPlaywright = () => {
                             marginBottom: '12px',
                             color: '#1e293b',
                             fontSize: '18px',
-                            fontWeight: '600'
+                            fontWeight: '600',
+                            textAlign: 'left'
                         }}>
                             Playwright User Actions Handout
                         </h4>
@@ -245,7 +255,8 @@ const ResPlaywright = () => {
                             marginBottom: '20px',
                             color: '#64748b',
                             fontSize: '14px',
-                            lineHeight: '1.6'
+                            lineHeight: '1.6',
+                            textAlign: 'left'
                         }}>
                             Download the complete Playwright TypeScript User Events & Actions handout
                         </p>
@@ -287,7 +298,7 @@ const ResPlaywright = () => {
                         borderRadius: '12px',
                         padding: '24px',
                         border: '2px dashed #cbd5e1',
-                        textAlign: 'center',
+                        textAlign: 'left',
                         transition: 'all 0.3s ease'
                     }}
                     onMouseEnter={(e) => {
@@ -4273,7 +4284,6 @@ export class DashboardPage {
             </div>
 
             <div>
-                <GoogleAd slot="1541085932" classNames="page-right-side" />
             </div>
             <section style={{ marginTop: '48px' }}>
                 <Footer />

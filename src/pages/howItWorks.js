@@ -1,7 +1,6 @@
 import React, {Component} from 'react';
 import { Link } from 'react-router-dom';
 import HeaderText from '../components/header';
-import GoogleAd from '../components/GoogleAd';
 import Footer from '../components/footer';
 import { containers, sectionStyles, cardStyles, buttonStyles, listStyles, colors, shadows, hoverHandlers } from '../utils/globalStyles';
 import '../styles/base.css';
@@ -232,7 +231,6 @@ class HowItWorks extends Component {
                 </div>
 
                 <div>
-                    <GoogleAd slot="1541085932" classNames="page-right-side" />
                 </div>
                 <section className='pt4'>
                     <Footer />

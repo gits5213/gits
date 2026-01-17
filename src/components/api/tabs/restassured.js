@@ -1,6 +1,5 @@
 import React from 'react';
 import link from '../../../utilities/links.json';
-import GoogleAd from '../../GoogleAd';
 import restassuredLogo from '../../../images/tabs/restassuredLogo.png'; 
 import Footer from '../../../components/footer';
 import PdfDownload from '../../shared/PdfDownload';
@@ -29,31 +28,41 @@ const resRestassured = () => {
     return(
         <div style={pageContainerStyles.modern}>
             {/* Hero Section */}
-            <div style={modernHeroStyles.base}>
-                <h1 style={modernHeroStyles.title}>
-                    RESTAssured Framework
-                </h1>
-                <p style={modernHeroStyles.subtitle}>
-                    Java DSL for Easy Testing of REST Services
-                </p>
-            </div>
-
-            {/* Image Section */}
             <div style={{
-                ...cardStyle,
-                textAlign: 'center',
-                padding: '32px'
+                ...modernHeroStyles.base,
+                display: 'flex',
+                alignItems: 'center',
+                justifyContent: 'space-between',
+                gap: '40px',
+                flexWrap: 'wrap',
+                textAlign: 'left'
             }}>
-                <img 
-                    src={restassuredLogo} 
-                    alt='RESTAssured Logo'
-                    style={{
-                        width: '100%',
-                        maxWidth: '500px',
-                        height: 'auto',
-                        borderRadius: '8px'
-                    }}
-                />
+                <div style={{ flex: '1', minWidth: '300px' }}>
+                    <h1 style={modernHeroStyles.title}>
+                        RESTAssured Framework
+                    </h1>
+                    <p style={modernHeroStyles.subtitle}>
+                        Java DSL for Easy Testing of REST Services
+                    </p>
+                </div>
+                <div style={{
+                    flex: '0 0 auto',
+                    display: 'flex',
+                    alignItems: 'center',
+                    justifyContent: 'flex-end'
+                }}>
+                    <img 
+                        src={restassuredLogo} 
+                        alt='RESTAssured Logo'
+                        style={{
+                            maxWidth: '300px',
+                            width: '100%',
+                            height: 'auto',
+                            borderRadius: '8px',
+                            filter: 'brightness(1.1)'
+                        }}
+                    />
+                </div>
             </div>
 
             {/* GitHub Links */}
@@ -545,7 +554,6 @@ reporter: [
             />
 
             <div>
-                <GoogleAd slot="1541085932" classNames="page-right-side" />
             </div>
             <section style={{ marginTop: '40px' }}>
                 <Footer />

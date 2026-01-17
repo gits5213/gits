@@ -5,19 +5,184 @@ import DefectBugError from '../../../images/tabs/defectBugError.png';
 import BugLifeCycle from '../../../images/tabs/bugLifeCycle.png'
 import TestPyramid from '../../../images/tabs/testPyramid.png'
 import TestPyramid1 from '../../../images/tabs/testPyramid1.png'
-import GoogleAd from '../../../components/GoogleAd';
 import Footer from '../../../components/footer';
 
 const resManual = () => {
     return(
         <div className='page-tab-body'>
             <div className='resManual-first-section'>
-                <div>
-                    <h3>Software Manual Testing</h3>
+                <div style={{
+                    display: 'flex',
+                    alignItems: 'center',
+                    justifyContent: 'space-between',
+                    gap: '40px',
+                    flexWrap: 'wrap',
+                    marginBottom: '40px'
+                }}>
+                    {/* Left Side - Heading and Logo */}
+                    <div style={{ flex: '1', minWidth: '300px' }}>
+                        <div>
+                            <h3 style={{ textAlign: 'left' }}>Software Manual Testing</h3>
+                        </div>
+                        <div style={{ textAlign: 'left', marginTop: '20px' }}>
+                            <img className='manual-logo' src={ManualLogo} alt='Manual Logo' />
+                        </div>
+                    </div>
+
+                    {/* Right Side - Testing Pyramid as 2 Grids */}
+                    <div style={{
+                        flex: '1',
+                        minWidth: '300px',
+                        display: 'grid',
+                        gridTemplateColumns: '1fr 1fr',
+                        gap: '15px'
+                    }}>
+                        {/* Grid 1 - Pyramid Visual */}
+                        <div style={{
+                            backgroundColor: '#ffffff',
+                            borderRadius: '12px',
+                            padding: '20px',
+                            border: '2px solid #00416A',
+                            boxShadow: '0 4px 12px rgba(0,0,0,0.1)',
+                            display: 'flex',
+                            flexDirection: 'column',
+                            alignItems: 'center',
+                            justifyContent: 'center'
+                        }}>
+                            <h3 style={{
+                                color: '#00416A',
+                                fontSize: '18px',
+                                marginBottom: '20px',
+                                fontWeight: '600',
+                                textAlign: 'center'
+                            }}>
+                                Testing Pyramid
+                            </h3>
+                            <div style={{
+                                display: 'flex',
+                                flexDirection: 'column',
+                                alignItems: 'center',
+                                justifyContent: 'center',
+                                width: '100%'
+                            }}>
+                                {/* E2E / System Tests - Top (Smallest) */}
+                                <div style={{
+                                    width: '80px',
+                                    height: '35px',
+                                    backgroundColor: '#dc3545',
+                                    display: 'flex',
+                                    alignItems: 'center',
+                                    justifyContent: 'center',
+                                    color: '#ffffff',
+                                    fontWeight: '600',
+                                    fontSize: '10px',
+                                    borderRadius: '4px',
+                                    marginBottom: '4px',
+                                    boxShadow: '0 2px 6px rgba(0,0,0,0.2)'
+                                }}>
+                                    E2E (10%)
+                                </div>
+                                
+                                {/* Integration Tests - Middle */}
+                                <div style={{
+                                    width: '140px',
+                                    height: '35px',
+                                    backgroundColor: '#ffc107',
+                                    display: 'flex',
+                                    alignItems: 'center',
+                                    justifyContent: 'center',
+                                    color: '#333',
+                                    fontWeight: '600',
+                                    fontSize: '10px',
+                                    borderRadius: '4px',
+                                    marginBottom: '4px',
+                                    boxShadow: '0 2px 6px rgba(0,0,0,0.2)'
+                                }}>
+                                    Integration (20%)
+                                </div>
+                                
+                                {/* Unit Tests - Bottom (Largest) */}
+                                <div style={{
+                                    width: '200px',
+                                    height: '35px',
+                                    backgroundColor: '#28a745',
+                                    display: 'flex',
+                                    alignItems: 'center',
+                                    justifyContent: 'center',
+                                    color: '#ffffff',
+                                    fontWeight: '600',
+                                    fontSize: '10px',
+                                    borderRadius: '4px',
+                                    boxShadow: '0 2px 6px rgba(0,0,0,0.2)'
+                                }}>
+                                    Unit Tests (70%)
+                                </div>
+                            </div>
+                        </div>
+
+                        {/* Grid 2 - Legend/Description */}
+                        <div style={{
+                            backgroundColor: '#ffffff',
+                            borderRadius: '12px',
+                            padding: '20px',
+                            border: '2px solid #00416A',
+                            boxShadow: '0 4px 12px rgba(0,0,0,0.1)',
+                            display: 'flex',
+                            flexDirection: 'column',
+                            gap: '10px'
+                        }}>
+                            <h3 style={{
+                                color: '#00416A',
+                                fontSize: '18px',
+                                marginBottom: '10px',
+                                fontWeight: '600',
+                                textAlign: 'left'
+                            }}>
+                                Test Distribution
+                            </h3>
+                            <div style={{
+                                padding: '10px',
+                                backgroundColor: '#f0f8ff',
+                                borderRadius: '6px',
+                                borderLeft: '4px solid #28a745'
+                            }}>
+                                <p style={{ margin: '3px 0', fontWeight: '600', color: '#00416A', fontSize: '12px' }}>
+                                    Unit Tests (70%)
+                                </p>
+                                <p style={{ margin: '3px 0', fontSize: '11px', color: '#333', lineHeight: '1.4' }}>
+                                    Fast, isolated tests for individual components/functions.
+                                </p>
+                            </div>
+                            <div style={{
+                                padding: '10px',
+                                backgroundColor: '#fff9e6',
+                                borderRadius: '6px',
+                                borderLeft: '4px solid #ffc107'
+                            }}>
+                                <p style={{ margin: '3px 0', fontWeight: '600', color: '#00416A', fontSize: '12px' }}>
+                                    Integration Tests (20%)
+                                </p>
+                                <p style={{ margin: '3px 0', fontSize: '11px', color: '#333', lineHeight: '1.4' }}>
+                                    Tests for interactions between components/modules.
+                                </p>
+                            </div>
+                            <div style={{
+                                padding: '10px',
+                                backgroundColor: '#ffe6e6',
+                                borderRadius: '6px',
+                                borderLeft: '4px solid #dc3545'
+                            }}>
+                                <p style={{ margin: '3px 0', fontWeight: '600', color: '#00416A', fontSize: '12px' }}>
+                                    E2E / System Tests (10%)
+                                </p>
+                                <p style={{ margin: '3px 0', fontSize: '11px', color: '#333', lineHeight: '1.4' }}>
+                                    End-to-end tests covering full user workflows.
+                                </p>
+                            </div>
+                        </div>
+                    </div>
                 </div>
-                <div className='tc'>
-                    <img className='manual-logo' src={ManualLogo} alt='Manual Logo' />
-                </div>
+
                 <div>
                     <h3>Manual Tesing are 2 types:</h3>
                     <ol>
@@ -762,7 +927,6 @@ const resManual = () => {
                 </a>
             </div>
             <div>
-                <GoogleAd slot="1541085932" classNames="page-right-side" />
             </div>
             <section className='pt4'>
                 <Footer />

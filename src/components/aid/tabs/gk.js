@@ -1,609 +1,869 @@
-import React from 'react';
-import GoogleAd from '../../GoogleAd';
+import React, { useState } from 'react';
 import gkLogo from '../../../images/tabs/gkLogo.png';
 import Footer from '../../../components/footer';
+import { leftAlignStyles, colors } from '../../../utils/globalStyles';
 
-const gk = () => {
-    const codeBlockStyle = {
-        backgroundColor: '#f8f9fa',
-        padding: '20px',
-        borderRadius: '8px',
-        marginBottom: '20px',
-        borderLeft: '4px solid #00416A'
+const Gk = () => {
+    // Modern design styles
+    const modernStyles = {
+        heroSection: {
+            background: `linear-gradient(135deg, ${colors.primary} 0%, ${colors.primaryDark} 50%, #006ba8 100%)`,
+            color: colors.textWhite,
+            padding: '80px 40px',
+            borderRadius: '20px',
+            marginBottom: '60px',
+            boxShadow: '0 20px 60px rgba(0, 65, 106, 0.3)',
+            display: 'flex',
+            alignItems: 'center',
+            justifyContent: 'space-between',
+            gap: '50px',
+            flexWrap: 'wrap',
+            position: 'relative',
+            overflow: 'hidden',
+        },
+        heroOverlay: {
+            position: 'absolute',
+            top: 0,
+            left: 0,
+            right: 0,
+            bottom: 0,
+            background: 'radial-gradient(circle at top right, rgba(255,255,255,0.1) 0%, transparent 50%)',
+            pointerEvents: 'none',
+        },
+        heroContent: {
+            flex: '1',
+            minWidth: '300px',
+            zIndex: 1,
+        },
+        heroTitle: {
+            fontSize: 'clamp(36px, 5vw, 56px)',
+            marginBottom: '20px',
+            fontWeight: '800',
+            textAlign: 'left',
+            lineHeight: '1.2',
+            letterSpacing: '-0.02em',
+            textShadow: '0 2px 20px rgba(0,0,0,0.2)',
+        },
+        heroSubtitle: {
+            fontSize: 'clamp(18px, 2.5vw, 24px)',
+            opacity: '0.95',
+            textAlign: 'left',
+            lineHeight: '1.6',
+            fontWeight: '300',
+        },
+        heroImage: {
+            flex: '0 0 auto',
+            display: 'flex',
+            alignItems: 'center',
+            justifyContent: 'flex-end',
+            zIndex: 1,
+        },
+        introCard: {
+            background: 'linear-gradient(135deg, #ffffff 0%, #f8f9fa 100%)',
+            padding: '40px',
+            borderRadius: '16px',
+            marginBottom: '50px',
+            boxShadow: '0 10px 40px rgba(0,0,0,0.08)',
+            border: '1px solid rgba(0, 65, 106, 0.1)',
+            textAlign: 'left',
+        },
+        introTitle: {
+            color: colors.primary,
+            fontSize: '28px',
+            marginBottom: '20px',
+            fontWeight: '700',
+            textAlign: 'left',
+            lineHeight: '1.3',
+        },
+        introText: {
+            fontSize: '18px',
+            lineHeight: '1.8',
+            color: colors.textDark,
+            textAlign: 'left',
+            margin: 0,
+        },
+        questionCard: {
+            backgroundColor: colors.textWhite,
+            borderRadius: '0',
+            padding: '30px',
+            marginBottom: '0',
+            boxShadow: 'none',
+            border: '1px solid rgba(0, 65, 106, 0.1)',
+            borderTop: 'none',
+            transition: 'all 0.3s cubic-bezier(0.4, 0, 0.2, 1)',
+            textAlign: 'left',
+            position: 'relative',
+            overflow: 'hidden',
+        },
+        questionCardFirst: {
+            borderRadius: '16px 16px 0 0',
+            borderTop: '1px solid rgba(0, 65, 106, 0.1)',
+        },
+        questionCardLast: {
+            borderRadius: '0 0 16px 16px',
+            marginBottom: '0',
+        },
+        questionCardHover: {
+            boxShadow: '0 8px 30px rgba(0, 65, 106, 0.15)',
+            transform: 'translateY(-2px)',
+            borderColor: colors.primary,
+        },
+        questionNumber: {
+            display: 'inline-flex',
+            alignItems: 'center',
+            justifyContent: 'center',
+            width: '48px',
+            height: '48px',
+            borderRadius: '12px',
+            background: `linear-gradient(135deg, ${colors.primary} 0%, ${colors.primaryDark} 100%)`,
+            color: colors.textWhite,
+            fontSize: '20px',
+            fontWeight: '700',
+            marginRight: '20px',
+            flexShrink: 0,
+            boxShadow: '0 4px 12px rgba(0, 65, 106, 0.3)',
+        },
+        questionHeader: {
+            display: 'flex',
+            alignItems: 'center',
+            cursor: 'pointer',
+            userSelect: 'none',
+            padding: '0',
+            margin: 0,
+        },
+        questionTitle: {
+            flex: 1,
+            color: colors.primary,
+            fontSize: '22px',
+            fontWeight: '600',
+            lineHeight: '1.4',
+            margin: 0,
+            textAlign: 'left',
+        },
+        expandIcon: {
+            fontSize: '24px',
+            color: colors.primary,
+            marginLeft: '20px',
+            transition: 'transform 0.3s ease',
+            flexShrink: 0,
+        },
+        expandIconRotated: {
+            transform: 'rotate(180deg)',
+        },
+        contentWrapper: {
+            marginTop: '24px',
+            paddingTop: '24px',
+            borderTop: '2px solid #f0f0f0',
+            animation: 'fadeIn 0.3s ease',
+        },
+        contentParagraph: {
+            fontSize: '16px',
+            lineHeight: '1.8',
+            color: colors.textDark,
+            marginBottom: '16px',
+            textAlign: 'left',
+        },
+        contentList: {
+            fontSize: '16px',
+            lineHeight: '2',
+            color: colors.textDark,
+            paddingLeft: '24px',
+            marginBottom: '16px',
+            textAlign: 'left',
+        },
+        highlightedBox: {
+            backgroundColor: '#f0f8ff',
+            padding: '20px',
+            borderRadius: '12px',
+            borderLeft: '4px solid',
+            borderLeftColor: colors.primary,
+            marginTop: '20px',
+            textAlign: 'left',
+        },
+        warningBox: {
+            backgroundColor: '#fff3cd',
+            padding: '16px',
+            borderRadius: '12px',
+            borderLeft: '4px solid #ffc107',
+            marginTop: '16px',
+            textAlign: 'left',
+        },
+        warningText: {
+            fontSize: '14px',
+            lineHeight: '1.8',
+            color: '#856404',
+            margin: 0,
+            fontStyle: 'italic',
+            textAlign: 'left',
+        },
+    };
+
+    // State to track which questions are expanded (all collapsed by default)
+    const [expandedQuestions, setExpandedQuestions] = useState({});
+    const [hoveredQuestion, setHoveredQuestion] = useState(null);
+
+    // Toggle function to expand/collapse questions
+    const toggleQuestion = (questionId) => {
+        setExpandedQuestions(prev => ({
+            ...prev,
+            [questionId]: !prev[questionId]
+        }));
     };
 
     return(
-        <div style={{
-            maxWidth: '1400px',
-            margin: '0 auto',
-            padding: '40px 20px'
-        }}>
-            {/* Hero Section */}
-            <div style={{
-                background: 'linear-gradient(135deg, #00416A 0%, #005a8a 100%)',
-                color: '#ffffff',
-                padding: '60px 20px',
-                textAlign: 'center',
-                borderRadius: '12px',
-                marginBottom: '40px',
-                boxShadow: '0 4px 15px rgba(0,0,0,0.2)'
-            }}>
-                <h1 style={{
-                    fontSize: '48px',
-                    marginBottom: '20px',
-                    fontWeight: 'bold'
-                }}>
-                    General Knowledge
-                </h1>
-                <p style={{
-                    fontSize: '20px',
-                    opacity: '0.95'
-                }}>
-                    Interview Questions and Career Guidance
-                </p>
-            </div>
-
-            {/* Image Section */}
-            <div style={{
-                textAlign: 'center',
-                marginBottom: '40px',
-                backgroundColor: '#f8f9fa',
-                padding: '40px',
-                borderRadius: '12px',
-                boxShadow: '0 2px 10px rgba(0,0,0,0.1)'
-            }}>
-                <img 
-                    src={gkLogo} 
-                    alt='General Knowledge Logo'
-                    style={{
-                        width: '100%',
-                        maxWidth: '400px',
-                        height: 'auto',
-                        borderRadius: '8px'
-                    }}
-                />
-            </div>
-
-            {/* Main Content */}
-            <div style={{
-                backgroundColor: '#ffffff',
-                padding: '40px',
-                borderRadius: '12px',
-                boxShadow: '0 2px 10px rgba(0,0,0,0.1)',
-                marginBottom: '40px'
-            }}>
-                <div style={codeBlockStyle}>
-                    <h3 style={{
-                        color: '#00416A',
-                        fontSize: '22px',
-                        marginBottom: '15px',
-                        fontWeight: 'bold'
-                    }}>
-                        After Giving 1,000 Interviews, I've Found List of Questions That Matter
-                    </h3>
-                    <p style={{
-                        fontSize: '16px',
-                        lineHeight: '1.8',
-                        color: '#333'
-                    }}>
-                        Hiring for culture fit can seem like a mystery, but this list of interview questions will help you get it right every time.
+        <div style={leftAlignStyles.pageContainer}>
+            {/* Modern Hero Section */}
+            <div style={modernStyles.heroSection}>
+                <div style={modernStyles.heroOverlay}></div>
+                <div style={modernStyles.heroContent}>
+                    <h1 style={modernStyles.heroTitle}>
+                        General Knowledge
+                    </h1>
+                    <p style={modernStyles.heroSubtitle}>
+                        Interview Questions and Career Guidance
                     </p>
-            </div>
-
-                {/* Interview Questions */}
-                <div style={{
-                    marginBottom: '40px',
-                    padding: '25px',
-                    backgroundColor: '#f8f9fa',
-                    borderRadius: '8px'
-                }}>
-                    <h3 style={{
-                        color: '#00416A',
-                        fontSize: '24px',
-                        marginBottom: '20px',
-                        fontWeight: 'bold',
-                        borderBottom: '2px solid #00416A',
-                        paddingBottom: '10px'
-                    }}>
-                    How did the culture at your last company empower or disempower you?
-                    </h3>
-                    <p style={{
-                        fontSize: '16px',
-                        lineHeight: '1.8',
-                        color: '#333'
-                    }}>
-                        This is a really interesting question because it will get candidates talking about their previous company through the lens of how they were affected by the company's culture. Getting candidates to talk about their past employer can be very telling. Do they openly throw the company under the bus? Do they recognize the positives even though it ultimately didn't work out?
-                    </p>
-                    <p style={{
-                        fontSize: '16px',
-                        lineHeight: '1.8',
-                        color: '#333',
-                        marginTop: '15px'
-                    }}>
-                        Asking specifically about the culture of their last company also tells you a lot about how they view the importance of culture. Their response will tell you if they've thought a lot about company culture or if they don't really know what it is. The question will also reveal how they think they are empowered or disempowered, which will give you a look into their motivations.
-                </p>
-            </div>
-
-                <div style={{
-                    marginBottom: '40px',
-                    padding: '25px',
-                    backgroundColor: '#f8f9fa',
-                    borderRadius: '8px'
-                }}>
-                    <h3 style={{
-                        color: '#00416A',
-                        fontSize: '24px',
-                        marginBottom: '20px',
-                        fontWeight: 'bold',
-                        borderBottom: '2px solid #00416A',
-                        paddingBottom: '10px'
-                    }}>
-                        What were the characteristics of the best boss you've ever had?
-                    </h3>
-                    <p style={{
-                        fontSize: '16px',
-                        lineHeight: '1.8',
-                        color: '#333'
-                    }}>
-                        I like this question as a follow-up to the culture question because it's somewhat similar but from a different angle. If you didn't get a sense for a candidate's view on culture and what motivates him or her, you likely will from this question.
-                    </p>
-                    <p style={{
-                        fontSize: '16px',
-                        lineHeight: '1.8',
-                        color: '#333',
-                        marginTop: '15px'
-                    }}>
-                    Did the candidate thrive under a boss who was extremely direct and valued performance above all else? Did he or she thrive under a boss that put as much emphasis on communication and interpersonal skills as results within the role?
-                </p>
-            </div>
-
-                <div style={{
-                    marginBottom: '40px',
-                    padding: '25px',
-                    backgroundColor: '#f8f9fa',
-                    borderRadius: '8px'
-                }}>
-                    <h3 style={{
-                        color: '#00416A',
-                        fontSize: '24px',
-                        marginBottom: '20px',
-                        fontWeight: 'bold',
-                        borderBottom: '2px solid #00416A',
-                        paddingBottom: '10px'
-                    }}>
-                    Describe how you handled a conflict with one of your co-workers
-                    </h3>
-                    <p style={{
-                        fontSize: '16px',
-                        lineHeight: '1.8',
-                        color: '#333'
-                    }}>
-                        It's always helpful to ask candidates about how they dealt with a conflict. As people, we tend to be more open and honest when recalling a specific event versus describing characteristics about ourselves. Understanding what the candidate perceives as a "conflict with a co-worker" will likely reveal information about the person's level of self-awareness.
-                    </p>
-                    <p style={{
-                        fontSize: '16px',
-                        lineHeight: '1.8',
-                        color: '#333',
-                        marginTop: '15px'
-                    }}>
-                    Understanding how someone dealt with a conflict will also give you insights into what he or she perceives as a reasonable and positive response to a conflict. No matter how wonderful your culture is, conflicts will arise. How your team deals with conflicts are the true test of our culture.
-                </p>
-            </div>
-
-                <div style={{
-                    marginBottom: '40px',
-                    padding: '25px',
-                    backgroundColor: '#f8f9fa',
-                    borderRadius: '8px'
-                }}>
-                    <h3 style={{
-                        color: '#00416A',
-                        fontSize: '24px',
-                        marginBottom: '20px',
-                        fontWeight: 'bold',
-                        borderBottom: '2px solid #00416A',
-                        paddingBottom: '10px'
-                    }}>
-                    What kind of feedback do you expect to receive in this role and how often do you expect to receive it?
-                    </h3>
-                    <p style={{
-                        fontSize: '16px',
-                        lineHeight: '1.8',
-                        color: '#333'
-                    }}>
-                        Understanding a candidate's desire or hesitation to receive feedback tells you a lot about the person's expectations. The frequency and type of feedback that is shared within a company tends to be highly correlated to culture.
-                    </p>
-                    <p style={{
-                        fontSize: '16px',
-                        lineHeight: '1.8',
-                        color: '#333',
-                        marginTop: '15px'
-                    }}>
-                        Does the candidate expect feedback to be tied to core values? Does the person think feedback is only about performance in the role? Does he or she see feedback as a once-a-year HR formality or as part of a constant process of growth and improvement?
-                </p>
-            </div>
-
-                <div style={{
-                    marginBottom: '40px',
-                    padding: '25px',
-                    backgroundColor: '#e7f3ff',
-                    borderRadius: '8px',
-                    borderLeft: '4px solid #00416A'
-                }}>
-                    <h3 style={{
-                        color: '#00416A',
-                        fontSize: '24px',
-                        marginBottom: '20px',
-                        fontWeight: 'bold'
-                    }}>
-                    Best words | lines you could say End of the Interview
-                    </h3>
-                    <p style={{
-                        fontSize: '16px',
-                        lineHeight: '1.8',
-                        color: '#333'
-                    }}>
-                        Eventually, I would like to say, I'm a very focused on my responsibilities, If you give me a chance to work with your team, I will be more focus & challengeable and I am wailing to learn new things and whatever I've expertise, knowledge & skills I will contribute to the team and I will do my best to enhance my Knowledge and enhance productivity of the company. That's all……
-                </p>
-            </div>
-
-                <div style={{
-                    marginBottom: '40px',
-                    padding: '25px',
-                    backgroundColor: '#f8f9fa',
-                    borderRadius: '8px'
-                }}>
-                    <h3 style={{
-                        color: '#00416A',
-                        fontSize: '24px',
-                        marginBottom: '20px',
-                        fontWeight: 'bold',
-                        borderBottom: '2px solid #00416A',
-                        paddingBottom: '10px'
-                    }}>
-                    End of the interview you may ask Question to Interviewer!
-                    </h3>
-                    <ul style={{
-                        fontSize: '16px',
-                        lineHeight: '2',
-                        color: '#333',
-                        paddingLeft: '20px'
-                    }}>
-                    <li>I want to know more about environment set up in this current project?</li>
-                    <li>Is this project is already fully integrated with CI/CD?</li>
-                        <li>In this current set-up, how Manual & Automation combined works?</li>
-                    <li>Is there any Service Account as a test account to test?</li>
-                        <li>In this current set-up, Automation repo already integrated with CI Server? and Over-night job already set up for executing the Regression suite?</li>
-                    <li>How do you feel my qualifications match your needs?</li>
-                </ul>
-            </div>
-
-                <div style={{
-                    marginBottom: '40px',
-                    padding: '25px',
-                    backgroundColor: '#f8f9fa',
-                    borderRadius: '8px'
-                }}>
-                    <h3 style={{
-                        color: '#00416A',
-                        fontSize: '24px',
-                        marginBottom: '20px',
-                        fontWeight: 'bold',
-                        borderBottom: '2px solid #00416A',
-                        paddingBottom: '10px'
-                    }}>
-                    Top Reasons to Work with Us
-                    </h3>
-                    <ul style={{
-                        fontSize: '16px',
-                        lineHeight: '2',
-                        color: '#333',
-                        paddingLeft: '20px'
-                    }}>
-                    <li>Awesome Company Culture</li>
-                    <li>Highly Innovative Products</li>
-                    <li>Work with New Technologies</li>
-                    <li>Collaborative team environment</li>
-                </ul>
-            </div>
-
-                <div style={{
-                    marginBottom: '40px',
-                    padding: '25px',
-                    backgroundColor: '#f8f9fa',
-                    borderRadius: '8px'
-                }}>
-                    <h3 style={{
-                        color: '#00416A',
-                        fontSize: '24px',
-                        marginBottom: '20px',
-                        fontWeight: 'bold',
-                        borderBottom: '2px solid #00416A',
-                        paddingBottom: '10px'
-                    }}>
-                        Greatest Strength: Best words | lines you could say
-                    </h3>
-                    <ul style={{
-                        fontSize: '16px',
-                        lineHeight: '2',
-                        color: '#333',
-                        paddingLeft: '20px',
-                        marginBottom: '20px'
-                    }}>
-                        <li>I'm a very focused on my responsibilities, once a target is given I must complete it and I'm sometimes a little bit soft on the people who work around me. Usually, I'm able to motivate and lead people to do great work, I always passionate about New Technology to learn and I would like to take new challenges every day.</li>
-                    <li>I would like to say, I am smart, talented, innovative, hardworking, professional, collaborative, efficient, caring, and friendly.</li>
-                    <li>Loyalty & Integrity is one of my strongest characteristics and I strongly believe that it pays off.</li>
-                        <li>I'm always able to learn from my mistakes. Rather than sit and sulk about failure, I look for another chance to prove that I can do it. I have a can-do attitude and I'm learning new thing as much as I can quick.</li>
-                </ul>
-                    <p style={{
-                        fontSize: '16px',
-                        lineHeight: '1.8',
-                        color: '#333',
-                        padding: '15px',
-                        backgroundColor: '#e7f3ff',
-                        borderRadius: '8px',
-                        borderLeft: '4px solid #00416A'
-                    }}>
-                        <strong>Knowledge-based:</strong> I have the skills and expertise in QA filed, Using tools and API's like: Selenium(API), Which is Selenium WebDriver, Selenium Grid, AutoIT, TestNG, Junit, Maven, SVN, Git, GitHub, CI Server Jenkins, Quality Center (ALM), JIRA, SQL, and Language-based : JAVA, JavaScript, HTML, CSS, XML, JQuery, JAVA Servlet, JSP
-                </p>
-            </div>
-
-                <div style={{
-                    marginBottom: '40px',
-                    padding: '25px',
-                    backgroundColor: '#f8f9fa',
-                    borderRadius: '8px'
-                }}>
-                    <h3 style={{
-                        color: '#00416A',
-                        fontSize: '24px',
-                        marginBottom: '20px',
-                        fontWeight: 'bold',
-                        borderBottom: '2px solid #00416A',
-                        paddingBottom: '10px'
-                    }}>
-                        Weakness: Best words | lines you could say
-                    </h3>
-                    <ul style={{
-                        fontSize: '16px',
-                        lineHeight: '2',
-                        color: '#333',
-                        paddingLeft: '20px'
-                    }}>
-                        <li>Well!! I would like to say "I care too much about my work and who work around me" this equates to my spending additional time on site at no cost to the company {'>>'} this is always a difficult thing to do because no one likes having to recognize their Additional work for the company.</li>
-                        <li>If I don't know something, Like I am getting any difficulties in my work:::::::: first of all, I always try to find by myself as much as quick, If I failed then I go and share with other's to get the information.</li>
-                </ul>
-            </div>
-
-                <div style={{
-                    marginBottom: '40px',
-                    padding: '25px',
-                    backgroundColor: '#f8f9fa',
-                    borderRadius: '8px'
-                }}>
-                    <h3 style={{
-                        color: '#00416A',
-                        fontSize: '24px',
-                        marginBottom: '20px',
-                        fontWeight: 'bold',
-                        borderBottom: '2px solid #00416A',
-                        paddingBottom: '10px'
-                    }}>
-                        What's the reason applying for permanent | Full-time position? | Why are you looking for a full-time job?
-                    </h3>
-                    <ul style={{
-                        fontSize: '16px',
-                        lineHeight: '2',
-                        color: '#333',
-                        paddingLeft: '20px'
-                    }}>
-                        <li>I love the company culture because awesome company culture and always work with new technologies & it is very friendly environment where I can contribute my strong subject matter expertise and also I can learn from others, it is a micromanaging system, it is huge opportunity to work with different team member, different types of people & defiantly different way to learning curve as well!. I would like to stay as a full-time employee over here, the way I can grow as a person and grow as a company.</li>
-                    <li>I mentioned friendly environment because of some level of managing the projects I can offer new ideas/suggestions for improving processes and procedures. I believe my organizational and time management skills would make me a very strong full-time employee.</li>
-                    <li>Another point I would like to say I can come in early and stay late when I needed if my management allowed me to work extra hours.</li>
-                        <li>Last not a lest I would like to say the full-time job is a long-term stability and benefits especially when It's supporting and providing benefit package for a family.</li>
-                </ul>
-            </div>
-
-                <div style={{
-                    marginBottom: '40px',
-                    padding: '25px',
-                    backgroundColor: '#f8f9fa',
-                    borderRadius: '8px'
-                }}>
-                    <h3 style={{
-                        color: '#00416A',
-                        fontSize: '24px',
-                        marginBottom: '20px',
-                        fontWeight: 'bold',
-                        borderBottom: '2px solid #00416A',
-                        paddingBottom: '10px'
-                    }}>
-                    Why do you like this job?
-                    </h3>
-                    <p style={{
-                        fontSize: '16px',
-                        lineHeight: '1.8',
-                        color: '#333'
-                    }}>
-                    I like this job because it is process oriented. The reason I said that, once I am getting an opportunity to work on analyzing the required documents to writing test plans, test cases, testing the application, logging defects, retesting, preparing reports and finally testing in production as well. Therefore, I am involved from the very beginning to the end of the software development lifecycle (SDLC) Process. I like this another reason is I like to find defects, from my past experience, I think all QA team members are working towards the same goal which is the defect, the defect is the most important part for me as a QA Engineer. I enjoy logging defects. The more defects I find, the happier I am.
-                </p>
-            </div>
-
-                <div style={{
-                    marginBottom: '40px',
-                    padding: '25px',
-                    backgroundColor: '#f8f9fa',
-                    borderRadius: '8px'
-                }}>
-                    <h3 style={{
-                        color: '#00416A',
-                        fontSize: '24px',
-                        marginBottom: '20px',
-                        fontWeight: 'bold',
-                        borderBottom: '2px solid #00416A',
-                        paddingBottom: '10px'
-                    }}>
-                    What made you choose a testing career?
-                    </h3>
-                    <p style={{
-                        fontSize: '16px',
-                        lineHeight: '1.8',
-                        color: '#333'
-                    }}>
-                        I am a very detailed oriented person and I like the process-oriented job. The way QA process works is just the kind of work I like. For example, analyzing requirement documents, attending walk-through meetings, writing test plans, writing test cases, executing the test cases (or running the test cases) testing the application, logging defects, retesting them and so on. I think I really like the process and that's why I chose this career.
-                </p>
-            </div>
-
-                <div style={{
-                    marginBottom: '40px',
-                    padding: '25px',
-                    backgroundColor: '#f8f9fa',
-                    borderRadius: '8px'
-                }}>
-                    <h3 style={{
-                        color: '#00416A',
-                        fontSize: '24px',
-                        marginBottom: '20px',
-                        fontWeight: 'bold',
-                        borderBottom: '2px solid #00416A',
-                        paddingBottom: '10px'
-                    }}>
-                    What are you expecting from our company?
-                    </h3>
-                    <p style={{
-                        fontSize: '16px',
-                        lineHeight: '1.8',
-                        color: '#333'
-                    }}>
-                    My expectation from your company would be I will have more challenges and new things to learn and whatever the skills I have to contribute, hopefully, I will be able to contribute if they are in any way helpful to enhance the productivity of the company.
-                </p>
-            </div>
-
-                <div style={{
-                    marginBottom: '40px',
-                    padding: '25px',
-                    backgroundColor: '#f8f9fa',
-                    borderRadius: '8px'
-                }}>
-                    <h3 style={{
-                        color: '#00416A',
-                        fontSize: '24px',
-                        marginBottom: '20px',
-                        fontWeight: 'bold',
-                        borderBottom: '2px solid #00416A',
-                        paddingBottom: '10px'
-                    }}>
-                    What do you want to be in next 2 years?
-                    </h3>
-                    <p style={{
-                        fontSize: '16px',
-                        lineHeight: '1.8',
-                        color: '#333'
-                    }}>
-                    I love this job and want to progress in this sector. I want to know more about how to manage QA process, how to handle different responsibilities and so on. I am trying to grow as a company and I am trying to grow as a person. Since the next step is the QA lead, that would preferably be one I will targeting for.
-                </p>
-            </div>
-
-                <div style={{
-                    marginBottom: '40px',
-                    padding: '25px',
-                    backgroundColor: '#f8f9fa',
-                    borderRadius: '8px'
-                }}>
-                    <h3 style={{
-                        color: '#00416A',
-                        fontSize: '24px',
-                        marginBottom: '20px',
-                        fontWeight: 'bold',
-                        borderBottom: '2px solid #00416A',
-                        paddingBottom: '10px'
-                    }}>
-                    Are you better working in a team or working alone?
-                    </h3>
-                    <p style={{
-                        fontSize: '16px',
-                        lineHeight: '1.8',
-                        color: '#333'
-                    }}>
-                    I am a team player. I get along with team members very well. As far as the working is concerned, I can be equally productive on a team or work alone.
-                    </p>
-                    <p style={{
-                        fontSize: '14px',
-                        lineHeight: '1.8',
-                        color: '#dc3545',
-                        marginTop: '15px',
-                        fontStyle: 'italic'
-                    }}>
-                    (Caution: Never say, I like working alone. This could lead you to not getting a job as they are always looking for people who can get along with other people.) 
-                </p>
-            </div>
-
-                <div style={{
-                    marginBottom: '40px',
-                    padding: '25px',
-                    backgroundColor: '#f8f9fa',
-                    borderRadius: '8px'
-                }}>
-                    <h3 style={{
-                        color: '#00416A',
-                        fontSize: '24px',
-                        marginBottom: '20px',
-                        fontWeight: 'bold',
-                        borderBottom: '2px solid #00416A',
-                        paddingBottom: '10px'
-                    }}>
-                        What do you like about a Manager? And what don't you like?
-                    </h3>
-                    <p style={{
-                        fontSize: '16px',
-                        lineHeight: '1.8',
-                        color: '#333'
-                    }}>
-                        The best thing I like about a Manager is that the Manager should be able to coordinate with the other teams so that we can get the updated documents, for example, updated requirements documents right away. A Manager who can efficiently it distributes the work to the team, without being biased and easily accessible and protective to his team for the right cause. As far as "what I don't like" is concerned, I don't like a manager who keeps coming to desk 10 times a day to check my work even if it is just a regular work. Once the responsibility is given, the team member should be trusted and let his work done.
-                </p>
-            </div>
-
-                <div style={{
-                    marginBottom: '40px',
-                    padding: '25px',
-                    backgroundColor: '#f8f9fa',
-                    borderRadius: '8px'
-                }}>
-                    <h3 style={{
-                        color: '#00416A',
-                        fontSize: '24px',
-                        marginBottom: '20px',
-                        fontWeight: 'bold',
-                        borderBottom: '2px solid #00416A',
-                        paddingBottom: '10px'
-                    }}>
-                    How do you Coordinate with the team? | How do you coordinate the work of you automated and manual testing in our team?
-                    </h3>
-                    <ul style={{
-                        fontSize: '16px',
-                        lineHeight: '2',
-                        color: '#333',
-                        paddingLeft: '20px'
-                    }}>
-                        <li>I think that is the key to maintaining a healthy manual-vs-automation relation in testing is TEAMWORK & COMMUNICATION</li>
-                        <li>I need to make sure both teams, the manual testers, and the automation engineers, are working based on the same agenda, coordinating their tasks based on the same priorities, and understanding how each player helps the other to fulfill the goals of the organization. In simple terms, how they work together in order to make their testing process faster, broader and eventually more effective.</li>
-                    <li>Make sure they are coordinated, by having regular update meetings and making sure there is active participation of both teams when planning the testing tasks for each project.</li>
-                        <li>Have both teams work in an integrated environment where both manual and automated tests are managed and executed. This will allow all testers, and also every other person in the company, to see the "full picture" and understand both on a planning and execution level what is been covered, what has been tested, and what are the results of these tests. After all, no one really cares if the test was run manually or automatically, they care about the results of the test.</li>
-                    <li>Have a process in place where automation is a tool to help a manual testing team.</li>
-                        <li>The correct process is what will eventually make or break the relationship between manual and automatic tests. Both teams need to understand that the idea of automation is to free the time of manual testers to run the more complex tests, those that are hard or expensive to automate. Once they understand that they complement each other and not compete with one-another they will be able to focus on their shared challenges instead of their rivalries.</li>
-                    <li>In short, I need to make sure my teams have both the agenda as well as the infrastructure required in order to coordinate their work.</li>
-                        <li>In the end, it is the work of the Manager/Lead and the Organization to create the environment and the "team norms ground rules" that will allow all members to feel like they provide their work and help drive the project forward TOGETHER.</li>
-                </ul>
+                </div>
+                <div style={modernStyles.heroImage}>
+                    <img 
+                        src={gkLogo} 
+                        alt='General Knowledge Logo'
+                        style={{
+                            maxWidth: '350px',
+                            width: '100%',
+                            height: 'auto',
+                            borderRadius: '16px',
+                            filter: 'brightness(1.1) drop-shadow(0 10px 30px rgba(0,0,0,0.2))'
+                        }}
+                    />
                 </div>
             </div>
 
-            <div>
-                <GoogleAd slot="1541085932" classNames="page-right-side" />
+            {/* Modern Intro Card */}
+            <div style={modernStyles.introCard}>
+                <h3 style={modernStyles.introTitle}>
+                    After Giving 1,000 Interviews, I've Found List of Questions That Matter
+                </h3>
+                <p style={modernStyles.introText}>
+                    Hiring for culture fit can seem like a mystery, but this list of interview questions will help you get it right every time.
+                </p>
             </div>
+
+            {/* Questions Section */}
+            <div style={{ marginBottom: '40px' }}>
+
+                {/* Question 1 */}
+                <div 
+                    style={{
+                        ...modernStyles.questionCard,
+                        ...modernStyles.questionCardFirst,
+                        ...(hoveredQuestion === 'q1' ? modernStyles.questionCardHover : {})
+                    }}
+                    onMouseEnter={() => setHoveredQuestion('q1')}
+                    onMouseLeave={() => setHoveredQuestion(null)}
+                >
+                    <div 
+                        style={modernStyles.questionHeader}
+                        onClick={() => toggleQuestion('q1')}
+                    >
+                        <div style={modernStyles.questionNumber}>1</div>
+                        <h3 style={modernStyles.questionTitle}>
+                            How did the culture at your last company empower or disempower you?
+                        </h3>
+                        <span style={{
+                            ...modernStyles.expandIcon,
+                            ...(expandedQuestions['q1'] ? modernStyles.expandIconRotated : {})
+                        }}>
+                            ▼
+                        </span>
+                    </div>
+                    {expandedQuestions['q1'] && (
+                        <div style={modernStyles.contentWrapper}>
+                            <p style={modernStyles.contentParagraph}>
+                                This is a really interesting question because it will get candidates talking about their previous company through the lens of how they were affected by the company's culture. Getting candidates to talk about their past employer can be very telling. Do they openly throw the company under the bus? Do they recognize the positives even though it ultimately didn't work out?
+                            </p>
+                            <p style={modernStyles.contentParagraph}>
+                                Asking specifically about the culture of their last company also tells you a lot about how they view the importance of culture. Their response will tell you if they've thought a lot about company culture or if they don't really know what it is. The question will also reveal how they think they are empowered or disempowered, which will give you a look into their motivations.
+                            </p>
+                        </div>
+                    )}
+            </div>
+
+                {/* Question 2 */}
+                <div 
+                    style={{
+                        ...modernStyles.questionCard,
+                        ...(hoveredQuestion === 'q2' ? modernStyles.questionCardHover : {})
+                    }}
+                    onMouseEnter={() => setHoveredQuestion('q2')}
+                    onMouseLeave={() => setHoveredQuestion(null)}
+                >
+                    <div 
+                        style={modernStyles.questionHeader}
+                        onClick={() => toggleQuestion('q2')}
+                    >
+                        <div style={modernStyles.questionNumber}>2</div>
+                        <h3 style={modernStyles.questionTitle}>
+                            What were the characteristics of the best boss you've ever had?
+                        </h3>
+                        <span style={{
+                            ...modernStyles.expandIcon,
+                            ...(expandedQuestions['q2'] ? modernStyles.expandIconRotated : {})
+                        }}>
+                            ▼
+                        </span>
+                    </div>
+                    {expandedQuestions['q2'] && (
+                        <div style={modernStyles.contentWrapper}>
+                            <p style={modernStyles.contentParagraph}>
+                                I like this question as a follow-up to the culture question because it's somewhat similar but from a different angle. If you didn't get a sense for a candidate's view on culture and what motivates him or her, you likely will from this question.
+                            </p>
+                            <p style={modernStyles.contentParagraph}>
+                            Did the candidate thrive under a boss who was extremely direct and valued performance above all else? Did he or she thrive under a boss that put as much emphasis on communication and interpersonal skills as results within the role?
+                            </p>
+                        </div>
+                    )}
+            </div>
+
+                {/* Question 3 */}
+                <div 
+                    style={{
+                        ...modernStyles.questionCard,
+                        ...(hoveredQuestion === 'q3' ? modernStyles.questionCardHover : {})
+                    }}
+                    onMouseEnter={() => setHoveredQuestion('q3')}
+                    onMouseLeave={() => setHoveredQuestion(null)}
+                >
+                    <div 
+                        style={modernStyles.questionHeader}
+                        onClick={() => toggleQuestion('q3')}
+                    >
+                        <div style={modernStyles.questionNumber}>3</div>
+                        <h3 style={modernStyles.questionTitle}>
+                            Describe how you handled a conflict with one of your co-workers
+                        </h3>
+                        <span style={{
+                            ...modernStyles.expandIcon,
+                            ...(expandedQuestions['q3'] ? modernStyles.expandIconRotated : {})
+                        }}>
+                            ▼
+                        </span>
+                    </div>
+                    {expandedQuestions['q3'] && (
+                        <div style={modernStyles.contentWrapper}>
+                            <p style={modernStyles.contentParagraph}>
+                                It's always helpful to ask candidates about how they dealt with a conflict. As people, we tend to be more open and honest when recalling a specific event versus describing characteristics about ourselves. Understanding what the candidate perceives as a "conflict with a co-worker" will likely reveal information about the person's level of self-awareness.
+                            </p>
+                            <p style={modernStyles.contentParagraph}>
+                            Understanding how someone dealt with a conflict will also give you insights into what he or she perceives as a reasonable and positive response to a conflict. No matter how wonderful your culture is, conflicts will arise. How your team deals with conflicts are the true test of our culture.
+                            </p>
+                        </div>
+                    )}
+            </div>
+
+                {/* Question 4 */}
+                <div 
+                    style={{
+                        ...modernStyles.questionCard,
+                        ...(hoveredQuestion === 'q4' ? modernStyles.questionCardHover : {})
+                    }}
+                    onMouseEnter={() => setHoveredQuestion('q4')}
+                    onMouseLeave={() => setHoveredQuestion(null)}
+                >
+                    <div 
+                        style={modernStyles.questionHeader}
+                        onClick={() => toggleQuestion('q4')}
+                    >
+                        <div style={modernStyles.questionNumber}>4</div>
+                        <h3 style={modernStyles.questionTitle}>
+                            What kind of feedback do you expect to receive in this role and how often do you expect to receive it?
+                        </h3>
+                        <span style={{
+                            ...modernStyles.expandIcon,
+                            ...(expandedQuestions['q4'] ? modernStyles.expandIconRotated : {})
+                        }}>
+                            ▼
+                        </span>
+                    </div>
+                    {expandedQuestions['q4'] && (
+                        <div style={modernStyles.contentWrapper}>
+                            <p style={modernStyles.contentParagraph}>
+                                Understanding a candidate's desire or hesitation to receive feedback tells you a lot about the person's expectations. The frequency and type of feedback that is shared within a company tends to be highly correlated to culture.
+                            </p>
+                            <p style={modernStyles.contentParagraph}>
+                                Does the candidate expect feedback to be tied to core values? Does the person think feedback is only about performance in the role? Does he or she see feedback as a once-a-year HR formality or as part of a constant process of growth and improvement?
+                            </p>
+                        </div>
+                    )}
+            </div>
+
+                {/* Question 5 */}
+                <div 
+                    style={{
+                        ...modernStyles.questionCard,
+                        backgroundColor: '#f0f8ff',
+                        borderLeft: '4px solid',
+                        borderLeftColor: colors.primary,
+                        ...(hoveredQuestion === 'q5' ? modernStyles.questionCardHover : {})
+                    }}
+                    onMouseEnter={() => setHoveredQuestion('q5')}
+                    onMouseLeave={() => setHoveredQuestion(null)}
+                >
+                    <div 
+                        style={modernStyles.questionHeader}
+                        onClick={() => toggleQuestion('q5')}
+                    >
+                        <div style={modernStyles.questionNumber}>5</div>
+                        <h3 style={modernStyles.questionTitle}>
+                            Best words | lines you could say End of the Interview
+                        </h3>
+                        <span style={{
+                            ...modernStyles.expandIcon,
+                            ...(expandedQuestions['q5'] ? modernStyles.expandIconRotated : {})
+                        }}>
+                            ▼
+                        </span>
+                    </div>
+                    {expandedQuestions['q5'] && (
+                        <div style={modernStyles.contentWrapper}>
+                            <p style={modernStyles.contentParagraph}>
+                                Eventually, I would like to say, I'm a very focused on my responsibilities, If you give me a chance to work with your team, I will be more focus & challengeable and I am wailing to learn new things and whatever I've expertise, knowledge & skills I will contribute to the team and I will do my best to enhance my Knowledge and enhance productivity of the company. That's all……
+                            </p>
+                        </div>
+                    )}
+            </div>
+
+                {/* Question 6 */}
+                <div 
+                    style={{
+                        ...modernStyles.questionCard,
+                        ...(hoveredQuestion === 'q6' ? modernStyles.questionCardHover : {})
+                    }}
+                    onMouseEnter={() => setHoveredQuestion('q6')}
+                    onMouseLeave={() => setHoveredQuestion(null)}
+                >
+                    <div 
+                        style={modernStyles.questionHeader}
+                        onClick={() => toggleQuestion('q6')}
+                    >
+                        <div style={modernStyles.questionNumber}>6</div>
+                        <h3 style={modernStyles.questionTitle}>
+                            End of the interview you may ask Question to Interviewer!
+                        </h3>
+                        <span style={{
+                            ...modernStyles.expandIcon,
+                            ...(expandedQuestions['q6'] ? modernStyles.expandIconRotated : {})
+                        }}>
+                            ▼
+                        </span>
+                    </div>
+                    {expandedQuestions['q6'] && (
+                        <div style={modernStyles.contentWrapper}>
+                            <ul style={modernStyles.contentList}>
+                            <li>I want to know more about environment set up in this current project?</li>
+                            <li>Is this project is already fully integrated with CI/CD?</li>
+                                <li>In this current set-up, how Manual & Automation combined works?</li>
+                            <li>Is there any Service Account as a test account to test?</li>
+                                <li>In this current set-up, Automation repo already integrated with CI Server? and Over-night job already set up for executing the Regression suite?</li>
+                            <li>How do you feel my qualifications match your needs?</li>
+                        </ul>
+                        </div>
+                    )}
+            </div>
+
+                {/* Question 7 */}
+                <div 
+                    style={{
+                        ...modernStyles.questionCard,
+                        ...(hoveredQuestion === 'q7' ? modernStyles.questionCardHover : {})
+                    }}
+                    onMouseEnter={() => setHoveredQuestion('q7')}
+                    onMouseLeave={() => setHoveredQuestion(null)}
+                >
+                    <div 
+                        style={modernStyles.questionHeader}
+                        onClick={() => toggleQuestion('q7')}
+                    >
+                        <div style={modernStyles.questionNumber}>7</div>
+                        <h3 style={modernStyles.questionTitle}>
+                            Top Reasons to Work with Us
+                        </h3>
+                        <span style={{
+                            ...modernStyles.expandIcon,
+                            ...(expandedQuestions['q7'] ? modernStyles.expandIconRotated : {})
+                        }}>
+                            ▼
+                        </span>
+                    </div>
+                    {expandedQuestions['q7'] && (
+                        <div style={modernStyles.contentWrapper}>
+                            <ul style={modernStyles.contentList}>
+                            <li>Awesome Company Culture</li>
+                            <li>Highly Innovative Products</li>
+                            <li>Work with New Technologies</li>
+                            <li>Collaborative team environment</li>
+                        </ul>
+                        </div>
+                    )}
+            </div>
+
+                {/* Question 8 */}
+                <div 
+                    style={{
+                        ...modernStyles.questionCard,
+                        ...(hoveredQuestion === 'q8' ? modernStyles.questionCardHover : {})
+                    }}
+                    onMouseEnter={() => setHoveredQuestion('q8')}
+                    onMouseLeave={() => setHoveredQuestion(null)}
+                >
+                    <div 
+                        style={modernStyles.questionHeader}
+                        onClick={() => toggleQuestion('q8')}
+                    >
+                        <div style={modernStyles.questionNumber}>8</div>
+                        <h3 style={modernStyles.questionTitle}>
+                            Greatest Strength: Best words | lines you could say
+                        </h3>
+                        <span style={{
+                            ...modernStyles.expandIcon,
+                            ...(expandedQuestions['q8'] ? modernStyles.expandIconRotated : {})
+                        }}>
+                            ▼
+                        </span>
+                    </div>
+                    {expandedQuestions['q8'] && (
+                        <div style={modernStyles.contentWrapper}>
+                            <ul style={modernStyles.contentList}>
+                                <li>I'm a very focused on my responsibilities, once a target is given I must complete it and I'm sometimes a little bit soft on the people who work around me. Usually, I'm able to motivate and lead people to do great work, I always passionate about New Technology to learn and I would like to take new challenges every day.</li>
+                            <li>I would like to say, I am smart, talented, innovative, hardworking, professional, collaborative, efficient, caring, and friendly.</li>
+                            <li>Loyalty & Integrity is one of my strongest characteristics and I strongly believe that it pays off.</li>
+                                <li>I'm always able to learn from my mistakes. Rather than sit and sulk about failure, I look for another chance to prove that I can do it. I have a can-do attitude and I'm learning new thing as much as I can quick.</li>
+                        </ul>
+                            <div style={modernStyles.highlightedBox}>
+                                <strong>Knowledge-based:</strong> I have the skills and expertise in QA filed, Using tools and API's like: Selenium(API), Which is Selenium WebDriver, Selenium Grid, AutoIT, TestNG, Junit, Maven, SVN, Git, GitHub, CI Server Jenkins, Quality Center (ALM), JIRA, SQL, and Language-based : JAVA, JavaScript, HTML, CSS, XML, JQuery, JAVA Servlet, JSP
+                            </div>
+                        </div>
+                    )}
+            </div>
+
+                {/* Question 9 */}
+                <div 
+                    style={{
+                        ...modernStyles.questionCard,
+                        ...(hoveredQuestion === 'q9' ? modernStyles.questionCardHover : {})
+                    }}
+                    onMouseEnter={() => setHoveredQuestion('q9')}
+                    onMouseLeave={() => setHoveredQuestion(null)}
+                >
+                    <div 
+                        style={modernStyles.questionHeader}
+                        onClick={() => toggleQuestion('q9')}
+                    >
+                        <div style={modernStyles.questionNumber}>9</div>
+                        <h3 style={modernStyles.questionTitle}>
+                            Weakness: Best words | lines you could say
+                        </h3>
+                        <span style={{
+                            ...modernStyles.expandIcon,
+                            ...(expandedQuestions['q9'] ? modernStyles.expandIconRotated : {})
+                        }}>
+                            ▼
+                        </span>
+                    </div>
+                    {expandedQuestions['q9'] && (
+                        <div style={modernStyles.contentWrapper}>
+                            <ul style={modernStyles.contentList}>
+                                <li>Well!! I would like to say "I care too much about my work and who work around me" this equates to my spending additional time on site at no cost to the company {'>>'} this is always a difficult thing to do because no one likes having to recognize their Additional work for the company.</li>
+                                <li>If I don't know something, Like I am getting any difficulties in my work:::::::: first of all, I always try to find by myself as much as quick, If I failed then I go and share with other's to get the information.</li>
+                        </ul>
+                        </div>
+                    )}
+            </div>
+
+                {/* Question 10 */}
+                <div 
+                    style={{
+                        ...modernStyles.questionCard,
+                        ...(hoveredQuestion === 'q10' ? modernStyles.questionCardHover : {})
+                    }}
+                    onMouseEnter={() => setHoveredQuestion('q10')}
+                    onMouseLeave={() => setHoveredQuestion(null)}
+                >
+                    <div 
+                        style={modernStyles.questionHeader}
+                        onClick={() => toggleQuestion('q10')}
+                    >
+                        <div style={modernStyles.questionNumber}>10</div>
+                        <h3 style={modernStyles.questionTitle}>
+                            What's the reason applying for permanent | Full-time position? | Why are you looking for a full-time job?
+                        </h3>
+                        <span style={{
+                            ...modernStyles.expandIcon,
+                            ...(expandedQuestions['q10'] ? modernStyles.expandIconRotated : {})
+                        }}>
+                            ▼
+                        </span>
+                    </div>
+                    {expandedQuestions['q10'] && (
+                        <div style={modernStyles.contentWrapper}>
+                            <ul style={modernStyles.contentList}>
+                                <li>I love the company culture because awesome company culture and always work with new technologies & it is very friendly environment where I can contribute my strong subject matter expertise and also I can learn from others, it is a micromanaging system, it is huge opportunity to work with different team member, different types of people & defiantly different way to learning curve as well!. I would like to stay as a full-time employee over here, the way I can grow as a person and grow as a company.</li>
+                            <li>I mentioned friendly environment because of some level of managing the projects I can offer new ideas/suggestions for improving processes and procedures. I believe my organizational and time management skills would make me a very strong full-time employee.</li>
+                            <li>Another point I would like to say I can come in early and stay late when I needed if my management allowed me to work extra hours.</li>
+                                <li>Last not a lest I would like to say the full-time job is a long-term stability and benefits especially when It's supporting and providing benefit package for a family.</li>
+                        </ul>
+                        </div>
+                    )}
+            </div>
+
+                {/* Question 11 */}
+                <div 
+                    style={{
+                        ...modernStyles.questionCard,
+                        ...(hoveredQuestion === 'q11' ? modernStyles.questionCardHover : {})
+                    }}
+                    onMouseEnter={() => setHoveredQuestion('q11')}
+                    onMouseLeave={() => setHoveredQuestion(null)}
+                >
+                    <div 
+                        style={modernStyles.questionHeader}
+                        onClick={() => toggleQuestion('q11')}
+                    >
+                        <div style={modernStyles.questionNumber}>11</div>
+                        <h3 style={modernStyles.questionTitle}>
+                            Why do you like this job?
+                        </h3>
+                        <span style={{
+                            ...modernStyles.expandIcon,
+                            ...(expandedQuestions['q11'] ? modernStyles.expandIconRotated : {})
+                        }}>
+                            ▼
+                        </span>
+                    </div>
+                    {expandedQuestions['q11'] && (
+                        <div style={modernStyles.contentWrapper}>
+                            <p style={modernStyles.contentParagraph}>
+                            I like this job because it is process oriented. The reason I said that, once I am getting an opportunity to work on analyzing the required documents to writing test plans, test cases, testing the application, logging defects, retesting, preparing reports and finally testing in production as well. Therefore, I am involved from the very beginning to the end of the software development lifecycle (SDLC) Process. I like this another reason is I like to find defects, from my past experience, I think all QA team members are working towards the same goal which is the defect, the defect is the most important part for me as a QA Engineer. I enjoy logging defects. The more defects I find, the happier I am.
+                            </p>
+                        </div>
+                    )}
+            </div>
+
+                {/* Question 12 */}
+                <div 
+                    style={{
+                        ...modernStyles.questionCard,
+                        ...(hoveredQuestion === 'q12' ? modernStyles.questionCardHover : {})
+                    }}
+                    onMouseEnter={() => setHoveredQuestion('q12')}
+                    onMouseLeave={() => setHoveredQuestion(null)}
+                >
+                    <div 
+                        style={modernStyles.questionHeader}
+                        onClick={() => toggleQuestion('q12')}
+                    >
+                        <div style={modernStyles.questionNumber}>12</div>
+                        <h3 style={modernStyles.questionTitle}>
+                            What made you choose a testing career?
+                        </h3>
+                        <span style={{
+                            ...modernStyles.expandIcon,
+                            ...(expandedQuestions['q12'] ? modernStyles.expandIconRotated : {})
+                        }}>
+                            ▼
+                        </span>
+                    </div>
+                    {expandedQuestions['q12'] && (
+                        <div style={modernStyles.contentWrapper}>
+                            <p style={modernStyles.contentParagraph}>
+                                I am a very detailed oriented person and I like the process-oriented job. The way QA process works is just the kind of work I like. For example, analyzing requirement documents, attending walk-through meetings, writing test plans, writing test cases, executing the test cases (or running the test cases) testing the application, logging defects, retesting them and so on. I think I really like the process and that's why I chose this career.
+                            </p>
+                        </div>
+                    )}
+            </div>
+
+                {/* Question 13 */}
+                <div 
+                    style={{
+                        ...modernStyles.questionCard,
+                        ...(hoveredQuestion === 'q13' ? modernStyles.questionCardHover : {})
+                    }}
+                    onMouseEnter={() => setHoveredQuestion('q13')}
+                    onMouseLeave={() => setHoveredQuestion(null)}
+                >
+                    <div 
+                        style={modernStyles.questionHeader}
+                        onClick={() => toggleQuestion('q13')}
+                    >
+                        <div style={modernStyles.questionNumber}>13</div>
+                        <h3 style={modernStyles.questionTitle}>
+                            What are you expecting from our company?
+                        </h3>
+                        <span style={{
+                            ...modernStyles.expandIcon,
+                            ...(expandedQuestions['q13'] ? modernStyles.expandIconRotated : {})
+                        }}>
+                            ▼
+                        </span>
+                    </div>
+                    {expandedQuestions['q13'] && (
+                        <div style={modernStyles.contentWrapper}>
+                            <p style={modernStyles.contentParagraph}>
+                            My expectation from your company would be I will have more challenges and new things to learn and whatever the skills I have to contribute, hopefully, I will be able to contribute if they are in any way helpful to enhance the productivity of the company.
+                            </p>
+                        </div>
+                    )}
+            </div>
+
+                {/* Question 14 */}
+                <div 
+                    style={{
+                        ...modernStyles.questionCard,
+                        ...(hoveredQuestion === 'q14' ? modernStyles.questionCardHover : {})
+                    }}
+                    onMouseEnter={() => setHoveredQuestion('q14')}
+                    onMouseLeave={() => setHoveredQuestion(null)}
+                >
+                    <div 
+                        style={modernStyles.questionHeader}
+                        onClick={() => toggleQuestion('q14')}
+                    >
+                        <div style={modernStyles.questionNumber}>14</div>
+                        <h3 style={modernStyles.questionTitle}>
+                            What do you want to be in next 2 years?
+                        </h3>
+                        <span style={{
+                            ...modernStyles.expandIcon,
+                            ...(expandedQuestions['q14'] ? modernStyles.expandIconRotated : {})
+                        }}>
+                            ▼
+                        </span>
+                    </div>
+                    {expandedQuestions['q14'] && (
+                        <div style={modernStyles.contentWrapper}>
+                            <p style={modernStyles.contentParagraph}>
+                            I love this job and want to progress in this sector. I want to know more about how to manage QA process, how to handle different responsibilities and so on. I am trying to grow as a company and I am trying to grow as a person. Since the next step is the QA lead, that would preferably be one I will targeting for.
+                            </p>
+                        </div>
+                    )}
+            </div>
+
+                {/* Question 15 */}
+                <div 
+                    style={{
+                        ...modernStyles.questionCard,
+                        ...(hoveredQuestion === 'q15' ? modernStyles.questionCardHover : {})
+                    }}
+                    onMouseEnter={() => setHoveredQuestion('q15')}
+                    onMouseLeave={() => setHoveredQuestion(null)}
+                >
+                    <div 
+                        style={modernStyles.questionHeader}
+                        onClick={() => toggleQuestion('q15')}
+                    >
+                        <div style={modernStyles.questionNumber}>15</div>
+                        <h3 style={modernStyles.questionTitle}>
+                            Are you better working in a team or working alone?
+                        </h3>
+                        <span style={{
+                            ...modernStyles.expandIcon,
+                            ...(expandedQuestions['q15'] ? modernStyles.expandIconRotated : {})
+                        }}>
+                            ▼
+                        </span>
+                    </div>
+                    {expandedQuestions['q15'] && (
+                        <div style={modernStyles.contentWrapper}>
+                            <p style={modernStyles.contentParagraph}>
+                            I am a team player. I get along with team members very well. As far as the working is concerned, I can be equally productive on a team or work alone.
+                            </p>
+                            <div style={modernStyles.warningBox}>
+                                <p style={modernStyles.warningText}>
+                                (Caution: Never say, I like working alone. This could lead you to not getting a job as they are always looking for people who can get along with other people.)
+                                </p>
+                            </div>
+                        </div>
+                    )}
+            </div>
+
+                {/* Question 16 */}
+                <div 
+                    style={{
+                        ...modernStyles.questionCard,
+                        ...(hoveredQuestion === 'q16' ? modernStyles.questionCardHover : {})
+                    }}
+                    onMouseEnter={() => setHoveredQuestion('q16')}
+                    onMouseLeave={() => setHoveredQuestion(null)}
+                >
+                    <div 
+                        style={modernStyles.questionHeader}
+                        onClick={() => toggleQuestion('q16')}
+                    >
+                        <div style={modernStyles.questionNumber}>16</div>
+                        <h3 style={modernStyles.questionTitle}>
+                            What do you like about a Manager? And what don't you like?
+                        </h3>
+                        <span style={{
+                            ...modernStyles.expandIcon,
+                            ...(expandedQuestions['q16'] ? modernStyles.expandIconRotated : {})
+                        }}>
+                            ▼
+                        </span>
+                    </div>
+                    {expandedQuestions['q16'] && (
+                        <div style={modernStyles.contentWrapper}>
+                            <p style={modernStyles.contentParagraph}>
+                                The best thing I like about a Manager is that the Manager should be able to coordinate with the other teams so that we can get the updated documents, for example, updated requirements documents right away. A Manager who can efficiently it distributes the work to the team, without being biased and easily accessible and protective to his team for the right cause. As far as "what I don't like" is concerned, I don't like a manager who keeps coming to desk 10 times a day to check my work even if it is just a regular work. Once the responsibility is given, the team member should be trusted and let his work done.
+                            </p>
+                        </div>
+                    )}
+            </div>
+
+                {/* Question 17 */}
+                <div 
+                    style={{
+                        ...modernStyles.questionCard,
+                        ...modernStyles.questionCardLast,
+                        ...(hoveredQuestion === 'q17' ? modernStyles.questionCardHover : {})
+                    }}
+                    onMouseEnter={() => setHoveredQuestion('q17')}
+                    onMouseLeave={() => setHoveredQuestion(null)}
+                >
+                    <div 
+                        style={modernStyles.questionHeader}
+                        onClick={() => toggleQuestion('q17')}
+                    >
+                        <div style={modernStyles.questionNumber}>17</div>
+                        <h3 style={modernStyles.questionTitle}>
+                            How do you Coordinate with the team? | How do you coordinate the work of you automated and manual testing in our team?
+                        </h3>
+                        <span style={{
+                            ...modernStyles.expandIcon,
+                            ...(expandedQuestions['q17'] ? modernStyles.expandIconRotated : {})
+                        }}>
+                            ▼
+                        </span>
+                    </div>
+                    {expandedQuestions['q17'] && (
+                        <div style={modernStyles.contentWrapper}>
+                            <ul style={modernStyles.contentList}>
+                                <li>I think that is the key to maintaining a healthy manual-vs-automation relation in testing is TEAMWORK & COMMUNICATION</li>
+                                <li>I need to make sure both teams, the manual testers, and the automation engineers, are working based on the same agenda, coordinating their tasks based on the same priorities, and understanding how each player helps the other to fulfill the goals of the organization. In simple terms, how they work together in order to make their testing process faster, broader and eventually more effective.</li>
+                            <li>Make sure they are coordinated, by having regular update meetings and making sure there is active participation of both teams when planning the testing tasks for each project.</li>
+                                <li>Have both teams work in an integrated environment where both manual and automated tests are managed and executed. This will allow all testers, and also every other person in the company, to see the "full picture" and understand both on a planning and execution level what is been covered, what has been tested, and what are the results of these tests. After all, no one really cares if the test was run manually or automatically, they care about the results of the test.</li>
+                            <li>Have a process in place where automation is a tool to help a manual testing team.</li>
+                                <li>The correct process is what will eventually make or break the relationship between manual and automatic tests. Both teams need to understand that the idea of automation is to free the time of manual testers to run the more complex tests, those that are hard or expensive to automate. Once they understand that they complement each other and not compete with one-another they will be able to focus on their shared challenges instead of their rivalries.</li>
+                            <li>In short, I need to make sure my teams have both the agenda as well as the infrastructure required in order to coordinate their work.</li>
+                                <li>In the end, it is the work of the Manager/Lead and the Organization to create the environment and the "team norms ground rules" that will allow all members to feel like they provide their work and help drive the project forward TOGETHER.</li>
+                        </ul>
+                        </div>
+                    )}
+                </div>
+            </div>
+
             <section style={{ marginTop: '40px' }}>
                 <Footer />
             </section>
         </div>
     )
 }
-export default gk;
+export default Gk;

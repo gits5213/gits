@@ -1,6 +1,5 @@
 import React from 'react';
 import link from '../../../utilities/links.json';
-import GoogleAd from '../../../components/GoogleAd';
 import HTML_LOGO from '../../../images/tabs/htmlLogo.png';
 import HTML_TAG from '../../../images/tabs/htmlTags.jpeg';
 import Footer from '../../../components/footer';
@@ -18,52 +17,59 @@ const resHtml = () => {
         <div style={{
             maxWidth: '1400px',
             margin: '0 auto',
-            padding: '40px 20px'
+            padding: '40px 20px',
+            textAlign: 'left'
         }}>
             {/* Hero Section */}
             <div style={{
                 background: 'linear-gradient(135deg, #00416A 0%, #005a8a 100%)',
                 color: '#ffffff',
                 padding: '60px 20px',
-                textAlign: 'center',
+                textAlign: 'left',
                 borderRadius: '12px',
                 marginBottom: '40px',
-                boxShadow: '0 4px 15px rgba(0,0,0,0.2)'
+                boxShadow: '0 4px 15px rgba(0,0,0,0.2)',
+                display: 'flex',
+                alignItems: 'center',
+                justifyContent: 'space-between',
+                gap: '40px',
+                flexWrap: 'wrap'
             }}>
-                <h1 style={{
-                    fontSize: '48px',
-                    marginBottom: '20px',
-                    fontWeight: 'bold'
+                <div style={{ flex: '1', minWidth: '300px' }}>
+                    <h1 style={{
+                        fontSize: '48px',
+                        marginBottom: '20px',
+                        fontWeight: 'bold',
+                        textAlign: 'left'
+                    }}>
+                        HTML
+                    </h1>
+                    <p style={{
+                        fontSize: '20px',
+                        opacity: '0.95',
+                        textAlign: 'left'
+                    }}>
+                        The Standard Markup Language for Creating Web Pages
+                    </p>
+                </div>
+                <div style={{
+                    flex: '0 0 auto',
+                    display: 'flex',
+                    alignItems: 'center',
+                    justifyContent: 'flex-end'
                 }}>
-                    HTML
-                </h1>
-                <p style={{
-                    fontSize: '20px',
-                    opacity: '0.95'
-                }}>
-                    The Standard Markup Language for Creating Web Pages
-                </p>
-            </div>
-
-            {/* Image Section */}
-            <div style={{
-                textAlign: 'center',
-                marginBottom: '40px',
-                backgroundColor: '#f8f9fa',
-                padding: '40px',
-                borderRadius: '12px',
-                boxShadow: '0 2px 10px rgba(0,0,0,0.1)'
-            }}>
-                <img 
-                    src={HTML_LOGO} 
-                    alt='HTML Logo'
-                    style={{
-                        width: '100%',
-                        maxWidth: '400px',
-                        height: 'auto',
-                        borderRadius: '8px'
-                    }}
-                />
+                    <img 
+                        src={HTML_LOGO} 
+                        alt='HTML Logo'
+                        style={{
+                            maxWidth: '300px',
+                            width: '100%',
+                            height: 'auto',
+                            borderRadius: '8px',
+                            filter: 'brightness(1.1)'
+                        }}
+                    />
+                </div>
             </div>
 
             {/* Main Content */}
@@ -72,14 +78,16 @@ const resHtml = () => {
                 padding: '40px',
                 borderRadius: '12px',
                 boxShadow: '0 2px 10px rgba(0,0,0,0.1)',
-                marginBottom: '40px'
+                marginBottom: '40px',
+                textAlign: 'left'
             }}>
                 <p style={{
                     fontSize: '18px',
                     lineHeight: '1.8',
                     color: '#333',
                     marginBottom: '30px',
-                    fontWeight: '500'
+                    fontWeight: '500',
+                    textAlign: 'left'
                 }}>
                     HTML is the standard markup language for creating Web pages.
                 </p>
@@ -89,7 +97,8 @@ const resHtml = () => {
                     fontSize: '32px',
                     marginBottom: '20px',
                     marginTop: '40px',
-                    fontWeight: 'bold'
+                    fontWeight: 'bold',
+                    textAlign: 'left'
                 }}>
                     What is HTML?
                 </h2>
@@ -98,7 +107,8 @@ const resHtml = () => {
                     lineHeight: '2',
                     color: '#333',
                     paddingLeft: '20px',
-                    marginBottom: '30px'
+                    marginBottom: '30px',
+                    textAlign: 'left'
                 }}>
                     <li>HTML stands for Hyper Text Markup Language</li>
                     <li>HTML is the standard markup language for creating Web pages</li>
@@ -113,7 +123,8 @@ const resHtml = () => {
                     fontSize: '32px',
                     marginBottom: '20px',
                     marginTop: '40px',
-                    fontWeight: 'bold'
+                    fontWeight: 'bold',
+                    textAlign: 'left'
                 }}>
                     Example
                 </h2>
@@ -126,7 +137,8 @@ const resHtml = () => {
                     overflowX: 'auto',
                     fontFamily: 'monospace',
                     fontSize: '14px',
-                    lineHeight: '1.6'
+                    lineHeight: '1.6',
+                    textAlign: 'left'
                 }}>
                     <code>
                         {'<'}!DOCTYPE html{'>'} <br />
@@ -147,7 +159,8 @@ const resHtml = () => {
                     fontSize: '32px',
                     marginBottom: '20px',
                     marginTop: '40px',
-                    fontWeight: 'bold'
+                    fontWeight: 'bold',
+                    textAlign: 'left'
                 }}>
                     Example Explained
                 </h2>
@@ -156,7 +169,8 @@ const resHtml = () => {
                     lineHeight: '2',
                     color: '#333',
                     paddingLeft: '20px',
-                    marginBottom: '30px'
+                    marginBottom: '30px',
+                    textAlign: 'left'
                 }}>
                     <li>The <code style={{ backgroundColor: '#f8f9fa', padding: '2px 6px', borderRadius: '4px', color: '#00416A' }}>{'<'}!DOCTYPE html{'>'}</code> declaration defines that this document is an HTML5 document</li>
                     <li>The <code style={{ backgroundColor: '#f8f9fa', padding: '2px 6px', borderRadius: '4px', color: '#00416A' }}>{'<'}html{'>'}</code> element is the root element of an HTML page</li>
@@ -172,7 +186,8 @@ const resHtml = () => {
                     fontSize: '32px',
                     marginBottom: '20px',
                     marginTop: '40px',
-                    fontWeight: 'bold'
+                    fontWeight: 'bold',
+                    textAlign: 'left'
                 }}>
                     What is an HTML Element?
                 </h2>
@@ -180,7 +195,8 @@ const resHtml = () => {
                     fontSize: '16px',
                     lineHeight: '1.8',
                     color: '#333',
-                    marginBottom: '20px'
+                    marginBottom: '20px',
+                    textAlign: 'left'
                 }}>
                     An HTML element is defined by a start tag, some content, and an end tag:
                 </p>
@@ -190,7 +206,8 @@ const resHtml = () => {
                     borderRadius: '8px',
                     marginBottom: '20px',
                     fontFamily: 'monospace',
-                    fontSize: '16px'
+                    fontSize: '16px',
+                    textAlign: 'left'
                 }}>
                     <code style={{ color: '#00416A' }}>{'<'}tagname{'>'}</code>Content goes here...<code style={{ color: '#00416A' }}>{'</'}tagname{'>'}</code>
                 </div>
@@ -202,13 +219,15 @@ const resHtml = () => {
                 padding: '40px',
                 borderRadius: '12px',
                 boxShadow: '0 2px 10px rgba(0,0,0,0.1)',
-                marginBottom: '40px'
+                marginBottom: '40px',
+                textAlign: 'left'
             }}>
                 <h2 style={{
                     color: '#00416A',
                     fontSize: '32px',
                     marginBottom: '20px',
-                    fontWeight: 'bold'
+                    fontWeight: 'bold',
+                    textAlign: 'left'
                 }}>
                     HTML Editors
                 </h2>
@@ -216,7 +235,8 @@ const resHtml = () => {
                     fontSize: '16px',
                     lineHeight: '1.8',
                     color: '#333',
-                    marginBottom: '20px'
+                    marginBottom: '20px',
+                    textAlign: 'left'
                 }}>
                     A simple text editor is all you need to learn HTML. Learn HTML Using VS Code. Web pages can be created and modified by using professional HTML editors. However, for learning HTML we recommend a simple text editor like VS Code (PC) or (Mac). We believe in that using a simple text editor is a good way to learn HTML. Follow the steps below to create your first web page with VS Code.
                 </p>
@@ -231,7 +251,8 @@ const resHtml = () => {
                         color: '#00416A',
                         fontSize: '20px',
                         marginBottom: '15px',
-                        fontWeight: '600'
+                        fontWeight: '600',
+                        textAlign: 'left'
                     }}>
                         Step 1: Download and Install VS Code (PC/MAC)
                     </h3>
@@ -239,7 +260,8 @@ const resHtml = () => {
                         fontSize: '16px',
                         lineHeight: '2',
                         color: '#333',
-                        paddingLeft: '20px'
+                        paddingLeft: '20px',
+                        textAlign: 'left'
                     }}>
                         <li>Navigate to the <a href={link.VSCODE} target="_blank" rel="noopener noreferrer" style={{ color: '#00416A', textDecoration: 'underline' }}><strong>URL</strong></a></li>
                     <li>Click on the <strong>Download Button</strong> according to your Operating System</li>
@@ -258,7 +280,8 @@ const resHtml = () => {
                         color: '#00416A',
                         fontSize: '20px',
                         marginBottom: '15px',
-                        fontWeight: '600'
+                        fontWeight: '600',
+                        textAlign: 'left'
                     }}>
                         Step 2: Create a Folder on the Desktop
                     </h3>
@@ -266,7 +289,8 @@ const resHtml = () => {
                         fontSize: '16px',
                         lineHeight: '2',
                         color: '#333',
-                        paddingLeft: '20px'
+                        paddingLeft: '20px',
+                        textAlign: 'left'
                     }}>
                     <li>Right click on the Desktop</li>
                     <li>Create New Folder</li>
@@ -285,7 +309,8 @@ const resHtml = () => {
                         color: '#00416A',
                         fontSize: '20px',
                         marginBottom: '15px',
-                        fontWeight: '600'
+                        fontWeight: '600',
+                        textAlign: 'left'
                     }}>
                         Step 3: Create Some Files inside the website Folder
                     </h3>
@@ -293,7 +318,8 @@ const resHtml = () => {
                         fontSize: '16px',
                         lineHeight: '2',
                         color: '#333',
-                        paddingLeft: '20px'
+                        paddingLeft: '20px',
+                        textAlign: 'left'
                     }}>
                     <li>Mouse hover on the <strong>Folder called website</strong> on the VS Code</li>
                     <li>Click on <strong>File with Plus Icon</strong></li>
@@ -306,7 +332,7 @@ const resHtml = () => {
 
             {/* HTML Tags Cheat Sheet */}
             <div style={{
-                textAlign: 'center',
+                textAlign: 'left',
                 marginBottom: '40px',
                 backgroundColor: '#f8f9fa',
                 padding: '40px',
@@ -317,7 +343,8 @@ const resHtml = () => {
                     color: '#00416A',
                     fontSize: '32px',
                     marginBottom: '30px',
-                    fontWeight: 'bold'
+                    fontWeight: 'bold',
+                    textAlign: 'left'
                 }}>
                     HTML Tags Cheat Sheet
                 </h2>
@@ -336,14 +363,15 @@ const resHtml = () => {
 
             {/* References */}
             <div style={{
-                marginBottom: '40px'
+                marginBottom: '40px',
+                textAlign: 'left'
             }}>
                 <h2 style={{
                     color: '#00416A',
                     fontSize: '32px',
                     marginBottom: '20px',
                     fontWeight: 'bold',
-                    textAlign: 'center'
+                    textAlign: 'left'
                 }}>
                     References
                 </h2>
@@ -368,7 +396,7 @@ const resHtml = () => {
                                 backgroundColor: '#00416A',
                                 textDecoration: 'none',
                                 borderRadius: '8px',
-                                textAlign: 'center',
+                                textAlign: 'left',
                                 transition: 'all 0.3s ease',
                                 boxShadow: '0 2px 8px rgba(0,0,0,0.15)'
                             }}
@@ -387,7 +415,7 @@ const resHtml = () => {
             </div>
                 <div style={{
                     display: 'flex',
-                    justifyContent: 'center',
+                    justifyContent: 'flex-start',
                     gap: '15px',
                     flexWrap: 'wrap'
                 }}>
@@ -449,7 +477,6 @@ const resHtml = () => {
             </div>
 
             <div>
-                <GoogleAd slot="1541085932" classNames="page-right-side" />
             </div>
             <section style={{ marginTop: '40px' }}>
                 <Footer />

@@ -1,7 +1,6 @@
 import React, {Component} from 'react';
 import HeaderText from '../components/header';
 import { Grid, Cell} from 'react-mdl';
-import GoogleAd from '../components/GoogleAd';
 import Footer from '../components/footer';
 import emailjs from '@emailjs/browser';
 import '../styles/base.css';
@@ -338,7 +337,6 @@ class Contact extends Component {
                     </Cell>
             </Grid>
             <div>
-                <GoogleAd slot="1541085932" classNames="page-right-side" />
             </div>
             <section className='pt4'>
                 <Footer />

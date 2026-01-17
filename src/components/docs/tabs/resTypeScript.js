@@ -1,5 +1,4 @@
 import React from 'react';
-import GoogleAd from '../../../components/GoogleAd';
 import Footer from '../../../components/footer';
 import PdfDownload from '../../shared/PdfDownload';
 import { scrollToTypeScriptItem } from '../../../utils/scrollHelpers';
@@ -249,7 +248,7 @@ export function todayISO(): string {
 
 // test
 import { todayISO } from "../utils/date";
-console.log(todayISO());`}
+// Example: todayISO() returns current date in ISO format`}
                     </pre>
                 </div>
 
@@ -502,9 +501,6 @@ class SettingsPage {
                 </p>
             </div>
 
-            <div>
-                <GoogleAd slot="1541085932" classNames="page-right-side" />
-            </div>
             <section className='pt4'>
                 <Footer />
             </section>

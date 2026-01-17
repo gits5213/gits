@@ -1,6 +1,5 @@
 import React, { useState } from 'react';
 import link from '../../../utilities/links.json';
-import GoogleAd from '../../../components/GoogleAd';
 import linuxLogo from '../../../images/tabs/linuxLogo.png';
 import linuxCheatSheet from '../../../images/tabs/linuxCheatSheet.png';
 import Footer from '../../../components/footer';
@@ -1796,7 +1795,6 @@ npm -v`}
                 </div>
             </section>
             <div>
-                <GoogleAd slot="1541085932" classNames="page-right-side" />
             </div>
             <section className='pt4'>
                 <Footer />

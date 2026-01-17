@@ -1,131 +1,74 @@
 import React from 'react';
 import link from '../../../utilities/links.json';
-import GoogleAd from '../../../components/GoogleAd';
 import SQL_LOGO from '../../../images/tabs/sqlLogo.png';
 import Footer from '../../../components/footer';
+import { leftAlignStyles } from '../../../utils/globalStyles';
 
 const resSql = () => {
     return(
-        <div style={{
-            maxWidth: '1400px',
-            margin: '0 auto',
-            padding: '40px 20px'
-        }}>
+        <div style={leftAlignStyles.pageContainer}>
             {/* Hero Section */}
             <div style={{
-                background: 'linear-gradient(135deg, #00416A 0%, #005a8a 100%)',
-                color: '#ffffff',
-                padding: '60px 20px',
-                textAlign: 'center',
-                borderRadius: '12px',
-                marginBottom: '40px',
-                boxShadow: '0 4px 15px rgba(0,0,0,0.2)'
+                ...leftAlignStyles.heroSection,
+                display: 'flex',
+                alignItems: 'center',
+                justifyContent: 'space-between',
+                gap: '40px',
+                flexWrap: 'wrap'
             }}>
-                <h1 style={{
-                    fontSize: '48px',
-                    marginBottom: '20px',
-                    fontWeight: 'bold'
+                <div style={{ flex: '1', minWidth: '300px' }}>
+                    <h1 style={leftAlignStyles.heroTitle}>
+                        SQL
+                    </h1>
+                    <p style={leftAlignStyles.heroSubtitle}>
+                        Structured Query Language for Database Management
+                    </p>
+                </div>
+                <div style={{
+                    flex: '0 0 auto',
+                    display: 'flex',
+                    alignItems: 'center',
+                    justifyContent: 'flex-end'
                 }}>
-                    SQL
-                </h1>
-                <p style={{
-                    fontSize: '20px',
-                    opacity: '0.95'
-                }}>
-                    Structured Query Language for Database Management
-                </p>
-            </div>
-
-            {/* Image Section */}
-            <div style={{
-                textAlign: 'center',
-                marginBottom: '40px',
-                backgroundColor: '#f8f9fa',
-                padding: '40px',
-                borderRadius: '12px',
-                boxShadow: '0 2px 10px rgba(0,0,0,0.1)'
-            }}>
-                <img 
-                    src={SQL_LOGO} 
-                    alt='SQL Logo'
-                    style={{
-                        width: '100%',
-                        maxWidth: '400px',
-                        height: 'auto',
-                        borderRadius: '8px'
-                    }}
-                />
+                    <img 
+                        src={SQL_LOGO} 
+                        alt='SQL Logo'
+                        style={{
+                            maxWidth: '300px',
+                            width: '100%',
+                            height: 'auto',
+                            borderRadius: '8px',
+                            filter: 'brightness(1.1)'
+                        }}
+                    />
+                </div>
             </div>
 
             {/* Main Content */}
-            <div style={{
-                backgroundColor: '#ffffff',
-                padding: '40px',
-                borderRadius: '12px',
-                boxShadow: '0 2px 10px rgba(0,0,0,0.1)',
-                marginBottom: '40px'
-            }}>
-                <h2 style={{
-                    color: '#00416A',
-                    fontSize: '32px',
-                    marginBottom: '20px',
-                    fontWeight: 'bold'
-                }}>
+            <div style={leftAlignStyles.mainContent}>
+                <h2 style={leftAlignStyles.sectionHeading}>
                     Introduction to SQL
                 </h2>
-                <p style={{
-                    fontSize: '16px',
-                    lineHeight: '1.8',
-                    color: '#333',
-                    marginBottom: '30px'
-                }}>
+                <p style={leftAlignStyles.paragraph}>
                     SQL is a standard language for accessing and manipulating databases.
                 </p>
 
-                <h3 style={{
-                    color: '#00416A',
-                    fontSize: '24px',
-                    marginBottom: '15px',
-                    marginTop: '30px',
-                    fontWeight: 'bold'
-                }}>
+                <h3 style={leftAlignStyles.sectionHeadingWithMargin}>
                     What is SQL?
                 </h3>
-                <ul style={{
-                    fontSize: '16px',
-                    lineHeight: '2',
-                    color: '#333',
-                    paddingLeft: '20px',
-                    marginBottom: '20px'
-                }}>
+                <ul style={leftAlignStyles.list}>
                     <li>SQL stands for Structured Query Language</li>
                     <li>SQL lets you access and manipulate databases</li>
                     <li>SQL became a standard of the American National Standards Institute (ANSI) in 1986, and of the International Organization for Standardization (ISO) in 1987</li>
                 </ul>
-                <p style={{
-                    fontSize: '16px',
-                    lineHeight: '1.8',
-                    color: '#333',
-                    marginBottom: '30px'
-                }}>
+                <p style={leftAlignStyles.paragraph}>
                     History of <a href={link.SQL_HISTORY} target="_blank" rel="noopener noreferrer" style={{ color: '#00416A', textDecoration: 'underline' }}>SQL</a>
                 </p>
 
-                <h3 style={{
-                    color: '#00416A',
-                    fontSize: '24px',
-                    marginBottom: '15px',
-                    marginTop: '30px',
-                    fontWeight: 'bold'
-                }}>
+                <h3 style={leftAlignStyles.sectionHeadingWithMargin}>
                     What Can SQL do?
                 </h3>
-                <ul style={{
-                    fontSize: '16px',
-                    lineHeight: '2',
-                    color: '#333',
-                    paddingLeft: '20px'
-                }}>
+                <ul style={leftAlignStyles.list}>
                     <li>SQL can execute queries against a database</li>
                     <li>SQL can retrieve data from a database</li>
                     <li>SQL can insert records in a database</li>
@@ -499,7 +442,6 @@ const resSql = () => {
             </div>
 
             <div>
-                <GoogleAd slot="1541085932" classNames="page-right-side" />
             </div>
             <section style={{ marginTop: '40px' }}>
                 <Footer />

@@ -29,18 +29,18 @@ class docs extends Component {
         const path = this.props.location.pathname;
         if (path.includes('/agile')) return 0;
         if (path.includes('/scrum')) return 1;
-        if (path.includes('/network')) return 2;
-        if (path.includes('/sql')) return 3;
-        if (path.includes('/manual') && !path.includes('/courses')) return 4;
-        if (path.includes('/linux')) return 5;
-        if (path.includes('/git')) return 6;
-        if (path.includes('/html')) return 7;
-        if (path.includes('/css')) return 8;
-        if (path.includes('/java')) return 9;
-        if (path.includes('/python')) return 10;
-        if (path.includes('/javascript')) return 11;
-        if (path.includes('/reactjs')) return 12;
-        if (path.includes('/typescript')) return 13;
+        if (path.includes('/manual') && !path.includes('/courses')) return 2;
+        if (path.includes('/linux')) return 3;
+        if (path.includes('/git')) return 4;
+        if (path.includes('/html')) return 5;
+        if (path.includes('/css')) return 6;
+        if (path.includes('/javascript')) return 7;
+        if (path.includes('/typescript')) return 8;
+        if (path.includes('/reactjs')) return 9;
+        if (path.includes('/sql')) return 10;
+        if (path.includes('/java')) return 11;
+        if (path.includes('/python')) return 12;
+        if (path.includes('/network')) return 13;
         if (path.includes('/links')) return 14;
         // Default to agile if just /docs
         return 0;
@@ -64,18 +64,18 @@ class docs extends Component {
         const tabRoutes = [
             '/docs/agile',
             '/docs/scrum',
-            '/docs/network',
-            '/docs/sql',
             '/docs/manual',
             '/docs/linux',
             '/docs/git',
             '/docs/html',
             '/docs/css',
+            '/docs/javascript',
+            '/docs/typescript',
+            '/docs/reactjs',
+            '/docs/sql',
             '/docs/java',
             '/docs/python',
-            '/docs/javascript',
-            '/docs/reactjs',
-            '/docs/typescript',
+            '/docs/network',
             '/docs/links'
         ];
         this.props.history.push(tabRoutes[tabId]);
@@ -91,53 +91,53 @@ class docs extends Component {
             return(
                 <Scrum />
             )
-        }else if(this.state.activeTab === 2) {
-            return(
-                <ResNetwork />
-            )
-        } else if(this.state.activeTab === 3) {
-            return(
-                <ResSql />
-            )
-        } else if(this.state.activeTab === 4) {
+        } else if(this.state.activeTab === 2) {
             return(
                 <ResManual />
             )
-        } else if(this.state.activeTab === 5) {
+        } else if(this.state.activeTab === 3) {
             return(
                 <ResLinux />
             )
-        }else if(this.state.activeTab === 6) {
+        }else if(this.state.activeTab === 4) {
             return(
                 <ResGit />
             )
-        } else if(this.state.activeTab === 7) {
+        } else if(this.state.activeTab === 5) {
             return(
                 <ResHtml />
             )
-        } else if(this.state.activeTab === 8) {
+        } else if(this.state.activeTab === 6) {
             return(
                 <ResCss />
             )
-        } else if(this.state.activeTab === 9) {
-            return(
-                <ResJava />
-            )
-        }else if(this.state.activeTab === 10) {
-            return(
-                <ResPython />
-            )
-        } else if(this.state.activeTab === 11) {
+        } else if(this.state.activeTab === 7) {
             return(
                 <ResJavascript />
             )
-        } else if(this.state.activeTab === 12) {
+        } else if(this.state.activeTab === 8) {
+            return(
+                <ResTypeScript />
+            )
+        } else if(this.state.activeTab === 9) {
             return(
                 <ResReact />
             )
+        } else if(this.state.activeTab === 10) {
+            return(
+                <ResSql />
+            )
+        } else if(this.state.activeTab === 11) {
+            return(
+                <ResJava />
+            )
+        }else if(this.state.activeTab === 12) {
+            return(
+                <ResPython />
+            )
         } else if(this.state.activeTab === 13) {
             return(
-                <ResTypeScript />
+                <ResNetwork />
             )
         }else if(this.state.activeTab === 14) {
             return(
@@ -151,18 +151,18 @@ class docs extends Component {
         const tabs = [
             { label: 'Agile', id: 0 },
             { label: 'Scrum', id: 1 },
-            { label: 'Net', id: 2 },
-            { label: 'SQL', id: 3 },
-            { label: 'Manual', id: 4 },
-            { label: 'Linux', id: 5 },
-            { label: 'Git', id: 6 },
-            { label: 'HTML', id: 7 },
-            { label: 'CSS', id: 8 },
-            { label: 'Java', id: 9 },
-            { label: 'PY', id: 10 },
-            { label: 'JS', id: 11 },
-            { label: 'ReactJS', id: 12 },
-            { label: 'TS', id: 13 },
+            { label: 'Manual', id: 2 },
+            { label: 'Linux', id: 3 },
+            { label: 'Git', id: 4 },
+            { label: 'HTML', id: 5 },
+            { label: 'CSS', id: 6 },
+            { label: 'JS', id: 7 },
+            { label: 'TS', id: 8 },
+            { label: 'ReactJS', id: 9 },
+            { label: 'SQL', id: 10 },
+            { label: 'JAVA', id: 11 },
+            { label: 'PY', id: 12 },
+            { label: 'NET', id: 13 },
             { label: 'Links', id: 14 }
         ];
 

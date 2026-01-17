@@ -1,6 +1,5 @@
 import React from 'react';
 import link from '../../../utilities/links.json';
-import GoogleAd from '../../../components/GoogleAd';
 import code4KidProgramOutline from '../../../images/code4KidsProgram.png';
 import Footer from '../../../components/footer';
 
@@ -354,7 +353,6 @@ const coursesCode4Kids = () => {
                 </div>
 
                 <div>
-                    <GoogleAd slot="1541085932" classNames="page-right-side" />
                 </div>
             </div>
             {/* Footer rendered outside page-tab-body to ensure proper full-width alignment */}

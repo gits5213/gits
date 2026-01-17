@@ -1,6 +1,5 @@
 import React from 'react';
 import link from '../../../utilities/links.json';
-import GoogleAd from '../../../components/GoogleAd';
 import css_logo from '../../../images/tabs/cssLogo.png';
 import css_image from '../../../images/tabs/cssImage.jpeg';
 import Footer from '../../../components/footer';
@@ -30,52 +29,59 @@ const resCss = () => {
         <div style={{
             maxWidth: '1400px',
             margin: '0 auto',
-            padding: '40px 20px'
+            padding: '40px 20px',
+            textAlign: 'left'
         }}>
             {/* Hero Section */}
             <div style={{
                 background: 'linear-gradient(135deg, #00416A 0%, #005a8a 100%)',
                 color: '#ffffff',
                 padding: '60px 20px',
-                textAlign: 'center',
+                textAlign: 'left',
                 borderRadius: '12px',
                 marginBottom: '40px',
-                boxShadow: '0 4px 15px rgba(0,0,0,0.2)'
+                boxShadow: '0 4px 15px rgba(0,0,0,0.2)',
+                display: 'flex',
+                alignItems: 'center',
+                justifyContent: 'space-between',
+                gap: '40px',
+                flexWrap: 'wrap'
             }}>
-                <h1 style={{
-                    fontSize: '48px',
-                    marginBottom: '20px',
-                    fontWeight: 'bold'
+                <div style={{ flex: '1', minWidth: '300px' }}>
+                    <h1 style={{
+                        fontSize: '48px',
+                        marginBottom: '20px',
+                        fontWeight: 'bold',
+                        textAlign: 'left'
+                    }}>
+                        CSS
+                    </h1>
+                    <p style={{
+                        fontSize: '20px',
+                        opacity: '0.95',
+                        textAlign: 'left'
+                    }}>
+                        Cascading Style Sheets for Web Design
+                    </p>
+                </div>
+                <div style={{
+                    flex: '0 0 auto',
+                    display: 'flex',
+                    alignItems: 'center',
+                    justifyContent: 'flex-end'
                 }}>
-                    CSS
-                </h1>
-                <p style={{
-                    fontSize: '20px',
-                    opacity: '0.95'
-                }}>
-                    Cascading Style Sheets for Web Design
-                </p>
-            </div>
-
-            {/* Image Section */}
-            <div style={{
-                textAlign: 'center',
-                marginBottom: '40px',
-                backgroundColor: '#f8f9fa',
-                padding: '40px',
-                borderRadius: '12px',
-                boxShadow: '0 2px 10px rgba(0,0,0,0.1)'
-            }}>
-                <img 
-                    src={css_logo} 
-                    alt='CSS Logo'
-                    style={{
-                        width: '100%',
-                        maxWidth: '400px',
-                        height: 'auto',
-                        borderRadius: '8px'
-                    }}
-                />
+                    <img 
+                        src={css_logo} 
+                        alt='CSS Logo'
+                        style={{
+                            maxWidth: '300px',
+                            width: '100%',
+                            height: 'auto',
+                            borderRadius: '8px',
+                            filter: 'brightness(1.1)'
+                        }}
+                    />
+                </div>
             </div>
 
             {/* GitHub Links */}
@@ -83,7 +89,7 @@ const resCss = () => {
                 display: 'flex',
                 flexWrap: 'wrap',
                 gap: '15px',
-                justifyContent: 'center',
+                justifyContent: 'flex-start',
                 marginBottom: '40px'
             }}>
                 <a 
@@ -152,13 +158,15 @@ const resCss = () => {
                 padding: '40px',
                 borderRadius: '12px',
                 boxShadow: '0 2px 10px rgba(0,0,0,0.1)',
-                marginBottom: '40px'
+                marginBottom: '40px',
+                textAlign: 'left'
             }}>
                 <h2 style={{
                     color: '#00416A',
                     fontSize: '32px',
                     marginBottom: '20px',
-                    fontWeight: 'bold'
+                    fontWeight: 'bold',
+                    textAlign: 'left'
                 }}>
                     What is CSS?
                 </h2>
@@ -167,7 +175,8 @@ const resCss = () => {
                     lineHeight: '2',
                     color: '#333',
                     paddingLeft: '20px',
-                    marginBottom: '30px'
+                    marginBottom: '30px',
+                    textAlign: 'left'
                 }}>
                     <li><strong>CSS</strong> stands for <strong>C</strong>ascading <strong>S</strong>tyle <strong>S</strong>heets</li>
                     <li>CSS describes <strong>how HTML elements are to be displayed on screen, paper, or in other media</strong></li>
@@ -180,7 +189,8 @@ const resCss = () => {
                     fontSize: '32px',
                     marginBottom: '20px',
                     marginTop: '40px',
-                    fontWeight: 'bold'
+                    fontWeight: 'bold',
+                    textAlign: 'left'
                 }}>
                     Why Use CSS?
                 </h2>
@@ -188,7 +198,8 @@ const resCss = () => {
                     fontSize: '16px',
                     lineHeight: '1.8',
                     color: '#333',
-                    marginBottom: '30px'
+                    marginBottom: '30px',
+                    textAlign: 'left'
                 }}>
                     CSS is used to define styles for your web pages, including the design, layout and variations in display for different devices and screen sizes.
                 </p>
@@ -198,7 +209,8 @@ const resCss = () => {
                     fontSize: '32px',
                     marginBottom: '20px',
                     marginTop: '40px',
-                    fontWeight: 'bold'
+                    fontWeight: 'bold',
+                    textAlign: 'left'
                 }}>
                     CSS Solved a Big Problem
                 </h2>
@@ -206,7 +218,8 @@ const resCss = () => {
                     fontSize: '16px',
                     lineHeight: '1.8',
                     color: '#333',
-                    marginBottom: '20px'
+                    marginBottom: '20px',
+                    textAlign: 'left'
                 }}>
                     HTML was NEVER intended to contain tags for formatting a web page! HTML was created to <strong>describe the content</strong> of a web page, like:
                 </p>
@@ -216,7 +229,8 @@ const resCss = () => {
                     borderRadius: '8px',
                     marginBottom: '20px',
                     fontFamily: 'monospace',
-                    fontSize: '16px'
+                    fontSize: '16px',
+                    textAlign: 'left'
                 }}>
                     <code style={{ color: '#00416A' }}>{'<'}h1{'>'}</code>This is a heading<code style={{ color: '#00416A' }}>{'</'}h1{'>'}</code><br />
                     <code style={{ color: '#00416A' }}>{'<'}p{'>'}</code>This is a paragraph.<code style={{ color: '#00416A' }}>{'</'}p{'>'}</code>
@@ -225,7 +239,8 @@ const resCss = () => {
                     fontSize: '16px',
                     lineHeight: '1.8',
                     color: '#333',
-                    marginBottom: '20px'
+                    marginBottom: '20px',
+                    textAlign: 'left'
                 }}>
                     When tags like <code style={{ backgroundColor: '#f8f9fa', padding: '2px 6px', borderRadius: '4px', color: '#00416A' }}>{'<'}font{'>'}</code>, and color attributes were added to the HTML 3.2 specification, it started a nightmare for web developers. Development of large websites, where fonts and color information were added to every single page, became a long and expensive process.
                 </p>
@@ -233,7 +248,8 @@ const resCss = () => {
                     fontSize: '16px',
                     lineHeight: '1.8',
                     color: '#333',
-                    marginBottom: '20px'
+                    marginBottom: '20px',
+                    textAlign: 'left'
                 }}>
                     To solve this problem, the World Wide Web Consortium (W3C) created CSS. CSS removed the style formatting from the HTML page!
                 </p>
@@ -242,14 +258,16 @@ const resCss = () => {
                     padding: '20px',
                     borderRadius: '8px',
                     borderLeft: '4px solid #00416A',
-                    marginTop: '20px'
+                    marginTop: '20px',
+                    textAlign: 'left'
                 }}>
                     <p style={{
                         fontSize: '16px',
                         lineHeight: '1.8',
                         color: '#333',
                         margin: 0,
-                        fontWeight: '600'
+                        fontWeight: '600',
+                        textAlign: 'left'
                     }}>
                         CSS Saves a Lot of Work! With an external stylesheet file, you can change the look of an entire website by changing just one file!
                 </p>
@@ -258,7 +276,7 @@ const resCss = () => {
 
             {/* CSS Image */}
             <div style={{
-                textAlign: 'center',
+                textAlign: 'left',
                 marginBottom: '40px',
                 backgroundColor: '#f8f9fa',
                 padding: '40px',
@@ -280,14 +298,15 @@ const resCss = () => {
 
             {/* References */}
             <div style={{
-                marginBottom: '40px'
+                marginBottom: '40px',
+                textAlign: 'left'
             }}>
                 <h2 style={{
                     color: '#00416A',
                     fontSize: '32px',
                     marginBottom: '20px',
                     fontWeight: 'bold',
-                    textAlign: 'center'
+                    textAlign: 'left'
                 }}>
                     References
                 </h2>
@@ -312,7 +331,7 @@ const resCss = () => {
                                 backgroundColor: '#00416A',
                                 textDecoration: 'none',
                                 borderRadius: '8px',
-                                textAlign: 'center',
+                                textAlign: 'left',
                                 transition: 'all 0.3s ease',
                                 boxShadow: '0 2px 8px rgba(0,0,0,0.15)'
                             }}
@@ -333,14 +352,15 @@ const resCss = () => {
 
             {/* CSS Framework */}
             <div style={{
-                marginBottom: '40px'
+                marginBottom: '40px',
+                textAlign: 'left'
             }}>
                 <h2 style={{
                     color: '#00416A',
                     fontSize: '32px',
                     marginBottom: '20px',
                     fontWeight: 'bold',
-                    textAlign: 'center'
+                    textAlign: 'left'
                 }}>
                     CSS Framework
                 </h2>
@@ -365,7 +385,7 @@ const resCss = () => {
                                 backgroundColor: '#00416A',
                                 textDecoration: 'none',
                                 borderRadius: '8px',
-                                textAlign: 'center',
+                                textAlign: 'left',
                                 transition: 'all 0.3s ease',
                                 boxShadow: '0 2px 8px rgba(0,0,0,0.15)'
                             }}
@@ -386,14 +406,15 @@ const resCss = () => {
 
             {/* React CSS Framework */}
             <div style={{
-                marginBottom: '40px'
+                marginBottom: '40px',
+                textAlign: 'left'
             }}>
                 <h2 style={{
                     color: '#00416A',
                     fontSize: '32px',
                     marginBottom: '20px',
                     fontWeight: 'bold',
-                    textAlign: 'center'
+                    textAlign: 'left'
                 }}>
                     React CSS Framework
                 </h2>
@@ -417,7 +438,7 @@ const resCss = () => {
                                 backgroundColor: '#00416A',
                                 textDecoration: 'none',
                                 borderRadius: '8px',
-                                textAlign: 'center',
+                                textAlign: 'left',
                                 transition: 'all 0.3s ease',
                                 boxShadow: '0 2px 8px rgba(0,0,0,0.15)'
                             }}
@@ -437,7 +458,6 @@ const resCss = () => {
             </div>
 
             <div>
-                <GoogleAd slot="1541085932" classNames="page-right-side" />
             </div>
             <section style={{ marginTop: '40px' }}>
                 <Footer />

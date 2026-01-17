@@ -1,72 +1,53 @@
 import React from 'react';
 import link from '../../../utilities/links.json';
 import BackToTop from '../../backToTop';
-import GoogleAd from '../../../components/GoogleAd';
 import python_logo from '../../../images/tabs/python_logo.png';
 import python_CHEAT_SHEET from '../../../images/tabs/Python_CheatSheet.jpeg';
 import Footer from '../../../components/footer';
+import { leftAlignStyles } from '../../../utils/globalStyles';
 
 const resPython = () => {
     return(
-        <div style={{
-            maxWidth: '1400px',
-            margin: '0 auto',
-            padding: '40px 20px'
-        }}>
+        <div style={leftAlignStyles.pageContainer}>
             {/* Hero Section */}
             <div style={{
-                background: 'linear-gradient(135deg, #00416A 0%, #005a8a 100%)',
-                color: '#ffffff',
-                padding: '60px 20px',
-                textAlign: 'center',
-                borderRadius: '12px',
-                marginBottom: '40px',
-                boxShadow: '0 4px 15px rgba(0,0,0,0.2)'
+                ...leftAlignStyles.heroSection,
+                display: 'flex',
+                alignItems: 'center',
+                justifyContent: 'space-between',
+                gap: '40px',
+                flexWrap: 'wrap'
             }}>
-                <h1 style={{
-                    fontSize: '48px',
-                    marginBottom: '20px',
-                    fontWeight: 'bold'
-                }}>
-                    PYTHON
-                </h1>
-                <p style={{
-                    fontSize: '20px',
-                    opacity: '0.95'
-                }}>
-                    A Popular Programming Language for Web Development and More
-                </p>
+                <div style={{ flex: '1', minWidth: '300px' }}>
+                    <h1 style={leftAlignStyles.heroTitle}>
+                        PYTHON
+                    </h1>
+                    <p style={leftAlignStyles.heroSubtitle}>
+                        A Popular Programming Language for Web Development and More
+                    </p>
                 </div>
-
-            {/* Image Section */}
-            <div style={{
-                textAlign: 'center',
-                marginBottom: '40px',
-                backgroundColor: '#f8f9fa',
-                padding: '40px',
-                borderRadius: '12px',
-                boxShadow: '0 2px 10px rgba(0,0,0,0.1)'
-            }}>
-                <img 
-                    src={python_logo} 
-                    alt='Python Logo'
-                    style={{
-                        width: '100%',
-                        maxWidth: '400px',
-                        height: 'auto',
-                        borderRadius: '8px'
-                    }}
-                />
+                <div style={{
+                    flex: '0 0 auto',
+                    display: 'flex',
+                    alignItems: 'center',
+                    justifyContent: 'flex-end'
+                }}>
+                    <img 
+                        src={python_logo} 
+                        alt='Python Logo'
+                        style={{
+                            maxWidth: '300px',
+                            width: '100%',
+                            height: 'auto',
+                            borderRadius: '8px',
+                            filter: 'brightness(1.1)'
+                        }}
+                    />
                 </div>
+            </div>
 
             {/* GitHub Links */}
-            <div style={{
-                display: 'flex',
-                flexWrap: 'wrap',
-                gap: '15px',
-                justifyContent: 'center',
-                marginBottom: '40px'
-            }}>
+            <div style={leftAlignStyles.linksContainer}>
                 <a 
                     href={link.PY_GITHUB} 
                     target="_blank" 
@@ -254,7 +235,6 @@ const resPython = () => {
                     <BackToTop />
                 </div> 
             <div>
-                <GoogleAd slot="1541085932" classNames="page-right-side" />
             </div>
             <section style={{ marginTop: '40px' }}>
                 <Footer />

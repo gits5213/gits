@@ -1,7 +1,6 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 import link from '../../../utilities/links.json';
-import GoogleAd from '../../../components/GoogleAd';
 import sdetRoadmapImage from '../../../images/QAEngineerRM.png';
 import Footer from '../../../components/footer';
 
@@ -368,7 +367,6 @@ const SdetRoadmap = () => {
             </div>
 
             <div>
-                <GoogleAd slot="1541085932" classNames="page-right-side" />
             </div>
             <section className='pt4'>
                 <Footer />

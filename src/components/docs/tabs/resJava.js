@@ -4,7 +4,6 @@ import BackToTop from '../../backToTop';
 import JavaMac from './resJava/java_mac';
 import JavaWindow from './resJava/java_window';
 import Maven from './resJava/maven';
-import GoogleAd from '../../../components/GoogleAd';
 import java_logo from '../../../images/tabs/javaLogo.png';
 import java_CHEAT_SHEET from '../../../images/tabs/javaCheatsheet.jpeg';
 import Footer from '../../../components/footer';
@@ -124,7 +123,6 @@ const resJava = () => {
             </section>
             <section>
             <div>
-                <GoogleAd slot="1541085932" classNames="page-right-side" />
             </div>
             <section className='pt4'>
                 <Footer />

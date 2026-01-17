@@ -1,6 +1,5 @@
 import React from 'react';
 import link from '../../../utilities/links.json';
-import GoogleAd from '../../../components/GoogleAd';
 import courseOutline from '../../../images/webDevProgram.png';
 import Footer from '../../../components/footer';
 
@@ -335,7 +334,6 @@ const coursesWebDev = () => {
             </div>
 
             <div>
-                <GoogleAd slot="1541085932" classNames="page-right-side" />
             </div>
             <section className='pt4'>
                 <Footer />

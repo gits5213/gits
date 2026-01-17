@@ -1,7 +1,6 @@
 import React, {Component} from 'react';
 import { Link } from 'react-router-dom';
 import HeaderText from '../components/header';
-import GoogleAd from '../components/GoogleAd';
 import aboutPic from '../images/about-pic.png';
 import Footer from '../components/footer';
 import link from '../utilities/links.json';
@@ -583,7 +582,6 @@ class About extends Component {
                 </div>
 
                 <div>
-                    <GoogleAd slot="1541085932" classNames="page-right-side" />
                 </div>
                 <section className='pt4'>
                     <Footer />

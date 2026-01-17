@@ -2,7 +2,7 @@ import React from 'react';
 import identifier from '../../../utilities/elRef';
 import link from '../../../utilities/links.json';
 import Footer from '../../../components/footer';
-import GoogleAd from '../../GoogleAd';
+import { leftAlignStyles } from '../../../utils/globalStyles';
 
 const selenium = () => {
     const codeBlockStyle = {
@@ -14,64 +14,45 @@ const selenium = () => {
         overflowX: 'auto',
         fontFamily: 'monospace',
         fontSize: '14px',
-        lineHeight: '1.6'
+        lineHeight: '1.6',
+        textAlign: 'left'
     };
 
     return(
-        <div style={{
-            maxWidth: '1400px',
-            margin: '0 auto',
-            padding: '40px 20px'
-        }}>
+        <div style={leftAlignStyles.pageContainer}>
             {/* Hero Section */}
-            <div style={{
-                background: 'linear-gradient(135deg, #00416A 0%, #005a8a 100%)',
-                color: '#ffffff',
-                padding: '60px 20px',
-                textAlign: 'center',
-                borderRadius: '12px',
-                marginBottom: '40px',
-                boxShadow: '0 4px 15px rgba(0,0,0,0.2)'
-            }}>
-                <h1 style={{
-                    fontSize: '48px',
-                    marginBottom: '20px',
-                    fontWeight: 'bold'
-                }}>
+            <div style={leftAlignStyles.heroSection}>
+                <h1 style={leftAlignStyles.heroTitle}>
                     Selenium automates browsers. That's it!
                 </h1>
                 <h2 style={{
                     fontSize: '28px',
                     marginBottom: '20px',
                     fontWeight: '400',
-                    opacity: '0.95'
+                    opacity: '0.95',
+                    textAlign: 'left'
                 }}>
                     What you do with that power is entirely up to you.
                 </h2>
                 <div style={{
                     maxWidth: '800px',
-                    margin: '0 auto',
+                    margin: '0',
                     fontSize: '18px',
-                    lineHeight: '1.8'
+                    lineHeight: '1.8',
+                    textAlign: 'left'
                 }}>
-                    <p style={{ marginBottom: '15px' }}>
+                    <p style={{ marginBottom: '15px', textAlign: 'left' }}>
                   Primarily it is for automating web applications for testing purposes,
                   but is certainly not limited to just that.
                 </p>
-                    <p>
+                    <p style={{ textAlign: 'left' }}>
                   Boring web-based administration tasks can (and should) also be automated as well.
                 </p>
               </div>
             </div>
 
             {/* GitHub Links */}
-            <div style={{
-                display: 'flex',
-                flexWrap: 'wrap',
-                gap: '15px',
-                justifyContent: 'center',
-                marginBottom: '40px'
-            }}>
+            <div style={leftAlignStyles.linksContainer}>
                 <a 
                     href={link.SELENIUM_GITHUB} 
                     target="_blank" 
@@ -1593,7 +1574,6 @@ const selenium = () => {
               </div>
 
             <div>
-                <GoogleAd slot="1541085932" classNames="page-right-side" />
             </div>
             <section style={{ marginTop: '40px' }}>
                 <Footer />

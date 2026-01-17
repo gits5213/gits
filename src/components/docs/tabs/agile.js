@@ -1,95 +1,60 @@
 import React from 'react';
 // eslint-disable-next-line no-unused-vars
 import link from '../../../utilities/links.json';
-import GoogleAd from '../../../components/GoogleAd';
 import AgilelLogo from '../../../images/tabs/agileLogo.png'; 
 import Footer from '../../../components/footer';
+import { leftAlignStyles } from '../../../utils/globalStyles';
 
 const agile = () => {
     return(
-        <div style={{
-            maxWidth: '1400px',
-            margin: '0 auto',
-            padding: '40px 20px'
-        }}>
+        <div style={leftAlignStyles.pageContainer}>
             {/* Hero Section */}
             <div style={{
-                background: 'linear-gradient(135deg, #00416A 0%, #005a8a 100%)',
-                color: '#ffffff',
-                padding: '60px 20px',
-                textAlign: 'center',
-                borderRadius: '12px',
-                marginBottom: '40px',
-                boxShadow: '0 4px 15px rgba(0,0,0,0.2)'
+                ...leftAlignStyles.heroSection,
+                display: 'flex',
+                alignItems: 'center',
+                justifyContent: 'space-between',
+                gap: '40px',
+                flexWrap: 'wrap'
             }}>
-                <h1 style={{
-                    fontSize: '48px',
-                    marginBottom: '20px',
-                    fontWeight: 'bold'
+                <div style={{ flex: '1', minWidth: '300px' }}>
+                    <h1 style={leftAlignStyles.heroTitle}>
+                        The Agile Manifesto
+                    </h1>
+                    <p style={leftAlignStyles.heroSubtitle}>
+                        Values and Principles for Effective Software Development
+                    </p>
+                </div>
+                <div style={{
+                    flex: '0 0 auto',
+                    display: 'flex',
+                    alignItems: 'center',
+                    justifyContent: 'flex-end'
                 }}>
-                    The Agile Manifesto
-                </h1>
-                <p style={{
-                    fontSize: '20px',
-                    opacity: '0.95'
-                }}>
-                    Values and Principles for Effective Software Development
-                </p>
-            </div>
-
-            {/* Image Section */}
-            <div style={{
-                textAlign: 'center',
-                marginBottom: '40px',
-                backgroundColor: '#f8f9fa',
-                padding: '40px',
-                borderRadius: '12px',
-                boxShadow: '0 2px 10px rgba(0,0,0,0.1)'
-            }}>
-                <img 
-                    src={AgilelLogo} 
-                    alt='Agile Logo'
-                    style={{
-                        width: '100%',
-                        maxWidth: '600px',
-                        height: 'auto',
-                        borderRadius: '8px'
-                    }}
-                />
+                    <img 
+                        src={AgilelLogo} 
+                        alt='Agile Logo'
+                        style={{
+                            maxWidth: '300px',
+                            width: '100%',
+                            height: 'auto',
+                            borderRadius: '8px',
+                            filter: 'brightness(1.1)'
+                        }}
+                    />
+                </div>
             </div>
 
             {/* Main Content */}
-            <div style={{
-                backgroundColor: '#ffffff',
-                padding: '40px',
-                borderRadius: '12px',
-                boxShadow: '0 2px 10px rgba(0,0,0,0.1)',
-                marginBottom: '40px'
-            }}>
-                <h2 style={{
-                    color: '#00416A',
-                    fontSize: '32px',
-                    marginBottom: '20px',
-                    fontWeight: 'bold'
-                }}>
+            <div style={leftAlignStyles.mainContent}>
+                <h2 style={leftAlignStyles.sectionHeading}>
                     The Key Values and Principles of Agile
                 </h2>
-                <p style={{
-                    fontSize: '16px',
-                    lineHeight: '1.8',
-                    color: '#333',
-                    marginBottom: '30px'
-                }}>
+                <p style={leftAlignStyles.paragraph}>
                     Nearly 20 years ago, 17 software developers came together in Snowbird, Utah to propose a new way of developing software "by doing it and helping others do it." Through this work, the signers of the Manifesto understood how much of an impact these principles would help them in the field of software development—but they had no idea how quickly their ideas would spread beyond their industry.
                 </p>
 
-                <h3 style={{
-                    color: '#00416A',
-                    fontSize: '24px',
-                    marginBottom: '20px',
-                    marginTop: '30px',
-                    fontWeight: 'bold'
-                }}>
+                <h3 style={leftAlignStyles.sectionHeadingWithMargin}>
                     Core Values
                 </h3>
                 <div style={{
@@ -102,7 +67,8 @@ const agile = () => {
                         backgroundColor: '#f8f9fa',
                         padding: '20px',
                         borderRadius: '8px',
-                        borderLeft: '4px solid #00416A'
+                        borderLeft: '4px solid #00416A',
+                        textAlign: 'left'
                     }}>
                         <strong style={{ color: '#00416A' }}>Individuals and interactions</strong> over processes and tools
                     </div>
@@ -110,7 +76,8 @@ const agile = () => {
                         backgroundColor: '#f8f9fa',
                         padding: '20px',
                         borderRadius: '8px',
-                        borderLeft: '4px solid #00416A'
+                        borderLeft: '4px solid #00416A',
+                        textAlign: 'left'
                     }}>
                         <strong style={{ color: '#00416A' }}>Working software</strong> over comprehensive documentation
             </div>
@@ -118,7 +85,8 @@ const agile = () => {
                         backgroundColor: '#f8f9fa',
                         padding: '20px',
                         borderRadius: '8px',
-                        borderLeft: '4px solid #00416A'
+                        borderLeft: '4px solid #00416A',
+                        textAlign: 'left'
                     }}>
                         <strong style={{ color: '#00416A' }}>Customer collaboration</strong> over contract negotiation
             </div>
@@ -126,36 +94,21 @@ const agile = () => {
                         backgroundColor: '#f8f9fa',
                         padding: '20px',
                         borderRadius: '8px',
-                        borderLeft: '4px solid #00416A'
+                        borderLeft: '4px solid #00416A',
+                        textAlign: 'left'
                     }}>
                         <strong style={{ color: '#00416A' }}>Responding to change</strong> over following a plan
             </div>
             </div>
 
-                <p style={{
-                    fontSize: '16px',
-                    lineHeight: '1.8',
-                    color: '#333',
-                    marginBottom: '30px'
-                }}>
+                <p style={leftAlignStyles.paragraph}>
                     Since that time, the original document has been used by groups as disparate as coders to Boy Scout Troops, from marketing departments to restaurants. Its universality is derived from a group of principles that can be broadly applied, easily learned, and rarely mastered completely. Before spreading to all corners of the globe, here are the key principles for incremental development that have made Agile what it is today:
                 </p>
 
-                <h3 style={{
-                    color: '#00416A',
-                    fontSize: '24px',
-                    marginBottom: '20px',
-                    marginTop: '30px',
-                    fontWeight: 'bold'
-                }}>
+                <h3 style={leftAlignStyles.sectionHeadingWithMargin}>
                     The 12 Principles of Agile
                 </h3>
-                <ol style={{
-                    paddingLeft: '20px',
-                    lineHeight: '2',
-                    fontSize: '16px',
-                    color: '#333'
-                }}>
+                <ol style={leftAlignStyles.list}>
                     <li style={{ marginBottom: '12px' }}>Our highest priority is to satisfy the customer through early and continuous delivery of valuable software.</li>
                     <li style={{ marginBottom: '12px' }}>Welcome changing requirements, even late in development. Agile processes harness change for the customer's competitive advantage.</li>
                     <li style={{ marginBottom: '12px' }}>Deliver working software frequently, from a couple of weeks to a couple of months, with a preference to the shorter timescale.</li>
@@ -172,13 +125,7 @@ const agile = () => {
             </div>
 
             {/* Action Buttons */}
-            <div style={{
-                display: 'flex',
-                flexWrap: 'wrap',
-                gap: '15px',
-                justifyContent: 'center',
-                marginBottom: '40px'
-            }}>
+            <div style={leftAlignStyles.linksContainer}>
                 <a 
                     href={link.AGILE_MENUFESTO} 
                     target="_blank" 
@@ -240,7 +187,6 @@ const agile = () => {
             </div>
 
             <div>
-                <GoogleAd slot="1541085932" classNames="page-right-side" />
             </div>
             <section style={{ marginTop: '40px' }}>
                 <Footer />
