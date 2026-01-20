@@ -145,7 +145,7 @@ class TestCases extends Component {
                 ],
                 environment: {
                     appBuild: 'v1.0.0',
-                    url: 'http://localhost:3000/gits/practice/registration-form',
+                    url: '/gits/practice/registration-form',
                     os: 'macOS/Windows/Linux',
                     browser: 'Chrome/Firefox/Safari latest',
                     database: 'N/A (Frontend only)'
@@ -201,7 +201,7 @@ class TestCases extends Component {
                 ],
                 environment: {
                     appBuild: 'v1.0.0',
-                    url: 'http://localhost:3000/gits/practice/registration-form',
+                    url: '/gits/practice/registration-form',
                     os: 'macOS/Windows/Linux',
                     browser: 'Chrome/Firefox/Safari latest',
                     database: 'N/A'
@@ -255,7 +255,7 @@ class TestCases extends Component {
                 ],
                 environment: {
                     appBuild: 'v1.0.0',
-                    url: 'http://localhost:3000/gits/practice/registration-form',
+                    url: '/gits/practice/registration-form',
                     os: 'macOS/Windows/Linux',
                     browser: 'Chrome/Firefox/Safari latest',
                     database: 'N/A'
@@ -308,7 +308,7 @@ class TestCases extends Component {
                 ],
                 environment: {
                     appBuild: 'v1.0.0',
-                    url: 'http://localhost:3000/gits/practice/registration-form',
+                    url: '/gits/practice/registration-form',
                     os: 'macOS/Windows/Linux',
                     browser: 'Chrome/Firefox/Safari latest',
                     database: 'N/A'
@@ -362,7 +362,7 @@ class TestCases extends Component {
                 ],
                 environment: {
                     appBuild: 'v1.0.0',
-                    url: 'http://localhost:3000/gits/practice/registration-form',
+                    url: '/gits/practice/registration-form',
                     os: 'macOS/Windows/Linux',
                     browser: 'Chrome/Firefox/Safari latest',
                     database: 'N/A'
@@ -415,7 +415,7 @@ class TestCases extends Component {
                 ],
                 environment: {
                     appBuild: 'v1.0.0',
-                    url: 'http://localhost:3000/gits/practice/registration-form',
+                    url: '/gits/practice/registration-form',
                     os: 'macOS/Windows/Linux',
                     browser: 'Chrome/Firefox/Safari latest',
                     database: 'N/A'
@@ -469,7 +469,7 @@ class TestCases extends Component {
                 ],
                 environment: {
                     appBuild: 'v1.0.0',
-                    url: 'http://localhost:3000/gits/practice/registration-form',
+                    url: '/gits/practice/registration-form',
                     os: 'macOS/Windows/Linux',
                     browser: 'Chrome/Firefox/Safari latest',
                     database: 'N/A'
@@ -523,7 +523,7 @@ class TestCases extends Component {
                 ],
                 environment: {
                     appBuild: 'v1.0.0',
-                    url: 'http://localhost:3000/gits/practice/registration-form',
+                    url: '/gits/practice/registration-form',
                     os: 'macOS/Windows/Linux',
                     browser: 'Chrome/Firefox/Safari latest',
                     database: 'N/A'
@@ -578,7 +578,7 @@ class TestCases extends Component {
                 ],
                 environment: {
                     appBuild: 'v1.0.0',
-                    url: 'http://localhost:3000/gits/practice/registration-form',
+                    url: '/gits/practice/registration-form',
                     os: 'macOS/Windows/Linux',
                     browser: 'Chrome/Firefox/Safari latest',
                     database: 'N/A'
@@ -631,7 +631,7 @@ class TestCases extends Component {
                 ],
                 environment: {
                     appBuild: 'v1.0.0',
-                    url: 'http://localhost:3000/gits/practice/registration-form',
+                    url: '/gits/practice/registration-form',
                     os: 'macOS/Windows/Linux',
                     browser: 'Chrome/Firefox/Safari latest',
                     database: 'N/A'
@@ -685,7 +685,7 @@ class TestCases extends Component {
                 ],
                 environment: {
                     appBuild: 'v1.0.0',
-                    url: 'http://localhost:3000/gits/practice/registration-form',
+                    url: '/gits/practice/registration-form',
                     os: 'macOS/Windows/Linux',
                     browser: 'Chrome/Firefox/Safari latest',
                     database: 'N/A'
@@ -739,7 +739,7 @@ class TestCases extends Component {
                 ],
                 environment: {
                     appBuild: 'v1.0.0',
-                    url: 'http://localhost:3000/gits/practice/registration-form',
+                    url: '/gits/practice/registration-form',
                     os: 'macOS/Windows/Linux',
                     browser: 'Chrome/Firefox/Safari latest',
                     database: 'N/A'
@@ -792,7 +792,7 @@ class TestCases extends Component {
                 ],
                 environment: {
                     appBuild: 'v1.0.0',
-                    url: 'http://localhost:3000/gits/practice/registration-form',
+                    url: '/gits/practice/registration-form',
                     os: 'macOS/Windows/Linux',
                     browser: 'Chrome/Firefox/Safari latest',
                     database: 'N/A'
@@ -846,7 +846,7 @@ class TestCases extends Component {
                 ],
                 environment: {
                     appBuild: 'v1.0.0',
-                    url: 'http://localhost:3000/gits/practice/registration-form',
+                    url: '/gits/practice/registration-form',
                     os: 'macOS/Windows/Linux',
                     browser: 'Chrome/Firefox/Safari latest',
                     database: 'N/A'
@@ -900,7 +900,7 @@ class TestCases extends Component {
                 ],
                 environment: {
                     appBuild: 'v1.0.0',
-                    url: 'http://localhost:3000/gits/practice/registration-form',
+                    url: '/gits/practice/registration-form',
                     os: 'macOS/Windows/Linux',
                     browser: 'Chrome/Firefox/Safari latest',
                     database: 'N/A'
@@ -956,7 +956,7 @@ class TestCases extends Component {
                 ],
                 environment: {
                     appBuild: 'v1.0.0',
-                    url: 'http://localhost:3000/gits/practice/registration-form',
+                    url: '/gits/practice/registration-form',
                     os: 'macOS/Windows/Linux',
                     browser: 'Chrome/Firefox/Safari latest',
                     database: 'N/A'
@@ -1010,7 +1010,7 @@ class TestCases extends Component {
                 ],
                 environment: {
                     appBuild: 'v1.0.0',
-                    url: 'http://localhost:3000/gits/practice/registration-form',
+                    url: '/gits/practice/registration-form',
                     os: 'macOS/Windows/Linux',
                     browser: 'Chrome/Firefox/Safari latest',
                     database: 'N/A'
@@ -1063,7 +1063,7 @@ class TestCases extends Component {
                 ],
                 environment: {
                     appBuild: 'v1.0.0',
-                    url: 'http://localhost:3000/gits/practice/registration-form',
+                    url: '/gits/practice/registration-form',
                     os: 'macOS/Windows/Linux',
                     browser: 'Chrome/Firefox/Safari latest',
                     database: 'N/A'
@@ -1116,7 +1116,7 @@ class TestCases extends Component {
                 ],
                 environment: {
                     appBuild: 'v1.0.0',
-                    url: 'http://localhost:3000/gits/practice/registration-form',
+                    url: '/gits/practice/registration-form',
                     os: 'macOS/Windows/Linux',
                     browser: 'Chrome/Firefox/Safari latest',
                     database: 'N/A'
@@ -1169,7 +1169,7 @@ class TestCases extends Component {
                 ],
                 environment: {
                     appBuild: 'v1.0.0',
-                    url: 'http://localhost:3000/gits/practice/registration-form',
+                    url: '/gits/practice/registration-form',
                     os: 'macOS/Windows/Linux',
                     browser: 'Chrome/Firefox/Safari latest',
                     database: 'N/A'
@@ -1222,7 +1222,7 @@ class TestCases extends Component {
                 ],
                 environment: {
                     appBuild: 'v1.0.0',
-                    url: 'http://localhost:3000/gits/practice/registration-form',
+                    url: '/gits/practice/registration-form',
                     os: 'macOS/Windows/Linux',
                     browser: 'Chrome/Firefox/Safari latest',
                     database: 'N/A'
@@ -1275,7 +1275,7 @@ class TestCases extends Component {
                 ],
                 environment: {
                     appBuild: 'v1.0.0',
-                    url: 'http://localhost:3000/gits/practice/registration-form',
+                    url: '/gits/practice/registration-form',
                     os: 'macOS/Windows/Linux',
                     browser: 'Chrome/Firefox/Safari latest',
                     database: 'N/A'
@@ -1328,7 +1328,7 @@ class TestCases extends Component {
                 ],
                 environment: {
                     appBuild: 'v1.0.0',
-                    url: 'http://localhost:3000/gits/practice/registration-form',
+                    url: '/gits/practice/registration-form',
                     os: 'macOS/Windows/Linux',
                     browser: 'Chrome/Firefox/Safari latest',
                     database: 'N/A'
@@ -1381,7 +1381,7 @@ class TestCases extends Component {
                 ],
                 environment: {
                     appBuild: 'v1.0.0',
-                    url: 'http://localhost:3000/gits/practice/registration-form',
+                    url: '/gits/practice/registration-form',
                     os: 'macOS/Windows/Linux',
                     browser: 'Chrome/Firefox/Safari latest',
                     database: 'N/A'
@@ -1434,7 +1434,7 @@ class TestCases extends Component {
                 ],
                 environment: {
                     appBuild: 'v1.0.0',
-                    url: 'http://localhost:3000/gits/practice/registration-form',
+                    url: '/gits/practice/registration-form',
                     os: 'macOS/Windows/Linux',
                     browser: 'Chrome/Firefox/Safari latest',
                     database: 'N/A'
@@ -1487,7 +1487,7 @@ class TestCases extends Component {
                 ],
                 environment: {
                     appBuild: 'v1.0.0',
-                    url: 'http://localhost:3000/gits/practice/registration-form',
+                    url: '/gits/practice/registration-form',
                     os: 'macOS/Windows/Linux',
                     browser: 'Chrome/Firefox/Safari latest',
                     database: 'N/A'
@@ -1540,7 +1540,7 @@ class TestCases extends Component {
                 ],
                 environment: {
                     appBuild: 'v1.0.0',
-                    url: 'http://localhost:3000/gits/practice/registration-form',
+                    url: '/gits/practice/registration-form',
                     os: 'macOS/Windows/Linux',
                     browser: 'Chrome/Firefox/Safari latest',
                     database: 'N/A'
@@ -1594,7 +1594,7 @@ class TestCases extends Component {
                 ],
                 environment: {
                     appBuild: 'v1.0.0',
-                    url: 'http://localhost:3000/gits/practice/registration-form',
+                    url: '/gits/practice/registration-form',
                     os: 'macOS/Windows/Linux',
                     browser: 'Chrome/Firefox/Safari latest',
                     database: 'N/A'
@@ -1647,7 +1647,7 @@ class TestCases extends Component {
                 ],
                 environment: {
                     appBuild: 'v1.0.0',
-                    url: 'http://localhost:3000/gits/practice/registration-form',
+                    url: '/gits/practice/registration-form',
                     os: 'macOS/Windows/Linux',
                     browser: 'Chrome/Firefox/Safari latest',
                     database: 'N/A'
@@ -1700,7 +1700,7 @@ class TestCases extends Component {
                 ],
                 environment: {
                     appBuild: 'v1.0.0',
-                    url: 'http://localhost:3000/gits/practice/registration-form',
+                    url: '/gits/practice/registration-form',
                     os: 'macOS/Windows/Linux',
                     browser: 'Chrome/Firefox/Safari latest',
                     database: 'N/A'
@@ -1753,7 +1753,7 @@ class TestCases extends Component {
                 ],
                 environment: {
                     appBuild: 'v1.0.0',
-                    url: 'http://localhost:3000/gits/practice/registration-form',
+                    url: '/gits/practice/registration-form',
                     os: 'macOS/Windows/Linux',
                     browser: 'Chrome/Firefox/Safari latest',
                     database: 'N/A'
@@ -1806,7 +1806,7 @@ class TestCases extends Component {
                 ],
                 environment: {
                     appBuild: 'v1.0.0',
-                    url: 'http://localhost:3000/gits/practice/registration-form',
+                    url: '/gits/practice/registration-form',
                     os: 'macOS/Windows/Linux',
                     browser: 'Chrome/Firefox/Safari latest',
                     database: 'N/A'
@@ -6361,34 +6361,77 @@ class TestCases extends Component {
         };
 
         return (
-            <main style={testCaseStyles.mainContainer}>
+            <main style={{
+                ...testCaseStyles.mainContainer,
+                background: 'linear-gradient(180deg, #f8f9fa 0%, #ffffff 100%)'
+            }}>
                 <div style={testCaseStyles.contentContainer}>
-                    {/* Header Section */}
-                    <div style={testCaseStyles.headerSection}>
-                        <h1 style={testCaseStyles.headerTitle}>
-                            Practice Examples - Test Cases
-                        </h1>
-                        <p style={testCaseStyles.headerSubtitle}>
-                            <a 
-                                href="https://istqb.org/" 
-                                target="_blank" 
-                                rel="noopener noreferrer"
-                                style={{
-                                    color: '#00416A',
-                                    textDecoration: 'none',
-                                    fontWeight: '600'
-                                }}
-                                onMouseEnter={(e) => {
-                                    e.target.style.textDecoration = 'underline';
-                                }}
-                                onMouseLeave={(e) => {
-                                    e.target.style.textDecoration = 'none';
-                                }}
-                            >
-                                ISTQB
-                            </a>
-                            -aligned Manual Test Cases for Registration Form
-                        </p>
+                    {/* Modern Header Section */}
+                    <div style={{
+                        textAlign: 'center',
+                        marginBottom: '50px',
+                        position: 'relative'
+                    }}>
+                        <div style={{
+                            background: 'linear-gradient(135deg, #667eea 0%, #764ba2 100%)',
+                            borderRadius: '20px',
+                            padding: '40px',
+                            boxShadow: '0 10px 30px rgba(102, 126, 234, 0.2)',
+                            position: 'relative',
+                            overflow: 'hidden',
+                            marginBottom: '30px'
+                        }}>
+                            <div style={{
+                                position: 'absolute',
+                                top: '-50%',
+                                right: '-50%',
+                                width: '200%',
+                                height: '200%',
+                                background: 'radial-gradient(circle, rgba(255,255,255,0.1) 1px, transparent 1px)',
+                                backgroundSize: '30px 30px',
+                                opacity: 0.3
+                            }}></div>
+                            <div style={{ position: 'relative', zIndex: 1 }}>
+                                <h1 style={{
+                                    fontSize: '42px',
+                                    color: '#ffffff',
+                                    marginBottom: '15px',
+                                    fontWeight: 'bold',
+                                    textAlign: 'center',
+                                    textShadow: '0 2px 4px rgba(0,0,0,0.2)'
+                                }}>
+                                    Practice Examples - Test Cases
+                                </h1>
+                                <p style={{
+                                    fontSize: '20px',
+                                    color: 'rgba(255,255,255,0.95)',
+                                    margin: 0,
+                                    textAlign: 'center',
+                                    fontWeight: '400'
+                                }}>
+                                    <a 
+                                        href="https://istqb.org/" 
+                                        target="_blank" 
+                                        rel="noopener noreferrer"
+                                        style={{
+                                            color: '#ffffff',
+                                            textDecoration: 'underline',
+                                            fontWeight: '600',
+                                            textUnderlineOffset: '3px'
+                                        }}
+                                        onMouseEnter={(e) => {
+                                            e.target.style.opacity = '0.9';
+                                        }}
+                                        onMouseLeave={(e) => {
+                                            e.target.style.opacity = '1';
+                                        }}
+                                    >
+                                        ISTQB
+                                    </a>
+                                    {' '}-aligned Manual Test Cases for Registration Form
+                                </p>
+                            </div>
+                        </div>
                     </div>
 
                     {/* Test Type Definitions and UX Examples - Collapsible */}
@@ -6799,12 +6842,16 @@ class TestCases extends Component {
                                     }
                                 }}
                                 onMouseEnter={(e) => {
-                                    Object.assign(e.currentTarget.style, testCaseStyles.testCaseCardHover);
+                                    if (this.state.selectedTestCase !== testCase.id) {
+                                        Object.assign(e.currentTarget.style, testCaseStyles.testCaseCardHover);
+                                    }
                                 }}
                                 onMouseLeave={(e) => {
                                     if (this.state.selectedTestCase !== testCase.id) {
                                         e.currentTarget.style.borderColor = testCaseStyles.testCaseCard.borderColor;
                                         e.currentTarget.style.boxShadow = testCaseStyles.testCaseCard.boxShadow;
+                                        e.currentTarget.style.transform = 'translateY(0)';
+                                        e.currentTarget.style.background = testCaseStyles.testCaseCard.backgroundColor;
                                     }
                                 }}
                             >

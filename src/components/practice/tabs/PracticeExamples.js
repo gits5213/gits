@@ -83,7 +83,7 @@ class PracticeExamples extends Component {
                 data-testid="practice-examples-main"
                 style={{
                     minHeight: '100vh',
-                    backgroundColor: '#f8f9fa'
+                    background: 'linear-gradient(180deg, #f8f9fa 0%, #ffffff 100%)'
                 }}
             >
                 {/* Main Content Container */}
@@ -96,50 +96,75 @@ class PracticeExamples extends Component {
                         padding: '40px 20px'
                     }}
                 >
-                    {/* Header Section */}
+                    {/* Modern Header Section */}
                     <div 
                         id="practice-examples-header"
                         data-testid="practice-examples-header"
                         style={{
-                            textAlign: 'left',
-                            marginBottom: '50px'
+                            textAlign: 'center',
+                            marginBottom: '50px',
+                            position: 'relative'
                         }}
                     >
-                        <h1 
-                            id="practice-examples-title"
-                            data-testid="practice-examples-title"
-                            style={{
-                                fontSize: '48px',
-                                color: '#00416A',
-                                marginBottom: '15px',
-                                fontWeight: 'bold',
-                                textAlign: 'left'
-                            }}
-                        >
-                            Welcome to the-Global I Tech Solutions Inc. (GITS) Practice center.
-                        </h1>
-                        <p 
-                            id="practice-examples-subtitle"
-                            data-testid="practice-examples-subtitle"
-                            style={{
-                                fontSize: '20px',
-                                color: '#666',
-                                margin: 0,
-                                textAlign: 'left'
-                            }}
-                        >
-                            Available Examples
-                        </p>
+                        <div style={{
+                            background: 'linear-gradient(135deg, #667eea 0%, #764ba2 100%)',
+                            borderRadius: '20px',
+                            padding: '40px',
+                            boxShadow: '0 10px 30px rgba(102, 126, 234, 0.2)',
+                            position: 'relative',
+                            overflow: 'hidden',
+                            marginBottom: '30px'
+                        }}>
+                            <div style={{
+                                position: 'absolute',
+                                top: '-50%',
+                                right: '-50%',
+                                width: '200%',
+                                height: '200%',
+                                background: 'radial-gradient(circle, rgba(255,255,255,0.1) 1px, transparent 1px)',
+                                backgroundSize: '30px 30px',
+                                opacity: 0.3
+                            }}></div>
+                            <div style={{ position: 'relative', zIndex: 1 }}>
+                                <h1 
+                                    id="practice-examples-title"
+                                    data-testid="practice-examples-title"
+                                    style={{
+                                        fontSize: '42px',
+                                        color: '#ffffff',
+                                        marginBottom: '15px',
+                                        fontWeight: 'bold',
+                                        textAlign: 'center',
+                                        textShadow: '0 2px 4px rgba(0,0,0,0.2)'
+                                    }}
+                                >
+                                    Welcome to GITS Practice Center
+                                </h1>
+                                <p 
+                                    id="practice-examples-subtitle"
+                                    data-testid="practice-examples-subtitle"
+                                    style={{
+                                        fontSize: '20px',
+                                        color: 'rgba(255,255,255,0.95)',
+                                        margin: 0,
+                                        textAlign: 'center',
+                                        fontWeight: '400'
+                                    }}
+                                >
+                                    Explore our comprehensive collection of practice examples
+                                </p>
+                            </div>
+                        </div>
                     </div>
 
-                    {/* Examples Grid */}
+                    {/* Modern Examples Grid */}
                     <div 
                         id="practice-examples-grid"
                         data-testid="practice-examples-grid"
                         style={{
                             display: 'grid',
-                            gridTemplateColumns: 'repeat(auto-fill, minmax(280px, 1fr))',
-                            gap: '20px',
+                            gridTemplateColumns: 'repeat(auto-fill, minmax(300px, 1fr))',
+                            gap: '24px',
                             marginBottom: '40px'
                         }}
                     >
@@ -150,69 +175,98 @@ class PracticeExamples extends Component {
                                 data-testid={this.createExampleTestId(example.name, index)}
                                 to={example.path}
                                 style={{
-                                    display: 'block',
-                                    padding: '20px',
+                                    display: 'flex',
+                                    alignItems: 'center',
+                                    gap: '16px',
+                                    padding: '24px',
                                     backgroundColor: '#ffffff',
-                                    borderRadius: '8px',
+                                    borderRadius: '16px',
                                     textDecoration: 'none',
-                                    color: '#00416A',
-                                    border: '2px solid #e0e0e0',
-                                    transition: 'all 0.3s ease',
-                                    boxShadow: '0 2px 4px rgba(0,0,0,0.1)'
+                                    color: '#333',
+                                    border: '2px solid #e9ecef',
+                                    transition: 'all 0.3s cubic-bezier(0.4, 0, 0.2, 1)',
+                                    boxShadow: '0 2px 8px rgba(0,0,0,0.08)',
+                                    position: 'relative',
+                                    overflow: 'hidden'
                                 }}
                                 onMouseEnter={(e) => {
-                                    e.currentTarget.style.borderColor = '#00416A';
-                                    e.currentTarget.style.transform = 'translateY(-4px)';
-                                    e.currentTarget.style.boxShadow = '0 4px 12px rgba(0,65,106,0.2)';
+                                    e.currentTarget.style.borderColor = '#667eea';
+                                    e.currentTarget.style.transform = 'translateY(-6px)';
+                                    e.currentTarget.style.boxShadow = '0 12px 24px rgba(102, 126, 234, 0.25)';
+                                    e.currentTarget.style.background = 'linear-gradient(135deg, #ffffff 0%, #f8f9ff 100%)';
                                 }}
                                 onMouseLeave={(e) => {
-                                    e.currentTarget.style.borderColor = '#e0e0e0';
+                                    e.currentTarget.style.borderColor = '#e9ecef';
                                     e.currentTarget.style.transform = 'translateY(0)';
-                                    e.currentTarget.style.boxShadow = '0 2px 4px rgba(0,0,0,0.1)';
+                                    e.currentTarget.style.boxShadow = '0 2px 8px rgba(0,0,0,0.08)';
+                                    e.currentTarget.style.background = '#ffffff';
                                 }}
                             >
+                                {/* Number Badge */}
+                                <div style={{
+                                    width: '48px',
+                                    height: '48px',
+                                    borderRadius: '12px',
+                                    background: 'linear-gradient(135deg, #667eea 0%, #764ba2 100%)',
+                                    display: 'flex',
+                                    alignItems: 'center',
+                                    justifyContent: 'center',
+                                    color: '#ffffff',
+                                    fontWeight: 'bold',
+                                    fontSize: '18px',
+                                    flexShrink: 0,
+                                    boxShadow: '0 4px 8px rgba(102, 126, 234, 0.3)'
+                                }}>
+                                    {index + 1}
+                                </div>
+                                
+                                {/* Content */}
                                 <div 
                                     id={`practice-example-content-${index}`}
                                     data-testid={`practice-example-content-${index}`}
                                     style={{
                                         fontSize: '16px',
                                         fontWeight: '500',
-                                        lineHeight: '1.5',
-                                        display: 'flex',
-                                        alignItems: 'flex-start',
-                                        gap: '10px'
+                                        lineHeight: '1.6',
+                                        flex: 1,
+                                        color: '#333'
                                     }}
                                 >
-                                    <span 
-                                        style={{
-                                            color: '#00416A',
-                                            fontWeight: 'bold',
-                                            fontSize: '18px',
-                                            minWidth: '30px',
-                                            flexShrink: 0
-                                        }}
-                                    >
-                                        {index + 1}.
-                                    </span>
-                                    <span style={{ flex: 1 }}>
-                                        {example.name}
-                                    </span>
+                                    {example.name}
+                                </div>
+                                
+                                {/* Arrow Icon */}
+                                <div style={{
+                                    width: '24px',
+                                    height: '24px',
+                                    borderRadius: '50%',
+                                    background: '#f0f4ff',
+                                    display: 'flex',
+                                    alignItems: 'center',
+                                    justifyContent: 'center',
+                                    flexShrink: 0,
+                                    transition: 'all 0.3s ease'
+                                }}>
+                                    <svg width="12" height="12" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                        <path d="M9 18L15 12L9 6" stroke="#667eea" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
+                                    </svg>
                                 </div>
                             </Link>
                         ))}
                     </div>
 
-                    {/* Footer Note */}
+                    {/* Modern Footer Note */}
                     <div 
                         id="practice-examples-footer-note"
                         data-testid="practice-examples-footer-note"
                         style={{
-                            textAlign: 'left',
-                            padding: '30px',
-                            backgroundColor: '#ffffff',
-                            borderRadius: '8px',
-                            border: '1px solid #e0e0e0',
-                            marginTop: '40px'
+                            textAlign: 'center',
+                            padding: '24px',
+                            background: 'linear-gradient(135deg, #f8f9fa 0%, #ffffff 100%)',
+                            borderRadius: '16px',
+                            border: '1px solid #e9ecef',
+                            marginTop: '40px',
+                            boxShadow: '0 2px 8px rgba(0,0,0,0.05)'
                         }}
                     >
                         <p 
@@ -221,8 +275,8 @@ class PracticeExamples extends Component {
                             style={{
                                 fontSize: '14px',
                                 color: '#666',
-                                textAlign: 'left',
-                                margin: 0
+                                margin: 0,
+                                fontWeight: '500'
                             }}
                         >
                             Powered by Elemental Selenium
