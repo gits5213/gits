@@ -12,6 +12,7 @@
     "cache": "^3.0.0",
     "clean": "^4.0.2",
     "font-awesome": "4.7.0",
+    "jspdf": "^2.5.1",
     "react": "16.13.1",
     "react-dom": "16.13.1",
     "react-helmet": "6.1.0",

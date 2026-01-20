@@ -3,6 +3,7 @@ import { withRouter } from 'react-router-dom';
 import HeaderText from '../components/header';
 import PracticeExamples from '../components/practice/tabs/PracticeExamples';
 import TestCases from '../components/practice/tabs/TestCases';
+import Quiz from '../components/practice/tabs/Quiz';
 import '../styles/base.css';
 
 class Practice extends Component {
@@ -14,6 +15,7 @@ class Practice extends Component {
     getActiveTabFromPath() {
         const path = this.props.location.pathname;
         if (path.includes('/testcases')) return 1;
+        if (path.includes('/quiz')) return 2;
         // Default to practice examples if just /practice
         return 0;
     }
@@ -36,7 +38,8 @@ class Practice extends Component {
     handleTabChange = (tabId) => {
         const tabRoutes = [
             '/practice/examples',
-            '/practice/testcases'
+            '/practice/testcases',
+            '/practice/quiz'
         ];
         this.props.history.push(tabRoutes[tabId]);
     }
@@ -50,13 +53,18 @@ class Practice extends Component {
             return(
                 <TestCases />
             )
+        } else if(this.state.activeTab === 2) {
+            return(
+                <Quiz />
+            )
         }
     }
 
     render() {
         const tabs = [
             { label: 'Practice Examples', id: 0 },
-            { label: 'Test Cases', id: 1 }
+            { label: 'Test Cases', id: 1 },
+            { label: 'Quiz', id: 2 }
         ];
 
         return (

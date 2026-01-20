@@ -52,6 +52,9 @@ import SortableDataTables from '../pages/practice/SortableDataTables';
 import StatusCodes from '../pages/practice/StatusCodes';
 import Typos from '../pages/practice/Typos';
 import WYSIWYGEditor from '../pages/practice/WYSIWYGEditor';
+import Exam1 from '../pages/practice/Exam1';
+import Exam2 from '../pages/practice/Exam2';
+import Exam3 from '../pages/practice/Exam3';
 import About from '../pages/about';
 import Contact from '../pages/contact';
 import HowItWorks from '../pages/howItWorks';
@@ -110,6 +113,13 @@ const Main = () => (
         <Route exact path='/practice' component={Practice} />
         <Route path='/practice/examples' component={Practice} />
         <Route path='/practice/testcases' component={Practice} />
+        <Route exact path='/practice/quiz' component={Practice} />
+        <Route path='/practice/quiz/exam-1' component={Exam1} />
+        <Route path='/practice/quiz/exam-1/register' component={Exam1} />
+        <Route path='/practice/quiz/exam-2' component={Exam2} />
+        <Route path='/practice/quiz/exam-2/register' component={Exam2} />
+        <Route path='/practice/quiz/exam-3' component={Exam3} />
+        <Route path='/practice/quiz/exam-3/register' component={Exam3} />
         <Route path='/practice/ab-testing' component={ABTesting} />
         <Route path='/practice/add-remove-elements' component={AddRemoveElements} />
         <Route path='/practice/basic-auth' component={BasicAuth} />
