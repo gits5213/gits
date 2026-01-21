@@ -1,6 +1,7 @@
 import React, {Component} from 'react';
 import { withRouter } from 'react-router-dom';
 import Certificate from '../../components/quiz/Certificate';
+import Footer from '../../components/footer';
 import { resetExam } from '../../utilities/examReset';
 import '../../styles/base.css';
 
@@ -198,12 +199,15 @@ class Exam extends Component {
 
         if (this.state.showCertificate && this.state.isSubmitted) {
             return (
-                <Certificate
-                    studentInfo={studentInfo}
-                    examData={this.examData}
-                    score={this.state.score}
-                    timeElapsed={this.state.timeElapsed}
-                />
+                <>
+                    <Certificate
+                        studentInfo={studentInfo}
+                        examData={this.examData}
+                        score={this.state.score}
+                        timeElapsed={this.state.timeElapsed}
+                    />
+                    <Footer />
+                </>
             );
         }
 
@@ -213,6 +217,7 @@ class Exam extends Component {
             const isCorrect = userAnswer === currentQuestion.correctAnswer;
             
             return (
+                <>
                 <div style={{
                     maxWidth: '900px',
                     margin: '40px auto',
@@ -446,6 +451,8 @@ class Exam extends Component {
                         </button>
                     </div>
                 </div>
+                <Footer />
+                </>
             );
         }
 
@@ -453,6 +460,7 @@ class Exam extends Component {
         const selectedAnswer = this.state.answers[currentQuestion.id];
 
         return (
+            <>
             <div style={{
                 maxWidth: '900px',
                 margin: '40px auto',
@@ -689,6 +697,8 @@ class Exam extends Component {
                     </div>
                 </div>
             </div>
+            <Footer />
+            </>
         );
     }
 }

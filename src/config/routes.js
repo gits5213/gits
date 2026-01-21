@@ -147,6 +147,7 @@ export const routes = [
   { path: '/practice/examples', component: Practice },
   { path: '/practice/testcases', component: Practice },
   { path: '/practice/quiz', exact: true, component: Practice },
+  { path: '/practice/scorecard', component: Practice },
   
   // Exams
   { path: '/practice/quiz/exam-1', component: Exam1 },

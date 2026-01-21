@@ -4,6 +4,7 @@ import HeaderText from '../components/header';
 import PracticeExamples from '../components/practice/tabs/PracticeExamples';
 import TestCases from '../components/practice/tabs/TestCases';
 import Quiz from '../components/practice/tabs/Quiz';
+import Scorecard from '../components/practice/tabs/Scorecard';
 import '../styles/base.css';
 
 class Practice extends Component {
@@ -16,6 +17,7 @@ class Practice extends Component {
         const path = this.props.location.pathname;
         if (path.includes('/testcases')) return 1;
         if (path.includes('/quiz')) return 2;
+        if (path.includes('/scorecard')) return 3;
         // Default to practice examples if just /practice
         return 0;
     }
@@ -39,7 +41,8 @@ class Practice extends Component {
         const tabRoutes = [
             '/practice/examples',
             '/practice/testcases',
-            '/practice/quiz'
+            '/practice/quiz',
+            '/practice/scorecard'
         ];
         this.props.history.push(tabRoutes[tabId]);
     }
@@ -56,6 +59,10 @@ class Practice extends Component {
         } else if(this.state.activeTab === 2) {
             return(
                 <Quiz />
+            )
+        } else if(this.state.activeTab === 3) {
+            return(
+                <Scorecard />
             )
         }
     }
@@ -90,6 +97,15 @@ class Practice extends Component {
                     <svg width="20" height="20" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
                         <path d="M9 11H15M9 15H15M17 21H7C5.89543 21 5 20.1046 5 19V5C5 3.89543 5.89543 3 7 3H12.5858C12.851 3 13.1054 3.10536 13.2929 3.29289L18.7071 8.70711C18.8946 8.89464 19 9.149 19 9.41421V19C19 20.1046 18.1046 21 17 21Z" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
                         <path d="M19 9H15C14.4477 9 14 8.55228 14 8V4" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
+                    </svg>
+                )
+            },
+            { 
+                label: 'Scorecard', 
+                id: 3,
+                icon: (
+                    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <path d="M9 17V7M13 17V7M17 17V7M5 3H19C20.1046 3 21 3.89543 21 5V19C21 20.1046 20.1046 21 19 21H5C3.89543 21 3 20.1046 3 19V5C3 3.89543 3.89543 3 5 3Z" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
                     </svg>
                 )
             }
