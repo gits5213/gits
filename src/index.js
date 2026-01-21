@@ -19,13 +19,13 @@ import 'tachyons';
 const link = document.createElement('link');
 link.rel = 'preload';
 link.as = 'style';
-link.href = `${process.env.PUBLIC_URL || '/gits'}/static/css/main.css`;
+link.href = `${process.env.PUBLIC_URL || ''}/static/css/main.css`;
 document.head.appendChild(link);
 
 ReactDOM.render(
   <React.StrictMode>
     <ErrorBoundary>
-      <BrowserRouter basename='/gits'>
+      <BrowserRouter>
         <App />
       </BrowserRouter>
     </ErrorBoundary>
