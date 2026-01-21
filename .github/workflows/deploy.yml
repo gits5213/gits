@@ -38,6 +38,13 @@ jobs:
       - name: Build project
         run: npm run build
         
+      - name: Ensure CNAME file exists for custom domain
+        if: vars.CUSTOM_DOMAIN == 'True'
+        run: |
+          if [ ! -f build/CNAME ]; then
+            echo "gitsuniversity.org" > build/CNAME
+          fi
+        
       - name: Setup Pages
         uses: actions/configure-pages@v4
         
