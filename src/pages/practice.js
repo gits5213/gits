@@ -62,7 +62,7 @@ class Practice extends Component {
             )
         } else if(this.state.activeTab === 3) {
             return(
-                <Scorecard />
+                <Scorecard key="scorecard" />
             )
         }
     }

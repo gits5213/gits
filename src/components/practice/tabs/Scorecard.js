@@ -1,4 +1,5 @@
 import React, {Component} from 'react';
+import { withRouter } from 'react-router-dom';
 import Footer from '../../../components/footer';
 import { exam1Data, exam2Data, exam3Data, exam4Data, exam5Data, exam6Data, exam7Data, exam8Data, exam9Data, exam10Data, exam11Data, exam12Data, exam13Data, exam14Data, exam15Data, exam16Data, exam17Data } from '../../../utilities/data/examData';
 
@@ -31,6 +32,38 @@ class Scorecard extends Component {
 
     componentDidMount() {
         this.loadResults();
+        // Reload results when window gains focus (user switches back to tab)
+        window.addEventListener('focus', this.handleWindowFocus);
+        // Reload results when page becomes visible (user switches back to tab)
+        document.addEventListener('visibilitychange', this.handleVisibilityChange);
+    }
+
+    componentWillUnmount() {
+        // Clean up event listeners
+        window.removeEventListener('focus', this.handleWindowFocus);
+        document.removeEventListener('visibilitychange', this.handleVisibilityChange);
+    }
+
+    componentDidUpdate(prevProps) {
+        // Reload results when navigating to the scorecard page
+        // This ensures the latest quiz results are always displayed
+        if (prevProps.location.pathname !== this.props.location.pathname) {
+            this.loadResults();
+        }
+    }
+
+    handleWindowFocus = () => {
+        // Reload results when user switches back to this tab/window
+        // This ensures fresh data after completing a quiz in another tab
+        this.loadResults();
+    }
+
+    handleVisibilityChange = () => {
+        // Reload results when page becomes visible
+        // This ensures fresh data when user switches back to the browser tab
+        if (!document.hidden) {
+            this.loadResults();
+        }
     }
 
     loadResults = () => {
@@ -41,6 +74,15 @@ class Scorecard extends Component {
             const examTaken = localStorage.getItem(`examTaken_${examId}`);
             const studentInfoStr = localStorage.getItem(`studentInfo_${examId}`);
             const examResultStr = localStorage.getItem(`examResult_${examId}`);
+            
+            // Debug logging to help identify missing data
+            if (examTaken === 'true' && (!studentInfoStr || !examResultStr)) {
+                console.warn(`Exam ${examId} marked as taken but missing data:`, {
+                    examTaken,
+                    hasStudentInfo: !!studentInfoStr,
+                    hasExamResult: !!examResultStr
+                });
+            }
             
             if (examTaken === 'true' && studentInfoStr && examResultStr) {
                 try {
@@ -73,6 +115,7 @@ class Scorecard extends Component {
         // Sort by submitted date (newest first)
         results.sort((a, b) => new Date(b.submittedAt) - new Date(a.submittedAt));
         
+        console.log(`Scorecard: Loaded ${results.length} exam result(s)`);
         this.setState({ results });
     }
 
@@ -527,4 +570,4 @@ class Scorecard extends Component {
     }
 }
 
-export default Scorecard;
+export default withRouter(Scorecard);
