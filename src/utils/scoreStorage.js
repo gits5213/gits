@@ -5,95 +5,102 @@
 import { WEB_APP_URL, isGoogleSheetsConfigured } from './googleSheetsConfig';
 
 // Save exam result to both localStorage and Google Sheets
+// Returns immediately after saving to localStorage (non-blocking)
+// Google Sheets save happens in the background
 export const saveExamResult = async (examId, studentInfo, examResult) => {
-  // Always save to localStorage for backward compatibility
+  // Always save to localStorage first (synchronous, instant)
   localStorage.setItem(`examResult_${examId}`, JSON.stringify(examResult));
   localStorage.setItem(`examTaken_${examId}`, 'true');
   localStorage.setItem(`studentInfo_${examId}`, JSON.stringify(studentInfo));
 
-  // Try to save to Google Sheets if configured
-  if (!isGoogleSheetsConfigured()) {
-    console.log('Google Sheets not configured, using localStorage only');
-    return;
-  }
-
-  try {
-    const resultData = {
-      examId,
-      examName: examResult.examName || `Exam-${examId}`,
-      examTitle: examResult.examTitle || '',
-      firstName: studentInfo.firstName || '',
-      middleName: studentInfo.middleName || '',
-      lastName: studentInfo.lastName || '',
-      companyName: studentInfo.companyName || '',
-      instructorName: studentInfo.instructorName || '',
-      score: examResult.score || 0,
-      timeElapsed: examResult.timeElapsed || 0,
-      submittedAt: examResult.submittedAt || new Date().toISOString(),
-      totalQuestions: examResult.totalQuestions || 0
-    };
-
-    // Send to Google Apps Script web app using URL-encoded form data to avoid CORS preflight
-    // This avoids the OPTIONS preflight request that causes 405 errors
-    const formData = new URLSearchParams();
-    formData.append('action', 'save');
-    formData.append('data', JSON.stringify(resultData));
-
-    console.log('📤 Sending to Google Sheets:', {
-      url: WEB_APP_URL,
-      action: 'save',
-      data: resultData
+  // Save to Google Sheets in the background (non-blocking)
+  // Don't await - let it happen asynchronously so UI doesn't wait
+  if (isGoogleSheetsConfigured()) {
+    saveToGoogleSheets(examId, studentInfo, examResult).catch(error => {
+      // Silently handle errors - localStorage already saved, so user experience isn't affected
+      console.warn('Background save to Google Sheets failed:', error.message);
     });
+  }
+};
 
-    const response = await fetch(WEB_APP_URL, {
+// Internal function to save to Google Sheets (non-blocking, fire-and-forget)
+const saveToGoogleSheets = async (examId, studentInfo, examResult) => {
+  const resultData = {
+    examId,
+    examName: examResult.examName || `Exam-${examId}`,
+    examTitle: examResult.examTitle || '',
+    firstName: studentInfo.firstName || '',
+    middleName: studentInfo.middleName || '',
+    lastName: studentInfo.lastName || '',
+    companyName: studentInfo.companyName || '',
+    instructorName: studentInfo.instructorName || '',
+    score: examResult.score || 0,
+    timeElapsed: examResult.timeElapsed || 0,
+    submittedAt: examResult.submittedAt || new Date().toISOString(),
+    totalQuestions: examResult.totalQuestions || 0
+  };
+
+  // Send to Google Apps Script web app using URL-encoded form data to avoid CORS preflight
+  const formData = new URLSearchParams();
+  formData.append('action', 'save');
+  formData.append('data', JSON.stringify(resultData));
+
+  // Reduced timeout to 5 seconds for faster failure
+  const timeoutPromise = new Promise((_, reject) => {
+    setTimeout(() => reject(new Error('Request timeout after 5 seconds')), 5000);
+  });
+
+  // Race between fetch and timeout
+  const response = await Promise.race([
+    fetch(WEB_APP_URL, {
       method: 'POST',
       body: formData,
-      redirect: 'follow' // Explicitly follow redirects (this is default, but being explicit)
-    });
+      redirect: 'follow'
+    }),
+    timeoutPromise
+  ]);
 
-    console.log('📥 Response status:', response.status, response.statusText);
-    console.log('📥 Response URL:', response.url);
-    console.log('📥 Response headers:', Object.fromEntries(response.headers.entries()));
+  const responseText = await response.text();
 
-    // Get response text first to see what we're dealing with
-    const responseText = await response.text();
-    console.log('📥 Response text:', responseText.substring(0, 500));
-
-    if (response.ok) {
-      try {
-        const result = JSON.parse(responseText);
-        console.log('✅ Exam result saved to Google Sheets', result);
-        if (!result.success) {
-          console.error('❌ Google Sheets returned error:', result.error);
-        }
-      } catch (parseError) {
-        console.error('❌ Failed to parse JSON response:', parseError);
-        console.error('❌ Response was:', responseText);
-        throw new Error(`Invalid JSON response: ${parseError.message}`);
+  if (response.ok) {
+    try {
+      const result = JSON.parse(responseText);
+      if (result.success) {
+        console.log('✅ Exam result saved to Google Sheets');
+      } else {
+        console.warn('⚠️ Google Sheets returned error:', result.error);
       }
-    } else {
-      console.error('❌ HTTP error response:', responseText);
-      throw new Error(`HTTP error! status: ${response.status}, ${responseText.substring(0, 200)}`);
+    } catch (parseError) {
+      console.warn('⚠️ Failed to parse Google Sheets response');
     }
-  } catch (error) {
-    console.error('❌ Error saving to Google Sheets (using localStorage only):', error);
-    // Continue with localStorage only - don't throw error
+  } else {
+    console.warn('⚠️ Google Sheets HTTP error:', response.status);
   }
 };
 
 // Load exam results from Google Sheets and localStorage
+// Optimized: Fast fallback to localStorage if Google Sheets is slow
 export const loadExamResults = async () => {
   const results = [];
   
-  // First, try to load from Google Sheets if configured
+  // Try to load from Google Sheets if configured (with timeout for fast fallback)
   if (isGoogleSheetsConfigured()) {
     try {
-      const response = await fetch(`${WEB_APP_URL}?action=load`, {
-        method: 'GET',
-        headers: {
-          'Content-Type': 'application/json',
-        }
+      // Create timeout promise (3 seconds max wait)
+      const timeoutPromise = new Promise((_, reject) => {
+        setTimeout(() => reject(new Error('Load timeout')), 3000);
       });
+
+      // Race between fetch and timeout
+      const response = await Promise.race([
+        fetch(`${WEB_APP_URL}?action=load`, {
+          method: 'GET',
+          headers: {
+            'Content-Type': 'application/json',
+          }
+        }),
+        timeoutPromise
+      ]);
 
       if (response.ok) {
         const data = await response.json();
@@ -106,8 +113,8 @@ export const loadExamResults = async () => {
         }
       }
     } catch (error) {
-      console.error('❌ Error loading from Google Sheets:', error);
-      console.warn('Falling back to localStorage');
+      // Silently fall back to localStorage - don't log errors to avoid console spam
+      // localStorage is fast and always available
     }
   }
 

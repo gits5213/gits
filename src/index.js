@@ -15,12 +15,8 @@ import 'react-mdl/extra/material.js';
 // Tachyons - utility CSS framework, keep global for utility classes
 import 'tachyons';
 
-// Performance: Preload critical resources
-const link = document.createElement('link');
-link.rel = 'preload';
-link.as = 'style';
-link.href = `${process.env.PUBLIC_URL || ''}/static/css/main.css`;
-document.head.appendChild(link);
+// Note: CSS is automatically loaded by React's build process
+// No need to manually preload - React handles asset loading correctly
 
 ReactDOM.render(
   <React.StrictMode>

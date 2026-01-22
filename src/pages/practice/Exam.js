@@ -156,15 +156,9 @@ class Exam extends Component {
                 totalQuestions: this.examData.questions.length
             };
             
-            // Save using the storage service (handles both localStorage and Firebase)
-            try {
-                await saveExamResult(this.examId, this.state.studentInfo, examResult);
-            } catch (error) {
-                console.error('Error saving exam result:', error);
-                // Still save to localStorage as fallback
-                localStorage.setItem(`examResult_${this.examId}`, JSON.stringify(examResult));
-                localStorage.setItem(`examTaken_${this.examId}`, 'true');
-            }
+            // Save using the storage service (non-blocking - returns immediately)
+            // localStorage is saved synchronously, Google Sheets happens in background
+            saveExamResult(this.examId, this.state.studentInfo, examResult);
             
             if (this.timerInterval) {
                 clearInterval(this.timerInterval);
