@@ -1,5 +1,4 @@
 import React, {Component} from 'react';
-import { withRouter } from 'react-router-dom';
 import Footer from '../../../components/footer';
 import { exam1Data, exam2Data, exam3Data, exam4Data, exam5Data, exam6Data, exam7Data, exam8Data, exam9Data, exam10Data, exam11Data, exam12Data, exam13Data, exam14Data, exam15Data, exam16Data, exam17Data } from '../../../utilities/data/examData';
 
@@ -47,7 +46,8 @@ class Scorecard extends Component {
     componentDidUpdate(prevProps) {
         // Reload results when navigating to the scorecard page
         // This ensures the latest quiz results are always displayed
-        if (prevProps.location.pathname !== this.props.location.pathname) {
+        if (prevProps.location && this.props.location && 
+            prevProps.location.pathname !== this.props.location.pathname) {
             this.loadResults();
         }
     }
@@ -570,4 +570,4 @@ class Scorecard extends Component {
     }
 }
 
-export default withRouter(Scorecard);
+export default Scorecard;
