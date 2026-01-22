@@ -1,12 +1,11 @@
 import React, {Component} from 'react';
 import Footer from '../../components/footer';
 import { CodeBlock, InlineCode } from '../../components/shared';
-import { pageContainerStyles, modernCardStyles, inlineCodeStyles, sectionHeaderStyles } from '../../utils/globalStyles';
+import { pageContainerStyles, modernCardStyles, sectionHeaderStyles } from '../../utils/globalStyles';
 
 class TestTypeTaxonomy extends Component {
     render() {
         const cardStyle = modernCardStyles.base;
-        const inlineCodeStyle = inlineCodeStyles.base;
         const sectionHeaderStyle = sectionHeaderStyles.primary;
 
         return (
