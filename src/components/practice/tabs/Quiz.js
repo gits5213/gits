@@ -1,5 +1,6 @@
 import React, {Component} from 'react';
 import {Link} from 'react-router-dom';
+// eslint-disable-next-line no-unused-vars
 import Footer from '../../../components/footer';
 import '../../../styles/base.css';
 

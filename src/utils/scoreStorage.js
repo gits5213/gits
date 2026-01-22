@@ -18,14 +18,28 @@ const initializeFirebase = async () => {
       return false;
     }
 
-    // Dynamically import Firebase (only if configured)
-    const firebase = await import('firebase/app');
-    const { getFirestore } = await import('firebase/firestore');
+    // Check if Firebase package is available
+    // Use dynamic import with error handling
+    let firebase, getFirestore;
+    try {
+      const firebaseAppModule = await import('firebase/app');
+      const firestoreModule = await import('firebase/firestore');
+      firebase = firebaseAppModule.default || firebaseAppModule;
+      getFirestore = firestoreModule.getFirestore;
+      
+      if (!getFirestore) {
+        throw new Error('Firebase Firestore not available');
+      }
+    } catch (importError) {
+      console.warn('Firebase package not installed. Install with: npm install firebase', importError);
+      firebaseInitialized = false;
+      return false;
+    }
     
-    if (!firebase.default.apps.length) {
-      firebaseApp = firebase.default.initializeApp(firebaseConfig);
+    if (!firebase.apps || firebase.apps.length === 0) {
+      firebaseApp = firebase.initializeApp(firebaseConfig);
     } else {
-      firebaseApp = firebase.default.apps[0];
+      firebaseApp = firebase.apps[0];
     }
     
     firestore = getFirestore(firebaseApp);
@@ -33,7 +47,7 @@ const initializeFirebase = async () => {
     console.log('Firebase initialized successfully');
     return true;
   } catch (error) {
-    console.warn('Firebase not available, using localStorage only:', error);
+    console.warn('Firebase not available, using localStorage only:', error.message || error);
     firebaseInitialized = false;
     return false;
   }
@@ -50,7 +64,17 @@ export const saveExamResult = async (examId, studentInfo, examResult) => {
   try {
     const initialized = await initializeFirebase();
     if (initialized && firestore) {
-      const { serverTimestamp } = await import('firebase/firestore');
+      let serverTimestamp, collection, addDoc;
+      try {
+        const firestoreModule = await import('firebase/firestore');
+        serverTimestamp = firestoreModule.serverTimestamp;
+        collection = firestoreModule.collection;
+        addDoc = firestoreModule.addDoc;
+      } catch (importError) {
+        console.warn('Firebase Firestore module not available');
+        return; // Exit early if Firebase modules can't be imported
+      }
+      
       const resultData = {
         examId,
         examName: examResult.examName || `Exam-${examId}`,
@@ -67,7 +91,6 @@ export const saveExamResult = async (examId, studentInfo, examResult) => {
         createdAt: serverTimestamp()
       };
 
-      const { collection, addDoc } = await import('firebase/firestore');
       await addDoc(collection(firestore, 'examResults'), resultData);
       console.log('Exam result saved to Firebase');
     }
@@ -85,32 +108,45 @@ export const loadExamResults = async () => {
   try {
     const initialized = await initializeFirebase();
     if (initialized && firestore) {
-      const { collection, query, orderBy, getDocs } = await import('firebase/firestore');
-      const q = query(collection(firestore, 'examResults'), orderBy('submittedAt', 'desc'));
-      const snapshot = await getDocs(q);
+      let collection, query, orderBy, getDocs;
+      try {
+        const firestoreModule = await import('firebase/firestore');
+        collection = firestoreModule.collection;
+        query = firestoreModule.query;
+        orderBy = firestoreModule.orderBy;
+        getDocs = firestoreModule.getDocs;
+      } catch (importError) {
+        console.warn('Firebase Firestore module not available');
+        // Fall through to localStorage
+      }
       
-      snapshot.forEach(doc => {
-        const data = doc.data();
-        results.push({
-          id: doc.id,
-          examId: data.examId,
-          examName: data.examName,
-          examTitle: data.examTitle,
-          firstName: data.firstName || '',
-          middleName: data.middleName || '',
-          lastName: data.lastName || '',
-          companyName: data.companyName || '',
-          instructorName: data.instructorName || '',
-          score: data.score || 0,
-          timeElapsed: data.timeElapsed || 0,
-          submittedAt: data.submittedAt || new Date().toISOString(),
-          totalQuestions: data.totalQuestions || 0,
-          source: 'firebase'
+      if (collection && query && orderBy && getDocs) {
+        const q = query(collection(firestore, 'examResults'), orderBy('submittedAt', 'desc'));
+        const snapshot = await getDocs(q);
+        
+        snapshot.forEach(doc => {
+          const data = doc.data();
+          results.push({
+            id: doc.id,
+            examId: data.examId,
+            examName: data.examName,
+            examTitle: data.examTitle,
+            firstName: data.firstName || '',
+            middleName: data.middleName || '',
+            lastName: data.lastName || '',
+            companyName: data.companyName || '',
+            instructorName: data.instructorName || '',
+            score: data.score || 0,
+            timeElapsed: data.timeElapsed || 0,
+            submittedAt: data.submittedAt || new Date().toISOString(),
+            totalQuestions: data.totalQuestions || 0,
+            source: 'firebase'
+          });
         });
-      });
-      
-      console.log(`Loaded ${results.length} results from Firebase`);
-      return results;
+        
+        console.log(`Loaded ${results.length} results from Firebase`);
+        return results;
+      }
     }
   } catch (error) {
     console.warn('Error loading from Firebase, falling back to localStorage:', error);
@@ -181,9 +217,21 @@ export const deleteExamResult = async (examId, firebaseDocId = null) => {
     try {
       const initialized = await initializeFirebase();
       if (initialized && firestore) {
-        const { collection, doc, deleteDoc } = await import('firebase/firestore');
-        await deleteDoc(doc(collection(firestore, 'examResults'), firebaseDocId));
-        console.log('Deleted from Firebase');
+        let collection, doc, deleteDoc;
+        try {
+          const firestoreModule = await import('firebase/firestore');
+          collection = firestoreModule.collection;
+          doc = firestoreModule.doc;
+          deleteDoc = firestoreModule.deleteDoc;
+        } catch (importError) {
+          console.warn('Firebase Firestore module not available');
+          return; // Exit early
+        }
+        
+        if (collection && doc && deleteDoc) {
+          await deleteDoc(doc(collection(firestore, 'examResults'), firebaseDocId));
+          console.log('Deleted from Firebase');
+        }
       }
     } catch (error) {
       console.error('Error deleting from Firebase:', error);
@@ -204,14 +252,26 @@ export const deleteAllExamResults = async () => {
   try {
     const initialized = await initializeFirebase();
     if (initialized && firestore) {
-      const { collection, getDocs, writeBatch, doc } = await import('firebase/firestore');
-      const snapshot = await getDocs(collection(firestore, 'examResults'));
-      const batch = writeBatch(firestore);
-      snapshot.forEach(docSnapshot => {
-        batch.delete(docSnapshot.ref);
-      });
-      await batch.commit();
-      console.log('Deleted all from Firebase');
+      let collection, getDocs, writeBatch;
+      try {
+        const firestoreModule = await import('firebase/firestore');
+        collection = firestoreModule.collection;
+        getDocs = firestoreModule.getDocs;
+        writeBatch = firestoreModule.writeBatch;
+      } catch (importError) {
+        console.warn('Firebase Firestore module not available');
+        return; // Exit early
+      }
+      
+      if (collection && getDocs && writeBatch) {
+        const snapshot = await getDocs(collection(firestore, 'examResults'));
+        const batch = writeBatch(firestore);
+        snapshot.forEach(docSnapshot => {
+          batch.delete(docSnapshot.ref);
+        });
+        await batch.commit();
+        console.log('Deleted all from Firebase');
+      }
     }
   } catch (error) {
     console.error('Error deleting all from Firebase:', error);

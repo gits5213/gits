@@ -1,19 +1,15 @@
 // Firebase Configuration
-// To enable public score storage, you need to:
-// 1. Go to https://console.firebase.google.com/
-// 2. Create a new project (or use existing)
-// 3. Enable Firestore Database
-// 4. Get your Firebase config from Project Settings
-// 5. Replace the placeholder values below
+// Firebase is configured and ready to use for public score storage
 
 // IMPORTANT: These are public keys and safe to expose in client-side code
 const firebaseConfig = {
-  apiKey: "YOUR_API_KEY",
-  authDomain: "YOUR_PROJECT_ID.firebaseapp.com",
-  projectId: "YOUR_PROJECT_ID",
-  storageBucket: "YOUR_PROJECT_ID.appspot.com",
-  messagingSenderId: "YOUR_MESSAGING_SENDER_ID",
-  appId: "YOUR_APP_ID"
+  apiKey: "AIzaSyBkmynxOFZL9RoiS2AhQeHS36n-_O-m8ro",
+  authDomain: "gitsuniversity.firebaseapp.com",
+  projectId: "gitsuniversity",
+  storageBucket: "gitsuniversity.firebasestorage.app",
+  messagingSenderId: "577052183919",
+  appId: "1:577052183919:web:5f7fc3c2a32caa2d08ac9a",
+  measurementId: "G-BE0KXJG788" // Optional: for Analytics
 };
 
 // Check if Firebase is configured
