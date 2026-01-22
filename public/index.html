@@ -2,7 +2,7 @@
 <html lang="en">
   <head>
     <meta charset="utf-8" />
-    <link rel="icon" href="%PUBLIC_URL%/favicon.ico " />
+    <link rel="icon" href="%PUBLIC_URL%/favicon.ico" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta name="theme-color" content="#000000" />
     <meta
@@ -20,6 +20,60 @@
     <!-- google adsense -->
     <script data-ad-client="ca-pub-9112023534705295" async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
     <title>Global iTech Solutions(GITS)</title>
+    <script>
+      // Suppress console errors in production for GitHub Pages routing and browser extensions
+      (function() {
+        if (window.location.hostname !== 'localhost' && window.location.hostname !== '127.0.0.1') {
+          // Suppress 404 errors for React Router routes (expected on GitHub Pages)
+          var originalError = console.error;
+          console.error = function() {
+            var args = Array.prototype.slice.call(arguments);
+            var message = args.join(' ');
+            
+            // Suppress 404 errors for routes (not static assets)
+            if (message.includes('404') && message.includes('/practice/') && !message.includes('.')) {
+              return; // Suppress this error
+            }
+            
+            // Suppress browser extension errors
+            if (message.includes('listener indicated an asynchronous response') ||
+                message.includes('message channel closed') ||
+                message.includes('runtime.lastError')) {
+              return; // Suppress extension errors
+            }
+            
+            // Log other errors normally
+            originalError.apply(console, args);
+          };
+          
+          // Suppress unhandled promise rejections for extension errors
+          window.addEventListener('unhandledrejection', function(event) {
+            var message = event.reason && event.reason.toString();
+            if (message && (
+              message.includes('listener indicated an asynchronous response') ||
+              message.includes('message channel closed') ||
+              message.includes('runtime.lastError')
+            )) {
+              event.preventDefault(); // Suppress the error
+            }
+          });
+          
+          // Suppress runtime.lastError from browser extensions
+          if (typeof chrome !== 'undefined' && chrome.runtime && chrome.runtime.lastError) {
+            var originalLastError = chrome.runtime.lastError;
+            Object.defineProperty(chrome.runtime, 'lastError', {
+              get: function() {
+                var error = originalLastError;
+                if (error && error.message && error.message.includes('message channel closed')) {
+                  return undefined; // Suppress the error
+                }
+                return error;
+              }
+            });
+          }
+        }
+      })();
+    </script>
   </head>
   <body>
     <noscript>You need to enable JavaScript to run this app.</noscript>
