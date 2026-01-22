@@ -3,6 +3,7 @@ import { withRouter } from 'react-router-dom';
 import Certificate from '../../components/quiz/Certificate';
 import Footer from '../../components/footer';
 import { resetExam } from '../../utilities/examReset';
+import { saveExamResult } from '../../utils/scoreStorage';
 import '../../styles/base.css';
 
 class Exam extends Component {
@@ -129,7 +130,7 @@ class Exam extends Component {
         }
     }
 
-    handleSubmit = () => {
+    handleSubmit = async () => {
         if (window.confirm('Are you sure you want to submit the exam? You cannot retake it.')) {
             const endTime = Date.now();
             const timeElapsed = Math.floor((endTime - this.state.startTime) / 1000);
@@ -144,16 +145,26 @@ class Exam extends Component {
             
             const score = Math.round((correctAnswers / this.examData.questions.length) * 100);
             
-            // Save exam result
+            // Save exam result (to both localStorage and Firebase if configured)
             const examResult = {
                 score,
                 answers: this.state.answers,
                 timeElapsed,
-                submittedAt: new Date().toISOString()
+                submittedAt: new Date().toISOString(),
+                examName: this.examData.examName,
+                examTitle: this.examData.title,
+                totalQuestions: this.examData.questions.length
             };
             
-            localStorage.setItem(`examResult_${this.examId}`, JSON.stringify(examResult));
-            localStorage.setItem(`examTaken_${this.examId}`, 'true');
+            // Save using the storage service (handles both localStorage and Firebase)
+            try {
+                await saveExamResult(this.examId, this.state.studentInfo, examResult);
+            } catch (error) {
+                console.error('Error saving exam result:', error);
+                // Still save to localStorage as fallback
+                localStorage.setItem(`examResult_${this.examId}`, JSON.stringify(examResult));
+                localStorage.setItem(`examTaken_${this.examId}`, 'true');
+            }
             
             if (this.timerInterval) {
                 clearInterval(this.timerInterval);

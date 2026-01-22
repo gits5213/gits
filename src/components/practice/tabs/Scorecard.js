@@ -1,5 +1,6 @@
 import React, {Component} from 'react';
 import Footer from '../../../components/footer';
+import { loadExamResults, deleteExamResult, deleteAllExamResults } from '../../../utils/scoreStorage';
 import { exam1Data, exam2Data, exam3Data, exam4Data, exam5Data, exam6Data, exam7Data, exam8Data, exam9Data, exam10Data, exam11Data, exam12Data, exam13Data, exam14Data, exam15Data, exam16Data, exam17Data } from '../../../utilities/data/examData';
 
 class Scorecard extends Component {
@@ -66,57 +67,16 @@ class Scorecard extends Component {
         }
     }
 
-    loadResults = () => {
-        const results = [];
-        
-        // Check all possible exam IDs (1-17)
-        for (let examId = 1; examId <= 17; examId++) {
-            const examTaken = localStorage.getItem(`examTaken_${examId}`);
-            const studentInfoStr = localStorage.getItem(`studentInfo_${examId}`);
-            const examResultStr = localStorage.getItem(`examResult_${examId}`);
-            
-            // Debug logging to help identify missing data
-            if (examTaken === 'true' && (!studentInfoStr || !examResultStr)) {
-                console.warn(`Exam ${examId} marked as taken but missing data:`, {
-                    examTaken,
-                    hasStudentInfo: !!studentInfoStr,
-                    hasExamResult: !!examResultStr
-                });
-            }
-            
-            if (examTaken === 'true' && studentInfoStr && examResultStr) {
-                try {
-                    const studentInfo = JSON.parse(studentInfoStr);
-                    const examResult = JSON.parse(examResultStr);
-                    const examData = this.examDataMap[examId];
-                    
-                    if (examData) {
-                        results.push({
-                            examId,
-                            examName: examData.examName,
-                            examTitle: examData.title,
-                            firstName: studentInfo.firstName || '',
-                            middleName: studentInfo.middleName || '',
-                            lastName: studentInfo.lastName || '',
-                            companyName: studentInfo.companyName || '',
-                            instructorName: studentInfo.instructorName || '',
-                            score: examResult.score || 0,
-                            timeElapsed: examResult.timeElapsed || 0,
-                            submittedAt: examResult.submittedAt || new Date().toISOString(),
-                            totalQuestions: examData.questions.length
-                        });
-                    }
-                } catch (error) {
-                    console.error(`Error parsing data for exam ${examId}:`, error);
-                }
-            }
+    loadResults = async () => {
+        try {
+            // Load results from Firebase (if configured) or localStorage
+            const results = await loadExamResults();
+            console.log(`Scorecard: Loaded ${results.length} exam result(s)`);
+            this.setState({ results });
+        } catch (error) {
+            console.error('Error loading exam results:', error);
+            this.setState({ results: [] });
         }
-        
-        // Sort by submitted date (newest first)
-        results.sort((a, b) => new Date(b.submittedAt) - new Date(a.submittedAt));
-        
-        console.log(`Scorecard: Loaded ${results.length} exam result(s)`);
-        this.setState({ results });
     }
 
     formatTime = (seconds) => {
@@ -207,23 +167,28 @@ class Scorecard extends Component {
         document.body.removeChild(link);
     }
 
-    deleteResult = (examId) => {
+    deleteResult = async (result) => {
         if (window.confirm('Are you sure you want to delete this exam result? This action cannot be undone.')) {
-            localStorage.removeItem(`examTaken_${examId}`);
-            localStorage.removeItem(`studentInfo_${examId}`);
-            localStorage.removeItem(`examResult_${examId}`);
-            this.loadResults();
+            try {
+                // result.id is the Firebase document ID if it came from Firebase
+                await deleteExamResult(result.examId, result.id || null);
+                this.loadResults();
+            } catch (error) {
+                console.error('Error deleting exam result:', error);
+                alert('Error deleting exam result. Please try again.');
+            }
         }
     }
 
-    deleteAllResults = () => {
+    handleDeleteAll = async () => {
         if (window.confirm('Are you sure you want to delete ALL exam results? This action cannot be undone.')) {
-            for (let examId = 1; examId <= 17; examId++) {
-                localStorage.removeItem(`examTaken_${examId}`);
-                localStorage.removeItem(`studentInfo_${examId}`);
-                localStorage.removeItem(`examResult_${examId}`);
+            try {
+                await deleteAllExamResults();
+                this.loadResults();
+            } catch (error) {
+                console.error('Error deleting all exam results:', error);
+                alert('Error deleting exam results. Please try again.');
             }
-            this.loadResults();
         }
     }
 
@@ -313,7 +278,7 @@ class Scorecard extends Component {
                         📥 Download CSV
                     </button>
                     <button
-                        onClick={this.deleteAllResults}
+                        onClick={this.handleDeleteAll}
                         disabled={results.length === 0}
                         style={{
                             padding: '14px 28px',
@@ -534,7 +499,7 @@ class Scorecard extends Component {
                                             </td>
                                             <td style={{ padding: '16px', textAlign: 'center' }}>
                                                 <button
-                                                    onClick={() => this.deleteResult(result.examId)}
+                                                    onClick={() => this.deleteResult(result)}
                                                     style={{
                                                         padding: '8px 16px',
                                                         fontSize: '12px',
