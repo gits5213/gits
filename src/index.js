@@ -6,9 +6,8 @@ import * as serviceWorker from './serviceWorker';
 import ErrorBoundary from './components/ErrorBoundary';
 import {BrowserRouter} from 'react-router-dom';
 
-// Lazy load heavy dependencies - only load when needed
-// react-mdl is only used in 3 components, so we'll load it conditionally
-// For now, keeping it global but can be optimized further if needed
+// Load heavy dependencies - these are needed for the UI
+// react-mdl is used in multiple components
 import 'react-mdl/extra/material.css';
 import 'react-mdl/extra/material.js';
 

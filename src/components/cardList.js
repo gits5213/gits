@@ -178,6 +178,7 @@ const cardList = ({cardDetails}) => {
                                 pointerEvents: 'none'
                             }} />
                             <img 
+                                loading="lazy"
                                 alt={card.alt}
                                 src={card.image}
                                 style={{

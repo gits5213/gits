@@ -77,7 +77,8 @@ class App extends Component {
               onClick={this.closeMobileMenu}
             >
               <img 
-                src={websiteLogo} 
+                src={websiteLogo}
+                loading="eager" 
                 alt="GITS Logo" 
                 style={{ 
                   height: '40px', 

@@ -170,6 +170,7 @@ class Landing extends Component {
                             <img 
                                 alt='SDLC Logo' 
                                 src={landingImage}
+                                loading="lazy"
                                 style={{
                                     width: '100%',
                                     maxWidth: '100%',
@@ -460,6 +461,7 @@ class Landing extends Component {
                                     In-Person Training
                                 </h3>
                                 <img 
+                                loading="lazy"
                                     alt='Classroom Training' 
                                     src={classromom}
                                     style={{
@@ -489,6 +491,7 @@ class Landing extends Component {
                                     Online Training
                                 </h3>
                                 <img 
+                                loading="lazy"
                                     alt='Online Training' 
                                     src={online}
                                     style={{
