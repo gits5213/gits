@@ -1,34 +1,46 @@
 import React from 'react';
+import CodeBlockWithCopy from './CodeBlockWithCopy';
+import { codeBlockStyles } from '../../utils/globalStyles';
 
 /**
- * Reusable Code Block Component
+ * Reusable Code Block Component with Copy Functionality
+ * Automatically adds copy button on hover for code blocks
+ * 
  * @param {string} code - The code content to display
- * @param {string} language - Optional language for syntax highlighting (not implemented yet)
+ * @param {string} language - Optional language hint (for future syntax highlighting)
+ * @param {string} variant - Style variant: 'dark' (default) or 'light'
  * @param {Object} customStyle - Optional custom styles to override defaults
+ * @param {boolean} showCopy - Whether to show copy button (default: true)
  */
-const CodeBlock = ({ code, language = '', customStyle = {} }) => {
-    const defaultStyle = {
-        backgroundColor: '#1e293b',
-        color: '#e2e8f0',
-        padding: '16px',
-        borderRadius: '8px',
-        overflow: 'auto',
-        fontSize: '14px',
-        fontFamily: 'Monaco, "Courier New", monospace',
-        lineHeight: '1.6',
-        border: '1px solid #334155',
-        marginTop: '12px',
-        marginBottom: '12px',
-        textAlign: 'left',
-        ...customStyle
+const CodeBlock = ({ 
+    code, 
+    language = '', 
+    variant = 'dark', 
+    customStyle = {}, 
+    showCopy = true 
+}) => {
+    const codeBlockStyle = { 
+        ...codeBlockStyles[variant], 
+        ...customStyle 
     };
 
+    if (!showCopy) {
+        // Return simple pre/code element without copy functionality
+        return (
+            <pre style={codeBlockStyle}>
+                <code>{code}</code>
+            </pre>
+        );
+    }
+
+    // Return code block with copy functionality
     return (
-        <pre style={defaultStyle}>
-            <code>{code}</code>
-        </pre>
+        <CodeBlockWithCopy 
+            code={code} 
+            codeStyle={codeBlockStyle} 
+            isInline={false} 
+        />
     );
 };
 
 export default CodeBlock;
-

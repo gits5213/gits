@@ -1,9 +1,9 @@
 import React, { useState } from 'react';
+import { Link } from 'react-router-dom';
 import link from '../../../utilities/links.json';
 import webDriverIOLogo from '../../../images/tabs/playwrightLogo.png'; 
 import Footer from '../../../components/footer';
-import PdfDownload from '../../shared/PdfDownload';
-import { scrollToItem, scrollToIntroSection, scrollToElement } from '../../../utils/scrollHelpers';
+import { scrollToItem, scrollToElement } from '../../../utils/scrollHelpers';
 import { modernCardStyles, codeBlockStyles, sectionHeaderStyles, itemHeaderStyles, pageContainerStyles, modernHeroStyles, checklistGridStyles, checklistLinkStyles, colors } from '../../../utils/globalStyles';
 
 const ResPlaywright = () => {
@@ -19,6 +19,8 @@ const ResPlaywright = () => {
     const [isCucumberExpanded, setIsCucumberExpanded] = useState(false);
     // State for Cucumber Gherkin E2E section collapse/expand
     const [isCucumberGherkinExpanded, setIsCucumberGherkinExpanded] = useState(false);
+    // State for "Getting Started" section collapse/expand (collapsed by default)
+    const [isWhatIsPlaywrightExpanded, setIsWhatIsPlaywrightExpanded] = useState(false);
 
     // Toggle checklist section
     const toggleChecklist = () => {
@@ -48,6 +50,11 @@ const ResPlaywright = () => {
     // Toggle Cucumber Gherkin E2E section
     const toggleCucumberGherkin = () => {
         setIsCucumberGherkinExpanded(!isCucumberGherkinExpanded);
+    };
+
+    // Toggle "Getting Started" section
+    const toggleWhatIsPlaywright = () => {
+        setIsWhatIsPlaywrightExpanded(!isWhatIsPlaywrightExpanded);
     };
 
     // Map checklist items to their corresponding section IDs
@@ -103,13 +110,39 @@ const ResPlaywright = () => {
                 justifyContent: 'space-between',
                 gap: '40px',
                 flexWrap: 'wrap',
-                textAlign: 'left'
+                textAlign: 'left',
+                background: 'linear-gradient(135deg, #667eea 0%, #764ba2 100%)',
+                boxShadow: '0 20px 25px -5px rgba(102, 126, 234, 0.3), 0 10px 10px -5px rgba(102, 126, 234, 0.2)',
+                position: 'relative',
+                overflow: 'hidden',
+                padding: '56px 48px'
             }}>
-                <div style={{ flex: '1', minWidth: '300px' }}>
-                    <h1 style={modernHeroStyles.title}>
+                <div style={{
+                    position: 'absolute',
+                    top: 0,
+                    right: 0,
+                    width: '300px',
+                    height: '300px',
+                    background: 'radial-gradient(circle, rgba(255,255,255,0.1) 0%, transparent 70%)',
+                    borderRadius: '50%',
+                    transform: 'translate(20%, -20%)'
+                }}></div>
+                <div style={{ flex: '1', minWidth: '300px', position: 'relative', zIndex: 1 }}>
+                    <h1 style={{
+                        ...modernHeroStyles.title,
+                        fontSize: 'clamp(36px, 5vw, 52px)',
+                        fontWeight: '800',
+                        letterSpacing: '-0.02em',
+                        marginBottom: '20px'
+                    }}>
                         Playwright Framework
                     </h1>
-                    <p style={modernHeroStyles.subtitle}>
+                    <p style={{
+                        ...modernHeroStyles.subtitle,
+                        fontSize: 'clamp(18px, 2.5vw, 22px)',
+                        opacity: 0.95,
+                        lineHeight: '1.6'
+                    }}>
                         Fast and Reliable End-to-End Testing for Modern Web Apps
                     </p>
                 </div>
@@ -117,7 +150,9 @@ const ResPlaywright = () => {
                     flex: '0 0 auto',
                     display: 'flex',
                     alignItems: 'center',
-                    justifyContent: 'flex-end'
+                    justifyContent: 'flex-end',
+                    position: 'relative',
+                    zIndex: 1
                 }}>
                     <img 
                         src={webDriverIOLogo} 
@@ -126,8 +161,9 @@ const ResPlaywright = () => {
                             maxWidth: '300px',
                             width: '100%',
                             height: 'auto',
-                            borderRadius: '8px',
-                            filter: 'brightness(1.1)'
+                            borderRadius: '16px',
+                            filter: 'brightness(1.1)',
+                            boxShadow: '0 8px 16px rgba(0, 0, 0, 0.2)'
                         }}
                     />
                 </div>
@@ -137,7 +173,7 @@ const ResPlaywright = () => {
             <div style={{
                 display: 'flex',
                 flexWrap: 'wrap',
-                gap: '16px',
+                gap: '20px',
                 justifyContent: 'center',
                 marginBottom: '48px'
             }}>
@@ -148,28 +184,28 @@ const ResPlaywright = () => {
                     style={{
                         display: 'inline-flex',
                         alignItems: 'center',
-                        padding: '14px 28px',
-                        fontSize: '15px',
+                        padding: '16px 32px',
+                        fontSize: '16px',
                         fontWeight: '600',
                         color: '#ffffff',
                         backgroundColor: '#dc3545',
                         textDecoration: 'none',
-                        borderRadius: '8px',
-                        transition: 'all 0.2s ease',
-                        boxShadow: '0 2px 6px rgba(220,53,69,0.3)'
+                        borderRadius: '12px',
+                        transition: 'all 0.3s cubic-bezier(0.4, 0, 0.2, 1)',
+                        boxShadow: '0 4px 6px -1px rgba(220,53,69,0.3), 0 2px 4px -1px rgba(220,53,69,0.2)'
                     }}
                     onMouseEnter={(e) => {
                         e.target.style.backgroundColor = '#c82333';
-                        e.target.style.transform = 'translateY(-2px)';
-                        e.target.style.boxShadow = '0 4px 12px rgba(220,53,69,0.4)';
+                        e.target.style.transform = 'translateY(-3px)';
+                        e.target.style.boxShadow = '0 8px 16px -4px rgba(220,53,69,0.4)';
                     }}
                     onMouseLeave={(e) => {
                         e.target.style.backgroundColor = '#dc3545';
                         e.target.style.transform = 'translateY(0)';
-                        e.target.style.boxShadow = '0 2px 6px rgba(220,53,69,0.3)';
+                        e.target.style.boxShadow = '0 4px 6px -1px rgba(220,53,69,0.3), 0 2px 4px -1px rgba(220,53,69,0.2)';
                     }}
                 >
-                    <img src={link.GITHUB_ICON} alt='github' style={{ marginRight: '10px', width: '18px', height: '18px' }} />
+                    <img src={link.GITHUB_ICON} alt='github' style={{ marginRight: '12px', width: '20px', height: '20px' }} />
                     Playwright on GitHub
                 </a>
                 <a 
@@ -179,28 +215,28 @@ const ResPlaywright = () => {
                     style={{
                         display: 'inline-flex',
                         alignItems: 'center',
-                        padding: '14px 28px',
-                        fontSize: '15px',
+                        padding: '16px 32px',
+                        fontSize: '16px',
                         fontWeight: '600',
                         color: '#ffffff',
                         backgroundColor: '#28a745',
                         textDecoration: 'none',
-                        borderRadius: '8px',
-                        transition: 'all 0.2s ease',
-                        boxShadow: '0 2px 6px rgba(40,167,69,0.3)'
+                        borderRadius: '12px',
+                        transition: 'all 0.3s cubic-bezier(0.4, 0, 0.2, 1)',
+                        boxShadow: '0 4px 6px -1px rgba(40,167,69,0.3), 0 2px 4px -1px rgba(40,167,69,0.2)'
                     }}
                     onMouseEnter={(e) => {
                         e.target.style.backgroundColor = '#218838';
-                        e.target.style.transform = 'translateY(-2px)';
-                        e.target.style.boxShadow = '0 4px 12px rgba(40,167,69,0.4)';
+                        e.target.style.transform = 'translateY(-3px)';
+                        e.target.style.boxShadow = '0 8px 16px -4px rgba(40,167,69,0.4)';
                     }}
                     onMouseLeave={(e) => {
                         e.target.style.backgroundColor = '#28a745';
                         e.target.style.transform = 'translateY(0)';
-                        e.target.style.boxShadow = '0 2px 6px rgba(40,167,69,0.3)';
+                        e.target.style.boxShadow = '0 4px 6px -1px rgba(40,167,69,0.3), 0 2px 4px -1px rgba(40,167,69,0.2)';
                     }}
                 >
-                    <img src={link.GITHUB_ICON} alt='github' style={{ marginRight: '10px', width: '18px', height: '18px' }} />
+                    <img src={link.GITHUB_ICON} alt='github' style={{ marginRight: '12px', width: '20px', height: '20px' }} />
                     Playwright API
                 </a>
             </div>
@@ -211,51 +247,58 @@ const ResPlaywright = () => {
                 marginBottom: '32px'
             }}>
                 <h3 style={{ 
-                    color: '#00416A', 
-                    fontSize: '24px', 
-                    marginBottom: '24px',
-                    fontWeight: '600',
-                    textAlign: 'left'
+                    color: '#1e293b', 
+                    fontSize: '28px', 
+                    marginBottom: '28px',
+                    fontWeight: '700',
+                    textAlign: 'left',
+                    letterSpacing: '-0.02em',
+                    paddingBottom: '16px',
+                    borderBottom: '3px solid #667eea'
                 }}>
                     📥 Download Playwright Resources
                 </h3>
                 <div style={{
                     display: 'grid',
-                    gridTemplateColumns: 'repeat(auto-fit, minmax(300px, 1fr))',
-                    gap: '20px'
+                    gridTemplateColumns: 'repeat(auto-fit, minmax(240px, 1fr))',
+                    gap: '16px'
                 }}>
                     {/* Download Option 1 */}
                     <div style={{
-                        backgroundColor: '#f8fafc',
+                        backgroundColor: '#ffffff',
                         borderRadius: '12px',
-                        padding: '24px',
-                        border: '2px dashed #cbd5e1',
+                        padding: '20px',
+                        border: '1px solid #e2e8f0',
                         textAlign: 'left',
-                        transition: 'all 0.3s ease'
+                        transition: 'all 0.3s cubic-bezier(0.4, 0, 0.2, 1)',
+                        boxShadow: '0 1px 3px rgba(0, 0, 0, 0.08)'
                     }}
                     onMouseEnter={(e) => {
                         e.currentTarget.style.borderColor = colors.primary;
-                        e.currentTarget.style.transform = 'translateY(-2px)';
+                        e.currentTarget.style.transform = 'translateY(-4px)';
+                        e.currentTarget.style.boxShadow = '0 8px 16px rgba(0, 65, 106, 0.15)';
                     }}
                     onMouseLeave={(e) => {
-                        e.currentTarget.style.borderColor = '#cbd5e1';
+                        e.currentTarget.style.borderColor = '#e2e8f0';
                         e.currentTarget.style.transform = 'translateY(0)';
+                        e.currentTarget.style.boxShadow = '0 2px 4px rgba(0, 0, 0, 0.05)';
                     }}
                     >
                         <h4 style={{ 
-                            marginBottom: '12px',
+                            marginBottom: '10px',
                             color: '#1e293b',
-                            fontSize: '18px',
+                            fontSize: '16px',
                             fontWeight: '600',
-                            textAlign: 'left'
+                            textAlign: 'left',
+                            lineHeight: '1.3'
                         }}>
                             Playwright User Actions Handout
                         </h4>
                         <p style={{
-                            marginBottom: '20px',
+                            marginBottom: '16px',
                             color: '#64748b',
-                            fontSize: '14px',
-                            lineHeight: '1.6',
+                            fontSize: '13px',
+                            lineHeight: '1.5',
                             textAlign: 'left'
                         }}>
                             Download the complete Playwright TypeScript User Events & Actions handout
@@ -267,25 +310,25 @@ const ResPlaywright = () => {
                                 display: 'inline-block',
                                 backgroundColor: colors.primary,
                                 color: colors.textWhite,
-                                padding: '12px 24px',
+                                padding: '10px 20px',
                                 borderRadius: '8px',
                                 textDecoration: 'none',
-                                fontSize: '14px',
+                                fontSize: '13px',
                                 fontWeight: '600',
                                 transition: 'all 0.3s ease',
-                                boxShadow: '0 4px 6px rgba(0, 65, 106, 0.2)',
+                                boxShadow: '0 2px 4px rgba(0, 65, 106, 0.2)',
                                 border: 'none',
                                 cursor: 'pointer'
                             }}
                             onMouseEnter={(e) => {
                                 e.target.style.backgroundColor = colors.primaryDark;
                                 e.target.style.transform = 'translateY(-2px)';
-                                e.target.style.boxShadow = '0 6px 12px rgba(0, 65, 106, 0.3)';
+                                e.target.style.boxShadow = '0 4px 8px rgba(0, 65, 106, 0.3)';
                             }}
                             onMouseLeave={(e) => {
                                 e.target.style.backgroundColor = colors.primary;
                                 e.target.style.transform = 'translateY(0)';
-                                e.target.style.boxShadow = '0 4px 6px rgba(0, 65, 106, 0.2)';
+                                e.target.style.boxShadow = '0 2px 4px rgba(0, 65, 106, 0.2)';
                             }}
                         >
                             📄 Download PDF
@@ -294,35 +337,39 @@ const ResPlaywright = () => {
 
                     {/* Download Option 2 */}
                     <div style={{
-                        backgroundColor: '#f8fafc',
+                        backgroundColor: '#ffffff',
                         borderRadius: '12px',
-                        padding: '24px',
-                        border: '2px dashed #cbd5e1',
+                        padding: '20px',
+                        border: '1px solid #e2e8f0',
                         textAlign: 'left',
-                        transition: 'all 0.3s ease'
+                        transition: 'all 0.3s cubic-bezier(0.4, 0, 0.2, 1)',
+                        boxShadow: '0 1px 3px rgba(0, 0, 0, 0.08)'
                     }}
                     onMouseEnter={(e) => {
                         e.currentTarget.style.borderColor = colors.primary;
-                        e.currentTarget.style.transform = 'translateY(-2px)';
+                        e.currentTarget.style.transform = 'translateY(-3px)';
+                        e.currentTarget.style.boxShadow = '0 6px 12px rgba(0, 65, 106, 0.15)';
                     }}
                     onMouseLeave={(e) => {
-                        e.currentTarget.style.borderColor = '#cbd5e1';
+                        e.currentTarget.style.borderColor = '#e2e8f0';
                         e.currentTarget.style.transform = 'translateY(0)';
+                        e.currentTarget.style.boxShadow = '0 1px 3px rgba(0, 0, 0, 0.08)';
                     }}
                     >
                         <h4 style={{ 
-                            marginBottom: '12px',
+                            marginBottom: '10px',
                             color: '#1e293b',
-                            fontSize: '18px',
-                            fontWeight: '600'
+                            fontSize: '16px',
+                            fontWeight: '600',
+                            lineHeight: '1.3'
                         }}>
                             Playwright Hooks & Checklist Handout
                         </h4>
                         <p style={{
-                            marginBottom: '20px',
+                            marginBottom: '16px',
                             color: '#64748b',
-                            fontSize: '14px',
-                            lineHeight: '1.6'
+                            fontSize: '13px',
+                            lineHeight: '1.5'
                         }}>
                             Download the complete Playwright TypeScript Hooks & Checklist handout
                         </p>
@@ -333,25 +380,25 @@ const ResPlaywright = () => {
                                 display: 'inline-block',
                                 backgroundColor: colors.primary,
                                 color: colors.textWhite,
-                                padding: '12px 24px',
+                                padding: '10px 20px',
                                 borderRadius: '8px',
                                 textDecoration: 'none',
-                                fontSize: '14px',
+                                fontSize: '13px',
                                 fontWeight: '600',
                                 transition: 'all 0.3s ease',
-                                boxShadow: '0 4px 6px rgba(0, 65, 106, 0.2)',
+                                boxShadow: '0 2px 4px rgba(0, 65, 106, 0.2)',
                                 border: 'none',
                                 cursor: 'pointer'
                             }}
                             onMouseEnter={(e) => {
                                 e.target.style.backgroundColor = colors.primaryDark;
                                 e.target.style.transform = 'translateY(-2px)';
-                                e.target.style.boxShadow = '0 6px 12px rgba(0, 65, 106, 0.3)';
+                                e.target.style.boxShadow = '0 4px 8px rgba(0, 65, 106, 0.3)';
                             }}
                             onMouseLeave={(e) => {
                                 e.target.style.backgroundColor = colors.primary;
                                 e.target.style.transform = 'translateY(0)';
-                                e.target.style.boxShadow = '0 4px 6px rgba(0, 65, 106, 0.2)';
+                                e.target.style.boxShadow = '0 2px 4px rgba(0, 65, 106, 0.2)';
                             }}
                         >
                             📄 Download PDF
@@ -360,88 +407,67 @@ const ResPlaywright = () => {
                 </div>
             </div>
 
-            {/* Playwright Introduction Checklist */}
-            <div style={{
-                ...cardStyle,
-                marginBottom: '32px'
-            }}>
-                <h3 style={{ 
-                    color: '#00416A', 
-                    fontSize: '24px', 
-                    marginBottom: '24px',
-                    fontWeight: '600',
-                    textAlign: 'left'
-                }}>
-                    Playwright Getting Started Checklist
-                </h3>
-                <div style={checklistGridStyles.compact}>
-                    {[
-                        { text: 'What is Playwright?', id: 'intro-what-is' },
-                        { text: 'Installation', id: 'intro-installation' },
-                        { text: 'Running Tests', id: 'intro-running-tests' },
-                        { text: 'Codegen - Generate Tests', id: 'intro-codegen' },
-                        { text: 'Other Useful Commands', id: 'intro-other-commands' }
-                    ].map((item, idx) => (
-                        <div key={idx} style={{
-                            backgroundColor: '#f8fafc',
-                            border: '1px solid #e5e7eb',
-                            borderRadius: '8px',
-                            padding: '16px',
-                            display: 'flex',
-                            alignItems: 'center'
-                        }}>
-                            <a
-                                href={`#${item.id}`}
-                                onClick={(e) => {
-                                    e.preventDefault();
-                                    scrollToIntroSection(item.id);
-                                }}
-                                style={{
-                                    color: '#00416A',
-                                    textDecoration: 'none',
-                                    fontSize: '15px',
-                                    fontWeight: '500',
-                                    cursor: 'pointer',
-                                    transition: 'all 0.2s ease',
-                                    width: '100%'
-                                }}
-                                onMouseEnter={(e) => {
-                                    e.target.style.color = '#005a8a';
-                                }}
-                                onMouseLeave={(e) => {
-                                    e.target.style.color = '#00416A';
-                                }}
-                            >
-                                {item.text}
-                            </a>
-                        </div>
-                    ))}
-                </div>
-            </div>
-
             {/* Playwright Introduction Section */}
             <div style={{
                 ...cardStyle,
                 marginBottom: '48px'
             }}>
-                <h2 id="intro-what-is" style={{ 
-                    color: '#00416A', 
-                    fontSize: '28px', 
-                    marginBottom: '20px',
-                    fontWeight: '700',
-                    textAlign: 'left',
-                    scrollMarginTop: '100px',
-                    transition: 'background-color 0.3s ease'
-                }}>
-                    What is Playwright?
-                </h2>
-                
-                <div style={{ marginBottom: '24px' }}>
+                <div
+                    onClick={toggleWhatIsPlaywright}
+                    style={{
+                        cursor: 'pointer',
+                        display: 'flex',
+                        justifyContent: 'space-between',
+                        alignItems: 'center',
+                        marginBottom: isWhatIsPlaywrightExpanded ? '24px' : '0',
+                        paddingBottom: isWhatIsPlaywrightExpanded ? '20px' : '0',
+                        borderBottom: isWhatIsPlaywrightExpanded ? '3px solid #667eea' : 'none',
+                        transition: 'all 0.3s ease'
+                    }}
+                    onMouseEnter={(e) => {
+                        if (!isWhatIsPlaywrightExpanded) {
+                            e.currentTarget.style.backgroundColor = '#f0f7fa';
+                        }
+                    }}
+                    onMouseLeave={(e) => {
+                        if (!isWhatIsPlaywrightExpanded) {
+                            e.currentTarget.style.backgroundColor = 'transparent';
+                        }
+                    }}
+                >
+                    <h2 id="intro-what-is" style={{ 
+                        color: '#1e293b', 
+                        fontSize: '28px', 
+                        marginBottom: 0,
+                        fontWeight: '700',
+                        textAlign: 'left',
+                        scrollMarginTop: '100px',
+                        transition: 'background-color 0.3s ease',
+                        margin: 0,
+                        letterSpacing: '-0.02em'
+                    }}>
+                        Getting Started
+                    </h2>
+                    <span style={{
+                        fontSize: '32px',
+                        color: '#667eea',
+                        fontWeight: 'bold',
+                        marginLeft: '20px',
+                        flexShrink: 0,
+                        transition: 'transform 0.3s ease'
+                    }}>
+                        {isWhatIsPlaywrightExpanded ? '−' : '+'}
+                    </span>
+                </div>
+
+                {isWhatIsPlaywrightExpanded && (
+                    <div>
+                        <div style={{ marginBottom: '24px' }}>
                     <p style={{ 
-                        fontSize: '16px', 
+                        fontSize: '17px', 
                         color: '#475569',
-                        lineHeight: '1.8',
-                        marginBottom: '16px',
+                        lineHeight: '1.9',
+                        marginBottom: '18px',
                         textAlign: 'left'
                     }}>
                         <strong>Playwright Test</strong> is an end-to-end test framework for modern web apps. It bundles test runner, assertions, isolation, parallelization and rich tooling. Playwright supports <strong>Chromium, WebKit and Firefox</strong> on Windows, Linux and macOS, locally or in CI, headless or headed, with native mobile emulation for Chrome (Android) and Mobile Safari.
@@ -725,9 +751,11 @@ npx playwright install --with-deps`}
                         margin: 0,
                         textAlign: 'left'
                     }}>
-                        <strong>Learn more:</strong> Visit the official <a href="https://playwright.dev/docs/intro" target="_blank" rel="noopener noreferrer" style={{ color: '#00416A', textDecoration: 'none', borderBottom: '1px solid #00416A' }}>Playwright Documentation</a> for comprehensive guides, API references, and best practices.
+                        <strong>Learn more:</strong> Visit the official <a href="https://playwright.dev/docs/intro" target="_blank" rel="noopener noreferrer" style={{ color: '#667eea', textDecoration: 'none', borderBottom: '2px solid #667eea', fontWeight: '500', transition: 'all 0.2s ease' }}>Playwright Documentation</a> for comprehensive guides, API references, and best practices.
                     </p>
                 </div>
+                    </div>
+                )}
             </div>
 
             {/* Playwright TS Course Checklist Section */}
@@ -1136,14 +1164,6 @@ test.describe("E2E: Purchase Flow", () => {
                     </div>
                 )}
             </div>
-
-            {/* Additional PDF Download Section */}
-            <PdfDownload
-                pdfPath="Playwright_TS_Hooks_Checklist_Handout.pdf"
-                title="📥 Download Playwright Hooks & Checklist Handout"
-                description="Download the complete Playwright TypeScript Hooks & Checklist handout"
-                downloadFileName="Playwright_TS_Hooks_Checklist_Handout.pdf"
-            />
 
             {/* Playwright Fixtures Package Section */}
             <div style={{
@@ -4283,8 +4303,315 @@ export class DashboardPage {
                 )}
             </div>
 
-            <div>
+            {/* Playwright Guides & Resources - Grid Layout */}
+            <div style={{
+                ...cardStyle,
+                marginBottom: '32px'
+            }}>
+                <h3 style={{ 
+                    color: '#00416A', 
+                    fontSize: '24px', 
+                    marginBottom: '24px',
+                    fontWeight: '600',
+                    textAlign: 'left',
+                    display: 'block',
+                    width: '100%',
+                    paddingBottom: '8px',
+                    borderBottom: '2px solid #e9ecef'
+                }}>
+                    📚 Playwright Guides & Resources
+                </h3>
+                <div style={{
+                    display: 'grid',
+                    gridTemplateColumns: 'repeat(auto-fit, minmax(300px, 1fr))',
+                    gap: '20px'
+                }}>
+                    {/* Naming Conventions Card */}
+                    <Link
+                        to="/apis/playwright/naming-conventions"
+                        style={{
+                            textDecoration: 'none',
+                            color: 'inherit'
+                        }}
+                    >
+                        <div style={{
+                            backgroundColor: '#ffffff',
+                            borderRadius: '12px',
+                            padding: '20px',
+                            border: '1px solid #e2e8f0',
+                            textAlign: 'left',
+                            transition: 'all 0.3s cubic-bezier(0.4, 0, 0.2, 1)',
+                            cursor: 'pointer',
+                            height: '100%',
+                            display: 'flex',
+                            flexDirection: 'column',
+                            boxShadow: '0 1px 3px rgba(0, 0, 0, 0.08)'
+                        }}
+                        onMouseEnter={(e) => {
+                            e.currentTarget.style.borderColor = colors.primary;
+                            e.currentTarget.style.transform = 'translateY(-4px)';
+                            e.currentTarget.style.boxShadow = '0 8px 16px rgba(0, 65, 106, 0.2)';
+                        }}
+                        onMouseLeave={(e) => {
+                            e.currentTarget.style.borderColor = '#e2e8f0';
+                            e.currentTarget.style.transform = 'translateY(0)';
+                            e.currentTarget.style.boxShadow = '0 1px 3px rgba(0, 0, 0, 0.08)';
+                        }}
+                        >
+                            <div style={{
+                                fontSize: '28px',
+                                marginBottom: '12px',
+                                textAlign: 'center'
+                            }}>
+                                📝
+                            </div>
+                            <h4 style={{ 
+                                marginBottom: '12px',
+                                color: '#1e293b',
+                                fontSize: '18px',
+                                fontWeight: '600',
+                                textAlign: 'left'
+                            }}>
+                                Naming Convention & Coding Best Practice
+                            </h4>
+                            <p style={{
+                                marginBottom: '16px',
+                                color: '#475569',
+                                fontSize: '13px',
+                                lineHeight: '1.6',
+                                textAlign: 'left',
+                                flex: '1'
+                            }}>
+                                Complete guide to GITS Playwright TypeScript naming conventions, coding best practices, and standards for readable, maintainable automation code.
+                            </p>
+                            <div style={{
+                                display: 'inline-flex',
+                                alignItems: 'center',
+                                color: colors.primary,
+                                fontSize: '13px',
+                                fontWeight: '600',
+                                marginTop: 'auto'
+                            }}>
+                                View Guide →
+                            </div>
+                        </div>
+                    </Link>
+
+                    {/* PR Review Checklist Card */}
+                    <Link
+                        to="/apis/playwright/pr-review-checklist"
+                        style={{
+                            textDecoration: 'none',
+                            color: 'inherit'
+                        }}
+                    >
+                        <div style={{
+                            backgroundColor: '#ffffff',
+                            borderRadius: '12px',
+                            padding: '20px',
+                            border: '1px solid #e2e8f0',
+                            textAlign: 'left',
+                            transition: 'all 0.3s cubic-bezier(0.4, 0, 0.2, 1)',
+                            cursor: 'pointer',
+                            height: '100%',
+                            display: 'flex',
+                            flexDirection: 'column',
+                            boxShadow: '0 1px 3px rgba(0, 0, 0, 0.08)'
+                        }}
+                        onMouseEnter={(e) => {
+                            e.currentTarget.style.borderColor = colors.primary;
+                            e.currentTarget.style.transform = 'translateY(-4px)';
+                            e.currentTarget.style.boxShadow = '0 8px 16px rgba(0, 65, 106, 0.2)';
+                        }}
+                        onMouseLeave={(e) => {
+                            e.currentTarget.style.borderColor = '#e2e8f0';
+                            e.currentTarget.style.transform = 'translateY(0)';
+                            e.currentTarget.style.boxShadow = '0 1px 3px rgba(0, 0, 0, 0.08)';
+                        }}
+                        >
+                            <div style={{
+                                fontSize: '28px',
+                                marginBottom: '12px',
+                                textAlign: 'center'
+                            }}>
+                                ✅
+                            </div>
+                            <h4 style={{ 
+                                marginBottom: '12px',
+                                color: '#1e293b',
+                                fontSize: '18px',
+                                fontWeight: '600',
+                                textAlign: 'left'
+                            }}>
+                                PR Review Checklist (MANDATORY)
+                            </h4>
+                            <p style={{
+                                marginBottom: '16px',
+                                color: '#475569',
+                                fontSize: '13px',
+                                lineHeight: '1.6',
+                                textAlign: 'left',
+                                flex: '1'
+                            }}>
+                                Complete checklist for reviewers to validate before approving PRs. Covers test structure, tags, locators, POM rules, test independence, quality gates, and documentation standards.
+                            </p>
+                            <div style={{
+                                display: 'inline-flex',
+                                alignItems: 'center',
+                                color: colors.primary,
+                                fontSize: '13px',
+                                fontWeight: '600',
+                                marginTop: 'auto'
+                            }}>
+                                View Checklist →
+                            </div>
+                        </div>
+                    </Link>
+
+                    {/* Test Type Taxonomy Card */}
+                    <Link
+                        to="/apis/playwright/test-type-taxonomy"
+                        style={{
+                            textDecoration: 'none',
+                            color: 'inherit'
+                        }}
+                    >
+                        <div style={{
+                            backgroundColor: '#ffffff',
+                            borderRadius: '12px',
+                            padding: '20px',
+                            border: '1px solid #e2e8f0',
+                            textAlign: 'left',
+                            transition: 'all 0.3s cubic-bezier(0.4, 0, 0.2, 1)',
+                            cursor: 'pointer',
+                            height: '100%',
+                            display: 'flex',
+                            flexDirection: 'column',
+                            boxShadow: '0 1px 3px rgba(0, 0, 0, 0.08)'
+                        }}
+                        onMouseEnter={(e) => {
+                            e.currentTarget.style.borderColor = colors.primary;
+                            e.currentTarget.style.transform = 'translateY(-4px)';
+                            e.currentTarget.style.boxShadow = '0 8px 16px rgba(0, 65, 106, 0.2)';
+                        }}
+                        onMouseLeave={(e) => {
+                            e.currentTarget.style.borderColor = '#e2e8f0';
+                            e.currentTarget.style.transform = 'translateY(0)';
+                            e.currentTarget.style.boxShadow = '0 1px 3px rgba(0, 0, 0, 0.08)';
+                        }}
+                        >
+                            <div style={{
+                                fontSize: '28px',
+                                marginBottom: '12px',
+                                textAlign: 'center'
+                            }}>
+                                🏷️
+                            </div>
+                            <h4 style={{ 
+                                marginBottom: '12px',
+                                color: '#1e293b',
+                                fontSize: '18px',
+                                fontWeight: '600',
+                                textAlign: 'left'
+                            }}>
+                                Test Type Taxonomy & Tagging Standards
+                            </h4>
+                            <p style={{
+                                marginBottom: '16px',
+                                color: '#475569',
+                                fontSize: '13px',
+                                lineHeight: '1.6',
+                                textAlign: 'left',
+                                flex: '1'
+                            }}>
+                                Complete guide to GITS test type taxonomy, tagging standards, and how to properly categorize and tag your Playwright tests for better organization and execution control.
+                            </p>
+                            <div style={{
+                                display: 'inline-flex',
+                                alignItems: 'center',
+                                color: colors.primary,
+                                fontSize: '13px',
+                                fontWeight: '600',
+                                marginTop: 'auto'
+                            }}>
+                                View Guide →
+                            </div>
+                        </div>
+                    </Link>
+
+                    {/* Automation Standards Card */}
+                    <Link
+                        to="/apis/playwright/automation-standards"
+                        style={{
+                            textDecoration: 'none',
+                            color: 'inherit'
+                        }}
+                    >
+                        <div style={{
+                            backgroundColor: '#ffffff',
+                            borderRadius: '12px',
+                            padding: '20px',
+                            border: '1px solid #e2e8f0',
+                            textAlign: 'left',
+                            transition: 'all 0.3s cubic-bezier(0.4, 0, 0.2, 1)',
+                            cursor: 'pointer',
+                            height: '100%',
+                            display: 'flex',
+                            flexDirection: 'column',
+                            boxShadow: '0 1px 3px rgba(0, 0, 0, 0.08)'
+                        }}
+                        onMouseEnter={(e) => {
+                            e.currentTarget.style.borderColor = colors.primary;
+                            e.currentTarget.style.transform = 'translateY(-4px)';
+                            e.currentTarget.style.boxShadow = '0 8px 16px rgba(0, 65, 106, 0.2)';
+                        }}
+                        onMouseLeave={(e) => {
+                            e.currentTarget.style.borderColor = '#e2e8f0';
+                            e.currentTarget.style.transform = 'translateY(0)';
+                            e.currentTarget.style.boxShadow = '0 1px 3px rgba(0, 0, 0, 0.08)';
+                        }}
+                        >
+                            <div style={{
+                                fontSize: '28px',
+                                marginBottom: '12px',
+                                textAlign: 'center'
+                            }}>
+                                📋
+                            </div>
+                            <h4 style={{ 
+                                marginBottom: '12px',
+                                color: '#1e293b',
+                                fontSize: '18px',
+                                fontWeight: '600',
+                                textAlign: 'left'
+                            }}>
+                                Automation Standards
+                            </h4>
+                            <p style={{
+                                marginBottom: '16px',
+                                color: '#475569',
+                                fontSize: '13px',
+                                lineHeight: '1.6',
+                                textAlign: 'left',
+                                flex: '1'
+                            }}>
+                                Complete GITS Playwright TypeScript automation standards covering project setup, structure, architecture, naming conventions, test writing practices, test types, CI/CD, and governance.
+                            </p>
+                            <div style={{
+                                display: 'inline-flex',
+                                alignItems: 'center',
+                                color: colors.primary,
+                                fontSize: '13px',
+                                fontWeight: '600',
+                                marginTop: 'auto'
+                            }}>
+                                View Standards →
+                            </div>
+                        </div>
+                    </Link>
+                </div>
             </div>
+
             <section style={{ marginTop: '48px' }}>
                 <Footer />
             </section>

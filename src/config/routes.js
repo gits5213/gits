@@ -85,6 +85,12 @@ const PrivacyPolicy = lazy(() => import('../pages/privacyPolicy'));
 const CopyrightNotice = lazy(() => import('../pages/copyrightNotice'));
 const WebsiteDisclaimer = lazy(() => import('../pages/websiteDisclaimer'));
 
+// Playwright sub-pages - lazy loaded
+const NamingConventions = lazy(() => import('../pages/playwright/NamingConventions'));
+const PRReviewChecklist = lazy(() => import('../pages/playwright/PRReviewChecklist'));
+const TestTypeTaxonomy = lazy(() => import('../pages/playwright/TestTypeTaxonomy'));
+const AutomationStandards = lazy(() => import('../pages/playwright/AutomationStandards'));
+
 // Route configuration array for easier maintenance
 export const routes = [
   // Landing
@@ -120,6 +126,11 @@ export const routes = [
   // APIs
   { path: '/apis', exact: true, component: APIS },
   { path: '/apis/selenium', component: APIS },
+  // Playwright sub-pages (must come before /apis/playwright)
+  { path: '/apis/playwright/naming-conventions', component: NamingConventions },
+  { path: '/apis/playwright/pr-review-checklist', component: PRReviewChecklist },
+  { path: '/apis/playwright/test-type-taxonomy', component: TestTypeTaxonomy },
+  { path: '/apis/playwright/automation-standards', component: AutomationStandards },
   { path: '/apis/playwright', component: APIS },
   { path: '/apis/cypressio', component: APIS },
   { path: '/apis/protractor', component: APIS },
