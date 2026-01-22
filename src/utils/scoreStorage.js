@@ -1,159 +1,92 @@
 // Score Storage Service
-// Handles saving and loading exam scores from both localStorage and Firebase
-// Falls back to localStorage if Firebase is not configured
+// Handles saving and loading exam scores from both localStorage and Google Sheets
+// Falls back to localStorage if Google Sheets is not configured
 
-import firebaseConfig, { isFirebaseConfigured } from './firebaseConfig';
+import { WEB_APP_URL, isGoogleSheetsConfigured } from './googleSheetsConfig';
 
-let firestore = null;
-let firebaseInitialized = false;
-let firebaseApp = null;
-
-// Initialize Firebase if configured
-const initializeFirebase = async () => {
-  if (firebaseInitialized) return firebaseInitialized;
-  
-  try {
-    if (!isFirebaseConfigured()) {
-      firebaseInitialized = false;
-      return false;
-    }
-
-    // Check if Firebase package is available
-    // Use dynamic import with error handling
-    let firebase, getFirestore;
-    try {
-      const firebaseAppModule = await import('firebase/app');
-      const firestoreModule = await import('firebase/firestore');
-      firebase = firebaseAppModule.default || firebaseAppModule;
-      getFirestore = firestoreModule.getFirestore;
-      
-      if (!getFirestore) {
-        throw new Error('Firebase Firestore not available');
-      }
-    } catch (importError) {
-      console.warn('Firebase package not installed. Install with: npm install firebase', importError);
-      firebaseInitialized = false;
-      return false;
-    }
-    
-    if (!firebase.apps || firebase.apps.length === 0) {
-      firebaseApp = firebase.initializeApp(firebaseConfig);
-    } else {
-      firebaseApp = firebase.apps[0];
-    }
-    
-    firestore = getFirestore(firebaseApp);
-    firebaseInitialized = true;
-    console.log('Firebase initialized successfully');
-    return true;
-  } catch (error) {
-    console.warn('Firebase not available, using localStorage only:', error.message || error);
-    firebaseInitialized = false;
-    return false;
-  }
-};
-
-// Save exam result to both localStorage and Firebase
+// Save exam result to both localStorage and Google Sheets
 export const saveExamResult = async (examId, studentInfo, examResult) => {
   // Always save to localStorage for backward compatibility
   localStorage.setItem(`examResult_${examId}`, JSON.stringify(examResult));
   localStorage.setItem(`examTaken_${examId}`, 'true');
   localStorage.setItem(`studentInfo_${examId}`, JSON.stringify(studentInfo));
 
-  // Try to save to Firebase if configured
-  try {
-    const initialized = await initializeFirebase();
-    if (initialized && firestore) {
-      let serverTimestamp, collection, addDoc;
-      try {
-        const firestoreModule = await import('firebase/firestore');
-        serverTimestamp = firestoreModule.serverTimestamp;
-        collection = firestoreModule.collection;
-        addDoc = firestoreModule.addDoc;
-      } catch (importError) {
-        console.warn('Firebase Firestore module not available');
-        return; // Exit early if Firebase modules can't be imported
-      }
-      
-      const resultData = {
-        examId,
-        examName: examResult.examName || `Exam-${examId}`,
-        examTitle: examResult.examTitle || '',
-        firstName: studentInfo.firstName || '',
-        middleName: studentInfo.middleName || '',
-        lastName: studentInfo.lastName || '',
-        companyName: studentInfo.companyName || '',
-        instructorName: studentInfo.instructorName || '',
-        score: examResult.score || 0,
-        timeElapsed: examResult.timeElapsed || 0,
-        submittedAt: examResult.submittedAt || new Date().toISOString(),
-        totalQuestions: examResult.totalQuestions || 0,
-        createdAt: serverTimestamp()
-      };
+  // Try to save to Google Sheets if configured
+  if (!isGoogleSheetsConfigured()) {
+    console.log('Google Sheets not configured, using localStorage only');
+    return;
+  }
 
-      await addDoc(collection(firestore, 'examResults'), resultData);
-      console.log('Exam result saved to Firebase');
+  try {
+    const resultData = {
+      examId,
+      examName: examResult.examName || `Exam-${examId}`,
+      examTitle: examResult.examTitle || '',
+      firstName: studentInfo.firstName || '',
+      middleName: studentInfo.middleName || '',
+      lastName: studentInfo.lastName || '',
+      companyName: studentInfo.companyName || '',
+      instructorName: studentInfo.instructorName || '',
+      score: examResult.score || 0,
+      timeElapsed: examResult.timeElapsed || 0,
+      submittedAt: examResult.submittedAt || new Date().toISOString(),
+      totalQuestions: examResult.totalQuestions || 0
+    };
+
+    // Send to Google Apps Script web app
+    const response = await fetch(WEB_APP_URL, {
+      method: 'POST',
+      headers: {
+        'Content-Type': 'application/json',
+      },
+      body: JSON.stringify({
+        action: 'save',
+        data: resultData
+      })
+    });
+
+    if (response.ok) {
+      console.log('✅ Exam result saved to Google Sheets');
+    } else {
+      throw new Error(`HTTP error! status: ${response.status}`);
     }
   } catch (error) {
-    console.error('Error saving to Firebase (using localStorage only):', error);
+    console.error('❌ Error saving to Google Sheets (using localStorage only):', error);
     // Continue with localStorage only - don't throw error
   }
 };
 
-// Load exam results from Firebase and localStorage
+// Load exam results from Google Sheets and localStorage
 export const loadExamResults = async () => {
   const results = [];
   
-  // First, try to load from Firebase if configured
-  try {
-    const initialized = await initializeFirebase();
-    if (initialized && firestore) {
-      let collection, query, orderBy, getDocs;
-      try {
-        const firestoreModule = await import('firebase/firestore');
-        collection = firestoreModule.collection;
-        query = firestoreModule.query;
-        orderBy = firestoreModule.orderBy;
-        getDocs = firestoreModule.getDocs;
-      } catch (importError) {
-        console.warn('Firebase Firestore module not available');
-        // Fall through to localStorage
+  // First, try to load from Google Sheets if configured
+  if (isGoogleSheetsConfigured()) {
+    try {
+      const response = await fetch(`${WEB_APP_URL}?action=load`, {
+        method: 'GET',
+        headers: {
+          'Content-Type': 'application/json',
+        }
+      });
+
+      if (response.ok) {
+        const data = await response.json();
+        if (data.success && Array.isArray(data.results)) {
+          console.log(`✅ Loaded ${data.results.length} results from Google Sheets`);
+          return data.results.map(result => ({
+            ...result,
+            source: 'googlesheets'
+          }));
+        }
       }
-      
-      if (collection && query && orderBy && getDocs) {
-        const q = query(collection(firestore, 'examResults'), orderBy('submittedAt', 'desc'));
-        const snapshot = await getDocs(q);
-        
-        snapshot.forEach(doc => {
-          const data = doc.data();
-          results.push({
-            id: doc.id,
-            examId: data.examId,
-            examName: data.examName,
-            examTitle: data.examTitle,
-            firstName: data.firstName || '',
-            middleName: data.middleName || '',
-            lastName: data.lastName || '',
-            companyName: data.companyName || '',
-            instructorName: data.instructorName || '',
-            score: data.score || 0,
-            timeElapsed: data.timeElapsed || 0,
-            submittedAt: data.submittedAt || new Date().toISOString(),
-            totalQuestions: data.totalQuestions || 0,
-            source: 'firebase'
-          });
-        });
-        
-        console.log(`Loaded ${results.length} results from Firebase`);
-        return results;
-      }
+    } catch (error) {
+      console.error('❌ Error loading from Google Sheets:', error);
+      console.warn('Falling back to localStorage');
     }
-  } catch (error) {
-    console.warn('Error loading from Firebase, falling back to localStorage:', error);
   }
 
   // Fallback to localStorage
-  // This code matches the existing Scorecard logic
   const examDataMap = await import('../utilities/data/examData');
   const { exam1Data, exam2Data, exam3Data, exam4Data, exam5Data, exam6Data, exam7Data, exam8Data, exam9Data, exam10Data, exam11Data, exam12Data, exam13Data, exam14Data, exam15Data, exam16Data, exam17Data } = examDataMap;
   
@@ -205,36 +138,32 @@ export const loadExamResults = async () => {
   return results;
 };
 
-// Delete exam result (from both localStorage and Firebase)
-export const deleteExamResult = async (examId, firebaseDocId = null) => {
+// Delete exam result (from both localStorage and Google Sheets)
+export const deleteExamResult = async (examId, sheetRowId = null) => {
   // Delete from localStorage
   localStorage.removeItem(`examTaken_${examId}`);
   localStorage.removeItem(`studentInfo_${examId}`);
   localStorage.removeItem(`examResult_${examId}`);
 
-  // Delete from Firebase if docId provided
-  if (firebaseDocId) {
+  // Delete from Google Sheets if configured and rowId provided
+  if (sheetRowId && isGoogleSheetsConfigured()) {
     try {
-      const initialized = await initializeFirebase();
-      if (initialized && firestore) {
-        let collection, doc, deleteDoc;
-        try {
-          const firestoreModule = await import('firebase/firestore');
-          collection = firestoreModule.collection;
-          doc = firestoreModule.doc;
-          deleteDoc = firestoreModule.deleteDoc;
-        } catch (importError) {
-          console.warn('Firebase Firestore module not available');
-          return; // Exit early
-        }
-        
-        if (collection && doc && deleteDoc) {
-          await deleteDoc(doc(collection(firestore, 'examResults'), firebaseDocId));
-          console.log('Deleted from Firebase');
-        }
+      const response = await fetch(WEB_APP_URL, {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify({
+          action: 'delete',
+          rowId: sheetRowId
+        })
+      });
+
+      if (response.ok) {
+        console.log('Deleted from Google Sheets');
       }
     } catch (error) {
-      console.error('Error deleting from Firebase:', error);
+      console.error('Error deleting from Google Sheets:', error);
     }
   }
 };
@@ -248,32 +177,24 @@ export const deleteAllExamResults = async () => {
     localStorage.removeItem(`examResult_${examId}`);
   }
 
-  // Delete all from Firebase
-  try {
-    const initialized = await initializeFirebase();
-    if (initialized && firestore) {
-      let collection, getDocs, writeBatch;
-      try {
-        const firestoreModule = await import('firebase/firestore');
-        collection = firestoreModule.collection;
-        getDocs = firestoreModule.getDocs;
-        writeBatch = firestoreModule.writeBatch;
-      } catch (importError) {
-        console.warn('Firebase Firestore module not available');
-        return; // Exit early
+  // Delete all from Google Sheets if configured
+  if (isGoogleSheetsConfigured()) {
+    try {
+      const response = await fetch(WEB_APP_URL, {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify({
+          action: 'deleteAll'
+        })
+      });
+
+      if (response.ok) {
+        console.log('Deleted all from Google Sheets');
       }
-      
-      if (collection && getDocs && writeBatch) {
-        const snapshot = await getDocs(collection(firestore, 'examResults'));
-        const batch = writeBatch(firestore);
-        snapshot.forEach(docSnapshot => {
-          batch.delete(docSnapshot.ref);
-        });
-        await batch.commit();
-        console.log('Deleted all from Firebase');
-      }
+    } catch (error) {
+      console.error('Error deleting all from Google Sheets:', error);
     }
-  } catch (error) {
-    console.error('Error deleting all from Firebase:', error);
   }
 };

@@ -170,7 +170,7 @@ class Scorecard extends Component {
     deleteResult = async (result) => {
         if (window.confirm('Are you sure you want to delete this exam result? This action cannot be undone.')) {
             try {
-                // result.id is the Firebase document ID if it came from Firebase
+                // result.id is the Google Sheets row ID if it came from Google Sheets
                 await deleteExamResult(result.examId, result.id || null);
                 this.loadResults();
             } catch (error) {

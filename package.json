@@ -11,9 +11,8 @@
     "@testing-library/user-event": "7.2.1",
     "cache": "^3.0.0",
     "clean": "^4.0.2",
-    "firebase": "^9.23.0",
     "font-awesome": "4.7.0",
-    "jspdf": "^2.5.1",
+    "jspdf": "^2.5.2",
     "react": "16.13.1",
     "react-dom": "16.13.1",
     "react-helmet": "6.1.0",
@@ -56,6 +55,7 @@
   },
   "overrides": {
     "nth-check": "^2.1.1",
-    "postcss": "^8.4.31"
+    "postcss": "^8.4.31",
+    "dompurify": "^3.0.8"
   }
 }
