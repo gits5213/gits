@@ -33,22 +33,47 @@ export const saveExamResult = async (examId, studentInfo, examResult) => {
       totalQuestions: examResult.totalQuestions || 0
     };
 
-    // Send to Google Apps Script web app
-    const response = await fetch(WEB_APP_URL, {
-      method: 'POST',
-      headers: {
-        'Content-Type': 'application/json',
-      },
-      body: JSON.stringify({
-        action: 'save',
-        data: resultData
-      })
+    // Send to Google Apps Script web app using URL-encoded form data to avoid CORS preflight
+    // This avoids the OPTIONS preflight request that causes 405 errors
+    const formData = new URLSearchParams();
+    formData.append('action', 'save');
+    formData.append('data', JSON.stringify(resultData));
+
+    console.log('📤 Sending to Google Sheets:', {
+      url: WEB_APP_URL,
+      action: 'save',
+      data: resultData
     });
 
+    const response = await fetch(WEB_APP_URL, {
+      method: 'POST',
+      body: formData,
+      redirect: 'follow' // Explicitly follow redirects (this is default, but being explicit)
+    });
+
+    console.log('📥 Response status:', response.status, response.statusText);
+    console.log('📥 Response URL:', response.url);
+    console.log('📥 Response headers:', Object.fromEntries(response.headers.entries()));
+
+    // Get response text first to see what we're dealing with
+    const responseText = await response.text();
+    console.log('📥 Response text:', responseText.substring(0, 500));
+
     if (response.ok) {
-      console.log('✅ Exam result saved to Google Sheets');
+      try {
+        const result = JSON.parse(responseText);
+        console.log('✅ Exam result saved to Google Sheets', result);
+        if (!result.success) {
+          console.error('❌ Google Sheets returned error:', result.error);
+        }
+      } catch (parseError) {
+        console.error('❌ Failed to parse JSON response:', parseError);
+        console.error('❌ Response was:', responseText);
+        throw new Error(`Invalid JSON response: ${parseError.message}`);
+      }
     } else {
-      throw new Error(`HTTP error! status: ${response.status}`);
+      console.error('❌ HTTP error response:', responseText);
+      throw new Error(`HTTP error! status: ${response.status}, ${responseText.substring(0, 200)}`);
     }
   } catch (error) {
     console.error('❌ Error saving to Google Sheets (using localStorage only):', error);
