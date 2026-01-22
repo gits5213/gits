@@ -1,6 +1,6 @@
 // Google Sheets Configuration
 // Google Apps Script Web App URL (deployed as web app)
-export const WEB_APP_URL = "https://script.google.com/macros/s/AKfycbxJVakLln4qGc83EcvfS3ggytHK80wMtJCAvCYZLJN9YcYggaNDF6Cry3V6ZcrqLmYAcg/exec";
+export const WEB_APP_URL = "https://script.google.com/macros/s/AKfycbyWwjMoy8qKnaYxbRUYOvaaUJqXG50q7dY98SWGaSr1AH99-pMle-RxfMZYsTfMQqRn8w/exec";
 
 
 // Check if Google Sheets is configured
