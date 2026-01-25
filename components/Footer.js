@@ -20,6 +20,8 @@ const Footer = () => {
       externalLinks: [
         { href: 'https://gitsics.com/contact/', label: 'Contact Us' },
         { href: 'https://us06web.zoom.us/j/9803798160', label: 'Zoom Meeting' },
+        { href: 'https://mdszaman.com/', label: "MD's Portfolio" },
+        { href: 'https://github.com/gits5213/gits5213/blob/master/README.md', label: "MD's Github" },
       ],
     },
     courses: {

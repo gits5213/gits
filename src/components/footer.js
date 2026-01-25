@@ -291,6 +291,30 @@ const Footer = () => {
                             </li>
                             <li>
                                 <a 
+                                    href="https://mdszaman.com/"
+                                    target="_blank"
+                                    rel="noopener noreferrer"
+                                    style={linkStyle}
+                                    onMouseEnter={handleLinkHover}
+                                    onMouseLeave={handleLinkLeave}
+                                >
+                                    MD's Portfolio
+                                </a>
+                            </li>
+                            <li>
+                                <a 
+                                    href="https://github.com/gits5213/gits5213/blob/master/README.md"
+                                    target="_blank"
+                                    rel="noopener noreferrer"
+                                    style={linkStyle}
+                                    onMouseEnter={handleLinkHover}
+                                    onMouseLeave={handleLinkLeave}
+                                >
+                                    MD's Github
+                                </a>
+                            </li>
+                            <li>
+                                <a 
                                     href={link.QUESTIONS} 
                                     target="_blank" 
                                     rel="noopener noreferrer"

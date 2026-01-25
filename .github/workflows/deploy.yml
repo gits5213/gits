@@ -41,8 +41,8 @@ jobs:
       - name: Ensure CNAME file exists for custom domain
         if: vars.CUSTOM_DOMAIN == 'True'
         run: |
-          if [ ! -f build/CNAME ]; then
-            echo "gitsuniversity.org" > build/CNAME
+          if [ ! -f out/CNAME ]; then
+            echo "gitsuniversity.org" > out/CNAME
           fi
         
       - name: Setup Pages
@@ -51,7 +51,7 @@ jobs:
       - name: Upload artifact
         uses: actions/upload-pages-artifact@v3
         with:
-          path: './build'
+          path: './out'
           
       - name: Deploy to GitHub Pages
         id: deployment
