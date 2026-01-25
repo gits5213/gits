@@ -15,12 +15,23 @@ class TestCases extends Component {
     }
 
     toggleSection = (sectionId) => {
+        const isExpanding = !this.state.expandedSections[sectionId];
         this.setState(prevState => ({
             expandedSections: {
                 ...prevState.expandedSections,
                 [sectionId]: !prevState.expandedSections[sectionId]
             }
-        }));
+        }), () => {
+            // Scroll to expanded section after state update
+            if (isExpanding) {
+                setTimeout(() => {
+                    const element = document.getElementById(`test-case-section-${sectionId}`);
+                    if (element) {
+                        element.scrollIntoView({ behavior: 'smooth', block: 'start' });
+                    }
+                }, 100);
+            }
+        });
     }
 
     // Map section IDs to their position in PracticeExamples (matching the numbering)
@@ -6722,295 +6733,470 @@ class TestCases extends Component {
                         )}
                     </div>
 
-                    {/* Test Cases List - Organized by Sections */}
-                    <div style={testCaseStyles.testCasesList}>
-                        {(() => {
-                            // Sort sections according to sectionOrder to ensure sequential numbering
-                            const sectionOrder = [
-                                'registration-form', 'e2e-flow', 'ab-testing', 'add-remove-elements',
-                                'basic-auth', 'broken-images', 'challenging-dom', 'checkboxes',
-                                'context-menu', 'digest-auth', 'disappearing-elements', 'drag-and-drop',
-                                'dropdown', 'dynamic-content', 'dynamic-controls', 'dynamic-loading',
-                                'entry-ad', 'exit-intent', 'file-download', 'file-upload',
-                                'floating-menu', 'forgot-password', 'form-authentication', 'frames',
-                                'geolocation', 'horizontal-slider', 'hovers', 'infinite-scroll',
-                                'inputs', 'jquery-ui-menus', 'javascript-alerts', 'javascript-error',
-                                'key-presses', 'large-deep-dom', 'multiple-windows', 'nested-frames',
-                                'notification-messages', 'redirect-link', 'secure-file-download', 'shadow-dom',
-                                'shifting-content', 'slow-resources', 'sortable-data-tables', 'status-codes',
-                                'typos', 'wysiwyg-editor'
-                            ];
-                            return sectionOrder
-                                .map(id => testCasesSections[id])
-                                .filter(section => section !== undefined);
-                        })().map((section, index, sortedSectionsArray) => {
-                            const isFirst = index === 0;
-                            const isLast = index === sortedSectionsArray.length - 1;
-                            const sectionNumber = index + 1; // Sequential numbering starting from 1
-                            return (
-                            <div key={section.id} style={{ marginBottom: '0' }}>
-                                {/* Section Header */}
-                                <div
-                                    onClick={() => this.toggleSection(section.id)}
-                                    role="button"
-                                    tabIndex={0}
-                                    aria-label={this.state.expandedSections[section.id] ? `Collapse ${section.title}` : `Expand ${section.title}`}
-                                    aria-expanded={this.state.expandedSections[section.id]}
-                                    onKeyDown={(e) => {
-                                        if (e.key === 'Enter' || e.key === ' ') {
-                                            e.preventDefault();
-                                            this.toggleSection(section.id);
-                                        }
-                                    }}
-                                    style={{
-                                        backgroundColor: '#e7f3ff',
-                                        borderLeft: '2px solid #00416A',
-                                        borderRight: '2px solid #00416A',
-                                        borderTop: isFirst ? '2px solid #00416A' : 'none',
-                                        borderBottom: 'none',
-                                        borderRadius: isFirst ? '8px 8px 0 0' : '0',
-                                        padding: '20px',
-                                        marginBottom: '0',
-                                        cursor: 'pointer',
-                                        display: 'flex',
-                                        justifyContent: 'space-between',
-                                        alignItems: 'center',
-                                        transition: 'background-color 0.3s ease'
-                                    }}
-                                    onMouseEnter={(e) => {
-                                        e.currentTarget.style.backgroundColor = '#d1e7ff';
-                                    }}
-                                    onMouseLeave={(e) => {
-                                        if (!this.state.expandedSections[section.id]) {
-                                            e.currentTarget.style.backgroundColor = '#e7f3ff';
-                                        }
-                                    }}
-                                >
-                                    <div style={{ flex: 1 }}>
-                                        <div style={{ display: 'flex', alignItems: 'flex-start', gap: '10px', marginBottom: '8px' }}>
-                                            <span style={{
-                                                color: '#00416A',
-                                                fontWeight: 'bold',
-                                                fontSize: '24px',
-                                                minWidth: '35px',
-                                                flexShrink: 0,
-                                                lineHeight: '1.2'
-                                            }}>
-                                                {sectionNumber}.
-                                            </span>
-                                            <h2 style={{
-                                                color: '#00416A',
-                                                fontSize: '24px',
-                                                margin: 0,
+                    {/* Test Cases List - Tabular Format */}
+                    <div style={{
+                        marginBottom: '40px',
+                        overflowX: 'auto',
+                        backgroundColor: '#ffffff',
+                        borderRadius: '16px',
+                        boxShadow: '0 4px 12px rgba(0,0,0,0.08)',
+                        border: '1px solid #e9ecef'
+                    }}>
+                        <table style={{
+                            width: '100%',
+                            borderCollapse: 'collapse',
+                            minWidth: '800px'
+                        }}>
+                            <thead>
+                                <tr style={{
+                                    background: 'linear-gradient(135deg, #667eea 0%, #764ba2 100%)',
+                                    color: '#ffffff'
+                                }}>
+                                    <th style={{
+                                        padding: '18px 20px',
+                                        textAlign: 'left',
+                                        fontSize: '16px',
+                                        fontWeight: '600',
+                                        borderBottom: '2px solid rgba(255,255,255,0.2)'
+                                    }}>
+                                        #
+                                    </th>
+                                    <th style={{
+                                        padding: '18px 20px',
+                                        textAlign: 'left',
+                                        fontSize: '16px',
+                                        fontWeight: '600',
+                                        borderBottom: '2px solid rgba(255,255,255,0.2)'
+                                    }}>
+                                        Test Case Section
+                                    </th>
+                                    <th style={{
+                                        padding: '18px 20px',
+                                        textAlign: 'left',
+                                        fontSize: '16px',
+                                        fontWeight: '600',
+                                        borderBottom: '2px solid rgba(255,255,255,0.2)'
+                                    }}>
+                                        Description
+                                    </th>
+                                    <th style={{
+                                        padding: '18px 20px',
+                                        textAlign: 'left',
+                                        fontSize: '16px',
+                                        fontWeight: '600',
+                                        borderBottom: '2px solid rgba(255,255,255,0.2)'
+                                    }}>
+                                        Test Cases Count
+                                    </th>
+                                    <th style={{
+                                        padding: '18px 20px',
+                                        textAlign: 'left',
+                                        fontSize: '16px',
+                                        fontWeight: '600',
+                                        borderBottom: '2px solid rgba(255,255,255,0.2)'
+                                    }}>
+                                        Action
+                                    </th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                {(() => {
+                                    // Sort sections according to sectionOrder to ensure sequential numbering
+                                    const sectionOrder = [
+                                        'registration-form', 'e2e-flow', 'ab-testing', 'add-remove-elements',
+                                        'basic-auth', 'broken-images', 'challenging-dom', 'checkboxes',
+                                        'context-menu', 'digest-auth', 'disappearing-elements', 'drag-and-drop',
+                                        'dropdown', 'dynamic-content', 'dynamic-controls', 'dynamic-loading',
+                                        'entry-ad', 'exit-intent', 'file-download', 'file-upload',
+                                        'floating-menu', 'forgot-password', 'form-authentication', 'frames',
+                                        'geolocation', 'horizontal-slider', 'hovers', 'infinite-scroll',
+                                        'inputs', 'jquery-ui-menus', 'javascript-alerts', 'javascript-error',
+                                        'key-presses', 'large-deep-dom', 'multiple-windows', 'nested-frames',
+                                        'notification-messages', 'redirect-link', 'secure-file-download', 'shadow-dom',
+                                        'shifting-content', 'slow-resources', 'sortable-data-tables', 'status-codes',
+                                        'typos', 'wysiwyg-editor'
+                                    ];
+                                    return sectionOrder
+                                        .map(id => testCasesSections[id])
+                                        .filter(section => section !== undefined)
+                                        .slice(0, 46);
+                                })().map((section, index) => {
+                                    const sectionNumber = index + 1;
+                                    return (
+                                        <tr
+                                            key={section.id}
+                                            style={{
+                                                backgroundColor: index % 2 === 0 ? '#ffffff' : '#f8f9fa',
+                                                borderBottom: '1px solid #e9ecef',
+                                                transition: 'background-color 0.2s ease'
+                                            }}
+                                            onMouseEnter={(e) => {
+                                                e.currentTarget.style.backgroundColor = '#e3f2fd';
+                                            }}
+                                            onMouseLeave={(e) => {
+                                                e.currentTarget.style.backgroundColor = index % 2 === 0 ? '#ffffff' : '#f8f9fa';
+                                            }}
+                                        >
+                                            <td style={{
+                                                padding: '18px 20px',
+                                                fontSize: '16px',
                                                 fontWeight: '600',
-                                                textAlign: 'left',
-                                                flex: 1
+                                                color: '#333',
+                                                borderRight: '1px solid #e9ecef',
+                                                textAlign: 'left'
+                                            }}>
+                                                <span style={{
+                                                    display: 'inline-flex',
+                                                    alignItems: 'center',
+                                                    justifyContent: 'center',
+                                                    width: '36px',
+                                                    height: '36px',
+                                                    borderRadius: '8px',
+                                                    background: 'linear-gradient(135deg, #667eea 0%, #764ba2 100%)',
+                                                    color: '#ffffff',
+                                                    fontWeight: 'bold',
+                                                    fontSize: '14px',
+                                                    boxShadow: '0 2px 6px rgba(102, 126, 234, 0.3)'
+                                                }}>
+                                                    {sectionNumber}
+                                                </span>
+                                            </td>
+                                            <td style={{
+                                                padding: '18px 20px',
+                                                fontSize: '16px',
+                                                fontWeight: '600',
+                                                color: '#00416A',
+                                                borderRight: '1px solid #e9ecef',
+                                                textAlign: 'left'
                                             }}>
                                                 {section.title}
-                                            </h2>
-                                        </div>
-                                        <p style={{
-                                            color: '#666',
-                                            fontSize: '14px',
-                                            margin: 0,
-                                            textAlign: 'left',
-                                            paddingLeft: '45px'
-                                        }}>
-                                            {section.description} ({section.testCases.length} test cases)
-                                        </p>
-                                    </div>
-                                    <span 
-                                        aria-hidden="true"
-                                        style={{
-                                            fontSize: '24px',
-                                            color: '#00416A',
-                                            fontWeight: 'bold',
-                                            transition: 'transform 0.3s ease',
-                                            transform: this.state.expandedSections[section.id] ? 'rotate(180deg)' : 'rotate(0deg)'
+                                            </td>
+                                            <td style={{
+                                                padding: '18px 20px',
+                                                fontSize: '15px',
+                                                color: '#666',
+                                                lineHeight: '1.5',
+                                                borderRight: '1px solid #e9ecef',
+                                                textAlign: 'left',
+                                                maxWidth: '500px'
+                                            }}>
+                                                {section.description}
+                                            </td>
+                                            <td style={{
+                                                padding: '18px 20px',
+                                                fontSize: '15px',
+                                                color: '#333',
+                                                fontWeight: '500',
+                                                borderRight: '1px solid #e9ecef',
+                                                textAlign: 'left'
+                                            }}>
+                                                {section.testCases.length} test case{section.testCases.length !== 1 ? 's' : ''}
+                                            </td>
+                                            <td style={{
+                                                padding: '18px 20px',
+                                                textAlign: 'left'
+                                            }}>
+                                                <button
+                                                    onClick={() => this.toggleSection(section.id)}
+                                                    style={{
+                                                        display: 'inline-flex',
+                                                        alignItems: 'center',
+                                                        gap: '6px',
+                                                        padding: '10px 20px',
+                                                        background: this.state.expandedSections[section.id] 
+                                                            ? 'linear-gradient(135deg, #28a745 0%, #20c997 100%)'
+                                                            : 'linear-gradient(135deg, #667eea 0%, #764ba2 100%)',
+                                                        color: '#ffffff',
+                                                        border: 'none',
+                                                        borderRadius: '8px',
+                                                        fontWeight: '600',
+                                                        fontSize: '14px',
+                                                        cursor: 'pointer',
+                                                        transition: 'all 0.3s ease',
+                                                        boxShadow: '0 2px 8px rgba(102, 126, 234, 0.3)'
+                                                    }}
+                                                    onMouseEnter={(e) => {
+                                                        e.currentTarget.style.transform = 'translateY(-2px)';
+                                                        e.currentTarget.style.boxShadow = '0 4px 12px rgba(102, 126, 234, 0.4)';
+                                                    }}
+                                                    onMouseLeave={(e) => {
+                                                        e.currentTarget.style.transform = 'translateY(0)';
+                                                        e.currentTarget.style.boxShadow = '0 2px 8px rgba(102, 126, 234, 0.3)';
+                                                    }}
+                                                >
+                                                    <span>{this.state.expandedSections[section.id] ? 'Hide' : 'View'}</span>
+                                                    <span style={{
+                                                        transition: 'transform 0.3s ease',
+                                                        transform: this.state.expandedSections[section.id] ? 'rotate(180deg)' : 'rotate(0deg)'
+                                                    }}>
+                                                        ▼
+                                                    </span>
+                                                </button>
+                                            </td>
+                                        </tr>
+                                    );
+                                })}
+                            </tbody>
+                        </table>
+                    </div>
+
+                    {/* Expanded Test Cases Details - Below Table */}
+                    {(() => {
+                        const sectionOrder = [
+                            'registration-form', 'e2e-flow', 'ab-testing', 'add-remove-elements',
+                            'basic-auth', 'broken-images', 'challenging-dom', 'checkboxes',
+                            'context-menu', 'digest-auth', 'disappearing-elements', 'drag-and-drop',
+                            'dropdown', 'dynamic-content', 'dynamic-controls', 'dynamic-loading',
+                            'entry-ad', 'exit-intent', 'file-download', 'file-upload',
+                            'floating-menu', 'forgot-password', 'form-authentication', 'frames',
+                            'geolocation', 'horizontal-slider', 'hovers', 'infinite-scroll',
+                            'inputs', 'jquery-ui-menus', 'javascript-alerts', 'javascript-error',
+                            'key-presses', 'large-deep-dom', 'multiple-windows', 'nested-frames',
+                            'notification-messages', 'redirect-link', 'secure-file-download', 'shadow-dom',
+                            'shifting-content', 'slow-resources', 'sortable-data-tables', 'status-codes',
+                            'typos', 'wysiwyg-editor'
+                        ];
+                        const expandedSections = sectionOrder
+                            .map(id => testCasesSections[id])
+                            .filter(section => section !== undefined)
+                            .slice(0, 46)
+                            .filter(section => this.state.expandedSections[section.id]);
+                        
+                        if (expandedSections.length === 0) return null;
+                        
+                        const sectionOrderFull = [
+                            'registration-form', 'e2e-flow', 'ab-testing', 'add-remove-elements',
+                            'basic-auth', 'broken-images', 'challenging-dom', 'checkboxes',
+                            'context-menu', 'digest-auth', 'disappearing-elements', 'drag-and-drop',
+                            'dropdown', 'dynamic-content', 'dynamic-controls', 'dynamic-loading',
+                            'entry-ad', 'exit-intent', 'file-download', 'file-upload',
+                            'floating-menu', 'forgot-password', 'form-authentication', 'frames',
+                            'geolocation', 'horizontal-slider', 'hovers', 'infinite-scroll',
+                            'inputs', 'jquery-ui-menus', 'javascript-alerts', 'javascript-error',
+                            'key-presses', 'large-deep-dom', 'multiple-windows', 'nested-frames',
+                            'notification-messages', 'redirect-link', 'secure-file-download', 'shadow-dom',
+                            'shifting-content', 'slow-resources', 'sortable-data-tables', 'status-codes',
+                            'typos', 'wysiwyg-editor'
+                        ];
+                        
+                        return (
+                            <div style={{
+                                marginTop: '40px',
+                                paddingTop: '20px',
+                                borderTop: '3px solid #00416A'
+                            }}>
+                                <h2 style={{
+                                    color: '#00416A',
+                                    fontSize: '28px',
+                                    marginBottom: '30px',
+                                    fontWeight: '600',
+                                    textAlign: 'left'
+                                }}>
+                                    Expanded Test Cases
+                                </h2>
+                                {expandedSections.map((section) => {
+                                    const sectionNumber = sectionOrderFull.indexOf(section.id) + 1;
+                                    return (
+                                        <div 
+                                            key={section.id} 
+                                            id={`test-case-section-${section.id}`}
+                                            style={{
+                                                marginBottom: '30px',
+                                                backgroundColor: '#ffffff',
+                                                borderRadius: '12px',
+                                                border: '2px solid #00416A',
+                                                padding: '20px',
+                                                boxShadow: '0 4px 12px rgba(0,0,0,0.08)',
+                                                marginTop: '20px'
+                                            }}
+                                        >
+                                <h3 style={{
+                                    color: '#00416A',
+                                    fontSize: '24px',
+                                    marginBottom: '20px',
+                                    fontWeight: '600',
+                                    textAlign: 'left',
+                                    borderBottom: '2px solid #00416A',
+                                    paddingBottom: '10px'
+                                }}>
+                                    {sectionNumber}. {section.title}
+                                </h3>
+                                <p style={{
+                                    color: '#666',
+                                    fontSize: '15px',
+                                    marginBottom: '20px',
+                                    textAlign: 'left',
+                                    lineHeight: '1.6'
+                                }}>
+                                    {section.description}
+                                </p>
+                                {section.testCases.map((testCase) => (
+                                    <div
+                                        key={testCase.id}
+                                        style={testCaseStyles.testCaseCard}
+                                        role="button"
+                                        tabIndex={0}
+                                        aria-label={this.state.selectedTestCase === testCase.id ? `Collapse ${testCase.title}` : `Expand ${testCase.title}`}
+                                        aria-expanded={this.state.selectedTestCase === testCase.id}
+                                        onClick={() => this.setState({ selectedTestCase: this.state.selectedTestCase === testCase.id ? null : testCase.id })}
+                                        onKeyDown={(e) => {
+                                            if (e.key === 'Enter' || e.key === ' ') {
+                                                e.preventDefault();
+                                                this.setState({ selectedTestCase: this.state.selectedTestCase === testCase.id ? null : testCase.id });
+                                            }
+                                        }}
+                                        onMouseEnter={(e) => {
+                                            if (this.state.selectedTestCase !== testCase.id) {
+                                                Object.assign(e.currentTarget.style, testCaseStyles.testCaseCardHover);
+                                            }
+                                        }}
+                                        onMouseLeave={(e) => {
+                                            if (this.state.selectedTestCase !== testCase.id) {
+                                                e.currentTarget.style.borderColor = testCaseStyles.testCaseCard.borderColor;
+                                                e.currentTarget.style.boxShadow = testCaseStyles.testCaseCard.boxShadow;
+                                                e.currentTarget.style.transform = 'translateY(0)';
+                                                e.currentTarget.style.background = testCaseStyles.testCaseCard.backgroundColor;
+                                            }
                                         }}
                                     >
-                                        ▼
-                                    </span>
-                                </div>
-
-                                {/* Section Test Cases */}
-                                {this.state.expandedSections[section.id] && (
-                                    <div style={{
-                                        borderLeft: '2px solid #00416A',
-                                        borderRight: '2px solid #00416A',
-                                        borderBottom: isLast ? '2px solid #00416A' : 'none',
-                                        borderRadius: isLast ? '0 0 8px 8px' : '0',
-                                        padding: '0 20px 20px 20px',
-                                        backgroundColor: '#ffffff'
-                                    }}>
-                                        {section.testCases.map((testCase) => (
-                            <div
-                                key={testCase.id}
-                                style={testCaseStyles.testCaseCard}
-                                role="button"
-                                tabIndex={0}
-                                aria-label={this.state.selectedTestCase === testCase.id ? `Collapse ${testCase.title}` : `Expand ${testCase.title}`}
-                                aria-expanded={this.state.selectedTestCase === testCase.id}
-                                onClick={() => this.setState({ selectedTestCase: this.state.selectedTestCase === testCase.id ? null : testCase.id })}
-                                onKeyDown={(e) => {
-                                    if (e.key === 'Enter' || e.key === ' ') {
-                                        e.preventDefault();
-                                        this.setState({ selectedTestCase: this.state.selectedTestCase === testCase.id ? null : testCase.id });
-                                    }
-                                }}
-                                onMouseEnter={(e) => {
-                                    if (this.state.selectedTestCase !== testCase.id) {
-                                        Object.assign(e.currentTarget.style, testCaseStyles.testCaseCardHover);
-                                    }
-                                }}
-                                onMouseLeave={(e) => {
-                                    if (this.state.selectedTestCase !== testCase.id) {
-                                        e.currentTarget.style.borderColor = testCaseStyles.testCaseCard.borderColor;
-                                        e.currentTarget.style.boxShadow = testCaseStyles.testCaseCard.boxShadow;
-                                        e.currentTarget.style.transform = 'translateY(0)';
-                                        e.currentTarget.style.background = testCaseStyles.testCaseCard.backgroundColor;
-                                    }
-                                }}
-                            >
-                                <div style={testCaseStyles.testCaseHeader}>
-                                    <div style={testCaseStyles.testCaseHeaderContent}>
-                                        <div style={testCaseStyles.badgeContainer}>
-                                            <span style={testCaseStyles.badgeId}>
-                                                {testCase.id}
-                                            </span>
-                                            <span style={testCaseStyles.badgePriority(testCase.priority)}>
-                                                {testCase.priority}
-                                            </span>
-                                            <span style={testCaseStyles.badgeType}>
-                                                {testCase.testType}
+                                        <div style={testCaseStyles.testCaseHeader}>
+                                            <div style={testCaseStyles.testCaseHeaderContent}>
+                                                <div style={testCaseStyles.badgeContainer}>
+                                                    <span style={testCaseStyles.badgeId}>
+                                                        {testCase.id}
+                                                    </span>
+                                                    <span style={testCaseStyles.badgePriority(testCase.priority)}>
+                                                        {testCase.priority}
+                                                    </span>
+                                                    <span style={testCaseStyles.badgeType}>
+                                                        {testCase.testType}
+                                                    </span>
+                                                </div>
+                                                <h3 style={testCaseStyles.testCaseTitle}>
+                                                    {testCase.title}
+                                                </h3>
+                                                <p style={testCaseStyles.testCaseMeta}>
+                                                    <strong>Module:</strong> {testCase.module} | <strong>Test Level:</strong> {testCase.testLevel}
+                                                </p>
+                                            </div>
+                                            <span 
+                                                aria-hidden="true"
+                                                style={testCaseStyles.expandIcon(this.state.selectedTestCase === testCase.id)}
+                                            >
+                                                ▼
                                             </span>
                                         </div>
-                                        <h3 style={testCaseStyles.testCaseTitle}>
-                                            {testCase.title}
-                                        </h3>
-                                        <p style={testCaseStyles.testCaseMeta}>
-                                            <strong>Module:</strong> {testCase.module} | <strong>Test Level:</strong> {testCase.testLevel}
-                                        </p>
-                                    </div>
-                                    <span 
-                                        aria-hidden="true"
-                                        style={testCaseStyles.expandIcon(this.state.selectedTestCase === testCase.id)}
-                                    >
-                                        ▼
-                                    </span>
-                                </div>
 
-                                {this.state.selectedTestCase === testCase.id && (
-                                    <div style={testCaseStyles.expandedContent}>
-                                        {/* Test Case Details */}
-                                        <div style={testCaseStyles.detailsGrid}>
-                                            <div>
-                                                <h4 style={testCaseStyles.acceptanceCriteriaTitle}>Story Acceptance Criteria</h4>
-                                                <div style={testCaseStyles.acceptanceCriteriaSection}>
-                                                    <p style={testCaseStyles.userStoryBox}>
-                                                        <strong>User Story:</strong> {testCase.acceptanceCriteria}
-                                                    </p>
-                                                    {testCase.gherkinCriteria && (
-                                                        <div style={testCaseStyles.gherkinBox}>
-                                                            <p style={testCaseStyles.gherkinLine}><strong>Given</strong> {testCase.gherkinCriteria.given.replace('Given ', '')}</p>
-                                                            <p style={testCaseStyles.gherkinLine}><strong>When</strong> {testCase.gherkinCriteria.when.replace('When ', '')}</p>
-                                                            <p style={testCaseStyles.gherkinLine}><strong>And</strong> {testCase.gherkinCriteria.and.replace('And ', '')}</p>
-                                                            <p style={testCaseStyles.gherkinLine}><strong>Then</strong> {testCase.gherkinCriteria.then.replace('Then ', '')}</p>
+                                        {this.state.selectedTestCase === testCase.id && (
+                                            <div style={testCaseStyles.expandedContent}>
+                                                {/* Test Case Details */}
+                                                <div style={testCaseStyles.detailsGrid}>
+                                                    <div>
+                                                        <h4 style={testCaseStyles.acceptanceCriteriaTitle}>Story Acceptance Criteria</h4>
+                                                        <div style={testCaseStyles.acceptanceCriteriaSection}>
+                                                            <p style={testCaseStyles.userStoryBox}>
+                                                                <strong>User Story:</strong> {testCase.acceptanceCriteria}
+                                                            </p>
+                                                            {testCase.gherkinCriteria && (
+                                                                <div style={testCaseStyles.gherkinBox}>
+                                                                    <p style={testCaseStyles.gherkinLine}><strong>Given</strong> {testCase.gherkinCriteria.given.replace('Given ', '')}</p>
+                                                                    <p style={testCaseStyles.gherkinLine}><strong>When</strong> {testCase.gherkinCriteria.when.replace('When ', '')}</p>
+                                                                    <p style={testCaseStyles.gherkinLine}><strong>And</strong> {testCase.gherkinCriteria.and.replace('And ', '')}</p>
+                                                                    <p style={testCaseStyles.gherkinLine}><strong>Then</strong> {testCase.gherkinCriteria.then.replace('Then ', '')}</p>
+                                                                </div>
+                                                            )}
+                                                            <p style={testCaseStyles.severityText}><strong>Severity:</strong> {testCase.severity}</p>
                                                         </div>
-                                                    )}
-                                                    <p style={testCaseStyles.severityText}><strong>Severity:</strong> {testCase.severity}</p>
+                                                    </div>
+                                                    <div>
+                                                        <h4 style={testCaseStyles.objectiveTitle}>Test Objective</h4>
+                                                        <p style={testCaseStyles.objectiveText}>{testCase.objective}</p>
+                                                    </div>
+                                                </div>
+
+                                                {/* Preconditions */}
+                                                <div style={testCaseStyles.preconditionsSection}>
+                                                    <h4 style={testCaseStyles.preconditionsTitle}>Preconditions</h4>
+                                                    <ul style={testCaseStyles.preconditionsList}>
+                                                        {testCase.preconditions.map((precondition, idx) => (
+                                                            <li key={idx} style={testCaseStyles.preconditionsItem}>{precondition}</li>
+                                                        ))}
+                                                    </ul>
+                                                </div>
+
+                                                {/* Test Data */}
+                                                <div style={testCaseStyles.testDataSection}>
+                                                    <h4 style={testCaseStyles.testDataTitle}>Test Data</h4>
+                                                    <div style={testCaseStyles.testDataGrid}>
+                                                        {Object.entries(testCase.testData).map(([key, value]) => (
+                                                            <div key={key} style={testCaseStyles.testDataItem}>
+                                                                <strong>{key.replace(/([A-Z])/g, ' $1').trim()}:</strong> {String(value)}
+                                                            </div>
+                                                        ))}
+                                                    </div>
+                                                </div>
+
+                                                {/* Test Steps */}
+                                                <div style={testCaseStyles.testStepsSection}>
+                                                    <h4 style={testCaseStyles.testStepsTitle}>Test Steps</h4>
+                                                    <div style={{ overflowX: 'auto' }}>
+                                                        <table style={testCaseStyles.testStepsTable}>
+                                                            <thead>
+                                                                <tr style={testCaseStyles.testStepsTableHeader}>
+                                                                    <th style={testCaseStyles.testStepsTableHeaderCell}>Step #</th>
+                                                                    <th style={testCaseStyles.testStepsTableHeaderCell}>Action</th>
+                                                                    <th style={testCaseStyles.testStepsTableHeaderCell}>Test Data</th>
+                                                                    <th style={testCaseStyles.testStepsTableHeaderCell}>Expected Result</th>
+                                                                </tr>
+                                                            </thead>
+                                                            <tbody>
+                                                                {testCase.steps.map((step, idx) => (
+                                                                    <tr key={idx} style={testCaseStyles.testStepsTableRow(idx)}>
+                                                                        <td style={testCaseStyles.testStepsTableCellBold}>{step.step}</td>
+                                                                        <td style={testCaseStyles.testStepsTableCell}>{step.action}</td>
+                                                                        <td style={testCaseStyles.testStepsTableCellItalic}>{step.testData}</td>
+                                                                        <td style={testCaseStyles.testStepsTableCell}>{step.expectedResult}</td>
+                                                                    </tr>
+                                                                ))}
+                                                            </tbody>
+                                                        </table>
+                                                    </div>
+                                                </div>
+
+                                                {/* Postconditions */}
+                                                <div style={testCaseStyles.postconditionsSection}>
+                                                    <h4 style={testCaseStyles.postconditionsTitle}>Postconditions</h4>
+                                                    <ul style={testCaseStyles.postconditionsList}>
+                                                        {testCase.postconditions.map((postcondition, idx) => (
+                                                            <li key={idx} style={testCaseStyles.postconditionsItem}>{postcondition}</li>
+                                                        ))}
+                                                    </ul>
+                                                </div>
+
+                                                {/* Environment */}
+                                                <div style={testCaseStyles.environmentSection}>
+                                                    <h4 style={testCaseStyles.environmentTitle}>Environment</h4>
+                                                    <div style={testCaseStyles.environmentGrid}>
+                                                        {Object.entries(testCase.environment).map(([key, value]) => (
+                                                            <div key={key} style={testCaseStyles.environmentItem}>
+                                                                <strong>{key.replace(/([A-Z])/g, ' $1').trim()}:</strong> {String(value)}
+                                                            </div>
+                                                        ))}
+                                                    </div>
                                                 </div>
                                             </div>
-                                            <div>
-                                                <h4 style={testCaseStyles.objectiveTitle}>Test Objective</h4>
-                                                <p style={testCaseStyles.objectiveText}>{testCase.objective}</p>
-                                            </div>
-                                        </div>
-
-                                        {/* Preconditions */}
-                                        <div style={testCaseStyles.preconditionsSection}>
-                                            <h4 style={testCaseStyles.preconditionsTitle}>Preconditions</h4>
-                                            <ul style={testCaseStyles.preconditionsList}>
-                                                {testCase.preconditions.map((precondition, idx) => (
-                                                    <li key={idx} style={testCaseStyles.preconditionsItem}>{precondition}</li>
-                                                ))}
-                                            </ul>
-                                        </div>
-
-                                        {/* Test Data */}
-                                        <div style={testCaseStyles.testDataSection}>
-                                            <h4 style={testCaseStyles.testDataTitle}>Test Data</h4>
-                                            <div style={testCaseStyles.testDataGrid}>
-                                                {Object.entries(testCase.testData).map(([key, value]) => (
-                                                    <div key={key} style={testCaseStyles.testDataItem}>
-                                                        <strong>{key.replace(/([A-Z])/g, ' $1').trim()}:</strong> {String(value)}
-                                                    </div>
-                                                ))}
-                                            </div>
-                                        </div>
-
-                                        {/* Test Steps */}
-                                        <div style={testCaseStyles.testStepsSection}>
-                                            <h4 style={testCaseStyles.testStepsTitle}>Test Steps</h4>
-                                            <div style={{ overflowX: 'auto' }}>
-                                                <table style={testCaseStyles.testStepsTable}>
-                                                    <thead>
-                                                        <tr style={testCaseStyles.testStepsTableHeader}>
-                                                            <th style={testCaseStyles.testStepsTableHeaderCell}>Step #</th>
-                                                            <th style={testCaseStyles.testStepsTableHeaderCell}>Action</th>
-                                                            <th style={testCaseStyles.testStepsTableHeaderCell}>Test Data</th>
-                                                            <th style={testCaseStyles.testStepsTableHeaderCell}>Expected Result</th>
-                                                        </tr>
-                                                    </thead>
-                                                    <tbody>
-                                                        {testCase.steps.map((step, idx) => (
-                                                            <tr key={idx} style={testCaseStyles.testStepsTableRow(idx)}>
-                                                                <td style={testCaseStyles.testStepsTableCellBold}>{step.step}</td>
-                                                                <td style={testCaseStyles.testStepsTableCell}>{step.action}</td>
-                                                                <td style={testCaseStyles.testStepsTableCellItalic}>{step.testData}</td>
-                                                                <td style={testCaseStyles.testStepsTableCell}>{step.expectedResult}</td>
-                                                            </tr>
-                                                        ))}
-                                                    </tbody>
-                                                </table>
-                                            </div>
-                                        </div>
-
-                                        {/* Postconditions */}
-                                        <div style={testCaseStyles.postconditionsSection}>
-                                            <h4 style={testCaseStyles.postconditionsTitle}>Postconditions</h4>
-                                            <ul style={testCaseStyles.postconditionsList}>
-                                                {testCase.postconditions.map((postcondition, idx) => (
-                                                    <li key={idx} style={testCaseStyles.postconditionsItem}>{postcondition}</li>
-                                                ))}
-                                            </ul>
-                                        </div>
-
-                                        {/* Environment */}
-                                        <div style={testCaseStyles.environmentSection}>
-                                            <h4 style={testCaseStyles.environmentTitle}>Environment</h4>
-                                            <div style={testCaseStyles.environmentGrid}>
-                                                {Object.entries(testCase.environment).map(([key, value]) => (
-                                                    <div key={key} style={testCaseStyles.environmentItem}>
-                                                        <strong>{key.replace(/([A-Z])/g, ' $1').trim()}:</strong> {String(value)}
-                                                    </div>
-                                                ))}
-                                            </div>
-                                        </div>
+                                        )}
                                     </div>
-                                )}
+                                ))}
                             </div>
-                                        ))}
-                                    </div>
-                                )}
-                            </div>
-                            );
-                        })}
+                        );
+                    })}
                     </div>
-                </div>
-
-                <section className='pt4'>
+                );
+            })()}
+                    <section className='pt4'>
                     </section>
+                </div>
             </main>
         );
     }

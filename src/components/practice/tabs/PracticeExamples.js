@@ -156,102 +156,155 @@ class PracticeExamples extends Component {
                         </div>
                     </div>
 
-                    {/* Modern Examples Grid */}
+                    {/* Practice Examples Table */}
                     <div 
-                        id="practice-examples-grid"
-                        data-testid="practice-examples-grid"
+                        id="practice-examples-table-container"
+                        data-testid="practice-examples-table-container"
                         style={{
-                            display: 'grid',
-                            gridTemplateColumns: 'repeat(auto-fill, minmax(300px, 1fr))',
-                            gap: '24px',
-                            marginBottom: '40px'
+                            marginBottom: '40px',
+                            overflowX: 'auto',
+                            backgroundColor: '#ffffff',
+                            borderRadius: '16px',
+                            boxShadow: '0 4px 12px rgba(0,0,0,0.08)',
+                            border: '1px solid #e9ecef'
                         }}
                     >
-                        {this.state.examples.map((example, index) => (
-                            <Link
-                                key={index}
-                                id={this.createExampleId(example.name, index)}
-                                data-testid={this.createExampleTestId(example.name, index)}
-                                to={example.path}
-                                style={{
-                                    display: 'flex',
-                                    alignItems: 'center',
-                                    gap: '16px',
-                                    padding: '24px',
-                                    backgroundColor: '#ffffff',
-                                    borderRadius: '16px',
-                                    textDecoration: 'none',
-                                    color: '#333',
-                                    border: '2px solid #e9ecef',
-                                    transition: 'all 0.3s cubic-bezier(0.4, 0, 0.2, 1)',
-                                    boxShadow: '0 2px 8px rgba(0,0,0,0.08)',
-                                    position: 'relative',
-                                    overflow: 'hidden'
-                                }}
-                                onMouseEnter={(e) => {
-                                    e.currentTarget.style.borderColor = '#667eea';
-                                    e.currentTarget.style.transform = 'translateY(-6px)';
-                                    e.currentTarget.style.boxShadow = '0 12px 24px rgba(102, 126, 234, 0.25)';
-                                    e.currentTarget.style.background = 'linear-gradient(135deg, #ffffff 0%, #f8f9ff 100%)';
-                                }}
-                                onMouseLeave={(e) => {
-                                    e.currentTarget.style.borderColor = '#e9ecef';
-                                    e.currentTarget.style.transform = 'translateY(0)';
-                                    e.currentTarget.style.boxShadow = '0 2px 8px rgba(0,0,0,0.08)';
-                                    e.currentTarget.style.background = '#ffffff';
-                                }}
-                            >
-                                {/* Number Badge */}
-                                <div style={{
-                                    width: '48px',
-                                    height: '48px',
-                                    borderRadius: '12px',
+                        <table 
+                            id="practice-examples-table"
+                            data-testid="practice-examples-table"
+                            style={{
+                                width: '100%',
+                                borderCollapse: 'collapse',
+                                minWidth: '600px'
+                            }}
+                        >
+                            <thead>
+                                <tr style={{
                                     background: 'linear-gradient(135deg, #667eea 0%, #764ba2 100%)',
-                                    display: 'flex',
-                                    alignItems: 'center',
-                                    justifyContent: 'center',
-                                    color: '#ffffff',
-                                    fontWeight: 'bold',
-                                    fontSize: '18px',
-                                    flexShrink: 0,
-                                    boxShadow: '0 4px 8px rgba(102, 126, 234, 0.3)'
+                                    color: '#ffffff'
                                 }}>
-                                    {index + 1}
-                                </div>
-                                
-                                {/* Content */}
-                                <div 
-                                    id={`practice-example-content-${index}`}
-                                    data-testid={`practice-example-content-${index}`}
-                                    style={{
+                                    <th style={{
+                                        padding: '18px 20px',
+                                        textAlign: 'left',
                                         fontSize: '16px',
-                                        fontWeight: '500',
-                                        lineHeight: '1.6',
-                                        flex: 1,
-                                        color: '#333'
-                                    }}
-                                >
-                                    {example.name}
-                                </div>
-                                
-                                {/* Arrow Icon */}
-                                <div style={{
-                                    width: '24px',
-                                    height: '24px',
-                                    borderRadius: '50%',
-                                    background: '#f0f4ff',
-                                    display: 'flex',
-                                    alignItems: 'center',
-                                    justifyContent: 'center',
-                                    flexShrink: 0,
-                                    transition: 'all 0.3s ease'
-                                }}>
-                                    <svg width="12" height="12" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-                                        <path d="M9 18L15 12L9 6" stroke="#667eea" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
-                                    </svg>
-                                </div>
-                            </Link>
-                        ))}
+                                        fontWeight: '600',
+                                        borderBottom: '2px solid rgba(255,255,255,0.2)'
+                                    }}>
+                                        #
+                                    </th>
+                                    <th style={{
+                                        padding: '18px 20px',
+                                        textAlign: 'left',
+                                        fontSize: '16px',
+                                        fontWeight: '600',
+                                        borderBottom: '2px solid rgba(255,255,255,0.2)'
+                                    }}>
+                                        Practice Example
+                                    </th>
+                                    <th style={{
+                                        padding: '18px 20px',
+                                        textAlign: 'left',
+                                        fontSize: '16px',
+                                        fontWeight: '600',
+                                        borderBottom: '2px solid rgba(255,255,255,0.2)'
+                                    }}>
+                                        Action
+                                    </th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                {this.state.examples.slice(0, 46).map((example, index) => (
+                                    <tr
+                                        key={index}
+                                        id={this.createExampleId(example.name, index)}
+                                        data-testid={this.createExampleTestId(example.name, index)}
+                                        style={{
+                                            backgroundColor: index % 2 === 0 ? '#ffffff' : '#f8f9fa',
+                                            borderBottom: '1px solid #e9ecef',
+                                            transition: 'background-color 0.2s ease'
+                                        }}
+                                        onMouseEnter={(e) => {
+                                            e.currentTarget.style.backgroundColor = '#e3f2fd';
+                                        }}
+                                        onMouseLeave={(e) => {
+                                            e.currentTarget.style.backgroundColor = index % 2 === 0 ? '#ffffff' : '#f8f9fa';
+                                        }}
+                                    >
+                                        <td style={{
+                                            padding: '18px 20px',
+                                            fontSize: '16px',
+                                            fontWeight: '600',
+                                            color: '#333',
+                                            borderRight: '1px solid #e9ecef',
+                                            textAlign: 'left'
+                                        }}>
+                                            <span style={{
+                                                display: 'inline-block',
+                                                width: '36px',
+                                                height: '36px',
+                                                borderRadius: '8px',
+                                                background: 'linear-gradient(135deg, #667eea 0%, #764ba2 100%)',
+                                                display: 'inline-flex',
+                                                alignItems: 'center',
+                                                justifyContent: 'center',
+                                                color: '#ffffff',
+                                                fontWeight: 'bold',
+                                                fontSize: '14px',
+                                                boxShadow: '0 2px 6px rgba(102, 126, 234, 0.3)'
+                                            }}>
+                                                {index + 1}
+                                            </span>
+                                        </td>
+                                        <td style={{
+                                            padding: '18px 20px',
+                                            fontSize: '16px',
+                                            fontWeight: '500',
+                                            color: '#333',
+                                            lineHeight: '1.6',
+                                            borderRight: '1px solid #e9ecef',
+                                            textAlign: 'left'
+                                        }}>
+                                            {example.name}
+                                        </td>
+                                        <td style={{
+                                            padding: '18px 20px',
+                                            textAlign: 'left'
+                                        }}>
+                                            <Link
+                                                to={example.path}
+                                                style={{
+                                                    display: 'inline-flex',
+                                                    alignItems: 'center',
+                                                    gap: '8px',
+                                                    padding: '10px 20px',
+                                                    background: 'linear-gradient(135deg, #667eea 0%, #764ba2 100%)',
+                                                    color: '#ffffff',
+                                                    textDecoration: 'none',
+                                                    borderRadius: '8px',
+                                                    fontWeight: '600',
+                                                    fontSize: '14px',
+                                                    transition: 'all 0.3s ease',
+                                                    boxShadow: '0 2px 8px rgba(102, 126, 234, 0.3)'
+                                                }}
+                                                onMouseEnter={(e) => {
+                                                    e.currentTarget.style.transform = 'translateY(-2px)';
+                                                    e.currentTarget.style.boxShadow = '0 4px 12px rgba(102, 126, 234, 0.4)';
+                                                }}
+                                                onMouseLeave={(e) => {
+                                                    e.currentTarget.style.transform = 'translateY(0)';
+                                                    e.currentTarget.style.boxShadow = '0 2px 8px rgba(102, 126, 234, 0.3)';
+                                                }}
+                                            >
+                                                <span>View</span>
+                                                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                                    <path d="M5 12H19M19 12L12 5M19 12L12 19" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
+                                                </svg>
+                                            </Link>
+                                        </td>
+                                    </tr>
+                                ))}
+                            </tbody>
+                        </table>
                     </div>
 
                     {/* Modern Footer Note */}
