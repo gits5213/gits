@@ -12,6 +12,7 @@ const socialIcon = () => {
         }}>
             {/* Facebook */}
             <a 
+                id="footer-social-facebook-link"
                 href={link.FACEBOOK} 
                 target="_blank" 
                 rel="noopener noreferrer"
@@ -82,6 +83,7 @@ const socialIcon = () => {
 
             {/* Instagram */}
             <a 
+                id="footer-social-instagram-link"
                 href={link.INSTRAGRAM} 
                 target="_blank" 
                 rel="noopener noreferrer"
@@ -115,6 +117,7 @@ const socialIcon = () => {
 
             {/* YouTube */}
             <a 
+                id="footer-social-youtube-link"
                 href={link.YOUTUBE} 
                 target="_blank" 
                 rel="noopener noreferrer"
@@ -150,6 +153,7 @@ const socialIcon = () => {
 
             {/* Slack */}
             <a 
+                id="footer-social-slack-link"
                 href={link.SLACK} 
                 target="_blank" 
                 rel="noopener noreferrer"
@@ -185,6 +189,7 @@ const socialIcon = () => {
 
             {/* LinkedIn */}
             <a 
+                id="footer-social-linkedin-link"
                 href={link.LINKEDIN} 
                 target="_blank" 
                 rel="noopener noreferrer"

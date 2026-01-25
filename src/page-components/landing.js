@@ -133,7 +133,9 @@ class Landing extends Component {
                                 flexWrap: 'wrap'
                             }}>
                                 <Link href="/courses" style={{ textDecoration: 'none' }}>
-                                    <button style={{
+                                    <button 
+                                        id="home-hero-explore-courses-btn"
+                                        style={{
                                         backgroundColor: '#ffffff',
                                         color: '#003366',
                                         padding: '14px 32px',
@@ -162,7 +164,9 @@ class Landing extends Component {
                                     rel="noopener noreferrer"
                                     style={{ textDecoration: 'none' }}
                                 >
-                                    <button style={{
+                                    <button 
+                                        id="home-hero-enroll-now-btn"
+                                        style={{
                                         backgroundColor: 'transparent',
                                         color: '#ffffff',
                                         padding: '14px 32px',
@@ -212,7 +216,9 @@ class Landing extends Component {
                                 
                                 return (
                                 <Link key={index} href={item.href} style={{ textDecoration: 'none' }}>
-                                    <Card style={{
+                                    <Card 
+                                        id={`home-explore-${item.title.toLowerCase().replace(/\s+/g, '-')}-card`}
+                                        style={{
                                         padding: 0,
                                         overflow: 'hidden',
                                         borderRadius: '8px',
@@ -313,7 +319,9 @@ class Landing extends Component {
                                 Global I Tech Solutions prepares the next generation of technology professionals through comprehensive training programs that integrate cutting-edge industry methodologies, hands-on practical experience, and a steadfast commitment to professional excellence. Our curriculum encompasses the latest advancements in artificial intelligence and machine learning technologies, including integration with leading AI platforms such as OpenAI's GPT, Anthropic's Claude, Microsoft Copilot, and other state-of-the-art AI tools that are reshaping the technology landscape. Located in the heart of New York City, our institution is dedicated to delivering accessible, high-quality technology education that equips students with the skills and knowledge necessary to excel in an increasingly AI-driven industry. These foundational principles define our institutional identity and continue to guide our mission of fostering innovation, technical proficiency, and professional growth in the evolving field of technology.
                             </p>
                             <Link href="/about" style={{ textDecoration: 'none', display: 'inline-block' }}>
-                                <button style={{
+                                <button 
+                                    id="home-about-learn-more-btn"
+                                    style={{
                                     backgroundColor: '#003366',
                                     color: '#ffffff',
                                     padding: '14px 32px',
@@ -363,7 +371,9 @@ class Landing extends Component {
                                 
                                 return (
                                     <LinkComponent key={index} {...linkProps} style={{ textDecoration: 'none' }}>
-                                        <div style={{
+                                        <div 
+                                            id={`home-most-visited-${item.title.toLowerCase().replace(/\s+/g, '-')}-card`}
+                                            style={{
                                             display: 'flex',
                                             flexDirection: 'column',
                                             borderRadius: '8px',
@@ -501,7 +511,9 @@ class Landing extends Component {
                                     Master Full Stack QA Engineering with Test Automation, CI/CD pipelines, Framework Design, and API & UI Testing. Learn programming (Java, Python, JavaScript), automation frameworks (Selenium, Playwright, Cypress), and AI-powered testing. Salary range: $95k-$200k+. High demand across fintech, healthcare, and tech industries.
                                 </p>
                                 <Link href="/courses/sdet-roadmap" style={{ textDecoration: 'none' }}>
-                                    <button style={{
+                                    <button 
+                                        id="home-training-sdet-roadmap-learn-more-btn"
+                                        style={{
                                         width: '100%',
                                         padding: '12px 24px',
                                         fontSize: '16px',
@@ -585,7 +597,9 @@ class Landing extends Component {
                                         })()}
                                     </p>
                                     <Link href="/courses" style={{ textDecoration: 'none' }}>
-                                        <button style={{
+                                        <button 
+                                            id={`home-training-${card.courseName.toLowerCase().replace(/\s+/g, '-').replace(/[()]/g, '')}-learn-more-btn`}
+                                            style={{
                                             width: '100%',
                                             padding: '12px 24px',
                                             fontSize: '16px',
@@ -650,7 +664,9 @@ class Landing extends Component {
                                     Master performance testing with Chrome DevTools Lighthouse, Apache JMeter, BlazeMeter, and Postman. Learn load testing, stress testing, spike testing, and performance monitoring. Identify and resolve bottlenecks in web applications, APIs, and mobile apps. Essential for Performance Test Engineer roles.
                                 </p>
                                 <Link href="/courses/performance" style={{ textDecoration: 'none' }}>
-                                    <button style={{
+                                    <button 
+                                        id="home-training-performance-learn-more-btn"
+                                        style={{
                                         width: '100%',
                                         padding: '12px 24px',
                                         fontSize: '16px',
@@ -714,7 +730,9 @@ class Landing extends Component {
                                     Learn to create accessible web applications compliant with Section 508 and WCAG standards. Master accessibility testing tools: AXE, WAVE, Pa11y, Screen Readers, and Lighthouse. Design for users with disabilities. High demand in government, healthcare, and enterprise sectors. Essential for Accessibility Specialist roles.
                                 </p>
                                 <Link href="/courses/accessibility" style={{ textDecoration: 'none' }}>
-                                    <button style={{
+                                    <button 
+                                        id="home-training-accessibility-learn-more-btn"
+                                        style={{
                                         width: '100%',
                                         padding: '12px 24px',
                                         fontSize: '16px',
@@ -778,7 +796,9 @@ class Landing extends Component {
                                     Master security testing and penetration testing with OWASP ZAP, Burp Suite, Metasploit, Nmap, and Wireshark. Learn vulnerability assessment, penetration testing, security code review, and OWASP Top 10. Critical skills for Security Test Engineer and Penetration Tester roles in cybersecurity.
                                 </p>
                                 <Link href="/courses/security" style={{ textDecoration: 'none' }}>
-                                    <button style={{
+                                    <button 
+                                        id="home-training-security-learn-more-btn"
+                                        style={{
                                         width: '100%',
                                         padding: '12px 24px',
                                         fontSize: '16px',

@@ -1,5 +1,5 @@
 import React, {Component} from 'react';
-import {Link} from 'react-router-dom';
+import Link from 'next/link';
 // eslint-disable-next-line no-unused-vars
 import '../../../styles/base.css';
 
@@ -403,7 +403,7 @@ class Quiz extends Component {
                                             fontSize: '13px',
                                             fontWeight: '600'
                                         }}>
-                                            Exam-{index + 1}
+                                            {exam.name}
                                         </span>
                                     </td>
                                     <td style={{
@@ -432,7 +432,8 @@ class Quiz extends Component {
                                         textAlign: 'left'
                                     }}>
                                         <Link
-                                            to={typeof exam.path === 'string' ? exam.path : (exam.path?.pathname || exam.path?.href || '/practice/quiz')}
+                                            href={typeof exam.path === 'string' ? exam.path : (exam.path?.pathname || exam.path?.href || '/practice/quiz')}
+                                            prefetch={true}
                                             style={{
                                                 display: 'inline-flex',
                                                 alignItems: 'center',

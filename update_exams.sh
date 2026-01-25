@@ -1,16 +1,23 @@
-import React, { useState, useMemo } from 'react';
-import Exam from './Exam';
-import ExamRegistration from './ExamRegistration';
-import { exam3Data } from '../../utilities/data/examData';
+#!/bin/bash
+# Script to update exam components with optimized pattern
 
-const Exam3 = (props) => {
-    const examId = 3;
+for i in {6..17}; do
+  file="src/page-components/practice/Exam${i}.js"
+  if [ -f "$file" ]; then
+    # Extract examId and examData import
+    examId=$(grep -o "const examId = [0-9]*;" "$file" | grep -o "[0-9]*")
+    examData=$(grep -o "exam[0-9]*Data" "$file" | head -1)
+    
+    # Create optimized component code
+    cat > /tmp/exam_component.js << EOF
+const Exam${i} = (props) => {
+    const examId = ${examId};
     
     // Check localStorage immediately - no need for useEffect delay
     const initialStudentInfo = useMemo(() => {
         if (typeof window === 'undefined') return null;
         try {
-            return JSON.parse(localStorage.getItem(`studentInfo_${examId}`) || 'null');
+            return JSON.parse(localStorage.getItem(\`studentInfo_\${examId}\`) || 'null');
         } catch {
             return null;
         }
@@ -22,7 +29,7 @@ const Exam3 = (props) => {
     const handleRegistrationComplete = () => {
         if (typeof window !== 'undefined') {
             try {
-                const storedInfo = JSON.parse(localStorage.getItem(`studentInfo_${examId}`) || 'null');
+                const storedInfo = JSON.parse(localStorage.getItem(\`studentInfo_\${examId}\`) || 'null');
                 setStudentInfo(storedInfo);
             } catch {
                 setStudentInfo(null);
@@ -36,7 +43,9 @@ const Exam3 = (props) => {
     }
 
     // Show exam
-    return <Exam examData={exam3Data} {...props} />;
+    return <Exam examData={${examData}} {...props} />;
 };
-
-export default Exam3;
+EOF
+    echo "Would update Exam${i}.js"
+  fi
+done

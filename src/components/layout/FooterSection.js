@@ -8,6 +8,9 @@ import Link from 'next/link'
 import { footerStyles as styles, colors, typography, spacing, transitions } from '../../utils/universityDesignSystem'
 
 const FooterSection = ({ title, links = [], externalLinks = [] }) => {
+  // Generate section key from title for ID generation
+  const sectionKey = title ? title.toLowerCase().replace(/\s+/g, '-') : 'section';
+  
   return (
     <div style={{
       display: 'flex',
@@ -34,46 +37,54 @@ const FooterSection = ({ title, links = [], externalLinks = [] }) => {
         flexDirection: 'column',
         gap: '12px'
       }}>
-        {links.map((link, index) => (
-          <li key={index}>
-            <Link 
-              href={link.href}
-              style={{
-                color: 'rgba(255,255,255,0.9)',
-                textDecoration: 'none',
-                fontSize: '14px',
-                fontWeight: 400,
-                transition: 'color 0.2s',
-                display: 'block'
-              }}
-              onMouseEnter={(e) => e.currentTarget.style.color = '#ffffff'}
-              onMouseLeave={(e) => e.currentTarget.style.color = 'rgba(255,255,255,0.9)'}
-            >
-              {link.label}
-            </Link>
-          </li>
-        ))}
-        {externalLinks.map((link, index) => (
-          <li key={`external-${index}`}>
-            <a 
-              href={link.href} 
-              target="_blank" 
-              rel="noopener noreferrer"
-              style={{
-                color: 'rgba(255,255,255,0.9)',
-                textDecoration: 'none',
-                fontSize: '14px',
-                fontWeight: 400,
-                transition: 'color 0.2s',
-                display: 'block'
-              }}
-              onMouseEnter={(e) => e.currentTarget.style.color = '#ffffff'}
-              onMouseLeave={(e) => e.currentTarget.style.color = 'rgba(255,255,255,0.9)'}
-            >
-              {link.label}
-            </a>
-          </li>
-        ))}
+        {links.map((link, index) => {
+          const linkKey = link.label.toLowerCase().replace(/\s+/g, '-').replace(/[&]/g, 'and');
+          return (
+            <li key={index}>
+              <Link 
+                id={`footer-${sectionKey}-${linkKey}-link`}
+                href={link.href}
+                style={{
+                  color: 'rgba(255,255,255,0.9)',
+                  textDecoration: 'none',
+                  fontSize: '14px',
+                  fontWeight: 400,
+                  transition: 'color 0.2s',
+                  display: 'block'
+                }}
+                onMouseEnter={(e) => e.currentTarget.style.color = '#ffffff'}
+                onMouseLeave={(e) => e.currentTarget.style.color = 'rgba(255,255,255,0.9)'}
+              >
+                {link.label}
+              </Link>
+            </li>
+          );
+        })}
+        {externalLinks.map((link, index) => {
+          const linkKey = link.label.toLowerCase().replace(/\s+/g, '-').replace(/[&]/g, 'and').replace(/['"]/g, '');
+          return (
+            <li key={`external-${index}`}>
+              <a 
+                id={`footer-${sectionKey}-${linkKey}-link`}
+                href={link.href} 
+                target="_blank" 
+                rel="noopener noreferrer"
+                style={{
+                  color: 'rgba(255,255,255,0.9)',
+                  textDecoration: 'none',
+                  fontSize: '14px',
+                  fontWeight: 400,
+                  transition: 'color 0.2s',
+                  display: 'block'
+                }}
+                onMouseEnter={(e) => e.currentTarget.style.color = '#ffffff'}
+                onMouseLeave={(e) => e.currentTarget.style.color = 'rgba(255,255,255,0.9)'}
+              >
+                {link.label}
+              </a>
+            </li>
+          );
+        })}
       </ul>
     </div>
   )

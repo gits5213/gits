@@ -1,6 +1,6 @@
 'use client'
 
-import React, { useState, useEffect } from 'react'
+import React, { useState, useEffect, useMemo } from 'react'
 import { useParams } from 'next/navigation'
 import { useNextRouterAdapter } from '@/src/utils/nextRouterAdapter'
 
@@ -25,6 +25,39 @@ const examComponents = {
   'exam-17': () => import('@/src/page-components/practice/Exam17'),
 }
 
+// Optimized loading component
+const LoadingSpinner = () => (
+  <div style={{
+    display: 'flex',
+    flexDirection: 'column',
+    alignItems: 'center',
+    justifyContent: 'center',
+    minHeight: '60vh',
+    padding: '40px 20px'
+  }}>
+    <div style={{
+      width: '50px',
+      height: '50px',
+      border: '4px solid #f3f3f3',
+      borderTop: '4px solid #667eea',
+      borderRadius: '50%',
+      animation: 'spin 1s linear infinite',
+      marginBottom: '20px'
+    }}></div>
+    <p style={{
+      fontSize: '16px',
+      color: '#666',
+      margin: 0
+    }}>Loading exam...</p>
+    <style jsx>{`
+      @keyframes spin {
+        0% { transform: rotate(0deg); }
+        100% { transform: rotate(360deg); }
+      }
+    `}</style>
+  </div>
+)
+
 export default function ExamPageClient() {
   const params = useParams()
   const routerProps = useNextRouterAdapter()
@@ -32,35 +65,66 @@ export default function ExamPageClient() {
   const [Component, setComponent] = useState(null)
   const [loading, setLoading] = useState(true)
   
+  // Start loading immediately
   useEffect(() => {
     if (!examId || !examComponents[examId]) {
       setLoading(false)
       return
     }
     
-    examComponents[examId]()
-      .then(module => {
+    // Load component immediately
+    const loadComponent = async () => {
+      try {
+        const module = await examComponents[examId]()
         setComponent(() => module.default || module)
-        setLoading(false)
-      })
-      .catch(error => {
+      } catch (error) {
         if (process.env.NODE_ENV === 'development') {
           console.error('Error loading exam:', error)
         }
+      } finally {
         setLoading(false)
-      })
+      }
+    }
+    
+    loadComponent()
   }, [examId])
   
   if (loading) {
-    return <div>Loading...</div>
+    return <LoadingSpinner />
   }
   
   if (!examId || !examComponents[examId]) {
-    return <div>Exam not found</div>
+    return (
+      <div style={{
+        textAlign: 'center',
+        padding: '40px 20px',
+        minHeight: '60vh',
+        display: 'flex',
+        alignItems: 'center',
+        justifyContent: 'center',
+        flexDirection: 'column'
+      }}>
+        <h2 style={{ color: '#e74c3c', marginBottom: '10px' }}>Exam not found</h2>
+        <p style={{ color: '#666' }}>The exam you're looking for doesn't exist.</p>
+      </div>
+    )
   }
   
   if (!Component) {
-    return <div>Error loading exam</div>
+    return (
+      <div style={{
+        textAlign: 'center',
+        padding: '40px 20px',
+        minHeight: '60vh',
+        display: 'flex',
+        alignItems: 'center',
+        justifyContent: 'center',
+        flexDirection: 'column'
+      }}>
+        <h2 style={{ color: '#e74c3c', marginBottom: '10px' }}>Error loading exam</h2>
+        <p style={{ color: '#666' }}>There was an error loading the exam. Please try again.</p>
+      </div>
+    )
   }
   
   return <Component {...routerProps} />

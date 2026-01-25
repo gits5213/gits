@@ -1,5 +1,4 @@
 import React, {Component} from 'react';
-import { withRouter } from 'react-router-dom';
 import '../../styles/base.css';
 
 class ExamRegistration extends Component {
@@ -60,8 +59,18 @@ class ExamRegistration extends Component {
 
         localStorage.setItem(`studentInfo_${this.props.examId}`, JSON.stringify(studentInfo));
         
-        // Navigate to exam
-        this.props.history.push(`/practice/quiz/exam-${this.props.examId}`);
+        // Call callback if provided (for inline registration)
+        if (this.props.onRegistrationComplete) {
+            this.props.onRegistrationComplete();
+        } else {
+            // Fallback: navigate to exam using router adapter
+            if (this.props.history) {
+                this.props.history.push(`/practice/quiz/exam-${this.props.examId}`);
+            } else {
+                // If no router, reload the page to show exam
+                window.location.reload();
+            }
+        }
     }
 
     render() {
@@ -294,4 +303,4 @@ class ExamRegistration extends Component {
     }
 }
 
-export default withRouter(ExamRegistration);
+export default ExamRegistration;

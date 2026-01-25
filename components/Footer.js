@@ -115,6 +115,7 @@ const Footer = () => {
           }}>
             &copy; {new Date().getFullYear()}{' '}
             <a 
+              id="footer-copyright-company-link"
               href={link.ITNYCUSA} 
               target="_blank" 
               rel="noopener noreferrer"

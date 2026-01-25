@@ -28,7 +28,7 @@ const Header = () => {
     { href: '/docs', label: 'Docs' },
     { href: '/apis', label: 'API' },
     { href: '/aid', label: 'AID' },
-    { href: '/practice', label: 'Practice' },
+    { href: '/practice', label: 'Labs' },
   ]
 
   const isActive = (href) => {

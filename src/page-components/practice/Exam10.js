@@ -1,42 +1,42 @@
-import React, { useEffect } from 'react';
-import { withRouter } from 'react-router-dom';
+import React, { useState, useMemo } from 'react';
 import Exam from './Exam';
 import ExamRegistration from './ExamRegistration';
 import { exam10Data } from '../../utilities/data/examData';
 
 const Exam10 = (props) => {
     const examId = 10;
-    const path = props.location.pathname;
-    const studentInfo = JSON.parse(localStorage.getItem(`studentInfo_${examId}`) || 'null');
-
-    useEffect(() => {
-        // If no student info and not on registration path, redirect to registration
-        if (!studentInfo && !path.includes('/register')) {
-            props.history.replace(`/practice/quiz/exam-${examId}/register`);
+    
+    // Check localStorage immediately - no need for useEffect delay
+    const initialStudentInfo = useMemo(() => {
+        if (typeof window === 'undefined') return null;
+        try {
+            return JSON.parse(localStorage.getItem(`studentInfo_${examId}`) || 'null');
+        } catch {
+            return null;
         }
-    }, [path, studentInfo, props.history, examId]);
+    }, [examId]);
+    
+    const [studentInfo, setStudentInfo] = useState(initialStudentInfo);
 
-    // If on registration path, show registration
-    if (path.includes('/register')) {
-        return <ExamRegistration examId={examId} {...props} />;
-    }
+    // Handle registration completion
+    const handleRegistrationComplete = () => {
+        if (typeof window !== 'undefined') {
+            try {
+                const storedInfo = JSON.parse(localStorage.getItem(`studentInfo_${examId}`) || 'null');
+                setStudentInfo(storedInfo);
+            } catch {
+                setStudentInfo(null);
+            }
+        }
+    };
 
-    // If no student info, show loading (redirect will happen in useEffect)
+    // If no student info, show registration form
     if (!studentInfo) {
-        return (
-            <div style={{
-                maxWidth: '900px',
-                margin: '40px auto',
-                padding: '40px',
-                textAlign: 'center'
-            }}>
-                <p>Loading...</p>
-            </div>
-        );
+        return <ExamRegistration examId={examId} onRegistrationComplete={handleRegistrationComplete} {...props} />;
     }
 
     // Show exam
     return <Exam examData={exam10Data} {...props} />;
 };
 
-export default withRouter(Exam10);
+export default Exam10;
