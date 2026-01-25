@@ -10,9 +10,13 @@ export function generateStaticParams() {
     { slug: 'manual' },
     { slug: 'accessibility' },
     { slug: 'sdet-roadmap' },
+    { slug: 'ai-for-qa' },
     { slug: 'performance' },
     { slug: 'security' },
+    { slug: 'api-automation' },
+    { slug: 'devops-pipeline' },
     { slug: 'selenium-webdriver' },
+    { slug: 'digital-marketing' }
   ]
 }
 

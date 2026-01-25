@@ -9,6 +9,10 @@ import SdetRoadmap from '../components/courses/tabs/sdetRoadmap';
 import CoursesPerformance from '../components/courses/tabs/coursesPerformance';
 import CoursesSecurity from '../components/courses/tabs/coursesSecurity';
 import SeleniumWebDriver from '../components/courses/tabs/seleniumWebDriver';
+import CoursesApiAutomation from '../components/courses/tabs/coursesApiAutomation';
+import CoursesDevOps from '../components/courses/tabs/coursesDevOps';
+import CoursesAiForQa from '../components/courses/tabs/coursesAiForQa';
+import CoursesDigitalMarketing from '../components/courses/tabs/coursesDigitalMarketing';
 import '../styles/base.css';
 import '../styles/courses.css';
 
@@ -21,16 +25,21 @@ class Courses extends Component {
     getActiveTabFromPath() {
         const path = this.props.location.pathname;
         // Check for selenium-webdriver first (before automation check)
-        if (path.includes('/selenium-webdriver')) return 8;
+        if (path.includes('/selenium-webdriver')) return 11;
         if (path.includes('/code4kids')) return 0;
         if (path.includes('/webdevelopment')) return 1;
-        // Check automation after selenium-webdriver to avoid conflicts
-        if (path.includes('/automation') && !path.includes('/selenium-webdriver')) return 2;
-        if (path.includes('/manual')) return 3;
-        if (path.includes('/accessibility')) return 4;
-        if (path.includes('/sdet-roadmap')) return 5;
-        if (path.includes('/performance')) return 6;
-        if (path.includes('/security')) return 7;
+        // Check automation before api-automation to avoid conflicts
+        if (path.includes('/automation') && !path.includes('/api-automation') && !path.includes('/selenium-webdriver')) return 2;
+        // Check api-automation after automation to avoid conflicts
+        if (path.includes('/api-automation')) return 3;
+        if (path.includes('/manual')) return 4;
+        if (path.includes('/accessibility')) return 5;
+        if (path.includes('/sdet-roadmap')) return 6;
+        if (path.includes('/ai-for-qa')) return 7;
+        if (path.includes('/performance')) return 8;
+        if (path.includes('/security')) return 9;
+        if (path.includes('/devops-pipeline')) return 10;
+        if (path.includes('/digital-marketing')) return 12;
         // Default to code4kids if just /courses
         return 0;
     }
@@ -54,11 +63,16 @@ class Courses extends Component {
             '/courses/code4kids',
             '/courses/webdevelopment',
             '/courses/automation',
+            '/courses/api-automation',
             '/courses/manual',
             '/courses/accessibility',
             '/courses/sdet-roadmap',
+            '/courses/ai-for-qa',
             '/courses/performance',
-            '/courses/security'
+            '/courses/security',
+            '/courses/devops-pipeline',
+            '/courses/selenium-webdriver',
+            '/courses/digital-marketing'
         ];
         // Ensure tabId is a valid number
         const validTabId = typeof tabId === 'number' ? tabId : parseInt(tabId, 10);
@@ -88,32 +102,51 @@ class Courses extends Component {
             )
         } else if(this.state.activeTab === 3) {
             return(
-                <CoursesManual />
+                <CoursesApiAutomation />
             )
-        }
-        else if(this.state.activeTab === 4) {
+        } else if(this.state.activeTab === 4) {
             return(
-                <Accessibility />
+                <CoursesManual />
             )
         }
         else if(this.state.activeTab === 5) {
             return(
-                <SdetRoadmap />
+                <Accessibility />
             )
         }
         else if(this.state.activeTab === 6) {
             return(
-                <CoursesPerformance />
+                <SdetRoadmap />
             )
         }
         else if(this.state.activeTab === 7) {
             return(
-                <CoursesSecurity />
+                <CoursesAiForQa />
             )
         }
         else if(this.state.activeTab === 8) {
             return(
+                <CoursesPerformance />
+            )
+        }
+        else if(this.state.activeTab === 9) {
+            return(
+                <CoursesSecurity />
+            )
+        }
+        else if(this.state.activeTab === 10) {
+            return(
+                <CoursesDevOps />
+            )
+        }
+        else if(this.state.activeTab === 11) {
+            return(
                 <SeleniumWebDriver />
+            )
+        }
+        else if(this.state.activeTab === 12) {
+            return(
+                <CoursesDigitalMarketing />
             )
         }
     }
@@ -123,11 +156,15 @@ class Courses extends Component {
             { label: 'Code4Kids', id: 0 },
             { label: 'WebDevelopment', id: 1 },
             { label: 'Automation', id: 2 },
-            { label: 'Manual', id: 3 },
-            { label: 'Accessibility', id: 4 },
-            { label: 'SDET ROADMAP', id: 5 },
-            { label: 'Performance', id: 6 },
-            { label: 'Security', id: 7 }
+            { label: 'API Automation', id: 3 },
+            { label: 'Manual', id: 4 },
+            { label: 'Accessibility', id: 5 },
+            { label: 'SDET ROADMAP', id: 6 },
+            { label: 'AI for QA', id: 7 },
+            { label: 'Performance', id: 8 },
+            { label: 'Security', id: 9 },
+            { label: 'DevOps Pipeline', id: 10 },
+            { label: 'Digital Marketing', id: 12 }
         ];
 
         return (

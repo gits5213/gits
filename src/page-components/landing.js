@@ -596,29 +596,29 @@ class Landing extends Component {
                                             return courseInfo[card.courseName] || card.techStack;
                                         })()}
                                     </p>
-                                    <Link href="/courses" style={{ textDecoration: 'none' }}>
+                                    <Link href={card.courseName === 'Backend(API) Automation Test' ? '/courses/api-automation' : '/courses'} style={{ textDecoration: 'none' }}>
                                         <button 
                                             id={`home-training-${card.courseName.toLowerCase().replace(/\s+/g, '-').replace(/[()]/g, '')}-learn-more-btn`}
                                             style={{
-                                            width: '100%',
-                                            padding: '12px 24px',
-                                            fontSize: '16px',
-                                            fontWeight: 600,
-                                            color: '#ffffff',
-                                            backgroundColor: '#003366',
-                                            border: 'none',
-                                            borderRadius: '6px',
-                                            cursor: 'pointer',
-                                            transition: 'all 0.3s'
-                                        }}
-                                        onMouseEnter={(e) => {
-                                            e.currentTarget.style.backgroundColor = '#002244';
-                                            e.currentTarget.style.transform = 'translateY(-2px)';
-                                        }}
-                                        onMouseLeave={(e) => {
-                                            e.currentTarget.style.backgroundColor = '#003366';
-                                            e.currentTarget.style.transform = 'translateY(0)';
-                                        }}>
+                                                width: '100%',
+                                                padding: '12px 24px',
+                                                fontSize: '16px',
+                                                fontWeight: 600,
+                                                color: '#ffffff',
+                                                backgroundColor: '#003366',
+                                                border: 'none',
+                                                borderRadius: '6px',
+                                                cursor: 'pointer',
+                                                transition: 'all 0.3s'
+                                            }}
+                                            onMouseEnter={(e) => {
+                                                e.currentTarget.style.backgroundColor = '#002244';
+                                                e.currentTarget.style.transform = 'translateY(-2px)';
+                                            }}
+                                            onMouseLeave={(e) => {
+                                                e.currentTarget.style.backgroundColor = '#003366';
+                                                e.currentTarget.style.transform = 'translateY(0)';
+                                            }}>
                                             Learn More
                                         </button>
                                     </Link>
@@ -798,6 +798,204 @@ class Landing extends Component {
                                 <Link href="/courses/security" style={{ textDecoration: 'none' }}>
                                     <button 
                                         id="home-training-security-learn-more-btn"
+                                        style={{
+                                        width: '100%',
+                                        padding: '12px 24px',
+                                        fontSize: '16px',
+                                        fontWeight: 600,
+                                        color: '#ffffff',
+                                        backgroundColor: '#003366',
+                                        border: 'none',
+                                        borderRadius: '6px',
+                                        cursor: 'pointer',
+                                        transition: 'all 0.3s'
+                                    }}
+                                    onMouseEnter={(e) => {
+                                        e.currentTarget.style.backgroundColor = '#002244';
+                                        e.currentTarget.style.transform = 'translateY(-2px)';
+                                    }}
+                                    onMouseLeave={(e) => {
+                                        e.currentTarget.style.backgroundColor = '#003366';
+                                        e.currentTarget.style.transform = 'translateY(0)';
+                                    }}>
+                                        Learn More
+                                    </button>
+                                </Link>
+                            </Card>
+                            {/* DevOps Pipeline for Testers Card */}
+                            <Card style={{
+                                padding: '24px',
+                                height: '100%',
+                                border: '1px solid #e0e0e0',
+                                transition: 'all 0.3s',
+                                display: 'flex',
+                                flexDirection: 'column'
+                            }}
+                            onMouseEnter={(e) => {
+                                e.currentTarget.style.transform = 'translateY(-4px)';
+                                e.currentTarget.style.boxShadow = '0 8px 16px rgba(0,0,0,0.15)';
+                                e.currentTarget.style.borderColor = '#003366';
+                            }}
+                            onMouseLeave={(e) => {
+                                e.currentTarget.style.transform = 'translateY(0)';
+                                e.currentTarget.style.boxShadow = 'none';
+                                e.currentTarget.style.borderColor = '#e0e0e0';
+                            }}>
+                                <h3 style={{
+                                    fontSize: '20px',
+                                    fontWeight: 700,
+                                    fontFamily: 'monospace',
+                                    color: '#003366',
+                                    marginBottom: '12px',
+                                    margin: '0 0 12px 0',
+                                    letterSpacing: '0.5px'
+                                }}>
+                                    🚀 DevOps Pipeline for Testers Program
+                                </h3>
+                                <p style={{
+                                    fontSize: '15px',
+                                    color: '#666666',
+                                    margin: '0 0 20px 0',
+                                    lineHeight: 1.6,
+                                    flex: 1
+                                }}>
+                                    Learn DevOps tools and practices for QA engineers. Master Docker containerization, Kubernetes, CI/CD pipeline setup with Jenkins and GitLab CI, Infrastructure as Code, cloud platforms (AWS/Azure), and monitoring/logging. Essential for DevOps QA Engineer and CI/CD Specialist roles.
+                                </p>
+                                <Link href="/courses/devops-pipeline" style={{ textDecoration: 'none' }}>
+                                    <button 
+                                        id="home-training-devops-pipeline-learn-more-btn"
+                                        style={{
+                                        width: '100%',
+                                        padding: '12px 24px',
+                                        fontSize: '16px',
+                                        fontWeight: 600,
+                                        color: '#ffffff',
+                                        backgroundColor: '#003366',
+                                        border: 'none',
+                                        borderRadius: '6px',
+                                        cursor: 'pointer',
+                                        transition: 'all 0.3s'
+                                    }}
+                                    onMouseEnter={(e) => {
+                                        e.currentTarget.style.backgroundColor = '#002244';
+                                        e.currentTarget.style.transform = 'translateY(-2px)';
+                                    }}
+                                    onMouseLeave={(e) => {
+                                        e.currentTarget.style.backgroundColor = '#003366';
+                                        e.currentTarget.style.transform = 'translateY(0)';
+                                    }}>
+                                        Learn More
+                                    </button>
+                                </Link>
+                            </Card>
+                            {/* AI for QA Card */}
+                            <Card style={{
+                                padding: '24px',
+                                height: '100%',
+                                border: '1px solid #e0e0e0',
+                                transition: 'all 0.3s',
+                                display: 'flex',
+                                flexDirection: 'column'
+                            }}
+                            onMouseEnter={(e) => {
+                                e.currentTarget.style.transform = 'translateY(-4px)';
+                                e.currentTarget.style.boxShadow = '0 8px 16px rgba(0,0,0,0.15)';
+                                e.currentTarget.style.borderColor = '#003366';
+                            }}
+                            onMouseLeave={(e) => {
+                                e.currentTarget.style.transform = 'translateY(0)';
+                                e.currentTarget.style.boxShadow = 'none';
+                                e.currentTarget.style.borderColor = '#e0e0e0';
+                            }}>
+                                <h3 style={{
+                                    fontSize: '20px',
+                                    fontWeight: 700,
+                                    fontFamily: 'monospace',
+                                    color: '#003366',
+                                    marginBottom: '12px',
+                                    margin: '0 0 12px 0',
+                                    letterSpacing: '0.5px'
+                                }}>
+                                    🤖 AI for QA Program
+                                </h3>
+                                <p style={{
+                                    fontSize: '15px',
+                                    color: '#666666',
+                                    margin: '0 0 20px 0',
+                                    lineHeight: 1.6,
+                                    flex: 1
+                                }}>
+                                    Leverage AI and GenAI for modern testing. Master AI-powered test generation, RAG (Retrieval-Augmented Generation) for QA, intelligent test automation, AI-based bug detection, OpenAI API, LangChain, and Python for AI/ML. Essential for AI QA Engineer and GenAI Test Automation Specialist roles.
+                                </p>
+                                <Link href="/courses/ai-for-qa" style={{ textDecoration: 'none' }}>
+                                    <button 
+                                        id="home-training-ai-for-qa-learn-more-btn"
+                                        style={{
+                                        width: '100%',
+                                        padding: '12px 24px',
+                                        fontSize: '16px',
+                                        fontWeight: 600,
+                                        color: '#ffffff',
+                                        backgroundColor: '#003366',
+                                        border: 'none',
+                                        borderRadius: '6px',
+                                        cursor: 'pointer',
+                                        transition: 'all 0.3s'
+                                    }}
+                                    onMouseEnter={(e) => {
+                                        e.currentTarget.style.backgroundColor = '#002244';
+                                        e.currentTarget.style.transform = 'translateY(-2px)';
+                                    }}
+                                    onMouseLeave={(e) => {
+                                        e.currentTarget.style.backgroundColor = '#003366';
+                                        e.currentTarget.style.transform = 'translateY(0)';
+                                    }}>
+                                        Learn More
+                                    </button>
+                                </Link>
+                            </Card>
+                            {/* Digital Marketing Card */}
+                            <Card style={{
+                                padding: '24px',
+                                height: '100%',
+                                border: '1px solid #e0e0e0',
+                                transition: 'all 0.3s',
+                                display: 'flex',
+                                flexDirection: 'column'
+                            }}
+                            onMouseEnter={(e) => {
+                                e.currentTarget.style.transform = 'translateY(-4px)';
+                                e.currentTarget.style.boxShadow = '0 8px 16px rgba(0,0,0,0.15)';
+                                e.currentTarget.style.borderColor = '#003366';
+                            }}
+                            onMouseLeave={(e) => {
+                                e.currentTarget.style.transform = 'translateY(0)';
+                                e.currentTarget.style.boxShadow = 'none';
+                                e.currentTarget.style.borderColor = '#e0e0e0';
+                            }}>
+                                <h3 style={{
+                                    fontSize: '20px',
+                                    fontWeight: 700,
+                                    fontFamily: 'monospace',
+                                    color: '#003366',
+                                    marginBottom: '12px',
+                                    margin: '0 0 12px 0',
+                                    letterSpacing: '0.5px'
+                                }}>
+                                    📱 Digital Marketing Program
+                                </h3>
+                                <p style={{
+                                    fontSize: '15px',
+                                    color: '#666666',
+                                    margin: '0 0 20px 0',
+                                    lineHeight: 1.6,
+                                    flex: 1
+                                }}>
+                                    Master comprehensive digital marketing strategies and tools. Learn SEO optimization, social media marketing, content marketing & copywriting, PPC advertising, email marketing campaigns, analytics & performance tracking, SEM, conversion rate optimization, and marketing automation. Essential for Digital Marketing Specialist, SEO Specialist, and Social Media Manager roles.
+                                </p>
+                                <Link href="/courses/digital-marketing" style={{ textDecoration: 'none' }}>
+                                    <button 
+                                        id="home-training-digital-marketing-learn-more-btn"
                                         style={{
                                         width: '100%',
                                         padding: '12px 24px',
