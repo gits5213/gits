@@ -1,5 +1,4 @@
 import React, {Component} from 'react';
-import Footer from '../../footer';
 import { testCaseStyles } from '../../../utils/globalStyles';
 import '../../../styles/base.css';
 
@@ -209,7 +208,7 @@ class TestCases extends Component {
             },
             // Field 2: Last Name (appears second in form)
             {
-                id: 'TC-011',
+                id: 'TC-003',
                 title: 'Registration Form - Validation Error for Empty Last Name',
                 module: 'Registration Form',
                 testLevel: 'System',
@@ -262,7 +261,7 @@ class TestCases extends Component {
                 }
             },
             {
-                id: 'TC-012',
+                id: 'TC-004',
                 title: 'Registration Form - Validation Error for Last Name with Only Whitespace',
                 module: 'Registration Form',
                 testLevel: 'System',
@@ -316,7 +315,7 @@ class TestCases extends Component {
             },
             // Field 3: Email (appears third in form)
             {
-                id: 'TC-013',
+                id: 'TC-005',
                 title: 'Registration Form - Validation Error for Empty Email',
                 module: 'Registration Form',
                 testLevel: 'System',
@@ -369,7 +368,7 @@ class TestCases extends Component {
                 }
             },
             {
-                id: 'TC-003',
+                id: 'TC-006',
                 title: 'Registration Form - Validation Error for Invalid Email Format',
                 module: 'Registration Form',
                 testLevel: 'System',
@@ -423,7 +422,7 @@ class TestCases extends Component {
             },
             // Field 4: Phone Number (appears fourth in form)
             {
-                id: 'TC-016',
+                id: 'TC-007',
                 title: 'Registration Form - Validation Error for Empty Phone Number',
                 module: 'Registration Form',
                 testLevel: 'System',
@@ -476,7 +475,7 @@ class TestCases extends Component {
                 }
             },
             {
-                id: 'TC-007',
+                id: 'TC-008',
                 title: 'Registration Form - Validation Error for Invalid Phone Number',
                 module: 'Registration Form',
                 testLevel: 'System',
@@ -531,7 +530,7 @@ class TestCases extends Component {
             },
             // Field 7: Confirm Password (appears seventh in form)
             {
-                id: 'TC-021',
+                id: 'TC-009',
                 title: 'Registration Form - Validation Error for Empty Confirm Password',
                 module: 'Registration Form',
                 testLevel: 'System',
@@ -585,7 +584,7 @@ class TestCases extends Component {
                 }
             },
             {
-                id: 'TC-004',
+                id: 'TC-010',
                 title: 'Registration Form - Validation Error for Password Mismatch',
                 module: 'Registration Form',
                 testLevel: 'System',
@@ -639,7 +638,7 @@ class TestCases extends Component {
             },
             // Field 8: Gender (appears eighth in form)
             {
-                id: 'TC-024',
+                id: 'TC-011',
                 title: 'Registration Form - Validation Error for Empty Gender',
                 module: 'Registration Form',
                 testLevel: 'System',
@@ -693,7 +692,7 @@ class TestCases extends Component {
             },
             // Field 9: Date of Birth (appears ninth in form)
             {
-                id: 'TC-022',
+                id: 'TC-012',
                 title: 'Registration Form - Validation Error for Empty Date of Birth',
                 module: 'Registration Form',
                 testLevel: 'System',
@@ -746,7 +745,7 @@ class TestCases extends Component {
                 }
             },
             {
-                id: 'TC-023',
+                id: 'TC-013',
                 title: 'Registration Form - Validation Error for Future Date of Birth',
                 module: 'Registration Form',
                 testLevel: 'System',
@@ -800,7 +799,7 @@ class TestCases extends Component {
             },
             // Field 10: Country (appears tenth in form)
             {
-                id: 'TC-025',
+                id: 'TC-014',
                 title: 'Registration Form - Validation Error for Empty Country',
                 module: 'Registration Form',
                 testLevel: 'System',
@@ -854,7 +853,7 @@ class TestCases extends Component {
             },
             // Field 11: Terms and Conditions (appears last in form)
             {
-                id: 'TC-008',
+                id: 'TC-015',
                 title: 'Registration Form - Validation Error for Unchecked Terms and Conditions',
                 module: 'Registration Form',
                 testLevel: 'System',
@@ -908,7 +907,7 @@ class TestCases extends Component {
             },
             // Combined Test Case: Multiple Fields Empty (edge case)
             {
-                id: 'TC-009',
+                id: 'TC-016',
                 title: 'Registration Form - Validation Error for Empty Required Dropdown Fields',
                 module: 'Registration Form',
                 testLevel: 'System',
@@ -964,7 +963,7 @@ class TestCases extends Component {
             },
             // Additional Edge Cases
             {
-                id: 'TC-010',
+                id: 'TC-017',
                 title: 'Registration Form - Validation Error for First Name with Only Whitespace',
                 module: 'Registration Form',
                 testLevel: 'System',
@@ -1017,7 +1016,7 @@ class TestCases extends Component {
                 }
             },
             {
-                id: 'TC-011',
+                id: 'TC-018',
                 title: 'Registration Form - Validation Error for Empty Last Name',
                 module: 'Registration Form',
                 testLevel: 'System',
@@ -1070,7 +1069,7 @@ class TestCases extends Component {
                 }
             },
             {
-                id: 'TC-012',
+                id: 'TC-019',
                 title: 'Registration Form - Validation Error for Last Name with Only Whitespace',
                 module: 'Registration Form',
                 testLevel: 'System',
@@ -1123,7 +1122,7 @@ class TestCases extends Component {
                 }
             },
             {
-                id: 'TC-013',
+                id: 'TC-020',
                 title: 'Registration Form - Validation Error for Empty Email',
                 module: 'Registration Form',
                 testLevel: 'System',
@@ -1176,7 +1175,7 @@ class TestCases extends Component {
                 }
             },
             {
-                id: 'TC-014',
+                id: 'TC-021',
                 title: 'Registration Form - Validation Error for Email Missing @ Symbol',
                 module: 'Registration Form',
                 testLevel: 'System',
@@ -1229,7 +1228,7 @@ class TestCases extends Component {
                 }
             },
             {
-                id: 'TC-015',
+                id: 'TC-022',
                 title: 'Registration Form - Validation Error for Email Missing Domain',
                 module: 'Registration Form',
                 testLevel: 'System',
@@ -1282,7 +1281,7 @@ class TestCases extends Component {
                 }
             },
             {
-                id: 'TC-016',
+                id: 'TC-023',
                 title: 'Registration Form - Validation Error for Empty Phone Number',
                 module: 'Registration Form',
                 testLevel: 'System',
@@ -1335,7 +1334,7 @@ class TestCases extends Component {
                 }
             },
             {
-                id: 'TC-017',
+                id: 'TC-024',
                 title: 'Registration Form - Validation Error for Phone Number with Less Than 10 Digits',
                 module: 'Registration Form',
                 testLevel: 'System',
@@ -1388,7 +1387,7 @@ class TestCases extends Component {
                 }
             },
             {
-                id: 'TC-018',
+                id: 'TC-025',
                 title: 'Registration Form - Validation Error for Phone Number with Letters',
                 module: 'Registration Form',
                 testLevel: 'System',
@@ -1441,7 +1440,7 @@ class TestCases extends Component {
                 }
             },
             {
-                id: 'TC-019',
+                id: 'TC-026',
                 title: 'Registration Form - Validation Error for Empty Username',
                 module: 'Registration Form',
                 testLevel: 'System',
@@ -1494,7 +1493,7 @@ class TestCases extends Component {
                 }
             },
             {
-                id: 'TC-020',
+                id: 'TC-027',
                 title: 'Registration Form - Validation Error for Empty Password',
                 module: 'Registration Form',
                 testLevel: 'System',
@@ -1547,7 +1546,7 @@ class TestCases extends Component {
                 }
             },
             {
-                id: 'TC-021',
+                id: 'TC-028',
                 title: 'Registration Form - Validation Error for Empty Confirm Password',
                 module: 'Registration Form',
                 testLevel: 'System',
@@ -1601,7 +1600,7 @@ class TestCases extends Component {
                 }
             },
             {
-                id: 'TC-022',
+                id: 'TC-029',
                 title: 'Registration Form - Validation Error for Empty Date of Birth',
                 module: 'Registration Form',
                 testLevel: 'System',
@@ -1654,7 +1653,7 @@ class TestCases extends Component {
                 }
             },
             {
-                id: 'TC-023',
+                id: 'TC-030',
                 title: 'Registration Form - Validation Error for Future Date of Birth',
                 module: 'Registration Form',
                 testLevel: 'System',
@@ -1707,7 +1706,7 @@ class TestCases extends Component {
                 }
             },
             {
-                id: 'TC-024',
+                id: 'TC-031',
                 title: 'Registration Form - Validation Error for Empty Gender',
                 module: 'Registration Form',
                 testLevel: 'System',
@@ -1760,7 +1759,7 @@ class TestCases extends Component {
                 }
             },
             {
-                id: 'TC-025',
+                id: 'TC-032',
                 title: 'Registration Form - Validation Error for Empty Country',
                 module: 'Registration Form',
                 testLevel: 'System',
@@ -3199,7 +3198,7 @@ class TestCases extends Component {
                 description: 'Test cases for Checkboxes functionality, verifying checkbox selection and deselection.',
                 testCases: [
                     {
-                        id: 'TC-CHK-001',
+                        id: 'TC-CH-001',
                         title: 'Checkboxes - Select Single Checkbox',
                         module: 'Checkboxes',
                         testLevel: 'System',
@@ -3231,7 +3230,7 @@ class TestCases extends Component {
                         }
                     },
                     {
-                        id: 'TC-CHK-002',
+                        id: 'TC-CH-002',
                         title: 'Checkboxes - Deselect Checkbox',
                         module: 'Checkboxes',
                         testLevel: 'System',
@@ -3264,7 +3263,7 @@ class TestCases extends Component {
                         }
                     },
                     {
-                        id: 'TC-CHK-003',
+                        id: 'TC-CH-003',
                         title: 'Checkboxes - Select Multiple Checkboxes',
                         module: 'Checkboxes',
                         testLevel: 'System',
@@ -3741,7 +3740,7 @@ class TestCases extends Component {
                 description: 'Test cases for Hovers functionality, verifying hover effects and content display.',
                 testCases: [
                     {
-                        id: 'TC-HOV-001',
+                        id: 'TC-HO-001',
                         title: 'Hovers - Verify Hover Effect on Element',
                         module: 'Hovers',
                         testLevel: 'System',
@@ -3773,7 +3772,7 @@ class TestCases extends Component {
                         }
                     },
                     {
-                        id: 'TC-HOV-002',
+                        id: 'TC-HO-002',
                         title: 'Hovers - Verify Hover Effect Disappears on Mouse Leave',
                         module: 'Hovers',
                         testLevel: 'System',
@@ -3813,7 +3812,7 @@ class TestCases extends Component {
                 description: 'Test cases for Inputs functionality, verifying text input and number input handling.',
                 testCases: [
                     {
-                        id: 'TC-INP-001',
+                        id: 'TC-IN-001',
                         title: 'Inputs - Enter Text in Number Input Field',
                         module: 'Inputs',
                         testLevel: 'System',
@@ -3846,7 +3845,7 @@ class TestCases extends Component {
                         }
                     },
                     {
-                        id: 'TC-INP-002',
+                        id: 'TC-IN-002',
                         title: 'Inputs - Verify Non-Numeric Input is Rejected',
                         module: 'Inputs',
                         testLevel: 'System',
@@ -4639,7 +4638,7 @@ class TestCases extends Component {
                 description: 'Test cases for Challenging DOM functionality, verifying complex DOM interactions and element selection.',
                 testCases: [
                     {
-                        id: 'TC-CDOM-001',
+                        id: 'TC-CD-001',
                         title: 'Challenging DOM - Verify Page Loads with Complex Elements',
                         module: 'Challenging DOM',
                         testLevel: 'System',
@@ -4670,7 +4669,7 @@ class TestCases extends Component {
                         }
                     },
                     {
-                        id: 'TC-CDOM-002',
+                        id: 'TC-CD-002',
                         title: 'Challenging DOM - Click Button and Verify Action',
                         module: 'Challenging DOM',
                         testLevel: 'System',
@@ -4780,7 +4779,7 @@ class TestCases extends Component {
                 description: 'Test cases for Dynamic Controls functionality, verifying controls that appear dynamically.',
                 testCases: [
                     {
-                        id: 'TC-DCTRL-001',
+                        id: 'TC-DCT-001',
                         title: 'Dynamic Controls - Enable Control After Click',
                         module: 'Dynamic Controls',
                         testLevel: 'System',
@@ -4813,7 +4812,7 @@ class TestCases extends Component {
                         }
                     },
                     {
-                        id: 'TC-DCTRL-002',
+                        id: 'TC-DCT-002',
                         title: 'Dynamic Controls - Remove Control After Click',
                         module: 'Dynamic Controls',
                         testLevel: 'System',
@@ -6111,7 +6110,7 @@ class TestCases extends Component {
                 description: 'Test cases for Shifting Content functionality, verifying content that shifts or moves dynamically.',
                 testCases: [
                     {
-                        id: 'TC-SC-001',
+                        id: 'TC-SR-001',
                         title: 'Shifting Content - Verify Content Shifts',
                         module: 'Shifting Content',
                         testLevel: 'System',
@@ -6144,7 +6143,7 @@ class TestCases extends Component {
                         }
                     },
                     {
-                        id: 'TC-SC-002',
+                        id: 'TC-SR-002',
                         title: 'Shifting Content - Verify Content Accessibility After Shift',
                         module: 'Shifting Content',
                         testLevel: 'System',
@@ -6184,7 +6183,7 @@ class TestCases extends Component {
                 description: 'Test cases for Slow Resources functionality, verifying page behavior with slow-loading resources.',
                 testCases: [
                     {
-                        id: 'TC-SR-001',
+                        id: 'TC-SLR-001',
                         title: 'Slow Resources - Verify Page Loads Despite Slow Resources',
                         module: 'Slow Resources',
                         testLevel: 'System',
@@ -6217,7 +6216,7 @@ class TestCases extends Component {
                         }
                     },
                     {
-                        id: 'TC-SR-002',
+                        id: 'TC-SLR-002',
                         title: 'Slow Resources - Verify Loading Indicators',
                         module: 'Slow Resources',
                         testLevel: 'System',
@@ -6725,9 +6724,29 @@ class TestCases extends Component {
 
                     {/* Test Cases List - Organized by Sections */}
                     <div style={testCaseStyles.testCasesList}>
-                        {Object.values(testCasesSections).map((section, index) => {
+                        {(() => {
+                            // Sort sections according to sectionOrder to ensure sequential numbering
+                            const sectionOrder = [
+                                'registration-form', 'e2e-flow', 'ab-testing', 'add-remove-elements',
+                                'basic-auth', 'broken-images', 'challenging-dom', 'checkboxes',
+                                'context-menu', 'digest-auth', 'disappearing-elements', 'drag-and-drop',
+                                'dropdown', 'dynamic-content', 'dynamic-controls', 'dynamic-loading',
+                                'entry-ad', 'exit-intent', 'file-download', 'file-upload',
+                                'floating-menu', 'forgot-password', 'form-authentication', 'frames',
+                                'geolocation', 'horizontal-slider', 'hovers', 'infinite-scroll',
+                                'inputs', 'jquery-ui-menus', 'javascript-alerts', 'javascript-error',
+                                'key-presses', 'large-deep-dom', 'multiple-windows', 'nested-frames',
+                                'notification-messages', 'redirect-link', 'secure-file-download', 'shadow-dom',
+                                'shifting-content', 'slow-resources', 'sortable-data-tables', 'status-codes',
+                                'typos', 'wysiwyg-editor'
+                            ];
+                            return sectionOrder
+                                .map(id => testCasesSections[id])
+                                .filter(section => section !== undefined);
+                        })().map((section, index, sortedSectionsArray) => {
                             const isFirst = index === 0;
-                            const isLast = index === Object.values(testCasesSections).length - 1;
+                            const isLast = index === sortedSectionsArray.length - 1;
+                            const sectionNumber = index + 1; // Sequential numbering starting from 1
                             return (
                             <div key={section.id} style={{ marginBottom: '0' }}>
                                 {/* Section Header */}
@@ -6769,18 +6788,16 @@ class TestCases extends Component {
                                 >
                                     <div style={{ flex: 1 }}>
                                         <div style={{ display: 'flex', alignItems: 'flex-start', gap: '10px', marginBottom: '8px' }}>
-                                            {this.getSectionNumber(section.id) && (
-                                                <span style={{
-                                                    color: '#00416A',
-                                                    fontWeight: 'bold',
-                                                    fontSize: '24px',
-                                                    minWidth: '35px',
-                                                    flexShrink: 0,
-                                                    lineHeight: '1.2'
-                                                }}>
-                                                    {this.getSectionNumber(section.id)}.
-                                                </span>
-                                            )}
+                                            <span style={{
+                                                color: '#00416A',
+                                                fontWeight: 'bold',
+                                                fontSize: '24px',
+                                                minWidth: '35px',
+                                                flexShrink: 0,
+                                                lineHeight: '1.2'
+                                            }}>
+                                                {sectionNumber}.
+                                            </span>
                                             <h2 style={{
                                                 color: '#00416A',
                                                 fontSize: '24px',
@@ -6797,7 +6814,7 @@ class TestCases extends Component {
                                             fontSize: '14px',
                                             margin: 0,
                                             textAlign: 'left',
-                                            paddingLeft: this.getSectionNumber(section.id) ? '45px' : '0'
+                                            paddingLeft: '45px'
                                         }}>
                                             {section.description} ({section.testCases.length} test cases)
                                         </p>
@@ -6993,8 +7010,7 @@ class TestCases extends Component {
                 </div>
 
                 <section className='pt4'>
-                    <Footer />
-                </section>
+                    </section>
             </main>
         );
     }

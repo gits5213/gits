@@ -2,6 +2,8 @@
 
 .landing-body {
   width: 100%;
+  margin: 0;
+  padding: 0;
 }
 
 .landing-hero-container {

@@ -1,7 +1,7 @@
 import React from 'react';
 import windowsLogo from '../../../images/tabs/winLogo.png';
 import link from '../../../utilities/links.json';
-import Footer from '../../../components/footer';
+import { getImageSrc } from '../../../utils/getImageSrc';
 import { leftAlignStyles } from '../../../utils/globalStyles';
 
 const window = () => {
@@ -31,7 +31,7 @@ const window = () => {
                     justifyContent: 'flex-end'
                 }}>
                     <img 
-                        src={windowsLogo} 
+                        src={getImageSrc(windowsLogo)} 
                         alt='Windows Logo'
                         style={{
                             maxWidth: '300px',
@@ -666,8 +666,7 @@ const window = () => {
             <div>
             </div>
             <section style={{ marginTop: '40px' }}>
-                <Footer />
-            </section>
+                </section>
         </div>
     )
 }

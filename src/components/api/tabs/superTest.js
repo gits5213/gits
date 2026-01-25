@@ -1,7 +1,7 @@
 import React from 'react';
 import link from '../../../utilities/links.json';
 import superTestLogo from '../../../images/tabs/supertestLogo.png'; 
-import Footer from '../../../components/footer';
+import { getImageSrc } from '../../../utils/getImageSrc';
 import { leftAlignStyles } from '../../../utils/globalStyles';
 
 const resSuperTest = () => {
@@ -31,7 +31,7 @@ const resSuperTest = () => {
                     justifyContent: 'flex-end'
                 }}>
                     <img 
-                        src={superTestLogo} 
+                        src={getImageSrc(superTestLogo)} 
                         alt='SuperTest Logo'
                         style={{
                             maxWidth: '300px',
@@ -72,7 +72,7 @@ const resSuperTest = () => {
                         e.target.style.transform = 'translateY(0)';
                     }}
                 >
-                    <img src={link.GITHUB_ICON} alt='github' style={{ marginRight: '10px', width: '20px', height: '20px' }} />
+                    <img src={getImageSrc(link.GITHUB_ICON)} alt='github' style={{ marginRight: '10px', width: '20px', height: '20px' }} />
                     SuperTest on GitHub                 
                 </a>
                 <a 
@@ -109,8 +109,7 @@ const resSuperTest = () => {
             <div>
             </div>
             <section style={{ marginTop: '40px' }}>
-                <Footer />
-            </section>
+                </section>
         </div>
     )
 }

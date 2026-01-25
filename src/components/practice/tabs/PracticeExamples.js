@@ -1,6 +1,5 @@
 import React, {Component} from 'react';
 import {Link} from 'react-router-dom';
-import Footer from '../../footer';
 import '../../../styles/base.css';
 
 class PracticeExamples extends Component {
@@ -289,8 +288,7 @@ class PracticeExamples extends Component {
                     data-testid="practice-examples-footer-section"
                     className='pt4'
                 >
-                    <Footer />
-                </section>
+                    </section>
             </main>
         );
     }

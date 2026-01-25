@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
+import { getImageSrc } from '../../../utils/getImageSrc';
 import gkLogo from '../../../images/tabs/gkLogo.png';
-import Footer from '../../../components/footer';
 import { leftAlignStyles, colors } from '../../../utils/globalStyles';
 
 const Gk = () => {
@@ -225,7 +225,7 @@ const Gk = () => {
                 </div>
                 <div style={modernStyles.heroImage}>
                     <img 
-                        src={gkLogo} 
+                        src={getImageSrc(gkLogo)} 
                         alt='General Knowledge Logo'
                         style={{
                             maxWidth: '350px',
@@ -861,8 +861,7 @@ const Gk = () => {
             </div>
 
             <section style={{ marginTop: '40px' }}>
-                <Footer />
-            </section>
+                </section>
         </div>
     )
 }

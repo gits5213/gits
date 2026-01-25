@@ -1,6 +1,6 @@
 import React from 'react';
 import basicLogo from '../../../images/tabs/basicLogo.png';
-import Footer from '../../../components/footer';
+import { getImageSrc } from '../../../utils/getImageSrc';
 import { leftAlignStyles } from '../../../utils/globalStyles';
 
 const basic = () => {
@@ -19,7 +19,7 @@ const basic = () => {
             {/* Image Section */}
             <div style={leftAlignStyles.imageSection}>
                 <img 
-                    src={basicLogo} 
+                    src={getImageSrc(basicLogo)} 
                     alt='Basic Logo'
                     style={{
                         width: '100%',
@@ -33,8 +33,7 @@ const basic = () => {
             <div>
             </div>
             <section style={{ marginTop: '40px' }}>
-                <Footer />
-            </section>
+                </section>
         </div>
     )
 }

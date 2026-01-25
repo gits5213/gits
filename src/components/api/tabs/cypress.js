@@ -1,7 +1,7 @@
 import React from 'react';
 import link from '../../../utilities/links.json';
 import CypressLogo from '../../../images/tabs/CypressLogo.png';
-import Footer from '../../../components/footer';
+import { getImageSrc } from '../../../utils/getImageSrc';
 import { leftAlignStyles } from '../../../utils/globalStyles';
 
 const resCypress = () => {
@@ -20,7 +20,7 @@ const resCypress = () => {
             {/* Image Section */}
             <div style={leftAlignStyles.imageSection}>
                 <img 
-                    src={CypressLogo} 
+                    src={getImageSrc(CypressLogo)} 
                     alt='Cypress Logo'
                     style={{
                         width: '100%',
@@ -59,7 +59,7 @@ const resCypress = () => {
                         e.target.style.transform = 'translateY(0)';
                     }}
                 >
-                    <img src={link.GITHUB_ICON} alt='github' style={{ marginRight: '10px', width: '20px', height: '20px' }} />
+                    <img src={getImageSrc(link.GITHUB_ICON)} alt='github' style={{ marginRight: '10px', width: '20px', height: '20px' }} />
                     Cypress on GitHub                 
                 </a>
                 <a 
@@ -96,8 +96,7 @@ const resCypress = () => {
             <div>
             </div>
             <section style={{ marginTop: '40px' }}>
-                <Footer />
-            </section>
+                </section>
         </div>
     )
 }

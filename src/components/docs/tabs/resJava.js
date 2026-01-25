@@ -6,20 +6,19 @@ import JavaWindow from './resJava/java_window';
 import Maven from './resJava/maven';
 import java_logo from '../../../images/tabs/javaLogo.png';
 import java_CHEAT_SHEET from '../../../images/tabs/javaCheatsheet.jpeg';
-import Footer from '../../../components/footer';
-
+import { getImageSrc } from '../../../utils/getImageSrc';
 const resJava = () => {
     return(
-        <div className='page-tab-body'>
+        <div className='page-tab-body' style={{ height: 'auto', minHeight: 'auto', paddingBottom: '100px', marginBottom: '40px' }}>
             <div id='top'>
                 <h3>JAVA</h3>
             </div>
             <div className='tc'>
-                <img className='pr4 pt4 pb4 js-logo' src={java_logo} alt='js Logo'/>
+                <img className='pr4 pt4 pb4 js-logo' src={getImageSrc(java_logo)} alt='js Logo'/>
             </div>
             <div className='tc pt3'>
               <a class='f6 grow no-underline br-pill ph3 pv2 mb2 dib white bg-red' href={link.JAVA_TOPICS} target="_blank" rel="noopener noreferrer">
-                  <img className='pr2' src={link.GITHUB_ICON} alt='github log' /> 
+                  <img className='pr2' src={getImageSrc(link.GITHUB_ICON)} alt='github log' /> 
                   Java Topics on GitHub                 
               </a>
               <a class='f6 grow no-underline br-pill ph3 pv2 mb2 dib white bg-green' href={link.JAVA_CODE_STYLEGUIDE} target="_blank" rel="noopener noreferrer">
@@ -118,15 +117,14 @@ const resJava = () => {
             <section>
             <hr />
                 <div className='tc'>
-                    <img className='pr4 pt4 pb4 linux-logo' src={java_CHEAT_SHEET} alt='Linux Logo'/>
+                    <img className='pr4 pt4 pb4 linux-logo' src={getImageSrc(java_CHEAT_SHEET)} alt='Linux Logo'/>
                 </div>
             </section>
             <section>
             <div>
             </div>
             <section className='pt4'>
-                <Footer />
-            </section>
+                </section>
             </section>
         </div>
     )

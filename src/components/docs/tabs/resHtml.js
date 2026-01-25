@@ -2,8 +2,7 @@ import React from 'react';
 import link from '../../../utilities/links.json';
 import HTML_LOGO from '../../../images/tabs/htmlLogo.png';
 import HTML_TAG from '../../../images/tabs/htmlTags.jpeg';
-import Footer from '../../../components/footer';
-
+import { getImageSrc } from '../../../utils/getImageSrc';
 const resHtml = () => {
     const htmlLinks = [
         { name: 'HTML tags', url: link.HTML_TAGS },
@@ -59,7 +58,7 @@ const resHtml = () => {
                     justifyContent: 'flex-end'
                 }}>
                     <img 
-                        src={HTML_LOGO} 
+                        src={getImageSrc(HTML_LOGO)} 
                         alt='HTML Logo'
                         style={{
                             maxWidth: '300px',
@@ -349,7 +348,7 @@ const resHtml = () => {
                     HTML Tags Cheat Sheet
                 </h2>
                 <img 
-                    src={HTML_TAG} 
+                    src={getImageSrc(HTML_TAG)} 
                     alt='HTML Tags Cheat Sheet'
                     style={{
                         width: '100%',
@@ -479,8 +478,7 @@ const resHtml = () => {
             <div>
             </div>
             <section style={{ marginTop: '40px' }}>
-                <Footer />
-            </section>
+                </section>
         </div>
     )
 }

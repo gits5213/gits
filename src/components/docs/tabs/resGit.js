@@ -2,17 +2,17 @@ import React, { useState } from 'react';
 import link from '../../../utilities/links.json';
 import GIT_LOGO from '../../../images/tabs/gitGitHub.png';
 import  GIT_CHEATSHEET from '../../../images/tabs/gitCheatSheet.jpeg';
-import Footer from '../../../components/footer';
 import PdfDownload from '../../shared/PdfDownload';
 import { scrollToGitCommand } from '../../../utils/scrollHelpers';
 import { checklistGridStyles, checklistLinkStyles } from '../../../utils/globalStyles';
 
+import { getImageSrc } from '../../../utils/getImageSrc';
 import { Grid, Cell } from 'react-mdl';
 
 const ResGit = () => {
     const [isExpanded, setIsExpanded] = useState(false);
     return(
-        <div className='page-tab-body'>
+        <div className='page-tab-body' style={{ height: 'auto', minHeight: 'auto', paddingBottom: '100px', marginBottom: '40px' }}>
             <section>
                 <div>
                     <h3>GIT/GITHUB</h3>
@@ -20,11 +20,11 @@ const ResGit = () => {
             </section>
             <section>
                 <div className='tc'>
-                    <img className='pr4 pt4 pb4 sql-logo' src={GIT_LOGO} alt='SQL Logo'/>
+                    <img className='pr4 pt4 pb4 sql-logo' src={getImageSrc(GIT_LOGO)} alt='SQL Logo'/>
                 </div>
                 <div className='tc pt3'>
                 <a class='f6 grow no-underline br-pill ph3 pv2 mb2 dib white bg-red' href={link.git} target="_blank" rel="noopener noreferrer">
-                    <img className='pr2' src={link.GITHUB_ICON} alt='github log' /> 
+                    <img className='pr2' src={getImageSrc(link.GITHUB_ICON)} alt='github log' /> 
                     GIT on GitHub                 
                 </a>
                 <a class='f6 grow no-underline br-pill ph3 pv2 mb2 dib white bg-green' href={link.gitHubCli} target="_blank" rel="noopener noreferrer">
@@ -1070,14 +1070,13 @@ git push -u origin dayXX-topic-name`}
             <section>
             <hr />
                 <div className='tc'>
-                    <img className='pr4 pt4 pb4 linux-logo' src={GIT_CHEATSHEET} alt='Linux Logo'/>
+                    <img className='pr4 pt4 pb4 linux-logo' src={getImageSrc(GIT_CHEATSHEET)} alt='Linux Logo'/>
                 </div>
             </section>
             <div>
             </div>
             <section className='pt4'>
-                <Footer />
-            </section>
+                </section>
         </div>
     )
 }

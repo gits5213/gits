@@ -1,7 +1,7 @@
 import React from 'react';
 import link from '../../../utilities/links.json';
 import appiumLogo from '../../../images/tabs/appiumLogo.png'; 
-import Footer from '../../../components/footer';
+import { getImageSrc } from '../../../utils/getImageSrc';
 import { leftAlignStyles } from '../../../utils/globalStyles';
 
 const resAppium = ({path}) => {
@@ -31,7 +31,7 @@ const resAppium = ({path}) => {
                     justifyContent: 'flex-end'
                 }}>
                     <img 
-                        src={appiumLogo} 
+                        src={getImageSrc(appiumLogo)} 
                         alt='Appium Logo'
                         style={{
                             maxWidth: '300px',
@@ -72,7 +72,7 @@ const resAppium = ({path}) => {
                         e.target.style.transform = 'translateY(0)';
                     }}
                 >
-                    <img src={link.GITHUB_ICON} alt='github' style={{ marginRight: '10px', width: '20px', height: '20px' }} />
+                    <img src={getImageSrc(link.GITHUB_ICON)} alt='github' style={{ marginRight: '10px', width: '20px', height: '20px' }} />
                     Appium on GitHub                 
                 </a>
                 <a 
@@ -109,8 +109,7 @@ const resAppium = ({path}) => {
             <div>
             </div>
             <section style={{ marginTop: '40px' }}>
-                <Footer />
-            </section>
+                </section>
         </div>
     )
 }

@@ -1,5 +1,4 @@
 import React, {Component} from 'react';
-import Footer from '../../../components/footer';
 import { loadExamResults, deleteExamResult, deleteAllExamResults } from '../../../utils/scoreStorage';
 import { exam1Data, exam2Data, exam3Data, exam4Data, exam5Data, exam6Data, exam7Data, exam8Data, exam9Data, exam10Data, exam11Data, exam12Data, exam13Data, exam14Data, exam15Data, exam16Data, exam17Data } from '../../../utilities/data/examData';
 
@@ -71,10 +70,14 @@ class Scorecard extends Component {
         try {
             // Load results from Firebase (if configured) or localStorage
             const results = await loadExamResults();
-            console.log(`Scorecard: Loaded ${results.length} exam result(s)`);
+            if (process.env.NODE_ENV === 'development') {
+                console.log(`Scorecard: Loaded ${results.length} exam result(s)`);
+            }
             this.setState({ results });
         } catch (error) {
-            console.error('Error loading exam results:', error);
+            if (process.env.NODE_ENV === 'development') {
+                console.error('Error loading exam results:', error);
+            }
             this.setState({ results: [] });
         }
     }
@@ -186,7 +189,9 @@ class Scorecard extends Component {
                 await deleteAllExamResults();
                 this.loadResults();
             } catch (error) {
-                console.error('Error deleting all exam results:', error);
+                if (process.env.NODE_ENV === 'development') {
+                    console.error('Error deleting all exam results:', error);
+                }
                 alert('Error deleting exam results. Please try again.');
             }
         }
@@ -529,8 +534,7 @@ class Scorecard extends Component {
                     </div>
                 )}
 
-                <Footer />
-            </div>
+                </div>
         );
     }
 }

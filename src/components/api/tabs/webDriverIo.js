@@ -1,7 +1,7 @@
 import React from 'react';
 import link from '../../../utilities/links.json';
 import webDriverIOLogo from '../../../images/tabs/webDriverIOLogo.png'; 
-import Footer from '../../../components/footer';
+import { getImageSrc } from '../../../utils/getImageSrc';
 import { leftAlignStyles } from '../../../utils/globalStyles';
 
 const resWebIo = () => {
@@ -31,7 +31,7 @@ const resWebIo = () => {
                     justifyContent: 'flex-end'
                 }}>
                     <img 
-                        src={webDriverIOLogo} 
+                        src={getImageSrc(webDriverIOLogo)} 
                         alt='WebDriverIO Logo'
                         style={{
                             maxWidth: '300px',
@@ -72,7 +72,7 @@ const resWebIo = () => {
                         e.target.style.transform = 'translateY(0)';
                     }}
                 >
-                    <img src={link.GITHUB_ICON} alt='github' style={{ marginRight: '10px', width: '20px', height: '20px' }} />
+                    <img src={getImageSrc(link.GITHUB_ICON)} alt='github' style={{ marginRight: '10px', width: '20px', height: '20px' }} />
                     WebDriverIO on GitHub                 
                 </a>
                 <a 
@@ -109,8 +109,7 @@ const resWebIo = () => {
             <div>
             </div>
             <section style={{ marginTop: '40px' }}>
-                <Footer />
-            </section>
+                </section>
         </div>
     )
 }

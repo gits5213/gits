@@ -1,7 +1,7 @@
 import React from 'react';
+import { getImageSrc } from '../../../utils/getImageSrc';
 import link from '../../../utilities/links.json';
 import restassuredLogo from '../../../images/tabs/restassuredLogo.png'; 
-import Footer from '../../../components/footer';
 import PdfDownload from '../../shared/PdfDownload';
 import { modernCardStyles, codeBlockStyles, sectionHeaderStyles, itemHeaderStyles, pageContainerStyles, modernHeroStyles, checklistGridStyles, checklistLinkStyles } from '../../../utils/globalStyles';
 
@@ -52,7 +52,7 @@ const resRestassured = () => {
                     justifyContent: 'flex-end'
                 }}>
                     <img 
-                        src={restassuredLogo} 
+                        src={getImageSrc(restassuredLogo)} 
                         alt='RESTAssured Logo'
                         style={{
                             maxWidth: '300px',
@@ -101,7 +101,7 @@ const resRestassured = () => {
                         e.target.style.boxShadow = '0 2px 6px rgba(220,53,69,0.3)';
                     }}
                 >
-                    <img src={link.GITHUB_ICON} alt='github' style={{ marginRight: '10px', width: '18px', height: '18px' }} />
+                    <img src={getImageSrc(link.GITHUB_ICON)} alt='github' style={{ marginRight: '10px', width: '18px', height: '18px' }} />
                     RESTAssured on GitHub
                 </a>
                 <a 
@@ -132,7 +132,7 @@ const resRestassured = () => {
                         e.target.style.boxShadow = '0 2px 6px rgba(40,167,69,0.3)';
                     }}
                 >
-                    <img src={link.GITHUB_ICON} alt='github' style={{ marginRight: '10px', width: '18px', height: '18px' }} />
+                    <img src={getImageSrc(link.GITHUB_ICON)} alt='github' style={{ marginRight: '10px', width: '18px', height: '18px' }} />
                     RESTAssured Org
                 </a>
             </div>
@@ -556,8 +556,7 @@ reporter: [
             <div>
             </div>
             <section style={{ marginTop: '40px' }}>
-                <Footer />
-            </section>
+                </section>
         </div>
     )
 }

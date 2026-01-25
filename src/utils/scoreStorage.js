@@ -8,17 +8,21 @@ import { WEB_APP_URL, isGoogleSheetsConfigured } from './googleSheetsConfig';
 // Returns immediately after saving to localStorage (non-blocking)
 // Google Sheets save happens in the background
 export const saveExamResult = async (examId, studentInfo, examResult) => {
-  // Always save to localStorage first (synchronous, instant)
-  localStorage.setItem(`examResult_${examId}`, JSON.stringify(examResult));
-  localStorage.setItem(`examTaken_${examId}`, 'true');
-  localStorage.setItem(`studentInfo_${examId}`, JSON.stringify(studentInfo));
+  // Always save to localStorage first (synchronous, instant) - only in browser
+  if (typeof window !== 'undefined' && window.localStorage) {
+    localStorage.setItem(`examResult_${examId}`, JSON.stringify(examResult));
+    localStorage.setItem(`examTaken_${examId}`, 'true');
+    localStorage.setItem(`studentInfo_${examId}`, JSON.stringify(studentInfo));
+  }
 
   // Save to Google Sheets in the background (non-blocking)
   // Don't await - let it happen asynchronously so UI doesn't wait
   if (isGoogleSheetsConfigured()) {
     saveToGoogleSheets(examId, studentInfo, examResult).catch(error => {
       // Silently handle errors - localStorage already saved, so user experience isn't affected
-      console.warn('Background save to Google Sheets failed:', error.message);
+      if (process.env.NODE_ENV === 'development') {
+        console.warn('Background save to Google Sheets failed:', error.message);
+      }
     });
   }
 };
@@ -66,15 +70,23 @@ const saveToGoogleSheets = async (examId, studentInfo, examResult) => {
     try {
       const result = JSON.parse(responseText);
       if (result.success) {
-        console.log('✅ Exam result saved to Google Sheets');
+        if (process.env.NODE_ENV === 'development') {
+          console.log('✅ Exam result saved to Google Sheets');
+        }
       } else {
-        console.warn('⚠️ Google Sheets returned error:', result.error);
+        if (process.env.NODE_ENV === 'development') {
+          console.warn('⚠️ Google Sheets returned error:', result.error);
+        }
       }
     } catch (parseError) {
-      console.warn('⚠️ Failed to parse Google Sheets response');
+      if (process.env.NODE_ENV === 'development') {
+        console.warn('⚠️ Failed to parse Google Sheets response');
+      }
     }
   } else {
-    console.warn('⚠️ Google Sheets HTTP error:', response.status);
+    if (process.env.NODE_ENV === 'development') {
+      console.warn('⚠️ Google Sheets HTTP error:', response.status);
+    }
   }
 };
 
@@ -129,6 +141,11 @@ export const loadExamResults = async () => {
     15: exam15Data, 16: exam16Data, 17: exam17Data
   };
 
+  // Only access localStorage in browser environment
+  if (typeof window === 'undefined' || !window.localStorage) {
+    return [];
+  }
+
   for (let examId = 1; examId <= 17; examId++) {
     const examTaken = localStorage.getItem(`examTaken_${examId}`);
     const studentInfoStr = localStorage.getItem(`studentInfo_${examId}`);
@@ -158,7 +175,9 @@ export const loadExamResults = async () => {
           });
         }
       } catch (error) {
-        console.error(`Error parsing data for exam ${examId}:`, error);
+        if (process.env.NODE_ENV === 'development') {
+          console.error(`Error parsing data for exam ${examId}:`, error);
+        }
       }
     }
   }
@@ -166,16 +185,20 @@ export const loadExamResults = async () => {
   // Sort by submitted date (newest first)
   results.sort((a, b) => new Date(b.submittedAt) - new Date(a.submittedAt));
   
-  console.log(`Loaded ${results.length} results from localStorage`);
+  if (process.env.NODE_ENV === 'development') {
+    console.log(`Loaded ${results.length} results from localStorage`);
+  }
   return results;
 };
 
 // Delete exam result (from both localStorage and Google Sheets)
 export const deleteExamResult = async (examId, sheetRowId = null) => {
-  // Delete from localStorage
-  localStorage.removeItem(`examTaken_${examId}`);
-  localStorage.removeItem(`studentInfo_${examId}`);
-  localStorage.removeItem(`examResult_${examId}`);
+  // Delete from localStorage (only in browser)
+  if (typeof window !== 'undefined' && window.localStorage) {
+    localStorage.removeItem(`examTaken_${examId}`);
+    localStorage.removeItem(`studentInfo_${examId}`);
+    localStorage.removeItem(`examResult_${examId}`);
+  }
 
   // Delete from Google Sheets if configured and rowId provided
   if (sheetRowId && isGoogleSheetsConfigured()) {
@@ -202,11 +225,13 @@ export const deleteExamResult = async (examId, sheetRowId = null) => {
 
 // Delete all exam results
 export const deleteAllExamResults = async () => {
-  // Delete all from localStorage
-  for (let examId = 1; examId <= 17; examId++) {
-    localStorage.removeItem(`examTaken_${examId}`);
-    localStorage.removeItem(`studentInfo_${examId}`);
-    localStorage.removeItem(`examResult_${examId}`);
+  // Delete all from localStorage (only in browser)
+  if (typeof window !== 'undefined' && window.localStorage) {
+    for (let examId = 1; examId <= 17; examId++) {
+      localStorage.removeItem(`examTaken_${examId}`);
+      localStorage.removeItem(`studentInfo_${examId}`);
+      localStorage.removeItem(`examResult_${examId}`);
+    }
   }
 
   // Delete all from Google Sheets if configured
@@ -223,10 +248,14 @@ export const deleteAllExamResults = async () => {
       });
 
       if (response.ok) {
-        console.log('Deleted all from Google Sheets');
+        if (process.env.NODE_ENV === 'development') {
+          console.log('Deleted all from Google Sheets');
+        }
       }
     } catch (error) {
-      console.error('Error deleting all from Google Sheets:', error);
+      if (process.env.NODE_ENV === 'development') {
+        console.error('Error deleting all from Google Sheets:', error);
+      }
     }
   }
 };

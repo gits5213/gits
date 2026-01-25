@@ -5,8 +5,7 @@ import selenium4Logo from '../../../images/architecture/selenium-4-Architecture.
 import cypressLogo from '../../../images/architecture/cypressArchitecture.png'; 
 import palywrightLogo from '../../../images/architecture/playwrightArchitecture.jpeg'; 
 import webDriverIOLogo from '../../../images/architecture/webdriverIO-Architecture.png'; 
-import Footer from '../../../components/footer';
-
+import { getImageSrc } from '../../../utils/getImageSrc';
 const Architecture = () => {
     return(
         <div style={{
@@ -89,7 +88,7 @@ const Architecture = () => {
                         borderRadius: '8px'
                     }}>
                         <img 
-                            src={selenium4Logo} 
+                            src={getImageSrc(selenium4Logo)} 
                             alt='Selenium 4 Architecture'
                             style={{
                                 width: '100%',
@@ -176,7 +175,7 @@ const Architecture = () => {
                         borderRadius: '8px'
                     }}>
                         <img 
-                            src={cypressLogo} 
+                            src={getImageSrc(cypressLogo)} 
                             alt='CypressIO Architecture'
                             style={{
                                 width: '100%',
@@ -262,7 +261,7 @@ const Architecture = () => {
                         borderRadius: '8px'
                     }}>
                         <img 
-                            src={palywrightLogo} 
+                            src={getImageSrc(palywrightLogo)} 
                             alt='Playwright Architecture'
                             style={{
                                 width: '100%',
@@ -346,7 +345,7 @@ const Architecture = () => {
                         borderRadius: '8px'
                     }}>
                         <img 
-                            src={webDriverIOLogo} 
+                            src={getImageSrc(webDriverIOLogo)} 
                             alt='WebDriverIO Architecture'
                             style={{
                                 width: '100%',
@@ -390,8 +389,7 @@ const Architecture = () => {
             </div>
 
             <section style={{ marginTop: '40px' }}>
-                <Footer />
-            </section>
+                </section>
         </div>
     )
 }

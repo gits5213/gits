@@ -1,7 +1,7 @@
 import React from 'react';
 import helpLogo from '../../../images/tabs/helpLogo.png';
 import link from '../../../utilities/links.json';
-import Footer from '../../../components/footer';
+import { getImageSrc } from '../../../utils/getImageSrc';
 import { leftAlignStyles } from '../../../utils/globalStyles';
 
 const help = () => {
@@ -43,7 +43,7 @@ const help = () => {
                     justifyContent: 'flex-end'
                 }}>
                     <img 
-                        src={helpLogo} 
+                        src={getImageSrc(helpLogo)} 
                         alt='Help Logo'
                         style={{
                             maxWidth: '300px',
@@ -119,8 +119,7 @@ const help = () => {
             <div>
             </div>
             <section style={{ marginTop: '40px' }}>
-                <Footer />
-            </section>
+                </section>
         </div>
     )
 }

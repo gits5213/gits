@@ -1,20 +1,19 @@
 import React from 'react';
 import link from '../../../utilities/links.json';
 import javascript_logo from '../../../images/tabs/javascriptLogo.png';
-import Footer from '../../../components/footer';
-
+import { getImageSrc } from '../../../utils/getImageSrc';
 const resJavascript = () => {
     return(
-        <div className='page-tab-body'>
+        <div className='page-tab-body' style={{ height: 'auto', minHeight: 'auto', paddingBottom: '100px', marginBottom: '40px' }}>
             <div>
                 <h3>JavaScript</h3>
             </div>
             <div className='tc'>
-                <img className='pr4 pt4 pb4 js-logo' src={javascript_logo} alt='js Logo'/>
+                <img className='pr4 pt4 pb4 js-logo' src={getImageSrc(javascript_logo)} alt='js Logo'/>
             </div>
             <div className='tc pt3'>
               <a class='f6 grow no-underline br-pill ph3 pv2 mb2 dib white bg-red' href={link.JAVASCRIPT_TOPICS} target="_blank" rel="noopener noreferrer">
-                  <img className='pr2' src={link.GITHUB_ICON} alt='github log' /> 
+                  <img className='pr2' src={getImageSrc(link.GITHUB_ICON)} alt='github log' /> 
                   JavaScript Topics on GitHub                 
               </a>
               <a class='f6 grow no-underline br-pill ph3 pv2 mb2 dib white bg-green' href={link.JAVASCRIPT_STYLEGUIDE} target="_blank" rel="noopener noreferrer">
@@ -253,8 +252,7 @@ const resJavascript = () => {
             <div>
             </div>
             <section className='pt4'>
-                <Footer />
-            </section>
+                </section>
         </div>
     )
 }

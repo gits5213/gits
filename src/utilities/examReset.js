@@ -10,13 +10,17 @@
  */
 export const resetExam = (examId) => {
     try {
-        localStorage.removeItem(`examTaken_${examId}`);
-        localStorage.removeItem(`examResult_${examId}`);
-        localStorage.removeItem(`examAttempts_${examId}`);
-        localStorage.removeItem(`allExamResults_${examId}`);
+        if (typeof window !== 'undefined' && window.localStorage) {
+            localStorage.removeItem(`examTaken_${examId}`);
+            localStorage.removeItem(`examResult_${examId}`);
+            localStorage.removeItem(`examAttempts_${examId}`);
+            localStorage.removeItem(`allExamResults_${examId}`);
+        }
         return true;
     } catch (error) {
-        console.error('Error resetting exam:', error);
+        if (process.env.NODE_ENV === 'development') {
+            console.error('Error resetting exam:', error);
+        }
         return false;
     }
 };
@@ -32,7 +36,9 @@ export const resetAllExams = () => {
         });
         return true;
     } catch (error) {
-        console.error('Error resetting all exams:', error);
+        if (process.env.NODE_ENV === 'development') {
+            console.error('Error resetting all exams:', error);
+        }
         return false;
     }
 };
@@ -45,19 +51,23 @@ export const resetAllExams = () => {
 export const resetExamForStudent = (studentName) => {
     const resetExams = [];
     try {
-        [1, 2, 3].forEach(examId => {
-            const studentInfo = JSON.parse(localStorage.getItem(`studentInfo_${examId}`) || 'null');
-            if (studentInfo) {
-                const fullName = `${studentInfo.firstName} ${studentInfo.middleName || ''} ${studentInfo.lastName}`.trim();
-                if (fullName.toLowerCase().includes(studentName.toLowerCase())) {
-                    resetExam(examId);
-                    resetExams.push(examId);
+        if (typeof window !== 'undefined' && window.localStorage) {
+            [1, 2, 3].forEach(examId => {
+                const studentInfo = JSON.parse(localStorage.getItem(`studentInfo_${examId}`) || 'null');
+                if (studentInfo) {
+                    const fullName = `${studentInfo.firstName} ${studentInfo.middleName || ''} ${studentInfo.lastName}`.trim();
+                    if (fullName.toLowerCase().includes(studentName.toLowerCase())) {
+                        resetExam(examId);
+                        resetExams.push(examId);
+                    }
                 }
-            }
-        });
+            });
+        }
         return resetExams;
     } catch (error) {
-        console.error('Error resetting exam for student:', error);
+        if (process.env.NODE_ENV === 'development') {
+            console.error('Error resetting exam for student:', error);
+        }
         return resetExams;
     }
 };
@@ -68,5 +78,8 @@ export const resetExamForStudent = (studentName) => {
  * @returns {boolean} - True if exam has been taken
  */
 export const isExamTaken = (examId) => {
+    if (typeof window === 'undefined' || !window.localStorage) {
+        return false;
+    }
     return localStorage.getItem(`examTaken_${examId}`) === 'true';
 };

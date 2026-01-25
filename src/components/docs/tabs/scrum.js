@@ -1,6 +1,5 @@
 import React from 'react';
 import link from '../../../utilities/links.json';
-import Footer from '../../../components/footer';
 import { leftAlignStyles } from '../../../utils/globalStyles';
 
 const scrum = () => {
@@ -270,8 +269,7 @@ const scrum = () => {
             <div>
             </div>
             <section style={{ marginTop: '40px' }}>
-                <Footer />
-            </section>
+                </section>
         </div>
     )
 }

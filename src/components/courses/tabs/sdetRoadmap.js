@@ -1,12 +1,11 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
+import { getImageSrc } from '../../../utils/getImageSrc';
 import link from '../../../utilities/links.json';
 import sdetRoadmapImage from '../../../images/QAEngineerRM.png';
-import Footer from '../../../components/footer';
-
 const SdetRoadmap = () => {
     return(
-        <div className='page-tab-body'>
+        <div className='page-tab-body' style={{ height: 'auto', minHeight: 'auto', paddingBottom: '100px', marginBottom: '40px' }}>
             {/* Hero Section */}
             <div style={{
                 background: 'linear-gradient(135deg, #00416A 0%, #005a8a 100%)',
@@ -117,7 +116,7 @@ const SdetRoadmap = () => {
                             borderRadius: '8px'
                         }}>
                             <img 
-                                src={sdetRoadmapImage} 
+                                src={getImageSrc(sdetRoadmapImage)} 
                                 alt="SDET Roadmap - FullStack Software Engineer in Test (SDET) / QA Engineer"
                                 style={{ 
                                     width: '100%', 
@@ -308,7 +307,7 @@ const SdetRoadmap = () => {
                             flexWrap: 'wrap'
                         }}>
                             <a 
-                                href={link.SQA_SIGN_UP}
+                                href="https://gitsics.com/enroll/"
                                 target="_blank"
                                 rel="noopener noreferrer"
                                 style={{
@@ -334,7 +333,7 @@ const SdetRoadmap = () => {
                                     e.target.style.boxShadow = '0 2px 8px rgba(0,0,0,0.2)';
                                 }}
                             >
-                                Sign Up for SQA Course
+                                Enroll Now
                             </a>
                             <Link 
                                 to="/courses"
@@ -369,8 +368,7 @@ const SdetRoadmap = () => {
             <div>
             </div>
             <section className='pt4'>
-                <Footer />
-            </section>
+                </section>
         </div> 
     );
 }

@@ -1,8 +1,8 @@
 import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
 import link from '../../../utilities/links.json';
+import { getImageSrc } from '../../../utils/getImageSrc';
 import webDriverIOLogo from '../../../images/tabs/playwrightLogo.png'; 
-import Footer from '../../../components/footer';
 import { scrollToItem, scrollToElement } from '../../../utils/scrollHelpers';
 import { modernCardStyles, codeBlockStyles, sectionHeaderStyles, itemHeaderStyles, pageContainerStyles, modernHeroStyles, checklistGridStyles, checklistLinkStyles, colors } from '../../../utils/globalStyles';
 
@@ -155,7 +155,7 @@ const ResPlaywright = () => {
                     zIndex: 1
                 }}>
                     <img 
-                        src={webDriverIOLogo} 
+                        src={getImageSrc(webDriverIOLogo)} 
                         alt='Playwright Logo'
                         style={{
                             maxWidth: '300px',
@@ -205,7 +205,7 @@ const ResPlaywright = () => {
                         e.target.style.boxShadow = '0 4px 6px -1px rgba(220,53,69,0.3), 0 2px 4px -1px rgba(220,53,69,0.2)';
                     }}
                 >
-                    <img src={link.GITHUB_ICON} alt='github' style={{ marginRight: '12px', width: '20px', height: '20px' }} />
+                    <img src={getImageSrc(link.GITHUB_ICON)} alt='github' style={{ marginRight: '12px', width: '20px', height: '20px' }} />
                     Playwright on GitHub
                 </a>
                 <a 
@@ -4613,8 +4613,7 @@ export class DashboardPage {
             </div>
 
             <section style={{ marginTop: '48px' }}>
-                <Footer />
-            </section>
+                </section>
         </div>
     )
 }

@@ -1,92 +1,136 @@
-## Create a create app
-    - See the section about [How to create new App](https://reactjs.org/docs/create-a-new-react-app.html#create-react-app)
+# GITS - Global iTech Solutions
 
-### `npm start`
+Student resources website built with Next.js 14, providing courses, documentation, API guides, practice exercises, and exam resources.
 
-Runs the app in the development mode.<br />
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
+## 🚀 Quick Start
 
-The page will reload if you make edits.<br />
-You will also see any lint errors in the console.
+### Installation
 
-### `npm run build`
+1. **Install dependencies:**
+   ```bash
+   npm install
+   ```
 
-Builds the app for production to the `build` folder.<br />
-It correctly bundles React in production mode and optimizes the build for the best performance.
+   If you encounter peer dependency errors (due to deprecated `react-mdl`), the project uses `.npmrc` with `legacy-peer-deps=true`. If issues persist:
+   ```bash
+   npm install --legacy-peer-deps
+   ```
 
-The build is minified and the filenames include the hashes.<br />
-Your app is ready to be deployed!
+2. **Run development server:**
+   ```bash
+   npm run dev
+   ```
+   Visit `http://localhost:3000` to see your site.
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+3. **Build for production:**
+   ```bash
+   npm run build
+   ```
+   This creates an optimized production build in the `/out` directory (static export).
 
-### `npm run eject`
+4. **Start production server:**
+   ```bash
+   npm start
+   ```
 
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
+## 📁 Project Structure
 
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+```
+/app                  # Next.js App Router pages and layouts
+/components           # Shared React components (Header, Footer)
+/src
+  /components         # Original components
+  /page-components    # Page components
+  /styles             # CSS files
+  /utils              # Utilities and design system
+  /utilities          # Data files and utilities
+  /config             # Configuration files
+  /images             # Source images
+/public               # Static assets (images, resources)
+```
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
+## 🎯 Features
 
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
+- ✅ Modern, responsive design
+- ✅ Server-side rendering (SSR) ready
+- ✅ Static site generation (SSG) support
+- ✅ Optimized images with Next.js Image component
+- ✅ Fast page transitions
+- ✅ SEO optimized
+- ✅ React Router compatibility via polyfill
 
-## Learn More
+## 📍 Routes
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+- `/` - Landing page
+- `/courses` and `/courses/[slug]` - Courses pages
+- `/docs` and `/docs/[slug]` - Documentation pages
+- `/apis` and `/apis/[slug]` - API documentation
+- `/apis/playwright/[slug]` - Playwright sub-pages
+- `/aid` and `/aid/[slug]` - AID resources
+- `/practice` and `/practice/[slug]` - Practice exercises
+- `/practice/quiz/[examId]` - Exam pages (Exam1-Exam17)
+- `/about`, `/contact`, `/how-it-works` - Static pages
+- Legal pages: `/terms-of-use`, `/privacy-policy`, `/copyright-notice`, `/website-disclaimer`
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+## 🛠️ Tech Stack
 
-### Code Splitting
+- **Next.js 14** - React framework
+- **React 18** - UI library
+- **react-mdl** - Material Design Lite components (deprecated but functional)
+- **tachyons** - Utility CSS framework
 
-This section has moved here: https://facebook.github.io/create-react-app/docs/code-splitting
+## 📝 Key Notes
 
-### Analyzing the Bundle Size
+- All pages, content, images, functions, and logic remain the same
+- React Router has been replaced with Next.js App Router
+- Components using `withRouter` work via polyfill
+- All styles and assets have been preserved
+- The design has been modernized while keeping all functionality intact
 
-This section has moved here: https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size
+## 🐛 Troubleshooting
 
-### Making a Progressive Web App
+If you encounter issues:
 
-This section has moved here: https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app
+1. **Clear node_modules and reinstall:**
+   ```bash
+   rm -rf node_modules package-lock.json
+   npm install
+   ```
 
-### Advanced Configuration
+2. **Clear Next.js cache:**
+   ```bash
+   rm -rf .next
+   npm run dev
+   ```
 
-This section has moved here: https://facebook.github.io/create-react-app/docs/advanced-configuration
+3. **Check image paths:** Ensure images are in `/public/images` or `/src/images`
 
-### Deployment
+4. **Verify component imports:** All components should import from `@/src/...`
 
-This section has moved here: https://facebook.github.io/create-react-app/docs/deployment
+For more detailed troubleshooting, see [TROUBLESHOOTING.md](./TROUBLESHOOTING.md)
 
-### `npm run build` fails to minify
+## 📚 Documentation
 
-This section has moved here: https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify
+- [MIGRATION_GUIDE.md](./MIGRATION_GUIDE.md) - Complete migration documentation
+- [GOOGLE_SHEETS_SETUP.md](./GOOGLE_SHEETS_SETUP.md) - Google Sheets integration setup
+- [EMAILJS_SETUP.md](./EMAILJS_SETUP.md) - EmailJS contact form setup
+- [README_DESIGN_SYSTEM.md](./README_DESIGN_SYSTEM.md) - Design system documentation
+- [RESET_EXAM.md](./RESET_EXAM.md) - How to reset exam attempts
+- [TROUBLESHOOTING.md](./TROUBLESHOOTING.md) - Common issues and solutions
 
-### How to deploy React App to GitHub Pages
-    Procedure :
+## 🚢 Deployment
 
-    1. First create a repository named my-app using create-react-app.
-        `npm init react-app my-app`
+The project is configured for static export and can be deployed to:
+- GitHub Pages
+- Vercel
+- Any static hosting service
 
-    2. We need to install GitHub Pages package as a dev-dependency.
-        `cd my-app`
-        `npm install gh-pages --save-dev`
+```bash
+npm run build
+```
 
-    3. Add properties to package.json file.
-        The first property we need to add at the top level homepage second we will define this as a string and the value will be "http://{username}.github.io/{repo-name}" {username} is your GitHub username, and {repo-name} is the name of the GitHub repository you created it will look like this :
+The output will be in the `/out` directory.
 
-    "homepage": "http://yuribenjamin.github.io/my-app"
-    Second in the existing scripts property we to need to add predeploy and deploy.
+## 📄 License
 
-        "scripts": {
-        //...
-        "predeploy": "npm run build",
-        "deploy": "gh-pages -d build"
-        }
-    4. Create a Github repository and initialize it and add it as a remote in your local git repository.
-
-    Now, create a remote GitHub repository with your app name and go back initialize this
-        `git init`
-    add it as remote
-        `git remote add origin git@github.com:Yuribenjamin/my-app.git`
-
-    5. Now deploy it to GitHub Pages.
-       Just run the following command :
-        `npm run deploy`
+See [LICENSE](./LICENSE) file for details.

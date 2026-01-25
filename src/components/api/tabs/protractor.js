@@ -1,8 +1,7 @@
 import React from 'react';
 import link from '../../../utilities/links.json';
 import ProtractorLog from '../../../images/tabs/protractorLog.png';
-import Footer from '../../../components/footer';
-
+import { getImageSrc } from '../../../utils/getImageSrc';
 const resProtractor = () => {
     return(
         <div style={{
@@ -45,7 +44,7 @@ const resProtractor = () => {
                 boxShadow: '0 2px 10px rgba(0,0,0,0.1)'
             }}>
                 <img 
-                    src={ProtractorLog} 
+                    src={getImageSrc(ProtractorLog)} 
                     alt='Protractor Logo'
                     style={{
                         width: '100%',
@@ -90,7 +89,7 @@ const resProtractor = () => {
                         e.target.style.transform = 'translateY(0)';
                     }}
                 >
-                    <img src={link.GITHUB_ICON} alt='github' style={{ marginRight: '10px', width: '20px', height: '20px' }} />
+                    <img src={getImageSrc(link.GITHUB_ICON)} alt='github' style={{ marginRight: '10px', width: '20px', height: '20px' }} />
                     Protractor on GitHub                 
                 </a>
                 <a 
@@ -127,8 +126,7 @@ const resProtractor = () => {
             <div>
             </div>
             <section style={{ marginTop: '40px' }}>
-                <Footer />
-            </section>
+                </section>
         </div>
     )
 }

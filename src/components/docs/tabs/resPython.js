@@ -3,7 +3,7 @@ import link from '../../../utilities/links.json';
 import BackToTop from '../../backToTop';
 import python_logo from '../../../images/tabs/python_logo.png';
 import python_CHEAT_SHEET from '../../../images/tabs/Python_CheatSheet.jpeg';
-import Footer from '../../../components/footer';
+import { getImageSrc } from '../../../utils/getImageSrc';
 import { leftAlignStyles } from '../../../utils/globalStyles';
 
 const resPython = () => {
@@ -33,7 +33,7 @@ const resPython = () => {
                     justifyContent: 'flex-end'
                 }}>
                     <img 
-                        src={python_logo} 
+                        src={getImageSrc(python_logo)} 
                         alt='Python Logo'
                         style={{
                             maxWidth: '300px',
@@ -74,7 +74,7 @@ const resPython = () => {
                         e.target.style.transform = 'translateY(0)';
                     }}
                 >
-                    <img src={link.GITHUB_ICON} alt='github' style={{ marginRight: '10px', width: '20px', height: '20px' }} />
+                    <img src={getImageSrc(link.GITHUB_ICON)} alt='github' style={{ marginRight: '10px', width: '20px', height: '20px' }} />
                         Python on GitHub                 
                     </a>
                 <a 
@@ -219,7 +219,7 @@ const resPython = () => {
                     Python Cheat Sheet
                 </h2>
                 <img 
-                    src={python_CHEAT_SHEET} 
+                    src={getImageSrc(python_CHEAT_SHEET)} 
                     alt='Python Cheat Sheet'
                     style={{
                         width: '100%',
@@ -237,8 +237,7 @@ const resPython = () => {
             <div>
             </div>
             <section style={{ marginTop: '40px' }}>
-                <Footer />
-            </section>
+                </section>
         </div>
     )
 }

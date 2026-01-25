@@ -20,10 +20,8 @@ import { footerStyles, footerHoverHandlers } from '../utils/globalStyles';
  * 
  * Usage:
  * ```javascript
- * import Footer from '../components/footer';
- * 
- * <Footer />
- * ```
+ *  * 
+ * * ```
  * 
  * @component
  * @returns {JSX.Element} Footer component
@@ -79,14 +77,14 @@ const Footer = () => {
                             </li>
                             <li>
                                 <a 
-                                    href={link.ITNYCUSA} 
+                                    href="https://gitsics.com/" 
                                     target="_blank" 
                                     rel="noopener noreferrer"
                                     style={linkStyle}
                                     onMouseEnter={handleLinkHover}
                                     onMouseLeave={handleLinkLeave}
                                 >
-                                    Educational Website
+                                    Global I Tech Solutions Inc.
                                 </a>
                             </li>
                             <li>
@@ -260,16 +258,14 @@ const Footer = () => {
                                 </Link>
                             </li>
                             <li>
-                                <a 
-                                    href="https://gitsics.com/" 
-                                    target="_blank" 
-                                    rel="noopener noreferrer"
+                                <Link 
+                                    to="/#training-programs"
                                     style={linkStyle}
                                     onMouseEnter={handleLinkHover}
                                     onMouseLeave={handleLinkLeave}
                                 >
                                     Services
-                                </a>
+                                </Link>
                             </li>
                             <li>
                                 <Link 
@@ -282,14 +278,16 @@ const Footer = () => {
                                 </Link>
                             </li>
                             <li>
-                                <Link 
-                                    to="/contact"
+                                <a 
+                                    href="https://gitsics.com/contact/"
+                                    target="_blank"
+                                    rel="noopener noreferrer"
                                     style={linkStyle}
                                     onMouseEnter={handleLinkHover}
                                     onMouseLeave={handleLinkLeave}
                                 >
                                     Contact Us
-                                </Link>
+                                </a>
                             </li>
                             <li>
                                 <a 

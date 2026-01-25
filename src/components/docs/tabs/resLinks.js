@@ -2,16 +2,15 @@ import React from 'react';
 import link from '../../../utilities/links.json';
 import { Grid, Cell } from 'react-mdl';
 import linklogo from '../../../images/tabs/linkLogo.png';
-import Footer from '../../../components/footer';
-
+import { getImageSrc } from '../../../utils/getImageSrc';
 const resLinks = () => {
     return(
-        <div className='page-tab-body'>
+        <div className='page-tab-body' style={{ height: 'auto', minHeight: 'auto', paddingBottom: '100px', marginBottom: '40px' }}>
             <div>
                 <h3>TechStack</h3>
             </div>
             <div className='tc'>
-                <img className='pr4 pt4 pb4 react-logo' src={linklogo} alt='react Logo' height='192' width='575'/>
+                <img className='pr4 pt4 pb4 react-logo' src={getImageSrc(linklogo)} alt='react Logo' height='192' width='575'/>
             </div>
             <div>
                 <h3>TechStack GitHub</h3>
@@ -22,7 +21,7 @@ const resLinks = () => {
                     <Cell className='pl4' col={4}>
                         <div className='pt4'>
                             <a class='f5 link dim ph3 pv2 mb2 dib white bg-dark-blue' href={link.JAVA_TOPICS} target="_blank" rel="noopener noreferrer">
-                                <img className='pr2' src={link.GITHUB_ICON} alt='github log' /> 
+                                <img className='pr2' src={getImageSrc(link.GITHUB_ICON)} alt='github log' /> 
                                 Java Topics                
                             </a>
                             <a class='f5 link dim ph3 pv2 mb2 dib white bg-dark-blue' href={link.JAVA_CODE_STYLEGUIDE} target="_blank" rel="noopener noreferrer">
@@ -196,8 +195,7 @@ const resLinks = () => {
             <div>
             </div>
             <section className='pt4'>
-                <Footer />
-            </section>
+                </section>
         </div>
     )
 }

@@ -5,11 +5,10 @@ import DefectBugError from '../../../images/tabs/defectBugError.png';
 import BugLifeCycle from '../../../images/tabs/bugLifeCycle.png'
 import TestPyramid from '../../../images/tabs/testPyramid.png'
 import TestPyramid1 from '../../../images/tabs/testPyramid1.png'
-import Footer from '../../../components/footer';
-
+import { getImageSrc } from '../../../utils/getImageSrc';
 const resManual = () => {
     return(
-        <div className='page-tab-body'>
+        <div className='page-tab-body' style={{ height: 'auto', minHeight: 'auto', paddingBottom: '100px', marginBottom: '40px' }}>
             <div className='resManual-first-section'>
                 <div style={{
                     display: 'flex',
@@ -25,7 +24,7 @@ const resManual = () => {
                             <h3 style={{ textAlign: 'left' }}>Software Manual Testing</h3>
                         </div>
                         <div style={{ textAlign: 'left', marginTop: '20px' }}>
-                            <img className='manual-logo' src={ManualLogo} alt='Manual Logo' />
+                            <img className='manual-logo' src={getImageSrc(ManualLogo)} alt='Manual Logo' />
                         </div>
                     </div>
 
@@ -224,7 +223,7 @@ const resManual = () => {
                 </p>
                 <div>
                     <h3> What is Errors, Defects, and Failures?</h3>
-                    <img id='bugPicid' alt='bugPic Logo' src={DefectBugError} height='200px' width='600px'/>
+                    <img id='bugPicid' alt='bugPic Logo' src={getImageSrc(DefectBugError)} height='200px' width='600px'/>
                     <p>
                         A person can make an error (mistake), which can lead to the introduction of a defect (fault or bug) in the software code or in some other related work product. An error that leads to the introduction of a defect in one work product can trigger an error that leads to the introduction of a defect in a related work product.
                     </p>
@@ -259,7 +258,7 @@ const resManual = () => {
                     </ul>
                 </div>
                 <h3>Bug Life Cycle</h3>
-                <img id='bugLifeCycleId' src={BugLifeCycle} alt='Bug Life Cycle' height='700px' width='900px'/>
+                <img id='bugLifeCycleId' src={getImageSrc(BugLifeCycle)} alt='Bug Life Cycle' height='700px' width='900px'/>
                 <h3>What is Business Requirement Document (BRD)?</h3>
                 <p>
                     It is a document that describes the details of the application functionalities which is required by the user. This document is written by the Business Analysts.
@@ -482,8 +481,8 @@ const resManual = () => {
                     <li>User Interface(UI) Tests</li>
                 </ul>
                 <div className='testPyramd'>
-                    <img id='testPyramid-1' src={TestPyramid} alt='Test Pyramid' height='250px' width='400px'/>
-                    <img id='testPyramid-2' src={TestPyramid1} alt='Test Pyramind' height='250px' width='400px'/>
+                    <img id='testPyramid-1' src={getImageSrc(TestPyramid)} alt='Test Pyramid' height='250px' width='400px'/>
+                    <img id='testPyramid-2' src={getImageSrc(TestPyramid1)} alt='Test Pyramind' height='250px' width='400px'/>
                     <h3>What's the SQA Testing proces you have been following?</h3> 
                 </div>
                 <p>
@@ -929,8 +928,7 @@ const resManual = () => {
             <div>
             </div>
             <section className='pt4'>
-                <Footer />
-            </section>
+                </section>
         </div>
     )
 }

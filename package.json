@@ -5,53 +5,34 @@
   "private": true,
   "dependencies": {
     "@emailjs/browser": "^4.4.1",
-    "@material-ui/styles": "4.11.2",
-    "@testing-library/jest-dom": "4.2.4",
-    "@testing-library/react": "9.5.0",
-    "@testing-library/user-event": "7.2.1",
-    "cache": "^3.0.0",
-    "clean": "^4.0.2",
-    "font-awesome": "4.7.0",
-    "jspdf": "^2.5.2",
-    "react": "16.13.1",
-    "react-dom": "16.13.1",
-    "react-helmet": "6.1.0",
-    "react-mdl": "2.1.0",
-    "react-player": "2.7.0",
-    "react-router-dom": "5.2.0",
-    "react-scripts": "^5.0.1",
-    "tachyons": "4.12.0"
+    "jspdf": "^4.0.0",
+    "next": "^14.2.0",
+    "next-seo": "^6.5.0",
+    "react": "^18.3.0",
+    "react-dom": "^18.3.0",
+    "react-mdl": "^2.1.0",
+    "react-player": "^2.16.0",
+    "react-scroll-up-button": "^1.6.4",
+    "sharp": "^0.34.5",
+    "tachyons": "^4.12.0"
   },
   "scripts": {
-    "start": "react-scripts start",
-    "dev": "react-scripts start",
-    "build": "react-scripts build",
-    "postbuild": "cp build/index.html build/404.html && echo '✅ 404.html created for GitHub Pages routing - all routes will now work correctly'",
-    "test": "react-scripts test",
-    "eject": "react-scripts eject",
+    "dev": "next dev",
+    "build": "next build",
+    "start": "next start",
+    "lint": "next lint",
+    "export": "next build",
     "predeploy": "npm run build",
-    "deploy": "gh-pages -d build"
-  },
-  "eslintConfig": {
-    "extends": "react-app"
-  },
-  "browserslist": {
-    "production": [
-      ">0.2%",
-      "not dead",
-      "not op_mini all"
-    ],
-    "development": [
-      "last 1 chrome version",
-      "last 1 firefox version",
-      "last 1 safari version"
-    ]
+    "deploy": "gh-pages -d out"
   },
   "devDependencies": {
-    "@babel/plugin-proposal-private-property-in-object": "^7.21.11",
-    "@material-ui/core": "4.11.2",
+    "@types/node": "^20.11.0",
+    "@types/react": "^18.3.0",
+    "@types/react-dom": "^18.3.0",
+    "eslint": "^8.57.0",
+    "eslint-config-next": "^16.1.4",
     "gh-pages": "^6.3.0",
-    "react-scroll-up-button": "1.6.4"
+    "typescript": "^5.3.3"
   },
   "overrides": {
     "nth-check": "^2.1.1",

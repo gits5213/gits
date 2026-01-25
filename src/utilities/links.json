@@ -5,11 +5,11 @@
 
     "HOW_IT_WORKS":"/courses",
     "ABOUT":"/about",
-    "CONTACT":"/contact",
+    "CONTACT":"https://gitsics.com/contact/",
     
-    "WEB_DEV_SIGN_UP":"https://gits5213.github.io/student-subscription/",
-    "SQA_SIGN_UP":"https://forms.gle/9NPaXHeKifgm4uPm7",
-    "CODE4KIDS_SIGN_UP":"https://mailchi.mp/93b0b3a7293e/code4kids",
+    "WEB_DEV_SIGN_UP":"https://gitsics.com/enroll/",
+    "SQA_SIGN_UP":"https://gitsics.com/enroll/",
+    "CODE4KIDS_SIGN_UP":"https://gitsics.com/enroll/",
     "BD_SIGN_UP":"https://docs.google.com/forms/d/e/1FAIpQLScBX0mnlaMNJFhOGnfHcHV9TLvSK3L3aQTlYZO9LNVKidcY6w/viewform?usp=sf_link",
     "SERVICES":"https://gits5213.github.io/student-subscription/",
     
@@ -232,6 +232,11 @@
     "R_A_V": "https://www.educative.io/blog/react-angular-vue-comparison?aid=5082902844932096&utm_source=google&utm_medium=cpc&utm_campaign=blog-dynamic&gclid=CjwKCAiA25v_BRBNEiwAZb4-ZXbgm4wYodvGTRWMG-iq13kw0n_TuTEF6IwTIYHdL4q6GqyZSeFwEBoCu6IQAvD_BwE",
     "REACT_NATIVE": "https://reactnative.dev/",
     "REACT_MDL": "https://tleunen.github.io/react-mdl/components/",
+    "NEXTJS_ORG": "https://nextjs.org/",
+    "NEXTJS_GITHUB": "https://github.com/vercel/next.js",
+    "NEXTJS_DOCS": "https://nextjs.org/docs",
+    "NEXTJS_LEARN": "https://nextjs.org/learn",
+    "VERCEL": "https://vercel.com/",
     "JS_ChEAT_SHEET": "https://htmlcheatsheet.com/js/",
     "JAVASCRIPT_TOPICS": "https://github.com/topics/javascript",
     "JAVASCRIPT_STYLEGUIDE": "https://github.com/airbnb/javascript",

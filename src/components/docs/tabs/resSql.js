@@ -1,7 +1,7 @@
 import React from 'react';
 import link from '../../../utilities/links.json';
 import SQL_LOGO from '../../../images/tabs/sqlLogo.png';
-import Footer from '../../../components/footer';
+import { getImageSrc } from '../../../utils/getImageSrc';
 import { leftAlignStyles } from '../../../utils/globalStyles';
 
 const resSql = () => {
@@ -31,7 +31,7 @@ const resSql = () => {
                     justifyContent: 'flex-end'
                 }}>
                     <img 
-                        src={SQL_LOGO} 
+                        src={getImageSrc(SQL_LOGO)} 
                         alt='SQL Logo'
                         style={{
                             maxWidth: '300px',
@@ -444,8 +444,7 @@ const resSql = () => {
             <div>
             </div>
             <section style={{ marginTop: '40px' }}>
-                <Footer />
-            </section>
+                </section>
         </div>
     )
 }

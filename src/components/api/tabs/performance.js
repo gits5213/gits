@@ -1,5 +1,4 @@
 import React from 'react';
-import Footer from '../../footer';
 import { leftAlignStyles } from '../../../utils/globalStyles';
 
 const performance = () => {
@@ -193,8 +192,7 @@ const performance = () => {
             <div>
             </div>
             <section style={{ marginTop: '40px' }}>
-                <Footer />
-            </section>
+                </section>
         </div>
     );
   }   

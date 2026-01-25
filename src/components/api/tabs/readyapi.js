@@ -1,7 +1,7 @@
 import React from 'react';
 import link from '../../../utilities/links.json';
 import readyapiLogo from '../../../images/tabs/readyapiLogo.png'; 
-import Footer from '../../../components/footer';
+import { getImageSrc } from '../../../utils/getImageSrc';
 import { leftAlignStyles } from '../../../utils/globalStyles';
 
 const readyapi = () => {
@@ -31,7 +31,7 @@ const readyapi = () => {
                     justifyContent: 'flex-end'
                 }}>
                     <img 
-                        src={readyapiLogo} 
+                        src={getImageSrc(readyapiLogo)} 
                         alt='ReadyAPI Logo'
                         style={{
                             maxWidth: '300px',
@@ -107,8 +107,7 @@ const readyapi = () => {
             <div>
             </div>
             <section style={{ marginTop: '40px' }}>
-                <Footer />
-            </section>
+                </section>
         </div>
     )
 }

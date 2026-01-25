@@ -2,8 +2,7 @@ import React from 'react';
 import link from '../../../utilities/links.json';
 import css_logo from '../../../images/tabs/cssLogo.png';
 import css_image from '../../../images/tabs/cssImage.jpeg';
-import Footer from '../../../components/footer';
-
+import { getImageSrc } from '../../../utils/getImageSrc';
 const resCss = () => {
     const cssLinks = [
         { name: 'Learn More CSS', url: link.W3_CSS },
@@ -71,7 +70,7 @@ const resCss = () => {
                     justifyContent: 'flex-end'
                 }}>
                     <img 
-                        src={css_logo} 
+                        src={getImageSrc(css_logo)} 
                         alt='CSS Logo'
                         style={{
                             maxWidth: '300px',
@@ -118,7 +117,7 @@ const resCss = () => {
                         e.target.style.transform = 'translateY(0)';
                     }}
                 >
-                    <img src={link.GITHUB_ICON} alt='github' style={{ marginRight: '10px', width: '20px', height: '20px' }} />
+                    <img src={getImageSrc(link.GITHUB_ICON)} alt='github' style={{ marginRight: '10px', width: '20px', height: '20px' }} />
                   CSS FW Topics on GitHub                 
               </a>
                 <a 
@@ -284,7 +283,7 @@ const resCss = () => {
                 boxShadow: '0 2px 10px rgba(0,0,0,0.1)'
             }}>
                 <img 
-                    src={css_image} 
+                    src={getImageSrc(css_image)} 
                     alt='CSS'
                     style={{
                         width: '100%',
@@ -460,8 +459,7 @@ const resCss = () => {
             <div>
             </div>
             <section style={{ marginTop: '40px' }}>
-                <Footer />
-            </section>
+                </section>
         </div>
     )
 }

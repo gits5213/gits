@@ -1,6 +1,6 @@
 import React from 'react';
 import macLogo from '../../../images/tabs/macLogo.png';
-import Footer from '../../../components/footer';
+import { getImageSrc } from '../../../utils/getImageSrc';
 import { leftAlignStyles } from '../../../utils/globalStyles';
 
 const mac = () => {
@@ -30,7 +30,7 @@ const mac = () => {
                     justifyContent: 'flex-end'
             }}>
                 <img 
-                    src={macLogo} 
+                    src={getImageSrc(macLogo)} 
                     alt='Mac Logo'
                     style={{
                             maxWidth: '300px',
@@ -364,8 +364,7 @@ const mac = () => {
             </div>
 
             <section style={{ marginTop: '40px' }}>
-                <Footer />
-            </section>
+                </section>
         </div>
     )
 }

@@ -1,0 +1,283 @@
+@import '../src/index.css';
+@import '../src/styles/base.css';
+
+/* Modern University Design System - Global Styles */
+
+/* Scroll animation for announcement banner */
+@keyframes scrollText {
+  0% {
+    transform: translateX(0);
+  }
+  100% {
+    transform: translateX(-33.333%);
+  }
+}
+
+/* Fade in animation */
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(-10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Slide up animation */
+@keyframes slideUp {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+body {
+  margin: 0;
+  padding: 0;
+  font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
+    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
+    sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  color: #212529;
+  line-height: 1.6;
+  background-color: #ffffff;
+  font-size: 16px;
+}
+
+main {
+  margin: 0;
+  padding: 0;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+/* Typography improvements */
+h1, h2, h3, h4, h5, h6 {
+  font-family: 'Inter', sans-serif;
+  font-weight: 700;
+  line-height: 1.2;
+  color: #1a365d;
+  margin-top: 0;
+}
+
+p {
+  margin-top: 0;
+  margin-bottom: 1rem;
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
+  transition: all 0.2s ease;
+}
+
+a:hover {
+  color: #003366;
+}
+
+/* Button base styles */
+button {
+  font-family: 'Inter', sans-serif;
+  cursor: pointer;
+  border: none;
+  transition: all 0.2s ease;
+}
+
+button:focus {
+  outline: 2px solid #1a365d;
+  outline-offset: 2px;
+}
+
+/* Responsive navigation */
+@media (max-width: 768px) {
+  .desktop-nav {
+    display: none !important;
+  }
+  
+  .mobile-menu-button {
+    display: flex !important;
+  }
+}
+
+@media (min-width: 769px) {
+  .mobile-menu-button {
+    display: none !important;
+  }
+}
+
+/* Smooth scrolling */
+html {
+  scroll-behavior: smooth;
+}
+
+/* Focus styles for accessibility */
+*:focus-visible {
+  outline: 2px solid #003366;
+  outline-offset: 2px;
+}
+
+/* Selection styles */
+::selection {
+  background-color: #003366;
+  color: #ffffff;
+}
+
+::-moz-selection {
+  background-color: #003366;
+  color: #ffffff;
+}
+
+/* Mobile responsive for header */
+@media (max-width: 768px) {
+  .mobile-menu-button {
+    display: flex !important;
+  }
+  
+  .desktop-nav {
+    display: none !important;
+  }
+  
+  /* Hide Enroll Now button on mobile in header, it's shown in mobile menu */
+  header > div > div:first-child a[href*="enroll"] {
+    display: none !important;
+  }
+  
+  /* Make logo and brand name smaller on mobile */
+  .brand-title {
+    font-size: 16px !important;
+    line-height: 1.2 !important;
+    white-space: normal !important;
+    word-break: break-word;
+  }
+  
+  .brand-subtitle {
+    font-size: 10px !important;
+    white-space: normal !important;
+    word-break: break-word;
+  }
+  
+  header img {
+    height: 45px !important;
+  }
+  
+  /* Adjust logo section padding and gap on mobile */
+  header > div > div:first-child {
+    padding: 12px 0 !important;
+    gap: 8px !important;
+    flex-wrap: wrap;
+  }
+  
+  /* Ensure logo link doesn't overflow */
+  header > div > div:first-child > a {
+    gap: 10px !important;
+    max-width: calc(100% - 100px);
+    flex: 1;
+    min-width: 0;
+  }
+}
+
+/* Tablet and medium screens */
+@media (max-width: 1024px) and (min-width: 769px) {
+  .mobile-menu-button {
+    display: none !important;
+  }
+  
+  .desktop-nav {
+    display: flex !important;
+    gap: 2px !important;
+    padding: 0 8px !important;
+  }
+  
+  .desktop-nav a {
+    padding: 14px 12px !important;
+    font-size: 14px !important;
+  }
+  
+  .brand-title {
+    font-size: 24px !important;
+  }
+  
+  .brand-subtitle {
+    font-size: 13px !important;
+  }
+  
+  header img {
+    height: 60px !important;
+  }
+  
+  /* Adjust header layout for tablet */
+  header > div > div:first-child {
+    gap: 16px !important;
+    padding: 16px 0 !important;
+  }
+  
+  /* Make Enroll Now button slightly smaller on tablet */
+  header a[href*="enroll"] {
+    padding: 8px 20px !important;
+    font-size: 14px !important;
+  }
+}
+
+/* Large screens */
+@media (min-width: 1025px) {
+  .mobile-menu-button {
+    display: none !important;
+  }
+  
+  .desktop-nav {
+    display: flex !important;
+  }
+}
+
+/* Extra large screens - ensure navigation doesn't get too spread out */
+@media (min-width: 1400px) {
+  .desktop-nav {
+    max-width: 800px;
+    margin: 0 auto;
+  }
+}
+
+/* Hide scrollbar for navigation on smaller screens */
+.desktop-nav::-webkit-scrollbar {
+  display: none;
+}
+
+/* Responsive header main row */
+@media (max-width: 1200px) {
+  .header-main-row {
+    gap: 12px !important;
+  }
+  
+  .desktop-nav {
+    gap: 0 !important;
+    padding: 0 8px !important;
+  }
+  
+  .desktop-nav a {
+    padding: 14px 12px !important;
+    font-size: 14px !important;
+  }
+}
+
+@media (max-width: 900px) {
+  .desktop-nav {
+    display: none !important;
+  }
+  
+  .mobile-menu-button {
+    display: flex !important;
+  }
+  
+  .header-main-row {
+    justify-content: space-between !important;
+  }
+}

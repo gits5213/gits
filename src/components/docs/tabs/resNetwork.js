@@ -1,6 +1,5 @@
 import React from 'react';
 import link from '../../../utilities/links.json';
-import Footer from '../../../components/footer';
 import { leftAlignStyles } from '../../../utils/globalStyles';
 
 const resNetwork = () => {
@@ -50,8 +49,6 @@ const resNetwork = () => {
                 </p>
 
                 <h2 style={leftAlignStyles.sectionHeadingWithMargin}>
-                    fontWeight: 'bold'
-                }}>
                     How Do IP Addresses Work?
                 </h2>
                 <p style={{
@@ -312,8 +309,7 @@ const resNetwork = () => {
             <div>
             </div>
             <section style={{ marginTop: '40px' }}>
-                <Footer />
-            </section>
+                </section>
         </div>
     )
 }

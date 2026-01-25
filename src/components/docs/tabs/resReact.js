@@ -1,7 +1,7 @@
 import React from 'react';
 import link from '../../../utilities/links.json';
 import reactLogo from '../../../images/tabs/reactLogo.png';
-import Footer from '../../../components/footer';
+import { getImageSrc } from '../../../utils/getImageSrc';
 import { leftAlignStyles } from '../../../utils/globalStyles';
 
 const resReact = () => {
@@ -31,7 +31,7 @@ const resReact = () => {
                     justifyContent: 'flex-end'
                 }}>
                     <img 
-                        src={reactLogo} 
+                        src={getImageSrc(reactLogo)} 
                         alt='React Logo'
                         style={{
                             maxWidth: '300px',
@@ -72,7 +72,7 @@ const resReact = () => {
                         e.target.style.transform = 'translateY(0)';
                     }}
                 >
-                    <img src={link.GITHUB_ICON} alt='github' style={{ marginRight: '10px', width: '20px', height: '20px' }} />
+                    <img src={getImageSrc(link.GITHUB_ICON)} alt='github' style={{ marginRight: '10px', width: '20px', height: '20px' }} />
                     ReactJS on GitHub                 
                 </a>
                 <a 
@@ -292,8 +292,7 @@ const resReact = () => {
             <div>
             </div>
             <section style={{ marginTop: '40px' }}>
-                <Footer />
-            </section>
+                </section>
         </div>
     )
 }

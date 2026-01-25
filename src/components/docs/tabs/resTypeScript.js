@@ -1,5 +1,4 @@
 import React from 'react';
-import Footer from '../../../components/footer';
 import PdfDownload from '../../shared/PdfDownload';
 import { scrollToTypeScriptItem } from '../../../utils/scrollHelpers';
 import { checklistGridStyles, checklistLinkStyles } from '../../../utils/globalStyles';
@@ -8,7 +7,7 @@ const resTypeScript = () => {
     const scrollToItem = scrollToTypeScriptItem;
 
     return(
-        <div className='page-tab-body'>
+        <div className='page-tab-body' style={{ height: 'auto', minHeight: 'auto', paddingBottom: '100px', marginBottom: '40px' }}>
             <div>
                 <h3>TypeScript for Playwright Test Automation</h3>
                 <div style={{ marginBottom: '30px', padding: '20px', backgroundColor: '#f0f7fa', borderRadius: '5px' }}>
@@ -502,8 +501,7 @@ class SettingsPage {
             </div>
 
             <section className='pt4'>
-                <Footer />
-            </section>
+                </section>
         </div>
     )
 }
