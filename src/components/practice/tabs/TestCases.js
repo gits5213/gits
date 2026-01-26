@@ -7099,10 +7099,18 @@ class TestCases extends Component {
                                                             </p>
                                                             {testCase.gherkinCriteria && (
                                                                 <div style={testCaseStyles.gherkinBox}>
-                                                                    <p style={testCaseStyles.gherkinLine}><strong>Given</strong> {testCase.gherkinCriteria.given.replace('Given ', '')}</p>
-                                                                    <p style={testCaseStyles.gherkinLine}><strong>When</strong> {testCase.gherkinCriteria.when.replace('When ', '')}</p>
-                                                                    <p style={testCaseStyles.gherkinLine}><strong>And</strong> {testCase.gherkinCriteria.and.replace('And ', '')}</p>
-                                                                    <p style={testCaseStyles.gherkinLine}><strong>Then</strong> {testCase.gherkinCriteria.then.replace('Then ', '')}</p>
+                                                                    {testCase.gherkinCriteria.given && (
+                                                                        <p style={testCaseStyles.gherkinLine}><strong>Given</strong> {testCase.gherkinCriteria.given.replace('Given ', '')}</p>
+                                                                    )}
+                                                                    {testCase.gherkinCriteria.when && (
+                                                                        <p style={testCaseStyles.gherkinLine}><strong>When</strong> {testCase.gherkinCriteria.when.replace('When ', '')}</p>
+                                                                    )}
+                                                                    {testCase.gherkinCriteria.and && (
+                                                                        <p style={testCaseStyles.gherkinLine}><strong>And</strong> {testCase.gherkinCriteria.and.replace('And ', '')}</p>
+                                                                    )}
+                                                                    {testCase.gherkinCriteria.then && (
+                                                                        <p style={testCaseStyles.gherkinLine}><strong>Then</strong> {testCase.gherkinCriteria.then.replace('Then ', '')}</p>
+                                                                    )}
                                                                 </div>
                                                             )}
                                                             <p style={testCaseStyles.severityText}><strong>Severity:</strong> {testCase.severity}</p>
