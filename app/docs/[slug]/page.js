@@ -7,6 +7,7 @@ export function generateStaticParams() {
     { slug: 'agile' },
     { slug: 'scrum' },
     { slug: 'manual' },
+    { slug: 'bdd' },
     { slug: 'linux' },
     { slug: 'git' },
     { slug: 'html' },

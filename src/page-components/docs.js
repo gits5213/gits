@@ -15,6 +15,7 @@ import ResPython from '../components/docs/tabs/resPython';
 import ResTypeScript from '../components/docs/tabs/resTypeScript';
 import Agile from '../components/docs/tabs/agile';
 import Scrum from '../components/docs/tabs/scrum';
+import Bdd from '../components/docs/tabs/bdd';
 import Links from '../components/docs/tabs/resLinks';
 import '../styles/base.css';
 import '../styles/docs.css';
@@ -30,19 +31,20 @@ class docs extends Component {
         if (path.includes('/agile')) return 0;
         if (path.includes('/scrum')) return 1;
         if (path.includes('/manual') && !path.includes('/courses')) return 2;
-        if (path.includes('/linux')) return 3;
-        if (path.includes('/git')) return 4;
-        if (path.includes('/html')) return 5;
-        if (path.includes('/css')) return 6;
-        if (path.includes('/javascript')) return 7;
-        if (path.includes('/typescript')) return 8;
-        if (path.includes('/reactjs')) return 9;
-        if (path.includes('/nextjs')) return 10;
-        if (path.includes('/sql')) return 11;
-        if (path.includes('/java')) return 12;
-        if (path.includes('/python')) return 13;
-        if (path.includes('/network')) return 14;
-        if (path.includes('/links')) return 15;
+        if (path.includes('/bdd')) return 3;
+        if (path.includes('/linux')) return 4;
+        if (path.includes('/git')) return 5;
+        if (path.includes('/html')) return 6;
+        if (path.includes('/css')) return 7;
+        if (path.includes('/javascript')) return 8;
+        if (path.includes('/typescript')) return 9;
+        if (path.includes('/reactjs')) return 10;
+        if (path.includes('/nextjs')) return 11;
+        if (path.includes('/sql')) return 12;
+        if (path.includes('/java')) return 13;
+        if (path.includes('/python')) return 14;
+        if (path.includes('/network')) return 15;
+        if (path.includes('/links')) return 16;
         // Default to agile if just /docs
         return 0;
     }
@@ -66,6 +68,7 @@ class docs extends Component {
             '/docs/agile',
             '/docs/scrum',
             '/docs/manual',
+            '/docs/bdd',
             '/docs/linux',
             '/docs/git',
             '/docs/html',
@@ -109,53 +112,57 @@ class docs extends Component {
             )
         } else if(this.state.activeTab === 3) {
             return(
+                <Bdd />
+            )
+        } else if(this.state.activeTab === 4) {
+            return(
                 <ResLinux />
             )
-        }else if(this.state.activeTab === 4) {
+        }else if(this.state.activeTab === 5) {
             return(
                 <ResGit />
             )
-        } else if(this.state.activeTab === 5) {
+        } else if(this.state.activeTab === 6) {
             return(
                 <ResHtml />
             )
-        } else if(this.state.activeTab === 6) {
+        } else if(this.state.activeTab === 7) {
             return(
                 <ResCss />
             )
-        } else if(this.state.activeTab === 7) {
+        } else if(this.state.activeTab === 8) {
             return(
                 <ResJavascript />
             )
-        } else if(this.state.activeTab === 8) {
+        } else if(this.state.activeTab === 9) {
             return(
                 <ResTypeScript />
             )
-        } else if(this.state.activeTab === 9) {
+        } else if(this.state.activeTab === 10) {
             return(
                 <ResReact />
             )
-        } else if(this.state.activeTab === 10) {
+        } else if(this.state.activeTab === 11) {
             return(
                 <ResNextJS />
             )
-        } else if(this.state.activeTab === 11) {
+        } else if(this.state.activeTab === 12) {
             return(
                 <ResSql />
             )
-        } else if(this.state.activeTab === 12) {
+        } else if(this.state.activeTab === 13) {
             return(
                 <ResJava />
             )
-        }else if(this.state.activeTab === 13) {
+        }else if(this.state.activeTab === 14) {
             return(
                 <ResPython />
             )
-        } else if(this.state.activeTab === 14) {
+        } else if(this.state.activeTab === 15) {
             return(
                 <ResNetwork />
             )
-        }else if(this.state.activeTab === 15) {
+        }else if(this.state.activeTab === 16) {
             return(
                 <Links />
             )
@@ -168,19 +175,20 @@ class docs extends Component {
             { label: 'Agile', id: 0 },
             { label: 'Scrum', id: 1 },
             { label: 'Manual', id: 2 },
-            { label: 'Linux', id: 3 },
-            { label: 'Git', id: 4 },
-            { label: 'HTML', id: 5 },
-            { label: 'CSS', id: 6 },
-            { label: 'JS', id: 7 },
-            { label: 'TS', id: 8 },
-            { label: 'ReactJS', id: 9 },
-            { label: 'NextJS', id: 10 },
-            { label: 'SQL', id: 11 },
-            { label: 'JAVA', id: 12 },
-            { label: 'PY', id: 13 },
-            { label: 'NET', id: 14 },
-            { label: 'Links', id: 15 }
+            { label: 'BDD', id: 3 },
+            { label: 'Linux', id: 4 },
+            { label: 'Git', id: 5 },
+            { label: 'HTML', id: 6 },
+            { label: 'CSS', id: 7 },
+            { label: 'JS', id: 8 },
+            { label: 'TS', id: 9 },
+            { label: 'ReactJS', id: 10 },
+            { label: 'NextJS', id: 11 },
+            { label: 'SQL', id: 12 },
+            { label: 'JAVA', id: 13 },
+            { label: 'PY', id: 14 },
+            { label: 'NET', id: 15 },
+            { label: 'Links', id: 16 }
         ];
 
         return (
