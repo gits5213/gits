@@ -7,6 +7,7 @@ import Gk from '../components/aid/tabs/gk';
 import Help from '../components/aid/tabs/help';
 import Frontend from '../components/aid/tabs/frontend';
 import CodeSnippet from '../components/aid/tabs/code-snippet';
+import Online from '../components/aid/tabs/online';
 import '../styles/base.css';
 import '../styles/aid.css';
 
@@ -25,6 +26,7 @@ class links extends Component {
         if (path.includes('/help')) return 4;
         if (path.includes('/frontend')) return 5;
         if (path.includes('/codesnippet')) return 6;
+        if (path.includes('/online')) return 7;
         // Default to window if just /aid
         return 0;
     }
@@ -51,7 +53,8 @@ class links extends Component {
             '/aid/gk',
             '/aid/help',
             '/aid/frontend',
-            '/aid/codesnippet'
+            '/aid/codesnippet',
+            '/aid/online'
         ];
         // Ensure tabId is a valid number
         const validTabId = typeof tabId === 'number' ? tabId : parseInt(tabId, 10);
@@ -95,6 +98,10 @@ class links extends Component {
             return(
                 <CodeSnippet />
             )
+        }else if(this.state.activeTab === 7) {
+            return(
+                <Online />
+            )
         }
     }
 
@@ -106,7 +113,8 @@ class links extends Component {
             { label: 'G.K', id: 3 },
             { label: 'Help', id: 4 },
             { label: 'Frontend', id: 5 },
-            { label: 'CodeSnippet', id: 6 }
+            { label: 'CodeSnippet', id: 6 },
+            { label: 'Online', id: 7 }
         ];
 
         return (

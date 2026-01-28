@@ -155,6 +155,7 @@ export const routes = [
   { path: '/aid/help', component: AID },
   { path: '/aid/frontend', component: AID },
   { path: '/aid/codesnippet', component: AID },
+  { path: '/aid/online', component: AID },
   
   // Practice
   { path: '/practice', exact: true, component: Practice },

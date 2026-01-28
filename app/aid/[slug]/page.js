@@ -11,6 +11,7 @@ export function generateStaticParams() {
     { slug: 'help' },
     { slug: 'frontend' },
     { slug: 'codesnippet' },
+    { slug: 'online' },
   ]
 }
 
