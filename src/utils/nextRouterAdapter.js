@@ -9,9 +9,12 @@ export function useNextRouterAdapter() {
   const pathname = usePathname()
   const router = useRouter()
   
+  // Ensure pathname is always a string, default to '/' if null/undefined
+  const safePathname = pathname || '/'
+  
   return {
     location: {
-      pathname,
+      pathname: safePathname,
       search: '',
       hash: '',
       state: undefined
@@ -84,7 +87,7 @@ export function useNextRouterAdapter() {
       length: 0,
       action: 'PUSH',
       location: {
-        pathname,
+        pathname: safePathname,
         search: '',
         hash: '',
         state: undefined
@@ -93,8 +96,8 @@ export function useNextRouterAdapter() {
     match: {
       params: {},
       isExact: true,
-      path: pathname,
-      url: pathname
+      path: safePathname,
+      url: safePathname
     }
   }
 }

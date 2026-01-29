@@ -679,6 +679,219 @@ it('should add item', () => {
 });`}
                 />
             </APICollapsibleSection>
+
+            {/* Cypress Interview Questions Section */}
+            <div style={{
+                ...pageContainerStyles.modern,
+                marginTop: '48px',
+                backgroundColor: '#ffffff',
+                borderRadius: '12px',
+                padding: '32px',
+                boxShadow: '0 4px 6px rgba(0, 0, 0, 0.1)',
+                border: `2px solid ${config.gradientStart}`
+            }}>
+                <h2 style={{
+                    color: '#00416A',
+                    fontSize: '28px',
+                    fontWeight: '700',
+                    marginBottom: '24px',
+                    textAlign: 'left',
+                    paddingBottom: '16px',
+                    borderBottom: `3px solid ${config.gradientStart}`
+                }}>
+                    CypressIO Interview Questions & Answers
+                </h2>
+
+                <div style={{ marginTop: '32px' }}>
+                    {[
+                        {
+                            question: 'What is Cypress and what are its key advantages?',
+                            answer: (
+                                <>
+                                    <strong>Cypress</strong> is a modern end-to-end testing framework for web applications. Key advantages include: <strong>time travel debugging</strong>, <strong>automatic waiting</strong> (no need for explicit waits), <strong>real-time reloads</strong>, <strong>network traffic control</strong> with <strong>cy.intercept()</strong>, <strong>screenshots and videos</strong> on failure, <strong>cross-browser testing</strong> support, and <strong>component testing</strong> capabilities. Cypress runs in the same run-loop as your application, providing native access to DOM elements.
+                                </>
+                            )
+                        },
+                        {
+                            question: 'How does Cypress differ from Selenium?',
+                            answer: (
+                                <>
+                                    <strong>Cypress</strong> runs directly in the browser, while <strong>Selenium</strong> uses WebDriver protocol to communicate with browsers. Cypress has <strong>automatic waiting</strong> built-in, while Selenium requires explicit waits. Cypress provides <strong>time travel debugging</strong> and <strong>real-time reloads</strong>, which Selenium doesn't offer. Cypress is <strong>JavaScript-only</strong>, while Selenium supports multiple languages. Cypress has better <strong>error messages</strong> and <strong>stack traces</strong> for debugging.
+                                </>
+                            )
+                        },
+                        {
+                            question: 'What is automatic waiting in Cypress?',
+                            answer: (
+                                <>
+                                    <strong>Automatic waiting</strong> is Cypress's built-in mechanism that automatically waits for elements to be actionable before performing actions. Cypress waits for elements to be: <strong>attached to DOM</strong>, <strong>visible</strong>, <strong>not covered</strong>, <strong>not disabled</strong>, and <strong>stable</strong> (not animating). This eliminates the need for explicit waits like <strong>cy.wait()</strong> with arbitrary timeouts, making tests more reliable and faster.
+                                </>
+                            )
+                        },
+                        {
+                            question: 'How do you handle authentication in Cypress?',
+                            answer: (
+                                <>
+                                    Cypress supports authentication through <strong>cy.request()</strong> for API-based login, <strong>cy.session()</strong> for caching session state, or <strong>cy.setCookie()</strong> and <strong>cy.setLocalStorage()</strong> for cookie/localStorage-based auth. Use <strong>cy.session()</strong> to cache authentication state and reuse it across tests, avoiding logging in for every test and improving test performance.
+                                </>
+                            )
+                        },
+                        {
+                            question: 'What are Cypress hooks and when do you use them?',
+                            answer: (
+                                <>
+                                    <strong>Hooks</strong> are lifecycle methods in Cypress: <strong>before()</strong> runs once before all tests in a describe block (one-time setup), <strong>after()</strong> runs once after all tests (one-time cleanup), <strong>beforeEach()</strong> runs before each test (per-test setup), and <strong>afterEach()</strong> runs after each test (per-test teardown/evidence capture). Use hooks to set up test data, navigate to pages, reset state, and capture screenshots on failures.
+                                </>
+                            )
+                        },
+                        {
+                            question: 'How do you handle file uploads in Cypress?',
+                            answer: (
+                                <>
+                                    Use <strong>cy.get('input[type="file"]').selectFile()</strong> to upload files. For single file: <strong>cy.get('input[type="file"]').selectFile('path/to/file.pdf')</strong>. For multiple files: <strong>cy.get('input[type="file"]').selectFile(['file1.pdf', 'file2.pdf'])</strong>. You can also use <strong>fixtures</strong> with <strong>cy.fixture()</strong> to load file data, or use <strong>cy.readFile()</strong> to read file contents.
+                                </>
+                            )
+                        },
+                        {
+                            question: 'What is the difference between cy.get() and cy.contains()?',
+                            answer: (
+                                <>
+                                    <strong>cy.get()</strong> queries elements by selector (CSS, data-cy, ID, class), while <strong>cy.contains()</strong> finds elements by text content. <strong>cy.get()</strong> is more precise and faster, while <strong>cy.contains()</strong> is useful for finding elements by visible text. Best practice: use <strong>cy.get('[data-cy=...]')</strong> for stable selectors, and <strong>cy.contains()</strong> when you need to find elements by text.
+                                </>
+                            )
+                        },
+                        {
+                            question: 'How do you mock API responses in Cypress?',
+                            answer: (
+                                <>
+                                    Use <strong>cy.intercept()</strong> to mock API responses. Example: <strong>cy.intercept('GET', '/api/users', {'{'} statusCode: 200, body: [{'{'} id: 1, name: 'User' {'}'}] {'}'}).as('getUsers')</strong>. You can also use <strong>fixtures</strong>: <strong>cy.intercept('GET', '/api/users', {'{'} fixture: 'users.json' {'}'})</strong>. Use <strong>cy.wait('@getUsers')</strong> to wait for the intercepted request. This makes tests faster and more reliable by avoiding backend dependencies.
+                                </>
+                            )
+                        },
+                        {
+                            question: 'What are custom commands in Cypress and how do you create them?',
+                            answer: (
+                                <>
+                                    <strong>Custom commands</strong> are reusable functions you can create in <strong>cypress/support/commands.js</strong>. Use <strong>Cypress.Commands.add('commandName', (param1, param2) =&gt; {'{'} ... {'}'})</strong> to create them. Example: <strong>Cypress.Commands.add('login', (username, password) =&gt; {'{'} cy.visit('/login'); cy.get('[data-cy=username]').type(username); cy.get('[data-cy=password]').type(password); cy.get('[data-cy=submit]').click(); {'}'})</strong>. Then use <strong>cy.login('user', 'pass')</strong> in tests.
+                                </>
+                            )
+                        },
+                        {
+                            question: 'How do you handle multiple tabs/windows in Cypress?',
+                            answer: (
+                                <>
+                                    Cypress doesn't support multiple tabs/windows natively. If a link opens a new tab, Cypress will follow it in the same tab. For testing new windows, you can use <strong>cy.window()</strong> to access the window object, or use <strong>cy.visit()</strong> with <strong>target="_blank"</strong> removed. Alternatively, use <strong>cy.request()</strong> to test API endpoints directly, or restructure tests to avoid multi-tab scenarios.
+                                </>
+                            )
+                        },
+                        {
+                            question: 'What is cy.session() and how do you use it?',
+                            answer: (
+                                <>
+                                    <strong>cy.session()</strong> caches and restores browser state (cookies, localStorage, sessionStorage) between tests. Use it to avoid logging in for every test: <strong>cy.session('user', () =&gt; {'{'} cy.request('POST', '/api/login', {'{'} username: 'demo', password: 'demo123' {'}'}); {'}'})</strong>. The session is cached and reused across tests, improving performance. Sessions are cleared when tests complete or when explicitly cleared with <strong>cy.session()</strong>.
+                                </>
+                            )
+                        },
+                        {
+                            question: 'How do you handle iframes in Cypress?',
+                            answer: (
+                                <>
+                                    Access iframes using <strong>cy.get('iframe').then(($iframe) =&gt; {'{'} const $body = $iframe.contents().find('body'); cy.wrap($body).find('button').click(); {'}'})</strong>. Alternatively, use <strong>cy.iframe()</strong> custom command or access iframe content directly. Note that Cypress can only access same-origin iframes due to browser security restrictions. For cross-origin iframes, you may need to use <strong>cy.origin()</strong> or test them separately.
+                                </>
+                            )
+                        },
+                        {
+                            question: 'What is the difference between cy.should() and cy.then()?',
+                            answer: (
+                                <>
+                                    <strong>cy.should()</strong> is for assertions with automatic retry - it will retry until the assertion passes or times out. <strong>cy.then()</strong> is for executing callbacks and doesn't retry. Use <strong>cy.should()</strong> for assertions: <strong>cy.get('[data-cy=element]').should('be.visible')</strong>. Use <strong>cy.then()</strong> for callbacks that need to execute once: <strong>cy.get('[data-cy=element]').then(($el) =&gt; {'{'} const text = $el.text(); {'}'})</strong>.
+                                </>
+                            )
+                        },
+                        {
+                            question: 'How do you handle cookies in Cypress?',
+                            answer: (
+                                <>
+                                    Use <strong>cy.setCookie()</strong> to set cookies, <strong>cy.getCookie()</strong> to get a specific cookie, <strong>cy.getCookies()</strong> to get all cookies, and <strong>cy.clearCookie()</strong> or <strong>cy.clearCookies()</strong> to clear cookies. Cookies are automatically managed per test. You can also save and restore cookies as part of <strong>cy.session()</strong> for authentication.
+                                </>
+                            )
+                        },
+                        {
+                            question: 'What are Cypress fixtures and how do you use them?',
+                            answer: (
+                                <>
+                                    <strong>Fixtures</strong> are static data files stored in <strong>cypress/fixtures/</strong> directory. Use <strong>cy.fixture('filename.json')</strong> to load fixture data. Example: <strong>cy.fixture('users.json').then((users) =&gt; {'{'} cy.intercept('GET', '/api/users', users); {'}'})</strong>. Fixtures are useful for test data, API responses, and file uploads. They keep test data separate from test code and make tests more maintainable.
+                                </>
+                            )
+                        },
+                        {
+                            question: 'How do you run tests in parallel in Cypress?',
+                            answer: (
+                                <>
+                                    Use <strong>cypress run --parallel</strong> to run tests in parallel. You need a <strong>Cypress Dashboard</strong> account for parallelization. Configure parallelization in <strong>cypress.config.js</strong> with <strong>numTestsKeptInMemory</strong> and use <strong>--record</strong> flag. Cypress Dashboard automatically distributes tests across available machines. For CI/CD, use <strong>--parallel --record --key YOUR_RECORD_KEY</strong>.
+                                </>
+                            )
+                        },
+                        {
+                            question: 'What are the best practices for writing maintainable Cypress tests?',
+                            answer: (
+                                <>
+                                    Use <strong>data-cy attributes</strong> for stable selectors, prefer <strong>cy.contains()</strong> for text-based queries, use <strong>custom commands</strong> for reusable logic, keep tests <strong>independent and isolated</strong>, use <strong>cy.intercept()</strong> to mock API calls, avoid <strong>arbitrary waits</strong>, use <strong>fixtures</strong> for test data, implement proper <strong>error handling</strong>, and maintain a <strong>clear folder structure</strong>. Use <strong>Page Object Model</strong> pattern for complex applications.
+                                </>
+                            )
+                        },
+                        {
+                            question: 'How do you handle file downloads in Cypress?',
+                            answer: (
+                                <>
+                                    Use <strong>cy.intercept()</strong> to intercept download requests and verify the response, or use <strong>cy.readFile()</strong> to read downloaded files. Example: <strong>cy.intercept('GET', '/download/file.pdf').as('download'); cy.get('[data-cy=download]').click(); cy.wait('@download').then((interception) =&gt; {'{'} expect(interception.response.statusCode).to.eq(200); {'}'})</strong>. You can also use <strong>cy.readFile()</strong> to verify file contents after download.
+                                </>
+                            )
+                        },
+                        {
+                            question: 'What is cy.origin() and when do you use it?',
+                            answer: (
+                                <>
+                                    <strong>cy.origin()</strong> is used to test cross-origin URLs. It allows you to run Cypress commands in a different origin context. Example: <strong>cy.origin('https://example.com', () =&gt; {'{'} cy.visit('/login'); cy.get('[data-cy=username]').type('demo'); {'}'})</strong>. Use it when testing OAuth flows, payment gateways, or any cross-origin scenarios. Note that <strong>cy.origin()</strong> requires proper configuration and may have limitations.
+                                </>
+                            )
+                        },
+                        {
+                            question: 'How do you debug failing tests in Cypress?',
+                            answer: (
+                                <>
+                                    Use <strong>cy.pause()</strong> to pause test execution, <strong>cy.debug()</strong> to debug specific commands, check the <strong>Cypress Test Runner</strong> for time-travel debugging, review <strong>screenshots and videos</strong> on failure, use <strong>cy.log()</strong> for custom logging, check <strong>console errors</strong> in the browser console, and use <strong>.then()</strong> callbacks to inspect element state. The <strong>time-travel feature</strong> in Cypress Test Runner helps you see exactly what happened at each step.
+                                </>
+                            )
+                        }
+                    ].map((item, index) => (
+                        <div key={index} style={{
+                            marginBottom: '32px',
+                            paddingBottom: '24px',
+                            borderBottom: index < 19 ? '1px solid #e5e7eb' : 'none'
+                        }}>
+                            <h3 style={{
+                                color: '#00416A',
+                                fontSize: '18px',
+                                fontWeight: '600',
+                                marginBottom: '12px',
+                                textAlign: 'left'
+                            }}>
+                                {index + 1}. {item.question}
+                            </h3>
+                            <div style={{
+                                color: '#475569',
+                                fontSize: '15px',
+                                lineHeight: '1.8',
+                                textAlign: 'left',
+                                paddingLeft: '8px'
+                            }}>
+                                {item.answer}
+                            </div>
+                        </div>
+                    ))}
+                </div>
+            </div>
         </div>
     )
 }

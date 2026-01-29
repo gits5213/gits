@@ -12,8 +12,8 @@ const ResLinux = () => {
             {/* Hero Section */}
             <div style={{
                 ...leftAlignStyles.heroSection,
-                display: 'flex',
-                alignItems: 'center',
+                            display: 'flex',
+                            alignItems: 'center',
                 justifyContent: 'space-between',
                 gap: '40px',
                 flexWrap: 'wrap'
@@ -26,7 +26,7 @@ const ResLinux = () => {
                         Open-Source Operating System and Command Line Interface
                     </p>
                 </div>
-                <div style={{
+                            <div style={{
                     flex: '0 0 auto',
                     display: 'flex',
                     alignItems: 'center',
@@ -43,8 +43,8 @@ const ResLinux = () => {
                             filter: 'brightness(1.1)'
                         }}
                     />
-                </div>
-            </div>
+                                </div>
+                                </div>
 
             {/* Main Content */}
             <div style={leftAlignStyles.mainContent}>
@@ -64,7 +64,7 @@ const ResLinux = () => {
                     <li>Linux manages communication between software and hardware</li>
                     <li>Linux is free to use, modify, and distribute</li>
                     <li>Linux has a large community of developers and users</li>
-                </ul>
+                                    </ul>
 
                 <h3 style={leftAlignStyles.sectionHeadingWithMargin}>
                     Linux Operating System Components
@@ -77,7 +77,7 @@ const ResLinux = () => {
                     <li><strong>Graphical server:</strong> Sub-system that displays graphics on your monitor (X server)</li>
                     <li><strong>Desktop environment:</strong> The piece that users interact with (GNOME, KDE, Xfce, etc.)</li>
                     <li><strong>Applications:</strong> Software titles that can be easily found and installed</li>
-                </ul>
+                                    </ul>
 
                 <h3 style={leftAlignStyles.sectionHeadingWithMargin}>
                     Open Source
@@ -90,11 +90,11 @@ const ResLinux = () => {
                     <li>The freedom to study how the program works, and change it to make it do what you wish</li>
                     <li>The freedom to redistribute copies so you can help your neighbor</li>
                     <li>The freedom to distribute copies of your modified versions to others</li>
-                </ul>
+                                    </ul>
                 <p style={leftAlignStyles.paragraph}>
                     These points are crucial to understanding the community that works together to create the Linux platform. Without a doubt, Linux is an operating system that is "by the people, for the people". These tenants are also a main factor in why many people choose Linux. It's about freedom and freedom of use and freedom of choice.
                 </p>
-            </div>
+                                </div>
 
             {/* Basic Commands Section */}
             <div style={leftAlignStyles.mainContent}>
@@ -137,8 +137,8 @@ const ResLinux = () => {
                         <li><code style={{ backgroundColor: '#f8f9fa', padding: '2px 6px', borderRadius: '4px', color: '#00416A' }}>mv index.html about.html</code>: Rename file</li>
                         <li><code style={{ backgroundColor: '#f8f9fa', padding: '2px 6px', borderRadius: '4px', color: '#00416A' }}>rm about.html</code>: Delete file (only works for files)</li>
                         <li><code style={{ backgroundColor: '#f8f9fa', padding: '2px 6px', borderRadius: '4px', color: '#00416A' }}>rm -r Test</code>: Delete folder</li>
-                    </ul>
-                </div>
+                                    </ul>
+                                </div>
 
                 <div style={{
                     backgroundColor: '#ffffff',
@@ -169,8 +169,8 @@ const ResLinux = () => {
                         <li><code style={{ backgroundColor: '#f8f9fa', padding: '2px 6px', borderRadius: '4px', color: '#00416A' }}>open index.html</code>: Open file</li>
                         <li><code style={{ backgroundColor: '#f8f9fa', padding: '2px 6px', borderRadius: '4px', color: '#00416A' }}>echo "Print statement"</code>: Print statement</li>
                         <li><code style={{ backgroundColor: '#f8f9fa', padding: '2px 6px', borderRadius: '4px', color: '#00416A' }}>zip, unzip</code>: Zip and extract files</li>
-                    </ul>
-                </div>
+                                    </ul>
+                                </div>
 
                 <div style={{
                     backgroundColor: '#ffffff',
@@ -202,9 +202,9 @@ const ResLinux = () => {
                         <li><strong>Ctrl + Z:</strong> Pause any command</li>
                         <li><strong>Ctrl + S:</strong> Freeze terminal</li>
                         <li><strong>Ctrl + Q:</strong> Unfreeze terminal</li>
-                    </ul>
-                </div>
-            </div>
+                                    </ul>
+                                </div>
+                                </div>
 
             {/* Advanced Commands Section */}
             <div style={leftAlignStyles.mainContent}>
@@ -219,15 +219,15 @@ const ResLinux = () => {
                     borderLeft: '4px solid #00416A',
                     textAlign: 'left'
                 }}>
-                    <h3 style={{
-                        color: '#00416A',
+                                <h3 style={{
+                                    color: '#00416A',
                         fontSize: '20px',
                         marginBottom: '15px',
                         fontWeight: 'bold',
                         textAlign: 'left'
                     }}>
                         File Operations
-                    </h3>
+                                </h3>
                     <ul style={{
                         fontSize: '16px',
                         lineHeight: '1.8',
@@ -243,7 +243,7 @@ const ResLinux = () => {
                         <li><code style={{ backgroundColor: '#f8f9fa', padding: '2px 6px', borderRadius: '4px', color: '#00416A' }}>tail</code>: Display last ten lines of a text file</li>
                         <li><code style={{ backgroundColor: '#f8f9fa', padding: '2px 6px', borderRadius: '4px', color: '#00416A' }}>diff</code>: Compare contents of two files line by line</li>
                     </ul>
-                </div>
+                                </div>
 
                 <div style={{
                     backgroundColor: '#ffffff',
@@ -276,7 +276,7 @@ const ResLinux = () => {
                         <li><code style={{ backgroundColor: '#f8f9fa', padding: '2px 6px', borderRadius: '4px', color: '#00416A' }}>ps ux</code>: Show process identification number (PID) of programs</li>
                         <li><code style={{ backgroundColor: '#f8f9fa', padding: '2px 6px', borderRadius: '4px', color: '#00416A' }}>man</code>: Manual instruction for any command</li>
                     </ul>
-                </div>
+                                </div>
 
                 <div style={{
                     backgroundColor: '#f8f9fa',
@@ -289,8 +289,8 @@ const ResLinux = () => {
                     <p style={{ margin: 0, fontSize: '16px', color: '#333333', textAlign: 'left' }}>
                         <strong>Tip:</strong> You can run multiple commands in one single command by using the ";" to separate them. For example: <code style={{ backgroundColor: '#fff', padding: '2px 6px', borderRadius: '4px' }}>Command1; Command2; Command3</code>. Or use <code style={{ backgroundColor: '#fff', padding: '2px 6px', borderRadius: '4px' }}>&&</code> if you only want the next command to run when the first one is successful.
                     </p>
-                </div>
-            </div>
+                                </div>
+                                </div>
 
             {/* CMDER Installation */}
             <div style={{
@@ -331,7 +331,7 @@ const ResLinux = () => {
                         }}>
                             Cmder is a software package created out of pure frustration over the absence of nice console emulators on Windows. It is based on amazing software, and spiced up with the Monokai color scheme and a custom prompt layout, looking sexy from the start.
                         </p>
-                    </div>
+                                </div>
 
                     <div>
                         <h5 style={{
@@ -355,8 +355,8 @@ const ResLinux = () => {
                             <li>Run <code style={{ backgroundColor: '#f8f9fa', padding: '2px 6px', borderRadius: '4px', color: '#00416A' }}>Cmder.exe</code></li>
                             <li>Click, Click & Done!</li>
                         </ul>
-                    </div>
-                </div>
+                                </div>
+                                </div>
 
                 <div style={{
                     backgroundColor: '#ffffff',
@@ -376,17 +376,17 @@ const ResLinux = () => {
                             borderRadius: '8px'
                         }}
                     />
-                </div>
-            </div>
+                                </div>
+                                </div>
 
             {/* PDF Download Section */}
             <div style={leftAlignStyles.mainContent}>
-                <PdfDownload
-                    pdfPath="LinuxWindosMacCommand.pdf"
-                    title="📥 Download Terminal Commands PDF Handout"
-                    description="Download the complete terminal commands checklist for Windows, macOS, and Linux (PDF format)"
-                    downloadFileName="LinuxWindosMacCommand.pdf"
-                />
+            <PdfDownload
+                pdfPath="LinuxWindosMacCommand.pdf"
+                title="📥 Download Terminal Commands PDF Handout"
+                description="Download the complete terminal commands checklist for Windows, macOS, and Linux (PDF format)"
+                downloadFileName="LinuxWindosMacCommand.pdf"
+            />
             </div>
 
             {/* Action Buttons */}
@@ -484,11 +484,11 @@ const ResLinux = () => {
                 >
                     Linux and GNU
                 </a>
-            </div>
+                </div>
 
             <section style={{ marginTop: '40px' }}>
             </section>
-        </div>
+                </div>
     );
 }
 

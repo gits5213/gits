@@ -23,7 +23,7 @@ class apis extends Component {
     }
 
     getActiveTabFromPath() {
-        const path = this.props.location.pathname;
+        const path = this.props?.location?.pathname || '';
         if (path.includes('/selenium')) return 0;
         if (path.includes('/playwright')) return 1;
         if (path.includes('/cypressio')) return 2;
@@ -42,14 +42,14 @@ class apis extends Component {
 
     componentDidMount() {
         // Redirect /apis to /apis/selenium if no specific tab
-        if (this.props.location.pathname === '/apis') {
-            this.props.history.replace('/apis/selenium');
+        if (this.props?.location?.pathname === '/apis') {
+            this.props.history?.replace('/apis/selenium');
         }
     }
 
     componentDidUpdate(prevProps) {
         // Update active tab when URL changes
-        if (prevProps.location.pathname !== this.props.location.pathname) {
+        if (prevProps?.location?.pathname !== this.props?.location?.pathname) {
             this.setState({ activeTab: this.getActiveTabFromPath() });
         }
     }
@@ -74,7 +74,7 @@ class apis extends Component {
         const route = tabRoutes[validTabId];
         // Only push if route exists and is a string
         if (route && typeof route === 'string') {
-            this.props.history.push(route);
+            this.props.history?.push(route);
         } else {
             if (process.env.NODE_ENV === 'development') {
                 console.warn('Invalid tabId or route:', { tabId, validTabId, route });
@@ -138,6 +138,8 @@ class apis extends Component {
                 <Frisby />
             )
         }
+        // Default fallback to Selenium
+        return <Selenium />
     }
 
     render() {

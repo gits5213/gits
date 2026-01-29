@@ -21,6 +21,10 @@ const ResPlaywright = () => {
     const [isCucumberGherkinExpanded, setIsCucumberGherkinExpanded] = useState(false);
     // State for "Getting Started" section collapse/expand (collapsed by default)
     const [isWhatIsPlaywrightExpanded, setIsWhatIsPlaywrightExpanded] = useState(false);
+    // State for Allure Report section collapse/expand
+    const [isAllureExpanded, setIsAllureExpanded] = useState(false);
+    // State for Playwright Interview Questions section collapse/expand
+    const [isInterviewQuestionsExpanded, setIsInterviewQuestionsExpanded] = useState(false);
 
     // Toggle checklist section
     const toggleChecklist = () => {
@@ -55,6 +59,16 @@ const ResPlaywright = () => {
     // Toggle "Getting Started" section
     const toggleWhatIsPlaywright = () => {
         setIsWhatIsPlaywrightExpanded(!isWhatIsPlaywrightExpanded);
+    };
+
+    // Toggle Allure Report section
+    const toggleAllure = () => {
+        setIsAllureExpanded(!isAllureExpanded);
+    };
+
+    // Toggle Interview Questions section
+    const toggleInterviewQuestions = () => {
+        setIsInterviewQuestionsExpanded(!isInterviewQuestionsExpanded);
     };
 
     // Map checklist items to their corresponding section IDs
@@ -3096,34 +3110,69 @@ use: {
                 )}
             </div>
 
-            {/* Allure Report Setup Section - Always Visible */}
+            {/* Allure Report Setup Section - Collapsible */}
             <div style={{
                 ...cardStyle,
                 marginBottom: '48px'
             }}>
-                <h2 style={{ 
-                    color: '#00416A', 
-                    fontSize: '32px', 
-                    marginBottom: '8px',
-                    fontWeight: '700',
-                    textAlign: 'left',
-                    margin: 0,
-                    paddingBottom: '16px',
-                    borderBottom: '3px solid #00416A'
-                }}>
-                    📊 Allure Report Integration
-                </h2>
-                <p style={{ 
-                    fontSize: '16px', 
-                    color: '#64748b',
-                    marginBottom: '32px',
-                    lineHeight: '1.6',
-                    textAlign: 'left'
-                }}>
-                    Learn how to integrate Allure reporting framework with Playwright to generate beautiful, interactive HTML reports for your test results.
-                </p>
+                <div
+                    onClick={toggleAllure}
+                    style={{
+                        cursor: 'pointer',
+                        display: 'flex',
+                        justifyContent: 'space-between',
+                        alignItems: 'center',
+                        marginBottom: isAllureExpanded ? '24px' : '0',
+                        paddingBottom: isAllureExpanded ? '20px' : '0',
+                        borderBottom: isAllureExpanded ? '2px solid #00416A' : 'none',
+                        transition: 'all 0.3s ease'
+                    }}
+                    onMouseEnter={(e) => {
+                        if (!isAllureExpanded) {
+                            e.currentTarget.style.backgroundColor = '#f0f7fa';
+                        }
+                    }}
+                    onMouseLeave={(e) => {
+                        if (!isAllureExpanded) {
+                            e.currentTarget.style.backgroundColor = 'transparent';
+                        }
+                    }}
+                >
+                    <div>
+                        <h2 style={{ 
+                            color: '#00416A', 
+                            fontSize: '32px', 
+                            marginBottom: '8px',
+                            fontWeight: '700',
+                            textAlign: 'left',
+                            margin: 0
+                        }}>
+                            📊 Allure Report Integration
+                        </h2>
+                        <p style={{ 
+                            fontSize: '16px', 
+                            color: '#64748b',
+                            marginBottom: 0,
+                            lineHeight: '1.6',
+                            textAlign: 'left'
+                        }}>
+                            Learn how to integrate Allure reporting framework with Playwright to generate beautiful, interactive HTML reports for your test results.
+                        </p>
+                    </div>
+                    <span style={{
+                        fontSize: '32px',
+                        color: '#00416A',
+                        fontWeight: 'bold',
+                        marginLeft: '20px',
+                        flexShrink: 0,
+                        transition: 'transform 0.3s ease'
+                    }}>
+                        {isAllureExpanded ? '−' : '+'}
+                    </span>
+                </div>
 
-                <div id="allure-report-section" style={{ marginBottom: '32px', scrollMarginTop: '100px' }}>
+                {isAllureExpanded && (
+                    <div id="allure-report-section" style={{ marginBottom: '32px', scrollMarginTop: '100px' }}>
                     <h3 style={{
                         color: '#00416A',
                         fontSize: '24px',
@@ -3383,7 +3432,8 @@ test('critical login test', async ({ page }) => {
                             <li>Integration with CI/CD pipelines</li>
                         </ul>
                     </div>
-                </div>
+                    </div>
+                )}
             </div>
 
             {/* Playwright + Cucumber (TypeScript) Checklist Section */}
@@ -4899,6 +4949,154 @@ export class DashboardPage {
                             </div>
                         </div>
                     </Link>
+                </div>
+            </div>
+
+            {/* Playwright Interview Questions & Answers - Always Visible */}
+            <div style={{
+                ...cardStyle,
+                marginBottom: '48px'
+            }}>
+                <h2 style={{ 
+                    color: '#00416A', 
+                    fontSize: '32px', 
+                    marginBottom: '8px',
+                    fontWeight: '700',
+                    textAlign: 'left',
+                    margin: 0,
+                    paddingBottom: '16px',
+                    borderBottom: '3px solid #00416A'
+                }}>
+                    💼 Playwright Interview Questions & Answers
+                </h2>
+                <p style={{ 
+                    fontSize: '16px', 
+                    color: '#64748b',
+                    marginBottom: '32px',
+                    lineHeight: '1.6',
+                    textAlign: 'left'
+                }}>
+                    21 most recent and frequently asked Playwright interview questions with detailed answers to help you prepare for your next interview.
+                </p>
+
+                <div>
+                        {[
+                            {
+                                question: 'What is Playwright and how does it differ from Selenium?',
+                                answer: 'Playwright is a modern end-to-end testing framework developed by Microsoft. Unlike Selenium, Playwright supports multiple browsers (Chromium, Firefox, WebKit) with a single API, has built-in auto-waiting, provides network interception capabilities, and offers better performance with parallel execution. Playwright also has native support for modern web features and provides better debugging tools.'
+                            },
+                            {
+                                question: 'What is Playwright and how does it differ from CypressIO?',
+                                answer: (
+                                    <>
+                                        Playwright is a modern end-to-end testing framework by Microsoft that supports multiple browsers (Chromium, Firefox, WebKit) with a single API. Key differences from CypressIO: <strong>Execution Model</strong>: Cypress runs test code <strong>inside the browser</strong> alongside the app (single event loop with a command queue), while Playwright runs <strong>outside the browser</strong> (Node process driving browsers via protocol). This makes Playwright naturally suited for true cross-browser, multi-context parallelism. Cypress trades that for tighter in-browser DOM access and time-travel debugging. <strong>Other differences</strong>: Playwright supports cross-browser testing including Firefox and Safari, can test multiple tabs/windows simultaneously, supports API testing with request context, has better mobile emulation, runs tests in parallel by default, and supports multiple programming languages (JavaScript, TypeScript, Python, Java, C#). CypressIO is primarily JavaScript-based, has a more interactive test runner, but is limited to Chromium-based browsers and single-tab testing.
+                                    </>
+                                )
+                            },
+                            {
+                                question: 'What is auto-waiting in Playwright?',
+                                answer: 'Auto-waiting is Playwright\'s built-in mechanism that automatically waits for elements to be actionable before performing actions. It waits for elements to be: attached to DOM, visible, stable (not animating), enabled, and editable (for inputs). This eliminates the need for explicit waits like sleep() or waitForTimeout(), making tests more reliable and faster.'
+                            },
+                            {
+                                question: 'How do you handle multiple tabs/windows in Playwright?',
+                                answer: 'Playwright handles multiple tabs through the BrowserContext. When a new tab opens, you can access it using context.pages() to get all pages, or use page.waitForEvent(\'popup\') to wait for a new page. You can switch between pages using the page object and perform actions on any tab.'
+                            },
+                            {
+                                question: 'What are Playwright locators and what are the best practices?',
+                                answer: 'Locators are Playwright\'s way of finding elements. Best practices include: use getByRole() for accessibility, getByLabel() for form fields, getByTestId() for stable test identifiers, avoid XPath when possible, use locator.first() or locator.last() for multiple matches, and prefer semantic locators over CSS selectors.'
+                            },
+                            {
+                                question: 'How do you handle file uploads in Playwright?',
+                                answer: 'Use page.setInputFiles() to upload files. For single file: await page.setInputFiles(\'input[type="file"]\', \'path/to/file.pdf\'). For multiple files: await page.setInputFiles(\'input[type="file"]\', [\'file1.pdf\', \'file2.pdf\']). You can also use buffer data or create files programmatically.'
+                            },
+                            {
+                                question: 'What is the difference between page.click() and locator.click()?',
+                                answer: 'page.click() requires a selector string and is the older API. locator.click() uses the Locator API which is more modern and provides better error messages, auto-waiting, and retry logic. The Locator API is recommended as it\'s more reliable and provides better debugging information.'
+                            },
+                            {
+                                question: 'How do you handle authentication in Playwright?',
+                                answer: 'Playwright supports authentication through storageState. You can save authentication state after login using context.storageState({ path: \'auth.json\' }) and then reuse it in tests by setting storageState in the config or context options. This avoids logging in for every test and improves test performance.'
+                            },
+                            {
+                                question: 'What are fixtures in Playwright and how do you use them?',
+                                answer: 'Fixtures are reusable test setup/teardown logic. Built-in fixtures include page, context, browser, request, etc. You can create custom fixtures using test.extend() to share common setup like authenticated pages, API clients, or test data. Fixtures provide dependency injection and automatic cleanup.'
+                            },
+                            {
+                                question: 'How do you handle network requests and responses in Playwright?',
+                                answer: 'Use page.route() to intercept and modify network requests. You can mock responses with route.fulfill(), block requests with route.abort(), or continue with route.continue(). Use page.waitForResponse() to wait for specific API calls. This is useful for testing without backend dependencies.'
+                            },
+                            {
+                                question: 'What is the difference between test.describe() and test.beforeEach()?',
+                                answer: 'test.describe() groups related tests together and can be nested. test.beforeEach() runs before each test in the describe block. Use describe for organization and beforeEach for common setup that needs to run before every test. You can also use test.beforeAll() for setup that runs once before all tests.'
+                            },
+                            {
+                                question: 'How do you take screenshots and videos in Playwright?',
+                                answer: 'Screenshots: await page.screenshot({ path: \'screenshot.png\' }) or configure in playwright.config.ts with screenshot: \'only-on-failure\'. Videos: Configure in config with video: \'retain-on-failure\' or \'on\'. Traces: Use trace: \'on-first-retry\' for debugging. All artifacts are automatically saved on test failures when configured.'
+                            },
+                            {
+                                question: 'What is Playwright Test vs Playwright Library?',
+                                answer: 'Playwright Test is the test runner that provides test organization, fixtures, parallelization, and reporting. Playwright Library is the core automation library that can be used with other test runners like Jest or Mocha. Playwright Test is recommended for new projects as it provides better integration and features.'
+                            },
+                            {
+                                question: 'How do you run tests in parallel in Playwright?',
+                                answer: 'Playwright runs tests in parallel by default. Configure parallelism using workers in playwright.config.ts: workers: process.env.CI ? 2 : undefined. You can also use test.describe.parallel() to force parallel execution within a describe block. Use test.describe.serial() to run tests sequentially when needed.'
+                            },
+                            {
+                                question: 'What are the different types of waits in Playwright?',
+                                answer: 'Playwright has auto-waiting (built-in), explicit waits like page.waitForSelector(), page.waitForLoadState(), page.waitForResponse(), and page.waitForEvent(). Avoid page.waitForTimeout() as it\'s a hard wait. Use assertions with expect() which have built-in retry logic, or use waitFor methods for specific conditions.'
+                            },
+                            {
+                                question: 'How do you handle iframes in Playwright?',
+                                answer: 'Access iframes using page.frameLocator() or page.frames(). Use frameLocator for better auto-waiting: const frame = page.frameLocator(\'iframe[name="myFrame"]\'); await frame.getByRole(\'button\').click(). You can also get frame by URL or name using page.frame() and then interact with elements inside.'
+                            },
+                            {
+                                question: 'What is the difference between expect() and page.waitFor()?',
+                                answer: 'expect() is Playwright\'s assertion API with built-in retry logic and better error messages. It automatically waits and retries until the condition is met or timeout. page.waitFor() methods wait for specific conditions but don\'t assert. Use expect() for assertions and waitFor() when you need to wait without asserting.'
+                            },
+                            {
+                                question: 'How do you handle cookies in Playwright?',
+                                answer: 'Use context.addCookies() to add cookies, context.cookies() to get all cookies, and page.context().clearCookies() to clear cookies. Cookies are automatically managed per browser context. You can also save and restore cookies as part of storageState for authentication.'
+                            },
+                            {
+                                question: 'What is the purpose of test.step() in Playwright?',
+                                answer: 'test.step() creates nested steps in test reports, making it easier to understand test execution flow. Steps appear in the test report and can be nested. Use it to organize complex test logic: await test.step(\'Login\', async () => { /* login code */ }). This improves test readability and debugging.'
+                            },
+                            {
+                                question: 'How do you handle file downloads in Playwright?',
+                                answer: 'Use page.waitForEvent(\'download\') to wait for download to start, then use download.saveAs() to save the file: const downloadPromise = page.waitForEvent(\'download\'); await page.click(\'a[href="/download"]\'); const download = await downloadPromise; await download.saveAs(\'downloaded-file.pdf\').'
+                            },
+                            {
+                                question: 'What are the best practices for writing maintainable Playwright tests?',
+                                answer: 'Use Page Object Model pattern, prefer semantic locators (getByRole, getByLabel), use fixtures for reusable setup, keep tests independent and isolated, use descriptive test names, organize tests with describe blocks, avoid hard waits, use environment variables for configuration, implement proper error handling, and maintain a clear folder structure.'
+                            }
+                        ].map((qa, index) => (
+                            <div key={index} style={{
+                                marginBottom: '32px',
+                                padding: '24px',
+                                backgroundColor: '#f8f9fa',
+                                borderRadius: '8px',
+                                border: '1px solid #e2e8f0'
+                            }}>
+                                <h4 style={{
+                                    color: '#00416A',
+                                    fontSize: '20px',
+                                    fontWeight: '600',
+                                    marginBottom: '12px',
+                                    textAlign: 'left'
+                                }}>
+                                    Q{index + 1}: {qa.question}
+                                </h4>
+                                <div style={{
+                                    color: '#475569',
+                                    fontSize: '16px',
+                                    lineHeight: '1.8',
+                                    marginBottom: 0,
+                                    textAlign: 'left'
+                                }}>
+                                    <strong style={{ color: '#1e293b' }}>Answer:</strong> <span>{qa.answer}</span>
+                                </div>
+                            </div>
+                        ))}
                 </div>
             </div>
 

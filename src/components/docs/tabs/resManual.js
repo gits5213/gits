@@ -12,22 +12,22 @@ const resManual = () => {
     return(
         <div style={leftAlignStyles.pageContainer}>
             {/* Hero Section */}
-            <div style={{
+                <div style={{
                 ...leftAlignStyles.heroSection,
-                display: 'flex',
-                alignItems: 'center',
-                justifyContent: 'space-between',
-                gap: '40px',
+                    display: 'flex',
+                    alignItems: 'center',
+                    justifyContent: 'space-between',
+                    gap: '40px',
                 flexWrap: 'wrap'
-            }}>
-                <div style={{ flex: '1', minWidth: '300px' }}>
+                }}>
+                    <div style={{ flex: '1', minWidth: '300px' }}>
                     <h1 style={leftAlignStyles.heroTitle}>
                         Software Manual Testing
                     </h1>
                     <p style={leftAlignStyles.heroSubtitle}>
                         Comprehensive Guide to Manual Testing Practices and Methodologies
                     </p>
-                </div>
+                        </div>
                 <div style={{
                     flex: '0 0 auto',
                     display: 'flex',
@@ -45,8 +45,8 @@ const resManual = () => {
                             filter: 'brightness(1.1)'
                         }}
                     />
-                </div>
-            </div>
+                        </div>
+                    </div>
 
             {/* Main Content */}
             <div style={leftAlignStyles.mainContent}>
@@ -78,144 +78,144 @@ const resManual = () => {
             </div>
 
             {/* Testing Pyramid Section */}
-            <div style={{
-                display: 'grid',
+                    <div style={{
+                        display: 'grid',
                 gridTemplateColumns: 'repeat(auto-fit, minmax(300px, 1fr))',
                 gap: '30px',
                 marginBottom: '40px'
-            }}>
-                <div style={{
-                    backgroundColor: '#ffffff',
+                    }}>
+                        <div style={{
+                            backgroundColor: '#ffffff',
                     padding: '30px',
-                    borderRadius: '12px',
+                            borderRadius: '12px',
                     boxShadow: '0 2px 10px rgba(0,0,0,0.1)',
-                    display: 'flex',
-                    flexDirection: 'column',
-                    alignItems: 'center',
-                    justifyContent: 'center'
-                }}>
-                    <h3 style={{
-                        color: '#00416A',
+                            display: 'flex',
+                            flexDirection: 'column',
+                            alignItems: 'center',
+                            justifyContent: 'center'
+                        }}>
+                            <h3 style={{
+                                color: '#00416A',
                         fontSize: '24px',
-                        marginBottom: '20px',
+                                marginBottom: '20px',
                         fontWeight: 'bold'
-                    }}>
-                        Testing Pyramid
-                    </h3>
-                    <div style={{
-                        display: 'flex',
-                        flexDirection: 'column',
-                        alignItems: 'center',
-                        justifyContent: 'center',
-                        width: '100%'
-                    }}>
-                        <div style={{
-                            width: '80px',
-                            height: '35px',
-                            backgroundColor: '#dc3545',
-                            display: 'flex',
-                            alignItems: 'center',
-                            justifyContent: 'center',
-                            color: '#ffffff',
-                            fontWeight: '600',
+                            }}>
+                                Testing Pyramid
+                            </h3>
+                            <div style={{
+                                display: 'flex',
+                                flexDirection: 'column',
+                                alignItems: 'center',
+                                justifyContent: 'center',
+                                width: '100%'
+                            }}>
+                                <div style={{
+                                    width: '80px',
+                                    height: '35px',
+                                    backgroundColor: '#dc3545',
+                                    display: 'flex',
+                                    alignItems: 'center',
+                                    justifyContent: 'center',
+                                    color: '#ffffff',
+                                    fontWeight: '600',
                             fontSize: '12px',
-                            borderRadius: '4px',
-                            marginBottom: '4px',
-                            boxShadow: '0 2px 6px rgba(0,0,0,0.2)'
-                        }}>
-                            E2E (10%)
-                        </div>
-                        <div style={{
-                            width: '140px',
-                            height: '35px',
-                            backgroundColor: '#ffc107',
-                            display: 'flex',
-                            alignItems: 'center',
-                            justifyContent: 'center',
-                            color: '#333',
-                            fontWeight: '600',
+                                    borderRadius: '4px',
+                                    marginBottom: '4px',
+                                    boxShadow: '0 2px 6px rgba(0,0,0,0.2)'
+                                }}>
+                                    E2E (10%)
+                                </div>
+                                <div style={{
+                                    width: '140px',
+                                    height: '35px',
+                                    backgroundColor: '#ffc107',
+                                    display: 'flex',
+                                    alignItems: 'center',
+                                    justifyContent: 'center',
+                                    color: '#333',
+                                    fontWeight: '600',
                             fontSize: '12px',
-                            borderRadius: '4px',
-                            marginBottom: '4px',
-                            boxShadow: '0 2px 6px rgba(0,0,0,0.2)'
-                        }}>
-                            Integration (20%)
-                        </div>
-                        <div style={{
-                            width: '200px',
-                            height: '35px',
-                            backgroundColor: '#28a745',
-                            display: 'flex',
-                            alignItems: 'center',
-                            justifyContent: 'center',
-                            color: '#ffffff',
-                            fontWeight: '600',
+                                    borderRadius: '4px',
+                                    marginBottom: '4px',
+                                    boxShadow: '0 2px 6px rgba(0,0,0,0.2)'
+                                }}>
+                                    Integration (20%)
+                                </div>
+                                <div style={{
+                                    width: '200px',
+                                    height: '35px',
+                                    backgroundColor: '#28a745',
+                                    display: 'flex',
+                                    alignItems: 'center',
+                                    justifyContent: 'center',
+                                    color: '#ffffff',
+                                    fontWeight: '600',
                             fontSize: '12px',
-                            borderRadius: '4px',
-                            boxShadow: '0 2px 6px rgba(0,0,0,0.2)'
-                        }}>
-                            Unit Tests (70%)
+                                    borderRadius: '4px',
+                                    boxShadow: '0 2px 6px rgba(0,0,0,0.2)'
+                                }}>
+                                    Unit Tests (70%)
+                                </div>
+                            </div>
                         </div>
-                    </div>
-                </div>
 
-                <div style={{
-                    backgroundColor: '#ffffff',
+                        <div style={{
+                            backgroundColor: '#ffffff',
                     padding: '30px',
-                    borderRadius: '12px',
+                            borderRadius: '12px',
                     boxShadow: '0 2px 10px rgba(0,0,0,0.1)'
-                }}>
-                    <h3 style={{
-                        color: '#00416A',
+                        }}>
+                            <h3 style={{
+                                color: '#00416A',
                         fontSize: '24px',
                         marginBottom: '20px',
                         fontWeight: 'bold'
-                    }}>
-                        Test Distribution
-                    </h3>
-                    <div style={{
+                            }}>
+                                Test Distribution
+                            </h3>
+                            <div style={{
                         padding: '15px',
-                        backgroundColor: '#f0f8ff',
-                        borderRadius: '6px',
+                                backgroundColor: '#f0f8ff',
+                                borderRadius: '6px',
                         borderLeft: '4px solid #28a745',
                         marginBottom: '15px'
-                    }}>
+                            }}>
                         <p style={{ margin: '5px 0', fontWeight: '600', color: '#00416A', fontSize: '14px' }}>
-                            Unit Tests (70%)
-                        </p>
+                                    Unit Tests (70%)
+                                </p>
                         <p style={{ margin: '5px 0', fontSize: '13px', color: '#333', lineHeight: '1.6' }}>
-                            Fast, isolated tests for individual components/functions.
-                        </p>
-                    </div>
-                    <div style={{
+                                    Fast, isolated tests for individual components/functions.
+                                </p>
+                            </div>
+                            <div style={{
                         padding: '15px',
-                        backgroundColor: '#fff9e6',
-                        borderRadius: '6px',
+                                backgroundColor: '#fff9e6',
+                                borderRadius: '6px',
                         borderLeft: '4px solid #ffc107',
                         marginBottom: '15px'
-                    }}>
+                            }}>
                         <p style={{ margin: '5px 0', fontWeight: '600', color: '#00416A', fontSize: '14px' }}>
-                            Integration Tests (20%)
-                        </p>
+                                    Integration Tests (20%)
+                                </p>
                         <p style={{ margin: '5px 0', fontSize: '13px', color: '#333', lineHeight: '1.6' }}>
-                            Tests for interactions between components/modules.
-                        </p>
-                    </div>
-                    <div style={{
+                                    Tests for interactions between components/modules.
+                                </p>
+                            </div>
+                            <div style={{
                         padding: '15px',
-                        backgroundColor: '#ffe6e6',
-                        borderRadius: '6px',
-                        borderLeft: '4px solid #dc3545'
-                    }}>
+                                backgroundColor: '#ffe6e6',
+                                borderRadius: '6px',
+                                borderLeft: '4px solid #dc3545'
+                            }}>
                         <p style={{ margin: '5px 0', fontWeight: '600', color: '#00416A', fontSize: '14px' }}>
-                            E2E / System Tests (10%)
-                        </p>
+                                    E2E / System Tests (10%)
+                                </p>
                         <p style={{ margin: '5px 0', fontSize: '13px', color: '#333', lineHeight: '1.6' }}>
-                            End-to-end tests covering full user workflows.
-                        </p>
+                                    End-to-end tests covering full user workflows.
+                                </p>
+                        </div>
                     </div>
                 </div>
-            </div>
 
             {/* What is Software Testing Section */}
             <div style={leftAlignStyles.mainContent}>
@@ -332,15 +332,15 @@ const resManual = () => {
                             lineHeight: '1.8',
                             color: '#333'
                         }}>
-                            <li>Time pressure</li>
-                            <li>Human fallibility</li>
-                            <li>Inexperienced or insufficiently skilled project participants</li>
+                        <li>Time pressure</li>
+                        <li>Human fallibility</li>
+                        <li>Inexperienced or insufficiently skilled project participants</li>
                             <li>Miscommunication between project participants</li>
                             <li>Complexity of the code, design, architecture, or technologies used</li>
                             <li>Misunderstandings about intra-system and inter-system interfaces</li>
                             <li>New, unfamiliar technologies</li>
-                        </ul>
-                    </div>
+                    </ul>
+                </div>
                 </div>
 
                 <div style={{
@@ -447,7 +447,7 @@ const resManual = () => {
                         fontWeight: 'bold'
                     }}>
                         Software Testing Life Cycle (STLC)
-                    </h3>
+                </h3>
                     <p style={{
                         fontSize: '14px',
                         lineHeight: '1.8',
@@ -470,16 +470,16 @@ const resManual = () => {
                         color: '#333',
                         paddingLeft: '20px'
                     }}>
-                        <li>Requirement Study</li>
-                        <li>Test Planning</li>
-                        <li>Writing Test Cases</li>
-                        <li>Review the Test Cases</li>
-                        <li>Executing the Test Cases</li>
-                        <li>Bug logging and tracking</li>
-                        <li>Bug Re-test</li>
-                        <li>Close or Reopen bugs</li>
-                        <li>Result and Report</li>
-                    </ol>
+                    <li>Requirement Study</li>
+                    <li>Test Planning</li>
+                    <li>Writing Test Cases</li>
+                    <li>Review the Test Cases</li>
+                    <li>Executing the Test Cases</li>
+                    <li>Bug logging and tracking</li>
+                    <li>Bug Re-test</li>
+                    <li>Close or Reopen bugs</li>
+                    <li>Result and Report</li>
+                </ol>
                 </div>
             </div>
 
@@ -520,8 +520,8 @@ const resManual = () => {
                         color: '#333333',
                         textAlign: 'left'
                     }}>
-                        A Test Plan includes Heading, Revision History, Table of Contents, Introduction, Scope, Approach, Overview, different types of testing that will be carried out, what software and hardware will be required, issues, risks, assumptions and signs off section.
-                    </p>
+                    A Test Plan includes Heading, Revision History, Table of Contents, Introduction, Scope, Approach, Overview, different types of testing that will be carried out, what software and hardware will be required, issues, risks, assumptions and signs off section.
+                </p>
                 </div>
 
                 <div style={{
@@ -539,8 +539,8 @@ const resManual = () => {
                         fontWeight: 'bold',
                         textAlign: 'left'
                     }}>
-                        What is Test Strategy?
-                    </h3>
+                    What is Test Strategy?
+                </h3>
                     <p style={{
                         fontSize: '16px',
                         lineHeight: '1.8',
@@ -582,7 +582,7 @@ const resManual = () => {
                         textAlign: 'left'
                     }}>
                         What is a Test Case?
-                    </h3>
+                </h3>
                     <p style={{
                         fontSize: '16px',
                         lineHeight: '1.8',
@@ -590,8 +590,8 @@ const resManual = () => {
                         marginBottom: '15px',
                         textAlign: 'left'
                     }}>
-                        A Test Case is a document that describes step by step process how to test the application. A Test Case includes Test Case ID, Steps Description, Expected Output, Actual Output, Pass/Fail, Remarks.
-                    </p>
+                    A Test Case is a document that describes step by step process how to test the application. A Test Case includes Test Case ID, Steps Description, Expected Output, Actual Output, Pass/Fail, Remarks. 
+                </p>
                 </div>
 
                 <div style={{
@@ -610,7 +610,7 @@ const resManual = () => {
                         textAlign: 'left'
                     }}>
                         Test Case Writing Tools
-                    </h3>
+                </h3>
                     <div style={{
                         display: 'grid',
                         gridTemplateColumns: 'repeat(auto-fit, minmax(200px, 1fr))',
@@ -658,7 +658,7 @@ const resManual = () => {
                             fontWeight: 'bold'
                         }}>
                             Functional Testing
-                        </h3>
+                </h3>
                         <p style={{
                             fontSize: '14px',
                             lineHeight: '1.8',
@@ -681,13 +681,13 @@ const resManual = () => {
                             color: '#333',
                             paddingLeft: '20px'
                         }}>
-                            <li>Unit Testing</li>
+                    <li>Unit Testing</li>
                             <li>Integration Testing</li>
                             <li>Smoke Testing</li>
-                            <li>Regression Testing</li>
+                    <li>Regression Testing</li>
                             <li>Sanity Testing</li>
                             <li>User Acceptance Testing</li>
-                            <li>System Testing</li>
+                    <li>System Testing</li>
                             <li>Black Box and White Box Testing</li>
                         </ul>
                     </div>
@@ -706,7 +706,7 @@ const resManual = () => {
                             fontWeight: 'bold'
                         }}>
                             Non-Functional Testing
-                        </h3>
+                </h3>
                         <p style={{
                             fontSize: '14px',
                             lineHeight: '1.8',
@@ -780,7 +780,7 @@ const resManual = () => {
                                 boxShadow: '0 2px 10px rgba(0,0,0,0.1)'
                             }}
                         />
-                    </div>
+                </div>
                     <div style={{
                         display: 'flex',
                         justifyContent: 'center',
@@ -920,7 +920,7 @@ const resManual = () => {
             </div>
 
             <section style={{ marginTop: '40px' }}>
-            </section>
+                </section>
         </div>
     )
 }
