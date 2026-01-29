@@ -106,15 +106,16 @@ class links extends Component {
     }
 
     render() {
+        // Tabs sorted alphabetically by label
         const tabs = [
-            { label: 'Window', id: 0 },
-            { label: 'MAC', id: 1 },
             { label: 'Basic', id: 2 },
+            { label: 'CodeSnippet', id: 6 },
+            { label: 'Frontend', id: 5 },
             { label: 'G.K', id: 3 },
             { label: 'Help', id: 4 },
-            { label: 'Frontend', id: 5 },
-            { label: 'CodeSnippet', id: 6 },
-            { label: 'Online', id: 7 }
+            { label: 'MAC', id: 1 },
+            { label: 'Online', id: 7 },
+            { label: 'Window', id: 0 }
         ];
 
         return (

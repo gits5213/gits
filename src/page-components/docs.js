@@ -17,6 +17,10 @@ import Agile from '../components/docs/tabs/agile';
 import Scrum from '../components/docs/tabs/scrum';
 import Bdd from '../components/docs/tabs/bdd';
 import Cucumber from '../components/docs/tabs/cucumber';
+import Installation from '../components/docs/tabs/installation';
+import Postman from '../components/docs/tabs/postman';
+import Appium from '../components/docs/tabs/appium';
+import JMeter from '../components/docs/tabs/jmeter';
 import Links from '../components/docs/tabs/resLinks';
 import '../styles/base.css';
 import '../styles/docs.css';
@@ -34,19 +38,23 @@ class docs extends Component {
         if (path.includes('/manual') && !path.includes('/courses')) return 2;
         if (path.includes('/bdd')) return 3;
         if (path.includes('/cucumber')) return 4;
-        if (path.includes('/linux')) return 5;
-        if (path.includes('/git')) return 6;
-        if (path.includes('/html')) return 7;
-        if (path.includes('/css')) return 8;
-        if (path.includes('/javascript')) return 9;
-        if (path.includes('/typescript')) return 10;
-        if (path.includes('/reactjs')) return 11;
-        if (path.includes('/nextjs')) return 12;
-        if (path.includes('/sql')) return 13;
-        if (path.includes('/java')) return 14;
-        if (path.includes('/python')) return 15;
-        if (path.includes('/network')) return 16;
-        if (path.includes('/links')) return 17;
+        if (path.includes('/installation')) return 5;
+        if (path.includes('/postman')) return 6;
+        if (path.includes('/appium')) return 7;
+        if (path.includes('/jmeter')) return 8;
+        if (path.includes('/linux')) return 9;
+        if (path.includes('/git')) return 10;
+        if (path.includes('/html')) return 11;
+        if (path.includes('/css')) return 12;
+        if (path.includes('/javascript')) return 13;
+        if (path.includes('/typescript')) return 14;
+        if (path.includes('/reactjs')) return 15;
+        if (path.includes('/nextjs')) return 16;
+        if (path.includes('/sql')) return 17;
+        if (path.includes('/java')) return 18;
+        if (path.includes('/python')) return 19;
+        if (path.includes('/network')) return 20;
+        if (path.includes('/links')) return 21;
         // Default to agile if just /docs
         return 0;
     }
@@ -72,6 +80,10 @@ class docs extends Component {
             '/docs/manual',
             '/docs/bdd',
             '/docs/cucumber',
+            '/docs/installation',
+            '/docs/postman',
+            '/docs/appium',
+            '/docs/jmeter',
             '/docs/linux',
             '/docs/git',
             '/docs/html',
@@ -123,53 +135,69 @@ class docs extends Component {
             )
         } else if(this.state.activeTab === 5) {
             return(
-                <ResLinux />
+                <Installation />
             )
-        }else if(this.state.activeTab === 6) {
+        } else if(this.state.activeTab === 6) {
             return(
-                <ResGit />
+                <Postman />
             )
         } else if(this.state.activeTab === 7) {
             return(
-                <ResHtml />
+                <Appium />
             )
         } else if(this.state.activeTab === 8) {
             return(
-                <ResCss />
+                <JMeter />
             )
         } else if(this.state.activeTab === 9) {
             return(
-                <ResJavascript />
+                <ResLinux />
             )
-        } else if(this.state.activeTab === 10) {
+        }else if(this.state.activeTab === 10) {
             return(
-                <ResTypeScript />
+                <ResGit />
             )
         } else if(this.state.activeTab === 11) {
             return(
-                <ResReact />
+                <ResHtml />
             )
         } else if(this.state.activeTab === 12) {
             return(
-                <ResNextJS />
+                <ResCss />
             )
         } else if(this.state.activeTab === 13) {
             return(
-                <ResSql />
+                <ResJavascript />
             )
         } else if(this.state.activeTab === 14) {
             return(
-                <ResJava />
+                <ResTypeScript />
             )
-        }else if(this.state.activeTab === 15) {
+        } else if(this.state.activeTab === 15) {
             return(
-                <ResPython />
+                <ResReact />
             )
         } else if(this.state.activeTab === 16) {
             return(
+                <ResNextJS />
+            )
+        } else if(this.state.activeTab === 17) {
+            return(
+                <ResSql />
+            )
+        } else if(this.state.activeTab === 18) {
+            return(
+                <ResJava />
+            )
+        }else if(this.state.activeTab === 19) {
+            return(
+                <ResPython />
+            )
+        } else if(this.state.activeTab === 20) {
+            return(
                 <ResNetwork />
             )
-        }else if(this.state.activeTab === 17) {
+        }else if(this.state.activeTab === 21) {
             return(
                 <Links />
             )
@@ -178,25 +206,30 @@ class docs extends Component {
     }
 
     render() {
+        // Tabs sorted alphabetically by label
         const tabs = [
             { label: 'Agile', id: 0 },
-            { label: 'Scrum', id: 1 },
-            { label: 'Manual', id: 2 },
+            { label: 'Appium', id: 7 },
             { label: 'BDD', id: 3 },
+            { label: 'CSS', id: 12 },
             { label: 'Cucumber', id: 4 },
-            { label: 'Linux', id: 5 },
-            { label: 'Git', id: 6 },
-            { label: 'HTML', id: 7 },
-            { label: 'CSS', id: 8 },
-            { label: 'JS', id: 9 },
-            { label: 'TS', id: 10 },
-            { label: 'ReactJS', id: 11 },
-            { label: 'NextJS', id: 12 },
-            { label: 'SQL', id: 13 },
-            { label: 'JAVA', id: 14 },
-            { label: 'PY', id: 15 },
-            { label: 'NET', id: 16 },
-            { label: 'Links', id: 17 }
+            { label: 'Git', id: 10 },
+            { label: 'HTML', id: 11 },
+            { label: 'Installation', id: 5 },
+            { label: 'JAVA', id: 18 },
+            { label: 'JMeter', id: 8 },
+            { label: 'JS', id: 13 },
+            { label: 'Links', id: 21 },
+            { label: 'Linux', id: 9 },
+            { label: 'Manual', id: 2 },
+            { label: 'NET', id: 20 },
+            { label: 'NextJS', id: 16 },
+            { label: 'Postman', id: 6 },
+            { label: 'PY', id: 19 },
+            { label: 'ReactJS', id: 15 },
+            { label: 'Scrum', id: 1 },
+            { label: 'SQL', id: 17 },
+            { label: 'TS', id: 14 }
         ];
 
         return (

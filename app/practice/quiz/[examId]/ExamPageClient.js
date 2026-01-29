@@ -23,6 +23,12 @@ const examComponents = {
   'exam-15': () => import('@/src/page-components/practice/Exam15'),
   'exam-16': () => import('@/src/page-components/practice/Exam16'),
   'exam-17': () => import('@/src/page-components/practice/Exam17'),
+  'exam-18': () => import('@/src/page-components/practice/Exam18'),
+  'exam-19': () => import('@/src/page-components/practice/Exam19'),
+  'exam-20': () => import('@/src/page-components/practice/Exam20'),
+  'exam-21': () => import('@/src/page-components/practice/Exam21'),
+  'exam-22': () => import('@/src/page-components/practice/Exam22'),
+  'exam-23': () => import('@/src/page-components/practice/Exam23'),
 }
 
 // Optimized loading component

@@ -152,19 +152,21 @@ class Courses extends Component {
     }
 
     render() {
+        // Tabs sorted alphabetically by label
         const tabs = [
-            { label: 'Code4Kids', id: 0 },
-            { label: 'WebDevelopment', id: 1 },
-            { label: 'Automation', id: 2 },
-            { label: 'API Automation', id: 3 },
-            { label: 'Manual', id: 4 },
             { label: 'Accessibility', id: 5 },
-            { label: 'SDET ROADMAP', id: 6 },
             { label: 'AI for QA', id: 7 },
-            { label: 'Performance', id: 8 },
-            { label: 'Security', id: 9 },
+            { label: 'API Automation', id: 3 },
+            { label: 'Automation', id: 2 },
+            { label: 'Code4Kids', id: 0 },
             { label: 'DevOps Pipeline', id: 10 },
-            { label: 'Digital Marketing', id: 12 }
+            { label: 'Digital Marketing', id: 12 },
+            { label: 'Manual', id: 4 },
+            { label: 'Performance', id: 8 },
+            { label: 'SDET ROADMAP', id: 6 },
+            { label: 'Security', id: 9 },
+            { label: 'Selenium WebDriver', id: 11 },
+            { label: 'WebDevelopment', id: 1 }
         ];
 
         return (

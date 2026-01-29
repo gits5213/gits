@@ -5,14 +5,8 @@ import '../../../styles/base.css';
 
 class Quiz extends Component {
     render() {
+        // Exams sorted numerically by ID (1-23)
         const exams = [
-            { 
-                id: 17, 
-                name: 'Exam-17', 
-                title: 'Requirements Analysis, Test Case Design & Bug Management',
-                description: '50 questions covering requirements, acceptance criteria, test planning, bug reporting, defect management, and RTM (Requirements Traceability Matrix)',
-                path: '/practice/quiz/exam-17'
-            },
             { 
                 id: 1, 
                 name: 'Exam-1', 
@@ -124,6 +118,55 @@ class Quiz extends Component {
                 title: 'JavaScript Essentials for Test Automation',
                 description: '20 questions covering JavaScript essentials: async/await, Promises, destructuring, arrays, loops, optional chaining, and best practices',
                 path: '/practice/quiz/exam-16'
+            },
+            { 
+                id: 17, 
+                name: 'Exam-17', 
+                title: 'Requirements Analysis, Test Case Design & Bug Management',
+                description: '50 questions covering requirements, acceptance criteria, test planning, bug reporting, defect management, and RTM (Requirements Traceability Matrix)',
+                path: '/practice/quiz/exam-17'
+            },
+            { 
+                id: 18, 
+                name: 'Exam-18', 
+                title: 'BDD, Cucumber & Playwright Integration',
+                description: '20 questions covering BDD concepts, Cucumber Gherkin syntax, Playwright commands, step definitions, hooks, World objects, and integration best practices',
+                path: '/practice/quiz/exam-18'
+            },
+            { 
+                id: 19, 
+                name: 'Exam-19', 
+                title: 'Postman, REST API & HTTP Methods',
+                description: '20 questions covering Postman tool usage, REST API concepts, HTTP methods (GET, POST, PUT, PATCH, DELETE), status codes, headers, authentication, and API testing best practices',
+                path: '/practice/quiz/exam-19'
+            },
+            { 
+                id: 20, 
+                name: 'Exam-20', 
+                title: 'Performance Testing with JMeter',
+                description: '20 questions covering JMeter fundamentals, performance testing concepts (load, stress, spike, endurance), JMeter components (Thread Groups, Samplers, Listeners, Timers), commands, assertions, and results analysis',
+                path: '/practice/quiz/exam-20'
+            },
+            { 
+                id: 21, 
+                name: 'Exam-21', 
+                title: 'Appium Test Automation with Windows',
+                description: '20 questions covering Appium Windows automation, WinAppDriver setup, Windows application testing, capabilities, locator strategies, UI Automation framework, element identification, and desktop application automation',
+                path: '/practice/quiz/exam-21'
+            },
+            { 
+                id: 22, 
+                name: 'Exam-22', 
+                title: 'SQL Fundamentals',
+                description: '20 questions covering SQL basics, SELECT statements, WHERE and HAVING clauses, JOINs (INNER, LEFT, RIGHT), aggregate functions (COUNT, SUM, AVG, MAX), GROUP BY, ORDER BY, INSERT, UPDATE, DELETE, constraints (PRIMARY KEY, FOREIGN KEY), and SQL operators',
+                path: '/practice/quiz/exam-22'
+            },
+            { 
+                id: 23, 
+                name: 'Exam-23', 
+                title: 'Git & Linux Fundamentals',
+                description: '20 questions covering Git commands (clone, add, commit, push, pull, branch, merge, status, log, diff) and Linux commands (ls, cd, pwd, mkdir, rm, grep, chmod, ps, kill, du, df)',
+                path: '/practice/quiz/exam-23'
             }
         ];
 

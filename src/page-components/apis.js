@@ -141,19 +141,20 @@ class apis extends Component {
     }
 
     render() {
+        // Tabs sorted alphabetically by label
         const tabs = [
-            { label: 'Selenium', id: 0 },
-            { label: 'Playwright', id: 1 },
-            { label: 'CypressIO', id: 2 },
-            { label: 'Protractor', id: 3 },
-            { label: 'RESTAssured', id: 4 },
-            { label: 'ReadyAPI', id: 5 },
-            { label: 'PerformaceTest', id: 6 },
-            { label: 'Architecture', id: 7 },
             { label: 'Appium', id: 8 },
-            { label: 'WebDriverIO', id: 9 },
+            { label: 'Architecture', id: 7 },
+            { label: 'CypressIO', id: 2 },
+            { label: 'FrisBy', id: 11 },
+            { label: 'PerformaceTest', id: 6 },
+            { label: 'Playwright', id: 1 },
+            { label: 'Protractor', id: 3 },
+            { label: 'ReadyAPI', id: 5 },
+            { label: 'RESTAssured', id: 4 },
+            { label: 'Selenium', id: 0 },
             { label: 'SuperTest', id: 10 },
-            { label: 'FrisBy', id: 11 }
+            { label: 'WebDriverIO', id: 9 }
         ];
 
         return (

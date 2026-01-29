@@ -3765,3 +3765,1371 @@ export const exam17Data = {
         }
     ]
 };
+
+export const exam18Data = {
+    examId: 18,
+    examName: 'Exam-18',
+    title: 'BDD, Cucumber & Playwright Integration',
+    questions: [
+        {
+            id: 331,
+            question: 'What command is used to install Cucumber for Playwright?',
+            options: [
+                'npm install cucumber',
+                'npm install --save-dev @cucumber/cucumber',
+                'npm install playwright-cucumber',
+                'npm install cucumber-playwright'
+            ],
+            correctAnswer: 1
+        },
+        {
+            id: 332,
+            question: 'Which Gherkin keyword is used to describe the initial state or context?',
+            options: [
+                'When',
+                'Given',
+                'Then',
+                'And'
+            ],
+            correctAnswer: 1
+        },
+        {
+            id: 333,
+            question: 'What is the correct Playwright command to run tests in headed mode?',
+            options: [
+                'npx playwright test --headed',
+                'npx playwright test --headless',
+                'npx playwright test --browser',
+                'npx playwright test --ui'
+            ],
+            correctAnswer: 0
+        },
+        {
+            id: 334,
+            question: 'In Cucumber, what file extension is used for feature files?',
+            options: [
+                '.cucumber',
+                '.feature',
+                '.gherkin',
+                '.bdd'
+            ],
+            correctAnswer: 1
+        },
+        {
+            id: 335,
+            question: 'What command generates a Cucumber HTML report?',
+            options: [
+                'cucumber-js --format html',
+                'cucumber-js --format html:reports/cucumber.html',
+                'npx cucumber-js --format html',
+                'playwright test --reporter html'
+            ],
+            correctAnswer: 1
+        },
+        {
+            id: 336,
+            question: 'Which Playwright command installs browser binaries?',
+            options: [
+                'npx playwright install',
+                'npm install playwright',
+                'playwright install browsers',
+                'npx playwright setup'
+            ],
+            correctAnswer: 0
+        },
+        {
+            id: 337,
+            question: 'What is the purpose of a World object in Cucumber with Playwright?',
+            options: [
+                'To store global test data',
+                'To share browser, page, and context instances across steps',
+                'To define test scenarios',
+                'To generate reports'
+            ],
+            correctAnswer: 1
+        },
+        {
+            id: 338,
+            question: 'Which Gherkin keyword represents an action performed by the user?',
+            options: [
+                'Given',
+                'When',
+                'Then',
+                'But'
+            ],
+            correctAnswer: 1
+        },
+        {
+            id: 339,
+            question: 'What Playwright command runs tests in debug mode?',
+            options: [
+                'npx playwright test --debug',
+                'npx playwright test --inspect',
+                'npx playwright test --trace on',
+                'npx playwright test --devtools'
+            ],
+            correctAnswer: 0
+        },
+        {
+            id: 340,
+            question: 'In Cucumber, what is a Step Definition?',
+            options: [
+                'A feature file',
+                'JavaScript/TypeScript code that maps Gherkin steps to actions',
+                'A test report',
+                'A configuration file'
+            ],
+            correctAnswer: 1
+        },
+        {
+            id: 341,
+            question: 'What command runs Playwright tests with code coverage?',
+            options: [
+                'npx playwright test --coverage',
+                'npx playwright test --coverage-report',
+                'npx playwright test with coverage',
+                'Playwright does not support coverage directly'
+            ],
+            correctAnswer: 3
+        },
+        {
+            id: 342,
+            question: 'Which Cucumber hook runs before each scenario?',
+            options: [
+                'BeforeAll',
+                'Before',
+                'BeforeEach',
+                'Setup'
+            ],
+            correctAnswer: 2
+        },
+        {
+            id: 343,
+            question: 'What Playwright command shows the test report after execution?',
+            options: [
+                'npx playwright show-report',
+                'npx playwright report',
+                'npx playwright view-report',
+                'npx playwright open-report'
+            ],
+            correctAnswer: 0
+        },
+        {
+            id: 344,
+            question: 'In BDD, what does the "Background" keyword do?',
+            options: [
+                'Sets up data for all scenarios in a feature',
+                'Runs tests in the background',
+                'Defines test environment',
+                'Creates a test report background'
+            ],
+            correctAnswer: 0
+        },
+        {
+            id: 345,
+            question: 'What command runs Playwright tests in a specific browser?',
+            options: [
+                'npx playwright test --browser chromium',
+                'npx playwright test --project chromium',
+                'npx playwright test chromium',
+                'npx playwright test --browser=chromium'
+            ],
+            correctAnswer: 1
+        },
+        {
+            id: 346,
+            question: 'What is a Scenario Outline used for in Cucumber?',
+            options: [
+                'To define test structure',
+                'To run the same scenario with different data sets',
+                'To create test reports',
+                'To define step definitions'
+            ],
+            correctAnswer: 1
+        },
+        {
+            id: 347,
+            question: 'Which Playwright command runs tests in UI mode?',
+            options: [
+                'npx playwright test --ui',
+                'npx playwright test --headed',
+                'npx playwright ui',
+                'npx playwright test-ui'
+            ],
+            correctAnswer: 0
+        },
+        {
+            id: 348,
+            question: 'In Cucumber, what symbol is used for Data Tables?',
+            options: [
+                '|',
+                '||',
+                '|||',
+                'Table'
+            ],
+            correctAnswer: 0
+        },
+        {
+            id: 349,
+            question: 'What command runs Playwright tests with retries?',
+            options: [
+                'npx playwright test --retries 2',
+                'npx playwright test --retry 2',
+                'npx playwright test --retry-count 2',
+                'Configure retries in playwright.config.ts, then run normally'
+            ],
+            correctAnswer: 3
+        },
+        {
+            id: 350,
+            question: 'What is the correct way to attach a screenshot in Cucumber with Playwright?',
+            options: [
+                'await this.attach(await this.page.screenshot(), "image/png")',
+                'await page.screenshot("screenshot.png")',
+                'await screenshot(page)',
+                'await attachScreenshot(page)'
+            ],
+            correctAnswer: 0
+        }
+    ]
+};
+
+export const exam19Data = {
+    examId: 19,
+    examName: 'Exam-19',
+    title: 'Postman, REST API & HTTP Methods',
+    questions: [
+        {
+            id: 351,
+            question: 'What does REST stand for?',
+            options: [
+                'Remote Execution System Technology',
+                'Representational State Transfer',
+                'Resource Exchange Service Transfer',
+                'Request Execution Service Technology'
+            ],
+            correctAnswer: 1
+        },
+        {
+            id: 352,
+            question: 'Which HTTP method is used to retrieve data from a server?',
+            options: [
+                'POST',
+                'GET',
+                'PUT',
+                'DELETE'
+            ],
+            correctAnswer: 1
+        },
+        {
+            id: 353,
+            question: 'What HTTP method is used to create a new resource on the server?',
+            options: [
+                'GET',
+                'POST',
+                'PUT',
+                'PATCH'
+            ],
+            correctAnswer: 1
+        },
+        {
+            id: 354,
+            question: 'In Postman, what is a Collection?',
+            options: [
+                'A single API request',
+                'A group of related API requests organized together',
+                'A test script',
+                'An environment variable'
+            ],
+            correctAnswer: 1
+        },
+        {
+            id: 355,
+            question: 'Which HTTP method is idempotent?',
+            options: [
+                'POST',
+                'GET',
+                'POST and PUT',
+                'GET, PUT, and DELETE'
+            ],
+            correctAnswer: 3
+        },
+        {
+            id: 356,
+            question: 'What is the difference between PUT and PATCH HTTP methods?',
+            options: [
+                'PUT updates entire resource, PATCH updates partial resource',
+                'PUT creates resources, PATCH deletes resources',
+                'PUT is for GET requests, PATCH is for POST requests',
+                'There is no difference'
+            ],
+            correctAnswer: 0
+        },
+        {
+            id: 357,
+            question: 'In Postman, what is an Environment?',
+            options: [
+                'A collection of requests',
+                'A set of variables for different environments (dev, staging, prod)',
+                'A test script',
+                'A response template'
+            ],
+            correctAnswer: 1
+        },
+        {
+            id: 358,
+            question: 'What HTTP status code indicates a successful creation of a resource?',
+            options: [
+                '200 OK',
+                '201 Created',
+                '204 No Content',
+                '202 Accepted'
+            ],
+            correctAnswer: 1
+        },
+        {
+            id: 359,
+            question: 'Which HTTP status code indicates "Not Found"?',
+            options: [
+                '400 Bad Request',
+                '401 Unauthorized',
+                '404 Not Found',
+                '500 Internal Server Error'
+            ],
+            correctAnswer: 2
+        },
+        {
+            id: 360,
+            question: 'What is the purpose of HTTP headers in API requests?',
+            options: [
+                'To store response data',
+                'To provide metadata about the request/response (authentication, content type, etc.)',
+                'To define the URL',
+                'To execute test scripts'
+            ],
+            correctAnswer: 1
+        },
+        {
+            id: 361,
+            question: 'In Postman, what is a Pre-request Script used for?',
+            options: [
+                'To parse response data',
+                'To execute code before sending the request (set variables, generate tokens)',
+                'To delete requests',
+                'To create collections'
+            ],
+            correctAnswer: 1
+        },
+        {
+            id: 362,
+            question: 'What HTTP method is used to delete a resource?',
+            options: [
+                'GET',
+                'POST',
+                'PUT',
+                'DELETE'
+            ],
+            correctAnswer: 3
+        },
+        {
+            id: 363,
+            question: 'What is the Content-Type header used for?',
+            options: [
+                'To specify authentication method',
+                'To indicate the media type of the request/response body (JSON, XML, etc.)',
+                'To set the HTTP method',
+                'To define the URL'
+            ],
+            correctAnswer: 1
+        },
+        {
+            id: 364,
+            question: 'In REST API, what does idempotent mean?',
+            options: [
+                'The request can be executed multiple times with the same result',
+                'The request must be executed only once',
+                'The request requires authentication',
+                'The request returns an error'
+            ],
+            correctAnswer: 0
+        },
+        {
+            id: 365,
+            question: 'What HTTP status code indicates "Unauthorized" (authentication required)?',
+            options: [
+                '400 Bad Request',
+                '401 Unauthorized',
+                '403 Forbidden',
+                '404 Not Found'
+            ],
+            correctAnswer: 1
+        },
+        {
+            id: 366,
+            question: 'In Postman, what is Newman?',
+            options: [
+                'A collection type',
+                'A command-line tool to run Postman collections',
+                'An environment variable',
+                'A test assertion'
+            ],
+            correctAnswer: 1
+        },
+        {
+            id: 367,
+            question: 'What HTTP method should be used to update an existing resource completely?',
+            options: [
+                'POST',
+                'PUT',
+                'PATCH',
+                'GET'
+            ],
+            correctAnswer: 1
+        },
+        {
+            id: 368,
+            question: 'What is the difference between 401 and 403 HTTP status codes?',
+            options: [
+                '401 means not authenticated, 403 means authenticated but not authorized',
+                '401 means server error, 403 means client error',
+                'There is no difference',
+                '401 means resource not found, 403 means bad request'
+            ],
+            correctAnswer: 0
+        },
+        {
+            id: 369,
+            question: 'In Postman, what is a Test Script used for?',
+            options: [
+                'To send requests',
+                'To write assertions and validate responses',
+                'To create environments',
+                'To delete collections'
+            ],
+            correctAnswer: 1
+        },
+        {
+            id: 370,
+            question: 'What HTTP status code range indicates client errors?',
+            options: [
+                '100-199',
+                '200-299',
+                '300-399',
+                '400-499'
+            ],
+            correctAnswer: 3
+        }
+    ]
+};
+
+export const exam20Data = {
+    examId: 20,
+    examName: 'Exam-20',
+    title: 'Performance Testing with JMeter',
+    questions: [
+        {
+            id: 371,
+            question: 'What is JMeter primarily used for?',
+            options: [
+                'Unit testing',
+                'Performance and load testing of web applications',
+                'Code compilation',
+                'Database design'
+            ],
+            correctAnswer: 1
+        },
+        {
+            id: 372,
+            question: 'What is a Thread Group in JMeter?',
+            options: [
+                'A collection of test scripts',
+                'A group of virtual users that simulate load on the application',
+                'A type of listener',
+                'A configuration element'
+            ],
+            correctAnswer: 1
+        },
+        {
+            id: 373,
+            question: 'What command runs a JMeter test plan from the command line?',
+            options: [
+                'jmeter -n -t testplan.jmx',
+                'jmeter run testplan.jmx',
+                'jmeter execute testplan.jmx',
+                'jmeter start testplan.jmx'
+            ],
+            correctAnswer: 0
+        },
+        {
+            id: 374,
+            question: 'What is the difference between Load Testing and Stress Testing?',
+            options: [
+                'Load testing uses more threads',
+                'Load testing tests normal expected load, Stress testing tests beyond normal capacity',
+                'There is no difference',
+                'Stress testing is faster'
+            ],
+            correctAnswer: 1
+        },
+        {
+            id: 375,
+            question: 'What is a Sampler in JMeter?',
+            options: [
+                'A component that generates sample data',
+                'A component that sends requests to a server (HTTP, FTP, JDBC, etc.)',
+                'A type of listener',
+                'A configuration element'
+            ],
+            correctAnswer: 1
+        },
+        {
+            id: 376,
+            question: 'What is the purpose of a Timer in JMeter?',
+            options: [
+                'To measure test execution time',
+                'To add delays between requests to simulate real user behavior',
+                'To schedule test runs',
+                'To time out requests'
+            ],
+            correctAnswer: 1
+        },
+        {
+            id: 377,
+            question: 'What command generates an HTML report from JMeter results?',
+            options: [
+                'jmeter -g results.jtl -o report/',
+                'jmeter report results.jtl',
+                'jmeter generate-report results.jtl',
+                'jmeter -r results.jtl -o report/'
+            ],
+            correctAnswer: 0
+        },
+        {
+            id: 378,
+            question: 'What is Throughput in performance testing?',
+            options: [
+                'The number of requests per second',
+                'The total number of requests',
+                'The response time',
+                'The error rate'
+            ],
+            correctAnswer: 0
+        },
+        {
+            id: 379,
+            question: 'What is a Listener in JMeter?',
+            options: [
+                'A component that sends requests',
+                'A component that displays and saves test results',
+                'A type of timer',
+                'A configuration element'
+            ],
+            correctAnswer: 1
+        },
+        {
+            id: 380,
+            question: 'What does Ramp-up Period mean in a Thread Group?',
+            options: [
+                'The time to shut down threads',
+                'The time taken to start all threads (gradual load increase)',
+                'The total test duration',
+                'The delay between requests'
+            ],
+            correctAnswer: 1
+        },
+        {
+            id: 381,
+            question: 'What is Spike Testing?',
+            options: [
+                'Testing with constant load',
+                'Testing with sudden, extreme increases in load',
+                'Testing with decreasing load',
+                'Testing with random load'
+            ],
+            correctAnswer: 1
+        },
+        {
+            id: 382,
+            question: 'What is the purpose of an Assertion in JMeter?',
+            options: [
+                'To add delays',
+                'To validate response data and verify test results',
+                'To configure threads',
+                'To generate reports'
+            ],
+            correctAnswer: 1
+        },
+        {
+            id: 383,
+            question: 'What file format does JMeter use to save test results?',
+            options: [
+                '.xml',
+                '.csv',
+                '.jtl (JMeter Test Log)',
+                '.json'
+            ],
+            correctAnswer: 2
+        },
+        {
+            id: 384,
+            question: 'What is Response Time in performance testing?',
+            options: [
+                'The time between requests',
+                'The time taken for the server to respond to a request',
+                'The total test duration',
+                'The time to start threads'
+            ],
+            correctAnswer: 1
+        },
+        {
+            id: 385,
+            question: 'What is a Configuration Element in JMeter?',
+            options: [
+                'A component that sends requests',
+                'A component that configures settings for samplers (HTTP headers, cookies, etc.)',
+                'A type of listener',
+                'A test plan structure'
+            ],
+            correctAnswer: 1
+        },
+        {
+            id: 386,
+            question: 'What command runs JMeter in non-GUI mode?',
+            options: [
+                'jmeter -n -t testplan.jmx',
+                'jmeter -gui -t testplan.jmx',
+                'jmeter run testplan.jmx',
+                'jmeter execute testplan.jmx'
+            ],
+            correctAnswer: 0
+        },
+        {
+            id: 387,
+            question: 'What is the 90th percentile response time?',
+            options: [
+                'The average response time',
+                '90% of requests completed within this time',
+                'The maximum response time',
+                'The minimum response time'
+            ],
+            correctAnswer: 1
+        },
+        {
+            id: 388,
+            question: 'What is a Pre-Processor in JMeter?',
+            options: [
+                'A component that runs before the test starts',
+                'A component that modifies requests before they are sent',
+                'A type of listener',
+                'A configuration element'
+            ],
+            correctAnswer: 1
+        },
+        {
+            id: 389,
+            question: 'What is Endurance Testing (Soak Testing)?',
+            options: [
+                'Testing with maximum load',
+                'Testing application stability under normal load for extended periods',
+                'Testing with minimum load',
+                'Testing response times only'
+            ],
+            correctAnswer: 1
+        },
+        {
+            id: 390,
+            question: 'What is the purpose of a Post-Processor in JMeter?',
+            options: [
+                'To modify requests',
+                'To extract data from responses for use in subsequent requests',
+                'To configure threads',
+                'To generate reports'
+            ],
+            correctAnswer: 1
+        }
+    ]
+};
+
+export const exam21Data = {
+    examId: 21,
+    examName: 'Exam-21',
+    title: 'Appium Test Automation with Windows',
+    questions: [
+        {
+            id: 391,
+            question: 'What is WinAppDriver used for in Appium Windows automation?',
+            options: [
+                'To run Android tests',
+                'To automate Windows desktop applications',
+                'To test web applications',
+                'To manage test data'
+            ],
+            correctAnswer: 1
+        },
+        {
+            id: 392,
+            question: 'What capability is required to connect Appium to a Windows application?',
+            options: [
+                'platformName: "Windows"',
+                'deviceName: "WindowsPC"',
+                'app: "path/to/app.exe"',
+                'All of the above'
+            ],
+            correctAnswer: 3
+        },
+        {
+            id: 393,
+            question: 'What command starts the WinAppDriver server?',
+            options: [
+                'winappdriver start',
+                'WinAppDriver.exe',
+                'appium --winappdriver',
+                'npm start winappdriver'
+            ],
+            correctAnswer: 1
+        },
+        {
+            id: 394,
+            question: 'What is the default port for WinAppDriver?',
+            options: [
+                '4723',
+                '4724',
+                '4725',
+                '4726'
+            ],
+            correctAnswer: 0
+        },
+        {
+            id: 395,
+            question: 'Which locator strategy is commonly used for Windows desktop applications in Appium?',
+            options: [
+                'XPath',
+                'Accessibility ID',
+                'Name',
+                'All of the above'
+            ],
+            correctAnswer: 3
+        },
+        {
+            id: 396,
+            question: 'What capability specifies the Windows application to automate?',
+            options: [
+                'appPackage',
+                'appActivity',
+                'app',
+                'bundleId'
+            ],
+            correctAnswer: 2
+        },
+        {
+            id: 397,
+            question: 'What tool is used to inspect Windows application elements?',
+            options: [
+                'Appium Inspector',
+                'Inspect.exe (Windows SDK)',
+                'UI Automation',
+                'All of the above'
+            ],
+            correctAnswer: 3
+        },
+        {
+            id: 398,
+            question: 'What is the correct Appium capability for Windows platform name?',
+            options: [
+                'platformName: "Windows"',
+                'platformName: "Win"',
+                'platformName: "Windows10"',
+                'platformName: "Desktop"'
+            ],
+            correctAnswer: 0
+        },
+        {
+            id: 399,
+            question: 'What command installs WinAppDriver?',
+            options: [
+                'npm install -g winappdriver',
+                'Download from GitHub and install manually',
+                'choco install winappdriver',
+                'Both B and C'
+            ],
+            correctAnswer: 3
+        },
+        {
+            id: 400,
+            question: 'What is the purpose of the deviceName capability in Windows automation?',
+            options: [
+                'To specify the Windows version',
+                'To identify the Windows machine/PC name',
+                'To set the application name',
+                'To configure the driver'
+            ],
+            correctAnswer: 1
+        },
+        {
+            id: 401,
+            question: 'Which Appium command connects to a Windows application?',
+            options: [
+                'driver = new WindowsDriver(new URL("http://127.0.0.1:4723"), capabilities)',
+                'driver = new AppiumDriver(capabilities)',
+                'driver = new WebDriver(capabilities)',
+                'driver = new WinDriver(capabilities)'
+            ],
+            correctAnswer: 0
+        },
+        {
+            id: 402,
+            question: 'What is UIA (UI Automation) in Windows automation?',
+            options: [
+                'A testing framework',
+                'Microsoft\'s accessibility framework for automating Windows applications',
+                'A programming language',
+                'A test reporting tool'
+            ],
+            correctAnswer: 1
+        },
+        {
+            id: 403,
+            question: 'What capability is used to launch an existing Windows application?',
+            options: [
+                'app',
+                'appTopLevelWindow',
+                'appArguments',
+                'Both B and C'
+            ],
+            correctAnswer: 3
+        },
+        {
+            id: 404,
+            question: 'What is the correct way to find an element by name in Windows Appium?',
+            options: [
+                'driver.findElement(By.name("ButtonName"))',
+                'driver.findElement(By.id("ButtonName"))',
+                'driver.findElement(By.xpath("//Button[@Name=\'ButtonName\']"))',
+                'All of the above'
+            ],
+            correctAnswer: 3
+        },
+        {
+            id: 405,
+            question: 'What must be enabled in Windows for WinAppDriver to work?',
+            options: [
+                'Developer Mode',
+                'Windows Subsystem for Linux',
+                'Hyper-V',
+                'None of the above'
+            ],
+            correctAnswer: 0
+        },
+        {
+            id: 406,
+            question: 'What is the purpose of appTopLevelWindow capability?',
+            options: [
+                'To specify the main window handle of an already running application',
+                'To set the application path',
+                'To configure the app package',
+                'To define test data'
+            ],
+            correctAnswer: 0
+        },
+        {
+            id: 407,
+            question: 'Which method is used to click a button in Windows Appium?',
+            options: [
+                'element.click()',
+                'element.sendKeys(Keys.ENTER)',
+                'driver.executeScript("arguments[0].click()", element)',
+                'All of the above'
+            ],
+            correctAnswer: 3
+        },
+        {
+            id: 408,
+            question: 'What is the correct Appium server URL for Windows automation?',
+            options: [
+                'http://localhost:4723/wd/hub',
+                'http://127.0.0.1:4723',
+                'http://localhost:4724',
+                'Both A and B'
+            ],
+            correctAnswer: 3
+        },
+        {
+            id: 409,
+            question: 'What is WinAppDriver\'s relationship with Appium?',
+            options: [
+                'WinAppDriver is a separate tool that Appium can use for Windows automation',
+                'They are the same tool',
+                'Appium replaces WinAppDriver',
+                'WinAppDriver is deprecated'
+            ],
+            correctAnswer: 0
+        },
+        {
+            id: 410,
+            question: 'What capability is used to pass arguments to a Windows application?',
+            options: [
+                'appArguments',
+                'appParams',
+                'arguments',
+                'appOptions'
+            ],
+            correctAnswer: 0
+        }
+    ]
+};
+
+export const exam22Data = {
+    examId: 22,
+    examName: 'Exam-22',
+    title: 'SQL Fundamentals',
+    questions: [
+        {
+            id: 411,
+            question: 'What does SQL stand for?',
+            options: [
+                'Structured Query Language',
+                'Simple Query Language',
+                'Standard Query Language',
+                'Sequential Query Language'
+            ],
+            correctAnswer: 0
+        },
+        {
+            id: 412,
+            question: 'Which SQL statement is used to retrieve data from a database?',
+            options: [
+                'GET',
+                'SELECT',
+                'FETCH',
+                'RETRIEVE'
+            ],
+            correctAnswer: 1
+        },
+        {
+            id: 413,
+            question: 'What is the correct SQL syntax to select all columns from a table named "Users"?',
+            options: [
+                'SELECT * FROM Users',
+                'SELECT all FROM Users',
+                'GET * FROM Users',
+                'SELECT Users.*'
+            ],
+            correctAnswer: 0
+        },
+        {
+            id: 414,
+            question: 'Which SQL clause is used to filter records?',
+            options: [
+                'FILTER',
+                'WHERE',
+                'HAVING',
+                'CONDITION'
+            ],
+            correctAnswer: 1
+        },
+        {
+            id: 415,
+            question: 'What type of JOIN returns only matching records from both tables?',
+            options: [
+                'LEFT JOIN',
+                'RIGHT JOIN',
+                'INNER JOIN',
+                'FULL OUTER JOIN'
+            ],
+            correctAnswer: 2
+        },
+        {
+            id: 416,
+            question: 'Which SQL function counts the number of rows?',
+            options: [
+                'SUM()',
+                'COUNT()',
+                'TOTAL()',
+                'NUMBER()'
+            ],
+            correctAnswer: 1
+        },
+        {
+            id: 417,
+            question: 'What SQL statement is used to insert new data into a table?',
+            options: [
+                'ADD',
+                'INSERT',
+                'CREATE',
+                'UPDATE'
+            ],
+            correctAnswer: 1
+        },
+        {
+            id: 418,
+            question: 'Which SQL clause is used to sort the result set?',
+            options: [
+                'SORT BY',
+                'ORDER BY',
+                'ARRANGE BY',
+                'GROUP BY'
+            ],
+            correctAnswer: 1
+        },
+        {
+            id: 419,
+            question: 'What is the difference between WHERE and HAVING clauses?',
+            options: [
+                'WHERE filters rows, HAVING filters groups',
+                'There is no difference',
+                'HAVING is used before GROUP BY, WHERE after',
+                'WHERE is for SELECT, HAVING is for UPDATE'
+            ],
+            correctAnswer: 0
+        },
+        {
+            id: 420,
+            question: 'Which SQL statement is used to modify existing data in a table?',
+            options: [
+                'MODIFY',
+                'CHANGE',
+                'UPDATE',
+                'ALTER'
+            ],
+            correctAnswer: 2
+        },
+        {
+            id: 421,
+            question: 'What does the GROUP BY clause do?',
+            options: [
+                'Groups rows with the same values into summary rows',
+                'Sorts the result set',
+                'Filters records',
+                'Joins tables'
+            ],
+            correctAnswer: 0
+        },
+        {
+            id: 422,
+            question: 'Which SQL aggregate function returns the average value?',
+            options: [
+                'AVG()',
+                'MEAN()',
+                'AVERAGE()',
+                'MEDIAN()'
+            ],
+            correctAnswer: 0
+        },
+        {
+            id: 423,
+            question: 'What SQL statement is used to delete data from a table?',
+            options: [
+                'REMOVE',
+                'DELETE',
+                'DROP',
+                'TRUNCATE'
+            ],
+            correctAnswer: 1
+        },
+        {
+            id: 424,
+            question: 'What is a PRIMARY KEY constraint?',
+            options: [
+                'A key that allows NULL values',
+                'A unique identifier for each row in a table',
+                'A foreign key reference',
+                'An index on a column'
+            ],
+            correctAnswer: 1
+        },
+        {
+            id: 425,
+            question: 'Which JOIN returns all records from the left table and matching records from the right table?',
+            options: [
+                'INNER JOIN',
+                'LEFT JOIN',
+                'RIGHT JOIN',
+                'FULL OUTER JOIN'
+            ],
+            correctAnswer: 1
+        },
+        {
+            id: 426,
+            question: 'What does the DISTINCT keyword do in SQL?',
+            options: [
+                'Sorts results',
+                'Removes duplicate rows from the result set',
+                'Groups data',
+                'Filters records'
+            ],
+            correctAnswer: 1
+        },
+        {
+            id: 427,
+            question: 'Which SQL operator is used to combine multiple conditions (all must be true)?',
+            options: [
+                'OR',
+                'AND',
+                'NOT',
+                'XOR'
+            ],
+            correctAnswer: 1
+        },
+        {
+            id: 428,
+            question: 'What is a FOREIGN KEY constraint?',
+            options: [
+                'A key that must be unique',
+                'A key that references a PRIMARY KEY in another table',
+                'A key that cannot be NULL',
+                'A key used for sorting'
+            ],
+            correctAnswer: 1
+        },
+        {
+            id: 429,
+            question: 'Which SQL function returns the maximum value?',
+            options: [
+                'MAX()',
+                'HIGHEST()',
+                'TOP()',
+                'PEAK()'
+            ],
+            correctAnswer: 0
+        },
+        {
+            id: 430,
+            question: 'What does the LIKE operator do in SQL?',
+            options: [
+                'Performs exact match',
+                'Searches for a specified pattern in a column',
+                'Compares two values',
+                'Joins tables'
+            ],
+            correctAnswer: 1
+        }
+    ]
+};
+
+export const exam23Data = {
+    examId: 23,
+    examName: 'Exam-23',
+    title: 'Git & Linux Fundamentals',
+    questions: [
+        {
+            id: 431,
+            question: 'What Git command is used to clone a repository?',
+            options: [
+                'git copy',
+                'git clone',
+                'git download',
+                'git get'
+            ],
+            correctAnswer: 1
+        },
+        {
+            id: 432,
+            question: 'Which Linux command lists files and directories?',
+            options: [
+                'list',
+                'ls',
+                'dir',
+                'show'
+            ],
+            correctAnswer: 1
+        },
+        {
+            id: 433,
+            question: 'What Git command stages files for commit?',
+            options: [
+                'git stage',
+                'git add',
+                'git commit',
+                'git save'
+            ],
+            correctAnswer: 1
+        },
+        {
+            id: 434,
+            question: 'Which Linux command changes the current directory?',
+            options: [
+                'change',
+                'cd',
+                'move',
+                'goto'
+            ],
+            correctAnswer: 1
+        },
+        {
+            id: 435,
+            question: 'What Git command creates a new branch?',
+            options: [
+                'git create branch',
+                'git branch',
+                'git new branch',
+                'git add branch'
+            ],
+            correctAnswer: 1
+        },
+        {
+            id: 436,
+            question: 'Which Linux command displays the current working directory?',
+            options: [
+                'pwd',
+                'cwd',
+                'where',
+                'current'
+            ],
+            correctAnswer: 0
+        },
+        {
+            id: 437,
+            question: 'What Git command shows the commit history?',
+            options: [
+                'git history',
+                'git log',
+                'git show',
+                'git list'
+            ],
+            correctAnswer: 1
+        },
+        {
+            id: 438,
+            question: 'Which Linux command searches for text patterns in files?',
+            options: [
+                'find',
+                'grep',
+                'search',
+                'locate'
+            ],
+            correctAnswer: 1
+        },
+        {
+            id: 439,
+            question: 'What Git command pushes changes to a remote repository?',
+            options: [
+                'git upload',
+                'git push',
+                'git send',
+                'git upload'
+            ],
+            correctAnswer: 1
+        },
+        {
+            id: 440,
+            question: 'Which Linux command removes files or directories?',
+            options: [
+                'delete',
+                'rm',
+                'remove',
+                'del'
+            ],
+            correctAnswer: 1
+        },
+        {
+            id: 441,
+            question: 'What Git command merges branches?',
+            options: [
+                'git combine',
+                'git merge',
+                'git join',
+                'git unite'
+            ],
+            correctAnswer: 1
+        },
+        {
+            id: 442,
+            question: 'Which Linux command changes file permissions?',
+            options: [
+                'chmod',
+                'chperm',
+                'perm',
+                'setperm'
+            ],
+            correctAnswer: 0
+        },
+        {
+            id: 443,
+            question: 'What Git command shows the status of your working directory?',
+            options: [
+                'git info',
+                'git status',
+                'git state',
+                'git check'
+            ],
+            correctAnswer: 1
+        },
+        {
+            id: 444,
+            question: 'Which Linux command creates a new directory?',
+            options: [
+                'mkdir',
+                'makedir',
+                'newdir',
+                'create'
+            ],
+            correctAnswer: 0
+        },
+        {
+            id: 445,
+            question: 'What Git command pulls changes from a remote repository?',
+            options: [
+                'git fetch',
+                'git pull',
+                'git download',
+                'git get'
+            ],
+            correctAnswer: 1
+        },
+        {
+            id: 446,
+            question: 'Which Linux command displays running processes?',
+            options: [
+                'process',
+                'ps',
+                'procs',
+                'list'
+            ],
+            correctAnswer: 1
+        },
+        {
+            id: 447,
+            question: 'What Git command discards changes in the working directory?',
+            options: [
+                'git undo',
+                'git reset',
+                'git checkout --',
+                'Both B and C'
+            ],
+            correctAnswer: 3
+        },
+        {
+            id: 448,
+            question: 'Which Linux command displays disk usage?',
+            options: [
+                'disk',
+                'du',
+                'df',
+                'Both B and C'
+            ],
+            correctAnswer: 3
+        },
+        {
+            id: 449,
+            question: 'What Git command shows differences between commits?',
+            options: [
+                'git diff',
+                'git compare',
+                'git difference',
+                'git show-diff'
+            ],
+            correctAnswer: 0
+        },
+        {
+            id: 450,
+            question: 'Which Linux command kills a process by PID?',
+            options: [
+                'stop',
+                'kill',
+                'terminate',
+                'end'
+            ],
+            correctAnswer: 1
+        }
+    ]
+};

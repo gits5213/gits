@@ -3096,6 +3096,296 @@ use: {
                 )}
             </div>
 
+            {/* Allure Report Setup Section - Always Visible */}
+            <div style={{
+                ...cardStyle,
+                marginBottom: '48px'
+            }}>
+                <h2 style={{ 
+                    color: '#00416A', 
+                    fontSize: '32px', 
+                    marginBottom: '8px',
+                    fontWeight: '700',
+                    textAlign: 'left',
+                    margin: 0,
+                    paddingBottom: '16px',
+                    borderBottom: '3px solid #00416A'
+                }}>
+                    📊 Allure Report Integration
+                </h2>
+                <p style={{ 
+                    fontSize: '16px', 
+                    color: '#64748b',
+                    marginBottom: '32px',
+                    lineHeight: '1.6',
+                    textAlign: 'left'
+                }}>
+                    Learn how to integrate Allure reporting framework with Playwright to generate beautiful, interactive HTML reports for your test results.
+                </p>
+
+                <div id="allure-report-section" style={{ marginBottom: '32px', scrollMarginTop: '100px' }}>
+                    <h3 style={{
+                        color: '#00416A',
+                        fontSize: '24px',
+                        marginBottom: '20px',
+                        fontWeight: '600',
+                        textAlign: 'left'
+                    }}>
+                        How to Add Allure Report - Step by Step
+                    </h3>
+                    <p style={{ marginBottom: '24px', color: '#475569', lineHeight: '1.6', textAlign: 'left' }}>
+                        Allure is a powerful reporting framework that generates beautiful, interactive HTML reports for your Playwright tests. Follow these steps to integrate Allure reporting.
+                    </p>
+
+                    <div style={{ marginBottom: '32px' }}>
+                        <h4 style={{
+                            color: '#00416A',
+                            fontSize: '20px',
+                            marginBottom: '12px',
+                            fontWeight: '600',
+                            textAlign: 'left'
+                        }}>
+                            Step 1: Install Allure Dependencies
+                        </h4>
+                        <p style={{ marginBottom: '12px', color: '#475569', lineHeight: '1.6', textAlign: 'left' }}>
+                            Install the required packages for Allure reporting:
+                        </p>
+                        <pre style={codeBlockStyle}>{`# Install Allure reporter for Playwright
+npm install --save-dev allure-playwright
+
+# Install Allure command-line tool (choose one method)
+
+# Method 1: Using npm (recommended)
+npm install --save-dev allure-commandline
+
+# Method 2: Using Homebrew (Mac)
+brew install allure
+
+# Method 3: Using Scoop (Windows)
+scoop install allure
+
+# Method 4: Manual installation
+# Download from https://github.com/allure-framework/allure2/releases
+# Extract and add to PATH`}</pre>
+                    </div>
+
+                    <div style={{ marginBottom: '32px' }}>
+                        <h4 style={{
+                            color: '#00416A',
+                            fontSize: '20px',
+                            marginBottom: '12px',
+                            fontWeight: '600',
+                            textAlign: 'left'
+                        }}>
+                            Step 2: Configure Playwright Config
+                        </h4>
+                        <p style={{ marginBottom: '12px', color: '#475569', lineHeight: '1.6', textAlign: 'left' }}>
+                            Add Allure reporter to your <strong>playwright.config.ts</strong>:
+                        </p>
+                        <pre style={codeBlockStyle}>{`// playwright.config.ts
+import { defineConfig } from '@playwright/test';
+
+export default defineConfig({
+  testDir: './tests',
+  reporter: [
+    ['html'],
+    ['allure-playwright', {
+      outputFolder: 'allure-results',
+      detail: true,
+      suiteTitle: false
+    }]
+  ],
+  use: {
+    screenshot: 'only-on-failure',
+    trace: 'on-first-retry',
+    video: 'retain-on-failure'
+  }
+});`}</pre>
+                    </div>
+
+                    <div style={{ marginBottom: '32px' }}>
+                        <h4 style={{
+                            color: '#00416A',
+                            fontSize: '20px',
+                            marginBottom: '12px',
+                            fontWeight: '600',
+                            textAlign: 'left'
+                        }}>
+                            Step 3: Update package.json Scripts
+                        </h4>
+                        <p style={{ marginBottom: '12px', color: '#475569', lineHeight: '1.6', textAlign: 'left' }}>
+                            Add scripts to run tests and generate Allure reports:
+                        </p>
+                        <pre style={codeBlockStyle}>{`// package.json
+{
+  "scripts": {
+    "test": "playwright test",
+    "test:allure": "playwright test && allure generate allure-results --clean -o allure-report && allure open allure-report",
+    "allure:generate": "allure generate allure-results --clean -o allure-report",
+    "allure:open": "allure open allure-report",
+    "allure:serve": "allure serve allure-results"
+  }
+}`}</pre>
+                        <p style={{ marginTop: '12px', marginBottom: '12px', color: '#475569', lineHeight: '1.6', textAlign: 'left', fontSize: '14px' }}>
+                            <strong>Note:</strong> Add <code style={{ backgroundColor: '#f0f0f0', padding: '2px 6px', borderRadius: '4px' }}>allure-results</code> and <code style={{ backgroundColor: '#f0f0f0', padding: '2px 6px', borderRadius: '4px' }}>allure-report</code> to your <code style={{ backgroundColor: '#f0f0f0', padding: '2px 6px', borderRadius: '4px' }}>.gitignore</code> file.
+                        </p>
+                    </div>
+
+                    <div style={{ marginBottom: '32px' }}>
+                        <h4 style={{
+                            color: '#00416A',
+                            fontSize: '20px',
+                            marginBottom: '12px',
+                            fontWeight: '600',
+                            textAlign: 'left'
+                        }}>
+                            Step 4: Run Tests and Generate Report
+                        </h4>
+                        <p style={{ marginBottom: '12px', color: '#475569', lineHeight: '1.6', textAlign: 'left' }}>
+                            Run your tests and generate the Allure report:
+                        </p>
+                        <pre style={codeBlockStyle}>{`# Run tests (this will generate allure-results folder)
+npm test
+# or
+npx playwright test
+
+# Generate HTML report from results
+npm run allure:generate
+
+# Open the report in browser
+npm run allure:open
+
+# Or serve report directly (generates and opens)
+npm run allure:serve`}</pre>
+                    </div>
+
+                    <div style={{ marginBottom: '32px' }}>
+                        <h4 style={{
+                            color: '#00416A',
+                            fontSize: '20px',
+                            marginBottom: '12px',
+                            fontWeight: '600',
+                            textAlign: 'left'
+                        }}>
+                            Step 5: Attach Screenshots and Videos to Allure Report
+                        </h4>
+                        <p style={{ marginBottom: '12px', color: '#475569', lineHeight: '1.6', textAlign: 'left' }}>
+                            Enhance your Allure report by attaching screenshots and videos. Update your test file:
+                        </p>
+                        <pre style={codeBlockStyle}>{`// tests/example.spec.ts
+import { test, expect } from '@playwright/test';
+import { allure } from 'allure-playwright';
+
+test('login test', async ({ page }) => {
+  await allure.epic('Authentication');
+  await allure.feature('Login');
+  await allure.story('User Login');
+  
+  await page.goto('https://example.com/login');
+  
+  // Attach screenshot
+  await allure.attachment('Login Page', await page.screenshot(), 'image/png');
+  
+  await page.fill('input[name="email"]', 'user@example.com');
+  await page.fill('input[name="password"]', 'password123');
+  
+  // Attach screenshot before click
+  await allure.attachment('Before Login', await page.screenshot(), 'image/png');
+  
+  await page.click('button[type="submit"]');
+  
+  await expect(page).toHaveURL(/.*dashboard/);
+  
+  // Attach final screenshot
+  await allure.attachment('After Login', await page.screenshot(), 'image/png');
+});`}</pre>
+                    </div>
+
+                    <div style={{ marginBottom: '32px' }}>
+                        <h4 style={{
+                            color: '#00416A',
+                            fontSize: '20px',
+                            marginBottom: '12px',
+                            fontWeight: '600',
+                            textAlign: 'left'
+                        }}>
+                            Step 6: Add Test Metadata (Optional)
+                        </h4>
+                        <p style={{ marginBottom: '12px', color: '#475569', lineHeight: '1.6', textAlign: 'left' }}>
+                            Add metadata like description, severity, and labels to your tests:
+                        </p>
+                        <pre style={codeBlockStyle}>{`import { test, expect } from '@playwright/test';
+import { allure } from 'allure-playwright';
+
+test('critical login test', async ({ page }) => {
+  await allure.description('This test verifies user can login with valid credentials');
+  await allure.severity('critical');
+  await allure.owner('QA Team');
+  await allure.tag('smoke');
+  await allure.tag('login');
+  
+  await page.goto('https://example.com/login');
+  // ... rest of test
+});`}</pre>
+                    </div>
+
+                    <div style={{ marginBottom: '32px' }}>
+                        <h4 style={{
+                            color: '#00416A',
+                            fontSize: '20px',
+                            marginBottom: '12px',
+                            fontWeight: '600',
+                            textAlign: 'left'
+                        }}>
+                            Step 7: View Allure Report
+                        </h4>
+                        <p style={{ marginBottom: '12px', color: '#475569', lineHeight: '1.6', textAlign: 'left' }}>
+                            After running tests and generating the report, you can view it:
+                        </p>
+                        <ul style={{
+                            marginBottom: '12px',
+                            color: '#475569',
+                            lineHeight: '1.6',
+                            paddingLeft: '20px',
+                            textAlign: 'left'
+                        }}>
+                            <li style={{ marginBottom: '8px' }}><strong>Using npm script:</strong> <code style={{ backgroundColor: '#f0f0f0', padding: '2px 6px', borderRadius: '4px' }}>npm run allure:open</code></li>
+                            <li style={{ marginBottom: '8px' }}><strong>Using command line:</strong> <code style={{ backgroundColor: '#f0f0f0', padding: '2px 6px', borderRadius: '4px' }}>allure open allure-report</code></li>
+                            <li style={{ marginBottom: '8px' }}><strong>Serve directly:</strong> <code style={{ backgroundColor: '#f0f0f0', padding: '2px 6px', borderRadius: '4px' }}>allure serve allure-results</code></li>
+                        </ul>
+                        <p style={{ marginBottom: '12px', color: '#475569', lineHeight: '1.6', textAlign: 'left', fontSize: '14px' }}>
+                            The report will open in your default browser showing test results, execution history, graphs, and attachments.
+                        </p>
+                    </div>
+
+                    <div style={{
+                        backgroundColor: '#e8f5e9',
+                        padding: '20px',
+                        borderRadius: '8px',
+                        border: '1px solid #4caf50',
+                        marginTop: '24px'
+                    }}>
+                        <p style={{ margin: 0, fontSize: '16px', color: '#2e7d32', textAlign: 'left', fontWeight: '600' }}>
+                            ✓ Benefits of Allure Reports:
+                        </p>
+                        <ul style={{
+                            marginTop: '12px',
+                            marginBottom: 0,
+                            color: '#2e7d32',
+                            lineHeight: '1.8',
+                            paddingLeft: '20px',
+                            textAlign: 'left'
+                        }}>
+                            <li>Interactive HTML reports with beautiful visualizations</li>
+                            <li>Test history tracking and trend analysis</li>
+                            <li>Detailed attachments (screenshots, videos, logs)</li>
+                            <li>Test categorization with labels and metadata</li>
+                            <li>Integration with CI/CD pipelines</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+
             {/* Playwright + Cucumber (TypeScript) Checklist Section */}
             <div style={{
                 ...cardStyle,
