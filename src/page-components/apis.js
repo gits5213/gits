@@ -13,6 +13,7 @@ import Playwright from '../components/api/tabs/playwright';
 import ReadyAPI from '../components/api/tabs/readyapi';
 import PerformaceTest from '../components/api/tabs/performance';
 import Architecture from '../components/api/tabs/architecture';
+import Automation from '../components/api/tabs/automation';
 import '../styles/base.css';
 import '../styles/apis.css';
 
@@ -36,6 +37,7 @@ class apis extends Component {
         if (path.includes('/webdriverio')) return 9;
         if (path.includes('/supertest')) return 10;
         if (path.includes('/frisby')) return 11;
+        if (path.includes('/automation')) return 12;
         // Default to selenium if just /apis
         return 0;
     }
@@ -67,7 +69,8 @@ class apis extends Component {
             '/apis/appium',
             '/apis/webdriverio',
             '/apis/supertest',
-            '/apis/frisby'
+            '/apis/frisby',
+            '/apis/automation'
         ];
         // Ensure tabId is a valid number
         const validTabId = typeof tabId === 'number' ? tabId : parseInt(tabId, 10);
@@ -138,6 +141,11 @@ class apis extends Component {
                 <Frisby />
             )
         }
+        else if(this.state.activeTab === 12) {
+            return(
+                <Automation />
+            )
+        }
         // Default fallback to Selenium
         return <Selenium />
     }
@@ -147,6 +155,7 @@ class apis extends Component {
         const tabs = [
             { label: 'Appium', id: 8 },
             { label: 'Architecture', id: 7 },
+            { label: 'Automation', id: 12 },
             { label: 'CypressIO', id: 2 },
             { label: 'FrisBy', id: 11 },
             { label: 'PerformaceTest', id: 6 },

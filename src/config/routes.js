@@ -142,6 +142,7 @@ export const routes = [
   { path: '/apis/webdriverio', component: APIS },
   { path: '/apis/supertest', component: APIS },
   { path: '/apis/frisby', component: APIS },
+  { path: '/apis/automation', component: APIS },
   
   // AID
   { path: '/aid', exact: true, component: AID },

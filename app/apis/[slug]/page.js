@@ -16,6 +16,7 @@ export function generateStaticParams() {
     { slug: 'webdriverio' },
     { slug: 'supertest' },
     { slug: 'frisby' },
+    { slug: 'automation' },
   ]
 }
 
