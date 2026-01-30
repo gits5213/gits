@@ -21,6 +21,12 @@ export function generateStaticParams() {
     { examId: 'exam-15' },
     { examId: 'exam-16' },
     { examId: 'exam-17' },
+    { examId: 'exam-18' },
+    { examId: 'exam-19' },
+    { examId: 'exam-20' },
+    { examId: 'exam-21' },
+    { examId: 'exam-22' },
+    { examId: 'exam-23' },
   ]
 }
 
