@@ -392,7 +392,7 @@ export const inlineCodeStyles = {
 // Code block styles (for <pre> elements)
 export const codeBlockStyles = {
   dark: {
-    backgroundColor: 'transparent',
+    backgroundColor: '#f8fafc',
     color: '#334155',
     padding: '20px',
     borderRadius: '12px',
@@ -411,7 +411,7 @@ export const codeBlockStyles = {
     overflowWrap: 'break-word',
   },
   light: {
-    backgroundColor: 'transparent',
+    backgroundColor: '#f8fafc',
     color: '#334155',
     padding: '15px',
     borderRadius: '5px',

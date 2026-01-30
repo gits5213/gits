@@ -7,3 +7,4 @@ export { default as CodeBlock } from './CodeBlock';
 export { default as CodeBlockWithCopy } from './CodeBlockWithCopy';
 export { default as InlineCode } from './InlineCode';
 export { default as PdfDownload } from './PdfDownload';
+export { default as UpArrow } from './UpArrow';
