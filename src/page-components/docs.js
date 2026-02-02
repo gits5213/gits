@@ -209,6 +209,7 @@ class docs extends Component {
         // Tabs sorted alphabetically by label
         const tabs = [
             { label: 'Agile', id: 0 },
+            { label: 'API-Test', id: 6 },
             { label: 'Appium', id: 7 },
             { label: 'BDD', id: 3 },
             { label: 'CSS', id: 12 },
@@ -224,7 +225,6 @@ class docs extends Component {
             { label: 'Manual', id: 2 },
             { label: 'NET', id: 20 },
             { label: 'NextJS', id: 16 },
-            { label: 'API-Test', id: 6 },
             { label: 'PY', id: 19 },
             { label: 'ReactJS', id: 15 },
             { label: 'Scrum', id: 1 },

@@ -1,92 +1,171 @@
 import React, { useState } from 'react';
 import link from '../../../utilities/links.json';
 import { leftAlignStyles } from '../../../utils/globalStyles';
+import { UpArrow } from '../../shared';
 
 const ApiTest = () => {
-    const [isApiTestingExpanded, setIsApiTestingExpanded] = useState(false);
+    const [isFundamentalsExpanded, setIsFundamentalsExpanded] = useState(true);
+    const [isGettingStartedExpanded, setIsGettingStartedExpanded] = useState(true);
+    const [isStatusCodesExpanded, setIsStatusCodesExpanded] = useState(true);
+    const [isVerifyExpanded, setIsVerifyExpanded] = useState(true);
+    const [isPostmanIntroExpanded, setIsPostmanIntroExpanded] = useState(true);
+    const [isFirstRequestExpanded, setIsFirstRequestExpanded] = useState(true);
 
     return(
-        <div style={leftAlignStyles.pageContainer}>
+        <>
+            <style>{`
+                @keyframes fadeIn {
+                    from {
+                        opacity: 0;
+                        transform: translateY(-10px);
+                    }
+                    to {
+                        opacity: 1;
+                        transform: translateY(0);
+                    }
+                }
+            `}</style>
+            <div style={leftAlignStyles.pageContainer}>
             {/* Hero Section */}
             <div style={{
-                ...leftAlignStyles.heroSection,
-                display: 'flex',
-                alignItems: 'center',
-                justifyContent: 'space-between',
-                gap: '40px',
-                flexWrap: 'wrap'
+                background: 'linear-gradient(135deg, #00416A 0%, #005a8a 50%, #006ba8 100%)',
+                color: '#ffffff',
+                padding: '80px 40px',
+                textAlign: 'left',
+                borderRadius: '16px',
+                marginBottom: '48px',
+                boxShadow: '0 8px 32px rgba(0, 65, 106, 0.3)',
+                position: 'relative',
+                overflow: 'hidden'
             }}>
-                <div style={{ flex: '1', minWidth: '300px' }}>
-                    <h1 style={leftAlignStyles.heroTitle}>
-                        API-Test
-                    </h1>
-                    <p style={leftAlignStyles.heroSubtitle}>
-                        API Development and Testing Platform
-                    </p>
+                <div style={{ 
+                    position: 'absolute', 
+                    top: '-50%', 
+                    right: '-10%', 
+                    width: '400px', 
+                    height: '400px', 
+                    background: 'radial-gradient(circle, rgba(255,255,255,0.1) 0%, transparent 70%)',
+                    borderRadius: '50%'
+                }}></div>
+                <div style={{ position: 'relative', zIndex: 1, display: 'flex', justifyContent: 'space-between', alignItems: 'flex-start' }}>
+                    <div style={{ flex: 1 }}>
+                        <h1 style={{
+                            fontSize: 'clamp(36px, 5vw, 56px)',
+                            marginBottom: '16px',
+                            fontWeight: '800',
+                            letterSpacing: '-0.02em',
+                            textShadow: '0 2px 20px rgba(0,0,0,0.2)',
+                            lineHeight: '1.2'
+                        }}>
+                            API Testing Guide
+                        </h1>
+                        <p style={{
+                            fontSize: 'clamp(18px, 2.5vw, 22px)',
+                            opacity: '0.95',
+                            fontWeight: '300',
+                            lineHeight: '1.6',
+                            maxWidth: '700px'
+                        }}>
+                            Comprehensive guide to API development, testing, and best practices
+                        </p>
+                    </div>
+                    <div style={{ flexShrink: 0 }}>
+                        <UpArrow 
+                            size={24} 
+                            color="#ffffff" 
+                            title="Back to top"
+                            style={{ 
+                                backgroundColor: 'rgba(255, 255, 255, 0.1)',
+                                borderRadius: '8px',
+                                padding: '12px',
+                                marginLeft: '0',
+                                backdropFilter: 'blur(10px)'
+                            }}
+                        />
+                    </div>
                 </div>
             </div>
 
-            {/* API Testing Fundamentals Section - Collapsible */}
+            {/* API Testing Fundamentals Section */}
             <div style={leftAlignStyles.mainContent}>
                 <div style={{
                     backgroundColor: '#ffffff',
-                    padding: '25px',
-                    borderRadius: '8px',
-                    marginBottom: '25px',
-                    borderLeft: '4px solid #00416A',
-                    boxShadow: '0 2px 10px rgba(0,0,0,0.1)'
-                }}>
+                    padding: '32px',
+                    borderRadius: '16px',
+                    marginBottom: '32px',
+                    boxShadow: '0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06)',
+                    border: '1px solid rgba(226, 232, 240, 0.8)',
+                    transition: 'all 0.3s cubic-bezier(0.4, 0, 0.2, 1)'
+                }}
+                onMouseEnter={(e) => {
+                    e.currentTarget.style.boxShadow = '0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05)';
+                    e.currentTarget.style.transform = 'translateY(-2px)';
+                }}
+                onMouseLeave={(e) => {
+                    e.currentTarget.style.boxShadow = '0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06)';
+                    e.currentTarget.style.transform = 'translateY(0)';
+                }}
+                >
                     <div
-                        onClick={() => setIsApiTestingExpanded(!isApiTestingExpanded)}
+                        onClick={() => setIsFundamentalsExpanded(!isFundamentalsExpanded)}
                         style={{
                             cursor: 'pointer',
                             display: 'flex',
                             justifyContent: 'space-between',
                             alignItems: 'center',
-                            paddingBottom: isApiTestingExpanded ? '15px' : '0',
-                            borderBottom: isApiTestingExpanded ? '2px solid #00416A' : 'none',
-                            transition: 'all 0.3s ease'
+                            paddingBottom: isFundamentalsExpanded ? '20px' : '0',
+                            borderBottom: isFundamentalsExpanded ? '3px solid #667eea' : 'none',
+                            transition: 'all 0.3s ease',
+                            marginBottom: isFundamentalsExpanded ? '24px' : '0'
                         }}
                         onMouseEnter={(e) => {
-                            if (!isApiTestingExpanded) {
-                                e.currentTarget.style.backgroundColor = '#f0f7fa';
-                            }
+                            e.currentTarget.style.opacity = '0.8';
                         }}
                         onMouseLeave={(e) => {
-                            if (!isApiTestingExpanded) {
-                                e.currentTarget.style.backgroundColor = 'transparent';
-                            }
+                            e.currentTarget.style.opacity = '1';
                         }}
                     >
-                        <h2 style={{
-                            ...leftAlignStyles.sectionHeading,
+                        <h2 id="api-testing-fundamentals" style={{
+                            color: '#1e293b',
+                            fontSize: '28px',
                             marginBottom: 0,
-                            color: '#00416A'
+                            fontWeight: '700',
+                            letterSpacing: '-0.02em',
+                            lineHeight: '1.3'
                         }}>
                             API Testing Fundamentals
                         </h2>
                         <span style={{
-                            fontSize: '32px',
-                            color: '#00416A',
+                            fontSize: '28px',
+                            color: '#667eea',
                             fontWeight: 'bold',
                             marginLeft: '20px',
                             flexShrink: 0,
-                            transition: 'transform 0.3s ease'
+                            transition: 'transform 0.3s ease',
+                            width: '32px',
+                            height: '32px',
+                            display: 'flex',
+                            alignItems: 'center',
+                            justifyContent: 'center',
+                            borderRadius: '8px',
+                            backgroundColor: isFundamentalsExpanded ? '#eef2ff' : '#f1f5f9'
                         }}>
-                            {isApiTestingExpanded ? '−' : '+'}
+                            {isFundamentalsExpanded ? '−' : '+'}
                         </span>
                     </div>
 
-                    {isApiTestingExpanded && (
-                        <div style={{ marginTop: '25px' }}>
+                    {isFundamentalsExpanded && (
+                        <div style={{ marginTop: '24px', animation: 'fadeIn 0.3s ease' }}>
                             {/* What is API from a testing standpoint */}
                             <div style={{ marginBottom: '30px' }}>
-                                <h3 style={{
-                                    color: '#00416A',
-                                    fontSize: '22px',
-                                    marginBottom: '15px',
-                                    fontWeight: 'bold',
-                                    textAlign: 'left'
+                                    <h3 id="what-is-api" style={{
+                                    color: '#1e293b',
+                                    fontSize: '24px',
+                                    marginBottom: '16px',
+                                    fontWeight: '700',
+                                    textAlign: 'left',
+                                    letterSpacing: '-0.01em',
+                                    lineHeight: '1.4'
                                 }}>
                                     What is API from a Testing Standpoint?
                                 </h3>
@@ -108,26 +187,60 @@ const ApiTest = () => {
                                 }}>
                                     In testing, APIs are tested to ensure:
                                 </p>
-                                <ul style={{
-                                    fontSize: '16px',
-                                    lineHeight: '1.8',
-                                    color: '#333333',
-                                    paddingLeft: '20px',
-                                    textAlign: 'left',
-                                    marginBottom: '15px'
+                                <div style={{
+                                    backgroundColor: '#ffffff',
+                                    padding: '20px',
+                                    borderRadius: '8px',
+                                    border: '1px solid #e0e0e0',
+                                    marginTop: '10px',
+                                    marginBottom: '16px',
+                                    overflowX: 'auto'
                                 }}>
-                                    <li>Correct data exchange between systems</li>
-                                    <li>Proper request/response handling</li>
-                                    <li>Error handling and edge cases</li>
-                                    <li>Performance and reliability</li>
-                                    <li>Security and authentication</li>
-                                    <li>Compliance with API specifications</li>
-                                </ul>
+                                    <table style={{
+                                        width: '100%',
+                                        borderCollapse: 'collapse',
+                                        fontSize: '14px',
+                                        textAlign: 'left'
+                                    }}>
+                                        <thead>
+                                            <tr style={{ backgroundColor: '#f8f9fa', borderBottom: '2px solid #00416A' }}>
+                                                <th style={{ padding: '12px', fontWeight: 'bold', color: '#00416A' }}>Aspect</th>
+                                                <th style={{ padding: '12px', fontWeight: 'bold', color: '#00416A' }}>Description</th>
+                                            </tr>
+                                        </thead>
+                                        <tbody>
+                                            <tr style={{ borderBottom: '1px solid #e0e0e0' }}>
+                                                <td style={{ padding: '12px', fontWeight: '600' }}>Data exchange</td>
+                                                <td style={{ padding: '12px' }}>Correct data exchange between systems</td>
+                                            </tr>
+                                            <tr style={{ borderBottom: '1px solid #e0e0e0', backgroundColor: '#f8f9fa' }}>
+                                                <td style={{ padding: '12px', fontWeight: '600' }}>Request/response</td>
+                                                <td style={{ padding: '12px' }}>Proper request/response handling</td>
+                                            </tr>
+                                            <tr style={{ borderBottom: '1px solid #e0e0e0' }}>
+                                                <td style={{ padding: '12px', fontWeight: '600' }}>Error handling</td>
+                                                <td style={{ padding: '12px' }}>Error handling and edge cases</td>
+                                            </tr>
+                                            <tr style={{ borderBottom: '1px solid #e0e0e0', backgroundColor: '#f8f9fa' }}>
+                                                <td style={{ padding: '12px', fontWeight: '600' }}>Performance</td>
+                                                <td style={{ padding: '12px' }}>Performance and reliability</td>
+                                            </tr>
+                                            <tr style={{ borderBottom: '1px solid #e0e0e0' }}>
+                                                <td style={{ padding: '12px', fontWeight: '600' }}>Security</td>
+                                                <td style={{ padding: '12px' }}>Security and authentication</td>
+                                            </tr>
+                                            <tr style={{ borderBottom: '1px solid #e0e0e0', backgroundColor: '#f8f9fa' }}>
+                                                <td style={{ padding: '12px', fontWeight: '600' }}>Compliance</td>
+                                                <td style={{ padding: '12px' }}>Compliance with API specifications</td>
+                                            </tr>
+                                        </tbody>
+                                    </table>
+                                </div>
                             </div>
 
                             {/* Purpose of API Testing */}
                             <div style={{ marginBottom: '30px' }}>
-                                <h3 style={{
+                                <h3 id="purpose-of-api-testing" style={{
                                     color: '#00416A',
                                     fontSize: '22px',
                                     marginBottom: '15px',
@@ -145,23 +258,63 @@ const ApiTest = () => {
                                 }}>
                                     API testing serves several critical purposes in software development:
                                 </p>
-                                <ul style={{
-                                    fontSize: '16px',
-                                    lineHeight: '1.8',
-                                    color: '#333333',
-                                    paddingLeft: '20px',
-                                    textAlign: 'left',
-                                    marginBottom: '15px'
+                                <div style={{
+                                    backgroundColor: '#ffffff',
+                                    padding: '20px',
+                                    borderRadius: '8px',
+                                    border: '1px solid #e0e0e0',
+                                    marginTop: '10px',
+                                    marginBottom: '16px',
+                                    overflowX: 'auto'
                                 }}>
-                                    <li><strong>Functional Validation:</strong> Verify that APIs perform their intended functions correctly</li>
-                                    <li><strong>Integration Testing:</strong> Ensure different systems and services communicate properly</li>
-                                    <li><strong>Data Integrity:</strong> Validate that data is correctly sent, received, and processed</li>
-                                    <li><strong>Error Handling:</strong> Test how APIs handle invalid inputs, errors, and edge cases</li>
-                                    <li><strong>Performance Testing:</strong> Assess response times, throughput, and scalability</li>
-                                    <li><strong>Security Testing:</strong> Identify vulnerabilities, test authentication, and authorization</li>
-                                    <li><strong>Contract Testing:</strong> Verify APIs meet their specifications and contracts</li>
-                                    <li><strong>Regression Testing:</strong> Ensure new changes don't break existing functionality</li>
-                                </ul>
+                                    <table style={{
+                                        width: '100%',
+                                        borderCollapse: 'collapse',
+                                        fontSize: '14px',
+                                        textAlign: 'left'
+                                    }}>
+                                        <thead>
+                                            <tr style={{ backgroundColor: '#f8f9fa', borderBottom: '2px solid #00416A' }}>
+                                                <th style={{ padding: '12px', fontWeight: 'bold', color: '#00416A' }}>Purpose</th>
+                                                <th style={{ padding: '12px', fontWeight: 'bold', color: '#00416A' }}>Description</th>
+                                            </tr>
+                                        </thead>
+                                        <tbody>
+                                            <tr style={{ borderBottom: '1px solid #e0e0e0' }}>
+                                                <td style={{ padding: '12px', fontWeight: '600' }}>Functional Validation</td>
+                                                <td style={{ padding: '12px' }}>Verify that APIs perform their intended functions correctly</td>
+                                            </tr>
+                                            <tr style={{ borderBottom: '1px solid #e0e0e0', backgroundColor: '#f8f9fa' }}>
+                                                <td style={{ padding: '12px', fontWeight: '600' }}>Integration Testing</td>
+                                                <td style={{ padding: '12px' }}>Ensure different systems and services communicate properly</td>
+                                            </tr>
+                                            <tr style={{ borderBottom: '1px solid #e0e0e0' }}>
+                                                <td style={{ padding: '12px', fontWeight: '600' }}>Data Integrity</td>
+                                                <td style={{ padding: '12px' }}>Validate that data is correctly sent, received, and processed</td>
+                                            </tr>
+                                            <tr style={{ borderBottom: '1px solid #e0e0e0', backgroundColor: '#f8f9fa' }}>
+                                                <td style={{ padding: '12px', fontWeight: '600' }}>Error Handling</td>
+                                                <td style={{ padding: '12px' }}>Test how APIs handle invalid inputs, errors, and edge cases</td>
+                                            </tr>
+                                            <tr style={{ borderBottom: '1px solid #e0e0e0' }}>
+                                                <td style={{ padding: '12px', fontWeight: '600' }}>Performance Testing</td>
+                                                <td style={{ padding: '12px' }}>Assess response times, throughput, and scalability</td>
+                                            </tr>
+                                            <tr style={{ borderBottom: '1px solid #e0e0e0', backgroundColor: '#f8f9fa' }}>
+                                                <td style={{ padding: '12px', fontWeight: '600' }}>Security Testing</td>
+                                                <td style={{ padding: '12px' }}>Identify vulnerabilities, test authentication, and authorization</td>
+                                            </tr>
+                                            <tr style={{ borderBottom: '1px solid #e0e0e0' }}>
+                                                <td style={{ padding: '12px', fontWeight: '600' }}>Contract Testing</td>
+                                                <td style={{ padding: '12px' }}>Verify APIs meet their specifications and contracts</td>
+                                            </tr>
+                                            <tr style={{ borderBottom: '1px solid #e0e0e0', backgroundColor: '#f8f9fa' }}>
+                                                <td style={{ padding: '12px', fontWeight: '600' }}>Regression Testing</td>
+                                                <td style={{ padding: '12px' }}>Ensure new changes don't break existing functionality</td>
+                                            </tr>
+                                        </tbody>
+                                    </table>
+                                </div>
                             </div>
 
                             {/* Why we need API Testing */}
@@ -184,30 +337,76 @@ const ApiTest = () => {
                                 }}>
                                     API testing is essential for several reasons:
                                 </p>
-                                <ul style={{
-                                    fontSize: '16px',
-                                    lineHeight: '1.8',
-                                    color: '#333333',
-                                    paddingLeft: '20px',
-                                    textAlign: 'left',
-                                    marginBottom: '15px'
+                                <div style={{
+                                    backgroundColor: '#ffffff',
+                                    padding: '20px',
+                                    borderRadius: '8px',
+                                    border: '1px solid #e0e0e0',
+                                    marginTop: '10px',
+                                    marginBottom: '16px',
+                                    overflowX: 'auto'
                                 }}>
-                                    <li><strong>Early Detection of Issues:</strong> Catch bugs before they reach production, reducing costs and time</li>
-                                    <li><strong>Faster Testing:</strong> API tests run faster than UI tests, enabling quicker feedback cycles</li>
-                                    <li><strong>Independent of UI:</strong> Test backend logic without waiting for frontend development</li>
-                                    <li><strong>Better Coverage:</strong> Test business logic, data validation, and integration points comprehensively</li>
-                                    <li><strong>Cost-Effective:</strong> Identify and fix issues early in the development lifecycle</li>
-                                    <li><strong>CI/CD Integration:</strong> Automate testing in continuous integration pipelines</li>
-                                    <li><strong>Microservices Architecture:</strong> Essential for testing service-to-service communication</li>
-                                    <li><strong>Third-Party Integration:</strong> Validate external API integrations work correctly</li>
-                                    <li><strong>Documentation:</strong> API tests serve as living documentation of API behavior</li>
-                                    <li><strong>Risk Mitigation:</strong> Reduce the risk of production failures and security breaches</li>
-                                </ul>
+                                    <table style={{
+                                        width: '100%',
+                                        borderCollapse: 'collapse',
+                                        fontSize: '14px',
+                                        textAlign: 'left'
+                                    }}>
+                                        <thead>
+                                            <tr style={{ backgroundColor: '#f8f9fa', borderBottom: '2px solid #00416A' }}>
+                                                <th style={{ padding: '12px', fontWeight: 'bold', color: '#00416A' }}>Reason</th>
+                                                <th style={{ padding: '12px', fontWeight: 'bold', color: '#00416A' }}>Description</th>
+                                            </tr>
+                                        </thead>
+                                        <tbody>
+                                            <tr style={{ borderBottom: '1px solid #e0e0e0' }}>
+                                                <td style={{ padding: '12px', fontWeight: '600' }}>Early Detection of Issues</td>
+                                                <td style={{ padding: '12px' }}>Catch bugs before they reach production, reducing costs and time</td>
+                                            </tr>
+                                            <tr style={{ borderBottom: '1px solid #e0e0e0', backgroundColor: '#f8f9fa' }}>
+                                                <td style={{ padding: '12px', fontWeight: '600' }}>Faster Testing</td>
+                                                <td style={{ padding: '12px' }}>API tests run faster than UI tests, enabling quicker feedback cycles</td>
+                                            </tr>
+                                            <tr style={{ borderBottom: '1px solid #e0e0e0' }}>
+                                                <td style={{ padding: '12px', fontWeight: '600' }}>Independent of UI</td>
+                                                <td style={{ padding: '12px' }}>Test backend logic without waiting for frontend development</td>
+                                            </tr>
+                                            <tr style={{ borderBottom: '1px solid #e0e0e0', backgroundColor: '#f8f9fa' }}>
+                                                <td style={{ padding: '12px', fontWeight: '600' }}>Better Coverage</td>
+                                                <td style={{ padding: '12px' }}>Test business logic, data validation, and integration points comprehensively</td>
+                                            </tr>
+                                            <tr style={{ borderBottom: '1px solid #e0e0e0' }}>
+                                                <td style={{ padding: '12px', fontWeight: '600' }}>Cost-Effective</td>
+                                                <td style={{ padding: '12px' }}>Identify and fix issues early in the development lifecycle</td>
+                                            </tr>
+                                            <tr style={{ borderBottom: '1px solid #e0e0e0', backgroundColor: '#f8f9fa' }}>
+                                                <td style={{ padding: '12px', fontWeight: '600' }}>CI/CD Integration</td>
+                                                <td style={{ padding: '12px' }}>Automate testing in continuous integration pipelines</td>
+                                            </tr>
+                                            <tr style={{ borderBottom: '1px solid #e0e0e0' }}>
+                                                <td style={{ padding: '12px', fontWeight: '600' }}>Microservices Architecture</td>
+                                                <td style={{ padding: '12px' }}>Essential for testing service-to-service communication</td>
+                                            </tr>
+                                            <tr style={{ borderBottom: '1px solid #e0e0e0', backgroundColor: '#f8f9fa' }}>
+                                                <td style={{ padding: '12px', fontWeight: '600' }}>Third-Party Integration</td>
+                                                <td style={{ padding: '12px' }}>Validate external API integrations work correctly</td>
+                                            </tr>
+                                            <tr style={{ borderBottom: '1px solid #e0e0e0' }}>
+                                                <td style={{ padding: '12px', fontWeight: '600' }}>Documentation</td>
+                                                <td style={{ padding: '12px' }}>API tests serve as living documentation of API behavior</td>
+                                            </tr>
+                                            <tr style={{ borderBottom: '1px solid #e0e0e0', backgroundColor: '#f8f9fa' }}>
+                                                <td style={{ padding: '12px', fontWeight: '600' }}>Risk Mitigation</td>
+                                                <td style={{ padding: '12px' }}>Reduce the risk of production failures and security breaches</td>
+                                            </tr>
+                                        </tbody>
+                                    </table>
+                                </div>
                             </div>
 
                             {/* Types of API Testing */}
                             <div style={{ marginBottom: '30px' }}>
-                                <h3 style={{
+                                <h3 id="types-of-api-testing" style={{
                                     color: '#00416A',
                                     fontSize: '22px',
                                     marginBottom: '15px',
@@ -216,9 +415,68 @@ const ApiTest = () => {
                                 }}>
                                     Different Types of API Testing - Detailed Explanation
                                 </h3>
-                                
+                                <div style={{
+                                    backgroundColor: '#ffffff',
+                                    padding: '20px',
+                                    borderRadius: '8px',
+                                    border: '1px solid #e0e0e0',
+                                    marginBottom: '25px',
+                                    overflowX: 'auto'
+                                }}>
+                                    <table style={{
+                                        width: '100%',
+                                        borderCollapse: 'collapse',
+                                        fontSize: '14px',
+                                        textAlign: 'left'
+                                    }}>
+                                        <thead>
+                                            <tr style={{ backgroundColor: '#f8f9fa', borderBottom: '2px solid #00416A' }}>
+                                                <th style={{ padding: '12px', fontWeight: 'bold', color: '#00416A' }}>Type</th>
+                                                <th style={{ padding: '12px', fontWeight: 'bold', color: '#00416A' }}>Description</th>
+                                            </tr>
+                                        </thead>
+                                        <tbody>
+                                            <tr style={{ borderBottom: '1px solid #e0e0e0' }}>
+                                                <td style={{ padding: '12px', fontWeight: '600' }}>Functional Testing</td>
+                                                <td style={{ padding: '12px' }}>Validates APIs perform intended functions; CRUD, request/response, business logic</td>
+                                            </tr>
+                                            <tr style={{ borderBottom: '1px solid #e0e0e0', backgroundColor: '#f8f9fa' }}>
+                                                <td style={{ padding: '12px', fontWeight: '600' }}>Integration Testing</td>
+                                                <td style={{ padding: '12px' }}>Tests how APIs interact with other APIs, databases, and external services</td>
+                                            </tr>
+                                            <tr style={{ borderBottom: '1px solid #e0e0e0' }}>
+                                                <td style={{ padding: '12px', fontWeight: '600' }}>Load Testing</td>
+                                                <td style={{ padding: '12px' }}>Evaluates API performance under expected load; response time, throughput</td>
+                                            </tr>
+                                            <tr style={{ borderBottom: '1px solid #e0e0e0', backgroundColor: '#f8f9fa' }}>
+                                                <td style={{ padding: '12px', fontWeight: '600' }}>Stress Testing</td>
+                                                <td style={{ padding: '12px' }}>Tests API behavior under extreme load; breaking points, recovery</td>
+                                            </tr>
+                                            <tr style={{ borderBottom: '1px solid #e0e0e0' }}>
+                                                <td style={{ padding: '12px', fontWeight: '600' }}>Security Testing</td>
+                                                <td style={{ padding: '12px' }}>Identifies vulnerabilities; auth, SQL injection, XSS, encryption</td>
+                                            </tr>
+                                            <tr style={{ borderBottom: '1px solid #e0e0e0', backgroundColor: '#f8f9fa' }}>
+                                                <td style={{ padding: '12px', fontWeight: '600' }}>Validation Testing</td>
+                                                <td style={{ padding: '12px' }}>Verifies behavior, efficiency, reliability; data, schema, response time</td>
+                                            </tr>
+                                            <tr style={{ borderBottom: '1px solid #e0e0e0' }}>
+                                                <td style={{ padding: '12px', fontWeight: '600' }}>Error Testing</td>
+                                                <td style={{ padding: '12px' }}>Tests how APIs handle invalid inputs, errors, and edge cases</td>
+                                            </tr>
+                                            <tr style={{ borderBottom: '1px solid #e0e0e0', backgroundColor: '#f8f9fa' }}>
+                                                <td style={{ padding: '12px', fontWeight: '600' }}>Contract Testing</td>
+                                                <td style={{ padding: '12px' }}>Verifies APIs meet their specifications and consumer-provider contracts</td>
+                                            </tr>
+                                            <tr style={{ borderBottom: '1px solid #e0e0e0' }}>
+                                                <td style={{ padding: '12px', fontWeight: '600' }}>Reliability Testing</td>
+                                                <td style={{ padding: '12px' }}>Tests API stability over time; consistency, failure recovery</td>
+                                            </tr>
+                                        </tbody>
+                                    </table>
+                                </div>
                                 <div style={{ marginBottom: '25px' }}>
-                                    <h4 style={{
+                                    <h4 id="functional-testing" style={{
                                         color: '#00416A',
                                         fontSize: '20px',
                                         marginBottom: '12px',
@@ -250,17 +508,19 @@ const ApiTest = () => {
                                         <li>Verifying data transformations</li>
                                     </ul>
                                     <div style={{
-                                        backgroundColor: '#f8f9fa',
-                                        padding: '15px',
-                                        borderRadius: '6px',
-                                        fontFamily: 'monospace',
+                                        backgroundColor: '#1e293b',
+                                        padding: '20px',
+                                        borderRadius: '12px',
+                                        fontFamily: '"SF Mono", Monaco, "Cascadia Code", "Roboto Mono", Consolas, "Courier New", monospace',
                                         fontSize: '14px',
-                                        border: '1px solid #e0e0e0',
-                                        marginTop: '15px',
+                                        border: '1px solid #334155',
+                                        marginTop: '20px',
                                         textAlign: 'left',
-                                        overflowX: 'auto'
+                                        overflowX: 'auto',
+                                        boxShadow: '0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06)',
+                                        position: 'relative'
                                     }}>
-                                        <pre style={{ margin: 0, whiteSpace: 'pre-wrap', textAlign: 'left' }}>{`Example: Testing User Management API
+                                        <pre style={{ margin: 0, whiteSpace: 'pre-wrap', textAlign: 'left', color: '#e2e8f0', lineHeight: '1.7' }}>{`Example: Testing User Management API
 
 GET /api/users/1
 Expected: Returns user with id=1
@@ -291,7 +551,7 @@ Expected: Deletes user, returns 204 No Content`}</pre>
                                 </div>
 
                                 <div style={{ marginBottom: '25px' }}>
-                                    <h4 style={{
+                                    <h4 id="integration-testing" style={{
                                         color: '#00416A',
                                         fontSize: '20px',
                                         marginBottom: '12px',
@@ -323,17 +583,19 @@ Expected: Deletes user, returns 204 No Content`}</pre>
                                         <li>Service-to-service communication</li>
                                     </ul>
                                     <div style={{
-                                        backgroundColor: '#f8f9fa',
-                                        padding: '15px',
-                                        borderRadius: '6px',
-                                        fontFamily: 'monospace',
+                                        backgroundColor: '#1e293b',
+                                        padding: '20px',
+                                        borderRadius: '12px',
+                                        fontFamily: '"SF Mono", Monaco, "Cascadia Code", "Roboto Mono", Consolas, "Courier New", monospace',
                                         fontSize: '14px',
-                                        border: '1px solid #e0e0e0',
-                                        marginTop: '15px',
+                                        border: '1px solid #334155',
+                                        marginTop: '20px',
                                         textAlign: 'left',
-                                        overflowX: 'auto'
+                                        overflowX: 'auto',
+                                        boxShadow: '0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06)',
+                                        position: 'relative'
                                     }}>
-                                        <pre style={{ margin: 0, whiteSpace: 'pre-wrap', textAlign: 'left' }}>{`Example: E-commerce Order Processing Flow
+                                        <pre style={{ margin: 0, whiteSpace: 'pre-wrap', textAlign: 'left', color: '#e2e8f0', lineHeight: '1.7' }}>{`Example: E-commerce Order Processing Flow
 
 Step 1: Create Order
 POST /api/orders
@@ -383,11 +645,12 @@ Response: 200 OK
 
                                 <div style={{ marginBottom: '25px' }}>
                                     <h4 style={{
-                                        color: '#00416A',
+                                        color: '#1e293b',
                                         fontSize: '20px',
                                         marginBottom: '12px',
                                         fontWeight: '600',
-                                        textAlign: 'left'
+                                        textAlign: 'left',
+                                        letterSpacing: '-0.01em'
                                     }}>
                                         3. Load Testing
                                     </h4>
@@ -414,17 +677,19 @@ Response: 200 OK
                                         <li>Resource utilization monitoring</li>
                                     </ul>
                                     <div style={{
-                                        backgroundColor: '#f8f9fa',
-                                        padding: '15px',
-                                        borderRadius: '6px',
-                                        fontFamily: 'monospace',
+                                        backgroundColor: '#1e293b',
+                                        padding: '20px',
+                                        borderRadius: '12px',
+                                        fontFamily: '"SF Mono", Monaco, "Cascadia Code", "Roboto Mono", Consolas, "Courier New", monospace',
                                         fontSize: '14px',
-                                        border: '1px solid #e0e0e0',
-                                        marginTop: '15px',
+                                        border: '1px solid #334155',
+                                        marginTop: '20px',
                                         textAlign: 'left',
-                                        overflowX: 'auto'
+                                        overflowX: 'auto',
+                                        boxShadow: '0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06)',
+                                        position: 'relative'
                                     }}>
-                                        <pre style={{ margin: 0, whiteSpace: 'pre-wrap', textAlign: 'left' }}>{`Example: Load Test Scenario
+                                        <pre style={{ margin: 0, whiteSpace: 'pre-wrap', textAlign: 'left', color: '#e2e8f0', lineHeight: '1.7' }}>{`Example: Load Test Scenario
 
 Test Configuration:
 - Concurrent Users: 100
@@ -455,7 +720,7 @@ Test Script (JMeter/Postman):
                                 </div>
 
                                 <div style={{ marginBottom: '25px' }}>
-                                    <h4 style={{
+                                    <h4 id="stress-testing" style={{
                                         color: '#00416A',
                                         fontSize: '20px',
                                         marginBottom: '12px',
@@ -487,17 +752,19 @@ Test Script (JMeter/Postman):
                                         <li>Validating error handling under stress</li>
                                     </ul>
                                     <div style={{
-                                        backgroundColor: '#f8f9fa',
-                                        padding: '15px',
-                                        borderRadius: '6px',
-                                        fontFamily: 'monospace',
+                                        backgroundColor: '#1e293b',
+                                        padding: '20px',
+                                        borderRadius: '12px',
+                                        fontFamily: '"SF Mono", Monaco, "Cascadia Code", "Roboto Mono", Consolas, "Courier New", monospace',
                                         fontSize: '14px',
-                                        border: '1px solid #e0e0e0',
-                                        marginTop: '15px',
+                                        border: '1px solid #334155',
+                                        marginTop: '20px',
                                         textAlign: 'left',
-                                        overflowX: 'auto'
+                                        overflowX: 'auto',
+                                        boxShadow: '0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06)',
+                                        position: 'relative'
                                     }}>
-                                        <pre style={{ margin: 0, whiteSpace: 'pre-wrap', textAlign: 'left' }}>{`Example: Stress Test Scenario
+                                        <pre style={{ margin: 0, whiteSpace: 'pre-wrap', textAlign: 'left', color: '#e2e8f0', lineHeight: '1.7' }}>{`Example: Stress Test Scenario
 
 Test Configuration:
 - Start with 50 concurrent users
@@ -527,11 +794,12 @@ Expected Behavior:
 
                                 <div style={{ marginBottom: '25px' }}>
                                     <h4 style={{
-                                        color: '#00416A',
+                                        color: '#1e293b',
                                         fontSize: '20px',
                                         marginBottom: '12px',
                                         fontWeight: '600',
-                                        textAlign: 'left'
+                                        textAlign: 'left',
+                                        letterSpacing: '-0.01em'
                                     }}>
                                         5. Security Testing
                                     </h4>
@@ -559,17 +827,19 @@ Expected Behavior:
                                         <li>Token and session management testing</li>
                                     </ul>
                                     <div style={{
-                                        backgroundColor: '#f8f9fa',
-                                        padding: '15px',
-                                        borderRadius: '6px',
-                                        fontFamily: 'monospace',
+                                        backgroundColor: '#1e293b',
+                                        padding: '20px',
+                                        borderRadius: '12px',
+                                        fontFamily: '"SF Mono", Monaco, "Cascadia Code", "Roboto Mono", Consolas, "Courier New", monospace',
                                         fontSize: '14px',
-                                        border: '1px solid #e0e0e0',
-                                        marginTop: '15px',
+                                        border: '1px solid #334155',
+                                        marginTop: '20px',
                                         textAlign: 'left',
-                                        overflowX: 'auto'
+                                        overflowX: 'auto',
+                                        boxShadow: '0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06)',
+                                        position: 'relative'
                                     }}>
-                                        <pre style={{ margin: 0, whiteSpace: 'pre-wrap', textAlign: 'left' }}>{`Example: Security Test Scenarios
+                                        <pre style={{ margin: 0, whiteSpace: 'pre-wrap', textAlign: 'left', color: '#e2e8f0', lineHeight: '1.7' }}>{`Example: Security Test Scenarios
 
 1. Authentication Testing:
 GET /api/users/1
@@ -613,7 +883,7 @@ Actual: 401 Unauthorized ✓`}</pre>
                                 </div>
 
                                 <div style={{ marginBottom: '25px' }}>
-                                    <h4 style={{
+                                    <h4 id="validation-testing" style={{
                                         color: '#00416A',
                                         fontSize: '20px',
                                         marginBottom: '12px',
@@ -645,17 +915,19 @@ Actual: 401 Unauthorized ✓`}</pre>
                                         <li>Schema validation</li>
                                     </ul>
                                     <div style={{
-                                        backgroundColor: '#f8f9fa',
-                                        padding: '15px',
-                                        borderRadius: '6px',
-                                        fontFamily: 'monospace',
+                                        backgroundColor: '#1e293b',
+                                        padding: '20px',
+                                        borderRadius: '12px',
+                                        fontFamily: '"SF Mono", Monaco, "Cascadia Code", "Roboto Mono", Consolas, "Courier New", monospace',
                                         fontSize: '14px',
-                                        border: '1px solid #e0e0e0',
-                                        marginTop: '15px',
+                                        border: '1px solid #334155',
+                                        marginTop: '20px',
                                         textAlign: 'left',
-                                        overflowX: 'auto'
+                                        overflowX: 'auto',
+                                        boxShadow: '0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06)',
+                                        position: 'relative'
                                     }}>
-                                        <pre style={{ margin: 0, whiteSpace: 'pre-wrap', textAlign: 'left' }}>{`Example: Validation Test Cases
+                                        <pre style={{ margin: 0, whiteSpace: 'pre-wrap', textAlign: 'left', color: '#e2e8f0', lineHeight: '1.7' }}>{`Example: Validation Test Cases
 
 1. Schema Validation:
 POST /api/users
@@ -702,11 +974,12 @@ Actual: 400 Bad Request ✓`}</pre>
 
                                 <div style={{ marginBottom: '25px' }}>
                                     <h4 style={{
-                                        color: '#00416A',
+                                        color: '#1e293b',
                                         fontSize: '20px',
                                         marginBottom: '12px',
                                         fontWeight: '600',
-                                        textAlign: 'left'
+                                        textAlign: 'left',
+                                        letterSpacing: '-0.01em'
                                     }}>
                                         7. Error Testing
                                     </h4>
@@ -733,17 +1006,19 @@ Actual: 400 Bad Request ✓`}</pre>
                                         <li>Edge case testing (boundary values, null values)</li>
                                     </ul>
                                     <div style={{
-                                        backgroundColor: '#f8f9fa',
-                                        padding: '15px',
-                                        borderRadius: '6px',
-                                        fontFamily: 'monospace',
+                                        backgroundColor: '#1e293b',
+                                        padding: '20px',
+                                        borderRadius: '12px',
+                                        fontFamily: '"SF Mono", Monaco, "Cascadia Code", "Roboto Mono", Consolas, "Courier New", monospace',
                                         fontSize: '14px',
-                                        border: '1px solid #e0e0e0',
-                                        marginTop: '15px',
+                                        border: '1px solid #334155',
+                                        marginTop: '20px',
                                         textAlign: 'left',
-                                        overflowX: 'auto'
+                                        overflowX: 'auto',
+                                        boxShadow: '0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06)',
+                                        position: 'relative'
                                     }}>
-                                        <pre style={{ margin: 0, whiteSpace: 'pre-wrap', textAlign: 'left' }}>{`Example: Error Test Scenarios
+                                        <pre style={{ margin: 0, whiteSpace: 'pre-wrap', textAlign: 'left', color: '#e2e8f0', lineHeight: '1.7' }}>{`Example: Error Test Scenarios
 
 1. Invalid Input - Missing Required Field:
 POST /api/users
@@ -802,7 +1077,7 @@ Response: 500 Internal Server Error
                                 </div>
 
                                 <div style={{ marginBottom: '25px' }}>
-                                    <h4 style={{
+                                    <h4 id="contract-testing" style={{
                                         color: '#00416A',
                                         fontSize: '20px',
                                         marginBottom: '12px',
@@ -833,17 +1108,19 @@ Response: 500 Internal Server Error
                                         <li>API contract validation</li>
                                     </ul>
                                     <div style={{
-                                        backgroundColor: '#f8f9fa',
-                                        padding: '15px',
-                                        borderRadius: '6px',
-                                        fontFamily: 'monospace',
+                                        backgroundColor: '#1e293b',
+                                        padding: '20px',
+                                        borderRadius: '12px',
+                                        fontFamily: '"SF Mono", Monaco, "Cascadia Code", "Roboto Mono", Consolas, "Courier New", monospace',
                                         fontSize: '14px',
-                                        border: '1px solid #e0e0e0',
-                                        marginTop: '15px',
+                                        border: '1px solid #334155',
+                                        marginTop: '20px',
                                         textAlign: 'left',
-                                        overflowX: 'auto'
+                                        overflowX: 'auto',
+                                        boxShadow: '0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06)',
+                                        position: 'relative'
                                     }}>
-                                        <pre style={{ margin: 0, whiteSpace: 'pre-wrap', textAlign: 'left' }}>{`Example: Contract Testing with OpenAPI/Swagger
+                                        <pre style={{ margin: 0, whiteSpace: 'pre-wrap', textAlign: 'left', color: '#e2e8f0', lineHeight: '1.7' }}>{`Example: Contract Testing with OpenAPI/Swagger
 
 OpenAPI Contract (swagger.yaml):
 /api/users/{id}:
@@ -904,11 +1181,12 @@ Contract Validation: ✗ Fails (missing required field)`}</pre>
 
                                 <div style={{ marginBottom: '25px' }}>
                                     <h4 style={{
-                                        color: '#00416A',
+                                        color: '#1e293b',
                                         fontSize: '20px',
                                         marginBottom: '12px',
                                         fontWeight: '600',
-                                        textAlign: 'left'
+                                        textAlign: 'left',
+                                        letterSpacing: '-0.01em'
                                     }}>
                                         9. Reliability Testing
                                     </h4>
@@ -934,17 +1212,19 @@ Contract Validation: ✗ Fails (missing required field)`}</pre>
                                         <li>Long-running transaction testing</li>
                                     </ul>
                                     <div style={{
-                                        backgroundColor: '#f8f9fa',
-                                        padding: '15px',
-                                        borderRadius: '6px',
-                                        fontFamily: 'monospace',
+                                        backgroundColor: '#1e293b',
+                                        padding: '20px',
+                                        borderRadius: '12px',
+                                        fontFamily: '"SF Mono", Monaco, "Cascadia Code", "Roboto Mono", Consolas, "Courier New", monospace',
                                         fontSize: '14px',
-                                        border: '1px solid #e0e0e0',
-                                        marginTop: '15px',
+                                        border: '1px solid #334155',
+                                        marginTop: '20px',
                                         textAlign: 'left',
-                                        overflowX: 'auto'
+                                        overflowX: 'auto',
+                                        boxShadow: '0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06)',
+                                        position: 'relative'
                                     }}>
-                                        <pre style={{ margin: 0, whiteSpace: 'pre-wrap', textAlign: 'left' }}>{`Example: Reliability Test Scenarios
+                                        <pre style={{ margin: 0, whiteSpace: 'pre-wrap', textAlign: 'left', color: '#e2e8f0', lineHeight: '1.7' }}>{`Example: Reliability Test Scenarios
 
 1. Consistent Response Testing:
 Test: GET /api/users/1 (100 iterations)
@@ -985,7 +1265,7 @@ Results:
                                 </div>
 
                                 <div style={{ marginBottom: '25px' }}>
-                                    <h4 style={{
+                                    <h4 id="fuzz-testing" style={{
                                         color: '#00416A',
                                         fontSize: '20px',
                                         marginBottom: '12px',
@@ -1016,17 +1296,19 @@ Results:
                                         <li>Unexpected data type testing</li>
                                     </ul>
                                     <div style={{
-                                        backgroundColor: '#f8f9fa',
-                                        padding: '15px',
-                                        borderRadius: '6px',
-                                        fontFamily: 'monospace',
+                                        backgroundColor: '#1e293b',
+                                        padding: '20px',
+                                        borderRadius: '12px',
+                                        fontFamily: '"SF Mono", Monaco, "Cascadia Code", "Roboto Mono", Consolas, "Courier New", monospace',
                                         fontSize: '14px',
-                                        border: '1px solid #e0e0e0',
-                                        marginTop: '15px',
+                                        border: '1px solid #334155',
+                                        marginTop: '20px',
                                         textAlign: 'left',
-                                        overflowX: 'auto'
+                                        overflowX: 'auto',
+                                        boxShadow: '0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06)',
+                                        position: 'relative'
                                     }}>
-                                        <pre style={{ margin: 0, whiteSpace: 'pre-wrap', textAlign: 'left' }}>{`Example: Fuzz Testing Scenarios
+                                        <pre style={{ margin: 0, whiteSpace: 'pre-wrap', textAlign: 'left', color: '#e2e8f0', lineHeight: '1.7' }}>{`Example: Fuzz Testing Scenarios
 
 1. Random String Injection:
 POST /api/users
@@ -1077,7 +1359,7 @@ Response: 400 Bad Request ✓`}</pre>
 
                             {/* API Testing Tools */}
                             <div style={{ marginBottom: '30px' }}>
-                                <h3 style={{
+                                <h3 id="api-testing-tools" style={{
                                     color: '#00416A',
                                     fontSize: '22px',
                                     marginBottom: '15px',
@@ -1097,7 +1379,7 @@ Response: 400 Bad Request ✓`}</pre>
                                 </p>
                                 
                                 <div style={{ marginBottom: '20px' }}>
-                                    <h4 style={{
+                                    <h4 id="gui-based-tools" style={{
                                         color: '#00416A',
                                         fontSize: '20px',
                                         marginBottom: '12px',
@@ -1125,7 +1407,7 @@ Response: 400 Bad Request ✓`}</pre>
                                 </div>
 
                                 <div style={{ marginBottom: '20px' }}>
-                                    <h4 style={{
+                                    <h4 id="code-based-tools" style={{
                                         color: '#00416A',
                                         fontSize: '20px',
                                         marginBottom: '12px',
@@ -1154,11 +1436,12 @@ Response: 400 Bad Request ✓`}</pre>
 
                                 <div style={{ marginBottom: '20px' }}>
                                     <h4 style={{
-                                        color: '#00416A',
+                                        color: '#1e293b',
                                         fontSize: '20px',
                                         marginBottom: '12px',
                                         fontWeight: '600',
-                                        textAlign: 'left'
+                                        textAlign: 'left',
+                                        letterSpacing: '-0.01em'
                                     }}>
                                         Performance Testing Tools:
                                     </h4>
@@ -1179,7 +1462,7 @@ Response: 400 Bad Request ✓`}</pre>
                                 </div>
 
                                 <div style={{ marginBottom: '20px' }}>
-                                    <h4 style={{
+                                    <h4 id="security-testing-tools" style={{
                                         color: '#00416A',
                                         fontSize: '20px',
                                         marginBottom: '12px',
@@ -1203,7 +1486,7 @@ Response: 400 Bad Request ✓`}</pre>
                                 </div>
 
                                 <div style={{ marginBottom: '20px' }}>
-                                    <h4 style={{
+                                    <h4 id="contract-testing-tools" style={{
                                         color: '#00416A',
                                         fontSize: '20px',
                                         marginBottom: '12px',
@@ -1229,7 +1512,7 @@ Response: 400 Bad Request ✓`}</pre>
 
                             {/* Different Types of API Services */}
                             <div style={{ marginBottom: '30px' }}>
-                                <h3 style={{
+                                <h3 id="different-types-api-services" style={{
                                     color: '#00416A',
                                     fontSize: '22px',
                                     marginBottom: '15px',
@@ -1250,7 +1533,7 @@ Response: 400 Bad Request ✓`}</pre>
 
                                 {/* REST API */}
                                 <div style={{ marginBottom: '25px' }}>
-                                    <h4 style={{
+                                    <h4 id="rest-api-type" style={{
                                         color: '#00416A',
                                         fontSize: '20px',
                                         marginBottom: '12px',
@@ -1283,17 +1566,19 @@ Response: 400 Bad Request ✓`}</pre>
                                         <li>Cacheable responses</li>
                                     </ul>
                                     <div style={{
-                                        backgroundColor: '#f8f9fa',
-                                        padding: '15px',
-                                        borderRadius: '6px',
-                                        fontFamily: 'monospace',
+                                        backgroundColor: '#1e293b',
+                                        padding: '20px',
+                                        borderRadius: '12px',
+                                        fontFamily: '"SF Mono", Monaco, "Cascadia Code", "Roboto Mono", Consolas, "Courier New", monospace',
                                         fontSize: '14px',
-                                        border: '1px solid #e0e0e0',
-                                        marginTop: '15px',
+                                        border: '1px solid #334155',
+                                        marginTop: '20px',
                                         textAlign: 'left',
-                                        overflowX: 'auto'
+                                        overflowX: 'auto',
+                                        boxShadow: '0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06)',
+                                        position: 'relative'
                                     }}>
-                                        <pre style={{ margin: 0, whiteSpace: 'pre-wrap', textAlign: 'left' }}>{`REST API Example:
+                                        <pre style={{ margin: 0, whiteSpace: 'pre-wrap', textAlign: 'left', color: '#e2e8f0', lineHeight: '1.7' }}>{`REST API Example:
 
 GET /api/users/1
 Headers:
@@ -1345,11 +1630,12 @@ Response: 204 No Content`}</pre>
                                 {/* SOAP API */}
                                 <div style={{ marginBottom: '25px' }}>
                                     <h4 style={{
-                                        color: '#00416A',
+                                        color: '#1e293b',
                                         fontSize: '20px',
                                         marginBottom: '12px',
                                         fontWeight: '600',
-                                        textAlign: 'left'
+                                        textAlign: 'left',
+                                        letterSpacing: '-0.01em'
                                     }}>
                                         2. SOAP API (Simple Object Access Protocol)
                                     </h4>
@@ -1377,17 +1663,19 @@ Response: 204 No Content`}</pre>
                                         <li>More structured and formal than REST</li>
                                     </ul>
                                     <div style={{
-                                        backgroundColor: '#f8f9fa',
-                                        padding: '15px',
-                                        borderRadius: '6px',
-                                        fontFamily: 'monospace',
+                                        backgroundColor: '#1e293b',
+                                        padding: '20px',
+                                        borderRadius: '12px',
+                                        fontFamily: '"SF Mono", Monaco, "Cascadia Code", "Roboto Mono", Consolas, "Courier New", monospace',
                                         fontSize: '14px',
-                                        border: '1px solid #e0e0e0',
-                                        marginTop: '15px',
+                                        border: '1px solid #334155',
+                                        marginTop: '20px',
                                         textAlign: 'left',
-                                        overflowX: 'auto'
+                                        overflowX: 'auto',
+                                        boxShadow: '0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06)',
+                                        position: 'relative'
                                     }}>
-                                        <pre style={{ margin: 0, whiteSpace: 'pre-wrap', textAlign: 'left' }}>{`SOAP API Example:
+                                        <pre style={{ margin: 0, whiteSpace: 'pre-wrap', textAlign: 'left', color: '#e2e8f0', lineHeight: '1.7' }}>{`SOAP API Example:
 
 POST /calculator.asmx HTTP/1.1
 Host: www.dneonline.com
@@ -1419,7 +1707,7 @@ Response: 200 OK
 
                                 {/* GraphQL API */}
                                 <div style={{ marginBottom: '25px' }}>
-                                    <h4 style={{
+                                    <h4 id="graphql-api-type" style={{
                                         color: '#00416A',
                                         fontSize: '20px',
                                         marginBottom: '12px',
@@ -1452,17 +1740,19 @@ Response: 200 OK
                                         <li>Reduces network overhead</li>
                                     </ul>
                                     <div style={{
-                                        backgroundColor: '#f8f9fa',
-                                        padding: '15px',
-                                        borderRadius: '6px',
-                                        fontFamily: 'monospace',
+                                        backgroundColor: '#1e293b',
+                                        padding: '20px',
+                                        borderRadius: '12px',
+                                        fontFamily: '"SF Mono", Monaco, "Cascadia Code", "Roboto Mono", Consolas, "Courier New", monospace',
                                         fontSize: '14px',
-                                        border: '1px solid #e0e0e0',
-                                        marginTop: '15px',
+                                        border: '1px solid #334155',
+                                        marginTop: '20px',
                                         textAlign: 'left',
-                                        overflowX: 'auto'
+                                        overflowX: 'auto',
+                                        boxShadow: '0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06)',
+                                        position: 'relative'
                                     }}>
-                                        <pre style={{ margin: 0, whiteSpace: 'pre-wrap', textAlign: 'left' }}>{`GraphQL API Example:
+                                        <pre style={{ margin: 0, whiteSpace: 'pre-wrap', textAlign: 'left', color: '#e2e8f0', lineHeight: '1.7' }}>{`GraphQL API Example:
 
 POST /graphql
 Headers:
@@ -1527,7 +1817,7 @@ Response: 200 OK
 
                                 {/* gRPC API */}
                                 <div style={{ marginBottom: '25px' }}>
-                                    <h4 style={{
+                                    <h4 id="grpc-api-type" style={{
                                         color: '#00416A',
                                         fontSize: '20px',
                                         marginBottom: '12px',
@@ -1560,17 +1850,19 @@ Response: 200 OK
                                         <li>Language-agnostic</li>
                                     </ul>
                                     <div style={{
-                                        backgroundColor: '#f8f9fa',
-                                        padding: '15px',
-                                        borderRadius: '6px',
-                                        fontFamily: 'monospace',
+                                        backgroundColor: '#1e293b',
+                                        padding: '20px',
+                                        borderRadius: '12px',
+                                        fontFamily: '"SF Mono", Monaco, "Cascadia Code", "Roboto Mono", Consolas, "Courier New", monospace',
                                         fontSize: '14px',
-                                        border: '1px solid #e0e0e0',
-                                        marginTop: '15px',
+                                        border: '1px solid #334155',
+                                        marginTop: '20px',
                                         textAlign: 'left',
-                                        overflowX: 'auto'
+                                        overflowX: 'auto',
+                                        boxShadow: '0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06)',
+                                        position: 'relative'
                                     }}>
-                                        <pre style={{ margin: 0, whiteSpace: 'pre-wrap', textAlign: 'left' }}>{`gRPC API Example:
+                                        <pre style={{ margin: 0, whiteSpace: 'pre-wrap', textAlign: 'left', color: '#e2e8f0', lineHeight: '1.7' }}>{`gRPC API Example:
 
 Protocol Buffer Definition (.proto):
 syntax = "proto3";
@@ -1611,7 +1903,7 @@ Content-Type: application/grpc
 
                                 {/* WebSocket API */}
                                 <div style={{ marginBottom: '25px' }}>
-                                    <h4 style={{
+                                    <h4 id="websocket-api-type" style={{
                                         color: '#00416A',
                                         fontSize: '20px',
                                         marginBottom: '12px',
@@ -1644,17 +1936,19 @@ Content-Type: application/grpc
                                         <li>Ideal for chat, gaming, live updates</li>
                                     </ul>
                                     <div style={{
-                                        backgroundColor: '#f8f9fa',
-                                        padding: '15px',
-                                        borderRadius: '6px',
-                                        fontFamily: 'monospace',
+                                        backgroundColor: '#1e293b',
+                                        padding: '20px',
+                                        borderRadius: '12px',
+                                        fontFamily: '"SF Mono", Monaco, "Cascadia Code", "Roboto Mono", Consolas, "Courier New", monospace',
                                         fontSize: '14px',
-                                        border: '1px solid #e0e0e0',
-                                        marginTop: '15px',
+                                        border: '1px solid #334155',
+                                        marginTop: '20px',
                                         textAlign: 'left',
-                                        overflowX: 'auto'
+                                        overflowX: 'auto',
+                                        boxShadow: '0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06)',
+                                        position: 'relative'
                                     }}>
-                                        <pre style={{ margin: 0, whiteSpace: 'pre-wrap', textAlign: 'left' }}>{`WebSocket API Example:
+                                        <pre style={{ margin: 0, whiteSpace: 'pre-wrap', textAlign: 'left', color: '#e2e8f0', lineHeight: '1.7' }}>{`WebSocket API Example:
 
 Connection Handshake:
 GET /chat HTTP/1.1
@@ -1696,7 +1990,7 @@ Server → Client (Broadcast):
 
                                 {/* Webhook API */}
                                 <div style={{ marginBottom: '25px' }}>
-                                    <h4 style={{
+                                    <h4 id="webhook-api-type" style={{
                                         color: '#00416A',
                                         fontSize: '20px',
                                         marginBottom: '12px',
@@ -1729,17 +2023,19 @@ Server → Client (Broadcast):
                                         <li>Commonly used for integrations</li>
                                     </ul>
                                     <div style={{
-                                        backgroundColor: '#f8f9fa',
-                                        padding: '15px',
-                                        borderRadius: '6px',
-                                        fontFamily: 'monospace',
+                                        backgroundColor: '#1e293b',
+                                        padding: '20px',
+                                        borderRadius: '12px',
+                                        fontFamily: '"SF Mono", Monaco, "Cascadia Code", "Roboto Mono", Consolas, "Courier New", monospace',
                                         fontSize: '14px',
-                                        border: '1px solid #e0e0e0',
-                                        marginTop: '15px',
+                                        border: '1px solid #334155',
+                                        marginTop: '20px',
                                         textAlign: 'left',
-                                        overflowX: 'auto'
+                                        overflowX: 'auto',
+                                        boxShadow: '0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06)',
+                                        position: 'relative'
                                     }}>
-                                        <pre style={{ margin: 0, whiteSpace: 'pre-wrap', textAlign: 'left' }}>{`Webhook API Example:
+                                        <pre style={{ margin: 0, whiteSpace: 'pre-wrap', textAlign: 'left', color: '#e2e8f0', lineHeight: '1.7' }}>{`Webhook API Example:
 
 Setting up Webhook (Registration):
 POST /api/webhooks/register
@@ -1785,11 +2081,12 @@ Response Expected: 200 OK`}</pre>
                                 {/* Comparison Table */}
                                 <div style={{ marginBottom: '25px' }}>
                                     <h4 style={{
-                                        color: '#00416A',
+                                        color: '#1e293b',
                                         fontSize: '20px',
                                         marginBottom: '12px',
                                         fontWeight: '600',
-                                        textAlign: 'left'
+                                        textAlign: 'left',
+                                        letterSpacing: '-0.01em'
                                     }}>
                                         API Types Comparison
                                     </h4>
@@ -1860,7 +2157,7 @@ Response Expected: 200 OK`}</pre>
 
                             {/* Prerequisites for API Testing */}
                             <div style={{ marginBottom: '30px' }}>
-                                <h3 style={{
+                                <h3 id="prerequisites-api-testing" style={{
                                     color: '#00416A',
                                     fontSize: '22px',
                                     marginBottom: '15px',
@@ -1878,27 +2175,79 @@ Response Expected: 200 OK`}</pre>
                                 }}>
                                     Before starting API testing, you should have knowledge and understanding of:
                                 </p>
-                                <ul style={{
-                                    fontSize: '16px',
-                                    lineHeight: '1.8',
-                                    color: '#333333',
-                                    paddingLeft: '20px',
-                                    textAlign: 'left',
-                                    marginBottom: '15px'
+                                <div style={{
+                                    backgroundColor: '#ffffff',
+                                    padding: '20px',
+                                    borderRadius: '8px',
+                                    border: '1px solid #e0e0e0',
+                                    marginTop: '10px',
+                                    marginBottom: '16px',
+                                    overflowX: 'auto'
                                 }}>
-                                    <li><strong>HTTP Protocol:</strong> Understanding of HTTP methods (GET, POST, PUT, DELETE, PATCH), status codes, headers, and request/response structure</li>
-                                    <li><strong>REST API Concepts:</strong> Understanding REST principles, resources, endpoints, and stateless communication</li>
-                                    <li><strong>JSON/XML:</strong> Knowledge of data formats used in API requests and responses</li>
-                                    <li><strong>API Documentation:</strong> Ability to read and understand API documentation (OpenAPI/Swagger, API Blueprint)</li>
-                                    <li><strong>Authentication Methods:</strong> Understanding of API authentication (API keys, OAuth, JWT tokens, Basic Auth)</li>
-                                    <li><strong>Testing Fundamentals:</strong> Basic understanding of testing concepts (test cases, assertions, test data)</li>
-                                    <li><strong>Command Line:</strong> Basic command-line knowledge for tools like Newman, cURL, or CLI-based testing</li>
-                                    <li><strong>Programming Basics (for code-based testing):</strong> Knowledge of at least one programming language (JavaScript, Python, Java, etc.) if using code-based tools</li>
-                                    <li><strong>Network Concepts:</strong> Basic understanding of client-server architecture, URLs, endpoints, and ports</li>
-                                    <li><strong>API Testing Tools:</strong> Familiarity with at least one API testing tool (Postman, Insomnia, etc.)</li>
-                                    <li><strong>Version Control:</strong> Basic Git knowledge for managing test scripts and collections</li>
-                                    <li><strong>CI/CD Concepts:</strong> Understanding of continuous integration for automating API tests</li>
-                                </ul>
+                                    <table style={{
+                                        width: '100%',
+                                        borderCollapse: 'collapse',
+                                        fontSize: '14px',
+                                        textAlign: 'left'
+                                    }}>
+                                        <thead>
+                                            <tr style={{ backgroundColor: '#f8f9fa', borderBottom: '2px solid #00416A' }}>
+                                                <th style={{ padding: '12px', fontWeight: 'bold', color: '#00416A' }}>Topic</th>
+                                                <th style={{ padding: '12px', fontWeight: 'bold', color: '#00416A' }}>Description</th>
+                                            </tr>
+                                        </thead>
+                                        <tbody>
+                                            <tr style={{ borderBottom: '1px solid #e0e0e0' }}>
+                                                <td style={{ padding: '12px', fontWeight: '600' }}>HTTP Protocol</td>
+                                                <td style={{ padding: '12px' }}>HTTP methods (GET, POST, PUT, DELETE, PATCH), status codes, headers, request/response structure</td>
+                                            </tr>
+                                            <tr style={{ borderBottom: '1px solid #e0e0e0', backgroundColor: '#f8f9fa' }}>
+                                                <td style={{ padding: '12px', fontWeight: '600' }}>REST API Concepts</td>
+                                                <td style={{ padding: '12px' }}>REST principles, resources, endpoints, stateless communication</td>
+                                            </tr>
+                                            <tr style={{ borderBottom: '1px solid #e0e0e0' }}>
+                                                <td style={{ padding: '12px', fontWeight: '600' }}>JSON/XML</td>
+                                                <td style={{ padding: '12px' }}>Data formats used in API requests and responses</td>
+                                            </tr>
+                                            <tr style={{ borderBottom: '1px solid #e0e0e0', backgroundColor: '#f8f9fa' }}>
+                                                <td style={{ padding: '12px', fontWeight: '600' }}>API Documentation</td>
+                                                <td style={{ padding: '12px' }}>OpenAPI/Swagger, API Blueprint</td>
+                                            </tr>
+                                            <tr style={{ borderBottom: '1px solid #e0e0e0' }}>
+                                                <td style={{ padding: '12px', fontWeight: '600' }}>Authentication Methods</td>
+                                                <td style={{ padding: '12px' }}>API keys, OAuth, JWT tokens, Basic Auth</td>
+                                            </tr>
+                                            <tr style={{ borderBottom: '1px solid #e0e0e0', backgroundColor: '#f8f9fa' }}>
+                                                <td style={{ padding: '12px', fontWeight: '600' }}>Testing Fundamentals</td>
+                                                <td style={{ padding: '12px' }}>Test cases, assertions, test data</td>
+                                            </tr>
+                                            <tr style={{ borderBottom: '1px solid #e0e0e0' }}>
+                                                <td style={{ padding: '12px', fontWeight: '600' }}>Command Line</td>
+                                                <td style={{ padding: '12px' }}>Newman, cURL, CLI-based testing</td>
+                                            </tr>
+                                            <tr style={{ borderBottom: '1px solid #e0e0e0', backgroundColor: '#f8f9fa' }}>
+                                                <td style={{ padding: '12px', fontWeight: '600' }}>Programming Basics</td>
+                                                <td style={{ padding: '12px' }}>JavaScript, Python, Java, etc. for code-based tools</td>
+                                            </tr>
+                                            <tr style={{ borderBottom: '1px solid #e0e0e0' }}>
+                                                <td style={{ padding: '12px', fontWeight: '600' }}>Network Concepts</td>
+                                                <td style={{ padding: '12px' }}>Client-server architecture, URLs, endpoints, ports</td>
+                                            </tr>
+                                            <tr style={{ borderBottom: '1px solid #e0e0e0', backgroundColor: '#f8f9fa' }}>
+                                                <td style={{ padding: '12px', fontWeight: '600' }}>API Testing Tools</td>
+                                                <td style={{ padding: '12px' }}>Postman, Insomnia, etc.</td>
+                                            </tr>
+                                            <tr style={{ borderBottom: '1px solid #e0e0e0' }}>
+                                                <td style={{ padding: '12px', fontWeight: '600' }}>Version Control</td>
+                                                <td style={{ padding: '12px' }}>Git for test scripts and collections</td>
+                                            </tr>
+                                            <tr style={{ borderBottom: '1px solid #e0e0e0', backgroundColor: '#f8f9fa' }}>
+                                                <td style={{ padding: '12px', fontWeight: '600' }}>CI/CD Concepts</td>
+                                                <td style={{ padding: '12px' }}>Continuous integration for automating API tests</td>
+                                            </tr>
+                                        </tbody>
+                                    </table>
+                                </div>
                             </div>
                         </div>
                     )}
@@ -1907,13 +2256,71 @@ Response Expected: 200 OK`}</pre>
 
             {/* API Testing Getting Started Section */}
             <div style={leftAlignStyles.mainContent}>
-                <h2 style={leftAlignStyles.sectionHeading}>
-                    API Testing Getting Started
-                </h2>
+                <div style={{
+                    backgroundColor: '#ffffff',
+                    padding: '32px',
+                    borderRadius: '16px',
+                    marginBottom: '32px',
+                    boxShadow: '0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06)',
+                    border: '1px solid rgba(226, 232, 240, 0.8)',
+                    transition: 'all 0.3s cubic-bezier(0.4, 0, 0.2, 1)'
+                }}
+                onMouseEnter={(e) => {
+                    e.currentTarget.style.boxShadow = '0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05)';
+                    e.currentTarget.style.transform = 'translateY(-2px)';
+                }}
+                onMouseLeave={(e) => {
+                    e.currentTarget.style.boxShadow = '0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06)';
+                    e.currentTarget.style.transform = 'translateY(0)';
+                }}
+                >
+                    <div
+                        onClick={() => setIsGettingStartedExpanded(!isGettingStartedExpanded)}
+                        style={{
+                            cursor: 'pointer',
+                            display: 'flex',
+                            justifyContent: 'space-between',
+                            alignItems: 'center',
+                            paddingBottom: isGettingStartedExpanded ? '15px' : '0',
+                            borderBottom: isGettingStartedExpanded ? '2px solid #00416A' : 'none',
+                            transition: 'all 0.3s ease'
+                        }}
+                        onMouseEnter={(e) => {
+                            if (!isGettingStartedExpanded) {
+                                e.currentTarget.style.backgroundColor = '#f0f7fa';
+                            }
+                        }}
+                        onMouseLeave={(e) => {
+                            if (!isGettingStartedExpanded) {
+                                e.currentTarget.style.backgroundColor = 'transparent';
+                            }
+                        }}
+                    >
+                        <h2 id="api-testing-getting-started" style={{
+                            ...leftAlignStyles.sectionHeading,
+                            marginBottom: 0,
+                            color: '#00416A'
+                        }}>
+                            API Testing Getting Started
+                        </h2>
+                        <span style={{
+                            fontSize: '32px',
+                            color: '#00416A',
+                            fontWeight: 'bold',
+                            marginLeft: '20px',
+                            flexShrink: 0,
+                            transition: 'transform 0.3s ease'
+                        }}>
+                            {isGettingStartedExpanded ? '−' : '+'}
+                        </span>
+                    </div>
+
+                    {isGettingStartedExpanded && (
+                        <div style={{ marginTop: '24px', animation: 'fadeIn 0.3s ease' }}>
 
                 {/* What is RESTful API */}
                 <div style={{ marginBottom: '30px' }}>
-                    <h3 style={{
+                    <h3 id="what-is-restful-api" style={{
                         color: '#00416A',
                         fontSize: '22px',
                         marginBottom: '15px',
@@ -1976,10 +2383,86 @@ Response Expected: 200 OK`}</pre>
                     }}>
                         RESTful APIs use standard HTTP methods to perform operations on resources. Each method has a specific purpose and meaning:
                     </p>
+                    <div style={{
+                        backgroundColor: '#ffffff',
+                        padding: '20px',
+                        borderRadius: '8px',
+                        border: '1px solid #e0e0e0',
+                        marginBottom: '25px',
+                        overflowX: 'auto'
+                    }}>
+                        <table style={{
+                            width: '100%',
+                            borderCollapse: 'collapse',
+                            fontSize: '14px',
+                            textAlign: 'left'
+                        }}>
+                            <thead>
+                                <tr style={{ backgroundColor: '#f8f9fa', borderBottom: '2px solid #00416A' }}>
+                                    <th style={{ padding: '12px', fontWeight: 'bold', color: '#00416A' }}>Method</th>
+                                    <th style={{ padding: '12px', fontWeight: 'bold', color: '#00416A' }}>Purpose</th>
+                                    <th style={{ padding: '12px', fontWeight: 'bold', color: '#00416A' }}>Idempotent</th>
+                                    <th style={{ padding: '12px', fontWeight: 'bold', color: '#00416A' }}>Safe</th>
+                                    <th style={{ padding: '12px', fontWeight: 'bold', color: '#00416A' }}>Request Body</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr style={{ borderBottom: '1px solid #e0e0e0' }}>
+                                    <td style={{ padding: '12px', fontWeight: '600' }}>GET</td>
+                                    <td style={{ padding: '12px' }}>Retrieve data</td>
+                                    <td style={{ padding: '12px' }}>Yes</td>
+                                    <td style={{ padding: '12px' }}>Yes</td>
+                                    <td style={{ padding: '12px' }}>No</td>
+                                </tr>
+                                <tr style={{ borderBottom: '1px solid #e0e0e0', backgroundColor: '#f8f9fa' }}>
+                                    <td style={{ padding: '12px', fontWeight: '600' }}>POST</td>
+                                    <td style={{ padding: '12px' }}>Create new resource</td>
+                                    <td style={{ padding: '12px' }}>No</td>
+                                    <td style={{ padding: '12px' }}>No</td>
+                                    <td style={{ padding: '12px' }}>Yes</td>
+                                </tr>
+                                <tr style={{ borderBottom: '1px solid #e0e0e0' }}>
+                                    <td style={{ padding: '12px', fontWeight: '600' }}>PUT</td>
+                                    <td style={{ padding: '12px' }}>Update/replace resource</td>
+                                    <td style={{ padding: '12px' }}>Yes</td>
+                                    <td style={{ padding: '12px' }}>No</td>
+                                    <td style={{ padding: '12px' }}>Yes</td>
+                                </tr>
+                                <tr style={{ borderBottom: '1px solid #e0e0e0', backgroundColor: '#f8f9fa' }}>
+                                    <td style={{ padding: '12px', fontWeight: '600' }}>PATCH</td>
+                                    <td style={{ padding: '12px' }}>Partial update</td>
+                                    <td style={{ padding: '12px' }}>Yes</td>
+                                    <td style={{ padding: '12px' }}>No</td>
+                                    <td style={{ padding: '12px' }}>Yes</td>
+                                </tr>
+                                <tr style={{ borderBottom: '1px solid #e0e0e0' }}>
+                                    <td style={{ padding: '12px', fontWeight: '600' }}>DELETE</td>
+                                    <td style={{ padding: '12px' }}>Remove resource</td>
+                                    <td style={{ padding: '12px' }}>Yes</td>
+                                    <td style={{ padding: '12px' }}>No</td>
+                                    <td style={{ padding: '12px' }}>No</td>
+                                </tr>
+                                <tr style={{ borderBottom: '1px solid #e0e0e0', backgroundColor: '#f8f9fa' }}>
+                                    <td style={{ padding: '12px', fontWeight: '600' }}>OPTIONS</td>
+                                    <td style={{ padding: '12px' }}>Get allowed methods</td>
+                                    <td style={{ padding: '12px' }}>Yes</td>
+                                    <td style={{ padding: '12px' }}>Yes</td>
+                                    <td style={{ padding: '12px' }}>No</td>
+                                </tr>
+                                <tr style={{ borderBottom: '1px solid #e0e0e0' }}>
+                                    <td style={{ padding: '12px', fontWeight: '600' }}>HEAD</td>
+                                    <td style={{ padding: '12px' }}>Get headers only</td>
+                                    <td style={{ padding: '12px' }}>Yes</td>
+                                    <td style={{ padding: '12px' }}>Yes</td>
+                                    <td style={{ padding: '12px' }}>No</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
 
                     {/* GET Method */}
                     <div style={{ marginBottom: '25px' }}>
-                        <h4 style={{
+                        <h4 id="get-method" style={{
                             color: '#00416A',
                             fontSize: '20px',
                             marginBottom: '12px',
@@ -2101,7 +2584,7 @@ Response: 201 Created
 
                     {/* PUT Method */}
                     <div style={{ marginBottom: '25px' }}>
-                        <h4 style={{
+                        <h4 id="put-method" style={{
                             color: '#00416A',
                             fontSize: '20px',
                             marginBottom: '12px',
@@ -2230,7 +2713,7 @@ Response: 200 OK
 
                     {/* DELETE Method */}
                     <div style={{ marginBottom: '25px' }}>
-                        <h4 style={{
+                        <h4 id="delete-method" style={{
                             color: '#00416A',
                             fontSize: '20px',
                             marginBottom: '12px',
@@ -2328,7 +2811,7 @@ Headers:
 
                     {/* HEAD Method */}
                     <div style={{ marginBottom: '25px' }}>
-                        <h4 style={{
+                        <h4 id="head-method" style={{
                             color: '#00416A',
                             fontSize: '20px',
                             marginBottom: '12px',
@@ -2371,7 +2854,7 @@ Headers:
 
                 {/* Components Needed for RESTful API Testing */}
                 <div style={{ marginBottom: '30px' }}>
-                    <h3 style={{
+                    <h3 id="components-needed-restful" style={{
                         color: '#00416A',
                         fontSize: '22px',
                         marginBottom: '15px',
@@ -2454,7 +2937,7 @@ Breakdown:
 
                     {/* Parameters - Query and Path */}
                     <div style={{ marginBottom: '25px' }}>
-                        <h4 style={{
+                        <h4 id="parameters-query-path" style={{
                             color: '#00416A',
                             fontSize: '20px',
                             marginBottom: '12px',
@@ -2539,7 +3022,7 @@ Path Parameter: userId = 123`}</pre>
 
                         {/* Query Parameters */}
                         <div style={{ marginBottom: '20px' }}>
-                            <h5 style={{
+                            <h5 id="query-parameters" style={{
                                 color: '#00416A',
                                 fontSize: '18px',
                                 marginBottom: '10px',
@@ -2637,7 +3120,7 @@ Query Parameters: status = published, sort = date, order = desc`}</pre>
 
                         {/* Basic Auth */}
                         <div style={{ marginBottom: '20px' }}>
-                            <h5 style={{
+                            <h5 id="basic-authentication" style={{
                                 color: '#00416A',
                                 fontSize: '18px',
                                 marginBottom: '10px',
@@ -2687,7 +3170,7 @@ Password: password`}</pre>
 
                         {/* Bearer Token / API Key */}
                         <div style={{ marginBottom: '20px' }}>
-                            <h5 style={{
+                            <h5 id="bearer-token-api-key" style={{
                                 color: '#00416A',
                                 fontSize: '18px',
                                 marginBottom: '10px',
@@ -2802,7 +3285,7 @@ Headers:
 
                         {/* JWT */}
                         <div style={{ marginBottom: '20px' }}>
-                            <h5 style={{
+                            <h5 id="jwt-token" style={{
                                 color: '#00416A',
                                 fontSize: '18px',
                                 marginBottom: '10px',
@@ -2905,7 +3388,7 @@ Password: password`}</pre>
 
                         {/* API Key in Query */}
                         <div style={{ marginBottom: '20px' }}>
-                            <h5 style={{
+                            <h5 id="api-key-query-parameter" style={{
                                 color: '#00416A',
                                 fontSize: '18px',
                                 marginBottom: '10px',
@@ -3045,7 +3528,7 @@ Body:
 
                         {/* XML Body */}
                         <div style={{ marginBottom: '20px' }}>
-                            <h5 style={{
+                            <h5 id="xml-request-body" style={{
                                 color: '#00416A',
                                 fontSize: '18px',
                                 marginBottom: '10px',
@@ -3157,7 +3640,7 @@ Key: avatar, Type: File, Value: [Select File]`}</pre>
 
                         {/* URL Encoded */}
                         <div style={{ marginBottom: '20px' }}>
-                            <h5 style={{
+                            <h5 id="url-encoded-request-body" style={{
                                 color: '#00416A',
                                 fontSize: '18px',
                                 marginBottom: '10px',
@@ -3211,30 +3694,600 @@ Key: role, Value: developer`}</pre>
                     </div>
                 </div>
 
+                {/* HTTP Status Codes */}
+                <div style={{ marginBottom: '30px' }}>
+                    <div
+                        onClick={() => setIsStatusCodesExpanded(!isStatusCodesExpanded)}
+                        style={{
+                            cursor: 'pointer',
+                            display: 'flex',
+                            justifyContent: 'space-between',
+                            alignItems: 'center',
+                            paddingBottom: isStatusCodesExpanded ? '15px' : '0',
+                            borderBottom: isStatusCodesExpanded ? '2px solid #00416A' : 'none',
+                            transition: 'all 0.3s ease',
+                            marginBottom: '15px'
+                        }}
+                        onMouseEnter={(e) => {
+                            if (!isStatusCodesExpanded) {
+                                e.currentTarget.style.backgroundColor = '#f0f7fa';
+                            }
+                        }}
+                        onMouseLeave={(e) => {
+                            if (!isStatusCodesExpanded) {
+                                e.currentTarget.style.backgroundColor = 'transparent';
+                            }
+                        }}
+                    >
+                        <h3 style={{
+                            color: '#00416A',
+                            fontSize: '22px',
+                            marginBottom: 0,
+                            fontWeight: 'bold',
+                            textAlign: 'left'
+                        }}>
+                            HTTP Status Codes
+                        </h3>
+                        <span style={{
+                            fontSize: '28px',
+                            color: '#00416A',
+                            fontWeight: 'bold',
+                            marginLeft: '20px',
+                            flexShrink: 0,
+                            transition: 'transform 0.3s ease'
+                        }}>
+                            {isStatusCodesExpanded ? '−' : '+'}
+                        </span>
+                    </div>
+
+                    {isStatusCodesExpanded && (
+                        <div>
+                            <p style={{
+                                fontSize: '16px',
+                                lineHeight: '1.8',
+                                color: '#333333',
+                                textAlign: 'left',
+                                marginBottom: '15px'
+                            }}>
+                                HTTP status codes are three-digit numbers returned by the server to indicate the result of a request. Understanding these codes is essential for API testing as they tell you whether a request succeeded, failed, or needs further action.
+                            </p>
+
+                    {/* 2xx Success Codes */}
+                    <div style={{ marginBottom: '25px' }}>
+                        <h4 id="2xx-success-codes" style={{
+                            color: '#00416A',
+                            fontSize: '20px',
+                            marginBottom: '12px',
+                            fontWeight: '600',
+                            textAlign: 'left'
+                        }}>
+                            2xx Success Codes
+                        </h4>
+                        <p style={{
+                            fontSize: '16px',
+                            lineHeight: '1.8',
+                            color: '#333333',
+                            textAlign: 'left',
+                            marginBottom: '15px'
+                        }}>
+                            These codes indicate that the request was successfully received, understood, and accepted.
+                        </p>
+                        <div style={{
+                            backgroundColor: '#ffffff',
+                            padding: '20px',
+                            borderRadius: '8px',
+                            border: '1px solid #e0e0e0',
+                            marginTop: '15px',
+                            overflowX: 'auto'
+                        }}>
+                            <table style={{
+                                width: '100%',
+                                borderCollapse: 'collapse',
+                                fontSize: '14px',
+                                textAlign: 'left'
+                            }}>
+                                <thead>
+                                    <tr style={{ backgroundColor: '#f8f9fa', borderBottom: '2px solid #00416A' }}>
+                                        <th style={{ padding: '12px', fontWeight: 'bold', color: '#00416A' }}>Code</th>
+                                        <th style={{ padding: '12px', fontWeight: 'bold', color: '#00416A' }}>Name</th>
+                                        <th style={{ padding: '12px', fontWeight: 'bold', color: '#00416A' }}>Description</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr style={{ borderBottom: '1px solid #e0e0e0' }}>
+                                        <td style={{ padding: '12px', fontWeight: 'bold' }}>200</td>
+                                        <td style={{ padding: '12px' }}>OK</td>
+                                        <td style={{ padding: '12px' }}>Request succeeded. The response body contains the requested resource.</td>
+                                    </tr>
+                                    <tr style={{ borderBottom: '1px solid #e0e0e0', backgroundColor: '#f8f9fa' }}>
+                                        <td style={{ padding: '12px', fontWeight: 'bold' }}>201</td>
+                                        <td style={{ padding: '12px' }}>Created</td>
+                                        <td style={{ padding: '12px' }}>Request succeeded and a new resource was created. Typically used for POST requests.</td>
+                                    </tr>
+                                    <tr style={{ borderBottom: '1px solid #e0e0e0' }}>
+                                        <td style={{ padding: '12px', fontWeight: 'bold' }}>202</td>
+                                        <td style={{ padding: '12px' }}>Accepted</td>
+                                        <td style={{ padding: '12px' }}>Request accepted for processing, but processing has not been completed.</td>
+                                    </tr>
+                                    <tr style={{ borderBottom: '1px solid #e0e0e0', backgroundColor: '#f8f9fa' }}>
+                                        <td style={{ padding: '12px', fontWeight: 'bold' }}>204</td>
+                                        <td style={{ padding: '12px' }}>No Content</td>
+                                        <td style={{ padding: '12px' }}>Request succeeded but there is no content to return. Commonly used for DELETE requests.</td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+
+                    {/* 3xx Redirection Codes */}
+                    <div style={{ marginBottom: '25px' }}>
+                        <h4 id="3xx-redirection-codes" style={{
+                            color: '#00416A',
+                            fontSize: '20px',
+                            marginBottom: '12px',
+                            fontWeight: '600',
+                            textAlign: 'left'
+                        }}>
+                            3xx Redirection Codes
+                        </h4>
+                        <p style={{
+                            fontSize: '16px',
+                            lineHeight: '1.8',
+                            color: '#333333',
+                            textAlign: 'left',
+                            marginBottom: '15px'
+                        }}>
+                            These codes indicate that further action needs to be taken to complete the request.
+                        </p>
+                        <div style={{
+                            backgroundColor: '#ffffff',
+                            padding: '20px',
+                            borderRadius: '8px',
+                            border: '1px solid #e0e0e0',
+                            marginTop: '15px',
+                            overflowX: 'auto'
+                        }}>
+                            <table style={{
+                                width: '100%',
+                                borderCollapse: 'collapse',
+                                fontSize: '14px',
+                                textAlign: 'left'
+                            }}>
+                                <thead>
+                                    <tr style={{ backgroundColor: '#f8f9fa', borderBottom: '2px solid #00416A' }}>
+                                        <th style={{ padding: '12px', fontWeight: 'bold', color: '#00416A' }}>Code</th>
+                                        <th style={{ padding: '12px', fontWeight: 'bold', color: '#00416A' }}>Name</th>
+                                        <th style={{ padding: '12px', fontWeight: 'bold', color: '#00416A' }}>Description</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr style={{ borderBottom: '1px solid #e0e0e0' }}>
+                                        <td style={{ padding: '12px', fontWeight: 'bold' }}>301</td>
+                                        <td style={{ padding: '12px' }}>Moved Permanently</td>
+                                        <td style={{ padding: '12px' }}>Resource has been permanently moved to a new URL.</td>
+                                    </tr>
+                                    <tr style={{ borderBottom: '1px solid #e0e0e0', backgroundColor: '#f8f9fa' }}>
+                                        <td style={{ padding: '12px', fontWeight: 'bold' }}>302</td>
+                                        <td style={{ padding: '12px' }}>Found</td>
+                                        <td style={{ padding: '12px' }}>Resource temporarily moved to a different URL.</td>
+                                    </tr>
+                                    <tr style={{ borderBottom: '1px solid #e0e0e0' }}>
+                                        <td style={{ padding: '12px', fontWeight: 'bold' }}>304</td>
+                                        <td style={{ padding: '12px' }}>Not Modified</td>
+                                        <td style={{ padding: '12px' }}>Resource has not been modified since the last request. Used for caching.</td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+
+                    {/* 4xx Client Error Codes */}
+                    <div style={{ marginBottom: '25px' }}>
+                        <h4 style={{
+                            color: '#00416A',
+                            fontSize: '20px',
+                            marginBottom: '12px',
+                            fontWeight: '600',
+                            textAlign: 'left'
+                        }}>
+                            4xx Client Error Codes
+                        </h4>
+                        <p style={{
+                            fontSize: '16px',
+                            lineHeight: '1.8',
+                            color: '#333333',
+                            textAlign: 'left',
+                            marginBottom: '15px'
+                        }}>
+                            These codes indicate that the client made an error in the request. The request should not be repeated without modification.
+                        </p>
+                        <div style={{
+                            backgroundColor: '#ffffff',
+                            padding: '20px',
+                            borderRadius: '8px',
+                            border: '1px solid #e0e0e0',
+                            marginTop: '15px',
+                            overflowX: 'auto'
+                        }}>
+                            <table style={{
+                                width: '100%',
+                                borderCollapse: 'collapse',
+                                fontSize: '14px',
+                                textAlign: 'left'
+                            }}>
+                                <thead>
+                                    <tr style={{ backgroundColor: '#f8f9fa', borderBottom: '2px solid #00416A' }}>
+                                        <th style={{ padding: '12px', fontWeight: 'bold', color: '#00416A' }}>Code</th>
+                                        <th style={{ padding: '12px', fontWeight: 'bold', color: '#00416A' }}>Name</th>
+                                        <th style={{ padding: '12px', fontWeight: 'bold', color: '#00416A' }}>Description</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr style={{ borderBottom: '1px solid #e0e0e0' }}>
+                                        <td style={{ padding: '12px', fontWeight: 'bold' }}>400</td>
+                                        <td style={{ padding: '12px' }}>Bad Request</td>
+                                        <td style={{ padding: '12px' }}>Request is malformed or invalid. Check request syntax, headers, and body.</td>
+                                    </tr>
+                                    <tr style={{ borderBottom: '1px solid #e0e0e0', backgroundColor: '#f8f9fa' }}>
+                                        <td style={{ padding: '12px', fontWeight: 'bold' }}>401</td>
+                                        <td style={{ padding: '12px' }}>Unauthorized</td>
+                                        <td style={{ padding: '12px' }}>Authentication required or authentication credentials are invalid.</td>
+                                    </tr>
+                                    <tr style={{ borderBottom: '1px solid #e0e0e0' }}>
+                                        <td style={{ padding: '12px', fontWeight: 'bold' }}>403</td>
+                                        <td style={{ padding: '12px' }}>Forbidden</td>
+                                        <td style={{ padding: '12px' }}>Server understood the request but refuses to authorize it. User lacks permissions.</td>
+                                    </tr>
+                                    <tr style={{ borderBottom: '1px solid #e0e0e0', backgroundColor: '#f8f9fa' }}>
+                                        <td style={{ padding: '12px', fontWeight: 'bold' }}>404</td>
+                                        <td style={{ padding: '12px' }}>Not Found</td>
+                                        <td style={{ padding: '12px' }}>Requested resource does not exist on the server.</td>
+                                    </tr>
+                                    <tr style={{ borderBottom: '1px solid #e0e0e0' }}>
+                                        <td style={{ padding: '12px', fontWeight: 'bold' }}>405</td>
+                                        <td style={{ padding: '12px' }}>Method Not Allowed</td>
+                                        <td style={{ padding: '12px' }}>HTTP method used is not allowed for this endpoint (e.g., using POST on a GET-only endpoint).</td>
+                                    </tr>
+                                    <tr style={{ borderBottom: '1px solid #e0e0e0', backgroundColor: '#f8f9fa' }}>
+                                        <td style={{ padding: '12px', fontWeight: 'bold' }}>409</td>
+                                        <td style={{ padding: '12px' }}>Conflict</td>
+                                        <td style={{ padding: '12px' }}>Request conflicts with current state of the server (e.g., duplicate resource creation).</td>
+                                    </tr>
+                                    <tr style={{ borderBottom: '1px solid #e0e0e0' }}>
+                                        <td style={{ padding: '12px', fontWeight: 'bold' }}>422</td>
+                                        <td style={{ padding: '12px' }}>Unprocessable Entity</td>
+                                        <td style={{ padding: '12px' }}>Request is well-formed but contains semantic errors or validation failures.</td>
+                                    </tr>
+                                    <tr style={{ borderBottom: '1px solid #e0e0e0', backgroundColor: '#f8f9fa' }}>
+                                        <td style={{ padding: '12px', fontWeight: 'bold' }}>429</td>
+                                        <td style={{ padding: '12px' }}>Too Many Requests</td>
+                                        <td style={{ padding: '12px' }}>Client has sent too many requests in a given amount of time (rate limiting).</td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+
+                    {/* 5xx Server Error Codes */}
+                    <div style={{ marginBottom: '25px' }}>
+                        <h4 id="5xx-server-error-codes" style={{
+                            color: '#00416A',
+                            fontSize: '20px',
+                            marginBottom: '12px',
+                            fontWeight: '600',
+                            textAlign: 'left'
+                        }}>
+                            5xx Server Error Codes
+                        </h4>
+                        <p style={{
+                            fontSize: '16px',
+                            lineHeight: '1.8',
+                            color: '#333333',
+                            textAlign: 'left',
+                            marginBottom: '15px'
+                        }}>
+                            These codes indicate that the server encountered an error and was unable to fulfill the request.
+                        </p>
+                        <div style={{
+                            backgroundColor: '#ffffff',
+                            padding: '20px',
+                            borderRadius: '8px',
+                            border: '1px solid #e0e0e0',
+                            marginTop: '15px',
+                            overflowX: 'auto'
+                        }}>
+                            <table style={{
+                                width: '100%',
+                                borderCollapse: 'collapse',
+                                fontSize: '14px',
+                                textAlign: 'left'
+                            }}>
+                                <thead>
+                                    <tr style={{ backgroundColor: '#f8f9fa', borderBottom: '2px solid #00416A' }}>
+                                        <th style={{ padding: '12px', fontWeight: 'bold', color: '#00416A' }}>Code</th>
+                                        <th style={{ padding: '12px', fontWeight: 'bold', color: '#00416A' }}>Name</th>
+                                        <th style={{ padding: '12px', fontWeight: 'bold', color: '#00416A' }}>Description</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr style={{ borderBottom: '1px solid #e0e0e0' }}>
+                                        <td style={{ padding: '12px', fontWeight: 'bold' }}>500</td>
+                                        <td style={{ padding: '12px' }}>Internal Server Error</td>
+                                        <td style={{ padding: '12px' }}>Generic server error. Something went wrong on the server side.</td>
+                                    </tr>
+                                    <tr style={{ borderBottom: '1px solid #e0e0e0', backgroundColor: '#f8f9fa' }}>
+                                        <td style={{ padding: '12px', fontWeight: 'bold' }}>501</td>
+                                        <td style={{ padding: '12px' }}>Not Implemented</td>
+                                        <td style={{ padding: '12px' }}>Server does not support the functionality required to fulfill the request.</td>
+                                    </tr>
+                                    <tr style={{ borderBottom: '1px solid #e0e0e0' }}>
+                                        <td style={{ padding: '12px', fontWeight: 'bold' }}>502</td>
+                                        <td style={{ padding: '12px' }}>Bad Gateway</td>
+                                        <td style={{ padding: '12px' }}>Server acting as gateway received an invalid response from upstream server.</td>
+                                    </tr>
+                                    <tr style={{ borderBottom: '1px solid #e0e0e0', backgroundColor: '#f8f9fa' }}>
+                                        <td style={{ padding: '12px', fontWeight: 'bold' }}>503</td>
+                                        <td style={{ padding: '12px' }}>Service Unavailable</td>
+                                        <td style={{ padding: '12px' }}>Server is temporarily unavailable (overloaded or under maintenance).</td>
+                                    </tr>
+                                    <tr style={{ borderBottom: '1px solid #e0e0e0' }}>
+                                        <td style={{ padding: '12px', fontWeight: 'bold' }}>504</td>
+                                        <td style={{ padding: '12px' }}>Gateway Timeout</td>
+                                        <td style={{ padding: '12px' }}>Server acting as gateway did not receive a timely response from upstream server.</td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+
+                    {/* Status Code Usage Examples */}
+                    <div style={{ marginBottom: '25px' }}>
+                        <h4 id="common-status-code-examples" style={{
+                            color: '#00416A',
+                            fontSize: '20px',
+                            marginBottom: '12px',
+                            fontWeight: '600',
+                            textAlign: 'left'
+                        }}>
+                            Common Status Code Usage Examples
+                        </h4>
+                        <div style={{
+                            backgroundColor: '#ffffff',
+                            padding: '20px',
+                            borderRadius: '8px',
+                            border: '1px solid #e0e0e0',
+                            marginTop: '15px',
+                            overflowX: 'auto'
+                        }}>
+                            <table style={{
+                                width: '100%',
+                                borderCollapse: 'collapse',
+                                fontSize: '14px',
+                                textAlign: 'left'
+                            }}>
+                                <thead>
+                                    <tr style={{ backgroundColor: '#f8f9fa', borderBottom: '2px solid #00416A' }}>
+                                        <th style={{ padding: '12px', fontWeight: 'bold', color: '#00416A' }}>Scenario</th>
+                                        <th style={{ padding: '12px', fontWeight: 'bold', color: '#00416A' }}>Request / Condition</th>
+                                        <th style={{ padding: '12px', fontWeight: 'bold', color: '#00416A' }}>Expected Status</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr style={{ borderBottom: '1px solid #e0e0e0', backgroundColor: '#f0fdf4' }}>
+                                        <td style={{ padding: '12px', fontWeight: '600' }}>Success</td>
+                                        <td style={{ padding: '12px', fontFamily: 'monospace', fontSize: '13px' }}>GET /api/users/1</td>
+                                        <td style={{ padding: '12px' }}>200 OK</td>
+                                    </tr>
+                                    <tr style={{ borderBottom: '1px solid #e0e0e0', backgroundColor: '#f0fdf4' }}>
+                                        <td style={{ padding: '12px', fontWeight: '600' }}>Success</td>
+                                        <td style={{ padding: '12px', fontFamily: 'monospace', fontSize: '13px' }}>POST /api/users</td>
+                                        <td style={{ padding: '12px' }}>201 Created</td>
+                                    </tr>
+                                    <tr style={{ borderBottom: '1px solid #e0e0e0', backgroundColor: '#f0fdf4' }}>
+                                        <td style={{ padding: '12px', fontWeight: '600' }}>Success</td>
+                                        <td style={{ padding: '12px', fontFamily: 'monospace', fontSize: '13px' }}>PUT /api/users/1</td>
+                                        <td style={{ padding: '12px' }}>200 OK</td>
+                                    </tr>
+                                    <tr style={{ borderBottom: '1px solid #e0e0e0', backgroundColor: '#f0fdf4' }}>
+                                        <td style={{ padding: '12px', fontWeight: '600' }}>Success</td>
+                                        <td style={{ padding: '12px', fontFamily: 'monospace', fontSize: '13px' }}>DELETE /api/users/1</td>
+                                        <td style={{ padding: '12px' }}>204 No Content</td>
+                                    </tr>
+                                    <tr style={{ borderBottom: '1px solid #e0e0e0' }}>
+                                        <td style={{ padding: '12px', fontWeight: '600' }}>Client Error</td>
+                                        <td style={{ padding: '12px', fontFamily: 'monospace', fontSize: '13px' }}>GET /api/users/999 (not found)</td>
+                                        <td style={{ padding: '12px' }}>404 Not Found</td>
+                                    </tr>
+                                    <tr style={{ borderBottom: '1px solid #e0e0e0', backgroundColor: '#f8f9fa' }}>
+                                        <td style={{ padding: '12px', fontWeight: '600' }}>Client Error</td>
+                                        <td style={{ padding: '12px', fontFamily: 'monospace', fontSize: '13px' }}>POST /api/users (invalid JSON)</td>
+                                        <td style={{ padding: '12px' }}>400 Bad Request</td>
+                                    </tr>
+                                    <tr style={{ borderBottom: '1px solid #e0e0e0' }}>
+                                        <td style={{ padding: '12px', fontWeight: '600' }}>Client Error</td>
+                                        <td style={{ padding: '12px', fontFamily: 'monospace', fontSize: '13px' }}>GET /api/users (no auth)</td>
+                                        <td style={{ padding: '12px' }}>401 Unauthorized</td>
+                                    </tr>
+                                    <tr style={{ borderBottom: '1px solid #e0e0e0', backgroundColor: '#f8f9fa' }}>
+                                        <td style={{ padding: '12px', fontWeight: '600' }}>Client Error</td>
+                                        <td style={{ padding: '12px', fontFamily: 'monospace', fontSize: '13px' }}>DELETE /api/users/1 (no permission)</td>
+                                        <td style={{ padding: '12px' }}>403 Forbidden</td>
+                                    </tr>
+                                    <tr style={{ borderBottom: '1px solid #e0e0e0' }}>
+                                        <td style={{ padding: '12px', fontWeight: '600' }}>Client Error</td>
+                                        <td style={{ padding: '12px', fontFamily: 'monospace', fontSize: '13px' }}>POST /api/users (duplicate email)</td>
+                                        <td style={{ padding: '12px' }}>409 Conflict</td>
+                                    </tr>
+                                    <tr style={{ borderBottom: '1px solid #e0e0e0', backgroundColor: '#f8f9fa' }}>
+                                        <td style={{ padding: '12px', fontWeight: '600' }}>Client Error</td>
+                                        <td style={{ padding: '12px', fontFamily: 'monospace', fontSize: '13px' }}>POST /api/users (validation error)</td>
+                                        <td style={{ padding: '12px' }}>422 Unprocessable Entity</td>
+                                    </tr>
+                                    <tr style={{ borderBottom: '1px solid #e0e0e0' }}>
+                                        <td style={{ padding: '12px', fontWeight: '600' }}>Client Error</td>
+                                        <td style={{ padding: '12px', fontFamily: 'monospace', fontSize: '13px' }}>GET /api/users (rate limit exceeded)</td>
+                                        <td style={{ padding: '12px' }}>429 Too Many Requests</td>
+                                    </tr>
+                                    <tr style={{ borderBottom: '1px solid #e0e0e0', backgroundColor: '#fef2f2' }}>
+                                        <td style={{ padding: '12px', fontWeight: '600' }}>Server Error</td>
+                                        <td style={{ padding: '12px', fontFamily: 'monospace', fontSize: '13px' }}>GET /api/users (server failure)</td>
+                                        <td style={{ padding: '12px' }}>500 Internal Server Error</td>
+                                    </tr>
+                                    <tr style={{ borderBottom: '1px solid #e0e0e0', backgroundColor: '#fef2f2' }}>
+                                        <td style={{ padding: '12px', fontWeight: '600' }}>Server Error</td>
+                                        <td style={{ padding: '12px', fontFamily: 'monospace', fontSize: '13px' }}>GET /api/users (overload/maintenance)</td>
+                                        <td style={{ padding: '12px' }}>503 Service Unavailable</td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                        <div style={{
+                            backgroundColor: '#f8f9fa',
+                            padding: '15px',
+                            borderRadius: '6px',
+                            fontFamily: 'monospace',
+                            fontSize: '13px',
+                            border: '1px solid #e0e0e0',
+                            marginTop: '15px',
+                            textAlign: 'left',
+                            overflowX: 'auto'
+                        }}>
+                            <strong style={{ color: '#00416A' }}>Postman test examples:</strong>
+                            <pre style={{ margin: '10px 0 0 0', whiteSpace: 'pre-wrap', textAlign: 'left' }}>{`pm.test("Status code is 200", function () { pm.response.to.have.status(200); });
+pm.test("Status code is 201 Created", function () { pm.response.to.have.status(201); });
+pm.test("Status code is 404 Not Found", function () { pm.response.to.have.status(404); });`}</pre>
+                        </div>
+                    </div>
+                        </div>
+                    )}
+                </div>
+
                 {/* What to Verify in API Testing */}
                 <div style={{ marginBottom: '30px' }}>
-                    <h3 style={{
-                        color: '#00416A',
-                        fontSize: '22px',
-                        marginBottom: '15px',
-                        fontWeight: 'bold',
-                        textAlign: 'left'
-                    }}>
-                        What to Verify in API Testing
-                    </h3>
-                    <p style={{
-                        fontSize: '16px',
-                        lineHeight: '1.8',
-                        color: '#333333',
-                        textAlign: 'left',
-                        marginBottom: '15px'
-                    }}>
-                        When testing APIs, you need to verify various aspects to ensure the API works correctly. Here's a comprehensive list of what to check:
-                    </p>
+                    <div
+                        onClick={() => setIsVerifyExpanded(!isVerifyExpanded)}
+                        style={{
+                            cursor: 'pointer',
+                            display: 'flex',
+                            justifyContent: 'space-between',
+                            alignItems: 'center',
+                            paddingBottom: isVerifyExpanded ? '15px' : '0',
+                            borderBottom: isVerifyExpanded ? '2px solid #00416A' : 'none',
+                            transition: 'all 0.3s ease',
+                            marginBottom: '15px'
+                        }}
+                        onMouseEnter={(e) => {
+                            if (!isVerifyExpanded) {
+                                e.currentTarget.style.backgroundColor = '#f0f7fa';
+                            }
+                        }}
+                        onMouseLeave={(e) => {
+                            if (!isVerifyExpanded) {
+                                e.currentTarget.style.backgroundColor = 'transparent';
+                            }
+                        }}
+                    >
+                        <h3 id="what-to-verify-api-testing" style={{
+                            color: '#00416A',
+                            fontSize: '22px',
+                            marginBottom: 0,
+                            fontWeight: 'bold',
+                            textAlign: 'left'
+                        }}>
+                            What to Verify in API Testing
+                        </h3>
+                        <span style={{
+                            fontSize: '28px',
+                            color: '#00416A',
+                            fontWeight: 'bold',
+                            marginLeft: '20px',
+                            flexShrink: 0,
+                            transition: 'transform 0.3s ease'
+                        }}>
+                            {isVerifyExpanded ? '−' : '+'}
+                        </span>
+                    </div>
+
+                    {isVerifyExpanded && (
+                        <div>
+                            <p style={{
+                                fontSize: '16px',
+                                lineHeight: '1.8',
+                                color: '#333333',
+                                textAlign: 'left',
+                                marginBottom: '15px'
+                            }}>
+                                When testing APIs, you need to verify various aspects to ensure the API works correctly. Here's a comprehensive list of what to check:
+                            </p>
+                            <div style={{
+                                backgroundColor: '#ffffff',
+                                padding: '20px',
+                                borderRadius: '8px',
+                                border: '1px solid #e0e0e0',
+                                marginBottom: '25px',
+                                overflowX: 'auto'
+                            }}>
+                                <table style={{
+                                    width: '100%',
+                                    borderCollapse: 'collapse',
+                                    fontSize: '14px',
+                                    textAlign: 'left'
+                                }}>
+                                    <thead>
+                                        <tr style={{ backgroundColor: '#f8f9fa', borderBottom: '2px solid #00416A' }}>
+                                            <th style={{ padding: '12px', fontWeight: 'bold', color: '#00416A' }}>#</th>
+                                            <th style={{ padding: '12px', fontWeight: 'bold', color: '#00416A' }}>Verification Area</th>
+                                            <th style={{ padding: '12px', fontWeight: 'bold', color: '#00416A' }}>Description</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <tr style={{ borderBottom: '1px solid #e0e0e0' }}>
+                                            <td style={{ padding: '12px', fontWeight: '600' }}>1</td>
+                                            <td style={{ padding: '12px', fontWeight: '600' }}>HTTP Status Code</td>
+                                            <td style={{ padding: '12px' }}>Correct status code for success (2xx), client errors (4xx), server errors (5xx)</td>
+                                        </tr>
+                                        <tr style={{ borderBottom: '1px solid #e0e0e0', backgroundColor: '#f8f9fa' }}>
+                                            <td style={{ padding: '12px', fontWeight: '600' }}>2</td>
+                                            <td style={{ padding: '12px', fontWeight: '600' }}>Response Body</td>
+                                            <td style={{ padding: '12px' }}>Structure, data types, values, format (JSON/XML)</td>
+                                        </tr>
+                                        <tr style={{ borderBottom: '1px solid #e0e0e0' }}>
+                                            <td style={{ padding: '12px', fontWeight: '600' }}>3</td>
+                                            <td style={{ padding: '12px', fontWeight: '600' }}>Response Headers</td>
+                                            <td style={{ padding: '12px' }}>Content-Type, caching, security headers</td>
+                                        </tr>
+                                        <tr style={{ borderBottom: '1px solid #e0e0e0', backgroundColor: '#f8f9fa' }}>
+                                            <td style={{ padding: '12px', fontWeight: '600' }}>4</td>
+                                            <td style={{ padding: '12px', fontWeight: '600' }}>Response Time</td>
+                                            <td style={{ padding: '12px' }}>Response within acceptable latency</td>
+                                        </tr>
+                                        <tr style={{ borderBottom: '1px solid #e0e0e0' }}>
+                                            <td style={{ padding: '12px', fontWeight: '600' }}>5</td>
+                                            <td style={{ padding: '12px', fontWeight: '600' }}>Data Validation</td>
+                                            <td style={{ padding: '12px' }}>Schema, required fields, data types, constraints</td>
+                                        </tr>
+                                        <tr style={{ borderBottom: '1px solid #e0e0e0', backgroundColor: '#f8f9fa' }}>
+                                            <td style={{ padding: '12px', fontWeight: '600' }}>6</td>
+                                            <td style={{ padding: '12px', fontWeight: '600' }}>Authentication & Authorization</td>
+                                            <td style={{ padding: '12px' }}>Auth required, token validation, permission checks</td>
+                                        </tr>
+                                        <tr style={{ borderBottom: '1px solid #e0e0e0' }}>
+                                            <td style={{ padding: '12px', fontWeight: '600' }}>7</td>
+                                            <td style={{ padding: '12px', fontWeight: '600' }}>Error Handling</td>
+                                            <td style={{ padding: '12px' }}>Appropriate error codes and messages for invalid inputs</td>
+                                        </tr>
+                                        <tr style={{ borderBottom: '1px solid #e0e0e0', backgroundColor: '#f8f9fa' }}>
+                                            <td style={{ padding: '12px', fontWeight: '600' }}>8</td>
+                                            <td style={{ padding: '12px', fontWeight: '600' }}>Business Logic</td>
+                                            <td style={{ padding: '12px' }}>Correct outcomes for workflows and business rules</td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </div>
 
                     {/* Status Code Verification */}
                     <div style={{ marginBottom: '25px' }}>
-                        <h4 style={{
+                        <h4 id="http-status-code-verification" style={{
                             color: '#00416A',
                             fontSize: '20px',
                             marginBottom: '12px',
@@ -3303,7 +4356,7 @@ pm.test("Status code is 201", function () {
 
                     {/* Response Body Verification */}
                     <div style={{ marginBottom: '25px' }}>
-                        <h4 style={{
+                        <h4 id="response-body-verification" style={{
                             color: '#00416A',
                             fontSize: '20px',
                             marginBottom: '12px',
@@ -3454,7 +4507,7 @@ pm.test("Cache-Control header exists", function () {
 
                     {/* Response Time Verification */}
                     <div style={{ marginBottom: '25px' }}>
-                        <h4 style={{
+                        <h4 id="response-time-verification" style={{
                             color: '#00416A',
                             fontSize: '20px',
                             marginBottom: '12px',
@@ -3595,7 +4648,7 @@ pm.test("Error message contains validation details", function () {
 
                     {/* Authentication & Authorization */}
                     <div style={{ marginBottom: '25px' }}>
-                        <h4 style={{
+                        <h4 id="authentication-authorization-verification" style={{
                             color: '#00416A',
                             fontSize: '20px',
                             marginBottom: '12px',
@@ -3763,7 +4816,7 @@ pm.test("404 returns proper error structure", function () {
 
                     {/* Business Logic Verification */}
                     <div style={{ marginBottom: '25px' }}>
-                        <h4 style={{
+                        <h4 id="business-logic-verification" style={{
                             color: '#00416A',
                             fontSize: '20px',
                             marginBottom: '12px',
@@ -3847,14 +4900,67 @@ pm.test("Created user can be retrieved", function () {
 });`}</pre>
                         </div>
                     </div>
+                        </div>
+                    )}
+                </div>
+                        </div>
+                    )}
                 </div>
             </div>
 
-            {/* Main Content */}
+            {/* Introduction to Postman Section */}
             <div style={leftAlignStyles.mainContent}>
-                <h2 style={leftAlignStyles.sectionHeading}>
-                    Introduction to Postman
-                </h2>
+                <div style={{
+                    backgroundColor: '#ffffff',
+                    padding: '25px',
+                    borderRadius: '8px',
+                    marginBottom: '25px',
+                    borderLeft: '4px solid #00416A',
+                    boxShadow: '0 2px 10px rgba(0,0,0,0.1)'
+                }}>
+                    <div
+                        onClick={() => setIsPostmanIntroExpanded(!isPostmanIntroExpanded)}
+                        style={{
+                            cursor: 'pointer',
+                            display: 'flex',
+                            justifyContent: 'space-between',
+                            alignItems: 'center',
+                            paddingBottom: isPostmanIntroExpanded ? '15px' : '0',
+                            borderBottom: isPostmanIntroExpanded ? '2px solid #00416A' : 'none',
+                            transition: 'all 0.3s ease'
+                        }}
+                        onMouseEnter={(e) => {
+                            if (!isPostmanIntroExpanded) {
+                                e.currentTarget.style.backgroundColor = '#f0f7fa';
+                            }
+                        }}
+                        onMouseLeave={(e) => {
+                            if (!isPostmanIntroExpanded) {
+                                e.currentTarget.style.backgroundColor = 'transparent';
+                            }
+                        }}
+                    >
+                        <h2 id="introduction-to-postman" style={{
+                            ...leftAlignStyles.sectionHeading,
+                            marginBottom: 0,
+                            color: '#00416A'
+                        }}>
+                            Introduction to Postman
+                        </h2>
+                        <span style={{
+                            fontSize: '32px',
+                            color: '#00416A',
+                            fontWeight: 'bold',
+                            marginLeft: '20px',
+                            flexShrink: 0,
+                            transition: 'transform 0.3s ease'
+                        }}>
+                            {isPostmanIntroExpanded ? '−' : '+'}
+                        </span>
+                    </div>
+
+                    {isPostmanIntroExpanded && (
+                        <div style={{ marginTop: '25px' }}>
                 <p style={leftAlignStyles.paragraph}>
                     Postman is a powerful API platform used by developers and QA engineers to design, test, and document APIs. It provides a user-friendly interface for making HTTP requests, organizing API collections, and automating API testing workflows.
                 </p>
@@ -3870,7 +4976,7 @@ pm.test("Created user can be retrieved", function () {
                     <li>Postman includes Newman CLI for command-line testing and CI/CD integration</li>
                 </ul>
 
-                <h3 style={leftAlignStyles.sectionHeadingWithMargin}>
+                <h3 id="what-can-postman-do" style={leftAlignStyles.sectionHeadingWithMargin}>
                     What Can Postman Do?
                 </h3>
                 <ul style={leftAlignStyles.list}>
@@ -3885,15 +4991,15 @@ pm.test("Created user can be retrieved", function () {
                     <li>Mock servers for API development</li>
                     <li>API monitoring and performance testing</li>
                 </ul>
-            </div>
 
-            {/* Installation Guides */}
-            <div style={{
-                display: 'grid',
-                gridTemplateColumns: 'repeat(auto-fit, minmax(400px, 1fr))',
-                gap: '30px',
-                marginBottom: '40px'
-            }}>
+                {/* Installation Guides */}
+                <div style={{
+                    display: 'grid',
+                    gridTemplateColumns: 'repeat(auto-fit, minmax(400px, 1fr))',
+                    gap: '30px',
+                    marginBottom: '40px',
+                    marginTop: '30px'
+                }}>
                 {/* Mac Installation */}
                 <div style={{
                     backgroundColor: '#ffffff',
@@ -3901,7 +5007,7 @@ pm.test("Created user can be retrieved", function () {
                     borderRadius: '12px',
                     boxShadow: '0 2px 10px rgba(0,0,0,0.1)'
                 }}>
-                    <h3 style={{
+                    <h3 id="postman-install-mac" style={{
                         color: '#00416A',
                         fontSize: '24px',
                         marginBottom: '20px',
@@ -3911,7 +5017,7 @@ pm.test("Created user can be retrieved", function () {
                     </h3>
                     
                     <div style={{ marginBottom: '30px' }}>
-                        <h5 style={{
+                        <h5 id="mac-step-1-download" style={{
                             color: '#00416A',
                             fontSize: '18px',
                             marginBottom: '15px',
@@ -3932,7 +5038,7 @@ pm.test("Created user can be retrieved", function () {
                     </div>
 
                     <div style={{ marginBottom: '30px' }}>
-                        <h5 style={{
+                        <h5 id="mac-step-2-install" style={{
                             color: '#00416A',
                             fontSize: '18px',
                             marginBottom: '15px',
@@ -3953,7 +5059,7 @@ pm.test("Created user can be retrieved", function () {
                     </div>
 
                     <div style={{ marginBottom: '30px' }}>
-                        <h5 style={{
+                        <h5 id="mac-step-3-newman" style={{
                             color: '#00416A',
                             fontSize: '18px',
                             marginBottom: '15px',
@@ -3975,7 +5081,7 @@ pm.test("Created user can be retrieved", function () {
                     </div>
 
                     <div>
-                        <h5 style={{
+                        <h5 id="mac-step-4-verify" style={{
                             color: '#00416A',
                             fontSize: '18px',
                             marginBottom: '15px',
@@ -4002,7 +5108,7 @@ pm.test("Created user can be retrieved", function () {
                     borderRadius: '12px',
                     boxShadow: '0 2px 10px rgba(0,0,0,0.1)'
                 }}>
-                    <h3 style={{
+                    <h3 id="postman-install-windows" style={{
                         color: '#00416A',
                         fontSize: '24px',
                         marginBottom: '20px',
@@ -4012,7 +5118,7 @@ pm.test("Created user can be retrieved", function () {
                     </h3>
                     
                     <div style={{ marginBottom: '30px' }}>
-                        <h5 style={{
+                        <h5 id="windows-step-1-download" style={{
                             color: '#00416A',
                             fontSize: '18px',
                             marginBottom: '15px',
@@ -4033,7 +5139,7 @@ pm.test("Created user can be retrieved", function () {
                     </div>
 
                     <div style={{ marginBottom: '30px' }}>
-                        <h5 style={{
+                        <h5 id="windows-step-2-install" style={{
                             color: '#00416A',
                             fontSize: '18px',
                             marginBottom: '15px',
@@ -4055,7 +5161,7 @@ pm.test("Created user can be retrieved", function () {
                     </div>
 
                     <div style={{ marginBottom: '30px' }}>
-                        <h5 style={{
+                        <h5 id="windows-step-3-newman" style={{
                             color: '#00416A',
                             fontSize: '18px',
                             marginBottom: '15px',
@@ -4077,7 +5183,7 @@ pm.test("Created user can be retrieved", function () {
                     </div>
 
                     <div>
-                        <h5 style={{
+                        <h5 id="windows-step-4-verify" style={{
                             color: '#00416A',
                             fontSize: '18px',
                             marginBottom: '15px',
@@ -4096,13 +5202,65 @@ pm.test("Created user can be retrieved", function () {
                         </ul>
                     </div>
                 </div>
+                </div>
+                        </div>
+                    )}
+                </div>
             </div>
 
             {/* Getting Started Section */}
             <div style={leftAlignStyles.mainContent}>
-                <h2 style={leftAlignStyles.sectionHeading}>
-                    Getting Started: Creating Your First Request
-                </h2>
+                <div style={{
+                    backgroundColor: '#ffffff',
+                    padding: '25px',
+                    borderRadius: '8px',
+                    marginBottom: '25px',
+                    borderLeft: '4px solid #00416A',
+                    boxShadow: '0 2px 10px rgba(0,0,0,0.1)'
+                }}>
+                    <div
+                        onClick={() => setIsFirstRequestExpanded(!isFirstRequestExpanded)}
+                        style={{
+                            cursor: 'pointer',
+                            display: 'flex',
+                            justifyContent: 'space-between',
+                            alignItems: 'center',
+                            paddingBottom: isFirstRequestExpanded ? '15px' : '0',
+                            borderBottom: isFirstRequestExpanded ? '2px solid #00416A' : 'none',
+                            transition: 'all 0.3s ease'
+                        }}
+                        onMouseEnter={(e) => {
+                            if (!isFirstRequestExpanded) {
+                                e.currentTarget.style.backgroundColor = '#f0f7fa';
+                            }
+                        }}
+                        onMouseLeave={(e) => {
+                            if (!isFirstRequestExpanded) {
+                                e.currentTarget.style.backgroundColor = 'transparent';
+                            }
+                        }}
+                    >
+                        <h2 style={{
+                            ...leftAlignStyles.sectionHeading,
+                            marginBottom: 0,
+                            color: '#00416A'
+                        }}>
+                            Getting Started: Creating Your First Request
+                        </h2>
+                        <span style={{
+                            fontSize: '32px',
+                            color: '#00416A',
+                            fontWeight: 'bold',
+                            marginLeft: '20px',
+                            flexShrink: 0,
+                            transition: 'transform 0.3s ease'
+                        }}>
+                            {isFirstRequestExpanded ? '−' : '+'}
+                        </span>
+                    </div>
+
+                    {isFirstRequestExpanded && (
+                        <div style={{ marginTop: '25px' }}>
                 <div style={{
                     backgroundColor: '#f8f9fa',
                     padding: '25px',
@@ -4141,7 +5299,7 @@ pm.test("Created user can be retrieved", function () {
                     borderLeft: '4px solid #00416A',
                     textAlign: 'left'
                 }}>
-                    <h3 style={{
+                    <h3 id="step-2-understanding-interface" style={{
                         color: '#00416A',
                         fontSize: '20px',
                         marginBottom: '15px',
@@ -4195,11 +5353,14 @@ pm.test("Created user can be retrieved", function () {
                         <li>Use variables like <code style={{ backgroundColor: '#fff', padding: '2px 6px', borderRadius: '4px' }}>{`{{baseUrl}}`}</code> in URLs</li>
                     </ul>
                 </div>
+                        </div>
+                    )}
+                </div>
             </div>
 
             {/* REST API Examples */}
             <div style={leftAlignStyles.mainContent}>
-                <h2 style={leftAlignStyles.sectionHeading}>
+                <h2 id="rest-api-examples" style={leftAlignStyles.sectionHeading}>
                     REST API Examples
                 </h2>
                 
@@ -4265,7 +5426,7 @@ Response:
                     borderLeft: '4px solid #00416A',
                     textAlign: 'left'
                 }}>
-                    <h3 style={{
+                    <h3 id="post-request-example" style={{
                         color: '#00416A',
                         fontSize: '20px',
                         marginBottom: '15px',
@@ -4431,7 +5592,7 @@ Body (raw JSON):
                     borderLeft: '4px solid #00416A',
                     textAlign: 'left'
                 }}>
-                    <h3 style={{
+                    <h3 id="delete-request-example" style={{
                         color: '#00416A',
                         fontSize: '20px',
                         marginBottom: '15px',
@@ -4485,7 +5646,7 @@ Response:
                     borderLeft: '4px solid #00416A',
                     textAlign: 'left'
                 }}>
-                    <h3 style={{
+                    <h3 id="soap-request-example" style={{
                         color: '#00416A',
                         fontSize: '20px',
                         marginBottom: '15px',
@@ -4539,16 +5700,16 @@ Alternative: Import WSDL
 4. Postman will generate requests automatically`}</pre>
                     </div>
                 </div>
-            </div>
 
-            {/* Action Buttons */}
-            <div style={{
-                display: 'flex',
-                flexWrap: 'wrap',
-                gap: '15px',
-                justifyContent: 'center',
-                marginBottom: '40px'
-            }}>
+                {/* Action Buttons */}
+                <div style={{
+                    display: 'flex',
+                    flexWrap: 'wrap',
+                    gap: '15px',
+                    justifyContent: 'center',
+                    marginBottom: '40px',
+                    marginTop: '30px'
+                }}>
                 <a 
                     href="https://www.postman.com/" 
                     target="_blank" 
@@ -4665,11 +5826,839 @@ Alternative: Import WSDL
                 >
                     Test Scripts Guide
                 </a>
+                </div>
+
+            {/* Newman Integration */}
+            <div style={leftAlignStyles.mainContent}>
+                <h2 id="newman-integration" style={{
+                    ...leftAlignStyles.sectionHeading,
+                    color: '#00416A',
+                    marginBottom: '20px'
+                }}>
+                    Newman Integration
+                </h2>
+                <p style={{
+                    fontSize: '16px',
+                    lineHeight: '1.8',
+                    color: '#333333',
+                    textAlign: 'left',
+                    marginBottom: '24px'
+                }}>
+                    <strong>Newman</strong> is the command-line collection runner for Postman. It lets you run Postman collections from the terminal, integrate API tests into CI/CD pipelines, and generate reports without opening the Postman app.
+                </p>
+
+                <div style={{
+                    backgroundColor: '#ffffff',
+                    padding: '25px',
+                    borderRadius: '8px',
+                    marginBottom: '25px',
+                    borderLeft: '4px solid #00416A',
+                    textAlign: 'left'
+                }}>
+                    <h3 style={{
+                        color: '#00416A',
+                        fontSize: '20px',
+                        marginBottom: '15px',
+                        fontWeight: '600',
+                        textAlign: 'left'
+                    }}>
+                        Installing Newman
+                    </h3>
+                    <p style={{
+                        fontSize: '16px',
+                        lineHeight: '1.8',
+                        color: '#333333',
+                        marginBottom: '15px',
+                        textAlign: 'left'
+                    }}>
+                        Install Newman globally via npm (Node.js required):
+                    </p>
+                    <div style={{
+                        backgroundColor: '#1e293b',
+                        padding: '16px 20px',
+                        borderRadius: '8px',
+                        fontFamily: '"SF Mono", Monaco, "Cascadia Code", Consolas, monospace',
+                        fontSize: '14px',
+                        color: '#e2e8f0',
+                        overflowX: 'auto',
+                        marginBottom: '20px'
+                    }}>
+                        <pre style={{ margin: 0, whiteSpace: 'pre-wrap', textAlign: 'left' }}>{`# Install Newman globally
+npm install -g newman
+
+# Verify installation
+newman --version`}</pre>
+                    </div>
+
+                    <h3 style={{
+                        color: '#00416A',
+                        fontSize: '20px',
+                        marginBottom: '15px',
+                        fontWeight: '600',
+                        textAlign: 'left'
+                    }}>
+                        Exporting a Collection from Postman
+                    </h3>
+                    <p style={{
+                        fontSize: '16px',
+                        lineHeight: '1.8',
+                        color: '#333333',
+                        marginBottom: '15px',
+                        textAlign: 'left'
+                    }}>
+                        In Postman: Collection → ⋮ (three dots) → Export → choose Collection v2.1 → Save as JSON (e.g. <code style={{ backgroundColor: '#f1f5f9', padding: '2px 6px', borderRadius: '4px' }}>my-api-tests.json</code>).
+                    </p>
+
+                    <h3 style={{
+                        color: '#00416A',
+                        fontSize: '20px',
+                        marginBottom: '15px',
+                        fontWeight: '600',
+                        textAlign: 'left'
+                    }}>
+                        Running a Collection with Newman
+                    </h3>
+                    <div style={{
+                        backgroundColor: '#1e293b',
+                        padding: '16px 20px',
+                        borderRadius: '8px',
+                        fontFamily: '"SF Mono", Monaco, "Cascadia Code", Consolas, monospace',
+                        fontSize: '14px',
+                        color: '#e2e8f0',
+                        overflowX: 'auto',
+                        marginBottom: '20px'
+                    }}>
+                        <pre style={{ margin: 0, whiteSpace: 'pre-wrap', textAlign: 'left' }}>{`# Basic run (collection file only)
+newman run my-api-tests.json
+
+# With environment variables
+newman run my-api-tests.json -e environment.json
+
+# With global variables
+newman run my-api-tests.json -g globals.json
+
+# Report options: CLI (default), JSON, HTML, JUnit
+newman run my-api-tests.json --reporters cli,json --reporter-json-export report.json
+
+# HTML report
+newman run my-api-tests.json --reporters cli,htmlextra --reporter-htmlextra-export newman-report.html
+
+# Fail the run on first test failure (useful for CI)
+newman run my-api-tests.json --bail`}</pre>
+                    </div>
+
+                    <h3 style={{
+                        color: '#00416A',
+                        fontSize: '20px',
+                        marginBottom: '15px',
+                        fontWeight: '600',
+                        textAlign: 'left'
+                    }}>
+                        Example: Full Newman Run with Report
+                    </h3>
+                    <p style={{
+                        fontSize: '16px',
+                        lineHeight: '1.8',
+                        color: '#333333',
+                        marginBottom: '12px',
+                        textAlign: 'left'
+                    }}>
+                        Example command and typical CLI output:
+                    </p>
+                    <div style={{
+                        backgroundColor: '#1e293b',
+                        padding: '16px 20px',
+                        borderRadius: '8px',
+                        fontFamily: '"SF Mono", Monaco, "Cascadia Code", Consolas, monospace',
+                        fontSize: '13px',
+                        color: '#e2e8f0',
+                        overflowX: 'auto',
+                        marginBottom: '20px',
+                        lineHeight: '1.6'
+                    }}>
+                        <pre style={{ margin: 0, whiteSpace: 'pre-wrap', textAlign: 'left' }}>{`$ newman run User-API-Tests.json -e dev-environment.json --reporters cli,html --reporter-html-export newman-report.html
+
+Newman
+
+User-API-Tests
+
+  GET Get User by ID
+    ✓ Status code is 200
+    ✓ Response has user id and name
+  GET Get All Users
+    ✓ Status code is 200
+    ✓ Response is an array
+  POST Create User
+    ✓ Status code is 201
+    ✓ Response contains created user id
+  PUT Update User
+    ✓ Status code is 200
+  DELETE Delete User
+    ✓ Status code is 204
+
+  ┌─────────────────────────┬────────────────────┬───────────────────┐
+  │                         │           executed │            failed │
+  ├─────────────────────────┼────────────────────┼───────────────────┤
+  │              iterations │                  1 │                 0 │
+  ├─────────────────────────┼────────────────────┼───────────────────┤
+  │                requests │                  5 │                 0 │
+  ├─────────────────────────┼────────────────────┼───────────────────┤
+  │            test-scripts │                 10 │                 0 │
+  ├─────────────────────────┼────────────────────┼───────────────────┤
+  │      prerequest-scripts │                  0 │                 0 │
+  ├─────────────────────────┼────────────────────┼───────────────────┤
+  │              assertions │                 10 │                 0 │
+  └─────────────────────────┴────────────────────┴───────────────────┘`}</pre>
+                    </div>
+
+                    <h3 style={{
+                        color: '#00416A',
+                        fontSize: '20px',
+                        marginBottom: '15px',
+                        fontWeight: '600',
+                        textAlign: 'left'
+                    }}>
+                        CI/CD Integration Example
+                    </h3>
+                    <p style={{
+                        fontSize: '16px',
+                        lineHeight: '1.8',
+                        color: '#333333',
+                        marginBottom: '12px',
+                        textAlign: 'left'
+                    }}>
+                        Run Newman in GitHub Actions, Jenkins, or any CI; use <code style={{ backgroundColor: '#f1f5f9', padding: '2px 6px', borderRadius: '4px' }}>--bail</code> so the job fails on the first test failure:
+                    </p>
+                    <div style={{
+                        backgroundColor: '#1e293b',
+                        padding: '16px 20px',
+                        borderRadius: '8px',
+                        fontFamily: '"SF Mono", Monaco, "Cascadia Code", Consolas, monospace',
+                        fontSize: '13px',
+                        color: '#e2e8f0',
+                        overflowX: 'auto',
+                        marginBottom: '15px',
+                        lineHeight: '1.6'
+                    }}>
+                        <pre style={{ margin: 0, whiteSpace: 'pre-wrap', textAlign: 'left' }}>{`# GitHub Actions example (snippet)
+- name: Run API tests with Newman
+  run: |
+    npm install -g newman
+    newman run postman/collections/api-tests.json \\
+      -e postman/environments/ci.json \\
+      --reporters cli,junit \\
+      --reporter-junit-export results.xml \\
+      --bail`}</pre>
+                    </div>
+                    <p style={{
+                        fontSize: '15px',
+                        lineHeight: '1.7',
+                        color: '#64748b',
+                        textAlign: 'left',
+                        marginBottom: '0'
+                    }}>
+                        Store collection and environment JSON in the repo or fetch from Postman API. Use <code style={{ backgroundColor: '#f1f5f9', padding: '2px 6px', borderRadius: '4px' }}>newman run &lt;collection&gt; -e &lt;env&gt; --bail</code> so the pipeline fails when any assertion fails.
+                    </p>
+                </div>
+            </div>
+
+                {/* Additional Resources */}
+                <div style={{
+                    marginTop: '40px',
+                    padding: '30px',
+                    backgroundColor: '#f8f9fa',
+                    borderRadius: '12px',
+                    borderLeft: '4px solid #00416A'
+                }}>
+                    <h3 id="additional-resources" style={{
+                        color: '#00416A',
+                        fontSize: '24px',
+                        marginBottom: '25px',
+                        fontWeight: 'bold',
+                        textAlign: 'left'
+                    }}>
+                        Additional Resources
+                    </h3>
+
+                    {/* Free API Endpoints Section */}
+                    <div style={{ marginBottom: '30px' }}>
+                        <h4 id="free-api-endpoints" style={{
+                            color: '#00416A',
+                            fontSize: '20px',
+                            marginBottom: '15px',
+                            fontWeight: '600',
+                            textAlign: 'left'
+                        }}>
+                            Free API Endpoints for Testing
+                        </h4>
+                        <p style={{
+                            fontSize: '16px',
+                            lineHeight: '1.8',
+                            color: '#333333',
+                            textAlign: 'left',
+                            marginBottom: '15px'
+                        }}>
+                            Use these free APIs to practice API testing without setting up your own backend:
+                        </p>
+                        <div style={{
+                            display: 'flex',
+                            flexWrap: 'wrap',
+                            gap: '15px',
+                            justifyContent: 'flex-start'
+                        }}>
+                            <a 
+                                href="https://jsonplaceholder.typicode.com/" 
+                                target="_blank" 
+                                rel="noopener noreferrer"
+                                style={{
+                                    display: 'inline-block',
+                                    padding: '10px 20px',
+                                    fontSize: '14px',
+                                    fontWeight: '600',
+                                    color: '#ffffff',
+                                    backgroundColor: '#00416A',
+                                    textDecoration: 'none',
+                                    borderRadius: '6px',
+                                    transition: 'all 0.3s ease',
+                                    boxShadow: '0 2px 6px rgba(0,0,0,0.1)'
+                                }}
+                                onMouseEnter={(e) => {
+                                    e.target.style.backgroundColor = '#005a8a';
+                                    e.target.style.transform = 'translateY(-2px)';
+                                }}
+                                onMouseLeave={(e) => {
+                                    e.target.style.backgroundColor = '#00416A';
+                                    e.target.style.transform = 'translateY(0)';
+                                }}
+                            >
+                                JSONPlaceholder
+                            </a>
+                            <a 
+                                href="https://reqres.in/" 
+                                target="_blank" 
+                                rel="noopener noreferrer"
+                                style={{
+                                    display: 'inline-block',
+                                    padding: '10px 20px',
+                                    fontSize: '14px',
+                                    fontWeight: '600',
+                                    color: '#ffffff',
+                                    backgroundColor: '#00416A',
+                                    textDecoration: 'none',
+                                    borderRadius: '6px',
+                                    transition: 'all 0.3s ease',
+                                    boxShadow: '0 2px 6px rgba(0,0,0,0.1)'
+                                }}
+                                onMouseEnter={(e) => {
+                                    e.target.style.backgroundColor = '#005a8a';
+                                    e.target.style.transform = 'translateY(-2px)';
+                                }}
+                                onMouseLeave={(e) => {
+                                    e.target.style.backgroundColor = '#00416A';
+                                    e.target.style.transform = 'translateY(0)';
+                                }}
+                            >
+                                ReqRes
+                            </a>
+                            <a 
+                                href="https://httpbin.org/" 
+                                target="_blank" 
+                                rel="noopener noreferrer"
+                                style={{
+                                    display: 'inline-block',
+                                    padding: '10px 20px',
+                                    fontSize: '14px',
+                                    fontWeight: '600',
+                                    color: '#ffffff',
+                                    backgroundColor: '#00416A',
+                                    textDecoration: 'none',
+                                    borderRadius: '6px',
+                                    transition: 'all 0.3s ease',
+                                    boxShadow: '0 2px 6px rgba(0,0,0,0.1)'
+                                }}
+                                onMouseEnter={(e) => {
+                                    e.target.style.backgroundColor = '#005a8a';
+                                    e.target.style.transform = 'translateY(-2px)';
+                                }}
+                                onMouseLeave={(e) => {
+                                    e.target.style.backgroundColor = '#00416A';
+                                    e.target.style.transform = 'translateY(0)';
+                                }}
+                            >
+                                HTTPBin
+                            </a>
+                            <a 
+                                href="https://dummyjson.com/" 
+                                target="_blank" 
+                                rel="noopener noreferrer"
+                                style={{
+                                    display: 'inline-block',
+                                    padding: '10px 20px',
+                                    fontSize: '14px',
+                                    fontWeight: '600',
+                                    color: '#ffffff',
+                                    backgroundColor: '#00416A',
+                                    textDecoration: 'none',
+                                    borderRadius: '6px',
+                                    transition: 'all 0.3s ease',
+                                    boxShadow: '0 2px 6px rgba(0,0,0,0.1)'
+                                }}
+                                onMouseEnter={(e) => {
+                                    e.target.style.backgroundColor = '#005a8a';
+                                    e.target.style.transform = 'translateY(-2px)';
+                                }}
+                                onMouseLeave={(e) => {
+                                    e.target.style.backgroundColor = '#00416A';
+                                    e.target.style.transform = 'translateY(0)';
+                                }}
+                            >
+                                DummyJSON
+                            </a>
+                            <a 
+                                href="https://fakestoreapi.com/" 
+                                target="_blank" 
+                                rel="noopener noreferrer"
+                                style={{
+                                    display: 'inline-block',
+                                    padding: '10px 20px',
+                                    fontSize: '14px',
+                                    fontWeight: '600',
+                                    color: '#ffffff',
+                                    backgroundColor: '#00416A',
+                                    textDecoration: 'none',
+                                    borderRadius: '6px',
+                                    transition: 'all 0.3s ease',
+                                    boxShadow: '0 2px 6px rgba(0,0,0,0.1)'
+                                }}
+                                onMouseEnter={(e) => {
+                                    e.target.style.backgroundColor = '#005a8a';
+                                    e.target.style.transform = 'translateY(-2px)';
+                                }}
+                                onMouseLeave={(e) => {
+                                    e.target.style.backgroundColor = '#00416A';
+                                    e.target.style.transform = 'translateY(0)';
+                                }}
+                            >
+                                FakeStore API
+                            </a>
+                            <a 
+                                href="https://api.github.com/" 
+                                target="_blank" 
+                                rel="noopener noreferrer"
+                                style={{
+                                    display: 'inline-block',
+                                    padding: '10px 20px',
+                                    fontSize: '14px',
+                                    fontWeight: '600',
+                                    color: '#ffffff',
+                                    backgroundColor: '#00416A',
+                                    textDecoration: 'none',
+                                    borderRadius: '6px',
+                                    transition: 'all 0.3s ease',
+                                    boxShadow: '0 2px 6px rgba(0,0,0,0.1)'
+                                }}
+                                onMouseEnter={(e) => {
+                                    e.target.style.backgroundColor = '#005a8a';
+                                    e.target.style.transform = 'translateY(-2px)';
+                                }}
+                                onMouseLeave={(e) => {
+                                    e.target.style.backgroundColor = '#00416A';
+                                    e.target.style.transform = 'translateY(0)';
+                                }}
+                            >
+                                GitHub API
+                            </a>
+                            <a 
+                                href="https://restcountries.com/" 
+                                target="_blank" 
+                                rel="noopener noreferrer"
+                                style={{
+                                    display: 'inline-block',
+                                    padding: '10px 20px',
+                                    fontSize: '14px',
+                                    fontWeight: '600',
+                                    color: '#ffffff',
+                                    backgroundColor: '#00416A',
+                                    textDecoration: 'none',
+                                    borderRadius: '6px',
+                                    transition: 'all 0.3s ease',
+                                    boxShadow: '0 2px 6px rgba(0,0,0,0.1)'
+                                }}
+                                onMouseEnter={(e) => {
+                                    e.target.style.backgroundColor = '#005a8a';
+                                    e.target.style.transform = 'translateY(-2px)';
+                                }}
+                                onMouseLeave={(e) => {
+                                    e.target.style.backgroundColor = '#00416A';
+                                    e.target.style.transform = 'translateY(0)';
+                                }}
+                            >
+                                REST Countries
+                            </a>
+                            <a 
+                                href="https://dog.ceo/dog-api/" 
+                                target="_blank" 
+                                rel="noopener noreferrer"
+                                style={{
+                                    display: 'inline-block',
+                                    padding: '10px 20px',
+                                    fontSize: '14px',
+                                    fontWeight: '600',
+                                    color: '#ffffff',
+                                    backgroundColor: '#00416A',
+                                    textDecoration: 'none',
+                                    borderRadius: '6px',
+                                    transition: 'all 0.3s ease',
+                                    boxShadow: '0 2px 6px rgba(0,0,0,0.1)'
+                                }}
+                                onMouseEnter={(e) => {
+                                    e.target.style.backgroundColor = '#005a8a';
+                                    e.target.style.transform = 'translateY(-2px)';
+                                }}
+                                onMouseLeave={(e) => {
+                                    e.target.style.backgroundColor = '#00416A';
+                                    e.target.style.transform = 'translateY(0)';
+                                }}
+                            >
+                                Dog API
+                            </a>
+                        </div>
+                    </div>
+
+                    {/* JSON Validation Section */}
+                    <div style={{ marginBottom: '30px' }}>
+                        <h4 style={{
+                            color: '#00416A',
+                            fontSize: '20px',
+                            marginBottom: '15px',
+                            fontWeight: '600',
+                            textAlign: 'left'
+                        }}>
+                            JSON Validation Tools
+                        </h4>
+                        <p style={{
+                            fontSize: '16px',
+                            lineHeight: '1.8',
+                            color: '#333333',
+                            textAlign: 'left',
+                            marginBottom: '15px'
+                        }}>
+                            Validate and format JSON data to ensure proper syntax and structure:
+                        </p>
+                        <div style={{
+                            display: 'flex',
+                            flexWrap: 'wrap',
+                            gap: '15px',
+                            justifyContent: 'flex-start'
+                        }}>
+                            <a 
+                                href="https://jsonlint.com/" 
+                                target="_blank" 
+                                rel="noopener noreferrer"
+                                style={{
+                                    display: 'inline-block',
+                                    padding: '10px 20px',
+                                    fontSize: '14px',
+                                    fontWeight: '600',
+                                    color: '#ffffff',
+                                    backgroundColor: '#00416A',
+                                    textDecoration: 'none',
+                                    borderRadius: '6px',
+                                    transition: 'all 0.3s ease',
+                                    boxShadow: '0 2px 6px rgba(0,0,0,0.1)'
+                                }}
+                                onMouseEnter={(e) => {
+                                    e.target.style.backgroundColor = '#005a8a';
+                                    e.target.style.transform = 'translateY(-2px)';
+                                }}
+                                onMouseLeave={(e) => {
+                                    e.target.style.backgroundColor = '#00416A';
+                                    e.target.style.transform = 'translateY(0)';
+                                }}
+                            >
+                                JSONLint
+                            </a>
+                            <a 
+                                href="https://jsonformatter.org/" 
+                                target="_blank" 
+                                rel="noopener noreferrer"
+                                style={{
+                                    display: 'inline-block',
+                                    padding: '10px 20px',
+                                    fontSize: '14px',
+                                    fontWeight: '600',
+                                    color: '#ffffff',
+                                    backgroundColor: '#00416A',
+                                    textDecoration: 'none',
+                                    borderRadius: '6px',
+                                    transition: 'all 0.3s ease',
+                                    boxShadow: '0 2px 6px rgba(0,0,0,0.1)'
+                                }}
+                                onMouseEnter={(e) => {
+                                    e.target.style.backgroundColor = '#005a8a';
+                                    e.target.style.transform = 'translateY(-2px)';
+                                }}
+                                onMouseLeave={(e) => {
+                                    e.target.style.backgroundColor = '#00416A';
+                                    e.target.style.transform = 'translateY(0)';
+                                }}
+                            >
+                                JSON Formatter
+                            </a>
+                            <a 
+                                href="https://jsonformatter.curiousconcept.com/" 
+                                target="_blank" 
+                                rel="noopener noreferrer"
+                                style={{
+                                    display: 'inline-block',
+                                    padding: '10px 20px',
+                                    fontSize: '14px',
+                                    fontWeight: '600',
+                                    color: '#ffffff',
+                                    backgroundColor: '#00416A',
+                                    textDecoration: 'none',
+                                    borderRadius: '6px',
+                                    transition: 'all 0.3s ease',
+                                    boxShadow: '0 2px 6px rgba(0,0,0,0.1)'
+                                }}
+                                onMouseEnter={(e) => {
+                                    e.target.style.backgroundColor = '#005a8a';
+                                    e.target.style.transform = 'translateY(-2px)';
+                                }}
+                                onMouseLeave={(e) => {
+                                    e.target.style.backgroundColor = '#00416A';
+                                    e.target.style.transform = 'translateY(0)';
+                                }}
+                            >
+                                JSON Formatter & Validator
+                            </a>
+                            <a 
+                                href="https://codebeautify.org/jsonvalidator" 
+                                target="_blank" 
+                                rel="noopener noreferrer"
+                                style={{
+                                    display: 'inline-block',
+                                    padding: '10px 20px',
+                                    fontSize: '14px',
+                                    fontWeight: '600',
+                                    color: '#ffffff',
+                                    backgroundColor: '#00416A',
+                                    textDecoration: 'none',
+                                    borderRadius: '6px',
+                                    transition: 'all 0.3s ease',
+                                    boxShadow: '0 2px 6px rgba(0,0,0,0.1)'
+                                }}
+                                onMouseEnter={(e) => {
+                                    e.target.style.backgroundColor = '#005a8a';
+                                    e.target.style.transform = 'translateY(-2px)';
+                                }}
+                                onMouseLeave={(e) => {
+                                    e.target.style.backgroundColor = '#00416A';
+                                    e.target.style.transform = 'translateY(0)';
+                                }}
+                            >
+                                Code Beautify JSON Validator
+                            </a>
+                            <a 
+                                href="https://jsoneditoronline.org/" 
+                                target="_blank" 
+                                rel="noopener noreferrer"
+                                style={{
+                                    display: 'inline-block',
+                                    padding: '10px 20px',
+                                    fontSize: '14px',
+                                    fontWeight: '600',
+                                    color: '#ffffff',
+                                    backgroundColor: '#00416A',
+                                    textDecoration: 'none',
+                                    borderRadius: '6px',
+                                    transition: 'all 0.3s ease',
+                                    boxShadow: '0 2px 6px rgba(0,0,0,0.1)'
+                                }}
+                                onMouseEnter={(e) => {
+                                    e.target.style.backgroundColor = '#005a8a';
+                                    e.target.style.transform = 'translateY(-2px)';
+                                }}
+                                onMouseLeave={(e) => {
+                                    e.target.style.backgroundColor = '#00416A';
+                                    e.target.style.transform = 'translateY(0)';
+                                }}
+                            >
+                                JSON Editor Online
+                            </a>
+                        </div>
+                    </div>
+
+                    {/* JSON Schema Validation Section */}
+                    <div style={{ marginBottom: '30px' }}>
+                        <h4 id="json-schema-validation-tools" style={{
+                            color: '#00416A',
+                            fontSize: '20px',
+                            marginBottom: '15px',
+                            fontWeight: '600',
+                            textAlign: 'left'
+                        }}>
+                            JSON Schema Validation Tools
+                        </h4>
+                        <p style={{
+                            fontSize: '16px',
+                            lineHeight: '1.8',
+                            color: '#333333',
+                            textAlign: 'left',
+                            marginBottom: '15px'
+                        }}>
+                            Validate JSON data against JSON Schema to ensure it matches expected structure and constraints:
+                        </p>
+                        <div style={{
+                            display: 'flex',
+                            flexWrap: 'wrap',
+                            gap: '15px',
+                            justifyContent: 'flex-start'
+                        }}>
+                            <a 
+                                href="https://www.jsonschemavalidator.net/" 
+                                target="_blank" 
+                                rel="noopener noreferrer"
+                                style={{
+                                    display: 'inline-block',
+                                    padding: '10px 20px',
+                                    fontSize: '14px',
+                                    fontWeight: '600',
+                                    color: '#ffffff',
+                                    backgroundColor: '#00416A',
+                                    textDecoration: 'none',
+                                    borderRadius: '6px',
+                                    transition: 'all 0.3s ease',
+                                    boxShadow: '0 2px 6px rgba(0,0,0,0.1)'
+                                }}
+                                onMouseEnter={(e) => {
+                                    e.target.style.backgroundColor = '#005a8a';
+                                    e.target.style.transform = 'translateY(-2px)';
+                                }}
+                                onMouseLeave={(e) => {
+                                    e.target.style.backgroundColor = '#00416A';
+                                    e.target.style.transform = 'translateY(0)';
+                                }}
+                            >
+                                JSON Schema Validator
+                            </a>
+                            <a 
+                                href="https://jsonschemalint.com/" 
+                                target="_blank" 
+                                rel="noopener noreferrer"
+                                style={{
+                                    display: 'inline-block',
+                                    padding: '10px 20px',
+                                    fontSize: '14px',
+                                    fontWeight: '600',
+                                    color: '#ffffff',
+                                    backgroundColor: '#00416A',
+                                    textDecoration: 'none',
+                                    borderRadius: '6px',
+                                    transition: 'all 0.3s ease',
+                                    boxShadow: '0 2px 6px rgba(0,0,0,0.1)'
+                                }}
+                                onMouseEnter={(e) => {
+                                    e.target.style.backgroundColor = '#005a8a';
+                                    e.target.style.transform = 'translateY(-2px)';
+                                }}
+                                onMouseLeave={(e) => {
+                                    e.target.style.backgroundColor = '#00416A';
+                                    e.target.style.transform = 'translateY(0)';
+                                }}
+                            >
+                                JSON Schema Lint
+                            </a>
+                            <a 
+                                href="https://json-schema-validator.herokuapp.com/" 
+                                target="_blank" 
+                                rel="noopener noreferrer"
+                                style={{
+                                    display: 'inline-block',
+                                    padding: '10px 20px',
+                                    fontSize: '14px',
+                                    fontWeight: '600',
+                                    color: '#ffffff',
+                                    backgroundColor: '#00416A',
+                                    textDecoration: 'none',
+                                    borderRadius: '6px',
+                                    transition: 'all 0.3s ease',
+                                    boxShadow: '0 2px 6px rgba(0,0,0,0.1)'
+                                }}
+                                onMouseEnter={(e) => {
+                                    e.target.style.backgroundColor = '#005a8a';
+                                    e.target.style.transform = 'translateY(-2px)';
+                                }}
+                                onMouseLeave={(e) => {
+                                    e.target.style.backgroundColor = '#00416A';
+                                    e.target.style.transform = 'translateY(0)';
+                                }}
+                            >
+                                JSON Schema Validator (Heroku)
+                            </a>
+                            <a 
+                                href="https://jsonschema.dev/" 
+                                target="_blank" 
+                                rel="noopener noreferrer"
+                                style={{
+                                    display: 'inline-block',
+                                    padding: '10px 20px',
+                                    fontSize: '14px',
+                                    fontWeight: '600',
+                                    color: '#ffffff',
+                                    backgroundColor: '#00416A',
+                                    textDecoration: 'none',
+                                    borderRadius: '6px',
+                                    transition: 'all 0.3s ease',
+                                    boxShadow: '0 2px 6px rgba(0,0,0,0.1)'
+                                }}
+                                onMouseEnter={(e) => {
+                                    e.target.style.backgroundColor = '#005a8a';
+                                    e.target.style.transform = 'translateY(-2px)';
+                                }}
+                                onMouseLeave={(e) => {
+                                    e.target.style.backgroundColor = '#00416A';
+                                    e.target.style.transform = 'translateY(0)';
+                                }}
+                            >
+                                JSON Schema Validator (Dev)
+                            </a>
+                            <a 
+                                href="https://json-schema.org/implementations" 
+                                target="_blank" 
+                                rel="noopener noreferrer"
+                                style={{
+                                    display: 'inline-block',
+                                    padding: '10px 20px',
+                                    fontSize: '14px',
+                                    fontWeight: '600',
+                                    color: '#ffffff',
+                                    backgroundColor: '#00416A',
+                                    textDecoration: 'none',
+                                    borderRadius: '6px',
+                                    transition: 'all 0.3s ease',
+                                    boxShadow: '0 2px 6px rgba(0,0,0,0.1)'
+                                }}
+                                onMouseEnter={(e) => {
+                                    e.target.style.backgroundColor = '#005a8a';
+                                    e.target.style.transform = 'translateY(-2px)';
+                                }}
+                                onMouseLeave={(e) => {
+                                    e.target.style.backgroundColor = '#00416A';
+                                    e.target.style.transform = 'translateY(0)';
+                                }}
+                            >
+                                JSON Schema Validators List
+                            </a>
+                        </div>
+                    </div>
+                </div>
             </div>
 
             <section style={{ marginTop: '40px' }}>
             </section>
         </div>
+        </>
     )
 }
 
