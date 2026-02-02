@@ -18,7 +18,7 @@ import Scrum from '../components/docs/tabs/scrum';
 import Bdd from '../components/docs/tabs/bdd';
 import Cucumber from '../components/docs/tabs/cucumber';
 import Installation from '../components/docs/tabs/installation';
-import Postman from '../components/docs/tabs/postman';
+import ApiTest from '../components/docs/tabs/api-test';
 import Appium from '../components/docs/tabs/appium';
 import JMeter from '../components/docs/tabs/jmeter';
 import Links from '../components/docs/tabs/resLinks';
@@ -39,7 +39,7 @@ class docs extends Component {
         if (path.includes('/bdd')) return 3;
         if (path.includes('/cucumber')) return 4;
         if (path.includes('/installation')) return 5;
-        if (path.includes('/postman')) return 6;
+        if (path.includes('/api-test')) return 6;
         if (path.includes('/appium')) return 7;
         if (path.includes('/jmeter')) return 8;
         if (path.includes('/linux')) return 9;
@@ -81,7 +81,7 @@ class docs extends Component {
             '/docs/bdd',
             '/docs/cucumber',
             '/docs/installation',
-            '/docs/postman',
+            '/docs/api-test',
             '/docs/appium',
             '/docs/jmeter',
             '/docs/linux',
@@ -139,7 +139,7 @@ class docs extends Component {
             )
         } else if(this.state.activeTab === 6) {
             return(
-                <Postman />
+                <ApiTest />
             )
         } else if(this.state.activeTab === 7) {
             return(
@@ -224,7 +224,7 @@ class docs extends Component {
             { label: 'Manual', id: 2 },
             { label: 'NET', id: 20 },
             { label: 'NextJS', id: 16 },
-            { label: 'Postman', id: 6 },
+            { label: 'API-Test', id: 6 },
             { label: 'PY', id: 19 },
             { label: 'ReactJS', id: 15 },
             { label: 'Scrum', id: 1 },

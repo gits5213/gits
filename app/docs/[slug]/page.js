@@ -10,7 +10,7 @@ export function generateStaticParams() {
     { slug: 'bdd' },
     { slug: 'cucumber' },
     { slug: 'installation' },
-    { slug: 'postman' },
+    { slug: 'api-test' },
     { slug: 'appium' },
     { slug: 'jmeter' },
     { slug: 'linux' },
