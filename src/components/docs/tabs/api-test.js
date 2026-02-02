@@ -6055,10 +6055,172 @@ User-API-Tests
                         lineHeight: '1.7',
                         color: '#64748b',
                         textAlign: 'left',
-                        marginBottom: '0'
+                        marginBottom: '24px'
                     }}>
                         Store collection and environment JSON in the repo or fetch from Postman API. Use <code style={{ backgroundColor: '#f1f5f9', padding: '2px 6px', borderRadius: '4px' }}>newman run &lt;collection&gt; -e &lt;env&gt; --bail</code> so the pipeline fails when any assertion fails.
                     </p>
+
+                    <h3 style={{
+                        color: '#00416A',
+                        fontSize: '20px',
+                        marginBottom: '15px',
+                        fontWeight: '600',
+                        textAlign: 'left'
+                    }}>
+                        Newman Resources
+                    </h3>
+                    <p style={{
+                        fontSize: '16px',
+                        lineHeight: '1.8',
+                        color: '#333333',
+                        marginBottom: '16px',
+                        textAlign: 'left'
+                    }}>
+                        Official docs, npm package, reporters, and run-from-API options:
+                    </p>
+                    <div style={{
+                        display: 'flex',
+                        flexWrap: 'wrap',
+                        gap: '12px',
+                        justifyContent: 'flex-start',
+                        alignItems: 'center'
+                    }}>
+                        <a
+                            href="https://learning.postman.com/docs/running-collections/using-newman-cli/command-line-integration-with-newman/"
+                            target="_blank"
+                            rel="noopener noreferrer"
+                            style={{
+                                display: 'inline-block',
+                                padding: '10px 18px',
+                                fontSize: '14px',
+                                fontWeight: '600',
+                                color: '#ffffff',
+                                backgroundColor: '#00416A',
+                                textDecoration: 'none',
+                                borderRadius: '6px',
+                                transition: 'all 0.2s ease',
+                                boxShadow: '0 2px 4px rgba(0,0,0,0.1)'
+                            }}
+                            onMouseEnter={(e) => {
+                                e.target.style.backgroundColor = '#005a8a';
+                                e.target.style.transform = 'translateY(-1px)';
+                            }}
+                            onMouseLeave={(e) => {
+                                e.target.style.backgroundColor = '#00416A';
+                                e.target.style.transform = 'translateY(0)';
+                            }}
+                        >
+                            Newman CLI docs (Postman)
+                        </a>
+                        <a
+                            href="https://www.npmjs.com/package/newman"
+                            target="_blank"
+                            rel="noopener noreferrer"
+                            style={{
+                                display: 'inline-block',
+                                padding: '10px 18px',
+                                fontSize: '14px',
+                                fontWeight: '600',
+                                color: '#ffffff',
+                                backgroundColor: '#00416A',
+                                textDecoration: 'none',
+                                borderRadius: '6px',
+                                transition: 'all 0.2s ease',
+                                boxShadow: '0 2px 4px rgba(0,0,0,0.1)'
+                            }}
+                            onMouseEnter={(e) => {
+                                e.target.style.backgroundColor = '#005a8a';
+                                e.target.style.transform = 'translateY(-1px)';
+                            }}
+                            onMouseLeave={(e) => {
+                                e.target.style.backgroundColor = '#00416A';
+                                e.target.style.transform = 'translateY(0)';
+                            }}
+                        >
+                            Newman on npm
+                        </a>
+                        <a
+                            href="https://github.com/postmanlabs/newman"
+                            target="_blank"
+                            rel="noopener noreferrer"
+                            style={{
+                                display: 'inline-block',
+                                padding: '10px 18px',
+                                fontSize: '14px',
+                                fontWeight: '600',
+                                color: '#ffffff',
+                                backgroundColor: '#00416A',
+                                textDecoration: 'none',
+                                borderRadius: '6px',
+                                transition: 'all 0.2s ease',
+                                boxShadow: '0 2px 4px rgba(0,0,0,0.1)'
+                            }}
+                            onMouseEnter={(e) => {
+                                e.target.style.backgroundColor = '#005a8a';
+                                e.target.style.transform = 'translateY(-1px)';
+                            }}
+                            onMouseLeave={(e) => {
+                                e.target.style.backgroundColor = '#00416A';
+                                e.target.style.transform = 'translateY(0)';
+                            }}
+                        >
+                            Newman (GitHub)
+                        </a>
+                        <a
+                            href="https://www.npmjs.com/package/newman-reporter-htmlextra"
+                            target="_blank"
+                            rel="noopener noreferrer"
+                            style={{
+                                display: 'inline-block',
+                                padding: '10px 18px',
+                                fontSize: '14px',
+                                fontWeight: '600',
+                                color: '#ffffff',
+                                backgroundColor: '#00416A',
+                                textDecoration: 'none',
+                                borderRadius: '6px',
+                                transition: 'all 0.2s ease',
+                                boxShadow: '0 2px 4px rgba(0,0,0,0.1)'
+                            }}
+                            onMouseEnter={(e) => {
+                                e.target.style.backgroundColor = '#005a8a';
+                                e.target.style.transform = 'translateY(-1px)';
+                            }}
+                            onMouseLeave={(e) => {
+                                e.target.style.backgroundColor = '#00416A';
+                                e.target.style.transform = 'translateY(0)';
+                            }}
+                        >
+                            Newman HTML Extra reporter
+                        </a>
+                        <a
+                            href="https://learning.postman.com/docs/developer/intro-api/"
+                            target="_blank"
+                            rel="noopener noreferrer"
+                            style={{
+                                display: 'inline-block',
+                                padding: '10px 18px',
+                                fontSize: '14px',
+                                fontWeight: '600',
+                                color: '#ffffff',
+                                backgroundColor: '#00416A',
+                                textDecoration: 'none',
+                                borderRadius: '6px',
+                                transition: 'all 0.2s ease',
+                                boxShadow: '0 2px 4px rgba(0,0,0,0.1)'
+                            }}
+                            onMouseEnter={(e) => {
+                                e.target.style.backgroundColor = '#005a8a';
+                                e.target.style.transform = 'translateY(-1px)';
+                            }}
+                            onMouseLeave={(e) => {
+                                e.target.style.backgroundColor = '#00416A';
+                                e.target.style.transform = 'translateY(0)';
+                            }}
+                        >
+                            Postman API (run via API)
+                        </a>
+                    </div>
                 </div>
             </div>
 
