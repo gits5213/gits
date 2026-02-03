@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState } from 'react';
 import link from '../../../utilities/links.json';
 import ManualLogo from '../../../images/tabs/manualLogo.png';
 import DefectBugError from '../../../images/tabs/defectBugError.png';
@@ -9,6 +9,10 @@ import { getImageSrc } from '../../../utils/getImageSrc';
 import { leftAlignStyles } from '../../../utils/globalStyles';
 
 const resManual = () => {
+    const [isUsernameUserStoryExpanded, setIsUsernameUserStoryExpanded] = useState(false);
+    const [isUsernameBDDExpanded, setIsUsernameBDDExpanded] = useState(false);
+    const [isUsernameTestCasesExpanded, setIsUsernameTestCasesExpanded] = useState(false);
+    const [isUsernameBDDTestCasesExpanded, setIsUsernameBDDTestCasesExpanded] = useState(false);
     return(
         <div style={leftAlignStyles.pageContainer}>
             {/* Hero Section */}
@@ -917,6 +921,719 @@ const resManual = () => {
                 >
                     SCRUM and User Stories
                 </a>
+            </div>
+
+            {/* Collapsible: Standard ui-traditional-based-focused user stories for a username input field */}
+            <div style={{
+                ...leftAlignStyles.mainContent,
+                marginTop: '32px',
+                marginBottom: '40px',
+                backgroundColor: '#ffffff',
+                padding: '0',
+                borderRadius: '16px',
+                boxShadow: '0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06)',
+                border: '1px solid rgba(226, 232, 240, 0.8)',
+                overflow: 'hidden'
+            }}>
+                <div
+                    onClick={() => setIsUsernameUserStoryExpanded(!isUsernameUserStoryExpanded)}
+                    style={{
+                        cursor: 'pointer',
+                        display: 'flex',
+                        justifyContent: 'space-between',
+                        alignItems: 'center',
+                        padding: '20px 24px',
+                        backgroundColor: isUsernameUserStoryExpanded ? 'linear-gradient(135deg, #00416A 0%, #005a8a 100%)' : '#f8f9fa',
+                        background: isUsernameUserStoryExpanded ? 'linear-gradient(135deg, #00416A 0%, #005a8a 100%)' : '#f8f9fa',
+                        color: isUsernameUserStoryExpanded ? '#ffffff' : '#00416A',
+                        borderBottom: isUsernameUserStoryExpanded ? 'none' : '1px solid #e9ecef',
+                        transition: 'all 0.2s ease'
+                    }}
+                >
+                    <h3 style={{
+                        margin: 0,
+                        fontSize: '20px',
+                        fontWeight: '600'
+                    }}>
+                        Standard ui-traditional-based-focused user stories for a username input field
+                    </h3>
+                    <span style={{
+                        fontSize: '18px',
+                        fontWeight: 'bold',
+                        transform: isUsernameUserStoryExpanded ? 'rotate(180deg)' : 'rotate(0deg)',
+                        transition: 'transform 0.2s ease'
+                    }}>
+                        ▼
+                    </span>
+                </div>
+                {isUsernameUserStoryExpanded && (
+                    <div style={{
+                        padding: '28px 24px 32px',
+                        borderTop: '1px solid #e9ecef'
+                    }}>
+                        <p style={{ ...leftAlignStyles.paragraph, marginBottom: '20px' }}>
+                            Here are a few <strong>standard UI-focused user stories</strong> for a <strong>Username input field</strong>, written in a typical Agile format (with clear acceptance criteria).
+                        </p>
+                        <p style={{
+                            ...leftAlignStyles.paragraph,
+                            marginBottom: '20px',
+                            padding: '12px 16px',
+                            backgroundColor: '#f0f9ff',
+                            borderLeft: '4px solid #00416A',
+                            borderRadius: '4px',
+                            fontStyle: 'italic'
+                        }}>
+                            <strong>Note:</strong> This story is a <strong>template</strong> and follows a <strong>traditional-based user story</strong> format (As a / I want / So that). Adapt the acceptance criteria to your product and team conventions.
+                        </p>
+
+                        <h4 style={{ ...leftAlignStyles.sectionHeadingWithMargin, fontSize: '18px', color: '#00416A' }}>
+                            User Story: Enter a Username
+                        </h4>
+                        <p style={{ ...leftAlignStyles.paragraph, marginBottom: '16px' }}>
+                            <strong>As a</strong> user creating an account<br />
+                            <strong>I want</strong> a username input field that clearly tells me what's allowed and validates my entry<br />
+                            <strong>So that</strong> I can choose a valid username and continue registration without confusion
+                        </p>
+
+                        <h4 style={{ ...leftAlignStyles.sectionHeadingWithMargin, fontSize: '16px', color: '#333' }}>
+                            Acceptance Criteria (UI/UX)
+                        </h4>
+
+                        <div style={{ marginBottom: '20px' }}>
+                            <strong style={{ display: 'block', marginBottom: '8px', color: '#00416A' }}>1. Field visibility & label</strong>
+                            <ul style={leftAlignStyles.list}>
+                                <li>Username field is visible on the form.</li>
+                                <li>Label is “Username” (not placeholder-only).</li>
+                                <li>Placeholder example is shown (e.g., <code style={{ background: '#f1f5f9', padding: '2px 6px', borderRadius: '4px' }}>e.g., mdzaman123</code>).</li>
+                            </ul>
+                        </div>
+
+                        <div style={{ marginBottom: '20px' }}>
+                            <strong style={{ display: 'block', marginBottom: '8px', color: '#00416A' }}>2. Required indicator</strong>
+                            <ul style={leftAlignStyles.list}>
+                                <li>If required, show an asterisk <code>*</code> or “Required”.</li>
+                                <li>If left empty and user attempts submit, show an inline error: “Username is required.”</li>
+                            </ul>
+                        </div>
+
+                        <div style={{ marginBottom: '20px' }}>
+                            <strong style={{ display: 'block', marginBottom: '8px', color: '#00416A' }}>3. Allowed format help text</strong>
+                            <ul style={leftAlignStyles.list}>
+                                <li>Display helper text near the field (or on focus), e.g.: “3–20 characters. Letters, numbers, underscore. No spaces.”</li>
+                            </ul>
+                        </div>
+
+                        <div style={{ marginBottom: '20px' }}>
+                            <strong style={{ display: 'block', marginBottom: '8px', color: '#00416A' }}>4. Validation behavior</strong>
+                            <ul style={leftAlignStyles.list}>
+                                <li>Validate on blur (when user leaves the field) and on submit.</li>
+                                <li>If invalid, show inline error and highlight field (red border + error text).</li>
+                                <li>Error message is specific:</li>
+                            </ul>
+                            <ul style={{ ...leftAlignStyles.list, marginLeft: '24px', marginTop: '8px' }}>
+                                <li>Too short: “Username must be at least 3 characters.”</li>
+                                <li>Too long: “Username can't exceed 20 characters.”</li>
+                                <li>Invalid characters: “Only letters, numbers, and underscores are allowed.”</li>
+                                <li>Spaces: “Spaces are not allowed.”</li>
+                            </ul>
+                        </div>
+
+                        <div style={{ marginBottom: '20px' }}>
+                            <strong style={{ display: 'block', marginBottom: '8px', color: '#00416A' }}>5. Real-time feedback (optional but common)</strong>
+                            <ul style={leftAlignStyles.list}>
+                                <li>While typing, show a subtle “Looks good” state once valid (optional).</li>
+                                <li>Do not show error while user is actively typing until blur/submit (to reduce noise).</li>
+                            </ul>
+                        </div>
+
+                        <div style={{ marginBottom: '20px' }}>
+                            <strong style={{ display: 'block', marginBottom: '8px', color: '#00416A' }}>6. Accessibility</strong>
+                            <ul style={leftAlignStyles.list}>
+                                <li>Field has programmatic label association.</li>
+                                <li>Error message is announced by screen readers (aria-live or equivalent).</li>
+                                <li>Field supports keyboard navigation and focus states.</li>
+                                <li>Color is not the only indicator (icon/text included).</li>
+                            </ul>
+                        </div>
+
+                        <div style={{ marginBottom: '0' }}>
+                            <strong style={{ display: 'block', marginBottom: '8px', color: '#00416A' }}>7. Security / input handling</strong>
+                            <ul style={leftAlignStyles.list}>
+                                <li>Input is trimmed for leading/trailing spaces.</li>
+                                <li>Prevent pasting invalid characters only if product requires it; otherwise allow paste but validate.</li>
+                            </ul>
+                        </div>
+                    </div>
+                )}
+            </div>
+
+            {/* Collapsible: Standard ui-bdd-focused user stories for a username input field */}
+            <div style={{
+                ...leftAlignStyles.mainContent,
+                marginTop: '24px',
+                marginBottom: '40px',
+                backgroundColor: '#ffffff',
+                padding: '0',
+                borderRadius: '16px',
+                boxShadow: '0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06)',
+                border: '1px solid rgba(226, 232, 240, 0.8)',
+                overflow: 'hidden'
+            }}>
+                <div
+                    onClick={() => setIsUsernameBDDExpanded(!isUsernameBDDExpanded)}
+                    style={{
+                        cursor: 'pointer',
+                        display: 'flex',
+                        justifyContent: 'space-between',
+                        alignItems: 'center',
+                        padding: '20px 24px',
+                        backgroundColor: isUsernameBDDExpanded ? 'linear-gradient(135deg, #0d9488 0%, #0f766e 100%)' : '#f0fdfa',
+                        background: isUsernameBDDExpanded ? 'linear-gradient(135deg, #0d9488 0%, #0f766e 100%)' : '#f0fdfa',
+                        color: isUsernameBDDExpanded ? '#ffffff' : '#0f766e',
+                        borderBottom: isUsernameBDDExpanded ? 'none' : '1px solid #ccfbf1',
+                        transition: 'all 0.2s ease'
+                    }}
+                >
+                    <h3 style={{
+                        margin: 0,
+                        fontSize: '20px',
+                        fontWeight: '600'
+                    }}>
+                        Standard ui-bdd-focused user stories for a username input field
+                    </h3>
+                    <span style={{
+                        fontSize: '18px',
+                        fontWeight: 'bold',
+                        transform: isUsernameBDDExpanded ? 'rotate(180deg)' : 'rotate(0deg)',
+                        transition: 'transform 0.2s ease'
+                    }}>
+                        ▼
+                    </span>
+                </div>
+                {isUsernameBDDExpanded && (
+                    <div style={{
+                        padding: '28px 24px 32px',
+                        borderTop: '1px solid #e9ecef'
+                    }}>
+                        <p style={{ ...leftAlignStyles.paragraph, marginBottom: '20px' }}>
+                            Below are the same Username input requirements expressed as <strong>BDD (Behavior-Driven Development)</strong> scenarios in Gherkin format (<strong>Given / When / Then</strong>). Use these for executable specifications and automation.
+                        </p>
+                        <p style={{
+                            ...leftAlignStyles.paragraph,
+                            marginBottom: '20px',
+                            padding: '12px 16px',
+                            backgroundColor: '#f0fdfa',
+                            borderLeft: '4px solid #0d9488',
+                            borderRadius: '4px',
+                            fontStyle: 'italic'
+                        }}>
+                            <strong>Note:</strong> This is a <strong>template</strong> in <strong>BDD/Gherkin</strong> style. Adapt the feature and scenario text to your product and tooling (e.g., Cucumber, SpecFlow).
+                        </p>
+
+                        <h4 style={{ ...leftAlignStyles.sectionHeadingWithMargin, fontSize: '18px', color: '#0f766e' }}>
+                            Feature: Username input on registration
+                        </h4>
+                        <p style={{ ...leftAlignStyles.paragraph, marginBottom: '16px', fontStyle: 'italic', color: '#555' }}>
+                            In order to register with a valid username<br />
+                            As a user creating an account<br />
+                            I want the form to show and validate the username field clearly
+                        </p>
+
+                        <h4 style={{ ...leftAlignStyles.sectionHeadingWithMargin, fontSize: '16px', color: '#333' }}>
+                            Scenarios (Gherkin)
+                        </h4>
+
+                        <div style={{
+                            marginBottom: '20px',
+                            padding: '16px',
+                            backgroundColor: '#f8fafc',
+                            borderRadius: '8px',
+                            border: '1px solid #e2e8f0',
+                            fontFamily: 'monospace',
+                            fontSize: '14px',
+                            lineHeight: '1.7'
+                        }}>
+                            <strong style={{ display: 'block', marginBottom: '10px', color: '#0f766e' }}>Scenario: Username field is visible and labeled</strong>
+                            <div style={{ marginLeft: '8px' }}>
+                                <span style={{ color: '#0d9488' }}>Given</span> I am on the registration form<br />
+                                <span style={{ color: '#0d9488' }}>When</span> I view the form<br />
+                                <span style={{ color: '#0d9488' }}>Then</span> I see a field labeled "Username"<br />
+                                <span style={{ color: '#0d9488' }}>And</span> a placeholder is shown (e.g., "e.g., mdzaman123")
+                            </div>
+                        </div>
+
+                        <div style={{
+                            marginBottom: '20px',
+                            padding: '16px',
+                            backgroundColor: '#f8fafc',
+                            borderRadius: '8px',
+                            border: '1px solid #e2e8f0',
+                            fontFamily: 'monospace',
+                            fontSize: '14px',
+                            lineHeight: '1.7'
+                        }}>
+                            <strong style={{ display: 'block', marginBottom: '10px', color: '#0f766e' }}>Scenario: Required username shows error on submit when empty</strong>
+                            <div style={{ marginLeft: '8px' }}>
+                                <span style={{ color: '#0d9488' }}>Given</span> I am on the registration form<br />
+                                <span style={{ color: '#0d9488' }}>And</span> the Username field is required (e.g., asterisk shown)<br />
+                                <span style={{ color: '#0d9488' }}>When</span> I leave Username empty and submit the form<br />
+                                <span style={{ color: '#0d9488' }}>Then</span> I see an inline error "Username is required."<br />
+                                <span style={{ color: '#0d9488' }}>And</span> the Username field is highlighted (e.g., red border)
+                            </div>
+                        </div>
+
+                        <div style={{
+                            marginBottom: '20px',
+                            padding: '16px',
+                            backgroundColor: '#f8fafc',
+                            borderRadius: '8px',
+                            border: '1px solid #e2e8f0',
+                            fontFamily: 'monospace',
+                            fontSize: '14px',
+                            lineHeight: '1.7'
+                        }}>
+                            <strong style={{ display: 'block', marginBottom: '10px', color: '#0f766e' }}>Scenario: Username too short shows validation error</strong>
+                            <div style={{ marginLeft: '8px' }}>
+                                <span style={{ color: '#0d9488' }}>Given</span> I am on the registration form<br />
+                                <span style={{ color: '#0d9488' }}>When</span> I enter "ab" in the Username field and blur or submit<br />
+                                <span style={{ color: '#0d9488' }}>Then</span> I see an error "Username must be at least 3 characters."
+                            </div>
+                        </div>
+
+                        <div style={{
+                            marginBottom: '20px',
+                            padding: '16px',
+                            backgroundColor: '#f8fafc',
+                            borderRadius: '8px',
+                            border: '1px solid #e2e8f0',
+                            fontFamily: 'monospace',
+                            fontSize: '14px',
+                            lineHeight: '1.7'
+                        }}>
+                            <strong style={{ display: 'block', marginBottom: '10px', color: '#0f766e' }}>Scenario: Username too long shows validation error</strong>
+                            <div style={{ marginLeft: '8px' }}>
+                                <span style={{ color: '#0d9488' }}>Given</span> I am on the registration form<br />
+                                <span style={{ color: '#0d9488' }}>When</span> I enter more than 20 characters in the Username field and blur or submit<br />
+                                <span style={{ color: '#0d9488' }}>Then</span> I see an error "Username can't exceed 20 characters."
+                            </div>
+                        </div>
+
+                        <div style={{
+                            marginBottom: '20px',
+                            padding: '16px',
+                            backgroundColor: '#f8fafc',
+                            borderRadius: '8px',
+                            border: '1px solid #e2e8f0',
+                            fontFamily: 'monospace',
+                            fontSize: '14px',
+                            lineHeight: '1.7'
+                        }}>
+                            <strong style={{ display: 'block', marginBottom: '10px', color: '#0f766e' }}>Scenario: Username with invalid characters shows error</strong>
+                            <div style={{ marginLeft: '8px' }}>
+                                <span style={{ color: '#0d9488' }}>Given</span> I am on the registration form<br />
+                                <span style={{ color: '#0d9488' }}>When</span> I enter "user@name" or "user name" and blur or submit<br />
+                                <span style={{ color: '#0d9488' }}>Then</span> I see an error such as "Only letters, numbers, and underscores are allowed." or "Spaces are not allowed."
+                            </div>
+                        </div>
+
+                        <div style={{
+                            marginBottom: '0',
+                            padding: '16px',
+                            backgroundColor: '#f8fafc',
+                            borderRadius: '8px',
+                            border: '1px solid #e2e8f0',
+                            fontFamily: 'monospace',
+                            fontSize: '14px',
+                            lineHeight: '1.7'
+                        }}>
+                            <strong style={{ display: 'block', marginBottom: '10px', color: '#0f766e' }}>Scenario: Valid username is accepted</strong>
+                            <div style={{ marginLeft: '8px' }}>
+                                <span style={{ color: '#0d9488' }}>Given</span> I am on the registration form<br />
+                                <span style={{ color: '#0d9488' }}>When</span> I enter "mdzaman123" in the Username field and blur or submit<br />
+                                <span style={{ color: '#0d9488' }}>Then</span> no validation error is shown for Username<br />
+                                <span style={{ color: '#0d9488' }}>And</span> I can proceed (or see a positive indicator if implemented)
+                            </div>
+                        </div>
+                    </div>
+                )}
+            </div>
+
+            {/* Collapsible: Standard ui-traditional-based-focused manual test cases for a username input field */}
+            <div style={{
+                ...leftAlignStyles.mainContent,
+                marginTop: '24px',
+                marginBottom: '40px',
+                backgroundColor: '#ffffff',
+                padding: '0',
+                borderRadius: '16px',
+                boxShadow: '0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06)',
+                border: '1px solid rgba(226, 232, 240, 0.8)',
+                overflow: 'hidden'
+            }}>
+                <div
+                    onClick={() => setIsUsernameTestCasesExpanded(!isUsernameTestCasesExpanded)}
+                    style={{
+                        cursor: 'pointer',
+                        display: 'flex',
+                        justifyContent: 'space-between',
+                        alignItems: 'center',
+                        padding: '20px 24px',
+                        backgroundColor: isUsernameTestCasesExpanded ? 'linear-gradient(135deg, #7c3aed 0%, #5b21b6 100%)' : '#f5f3ff',
+                        background: isUsernameTestCasesExpanded ? 'linear-gradient(135deg, #7c3aed 0%, #5b21b6 100%)' : '#f5f3ff',
+                        color: isUsernameTestCasesExpanded ? '#ffffff' : '#5b21b6',
+                        borderBottom: isUsernameTestCasesExpanded ? 'none' : '1px solid #ede9fe',
+                        transition: 'all 0.2s ease'
+                    }}
+                >
+                    <h3 style={{
+                        margin: 0,
+                        fontSize: '20px',
+                        fontWeight: '600'
+                    }}>
+                        Standard ui-traditional-based-focused manual test cases for a username input field
+                    </h3>
+                    <span style={{
+                        fontSize: '18px',
+                        fontWeight: 'bold',
+                        transform: isUsernameTestCasesExpanded ? 'rotate(180deg)' : 'rotate(0deg)',
+                        transition: 'transform 0.2s ease'
+                    }}>
+                        ▼
+                    </span>
+                </div>
+                {isUsernameTestCasesExpanded && (
+                    <div style={{
+                        padding: '28px 24px 32px',
+                        borderTop: '1px solid #e9ecef'
+                    }}>
+                        <p style={{ ...leftAlignStyles.paragraph, marginBottom: '20px' }}>
+                            Below are <strong>traditional-style manual test cases</strong> for the Username input field, written as <strong>baby steps</strong> (one clear action per step) so any tester can follow them step by step.
+                        </p>
+                        <p style={{
+                            ...leftAlignStyles.paragraph,
+                            marginBottom: '24px',
+                            padding: '12px 16px',
+                            backgroundColor: '#f5f3ff',
+                            borderLeft: '4px solid #7c3aed',
+                            borderRadius: '4px',
+                            fontStyle: 'italic'
+                        }}>
+                            <strong>Note:</strong> This is a <strong>template</strong>. Adapt test case IDs, steps, and expected results to your product and naming conventions.
+                        </p>
+
+                        <h4 style={{ ...leftAlignStyles.sectionHeadingWithMargin, fontSize: '18px', color: '#5b21b6' }}>
+                            TC-UN-001: Username field is visible and labeled
+                        </h4>
+                        <table style={{ width: '100%', borderCollapse: 'collapse', fontSize: '14px', marginBottom: '24px', border: '1px solid #e2e8f0' }}>
+                            <thead>
+                                <tr style={{ backgroundColor: '#f5f3ff' }}>
+                                    <th style={{ padding: '10px 12px', textAlign: 'left', border: '1px solid #e2e8f0', width: '60px' }}>Step</th>
+                                    <th style={{ padding: '10px 12px', textAlign: 'left', border: '1px solid #e2e8f0' }}>Action (baby step)</th>
+                                    <th style={{ padding: '10px 12px', textAlign: 'left', border: '1px solid #e2e8f0' }}>Expected Result</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr style={{ backgroundColor: '#fff' }}><td style={{ padding: '10px 12px', border: '1px solid #e2e8f0', fontWeight: '600' }}>1</td><td style={{ padding: '10px 12px', border: '1px solid #e2e8f0' }}>Open the registration page.</td><td style={{ padding: '10px 12px', border: '1px solid #e2e8f0' }}>Registration form is displayed.</td></tr>
+                                <tr style={{ backgroundColor: '#fafafa' }}><td style={{ padding: '10px 12px', border: '1px solid #e2e8f0', fontWeight: '600' }}>2</td><td style={{ padding: '10px 12px', border: '1px solid #e2e8f0' }}>Locate the Username field on the form.</td><td style={{ padding: '10px 12px', border: '1px solid #e2e8f0' }}>A Username input field is visible.</td></tr>
+                                <tr style={{ backgroundColor: '#fff' }}><td style={{ padding: '10px 12px', border: '1px solid #e2e8f0', fontWeight: '600' }}>3</td><td style={{ padding: '10px 12px', border: '1px solid #e2e8f0' }}>Check the label next to or above the field.</td><td style={{ padding: '10px 12px', border: '1px solid #e2e8f0' }}>Label text is "Username" (not placeholder-only).</td></tr>
+                                <tr style={{ backgroundColor: '#fafafa' }}><td style={{ padding: '10px 12px', border: '1px solid #e2e8f0', fontWeight: '600' }}>4</td><td style={{ padding: '10px 12px', border: '1px solid #e2e8f0' }}>Check the placeholder inside the field.</td><td style={{ padding: '10px 12px', border: '1px solid #e2e8f0' }}>Placeholder shows an example (e.g., "e.g., mdzaman123").</td></tr>
+                            </tbody>
+                        </table>
+
+                        <h4 style={{ ...leftAlignStyles.sectionHeadingWithMargin, fontSize: '18px', color: '#5b21b6' }}>
+                            TC-UN-002: Required indicator and error when Username is empty on submit
+                        </h4>
+                        <table style={{ width: '100%', borderCollapse: 'collapse', fontSize: '14px', marginBottom: '24px', border: '1px solid #e2e8f0' }}>
+                            <thead>
+                                <tr style={{ backgroundColor: '#f5f3ff' }}>
+                                    <th style={{ padding: '10px 12px', textAlign: 'left', border: '1px solid #e2e8f0', width: '60px' }}>Step</th>
+                                    <th style={{ padding: '10px 12px', textAlign: 'left', border: '1px solid #e2e8f0' }}>Action (baby step)</th>
+                                    <th style={{ padding: '10px 12px', textAlign: 'left', border: '1px solid #e2e8f0' }}>Expected Result</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr style={{ backgroundColor: '#fff' }}><td style={{ padding: '10px 12px', border: '1px solid #e2e8f0', fontWeight: '600' }}>1</td><td style={{ padding: '10px 12px', border: '1px solid #e2e8f0' }}>Open the registration page.</td><td style={{ padding: '10px 12px', border: '1px solid #e2e8f0' }}>Form is displayed.</td></tr>
+                                <tr style={{ backgroundColor: '#fafafa' }}><td style={{ padding: '10px 12px', border: '1px solid #e2e8f0', fontWeight: '600' }}>2</td><td style={{ padding: '10px 12px', border: '1px solid #e2e8f0' }}>Check if the Username field shows a required indicator (e.g., asterisk * or "Required").</td><td style={{ padding: '10px 12px', border: '1px solid #e2e8f0' }}>Required indicator is visible.</td></tr>
+                                <tr style={{ backgroundColor: '#fff' }}><td style={{ padding: '10px 12px', border: '1px solid #e2e8f0', fontWeight: '600' }}>3</td><td style={{ padding: '10px 12px', border: '1px solid #e2e8f0' }}>Leave the Username field empty.</td><td style={{ padding: '10px 12px', border: '1px solid #e2e8f0' }}>Field remains empty.</td></tr>
+                                <tr style={{ backgroundColor: '#fafafa' }}><td style={{ padding: '10px 12px', border: '1px solid #e2e8f0', fontWeight: '600' }}>4</td><td style={{ padding: '10px 12px', border: '1px solid #e2e8f0' }}>Click the Submit (or Register) button.</td><td style={{ padding: '10px 12px', border: '1px solid #e2e8f0' }}>Form does not submit successfully.</td></tr>
+                                <tr style={{ backgroundColor: '#fff' }}><td style={{ padding: '10px 12px', border: '1px solid #e2e8f0', fontWeight: '600' }}>5</td><td style={{ padding: '10px 12px', border: '1px solid #e2e8f0' }}>Check the message near the Username field.</td><td style={{ padding: '10px 12px', border: '1px solid #e2e8f0' }}>Inline error "Username is required." is displayed; field may have red border.</td></tr>
+                            </tbody>
+                        </table>
+
+                        <h4 style={{ ...leftAlignStyles.sectionHeadingWithMargin, fontSize: '18px', color: '#5b21b6' }}>
+                            TC-UN-003: Username too short shows validation error
+                        </h4>
+                        <table style={{ width: '100%', borderCollapse: 'collapse', fontSize: '14px', marginBottom: '24px', border: '1px solid #e2e8f0' }}>
+                            <thead>
+                                <tr style={{ backgroundColor: '#f5f3ff' }}>
+                                    <th style={{ padding: '10px 12px', textAlign: 'left', border: '1px solid #e2e8f0', width: '60px' }}>Step</th>
+                                    <th style={{ padding: '10px 12px', textAlign: 'left', border: '1px solid #e2e8f0' }}>Action (baby step)</th>
+                                    <th style={{ padding: '10px 12px', textAlign: 'left', border: '1px solid #e2e8f0' }}>Expected Result</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr style={{ backgroundColor: '#fff' }}><td style={{ padding: '10px 12px', border: '1px solid #e2e8f0', fontWeight: '600' }}>1</td><td style={{ padding: '10px 12px', border: '1px solid #e2e8f0' }}>Open the registration page.</td><td style={{ padding: '10px 12px', border: '1px solid #e2e8f0' }}>Form is displayed.</td></tr>
+                                <tr style={{ backgroundColor: '#fafafa' }}><td style={{ padding: '10px 12px', border: '1px solid #e2e8f0', fontWeight: '600' }}>2</td><td style={{ padding: '10px 12px', border: '1px solid #e2e8f0' }}>Click in the Username field.</td><td style={{ padding: '10px 12px', border: '1px solid #e2e8f0' }}>Field receives focus.</td></tr>
+                                <tr style={{ backgroundColor: '#fff' }}><td style={{ padding: '10px 12px', border: '1px solid #e2e8f0', fontWeight: '600' }}>3</td><td style={{ padding: '10px 12px', border: '1px solid #e2e8f0' }}>Type "ab" (two characters).</td><td style={{ padding: '10px 12px', border: '1px solid #e2e8f0' }}>Text "ab" appears in the field.</td></tr>
+                                <tr style={{ backgroundColor: '#fafafa' }}><td style={{ padding: '10px 12px', border: '1px solid #e2e8f0', fontWeight: '600' }}>4</td><td style={{ padding: '10px 12px', border: '1px solid #e2e8f0' }}>Click outside the field (blur) or click Submit.</td><td style={{ padding: '10px 12px', border: '1px solid #e2e8f0' }}>Validation runs.</td></tr>
+                                <tr style={{ backgroundColor: '#fff' }}><td style={{ padding: '10px 12px', border: '1px solid #e2e8f0', fontWeight: '600' }}>5</td><td style={{ padding: '10px 12px', border: '1px solid #e2e8f0' }}>Check the error message near the Username field.</td><td style={{ padding: '10px 12px', border: '1px solid #e2e8f0' }}>Error "Username must be at least 3 characters." is shown; field may have red border.</td></tr>
+                            </tbody>
+                        </table>
+
+                        <h4 style={{ ...leftAlignStyles.sectionHeadingWithMargin, fontSize: '18px', color: '#5b21b6' }}>
+                            TC-UN-004: Username too long shows validation error
+                        </h4>
+                        <table style={{ width: '100%', borderCollapse: 'collapse', fontSize: '14px', marginBottom: '24px', border: '1px solid #e2e8f0' }}>
+                            <thead>
+                                <tr style={{ backgroundColor: '#f5f3ff' }}>
+                                    <th style={{ padding: '10px 12px', textAlign: 'left', border: '1px solid #e2e8f0', width: '60px' }}>Step</th>
+                                    <th style={{ padding: '10px 12px', textAlign: 'left', border: '1px solid #e2e8f0' }}>Action (baby step)</th>
+                                    <th style={{ padding: '10px 12px', textAlign: 'left', border: '1px solid #e2e8f0' }}>Expected Result</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr style={{ backgroundColor: '#fff' }}><td style={{ padding: '10px 12px', border: '1px solid #e2e8f0', fontWeight: '600' }}>1</td><td style={{ padding: '10px 12px', border: '1px solid #e2e8f0' }}>Open the registration page.</td><td style={{ padding: '10px 12px', border: '1px solid #e2e8f0' }}>Form is displayed.</td></tr>
+                                <tr style={{ backgroundColor: '#fafafa' }}><td style={{ padding: '10px 12px', border: '1px solid #e2e8f0', fontWeight: '600' }}>2</td><td style={{ padding: '10px 12px', border: '1px solid #e2e8f0' }}>Click in the Username field.</td><td style={{ padding: '10px 12px', border: '1px solid #e2e8f0' }}>Field receives focus.</td></tr>
+                                <tr style={{ backgroundColor: '#fff' }}><td style={{ padding: '10px 12px', border: '1px solid #e2e8f0', fontWeight: '600' }}>3</td><td style={{ padding: '10px 12px', border: '1px solid #e2e8f0' }}>Enter more than 20 characters (e.g., "abcdefghijklmnopqrstuvwxyz").</td><td style={{ padding: '10px 12px', border: '1px solid #e2e8f0' }}>Text appears in the field (or is truncated per product).</td></tr>
+                                <tr style={{ backgroundColor: '#fafafa' }}><td style={{ padding: '10px 12px', border: '1px solid #e2e8f0', fontWeight: '600' }}>4</td><td style={{ padding: '10px 12px', border: '1px solid #e2e8f0' }}>Click outside the field (blur) or click Submit.</td><td style={{ padding: '10px 12px', border: '1px solid #e2e8f0' }}>Validation runs.</td></tr>
+                                <tr style={{ backgroundColor: '#fff' }}><td style={{ padding: '10px 12px', border: '1px solid #e2e8f0', fontWeight: '600' }}>5</td><td style={{ padding: '10px 12px', border: '1px solid #e2e8f0' }}>Check the error message near the Username field.</td><td style={{ padding: '10px 12px', border: '1px solid #e2e8f0' }}>Error "Username can't exceed 20 characters." is shown; field may have red border.</td></tr>
+                            </tbody>
+                        </table>
+
+                        <h4 style={{ ...leftAlignStyles.sectionHeadingWithMargin, fontSize: '18px', color: '#5b21b6' }}>
+                            TC-UN-005: Username with invalid characters (e.g., spaces) shows error
+                        </h4>
+                        <table style={{ width: '100%', borderCollapse: 'collapse', fontSize: '14px', marginBottom: '24px', border: '1px solid #e2e8f0' }}>
+                            <thead>
+                                <tr style={{ backgroundColor: '#f5f3ff' }}>
+                                    <th style={{ padding: '10px 12px', textAlign: 'left', border: '1px solid #e2e8f0', width: '60px' }}>Step</th>
+                                    <th style={{ padding: '10px 12px', textAlign: 'left', border: '1px solid #e2e8f0' }}>Action (baby step)</th>
+                                    <th style={{ padding: '10px 12px', textAlign: 'left', border: '1px solid #e2e8f0' }}>Expected Result</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr style={{ backgroundColor: '#fff' }}><td style={{ padding: '10px 12px', border: '1px solid #e2e8f0', fontWeight: '600' }}>1</td><td style={{ padding: '10px 12px', border: '1px solid #e2e8f0' }}>Open the registration page.</td><td style={{ padding: '10px 12px', border: '1px solid #e2e8f0' }}>Form is displayed.</td></tr>
+                                <tr style={{ backgroundColor: '#fafafa' }}><td style={{ padding: '10px 12px', border: '1px solid #e2e8f0', fontWeight: '600' }}>2</td><td style={{ padding: '10px 12px', border: '1px solid #e2e8f0' }}>Click in the Username field.</td><td style={{ padding: '10px 12px', border: '1px solid #e2e8f0' }}>Field receives focus.</td></tr>
+                                <tr style={{ backgroundColor: '#fff' }}><td style={{ padding: '10px 12px', border: '1px solid #e2e8f0', fontWeight: '600' }}>3</td><td style={{ padding: '10px 12px', border: '1px solid #e2e8f0' }}>Type "user name" (with a space) or "user@name".</td><td style={{ padding: '10px 12px', border: '1px solid #e2e8f0' }}>Text appears in the field.</td></tr>
+                                <tr style={{ backgroundColor: '#fafafa' }}><td style={{ padding: '10px 12px', border: '1px solid #e2e8f0', fontWeight: '600' }}>4</td><td style={{ padding: '10px 12px', border: '1px solid #e2e8f0' }}>Click outside the field (blur) or click Submit.</td><td style={{ padding: '10px 12px', border: '1px solid #e2e8f0' }}>Validation runs.</td></tr>
+                                <tr style={{ backgroundColor: '#fff' }}><td style={{ padding: '10px 12px', border: '1px solid #e2e8f0', fontWeight: '600' }}>5</td><td style={{ padding: '10px 12px', border: '1px solid #e2e8f0' }}>Check the error message near the Username field.</td><td style={{ padding: '10px 12px', border: '1px solid #e2e8f0' }}>Error such as "Spaces are not allowed." or "Only letters, numbers, and underscores are allowed." is shown.</td></tr>
+                            </tbody>
+                        </table>
+
+                        <h4 style={{ ...leftAlignStyles.sectionHeadingWithMargin, fontSize: '18px', color: '#5b21b6' }}>
+                            TC-UN-006: Valid username is accepted (happy path)
+                        </h4>
+                        <table style={{ width: '100%', borderCollapse: 'collapse', fontSize: '14px', marginBottom: '0', border: '1px solid #e2e8f0' }}>
+                            <thead>
+                                <tr style={{ backgroundColor: '#f5f3ff' }}>
+                                    <th style={{ padding: '10px 12px', textAlign: 'left', border: '1px solid #e2e8f0', width: '60px' }}>Step</th>
+                                    <th style={{ padding: '10px 12px', textAlign: 'left', border: '1px solid #e2e8f0' }}>Action (baby step)</th>
+                                    <th style={{ padding: '10px 12px', textAlign: 'left', border: '1px solid #e2e8f0' }}>Expected Result</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr style={{ backgroundColor: '#fff' }}><td style={{ padding: '10px 12px', border: '1px solid #e2e8f0', fontWeight: '600' }}>1</td><td style={{ padding: '10px 12px', border: '1px solid #e2e8f0' }}>Open the registration page.</td><td style={{ padding: '10px 12px', border: '1px solid #e2e8f0' }}>Form is displayed.</td></tr>
+                                <tr style={{ backgroundColor: '#fafafa' }}><td style={{ padding: '10px 12px', border: '1px solid #e2e8f0', fontWeight: '600' }}>2</td><td style={{ padding: '10px 12px', border: '1px solid #e2e8f0' }}>Click in the Username field.</td><td style={{ padding: '10px 12px', border: '1px solid #e2e8f0' }}>Field receives focus.</td></tr>
+                                <tr style={{ backgroundColor: '#fff' }}><td style={{ padding: '10px 12px', border: '1px solid #e2e8f0', fontWeight: '600' }}>3</td><td style={{ padding: '10px 12px', border: '1px solid #e2e8f0' }}>Type "mdzaman123" (3–20 chars, letters and numbers).</td><td style={{ padding: '10px 12px', border: '1px solid #e2e8f0' }}>Text appears in the field.</td></tr>
+                                <tr style={{ backgroundColor: '#fafafa' }}><td style={{ padding: '10px 12px', border: '1px solid #e2e8f0', fontWeight: '600' }}>4</td><td style={{ padding: '10px 12px', border: '1px solid #e2e8f0' }}>Click outside the field (blur).</td><td style={{ padding: '10px 12px', border: '1px solid #e2e8f0' }}>No validation error is shown; optional "Looks good" may appear.</td></tr>
+                                <tr style={{ backgroundColor: '#fff' }}><td style={{ padding: '10px 12px', border: '1px solid #e2e8f0', fontWeight: '600' }}>5</td><td style={{ padding: '10px 12px', border: '1px solid #e2e8f0' }}>Fill other required fields and click Submit (if testing full form).</td><td style={{ padding: '10px 12px', border: '1px solid #e2e8f0' }}>Username is accepted; form can proceed without Username error.</td></tr>
+                            </tbody>
+                        </table>
+                    </div>
+                )}
+            </div>
+
+            {/* Collapsible: Standard ui-bdd-focused manual test cases for a username input field */}
+            <div style={{
+                ...leftAlignStyles.mainContent,
+                marginTop: '24px',
+                marginBottom: '40px',
+                backgroundColor: '#ffffff',
+                padding: '0',
+                borderRadius: '16px',
+                boxShadow: '0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06)',
+                border: '1px solid rgba(226, 232, 240, 0.8)',
+                overflow: 'hidden'
+            }}>
+                <div
+                    onClick={() => setIsUsernameBDDTestCasesExpanded(!isUsernameBDDTestCasesExpanded)}
+                    style={{
+                        cursor: 'pointer',
+                        display: 'flex',
+                        justifyContent: 'space-between',
+                        alignItems: 'center',
+                        padding: '20px 24px',
+                        backgroundColor: isUsernameBDDTestCasesExpanded ? 'linear-gradient(135deg, #0d9488 0%, #0f766e 100%)' : '#ecfdf5',
+                        background: isUsernameBDDTestCasesExpanded ? 'linear-gradient(135deg, #0d9488 0%, #0f766e 100%)' : '#ecfdf5',
+                        color: isUsernameBDDTestCasesExpanded ? '#ffffff' : '#047857',
+                        borderBottom: isUsernameBDDTestCasesExpanded ? 'none' : '1px solid #a7f3d0',
+                        transition: 'all 0.2s ease'
+                    }}
+                >
+                    <h3 style={{
+                        margin: 0,
+                        fontSize: '20px',
+                        fontWeight: '600'
+                    }}>
+                        Standard ui-bdd-focused manual test cases for a username input field
+                    </h3>
+                    <span style={{
+                        fontSize: '18px',
+                        fontWeight: 'bold',
+                        transform: isUsernameBDDTestCasesExpanded ? 'rotate(180deg)' : 'rotate(0deg)',
+                        transition: 'transform 0.2s ease'
+                    }}>
+                        ▼
+                    </span>
+                </div>
+                {isUsernameBDDTestCasesExpanded && (
+                    <div style={{
+                        padding: '28px 24px 32px',
+                        borderTop: '1px solid #e9ecef'
+                    }}>
+                        <p style={{ ...leftAlignStyles.paragraph, marginBottom: '20px' }}>
+                            Below are <strong>manual test cases</strong> for the Username input field written in <strong>BDD (Gherkin) format</strong>. Each scenario uses <strong>Given / When / Then</strong> so testers (or automation) can execute and verify step by step. These are manual test cases expressed in BDD style.
+                        </p>
+                        <p style={{
+                            ...leftAlignStyles.paragraph,
+                            marginBottom: '24px',
+                            padding: '12px 16px',
+                            backgroundColor: '#ecfdf5',
+                            borderLeft: '4px solid #0d9488',
+                            borderRadius: '4px',
+                            fontStyle: 'italic'
+                        }}>
+                            <strong>Note:</strong> This is a <strong>template</strong>. Use these scenarios for manual execution or adapt for Cucumber/SpecFlow. Each step is a single action or verification.
+                        </p>
+
+                        <h4 style={{ ...leftAlignStyles.sectionHeadingWithMargin, fontSize: '16px', color: '#047857' }}>
+                            Feature: Username input – manual test cases (BDD format)
+                        </h4>
+
+                        <div style={{
+                            marginBottom: '24px',
+                            padding: '16px 20px',
+                            backgroundColor: '#f0fdfa',
+                            borderRadius: '8px',
+                            border: '1px solid #99f6e4',
+                            fontFamily: 'monospace',
+                            fontSize: '14px',
+                            lineHeight: '1.8'
+                        }}>
+                            <strong style={{ display: 'block', marginBottom: '10px', color: '#0f766e' }}>Manual TC-BDD-UN-001: Username field is visible and labeled</strong>
+                            <div style={{ marginLeft: '8px' }}>
+                                <span style={{ color: '#0d9488', fontWeight: '600' }}>Given</span> I am on the registration page<br />
+                                <span style={{ color: '#0d9488', fontWeight: '600' }}>When</span> I look at the form<br />
+                                <span style={{ color: '#0d9488', fontWeight: '600' }}>Then</span> I see a Username input field<br />
+                                <span style={{ color: '#0d9488', fontWeight: '600' }}>And</span> the field has a label "Username"<br />
+                                <span style={{ color: '#0d9488', fontWeight: '600' }}>And</span> a placeholder is shown (e.g., "e.g., mdzaman123")
+                            </div>
+                        </div>
+
+                        <div style={{
+                            marginBottom: '24px',
+                            padding: '16px 20px',
+                            backgroundColor: '#f0fdfa',
+                            borderRadius: '8px',
+                            border: '1px solid #99f6e4',
+                            fontFamily: 'monospace',
+                            fontSize: '14px',
+                            lineHeight: '1.8'
+                        }}>
+                            <strong style={{ display: 'block', marginBottom: '10px', color: '#0f766e' }}>Manual TC-BDD-UN-002: Required username shows error when empty on submit</strong>
+                            <div style={{ marginLeft: '8px' }}>
+                                <span style={{ color: '#0d9488', fontWeight: '600' }}>Given</span> I am on the registration page<br />
+                                <span style={{ color: '#0d9488', fontWeight: '600' }}>And</span> the Username field shows a required indicator (e.g., *)<br />
+                                <span style={{ color: '#0d9488', fontWeight: '600' }}>When</span> I leave the Username field empty<br />
+                                <span style={{ color: '#0d9488', fontWeight: '600' }}>And</span> I click the Submit (or Register) button<br />
+                                <span style={{ color: '#0d9488', fontWeight: '600' }}>Then</span> the form does not submit successfully<br />
+                                <span style={{ color: '#0d9488', fontWeight: '600' }}>And</span> I see an inline error "Username is required." near the Username field<br />
+                                <span style={{ color: '#0d9488', fontWeight: '600' }}>And</span> the Username field is highlighted (e.g., red border)
+                            </div>
+                        </div>
+
+                        <div style={{
+                            marginBottom: '24px',
+                            padding: '16px 20px',
+                            backgroundColor: '#f0fdfa',
+                            borderRadius: '8px',
+                            border: '1px solid #99f6e4',
+                            fontFamily: 'monospace',
+                            fontSize: '14px',
+                            lineHeight: '1.8'
+                        }}>
+                            <strong style={{ display: 'block', marginBottom: '10px', color: '#0f766e' }}>Manual TC-BDD-UN-003: Username too short shows validation error</strong>
+                            <div style={{ marginLeft: '8px' }}>
+                                <span style={{ color: '#0d9488', fontWeight: '600' }}>Given</span> I am on the registration page<br />
+                                <span style={{ color: '#0d9488', fontWeight: '600' }}>When</span> I enter "ab" in the Username field<br />
+                                <span style={{ color: '#0d9488', fontWeight: '600' }}>And</span> I click outside the field (blur) or click Submit<br />
+                                <span style={{ color: '#0d9488', fontWeight: '600' }}>Then</span> I see an inline error "Username must be at least 3 characters."<br />
+                                <span style={{ color: '#0d9488', fontWeight: '600' }}>And</span> the Username field is highlighted (e.g., red border)
+                            </div>
+                        </div>
+
+                        <div style={{
+                            marginBottom: '24px',
+                            padding: '16px 20px',
+                            backgroundColor: '#f0fdfa',
+                            borderRadius: '8px',
+                            border: '1px solid #99f6e4',
+                            fontFamily: 'monospace',
+                            fontSize: '14px',
+                            lineHeight: '1.8'
+                        }}>
+                            <strong style={{ display: 'block', marginBottom: '10px', color: '#0f766e' }}>Manual TC-BDD-UN-004: Username too long shows validation error</strong>
+                            <div style={{ marginLeft: '8px' }}>
+                                <span style={{ color: '#0d9488', fontWeight: '600' }}>Given</span> I am on the registration page<br />
+                                <span style={{ color: '#0d9488', fontWeight: '600' }}>When</span> I enter more than 20 characters in the Username field<br />
+                                <span style={{ color: '#0d9488', fontWeight: '600' }}>And</span> I click outside the field (blur) or click Submit<br />
+                                <span style={{ color: '#0d9488', fontWeight: '600' }}>Then</span> I see an inline error "Username can't exceed 20 characters."<br />
+                                <span style={{ color: '#0d9488', fontWeight: '600' }}>And</span> the Username field is highlighted (e.g., red border)
+                            </div>
+                        </div>
+
+                        <div style={{
+                            marginBottom: '24px',
+                            padding: '16px 20px',
+                            backgroundColor: '#f0fdfa',
+                            borderRadius: '8px',
+                            border: '1px solid #99f6e4',
+                            fontFamily: 'monospace',
+                            fontSize: '14px',
+                            lineHeight: '1.8'
+                        }}>
+                            <strong style={{ display: 'block', marginBottom: '10px', color: '#0f766e' }}>Manual TC-BDD-UN-005: Username with invalid characters shows error</strong>
+                            <div style={{ marginLeft: '8px' }}>
+                                <span style={{ color: '#0d9488', fontWeight: '600' }}>Given</span> I am on the registration page<br />
+                                <span style={{ color: '#0d9488', fontWeight: '600' }}>When</span> I enter "user name" (with space) or "user@name" in the Username field<br />
+                                <span style={{ color: '#0d9488', fontWeight: '600' }}>And</span> I click outside the field (blur) or click Submit<br />
+                                <span style={{ color: '#0d9488', fontWeight: '600' }}>Then</span> I see an inline error such as "Spaces are not allowed." or "Only letters, numbers, and underscores are allowed."<br />
+                                <span style={{ color: '#0d9488', fontWeight: '600' }}>And</span> the Username field is highlighted (e.g., red border)
+                            </div>
+                        </div>
+
+                        <div style={{
+                            marginBottom: '0',
+                            padding: '16px 20px',
+                            backgroundColor: '#f0fdfa',
+                            borderRadius: '8px',
+                            border: '1px solid #99f6e4',
+                            fontFamily: 'monospace',
+                            fontSize: '14px',
+                            lineHeight: '1.8'
+                        }}>
+                            <strong style={{ display: 'block', marginBottom: '10px', color: '#0f766e' }}>Manual TC-BDD-UN-006: Valid username is accepted (happy path)</strong>
+                            <div style={{ marginLeft: '8px' }}>
+                                <span style={{ color: '#0d9488', fontWeight: '600' }}>Given</span> I am on the registration page<br />
+                                <span style={{ color: '#0d9488', fontWeight: '600' }}>When</span> I enter "mdzaman123" in the Username field (3–20 chars, letters/numbers)<br />
+                                <span style={{ color: '#0d9488', fontWeight: '600' }}>And</span> I click outside the field (blur)<br />
+                                <span style={{ color: '#0d9488', fontWeight: '600' }}>Then</span> no validation error is shown for the Username field<br />
+                                <span style={{ color: '#0d9488', fontWeight: '600' }}>And</span> I may see a positive indicator (e.g., "Looks good") if implemented<br />
+                                <span style={{ color: '#0d9488', fontWeight: '600' }}>And</span> when I submit the form (with other required fields filled), the Username is accepted and the form proceeds
+                            </div>
+                        </div>
+                    </div>
+                )}
             </div>
 
             <section style={{ marginTop: '40px' }}>

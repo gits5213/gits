@@ -1057,6 +1057,143 @@ git push -u origin dayXX-topic-name`}
                 </div>
             </section>
 
+            {/* Getting started Section */}
+            <section style={{
+                marginBottom: '40px',
+                padding: '32px',
+                backgroundColor: '#ffffff',
+                borderRadius: '16px',
+                boxShadow: '0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06)',
+                border: '1px solid rgba(226, 232, 240, 0.8)'
+            }}>
+                <h2 style={{
+                    color: '#00416A',
+                    fontSize: '28px',
+                    marginBottom: '24px',
+                    paddingBottom: '12px',
+                    borderBottom: '3px solid #00416A',
+                    fontWeight: '600'
+                }}>
+                    Getting started
+                </h2>
+                <p style={{ fontSize: '16px', color: '#475569', lineHeight: '1.6', marginBottom: '24px' }}>
+                    Follow this real-time example from zero to your first push. It assumes you have Git installed and a GitHub account (see setup steps above). Replace <code style={{ backgroundColor: '#f1f5f9', padding: '2px 6px', borderRadius: '4px' }}>YOUR_USERNAME</code> and repo names with your own.
+                </p>
+
+                <h3 style={{ color: '#00416A', fontSize: '20px', fontWeight: '600', marginBottom: '12px', marginTop: '28px' }}>
+                    Scenario: First time — clone a repo and push a change
+                </h3>
+                <p style={{ fontSize: '15px', color: '#475569', lineHeight: '1.6', marginBottom: '16px' }}>
+                    You are joining a project. Someone gives you the repo URL. You clone it, create a branch, edit a file, commit, and push.
+                </p>
+                <div style={{ marginBottom: '20px' }}>
+                    <p style={{ fontSize: '14px', color: '#64748b', fontWeight: '600', marginBottom: '8px' }}>Step 1 — Configure Git once (if not done)</p>
+                    <pre style={{
+                        backgroundColor: '#1e293b',
+                        color: '#e2e8f0',
+                        padding: '16px',
+                        borderRadius: '8px',
+                        overflow: 'auto',
+                        fontSize: '14px',
+                        fontFamily: 'Monaco, "Courier New", monospace',
+                        lineHeight: '1.6',
+                        border: '1px solid #334155'
+                    }}>
+{`git config --global user.name "Your Name"
+git config --global user.email "you@example.com"`}
+                    </pre>
+                </div>
+                <div style={{ marginBottom: '20px' }}>
+                    <p style={{ fontSize: '14px', color: '#64748b', fontWeight: '600', marginBottom: '8px' }}>Step 2 — Clone the repository</p>
+                    <pre style={{
+                        backgroundColor: '#1e293b',
+                        color: '#e2e8f0',
+                        padding: '16px',
+                        borderRadius: '8px',
+                        overflow: 'auto',
+                        fontSize: '14px',
+                        fontFamily: 'Monaco, "Courier New", monospace',
+                        lineHeight: '1.6',
+                        border: '1px solid #334155'
+                    }}>
+{`# HTTPS (you will be asked for GitHub username/password or token)
+git clone https://github.com/YOUR_USERNAME/my-project.git
+cd my-project`}
+                    </pre>
+                </div>
+                <div style={{ marginBottom: '20px' }}>
+                    <p style={{ fontSize: '14px', color: '#64748b', fontWeight: '600', marginBottom: '8px' }}>Step 3 — Create a branch and make a change</p>
+                    <pre style={{
+                        backgroundColor: '#1e293b',
+                        color: '#e2e8f0',
+                        padding: '16px',
+                        borderRadius: '8px',
+                        overflow: 'auto',
+                        fontSize: '14px',
+                        fontFamily: 'Monaco, "Courier New", monospace',
+                        lineHeight: '1.6',
+                        border: '1px solid #334155'
+                    }}>
+{`git checkout -b add-readme-section
+# Edit README.md (or any file) in your editor, then:
+git status          # see modified files
+git add README.md
+git commit -m "docs: add getting started section to README"`}
+                    </pre>
+                </div>
+                <div style={{ marginBottom: '20px' }}>
+                    <p style={{ fontSize: '14px', color: '#64748b', fontWeight: '600', marginBottom: '8px' }}>Step 4 — Push your branch and open a Pull Request</p>
+                    <pre style={{
+                        backgroundColor: '#1e293b',
+                        color: '#e2e8f0',
+                        padding: '16px',
+                        borderRadius: '8px',
+                        overflow: 'auto',
+                        fontSize: '14px',
+                        fontFamily: 'Monaco, "Courier New", monospace',
+                        lineHeight: '1.6',
+                        border: '1px solid #334155'
+                    }}>
+{`git push -u origin add-readme-section`}
+                    </pre>
+                </div>
+                <p style={{ fontSize: '14px', color: '#64748b', lineHeight: '1.6', marginBottom: '24px' }}>
+                    Then go to GitHub in the browser: you will see a prompt to <strong>Create Pull Request</strong> for <code>add-readme-section</code>. Click it, add a description, and submit. After review, the maintainer merges your change.
+                </p>
+
+                <h3 style={{ color: '#00416A', fontSize: '20px', fontWeight: '600', marginBottom: '12px', marginTop: '28px' }}>
+                    Scenario: Daily work — start from main, pull, branch, commit, push
+                </h3>
+                <p style={{ fontSize: '15px', color: '#475569', lineHeight: '1.6', marginBottom: '16px' }}>
+                    You already have the repo cloned. Each day you get the latest code, create a feature branch, do work, then push.
+                </p>
+                <pre style={{
+                    backgroundColor: '#1e293b',
+                    color: '#e2e8f0',
+                    padding: '16px',
+                    borderRadius: '8px',
+                    overflow: 'auto',
+                    fontSize: '14px',
+                    fontFamily: 'Monaco, "Courier New", monospace',
+                    lineHeight: '1.6',
+                    border: '1px solid #334155'
+                }}>
+{`cd my-project
+git checkout main
+git pull --rebase
+git checkout -b feature/login-button
+
+# ... edit files ...
+git status
+git add .
+git commit -m "feat: add login button to header"
+git push -u origin feature/login-button`}
+                </pre>
+                <p style={{ fontSize: '14px', color: '#64748b', lineHeight: '1.6', marginTop: '12px' }}>
+                    Again, open the repo on GitHub to create a Pull Request from <code>feature/login-button</code> to <code>main</code>. For more commands and options, use the <strong>Git Command Checklist</strong> above.
+                </p>
+            </section>
+
             <section>
                 <div class="pr3"> 
                     <h3>References</h3>

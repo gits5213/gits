@@ -178,6 +178,10 @@
     "SQL_CODEACADEMEY_COMMANDS": "https://www.codecademy.com/articles/sql-commands",
     "SQL_W3SHCOOL": "https://www.w3schools.com/sql/sql_syntax.asp" ,
     "DBEAVER_INSTALL": "https://dbeaver.io/" ,
+    "SQLBOLT": "https://sqlbolt.com/",
+    "PGEXERCISES": "https://pgexercises.com/",
+    "DB_FIDDLE": "https://www.db-fiddle.com/",
+    "SQL_FIDDLE": "https://sqlfiddle.com/",
 
     "React":"................",
     "REACT_ORG": "https://gist.github.com/riipandi/3097780",
