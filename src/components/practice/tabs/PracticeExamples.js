@@ -156,7 +156,7 @@ class PracticeExamples extends Component {
                         </div>
                     </div>
 
-                    {/* Practice Examples Table */}
+                    {/* UI Practice Examples Table */}
                     <div 
                         id="practice-examples-table-container"
                         data-testid="practice-examples-table-container"

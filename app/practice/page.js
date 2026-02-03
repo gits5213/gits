@@ -11,8 +11,8 @@ export default function PracticePage() {
   const routerProps = useNextRouterAdapter()
   
   useEffect(() => {
-    // Redirect /practice to /practice/examples if no specific tab
-    if (pathname === '/practice') {
+    // Redirect /practice to /practice/examples so Practice component (with dropdown) shows
+    if (pathname === '/practice' || pathname === '/practice/') {
       router.replace('/practice/examples')
     }
   }, [pathname, router])

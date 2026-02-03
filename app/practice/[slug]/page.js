@@ -56,6 +56,12 @@ export function generateStaticParams() {
     { slug: 'status-codes' },
     { slug: 'typos' },
     { slug: 'wysiwyg-editor' },
+    { slug: 'api-examples' },
+    { slug: 'performance-examples' },
+    { slug: 'appium-ios-emulator' },
+    { slug: 'appium-android-emulator' },
+    { slug: 'appium-ios-device' },
+    { slug: 'appium-android-device' },
   ]
 }
 

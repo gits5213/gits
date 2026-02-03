@@ -22,9 +22,9 @@ class Practice extends Component {
     }
 
     componentDidMount() {
-        // Redirect /practice to /practice/examples if no specific tab
+        // Redirect /practice to /practice/examples if no specific tab (handled by app/practice/page.js for select)
         const path = this.props.location.pathname;
-        if (path === '/practice') {
+        if (path === '/practice' || path === '/practice/') {
             this.props.history.replace('/practice/examples');
         }
     }
@@ -79,7 +79,7 @@ class Practice extends Component {
     render() {
         const tabs = [
             { 
-                label: 'Practice Examples', 
+                label: 'UI Practice Examples', 
                 id: 0,
                 icon: (
                     <svg width="20" height="20" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -90,7 +90,7 @@ class Practice extends Component {
                 )
             },
             { 
-                label: 'Test Cases', 
+                label: 'UI Test Cases', 
                 id: 1,
                 icon: (
                     <svg width="20" height="20" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -120,8 +120,61 @@ class Practice extends Component {
             }
         ];
 
+        const practiceTypeOptions = [
+            { value: '/practice/examples', label: 'UI Practice Examples' },
+            { value: '/practice/api-examples', label: 'API Practice Examples' },
+            { value: '/practice/performance-examples', label: 'Performance Practice Example' },
+            { value: '/practice/appium-ios-emulator', label: 'Appium iOS (Emulator) Practice Example' },
+            { value: '/practice/appium-android-emulator', label: 'Appium Android (Emulator) Practice Example' },
+            { value: '/practice/appium-ios-device', label: 'Appium iOS (Real Device) Practice Example' },
+            { value: '/practice/appium-android-device', label: 'Appium Android (Device) Practice Example' }
+        ];
+        const currentPath = (this.props.location.pathname || '').replace(/\/$/, '') || '/practice/examples';
+        const currentPracticeType = practiceTypeOptions.find((opt) => (opt.value.replace(/\/$/, '') === currentPath)) || practiceTypeOptions[0];
+
         return (
-            <div className="category-tabs">                
+            <div className="category-tabs">
+                {/* Practice Type Dropdown - visible on practice page */}
+                <div style={{
+                    maxWidth: '1400px',
+                    margin: '0 auto 20px',
+                    padding: '16px 20px',
+                    background: 'linear-gradient(135deg, #00416A 0%, #005a8a 100%)',
+                    borderRadius: '12px',
+                    boxShadow: '0 4px 12px rgba(0, 65, 106, 0.25)'
+                }}>
+                    <label htmlFor="practice-type-dropdown" style={{ display: 'block', fontSize: '14px', fontWeight: '600', color: 'rgba(255,255,255,0.95)', marginBottom: '8px' }}>
+                        Practice type
+                    </label>
+                    <select
+                        id="practice-type-dropdown"
+                        value={currentPracticeType.value}
+                        onChange={(e) => {
+                            const path = e.target.value;
+                            if (path && this.props.history && typeof this.props.history.push === 'function') {
+                                this.props.history.push(path);
+                            }
+                        }}
+                        style={{
+                            width: '100%',
+                            maxWidth: '480px',
+                            padding: '12px 16px',
+                            fontSize: '16px',
+                            color: '#1e293b',
+                            backgroundColor: '#ffffff',
+                            border: '2px solid rgba(255,255,255,0.3)',
+                            borderRadius: '8px',
+                            cursor: 'pointer',
+                            outline: 'none',
+                            fontFamily: 'inherit'
+                        }}
+                    >
+                        {practiceTypeOptions.map((opt) => (
+                            <option key={opt.value} value={opt.value}>{opt.label}</option>
+                        ))}
+                    </select>
+                </div>
+
                 {/* Modern Tab Navigation */}
                 <div style={{
                     background: 'linear-gradient(180deg, #f8f9fa 0%, #ffffff 100%)',

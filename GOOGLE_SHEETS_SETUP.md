@@ -29,8 +29,9 @@ Google Sheets provides a simple, free solution for storing quiz scores publicly.
 
 3. Set up the header row (Row 1) with these columns:
    ```
-   Exam ID | Exam Name | Exam Title | First Name | Middle Name | Last Name | Company Name | Instructor Name | Score | Time Elapsed | Submitted At | Total Questions
+   Exam ID | Exam Name | Exam Title | First Name | Middle Name | Last Name | Company Name | Instructor Name | Score | Time Elapsed | Submitted At | Total Questions | Question Summary
    ```
+   **Question Summary** (column 13) stores each question text and the student's selected answer for that submission.
 
 4. Format row 1 as bold/header style (optional)
 

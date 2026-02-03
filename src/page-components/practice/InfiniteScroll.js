@@ -140,7 +140,7 @@ class InfiniteScroll extends Component {
                                 fontWeight: '600'
                             }}
                         >
-                            ← Back to Practice Examples
+                            ← Back to UI Practice Examples
                         </Link>
                     </div>
                 </div>

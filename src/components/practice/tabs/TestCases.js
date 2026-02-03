@@ -6410,7 +6410,7 @@ class TestCases extends Component {
                                     textAlign: 'center',
                                     textShadow: '0 2px 4px rgba(0,0,0,0.2)'
                                 }}>
-                                    Practice Examples - Test Cases
+                                    UI Practice Examples - UI Test Cases
                                 </h1>
                                 <p style={{
                                     fontSize: '20px',
@@ -6438,7 +6438,7 @@ class TestCases extends Component {
                                     >
                                         ISTQB
                                     </a>
-                                    {' '}-aligned Manual Test Cases for Registration Form
+                                    {' '}-aligned Manual UI Test Cases for Registration Form
                                 </p>
                             </div>
                         </div>
@@ -6786,7 +6786,7 @@ class TestCases extends Component {
                                         fontWeight: '600',
                                         borderBottom: '2px solid rgba(255,255,255,0.2)'
                                     }}>
-                                        Test Cases Count
+                                        UI Test Cases Count
                                     </th>
                                     <th style={{
                                         padding: '18px 20px',
@@ -6940,7 +6940,7 @@ class TestCases extends Component {
                         </table>
                     </div>
 
-                    {/* Expanded Test Cases Details - Below Table */}
+                    {/* Expanded UI Test Cases Details - Below Table */}
                     {(() => {
                         const sectionOrder = [
                             'registration-form', 'e2e-flow', 'ab-testing', 'add-remove-elements',
@@ -6992,7 +6992,7 @@ class TestCases extends Component {
                                     fontWeight: '600',
                                     textAlign: 'left'
                                 }}>
-                                    Expanded Test Cases
+                                    Expanded UI Test Cases
                                 </h2>
                                 {expandedSections.map((section) => {
                                     const sectionNumber = sectionOrderFull.indexOf(section.id) + 1;

@@ -44,9 +44,12 @@ const saveToGoogleSheets = async (examId, studentInfo, examResult) => {
     totalQuestions: examResult.totalQuestions || 0
   };
 
-  // Send to Google Apps Script web app using URL-encoded form data to avoid CORS preflight
+  const questionSummary = (examResult.questionSummary != null && examResult.questionSummary !== '') ? String(examResult.questionSummary) : '';
+
+  // Send to Google Apps Script: questionSummary first (long) then data (JSON) so summary is less likely truncated
   const formData = new URLSearchParams();
   formData.append('action', 'save');
+  formData.append('questionSummary', questionSummary);
   formData.append('data', JSON.stringify(resultData));
 
   // Reduced timeout to 5 seconds for faster failure

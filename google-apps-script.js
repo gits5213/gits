@@ -23,6 +23,29 @@ function doOptions() {
 }
 
 /**
+ * Parse URL-encoded form body (action, data, questionSummary).
+ * Use raw postData.contents so questionSummary is not truncated by e.parameter.
+ */
+function parseFormBody(contents) {
+  const params = {};
+  if (!contents || typeof contents !== 'string') return params;
+  const pairs = contents.split('&');
+  for (let i = 0; i < pairs.length; i++) {
+    const eqIdx = pairs[i].indexOf('=');
+    if (eqIdx !== -1) {
+      try {
+        const key = decodeURIComponent(pairs[i].substring(0, eqIdx).replace(/\+/g, ' '));
+        const val = decodeURIComponent(pairs[i].substring(eqIdx + 1).replace(/\+/g, ' '));
+        params[key] = val;
+      } catch (err) {
+        // skip malformed pair
+      }
+    }
+  }
+  return params;
+}
+
+/**
  * Handle POST requests (save, delete operations)
  */
 function doPost(e) {
@@ -38,119 +61,66 @@ function doPost(e) {
       .setMimeType(ContentService.MimeType.JSON);
     }
     
-    // IMPORTANT: For URL-encoded form data, ALWAYS read from e.parameter
-    // NEVER parse e.postData.contents for form data - it contains raw form string like "action=sav..."
     let data;
+    var params = {};
     
-    // Debug logging to see what we're receiving
-    const debugInfo = {
-      hasParameter: !!e.parameter,
-      hasPostData: !!e.postData,
-      postDataType: e.postData ? e.postData.type : null,
-      parameterKeys: e.parameter ? Object.keys(e.parameter) : [],
-      parameterAction: e.parameter ? e.parameter.action : null,
-      parameterData: e.parameter && e.parameter.data ? e.parameter.data.substring(0, 100) : null,
-      postDataContents: e.postData ? e.postData.contents.substring(0, 100) : null
-    };
+    // Prefer parsing raw POST body so questionSummary is never truncated (e.parameter can drop long values)
+    if (e.postData && e.postData.contents) {
+      params = parseFormBody(e.postData.contents);
+    }
+    // If no postData or params empty, fall back to e.parameter
+    if (!params || !params.action) {
+      if (e.parameter) {
+        params.action = e.parameter.action;
+        params.data = e.parameter.data;
+        params.questionSummary = (e.parameter.questionSummary != null) ? String(e.parameter.questionSummary) : '';
+        params.rowId = e.parameter.rowId;
+      }
+    }
     
-    // Check e.parameter first (this is where URL-encoded form data goes)
-    // Google Apps Script automatically parses application/x-www-form-urlencoded into e.parameter
-    if (e.parameter && e.parameter.action) {
-      const action = e.parameter.action;
-      const dataStr = e.parameter.data;
-      
-      if (action === 'save' && dataStr) {
-        try {
-          // Parse the JSON string from the data parameter
-          data = {
-            action: 'save',
-            data: JSON.parse(dataStr)
-          };
-        } catch (parseError) {
-          return ContentService.createTextOutput(JSON.stringify({
-            success: false,
-            error: 'Invalid JSON in data parameter: ' + parseError.toString(),
-            receivedData: dataStr ? dataStr.substring(0, 200) : 'null',
-            debug: debugInfo
-          }))
-          .setMimeType(ContentService.MimeType.JSON);
-        }
-      } else if (action === 'delete') {
-        data = { 
-          action: 'delete',
-          rowId: e.parameter.rowId
+    const action = params.action;
+    const dataStr = params.data;
+    
+    if (action === 'save' && dataStr) {
+      try {
+        data = {
+          action: 'save',
+          data: JSON.parse(dataStr),
+          questionSummaryParam: (params.questionSummary != null && params.questionSummary !== '') ? String(params.questionSummary) : (params.questionSummary || '')
         };
-      } else if (action === 'deleteAll') {
-        data = { action: 'deleteAll' };
-      } else {
+      } catch (parseError) {
         return ContentService.createTextOutput(JSON.stringify({
           success: false,
-          error: 'Invalid action or missing data. Action: ' + (action || 'null') + ', Data: ' + (dataStr ? 'present' : 'missing'),
-          debug: debugInfo
+          error: 'Invalid JSON in data parameter: ' + parseError.toString(),
+          receivedData: dataStr ? dataStr.substring(0, 200) : 'null'
         }))
         .setMimeType(ContentService.MimeType.JSON);
       }
-    } else if (e.postData && e.postData.contents) {
-      // Fallback: manually parse URL-encoded form data from postData.contents
-      // This handles cases where e.parameter is not populated automatically
-      const formData = e.postData.contents;
-      const params = {};
-      
-      // Parse the form data string (e.g., "action=save&data={...}")
-      const pairs = formData.split('&');
-      for (let i = 0; i < pairs.length; i++) {
-        const pair = pairs[i].split('=');
-        if (pair.length === 2) {
-          params[decodeURIComponent(pair[0])] = decodeURIComponent(pair[1]);
-        }
-      }
-      
-      const action = params.action;
-      const dataStr = params.data;
-      
-      if (action === 'save' && dataStr) {
-        try {
-          data = {
-            action: 'save',
-            data: JSON.parse(dataStr)
-          };
-        } catch (parseError) {
-          return ContentService.createTextOutput(JSON.stringify({
-            success: false,
-            error: 'Invalid JSON in parsed form data: ' + parseError.toString(),
-            receivedData: dataStr ? dataStr.substring(0, 200) : 'null',
-            debug: debugInfo
-          }))
-          .setMimeType(ContentService.MimeType.JSON);
-        }
-      } else if (action === 'delete') {
-        data = { 
-          action: 'delete',
-          rowId: params.rowId
-        };
-      } else if (action === 'deleteAll') {
-        data = { action: 'deleteAll' };
-      } else {
-        return ContentService.createTextOutput(JSON.stringify({
-          success: false,
-          error: 'Invalid action in parsed form data. Action: ' + (action || 'null') + ', Data: ' + (dataStr ? 'present' : 'missing'),
-          debug: debugInfo
-        }))
-        .setMimeType(ContentService.MimeType.JSON);
-      }
+    } else if (action === 'delete') {
+      data = { action: 'delete', rowId: params.rowId };
+    } else if (action === 'deleteAll') {
+      data = { action: 'deleteAll' };
     } else {
-      // No parameters found and no postData
       return ContentService.createTextOutput(JSON.stringify({
         success: false,
-        error: 'No parameters found. Make sure you are sending URL-encoded form data.',
-        debug: debugInfo
+        error: 'Invalid action or missing data. Action: ' + (action || 'null') + ', Data: ' + (dataStr ? 'present' : 'missing')
+      }))
+      .setMimeType(ContentService.MimeType.JSON);
+    }
+    
+    if (!data) {
+      return ContentService.createTextOutput(JSON.stringify({
+        success: false,
+        error: 'No parameters found. Send URL-encoded form: action, data (JSON), questionSummary.'
       }))
       .setMimeType(ContentService.MimeType.JSON);
     }
     
     // Process the action
     if (data.action === 'save' && data.data) {
-      // Add new row with exam result
+      // questionSummary from separate form param (avoids truncation of long JSON); fallback to data.data for older clients
+      const questionSummaryCell = (data.questionSummaryParam != null && data.questionSummaryParam !== '') ? String(data.questionSummaryParam) : (data.data.questionSummary || '');
+      // Add new row with exam result (column 13 = Question Summary for gits-scorecard)
       const rowData = [
         data.data.examId || '',
         data.data.examName || '',
@@ -163,7 +133,8 @@ function doPost(e) {
         data.data.score || 0,
         data.data.timeElapsed || 0,
         data.data.submittedAt || new Date().toISOString(),
-        data.data.totalQuestions || 0
+        data.data.totalQuestions || 0,
+        questionSummaryCell
       ];
       
       // Append the row
@@ -268,7 +239,8 @@ function doGet(e) {
           score: row[8] || 0,
           timeElapsed: row[9] || 0,
           submittedAt: row[10] || '',
-          totalQuestions: row[11] || 0
+          totalQuestions: row[11] || 0,
+          questionSummary: (row[12] !== undefined && row[12] !== null && row[12] !== '') ? row[12] : ''
         });
       }
     }

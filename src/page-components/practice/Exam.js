@@ -27,7 +27,8 @@ class Exam extends Component {
             examTaken: examTaken === 'true',
             studentInfo: studentInfo,
             showCertificate: false,
-            attemptNumber: examTaken === 'true' ? 1 : 1 // For one-attempt system, always 1
+            attemptNumber: examTaken === 'true' ? 1 : 1, // For one-attempt system, always 1
+            showOverview: false
         };
     }
 
@@ -116,7 +117,8 @@ class Exam extends Component {
                 endTime: null,
                 timeElapsed: 0,
                 showCertificate: false,
-                attemptNumber: 1
+                attemptNumber: 1,
+                showOverview: false
             }, () => {
                 // Restart timer after state is updated
                 this.timerInterval = setInterval(() => {
@@ -127,6 +129,14 @@ class Exam extends Component {
                 }, 1000);
             });
         }
+    }
+
+    showOverviewPage = () => {
+        this.setState({ showOverview: true });
+    }
+
+    hideOverviewPage = () => {
+        this.setState({ showOverview: false });
     }
 
     handleSubmit = async () => {
@@ -143,8 +153,17 @@ class Exam extends Component {
             });
             
             const score = Math.round((correctAnswers / this.examData.questions.length) * 100);
-            
-            // Save exam result (to both localStorage and Firebase if configured)
+
+            // Build question summary for Google Sheets (all questions and selected answers)
+            const questionSummaryLines = this.examData.questions.map((q, index) => {
+                const userAnswerIndex = this.state.answers[q.id];
+                const optionLabel = userAnswerIndex !== undefined ? String.fromCharCode(65 + userAnswerIndex) : '—';
+                const optionText = userAnswerIndex !== undefined ? q.options[userAnswerIndex] : 'Not answered';
+                return `Q${index + 1}: ${q.question}\nYour answer: ${optionLabel}. ${optionText}`;
+            });
+            const questionSummary = questionSummaryLines.join('\n\n');
+
+            // Save exam result (to both localStorage and Google Sheets)
             const examResult = {
                 score,
                 answers: this.state.answers,
@@ -152,9 +171,10 @@ class Exam extends Component {
                 submittedAt: new Date().toISOString(),
                 examName: this.examData.examName,
                 examTitle: this.examData.title,
-                totalQuestions: this.examData.questions.length
+                totalQuestions: this.examData.questions.length,
+                questionSummary
             };
-            
+
             // Save using the storage service (non-blocking - returns immediately)
             // localStorage is saved synchronously, Google Sheets happens in background
             saveExamResult(this.examId, this.state.studentInfo, examResult);
@@ -458,6 +478,144 @@ class Exam extends Component {
             );
         }
 
+        // Overview: all questions and answers on one page before submit
+        if (this.state.showOverview && !this.state.isSubmitted) {
+            return (
+                <>
+                <div style={{
+                    maxWidth: '900px',
+                    margin: '40px auto',
+                    padding: '40px',
+                    backgroundColor: '#ffffff',
+                    borderRadius: '12px',
+                    boxShadow: '0 4px 6px rgba(0,0,0,0.1)'
+                }}>
+                    <div style={{
+                        display: 'flex',
+                        justifyContent: 'space-between',
+                        alignItems: 'center',
+                        marginBottom: '24px',
+                        padding: '20px',
+                        backgroundColor: 'linear-gradient(135deg, #667eea 0%, #764ba2 100%)',
+                        background: 'linear-gradient(135deg, #667eea 0%, #764ba2 100%)',
+                        borderRadius: '8px',
+                        color: '#fff'
+                    }}>
+                        <div>
+                            <h1 style={{ fontSize: '24px', fontWeight: 'bold', margin: 0, color: '#fff' }}>
+                                Exam Overview — Review Your Answers
+                            </h1>
+                            <p style={{ fontSize: '14px', margin: '8px 0 0 0', opacity: 0.95 }}>
+                                {this.examData.examName}: {this.examData.title} · {this.examData.questions.length} questions
+                            </p>
+                        </div>
+                        <div style={{ fontSize: '18px', fontWeight: '600' }}>
+                            ⏱️ {this.formatTime(this.state.timeElapsed)}
+                        </div>
+                    </div>
+
+                    <p style={{
+                        fontSize: '15px',
+                        color: '#555',
+                        marginBottom: '24px',
+                        padding: '12px 16px',
+                        backgroundColor: '#f8f9fa',
+                        borderRadius: '8px',
+                        borderLeft: '4px solid #00416A'
+                    }}>
+                        Review all questions and your selected answers below. You can go back to the exam to change any answer, or submit when ready.
+                    </p>
+
+                    <div style={{ marginBottom: '32px' }}>
+                        {this.examData.questions.map((q, index) => {
+                            const userAnswerIndex = this.state.answers[q.id];
+                            const optionLabel = userAnswerIndex !== undefined ? String.fromCharCode(65 + userAnswerIndex) : '—';
+                            const optionText = userAnswerIndex !== undefined ? q.options[userAnswerIndex] : 'Not answered';
+                            return (
+                                <div
+                                    key={q.id}
+                                    style={{
+                                        padding: '20px',
+                                        marginBottom: '16px',
+                                        border: '1px solid #e0e0e0',
+                                        borderRadius: '8px',
+                                        backgroundColor: index % 2 === 0 ? '#ffffff' : '#fafafa'
+                                    }}
+                                >
+                                    <div style={{
+                                        fontSize: '14px',
+                                        fontWeight: '600',
+                                        color: '#00416A',
+                                        marginBottom: '8px'
+                                    }}>
+                                        Question {index + 1} of {this.examData.questions.length}
+                                    </div>
+                                    <div style={{
+                                        fontSize: '17px',
+                                        fontWeight: '600',
+                                        color: '#333',
+                                        marginBottom: '10px',
+                                        lineHeight: 1.4
+                                    }}>
+                                        {q.question}
+                                    </div>
+                                    <div style={{
+                                        fontSize: '15px',
+                                        color: '#555',
+                                        paddingLeft: '8px',
+                                        borderLeft: '3px solid #667eea'
+                                    }}>
+                                        <strong>Your answer:</strong> {optionLabel}. {optionText}
+                                    </div>
+                                </div>
+                            );
+                        })}
+                    </div>
+
+                    <div style={{
+                        display: 'flex',
+                        flexWrap: 'wrap',
+                        gap: '12px',
+                        justifyContent: 'center',
+                        paddingTop: '24px',
+                        borderTop: '2px solid #e9ecef'
+                    }}>
+                        <button
+                            onClick={this.hideOverviewPage}
+                            style={{
+                                padding: '14px 28px',
+                                fontSize: '16px',
+                                fontWeight: '600',
+                                backgroundColor: '#6c757d',
+                                color: '#ffffff',
+                                border: 'none',
+                                borderRadius: '8px',
+                                cursor: 'pointer'
+                            }}
+                        >
+                            ← Back to Exam
+                        </button>
+                        <button
+                            onClick={this.handleSubmit}
+                            style={{
+                                padding: '14px 28px',
+                                fontSize: '16px',
+                                fontWeight: '600',
+                                backgroundColor: '#28a745',
+                                color: '#ffffff',
+                                border: 'none',
+                                borderRadius: '8px',
+                                cursor: 'pointer'
+                            }}
+                        >
+                            Submit Exam
+                        </button>
+                    </div>
+                </div>
+                </>
+            );
+        }
+
         const currentQuestion = this.examData.questions[this.state.currentQuestion];
         const selectedAnswer = this.state.answers[currentQuestion.id];
 
@@ -662,10 +820,26 @@ class Exam extends Component {
                     >
                         Previous
                     </button>
-                    <div style={{ display: 'flex', gap: '10px' }}>
+                    <div style={{ display: 'flex', gap: '10px', alignItems: 'center' }}>
+                        <button
+                            type="button"
+                            onClick={this.showOverviewPage}
+                            style={{
+                                padding: '10px 18px',
+                                fontSize: '14px',
+                                backgroundColor: 'transparent',
+                                color: '#667eea',
+                                border: '2px solid #667eea',
+                                borderRadius: '6px',
+                                cursor: 'pointer',
+                                fontWeight: '600'
+                            }}
+                        >
+                            Review all answers
+                        </button>
                         {this.state.currentQuestion === this.examData.questions.length - 1 ? (
                             <button
-                                onClick={this.handleSubmit}
+                                onClick={this.showOverviewPage}
                                 style={{
                                     padding: '12px 24px',
                                     fontSize: '16px',
@@ -677,7 +851,7 @@ class Exam extends Component {
                                     fontWeight: '600'
                                 }}
                             >
-                                Submit Exam
+                                Review answers & Submit
                             </button>
                         ) : (
                             <button

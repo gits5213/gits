@@ -1924,7 +1924,7 @@ class E2EFlow extends Component {
                                 fontSize: '16px'
                             }}
                         >
-                            ← Back to Practice Examples
+                            ← Back to UI Practice Examples
                         </Link>
                     </div>
                 </div>
