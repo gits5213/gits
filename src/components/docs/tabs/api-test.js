@@ -5,6 +5,8 @@ import { UpArrow } from '../../shared';
 
 const ApiTest = () => {
     const [isFundamentalsExpanded, setIsFundamentalsExpanded] = useState(true);
+    const [isUserStoryExpanded, setIsUserStoryExpanded] = useState(true);
+    const [isManualTestCaseExpanded, setIsManualTestCaseExpanded] = useState(true);
     const [isGettingStartedExpanded, setIsGettingStartedExpanded] = useState(true);
     const [isStatusCodesExpanded, setIsStatusCodesExpanded] = useState(true);
     const [isVerifyExpanded, setIsVerifyExpanded] = useState(true);
@@ -2248,6 +2250,544 @@ Response Expected: 200 OK`}</pre>
                                         </tbody>
                                     </table>
                                 </div>
+                            </div>
+                        </div>
+                    )}
+                </div>
+            </div>
+
+            {/* Industry Standard API User Story Sample Section */}
+            <div style={leftAlignStyles.mainContent}>
+                <div style={{
+                    backgroundColor: '#ffffff',
+                    padding: '32px',
+                    borderRadius: '16px',
+                    marginBottom: '32px',
+                    boxShadow: '0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06)',
+                    border: '1px solid rgba(226, 232, 240, 0.8)',
+                    transition: 'all 0.3s cubic-bezier(0.4, 0, 0.2, 1)'
+                }}
+                onMouseEnter={(e) => {
+                    e.currentTarget.style.boxShadow = '0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05)';
+                    e.currentTarget.style.transform = 'translateY(-2px)';
+                }}
+                onMouseLeave={(e) => {
+                    e.currentTarget.style.boxShadow = '0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06)';
+                    e.currentTarget.style.transform = 'translateY(0)';
+                }}
+                >
+                    <div
+                        onClick={() => setIsUserStoryExpanded(!isUserStoryExpanded)}
+                        style={{
+                            cursor: 'pointer',
+                            display: 'flex',
+                            justifyContent: 'space-between',
+                            alignItems: 'center',
+                            paddingBottom: isUserStoryExpanded ? '20px' : '0',
+                            borderBottom: isUserStoryExpanded ? '3px solid #667eea' : 'none',
+                            transition: 'all 0.3s ease',
+                            marginBottom: isUserStoryExpanded ? '24px' : '0'
+                        }}
+                        onMouseEnter={(e) => { e.currentTarget.style.opacity = '0.8'; }}
+                        onMouseLeave={(e) => { e.currentTarget.style.opacity = '1'; }}
+                    >
+                        <h2 id="industry-standard-api-user-story" style={{
+                            color: '#1e293b',
+                            fontSize: '28px',
+                            marginBottom: 0,
+                            fontWeight: '700',
+                            letterSpacing: '-0.02em',
+                            lineHeight: '1.3'
+                        }}>
+                            Industry Standard API User Story Sample
+                        </h2>
+                        <span style={{
+                            fontSize: '28px',
+                            color: '#667eea',
+                            fontWeight: 'bold',
+                            marginLeft: '20px',
+                            flexShrink: 0,
+                            transition: 'transform 0.3s ease',
+                            width: '32px',
+                            height: '32px',
+                            display: 'flex',
+                            alignItems: 'center',
+                            justifyContent: 'center',
+                            borderRadius: '8px',
+                            backgroundColor: isUserStoryExpanded ? '#eef2ff' : '#f1f5f9'
+                        }}>
+                            {isUserStoryExpanded ? '−' : '+'}
+                        </span>
+                    </div>
+
+                    {isUserStoryExpanded && (
+                        <div style={{ marginTop: '24px', animation: 'fadeIn 0.3s ease' }}>
+                            <p style={{ fontSize: '16px', lineHeight: '1.8', color: '#333333', marginBottom: '20px' }}>
+                                Below is a single, copy-paste <strong>industry standard API user story template</strong> you can reuse for any endpoint. It is written to be <strong>testable</strong>, <strong>implementation-agnostic</strong>, and aligned with common Agile + API best practices.
+                            </p>
+
+                            <h3 id="api-user-story-template" style={{ color: '#00416A', fontSize: '22px', marginBottom: '12px', marginTop: '24px', fontWeight: 'bold' }}>
+                                API User Story Template (Best Practice)
+                            </h3>
+
+                            <div style={{ backgroundColor: '#ffffff', padding: '20px', borderRadius: '8px', border: '1px solid #e0e0e0', marginBottom: '24px', overflowX: 'auto' }}>
+                                <table style={{ width: '100%', borderCollapse: 'collapse', fontSize: '14px', textAlign: 'left' }}>
+                                    <thead>
+                                        <tr style={{ backgroundColor: '#f8f9fa', borderBottom: '2px solid #00416A' }}>
+                                            <th style={{ padding: '12px', fontWeight: 'bold', color: '#00416A', width: '160px' }}>Field</th>
+                                            <th style={{ padding: '12px', fontWeight: 'bold', color: '#00416A' }}>Value / Template</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <tr style={{ borderBottom: '1px solid #e0e0e0' }}><td style={{ padding: '12px', fontWeight: '600' }}>Story ID</td><td style={{ padding: '12px' }}>API-___</td></tr>
+                                        <tr style={{ borderBottom: '1px solid #e0e0e0', backgroundColor: '#f8f9fa' }}><td style={{ padding: '12px', fontWeight: '600' }}>Title</td><td style={{ padding: '12px' }}><code style={{ backgroundColor: '#e2e8f0', padding: '2px 6px', borderRadius: '4px' }}>[Verb] [Resource] (Endpoint: [METHOD] /v1/[resource])</code></td></tr>
+                                        <tr style={{ borderBottom: '1px solid #e0e0e0' }}><td style={{ padding: '12px', fontWeight: '600' }}>Epic/Feature</td><td style={{ padding: '12px' }}>___</td></tr>
+                                        <tr style={{ borderBottom: '1px solid #e0e0e0', backgroundColor: '#f8f9fa' }}><td style={{ padding: '12px', fontWeight: '600' }}>Priority</td><td style={{ padding: '12px' }}>P0 / P1 / P2</td></tr>
+                                        <tr style={{ borderBottom: '1px solid #e0e0e0' }}><td style={{ padding: '12px', fontWeight: '600' }}>Story Points</td><td style={{ padding: '12px' }}>___</td></tr>
+                                        <tr style={{ borderBottom: '1px solid #e0e0e0', backgroundColor: '#f8f9fa' }}><td style={{ padding: '12px', fontWeight: '600' }}>Owner</td><td style={{ padding: '12px' }}>___</td></tr>
+                                    </tbody>
+                                </table>
+                            </div>
+
+                            <h4 style={{ color: '#1e293b', fontSize: '18px', marginTop: '20px', marginBottom: '8px', fontWeight: '600' }}>User Story</h4>
+                            <div style={{ backgroundColor: '#ffffff', padding: '20px', borderRadius: '8px', border: '1px solid #e0e0e0', marginBottom: '24px', overflowX: 'auto' }}>
+                                <table style={{ width: '100%', borderCollapse: 'collapse', fontSize: '14px', textAlign: 'left' }}>
+                                    <thead>
+                                        <tr style={{ backgroundColor: '#f8f9fa', borderBottom: '2px solid #00416A' }}>
+                                            <th style={{ padding: '12px', fontWeight: 'bold', color: '#00416A', width: '120px' }}>Clause</th>
+                                            <th style={{ padding: '12px', fontWeight: 'bold', color: '#00416A' }}>Template</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <tr style={{ borderBottom: '1px solid #e0e0e0' }}><td style={{ padding: '12px', fontWeight: '600' }}>As a</td><td style={{ padding: '12px' }}>[API consumer persona: internal service / web app / mobile app / partner]</td></tr>
+                                        <tr style={{ borderBottom: '1px solid #e0e0e0', backgroundColor: '#f8f9fa' }}><td style={{ padding: '12px', fontWeight: '600' }}>I want to</td><td style={{ padding: '12px' }}>[action] via [endpoint]</td></tr>
+                                        <tr style={{ borderBottom: '1px solid #e0e0e0' }}><td style={{ padding: '12px', fontWeight: '600' }}>So that</td><td style={{ padding: '12px' }}>[business value/outcome]</td></tr>
+                                    </tbody>
+                                </table>
+                            </div>
+
+                            <h4 style={{ color: '#1e293b', fontSize: '18px', marginTop: '20px', marginBottom: '8px', fontWeight: '600' }}>Scope</h4>
+                            <div style={{ backgroundColor: '#ffffff', padding: '20px', borderRadius: '8px', border: '1px solid #e0e0e0', marginBottom: '24px', overflowX: 'auto' }}>
+                                <table style={{ width: '100%', borderCollapse: 'collapse', fontSize: '14px', textAlign: 'left' }}>
+                                    <thead>
+                                        <tr style={{ backgroundColor: '#f8f9fa', borderBottom: '2px solid #00416A' }}>
+                                            <th style={{ padding: '12px', fontWeight: 'bold', color: '#00416A', width: '140px' }}>Type</th>
+                                            <th style={{ padding: '12px', fontWeight: 'bold', color: '#00416A' }}>Items</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <tr style={{ borderBottom: '1px solid #e0e0e0' }}><td style={{ padding: '12px', fontWeight: '600' }}>In Scope</td><td style={{ padding: '12px' }}>--- , ---</td></tr>
+                                        <tr style={{ borderBottom: '1px solid #e0e0e0', backgroundColor: '#f8f9fa' }}><td style={{ padding: '12px', fontWeight: '600' }}>Out of Scope</td><td style={{ padding: '12px' }}>--- , ---</td></tr>
+                                    </tbody>
+                                </table>
+                            </div>
+
+                            <h4 style={{ color: '#1e293b', fontSize: '18px', marginTop: '20px', marginBottom: '8px', fontWeight: '600' }}>API Contract — Endpoint</h4>
+                            <div style={{ backgroundColor: '#ffffff', padding: '20px', borderRadius: '8px', border: '1px solid #e0e0e0', marginBottom: '16px', overflowX: 'auto' }}>
+                                <table style={{ width: '100%', borderCollapse: 'collapse', fontSize: '14px', textAlign: 'left' }}>
+                                    <thead>
+                                        <tr style={{ backgroundColor: '#f8f9fa', borderBottom: '2px solid #00416A' }}>
+                                            <th style={{ padding: '12px', fontWeight: 'bold', color: '#00416A', width: '180px' }}>Attribute</th>
+                                            <th style={{ padding: '12px', fontWeight: 'bold', color: '#00416A' }}>Description</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <tr style={{ borderBottom: '1px solid #e0e0e0' }}><td style={{ padding: '12px', fontWeight: '600' }}>Method</td><td style={{ padding: '12px' }}><code style={{ backgroundColor: '#e2e8f0', padding: '2px 6px', borderRadius: '4px' }}>GET | POST | PUT | PATCH | DELETE</code></td></tr>
+                                        <tr style={{ borderBottom: '1px solid #e0e0e0', backgroundColor: '#f8f9fa' }}><td style={{ padding: '12px', fontWeight: '600' }}>Path</td><td style={{ padding: '12px' }}><code style={{ backgroundColor: '#e2e8f0', padding: '2px 6px', borderRadius: '4px' }}>/v1/[resource]</code> or <code style={{ backgroundColor: '#e2e8f0', padding: '2px 6px', borderRadius: '4px' }}>/v1/[resource]/&#123;id&#125;</code></td></tr>
+                                        <tr style={{ borderBottom: '1px solid #e0e0e0' }}><td style={{ padding: '12px', fontWeight: '600' }}>Auth</td><td style={{ padding: '12px' }}><code style={{ backgroundColor: '#e2e8f0', padding: '2px 6px', borderRadius: '4px' }}>Bearer token | API key | mTLS</code></td></tr>
+                                        <tr style={{ borderBottom: '1px solid #e0e0e0', backgroundColor: '#f8f9fa' }}><td style={{ padding: '12px', fontWeight: '600' }}>Required Scopes/Roles</td><td style={{ padding: '12px' }}><code style={{ backgroundColor: '#e2e8f0', padding: '2px 6px', borderRadius: '4px' }}>[...]</code></td></tr>
+                                        <tr style={{ borderBottom: '1px solid #e0e0e0' }}><td style={{ padding: '12px', fontWeight: '600' }}>Idempotency</td><td style={{ padding: '12px' }}><code style={{ backgroundColor: '#e2e8f0', padding: '2px 6px', borderRadius: '4px' }}>Yes/No</code> (If yes: <code style={{ backgroundColor: '#e2e8f0', padding: '2px 6px', borderRadius: '4px' }}>Idempotency-Key</code> header required)</td></tr>
+                                    </tbody>
+                                </table>
+                            </div>
+
+                            <h4 style={{ color: '#1e293b', fontSize: '18px', marginBottom: '8px', fontWeight: '600' }}>API Contract — Request</h4>
+                            <div style={{ backgroundColor: '#ffffff', padding: '20px', borderRadius: '8px', border: '1px solid #e0e0e0', marginBottom: '16px', overflowX: 'auto' }}>
+                                <table style={{ width: '100%', borderCollapse: 'collapse', fontSize: '14px', textAlign: 'left' }}>
+                                    <thead>
+                                        <tr style={{ backgroundColor: '#f8f9fa', borderBottom: '2px solid #00416A' }}>
+                                            <th style={{ padding: '12px', fontWeight: 'bold', color: '#00416A', width: '160px' }}>Part</th>
+                                            <th style={{ padding: '12px', fontWeight: 'bold', color: '#00416A' }}>Description</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <tr style={{ borderBottom: '1px solid #e0e0e0' }}><td style={{ padding: '12px', fontWeight: '600' }}>Headers</td><td style={{ padding: '12px' }}><code style={{ backgroundColor: '#e2e8f0', padding: '2px 6px', borderRadius: '4px' }}>Content-Type: application/json</code> (if body), <code style={{ backgroundColor: '#e2e8f0', padding: '2px 6px', borderRadius: '4px' }}>Authorization: Bearer &lt;token&gt;</code> (if secured), <code style={{ backgroundColor: '#e2e8f0', padding: '2px 6px', borderRadius: '4px' }}>Idempotency-Key: &lt;uuid&gt;</code> (if applicable)</td></tr>
+                                        <tr style={{ borderBottom: '1px solid #e0e0e0', backgroundColor: '#f8f9fa' }}><td style={{ padding: '12px', fontWeight: '600' }}>Path Params</td><td style={{ padding: '12px' }}><code style={{ backgroundColor: '#e2e8f0', padding: '2px 6px', borderRadius: '4px' }}>&#123;id&#125;</code> format/validation rules</td></tr>
+                                        <tr style={{ borderBottom: '1px solid #e0e0e0' }}><td style={{ padding: '12px', fontWeight: '600' }}>Query Params</td><td style={{ padding: '12px' }}>filters / sort / pagination</td></tr>
+                                        <tr style={{ borderBottom: '1px solid #e0e0e0', backgroundColor: '#f8f9fa' }}><td style={{ padding: '12px', fontWeight: '600' }}>Body Schema (JSON)</td><td style={{ padding: '12px' }}>Field list: <code style={{ backgroundColor: '#e2e8f0', padding: '2px 6px', borderRadius: '4px' }}>name</code>, <code style={{ backgroundColor: '#e2e8f0', padding: '2px 6px', borderRadius: '4px' }}>type</code>, <code style={{ backgroundColor: '#e2e8f0', padding: '2px 6px', borderRadius: '4px' }}>required?</code>, <code style={{ backgroundColor: '#e2e8f0', padding: '2px 6px', borderRadius: '4px' }}>constraints</code>, <code style={{ backgroundColor: '#e2e8f0', padding: '2px 6px', borderRadius: '4px' }}>example</code>; example request payload</td></tr>
+                                    </tbody>
+                                </table>
+                            </div>
+
+                            <h4 style={{ color: '#1e293b', fontSize: '18px', marginBottom: '8px', fontWeight: '600' }}>API Contract — Response</h4>
+                            <div style={{ backgroundColor: '#ffffff', padding: '20px', borderRadius: '8px', border: '1px solid #e0e0e0', marginBottom: '24px', overflowX: 'auto' }}>
+                                <table style={{ width: '100%', borderCollapse: 'collapse', fontSize: '14px', textAlign: 'left' }}>
+                                    <thead>
+                                        <tr style={{ backgroundColor: '#f8f9fa', borderBottom: '2px solid #00416A' }}>
+                                            <th style={{ padding: '12px', fontWeight: 'bold', color: '#00416A', width: '160px' }}>Part</th>
+                                            <th style={{ padding: '12px', fontWeight: 'bold', color: '#00416A' }}>Description</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <tr style={{ borderBottom: '1px solid #e0e0e0' }}><td style={{ padding: '12px', fontWeight: '600' }}>Success Status</td><td style={{ padding: '12px' }}><code style={{ backgroundColor: '#e2e8f0', padding: '2px 6px', borderRadius: '4px' }}>200 | 201 | 204</code></td></tr>
+                                        <tr style={{ borderBottom: '1px solid #e0e0e0', backgroundColor: '#f8f9fa' }}><td style={{ padding: '12px', fontWeight: '600' }}>Response Schema (JSON)</td><td style={{ padding: '12px' }}>Field list + examples</td></tr>
+                                        <tr style={{ borderBottom: '1px solid #e0e0e0' }}><td style={{ padding: '12px', fontWeight: '600' }}>Headers</td><td style={{ padding: '12px' }}><code style={{ backgroundColor: '#e2e8f0', padding: '2px 6px', borderRadius: '4px' }}>Location</code> (201 create), <code style={{ backgroundColor: '#e2e8f0', padding: '2px 6px', borderRadius: '4px' }}>ETag</code> (caching/optimistic locking), <code style={{ backgroundColor: '#e2e8f0', padding: '2px 6px', borderRadius: '4px' }}>X-Request-Id</code> (trace)</td></tr>
+                                    </tbody>
+                                </table>
+                            </div>
+
+                            <h4 style={{ color: '#1e293b', fontSize: '18px', marginTop: '20px', marginBottom: '8px', fontWeight: '600' }}>Acceptance Criteria (Gherkin-Style)</h4>
+                            <div style={{ backgroundColor: '#ffffff', padding: '20px', borderRadius: '8px', border: '1px solid #e0e0e0', marginBottom: '24px', overflowX: 'auto' }}>
+                                <table style={{ width: '100%', borderCollapse: 'collapse', fontSize: '14px', textAlign: 'left' }}>
+                                    <thead>
+                                        <tr style={{ backgroundColor: '#f8f9fa', borderBottom: '2px solid #00416A' }}>
+                                            <th style={{ padding: '12px', fontWeight: 'bold', color: '#00416A', width: '200px' }}>Scenario</th>
+                                            <th style={{ padding: '12px', fontWeight: 'bold', color: '#00416A' }}>Given / When / Then</th>
+                                            <th style={{ padding: '12px', fontWeight: 'bold', color: '#00416A', width: '160px' }}>Expected</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <tr style={{ borderBottom: '1px solid #e0e0e0' }}><td style={{ padding: '12px', fontWeight: '600' }}>Successful request</td><td style={{ padding: '12px' }}>Given valid auth; And valid payload; When client calls <code style={{ backgroundColor: '#e2e8f0', padding: '2px 6px', borderRadius: '4px' }}>[METHOD] /v1/[resource]...</code></td><td style={{ padding: '12px' }}><code style={{ backgroundColor: '#e2e8f0', padding: '2px 6px', borderRadius: '4px' }}>200/201/204</code>; response matches schema; resource persisted; audit has requestId</td></tr>
+                                        <tr style={{ borderBottom: '1px solid #e0e0e0', backgroundColor: '#f8f9fa' }}><td style={{ padding: '12px', fontWeight: '600' }}>Validation failure</td><td style={{ padding: '12px' }}>Given invalid/missing fields; When client calls endpoint</td><td style={{ padding: '12px' }}><code style={{ backgroundColor: '#e2e8f0', padding: '2px 6px', borderRadius: '4px' }}>400 Bad Request</code>; standard error model with field-level details</td></tr>
+                                        <tr style={{ borderBottom: '1px solid #e0e0e0' }}><td style={{ padding: '12px', fontWeight: '600' }}>Unauthorized</td><td style={{ padding: '12px' }}>Given missing/invalid token; When client calls endpoint</td><td style={{ padding: '12px' }}><code style={{ backgroundColor: '#e2e8f0', padding: '2px 6px', borderRadius: '4px' }}>401 Unauthorized</code></td></tr>
+                                        <tr style={{ borderBottom: '1px solid #e0e0e0', backgroundColor: '#f8f9fa' }}><td style={{ padding: '12px', fontWeight: '600' }}>Forbidden</td><td style={{ padding: '12px' }}>Given valid token but insufficient scope/role</td><td style={{ padding: '12px' }}><code style={{ backgroundColor: '#e2e8f0', padding: '2px 6px', borderRadius: '4px' }}>403 Forbidden</code></td></tr>
+                                        <tr style={{ borderBottom: '1px solid #e0e0e0' }}><td style={{ padding: '12px', fontWeight: '600' }}>Not found</td><td style={{ padding: '12px' }}>Given resource <code style={{ backgroundColor: '#e2e8f0', padding: '2px 6px', borderRadius: '4px' }}>&#123;id&#125;</code> does not exist</td><td style={{ padding: '12px' }}><code style={{ backgroundColor: '#e2e8f0', padding: '2px 6px', borderRadius: '4px' }}>404 Not Found</code></td></tr>
+                                        <tr style={{ borderBottom: '1px solid #e0e0e0', backgroundColor: '#f8f9fa' }}><td style={{ padding: '12px', fontWeight: '600' }}>Conflict / duplicate</td><td style={{ padding: '12px' }}>Given uniqueness constraint violated</td><td style={{ padding: '12px' }}><code style={{ backgroundColor: '#e2e8f0', padding: '2px 6px', borderRadius: '4px' }}>409 Conflict</code></td></tr>
+                                        <tr style={{ borderBottom: '1px solid #e0e0e0' }}><td style={{ padding: '12px', fontWeight: '600' }}>Rate limited</td><td style={{ padding: '12px' }}>Given client exceeds rate limit</td><td style={{ padding: '12px' }}><code style={{ backgroundColor: '#e2e8f0', padding: '2px 6px', borderRadius: '4px' }}>429 Too Many Requests</code>; <code style={{ backgroundColor: '#e2e8f0', padding: '2px 6px', borderRadius: '4px' }}>Retry-After</code> header</td></tr>
+                                    </tbody>
+                                </table>
+                            </div>
+
+                            <h4 style={{ color: '#1e293b', fontSize: '18px', marginTop: '20px', marginBottom: '8px', fontWeight: '600' }}>Error Handling Standard</h4>
+                            <p style={{ fontSize: '14px', color: '#333333', marginBottom: '8px' }}>All non-2xx responses must return:</p>
+                            <div style={{ backgroundColor: '#ffffff', padding: '20px', borderRadius: '8px', border: '1px solid #e0e0e0', marginBottom: '24px', overflowX: 'auto' }}>
+                                <table style={{ width: '100%', borderCollapse: 'collapse', fontSize: '14px', textAlign: 'left' }}>
+                                    <thead>
+                                        <tr style={{ backgroundColor: '#f8f9fa', borderBottom: '2px solid #00416A' }}>
+                                            <th style={{ padding: '12px', fontWeight: 'bold', color: '#00416A', width: '120px' }}>Field</th>
+                                            <th style={{ padding: '12px', fontWeight: 'bold', color: '#00416A', width: '100px' }}>Type</th>
+                                            <th style={{ padding: '12px', fontWeight: 'bold', color: '#00416A' }}>Description</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <tr style={{ borderBottom: '1px solid #e0e0e0' }}><td style={{ padding: '12px', fontWeight: '600' }}><code style={{ backgroundColor: '#e2e8f0', padding: '2px 6px', borderRadius: '4px' }}>code</code></td><td style={{ padding: '12px' }}>string</td><td style={{ padding: '12px' }}>Error code</td></tr>
+                                        <tr style={{ borderBottom: '1px solid #e0e0e0', backgroundColor: '#f8f9fa' }}><td style={{ padding: '12px', fontWeight: '600' }}><code style={{ backgroundColor: '#e2e8f0', padding: '2px 6px', borderRadius: '4px' }}>message</code></td><td style={{ padding: '12px' }}>string</td><td style={{ padding: '12px' }}>Human-readable message</td></tr>
+                                        <tr style={{ borderBottom: '1px solid #e0e0e0' }}><td style={{ padding: '12px', fontWeight: '600' }}><code style={{ backgroundColor: '#e2e8f0', padding: '2px 6px', borderRadius: '4px' }}>details</code></td><td style={{ padding: '12px' }}>array (optional)</td><td style={{ padding: '12px' }}>Array of &#123;field, issue&#125;</td></tr>
+                                        <tr style={{ borderBottom: '1px solid #e0e0e0', backgroundColor: '#f8f9fa' }}><td style={{ padding: '12px', fontWeight: '600' }}><code style={{ backgroundColor: '#e2e8f0', padding: '2px 6px', borderRadius: '4px' }}>requestId</code></td><td style={{ padding: '12px' }}>string</td><td style={{ padding: '12px' }}>Request trace ID</td></tr>
+                                    </tbody>
+                                </table>
+                            </div>
+
+                            <h4 style={{ color: '#1e293b', fontSize: '18px', marginTop: '20px', marginBottom: '8px', fontWeight: '600' }}>Non-Functional Requirements (NFRs)</h4>
+                            <div style={{ backgroundColor: '#ffffff', padding: '20px', borderRadius: '8px', border: '1px solid #e0e0e0', marginBottom: '24px', overflowX: 'auto' }}>
+                                <table style={{ width: '100%', borderCollapse: 'collapse', fontSize: '14px', textAlign: 'left' }}>
+                                    <thead>
+                                        <tr style={{ backgroundColor: '#f8f9fa', borderBottom: '2px solid #00416A' }}>
+                                            <th style={{ padding: '12px', fontWeight: 'bold', color: '#00416A', width: '160px' }}>Category</th>
+                                            <th style={{ padding: '12px', fontWeight: 'bold', color: '#00416A' }}>Requirement</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <tr style={{ borderBottom: '1px solid #e0e0e0' }}><td style={{ padding: '12px', fontWeight: '600' }}>Performance</td><td style={{ padding: '12px' }}>P95 latency ≤ ___ ms (under ___ RPS)</td></tr>
+                                        <tr style={{ borderBottom: '1px solid #e0e0e0', backgroundColor: '#f8f9fa' }}><td style={{ padding: '12px', fontWeight: '600' }}>Reliability</td><td style={{ padding: '12px' }}>Availability ≥ ___%</td></tr>
+                                        <tr style={{ borderBottom: '1px solid #e0e0e0' }}><td style={{ padding: '12px', fontWeight: '600' }}>Security</td><td style={{ padding: '12px' }}>TLS, input validation, least privilege scopes</td></tr>
+                                        <tr style={{ borderBottom: '1px solid #e0e0e0', backgroundColor: '#f8f9fa' }}><td style={{ padding: '12px', fontWeight: '600' }}>Observability</td><td style={{ padding: '12px' }}>Structured logs, metrics, tracing with <code style={{ backgroundColor: '#e2e8f0', padding: '2px 6px', borderRadius: '4px' }}>requestId</code></td></tr>
+                                        <tr style={{ borderBottom: '1px solid #e0e0e0' }}><td style={{ padding: '12px', fontWeight: '600' }}>Compliance/Data</td><td style={{ padding: '12px' }}>PII rules, retention, masking</td></tr>
+                                    </tbody>
+                                </table>
+                            </div>
+
+                            <h4 style={{ color: '#1e293b', fontSize: '18px', marginTop: '20px', marginBottom: '8px', fontWeight: '600' }}>Test Coverage (Definition of Done)</h4>
+                            <div style={{ backgroundColor: '#ffffff', padding: '20px', borderRadius: '8px', border: '1px solid #e0e0e0', marginBottom: '24px', overflowX: 'auto' }}>
+                                <table style={{ width: '100%', borderCollapse: 'collapse', fontSize: '14px', textAlign: 'left' }}>
+                                    <thead>
+                                        <tr style={{ backgroundColor: '#f8f9fa', borderBottom: '2px solid #00416A' }}>
+                                            <th style={{ padding: '12px', fontWeight: 'bold', color: '#00416A', width: '80px' }}>#</th>
+                                            <th style={{ padding: '12px', fontWeight: 'bold', color: '#00416A' }}>Checklist Item</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <tr style={{ borderBottom: '1px solid #e0e0e0' }}><td style={{ padding: '12px' }}>1</td><td style={{ padding: '12px' }}>Contract tests for schema and status codes</td></tr>
+                                        <tr style={{ borderBottom: '1px solid #e0e0e0', backgroundColor: '#f8f9fa' }}><td style={{ padding: '12px' }}>2</td><td style={{ padding: '12px' }}>Positive + negative API tests (auth, validation, not found, conflict)</td></tr>
+                                        <tr style={{ borderBottom: '1px solid #e0e0e0' }}><td style={{ padding: '12px' }}>3</td><td style={{ padding: '12px' }}>Idempotency tests (if applicable)</td></tr>
+                                        <tr style={{ borderBottom: '1px solid #e0e0e0', backgroundColor: '#f8f9fa' }}><td style={{ padding: '12px' }}>4</td><td style={{ padding: '12px' }}>Performance smoke test (basic)</td></tr>
+                                        <tr style={{ borderBottom: '1px solid #e0e0e0' }}><td style={{ padding: '12px' }}>5</td><td style={{ padding: '12px' }}>OpenAPI/Swagger updated and published</td></tr>
+                                        <tr style={{ borderBottom: '1px solid #e0e0e0', backgroundColor: '#f8f9fa' }}><td style={{ padding: '12px' }}>6</td><td style={{ padding: '12px' }}>Backward compatibility checked (versioning noted)</td></tr>
+                                    </tbody>
+                                </table>
+                            </div>
+
+                            <h4 style={{ color: '#1e293b', fontSize: '18px', marginTop: '20px', marginBottom: '8px', fontWeight: '600' }}>Dependencies / Notes</h4>
+                            <div style={{ backgroundColor: '#ffffff', padding: '20px', borderRadius: '8px', border: '1px solid #e0e0e0', marginBottom: '0', overflowX: 'auto' }}>
+                                <table style={{ width: '100%', borderCollapse: 'collapse', fontSize: '14px', textAlign: 'left' }}>
+                                    <thead>
+                                        <tr style={{ backgroundColor: '#f8f9fa', borderBottom: '2px solid #00416A' }}>
+                                            <th style={{ padding: '12px', fontWeight: 'bold', color: '#00416A', width: '200px' }}>Type</th>
+                                            <th style={{ padding: '12px', fontWeight: 'bold', color: '#00416A' }}>Description</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <tr style={{ borderBottom: '1px solid #e0e0e0' }}><td style={{ padding: '12px', fontWeight: '600' }}>Depends on</td><td style={{ padding: '12px' }}>___ (DB table, downstream service, auth provider)</td></tr>
+                                        <tr style={{ borderBottom: '1px solid #e0e0e0', backgroundColor: '#f8f9fa' }}><td style={{ padding: '12px', fontWeight: '600' }}>Feature flags (if any)</td><td style={{ padding: '12px' }}>___</td></tr>
+                                        <tr style={{ borderBottom: '1px solid #e0e0e0' }}><td style={{ padding: '12px', fontWeight: '600' }}>Migration needed (if any)</td><td style={{ padding: '12px' }}>___</td></tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                        </div>
+                    )}
+                </div>
+            </div>
+
+            {/* Manual Test Case Template Section */}
+            <div style={leftAlignStyles.mainContent}>
+                <div style={{
+                    backgroundColor: '#ffffff',
+                    padding: '32px',
+                    borderRadius: '16px',
+                    marginBottom: '32px',
+                    boxShadow: '0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06)',
+                    border: '1px solid rgba(226, 232, 240, 0.8)',
+                    transition: 'all 0.3s cubic-bezier(0.4, 0, 0.2, 1)'
+                }}
+                onMouseEnter={(e) => {
+                    e.currentTarget.style.boxShadow = '0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05)';
+                    e.currentTarget.style.transform = 'translateY(-2px)';
+                }}
+                onMouseLeave={(e) => {
+                    e.currentTarget.style.boxShadow = '0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06)';
+                    e.currentTarget.style.transform = 'translateY(0)';
+                }}
+                >
+                    <div
+                        onClick={() => setIsManualTestCaseExpanded(!isManualTestCaseExpanded)}
+                        style={{
+                            cursor: 'pointer',
+                            display: 'flex',
+                            justifyContent: 'space-between',
+                            alignItems: 'center',
+                            paddingBottom: isManualTestCaseExpanded ? '20px' : '0',
+                            borderBottom: isManualTestCaseExpanded ? '3px solid #667eea' : 'none',
+                            transition: 'all 0.3s ease',
+                            marginBottom: isManualTestCaseExpanded ? '24px' : '0'
+                        }}
+                        onMouseEnter={(e) => { e.currentTarget.style.opacity = '0.8'; }}
+                        onMouseLeave={(e) => { e.currentTarget.style.opacity = '1'; }}
+                    >
+                        <h2 id="manual-test-case-template" style={{
+                            color: '#1e293b',
+                            fontSize: '28px',
+                            marginBottom: 0,
+                            fontWeight: '700',
+                            letterSpacing: '-0.02em',
+                            lineHeight: '1.3'
+                        }}>
+                            Manual Test Case Template
+                        </h2>
+                        <span style={{
+                            fontSize: '28px',
+                            color: '#667eea',
+                            fontWeight: 'bold',
+                            marginLeft: '20px',
+                            flexShrink: 0,
+                            transition: 'transform 0.3s ease',
+                            width: '32px',
+                            height: '32px',
+                            display: 'flex',
+                            alignItems: 'center',
+                            justifyContent: 'center',
+                            borderRadius: '8px',
+                            backgroundColor: isManualTestCaseExpanded ? '#eef2ff' : '#f1f5f9'
+                        }}>
+                            {isManualTestCaseExpanded ? '−' : '+'}
+                        </span>
+                    </div>
+
+                    {isManualTestCaseExpanded && (
+                        <div style={{ marginTop: '24px', animation: 'fadeIn 0.3s ease' }}>
+                            <p style={{ fontSize: '16px', lineHeight: '1.8', color: '#333333', marginBottom: '24px' }}>
+                                Below is a <strong>standard, best-practice manual test case template</strong> in a <strong>granular, step-by-step tabular format</strong> that you can use directly for an API user story (example: <strong>POST /v1/customers – Create Customer</strong>). You can copy/paste this into <strong>Excel / Jira / TestRail / Zephyr</strong>.
+                            </p>
+
+                            <h3 style={{ color: '#00416A', fontSize: '20px', marginBottom: '12px', marginTop: '24px', fontWeight: 'bold' }}>
+                                TC: API-POST-CUSTOMERS-001 — Create Customer (Happy Path)
+                            </h3>
+                            <div style={{ backgroundColor: '#ffffff', padding: '20px', borderRadius: '8px', border: '1px solid #e0e0e0', marginBottom: '16px', overflowX: 'auto' }}>
+                                <table style={{ width: '100%', borderCollapse: 'collapse', fontSize: '14px', textAlign: 'left' }}>
+                                    <thead>
+                                        <tr style={{ backgroundColor: '#f8f9fa', borderBottom: '2px solid #00416A' }}>
+                                            <th style={{ padding: '12px', fontWeight: 'bold', color: '#00416A', width: '200px' }}>Field</th>
+                                            <th style={{ padding: '12px', fontWeight: 'bold', color: '#00416A' }}>Value</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <tr style={{ borderBottom: '1px solid #e0e0e0' }}><td style={{ padding: '12px', fontWeight: '600' }}>Test Case ID</td><td style={{ padding: '12px' }}>API-POST-CUSTOMERS-001</td></tr>
+                                        <tr style={{ borderBottom: '1px solid #e0e0e0', backgroundColor: '#f8f9fa' }}><td style={{ padding: '12px', fontWeight: '600' }}>Title</td><td style={{ padding: '12px' }}>Create Customer - Valid request returns 201 and customer object</td></tr>
+                                        <tr style={{ borderBottom: '1px solid #e0e0e0' }}><td style={{ padding: '12px', fontWeight: '600' }}>Requirement / Story ID</td><td style={{ padding: '12px' }}>API-___ (Create Customer)</td></tr>
+                                        <tr style={{ borderBottom: '1px solid #e0e0e0', backgroundColor: '#f8f9fa' }}><td style={{ padding: '12px', fontWeight: '600' }}>Endpoint</td><td style={{ padding: '12px' }}>POST <code style={{ backgroundColor: '#e2e8f0', padding: '2px 6px', borderRadius: '4px' }}>/v1/customers</code></td></tr>
+                                        <tr style={{ borderBottom: '1px solid #e0e0e0' }}><td style={{ padding: '12px', fontWeight: '600' }}>Priority</td><td style={{ padding: '12px' }}>P0</td></tr>
+                                        <tr style={{ borderBottom: '1px solid #e0e0e0', backgroundColor: '#f8f9fa' }}><td style={{ padding: '12px', fontWeight: '600' }}>Type</td><td style={{ padding: '12px' }}>Manual API</td></tr>
+                                        <tr style={{ borderBottom: '1px solid #e0e0e0' }}><td style={{ padding: '12px', fontWeight: '600' }}>Preconditions</td><td style={{ padding: '12px' }}>API base URL available; Valid auth token with required scope; Test environment is up</td></tr>
+                                        <tr style={{ borderBottom: '1px solid #e0e0e0', backgroundColor: '#f8f9fa' }}><td style={{ padding: '12px', fontWeight: '600' }}>Test Data</td><td style={{ padding: '12px' }}>firstName=&quot;John&quot;, lastName=&quot;Doe&quot;, email=unique, phone=&quot;+17185550123&quot;</td></tr>
+                                        <tr style={{ borderBottom: '1px solid #e0e0e0' }}><td style={{ padding: '12px', fontWeight: '600' }}>Tools</td><td style={{ padding: '12px' }}>Postman / curl / Swagger UI</td></tr>
+                                        <tr style={{ borderBottom: '1px solid #e0e0e0', backgroundColor: '#f8f9fa' }}><td style={{ padding: '12px', fontWeight: '600' }}>Expected Result Summary</td><td style={{ padding: '12px' }}>Returns 201, body contains created resource, Location header set</td></tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                            <h4 style={{ color: '#1e293b', fontSize: '16px', marginBottom: '8px', fontWeight: '600' }}>Step-by-step execution</h4>
+                            <div style={{ backgroundColor: '#ffffff', padding: '20px', borderRadius: '8px', border: '1px solid #e0e0e0', marginBottom: '24px', overflowX: 'auto' }}>
+                                <table style={{ width: '100%', borderCollapse: 'collapse', fontSize: '13px', textAlign: 'left' }}>
+                                    <thead>
+                                        <tr style={{ backgroundColor: '#f8f9fa', borderBottom: '2px solid #00416A' }}>
+                                            <th style={{ padding: '10px', fontWeight: 'bold', color: '#00416A', width: '70px' }}>Step #</th>
+                                            <th style={{ padding: '10px', fontWeight: 'bold', color: '#00416A' }}>Action (Granular)</th>
+                                            <th style={{ padding: '10px', fontWeight: 'bold', color: '#00416A' }}>Input / Test Data</th>
+                                            <th style={{ padding: '10px', fontWeight: 'bold', color: '#00416A' }}>Expected Result</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <tr style={{ borderBottom: '1px solid #e0e0e0' }}><td style={{ padding: '10px' }}>1</td><td style={{ padding: '10px' }}>Open Postman (or Swagger UI).</td><td style={{ padding: '10px' }}>N/A</td><td style={{ padding: '10px' }}>Tool opens successfully.</td></tr>
+                                        <tr style={{ borderBottom: '1px solid #e0e0e0', backgroundColor: '#f8f9fa' }}><td style={{ padding: '10px' }}>2</td><td style={{ padding: '10px' }}>Create a new request.</td><td style={{ padding: '10px' }}>N/A</td><td style={{ padding: '10px' }}>New request tab is created.</td></tr>
+                                        <tr style={{ borderBottom: '1px solid #e0e0e0' }}><td style={{ padding: '10px' }}>3</td><td style={{ padding: '10px' }}>Set request method to <strong>POST</strong>.</td><td style={{ padding: '10px' }}>POST</td><td style={{ padding: '10px' }}>Method is set to POST.</td></tr>
+                                        <tr style={{ borderBottom: '1px solid #e0e0e0', backgroundColor: '#f8f9fa' }}><td style={{ padding: '10px' }}>4</td><td style={{ padding: '10px' }}>Enter request URL.</td><td style={{ padding: '10px' }}><code style={{ backgroundColor: '#e2e8f0', padding: '2px 6px', borderRadius: '4px' }}>&#123;&#123;baseUrl&#125;&#125;/v1/customers</code></td><td style={{ padding: '10px' }}>URL is accepted (no formatting error).</td></tr>
+                                        <tr style={{ borderBottom: '1px solid #e0e0e0' }}><td style={{ padding: '10px' }}>5</td><td style={{ padding: '10px' }}>Add request header <code style={{ backgroundColor: '#e2e8f0', padding: '2px 6px', borderRadius: '4px' }}>Content-Type</code>.</td><td style={{ padding: '10px' }}><code style={{ backgroundColor: '#e2e8f0', padding: '2px 6px', borderRadius: '4px' }}>Content-Type: application/json</code></td><td style={{ padding: '10px' }}>Header appears correctly.</td></tr>
+                                        <tr style={{ borderBottom: '1px solid #e0e0e0', backgroundColor: '#f8f9fa' }}><td style={{ padding: '10px' }}>6</td><td style={{ padding: '10px' }}>Add request header <code style={{ backgroundColor: '#e2e8f0', padding: '2px 6px', borderRadius: '4px' }}>Authorization</code>.</td><td style={{ padding: '10px' }}><code style={{ backgroundColor: '#e2e8f0', padding: '2px 6px', borderRadius: '4px' }}>Authorization: Bearer &#123;&#123;token&#125;&#125;</code></td><td style={{ padding: '10px' }}>Header appears; token not truncated.</td></tr>
+                                        <tr style={{ borderBottom: '1px solid #e0e0e0' }}><td style={{ padding: '10px' }}>7</td><td style={{ padding: '10px' }}>Generate a unique email for this run.</td><td style={{ padding: '10px' }}>e.g. <code style={{ backgroundColor: '#e2e8f0', padding: '2px 6px', borderRadius: '4px' }}>john.doe+&lt;timestamp&gt;@example.com</code></td><td style={{ padding: '10px' }}>Email is unique; not used previously in env.</td></tr>
+                                        <tr style={{ borderBottom: '1px solid #e0e0e0', backgroundColor: '#f8f9fa' }}><td style={{ padding: '10px' }}>8</td><td style={{ padding: '10px' }}>Prepare JSON body.</td><td style={{ padding: '10px' }}><code style={{ backgroundColor: '#e2e8f0', padding: '2px 6px', borderRadius: '4px' }}>&#123; &quot;firstName&quot;:&quot;John&quot;, &quot;lastName&quot;:&quot;Doe&quot;, &quot;email&quot;:&quot;&lt;unique&gt;&quot;, &quot;phone&quot;:&quot;+17185550123&quot; &#125;</code></td><td style={{ padding: '10px' }}>JSON is valid (no syntax errors).</td></tr>
+                                        <tr style={{ borderBottom: '1px solid #e0e0e0' }}><td style={{ padding: '10px' }}>9</td><td style={{ padding: '10px' }}>Click <strong>Send</strong>.</td><td style={{ padding: '10px' }}>N/A</td><td style={{ padding: '10px' }}>Request is submitted.</td></tr>
+                                        <tr style={{ borderBottom: '1px solid #e0e0e0', backgroundColor: '#f8f9fa' }}><td style={{ padding: '10px' }}>10</td><td style={{ padding: '10px' }}>Verify HTTP status code.</td><td style={{ padding: '10px' }}>N/A</td><td style={{ padding: '10px' }}>Response status is <strong>201 Created</strong>.</td></tr>
+                                        <tr style={{ borderBottom: '1px solid #e0e0e0' }}><td style={{ padding: '10px' }}>11</td><td style={{ padding: '10px' }}>Verify response headers include <code style={{ backgroundColor: '#e2e8f0', padding: '2px 6px', borderRadius: '4px' }}>Location</code>.</td><td style={{ padding: '10px' }}>N/A</td><td style={{ padding: '10px' }}><code style={{ backgroundColor: '#e2e8f0', padding: '2px 6px', borderRadius: '4px' }}>Location</code> header exists and ends with <code style={{ backgroundColor: '#e2e8f0', padding: '2px 6px', borderRadius: '4px' }}>/v1/customers/&#123;id&#125;</code>.</td></tr>
+                                        <tr style={{ borderBottom: '1px solid #e0e0e0', backgroundColor: '#f8f9fa' }}><td style={{ padding: '10px' }}>12</td><td style={{ padding: '10px' }}>Verify response body schema (required fields).</td><td style={{ padding: '10px' }}>N/A</td><td style={{ padding: '10px' }}>Body contains: <code style={{ backgroundColor: '#e2e8f0', padding: '2px 6px', borderRadius: '4px' }}>id</code>, <code style={{ backgroundColor: '#e2e8f0', padding: '2px 6px', borderRadius: '4px' }}>firstName</code>, <code style={{ backgroundColor: '#e2e8f0', padding: '2px 6px', borderRadius: '4px' }}>lastName</code>, <code style={{ backgroundColor: '#e2e8f0', padding: '2px 6px', borderRadius: '4px' }}>email</code>, <code style={{ backgroundColor: '#e2e8f0', padding: '2px 6px', borderRadius: '4px' }}>createdAt</code>, <code style={{ backgroundColor: '#e2e8f0', padding: '2px 6px', borderRadius: '4px' }}>updatedAt</code>.</td></tr>
+                                        <tr style={{ borderBottom: '1px solid #e0e0e0' }}><td style={{ padding: '10px' }}>13</td><td style={{ padding: '10px' }}>Validate response field values.</td><td style={{ padding: '10px' }}>N/A</td><td style={{ padding: '10px' }}>Returned firstName/lastName/email/phone match request; <code style={{ backgroundColor: '#e2e8f0', padding: '2px 6px', borderRadius: '4px' }}>id</code> is not null.</td></tr>
+                                        <tr style={{ borderBottom: '1px solid #e0e0e0', backgroundColor: '#f8f9fa' }}><td style={{ padding: '10px' }}>14</td><td style={{ padding: '10px' }}>Copy created <code style={{ backgroundColor: '#e2e8f0', padding: '2px 6px', borderRadius: '4px' }}>id</code> from response.</td><td style={{ padding: '10px' }}><code style={{ backgroundColor: '#e2e8f0', padding: '2px 6px', borderRadius: '4px' }}>id</code></td><td style={{ padding: '10px' }}>ID is captured for later validation.</td></tr>
+                                        <tr style={{ borderBottom: '1px solid #e0e0e0' }}><td style={{ padding: '10px' }}>15</td><td style={{ padding: '10px' }}>Execute follow-up GET to confirm persistence.</td><td style={{ padding: '10px' }}>GET <code style={{ backgroundColor: '#e2e8f0', padding: '2px 6px', borderRadius: '4px' }}>&#123;&#123;baseUrl&#125;&#125;/v1/customers/&#123;id&#125;</code></td><td style={{ padding: '10px' }}>Returns <strong>200</strong> and matches created customer.</td></tr>
+                                        <tr style={{ borderBottom: '1px solid #e0e0e0', backgroundColor: '#f8f9fa' }}><td style={{ padding: '10px' }}>16</td><td style={{ padding: '10px' }}>Record evidence (screenshot/export).</td><td style={{ padding: '10px' }}>N/A</td><td style={{ padding: '10px' }}>Request/response saved as test evidence.</td></tr>
+                                    </tbody>
+                                </table>
+                            </div>
+
+                            <h3 style={{ color: '#00416A', fontSize: '20px', marginBottom: '12px', marginTop: '28px', fontWeight: 'bold' }}>
+                                Negative / Security / Validation Manual Test Cases (Same Story)
+                            </h3>
+
+                            <h4 style={{ color: '#1e293b', fontSize: '16px', marginBottom: '8px', marginTop: '16px', fontWeight: '600' }}>TC: API-POST-CUSTOMERS-002 — Missing Required Field (firstName)</h4>
+                            <div style={{ backgroundColor: '#ffffff', padding: '20px', borderRadius: '8px', border: '1px solid #e0e0e0', marginBottom: '20px', overflowX: 'auto' }}>
+                                <table style={{ width: '100%', borderCollapse: 'collapse', fontSize: '13px', textAlign: 'left' }}>
+                                    <thead>
+                                        <tr style={{ backgroundColor: '#f8f9fa', borderBottom: '2px solid #00416A' }}>
+                                            <th style={{ padding: '10px', fontWeight: 'bold', color: '#00416A', width: '70px' }}>Step #</th>
+                                            <th style={{ padding: '10px', fontWeight: 'bold', color: '#00416A' }}>Action</th>
+                                            <th style={{ padding: '10px', fontWeight: 'bold', color: '#00416A' }}>Input / Test Data</th>
+                                            <th style={{ padding: '10px', fontWeight: 'bold', color: '#00416A' }}>Expected Result</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <tr style={{ borderBottom: '1px solid #e0e0e0' }}><td style={{ padding: '10px' }}>1</td><td style={{ padding: '10px' }}>Set POST request to <code style={{ backgroundColor: '#e2e8f0', padding: '2px 6px', borderRadius: '4px' }}>/v1/customers</code> with headers.</td><td style={{ padding: '10px' }}>Same as happy path</td><td style={{ padding: '10px' }}>Request is ready.</td></tr>
+                                        <tr style={{ borderBottom: '1px solid #e0e0e0', backgroundColor: '#f8f9fa' }}><td style={{ padding: '10px' }}>2</td><td style={{ padding: '10px' }}>Remove <code style={{ backgroundColor: '#e2e8f0', padding: '2px 6px', borderRadius: '4px' }}>firstName</code> from JSON body.</td><td style={{ padding: '10px' }}><code style={{ backgroundColor: '#e2e8f0', padding: '2px 6px', borderRadius: '4px' }}>&#123; &quot;lastName&quot;:&quot;Doe&quot;, &quot;email&quot;:&quot;&lt;unique&gt;&quot; &#125;</code></td><td style={{ padding: '10px' }}>JSON valid.</td></tr>
+                                        <tr style={{ borderBottom: '1px solid #e0e0e0' }}><td style={{ padding: '10px' }}>3</td><td style={{ padding: '10px' }}>Send request.</td><td style={{ padding: '10px' }}>N/A</td><td style={{ padding: '10px' }}>API returns <strong>400 Bad Request</strong>.</td></tr>
+                                        <tr style={{ borderBottom: '1px solid #e0e0e0', backgroundColor: '#f8f9fa' }}><td style={{ padding: '10px' }}>4</td><td style={{ padding: '10px' }}>Verify error model.</td><td style={{ padding: '10px' }}>N/A</td><td style={{ padding: '10px' }}>Error includes <code style={{ backgroundColor: '#e2e8f0', padding: '2px 6px', borderRadius: '4px' }}>code</code>, <code style={{ backgroundColor: '#e2e8f0', padding: '2px 6px', borderRadius: '4px' }}>message</code>, <code style={{ backgroundColor: '#e2e8f0', padding: '2px 6px', borderRadius: '4px' }}>requestId</code>, and <code style={{ backgroundColor: '#e2e8f0', padding: '2px 6px', borderRadius: '4px' }}>details</code> includes <code style={{ backgroundColor: '#e2e8f0', padding: '2px 6px', borderRadius: '4px' }}>field=firstName</code>.</td></tr>
+                                    </tbody>
+                                </table>
+                            </div>
+
+                            <h4 style={{ color: '#1e293b', fontSize: '16px', marginBottom: '8px', marginTop: '16px', fontWeight: '600' }}>TC: API-POST-CUSTOMERS-003 — Duplicate Email Returns 409</h4>
+                            <div style={{ backgroundColor: '#ffffff', padding: '20px', borderRadius: '8px', border: '1px solid #e0e0e0', marginBottom: '20px', overflowX: 'auto' }}>
+                                <table style={{ width: '100%', borderCollapse: 'collapse', fontSize: '13px', textAlign: 'left' }}>
+                                    <thead>
+                                        <tr style={{ backgroundColor: '#f8f9fa', borderBottom: '2px solid #00416A' }}>
+                                            <th style={{ padding: '10px', fontWeight: 'bold', color: '#00416A', width: '70px' }}>Step #</th>
+                                            <th style={{ padding: '10px', fontWeight: 'bold', color: '#00416A' }}>Action</th>
+                                            <th style={{ padding: '10px', fontWeight: 'bold', color: '#00416A' }}>Input / Test Data</th>
+                                            <th style={{ padding: '10px', fontWeight: 'bold', color: '#00416A' }}>Expected Result</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <tr style={{ borderBottom: '1px solid #e0e0e0' }}><td style={{ padding: '10px' }}>1</td><td style={{ padding: '10px' }}>Create a customer successfully (reuse TC-001).</td><td style={{ padding: '10px' }}>Email = <code style={{ backgroundColor: '#e2e8f0', padding: '2px 6px', borderRadius: '4px' }}>dup@example.com</code></td><td style={{ padding: '10px' }}>Customer created with <strong>201</strong>.</td></tr>
+                                        <tr style={{ borderBottom: '1px solid #e0e0e0', backgroundColor: '#f8f9fa' }}><td style={{ padding: '10px' }}>2</td><td style={{ padding: '10px' }}>Send POST again with same email.</td><td style={{ padding: '10px' }}>Same email</td><td style={{ padding: '10px' }}>API returns <strong>409 Conflict</strong>.</td></tr>
+                                        <tr style={{ borderBottom: '1px solid #e0e0e0' }}><td style={{ padding: '10px' }}>3</td><td style={{ padding: '10px' }}>Validate error model.</td><td style={{ padding: '10px' }}>N/A</td><td style={{ padding: '10px' }}><code style={{ backgroundColor: '#e2e8f0', padding: '2px 6px', borderRadius: '4px' }}>code/message/requestId</code> present; message indicates duplicate/constraint.</td></tr>
+                                    </tbody>
+                                </table>
+                            </div>
+
+                            <h4 style={{ color: '#1e293b', fontSize: '16px', marginBottom: '8px', marginTop: '16px', fontWeight: '600' }}>TC: API-POST-CUSTOMERS-004 — Unauthorized (Missing Token)</h4>
+                            <div style={{ backgroundColor: '#ffffff', padding: '20px', borderRadius: '8px', border: '1px solid #e0e0e0', marginBottom: '20px', overflowX: 'auto' }}>
+                                <table style={{ width: '100%', borderCollapse: 'collapse', fontSize: '13px', textAlign: 'left' }}>
+                                    <thead>
+                                        <tr style={{ backgroundColor: '#f8f9fa', borderBottom: '2px solid #00416A' }}>
+                                            <th style={{ padding: '10px', fontWeight: 'bold', color: '#00416A', width: '70px' }}>Step #</th>
+                                            <th style={{ padding: '10px', fontWeight: 'bold', color: '#00416A' }}>Action</th>
+                                            <th style={{ padding: '10px', fontWeight: 'bold', color: '#00416A' }}>Input / Test Data</th>
+                                            <th style={{ padding: '10px', fontWeight: 'bold', color: '#00416A' }}>Expected Result</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <tr style={{ borderBottom: '1px solid #e0e0e0' }}><td style={{ padding: '10px' }}>1</td><td style={{ padding: '10px' }}>Prepare POST request without Authorization header.</td><td style={{ padding: '10px' }}>Remove <code style={{ backgroundColor: '#e2e8f0', padding: '2px 6px', borderRadius: '4px' }}>Authorization</code></td><td style={{ padding: '10px' }}>Request ready.</td></tr>
+                                        <tr style={{ borderBottom: '1px solid #e0e0e0', backgroundColor: '#f8f9fa' }}><td style={{ padding: '10px' }}>2</td><td style={{ padding: '10px' }}>Send request.</td><td style={{ padding: '10px' }}>Valid body</td><td style={{ padding: '10px' }}>API returns <strong>401 Unauthorized</strong>.</td></tr>
+                                        <tr style={{ borderBottom: '1px solid #e0e0e0' }}><td style={{ padding: '10px' }}>3</td><td style={{ padding: '10px' }}>Validate error model.</td><td style={{ padding: '10px' }}>N/A</td><td style={{ padding: '10px' }}>Standard error schema returned.</td></tr>
+                                    </tbody>
+                                </table>
+                            </div>
+
+                            <h4 style={{ color: '#1e293b', fontSize: '16px', marginBottom: '8px', marginTop: '16px', fontWeight: '600' }}>TC: API-POST-CUSTOMERS-005 — Forbidden (Insufficient Scope)</h4>
+                            <div style={{ backgroundColor: '#ffffff', padding: '20px', borderRadius: '8px', border: '1px solid #e0e0e0', marginBottom: '24px', overflowX: 'auto' }}>
+                                <table style={{ width: '100%', borderCollapse: 'collapse', fontSize: '13px', textAlign: 'left' }}>
+                                    <thead>
+                                        <tr style={{ backgroundColor: '#f8f9fa', borderBottom: '2px solid #00416A' }}>
+                                            <th style={{ padding: '10px', fontWeight: 'bold', color: '#00416A', width: '70px' }}>Step #</th>
+                                            <th style={{ padding: '10px', fontWeight: 'bold', color: '#00416A' }}>Action</th>
+                                            <th style={{ padding: '10px', fontWeight: 'bold', color: '#00416A' }}>Input / Test Data</th>
+                                            <th style={{ padding: '10px', fontWeight: 'bold', color: '#00416A' }}>Expected Result</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <tr style={{ borderBottom: '1px solid #e0e0e0' }}><td style={{ padding: '10px' }}>1</td><td style={{ padding: '10px' }}>Use a token that lacks required scope/role.</td><td style={{ padding: '10px' }}><code style={{ backgroundColor: '#e2e8f0', padding: '2px 6px', borderRadius: '4px' }}>Bearer &#123;&#123;token_no_scope&#125;&#125;</code></td><td style={{ padding: '10px' }}>Request ready.</td></tr>
+                                        <tr style={{ borderBottom: '1px solid #e0e0e0', backgroundColor: '#f8f9fa' }}><td style={{ padding: '10px' }}>2</td><td style={{ padding: '10px' }}>Send request.</td><td style={{ padding: '10px' }}>Valid body</td><td style={{ padding: '10px' }}>API returns <strong>403 Forbidden</strong>.</td></tr>
+                                        <tr style={{ borderBottom: '1px solid #e0e0e0' }}><td style={{ padding: '10px' }}>3</td><td style={{ padding: '10px' }}>Validate error model.</td><td style={{ padding: '10px' }}>N/A</td><td style={{ padding: '10px' }}>Standard error schema returned.</td></tr>
+                                    </tbody>
+                                </table>
+                            </div>
+
+                            <h3 style={{ color: '#00416A', fontSize: '20px', marginBottom: '12px', marginTop: '28px', fontWeight: 'bold' }}>
+                                Reusable &quot;Blank&quot; Manual Test Case Table (Template Only)
+                            </h3>
+                            <p style={{ fontSize: '14px', color: '#333333', marginBottom: '12px' }}>Generic blank template to reuse for any endpoint:</p>
+                            <div style={{ backgroundColor: '#ffffff', padding: '20px', borderRadius: '8px', border: '1px solid #e0e0e0', marginBottom: '16px', overflowX: 'auto' }}>
+                                <table style={{ width: '100%', borderCollapse: 'collapse', fontSize: '14px', textAlign: 'left' }}>
+                                    <thead>
+                                        <tr style={{ backgroundColor: '#f8f9fa', borderBottom: '2px solid #00416A' }}>
+                                            <th style={{ padding: '12px', fontWeight: 'bold', color: '#00416A', width: '200px' }}>Field</th>
+                                            <th style={{ padding: '12px', fontWeight: 'bold', color: '#00416A' }}>Value</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <tr style={{ borderBottom: '1px solid #e0e0e0' }}><td style={{ padding: '12px', fontWeight: '600' }}>Test Case ID</td><td style={{ padding: '12px' }}>API-___</td></tr>
+                                        <tr style={{ borderBottom: '1px solid #e0e0e0', backgroundColor: '#f8f9fa' }}><td style={{ padding: '12px', fontWeight: '600' }}>Title</td><td style={{ padding: '12px' }}>___</td></tr>
+                                        <tr style={{ borderBottom: '1px solid #e0e0e0' }}><td style={{ padding: '12px', fontWeight: '600' }}>Requirement / Story ID</td><td style={{ padding: '12px' }}>___</td></tr>
+                                        <tr style={{ borderBottom: '1px solid #e0e0e0', backgroundColor: '#f8f9fa' }}><td style={{ padding: '12px', fontWeight: '600' }}>Endpoint</td><td style={{ padding: '12px' }}>___</td></tr>
+                                        <tr style={{ borderBottom: '1px solid #e0e0e0' }}><td style={{ padding: '12px', fontWeight: '600' }}>Priority</td><td style={{ padding: '12px' }}>___</td></tr>
+                                        <tr style={{ borderBottom: '1px solid #e0e0e0', backgroundColor: '#f8f9fa' }}><td style={{ padding: '12px', fontWeight: '600' }}>Type</td><td style={{ padding: '12px' }}>Manual API</td></tr>
+                                        <tr style={{ borderBottom: '1px solid #e0e0e0' }}><td style={{ padding: '12px', fontWeight: '600' }}>Preconditions</td><td style={{ padding: '12px' }}>___</td></tr>
+                                        <tr style={{ borderBottom: '1px solid #e0e0e0', backgroundColor: '#f8f9fa' }}><td style={{ padding: '12px', fontWeight: '600' }}>Test Data</td><td style={{ padding: '12px' }}>___</td></tr>
+                                        <tr style={{ borderBottom: '1px solid #e0e0e0' }}><td style={{ padding: '12px', fontWeight: '600' }}>Tools</td><td style={{ padding: '12px' }}>Postman / curl / Swagger UI</td></tr>
+                                        <tr style={{ borderBottom: '1px solid #e0e0e0', backgroundColor: '#f8f9fa' }}><td style={{ padding: '12px', fontWeight: '600' }}>Expected Result Summary</td><td style={{ padding: '12px' }}>___</td></tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                            <div style={{ backgroundColor: '#ffffff', padding: '20px', borderRadius: '8px', border: '1px solid #e0e0e0', marginBottom: '0', overflowX: 'auto' }}>
+                                <table style={{ width: '100%', borderCollapse: 'collapse', fontSize: '14px', textAlign: 'left' }}>
+                                    <thead>
+                                        <tr style={{ backgroundColor: '#f8f9fa', borderBottom: '2px solid #00416A' }}>
+                                            <th style={{ padding: '10px', fontWeight: 'bold', color: '#00416A', width: '70px' }}>Step #</th>
+                                            <th style={{ padding: '10px', fontWeight: 'bold', color: '#00416A' }}>Action (Granular)</th>
+                                            <th style={{ padding: '10px', fontWeight: 'bold', color: '#00416A' }}>Input / Test Data</th>
+                                            <th style={{ padding: '10px', fontWeight: 'bold', color: '#00416A' }}>Expected Result</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <tr style={{ borderBottom: '1px solid #e0e0e0' }}><td style={{ padding: '10px' }}>1</td><td style={{ padding: '10px' }}>___</td><td style={{ padding: '10px' }}>___</td><td style={{ padding: '10px' }}>___</td></tr>
+                                        <tr style={{ borderBottom: '1px solid #e0e0e0', backgroundColor: '#f8f9fa' }}><td style={{ padding: '10px' }}>2</td><td style={{ padding: '10px' }}>___</td><td style={{ padding: '10px' }}>___</td><td style={{ padding: '10px' }}>___</td></tr>
+                                        <tr style={{ borderBottom: '1px solid #e0e0e0' }}><td style={{ padding: '10px' }}>3</td><td style={{ padding: '10px' }}>___</td><td style={{ padding: '10px' }}>___</td><td style={{ padding: '10px' }}>___</td></tr>
+                                    </tbody>
+                                </table>
                             </div>
                         </div>
                     )}
