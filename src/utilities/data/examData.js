@@ -1,5 +1,87 @@
 // Exam Data - 3 sets of 10 questions each
 
+// Exam-0: BCS-JSE (Basic Computer Skills + Job Search Essentials) - 60 questions, 5 per session × 12 sessions
+// Curriculum: https://gitsics.com/course-curriculum/
+export const exam0Data = {
+    examId: 0,
+    examName: 'Exam-0',
+    title: 'BCS-JSE: Basic Computer Skills + Job Search Essentials',
+    questions: [
+        // Session 1: Computer basics - mouse, keyboard, desktop
+        { id: 1, question: 'Which action is used to select an item on the desktop?', options: ['Double-click', 'Single click', 'Right-click and drag', 'Press Enter only'], correctAnswer: 0 },
+        { id: 2, question: 'What does the taskbar (Windows) or dock (Mac) typically show?', options: ['Only the clock', 'Open programs, Start/Apple menu, and system icons', 'Only the recycle bin', 'Only Wi-Fi'], correctAnswer: 1 },
+        { id: 3, question: 'To safely turn off the computer, you should:', options: ['Unplug the power cord', 'Use Shut down or Sign out from the Start/Apple menu', 'Close the laptop lid only', 'Press the power button once and walk away'], correctAnswer: 1 },
+        { id: 4, question: 'The Backspace key is commonly used to:', options: ['Move the cursor forward', 'Delete the character to the left of the cursor', 'Open a new window', 'Save the document'], correctAnswer: 1 },
+        { id: 5, question: 'Which part of the computer displays the desktop and open windows?', options: ['Keyboard', 'Monitor', 'Mouse', 'Tower'], correctAnswer: 1 },
+        // Session 2: Wi-Fi, settings, troubleshooting
+        { id: 6, question: 'To connect to Wi-Fi, you typically need:', options: ['Only the computer brand', 'Network name (SSID) and password', 'A USB cable', 'Only the monitor'], correctAnswer: 1 },
+        { id: 7, question: 'Where do you usually find display, sound, and language settings on a Windows PC?', options: ['In the Downloads folder', 'In Settings', 'In the Recycle Bin', 'In the browser'], correctAnswer: 1 },
+        { id: 8, question: 'When might restarting the computer help?', options: ['When the screen is off', 'When programs are frozen or the system is slow', 'When you want to save a file', 'When you need to type faster'], correctAnswer: 1 },
+        { id: 9, question: 'Checking for updates on your computer helps:', options: ['Only change the wallpaper', 'Improve security and fix bugs', 'Delete your files', 'Slow down the computer'], correctAnswer: 1 },
+        { id: 10, question: 'The default browser is the one that:', options: ['Uses the most memory', 'Opens when you click a web link', 'Cannot be changed', 'Only runs on Mac'], correctAnswer: 1 },
+        // Session 3: Files and folders
+        { id: 11, question: 'A folder is used to:', options: ['Run programs', 'Organize files and other folders', 'Connect to the internet', 'Change the screen brightness'], correctAnswer: 1 },
+        { id: 12, question: 'Where are new documents often saved by default?', options: ['Only on USB', 'Documents or Desktop', 'In the browser', 'In email'], correctAnswer: 1 },
+        { id: 13, question: 'To find a file by name on Windows you can use:', options: ['Only File Explorer menu', 'Search in the taskbar or File Explorer', 'The Recycle Bin', 'The right-click menu only'], correctAnswer: 1 },
+        { id: 14, question: 'Saving a file with a clear name helps you:', options: ['Use less storage', 'Find it later and know what it contains', 'Open the browser', 'Change settings'], correctAnswer: 1 },
+        { id: 15, question: 'On a Mac, Spotlight is used to:', options: ['Only open apps', 'Search for files, apps, and more', 'Only adjust volume', 'Only connect Wi-Fi'], correctAnswer: 1 },
+        // Session 4: Downloads, USB, cloud
+        { id: 16, question: 'Files downloaded from the internet often go to:', options: ['Desktop only', 'The Downloads folder', 'Email', 'USB drive only'], correctAnswer: 1 },
+        { id: 17, question: 'Before unplugging a USB drive, you should:', options: ['Turn off the computer', 'Safely eject it to avoid data loss', 'Delete all files first', 'Format the drive'], correctAnswer: 1 },
+        { id: 18, question: 'Cloud storage (e.g., OneDrive, Google Drive) means:', options: ['Files are only on one device', 'Files can sync and be accessed from multiple devices', 'Files are deleted after a day', 'You cannot rename files'], correctAnswer: 1 },
+        { id: 19, question: 'Renaming files with clear names (e.g., date or purpose) helps with:', options: ['Making files larger', 'Organization and finding them later', 'Deleting them faster', 'Sending email'], correctAnswer: 1 },
+        { id: 20, question: 'Organizing documents into folders with sensible names is part of:', options: ['Installing software', 'File management', 'Connecting to Wi-Fi', 'Changing the browser'], correctAnswer: 1 },
+        // Session 5: Microsoft Word basics
+        { id: 21, question: 'In Microsoft Word, to make text bold you typically:', options: ['Change the font size only', 'Select the text and use the Bold button or Ctrl/Cmd+B', 'Only use the right-click menu', 'Save the document'], correctAnswer: 1 },
+        { id: 22, question: 'Bullet points in Word are used to:', options: ['Insert images', 'Create a list of items', 'Change page margins', 'Print the document'], correctAnswer: 1 },
+        { id: 23, question: 'To save a new document in Word, you should:', options: ['Only close the window', 'Use Save or Save As and choose a location and name', 'Only type the title', 'Only change the font'], correctAnswer: 1 },
+        { id: 24, question: 'Line spacing in Word controls:', options: ['Only the font color', 'The space between lines of text', 'The number of pages', 'The file size'], correctAnswer: 1 },
+        { id: 25, question: 'To create a new document in Word, you can:', options: ['Only open an existing file', 'Use File > New or a blank document template', 'Only use the taskbar', 'Only use the keyboard'], correctAnswer: 1 },
+        // Session 6: Resume and cover letter in Word
+        { id: 26, question: 'A resume typically includes:', options: ['Only your name', 'Contact info, summary, experience, education, and skills', 'Only the cover letter', 'Only the job title'], correctAnswer: 1 },
+        { id: 27, question: 'A short cover letter usually has:', options: ['Only one word', 'A greeting, why you want the job, and a thank you', 'Only your address', 'Only the company name'], correctAnswer: 1 },
+        { id: 28, question: 'Professional file names for resume and cover letter might be:', options: ['Document1.docx', 'FirstName_LastName_Resume.docx', 'Untitled.docx', 'New File.docx'], correctAnswer: 1 },
+        { id: 29, question: 'Formatting section headings consistently on a resume helps:', options: ['Reduce file size', 'Make it look professional and easy to read', 'Send email faster', 'Use fewer words'], correctAnswer: 1 },
+        { id: 30, question: 'The cover letter should be saved:', options: ['Only in email', 'In the same folder as the resume with a clear name', 'Only on USB', 'Only in Downloads'], correctAnswer: 1 },
+        // Session 7: Excel - lists and budget
+        { id: 31, question: 'In Excel, a cell is:', options: ['The entire sheet', 'The intersection of a row and column', 'Only the first row', 'Only the formula bar'], correctAnswer: 1 },
+        { id: 32, question: 'The SUM function in Excel is used to:', options: ['Count words', 'Add numbers in a range', 'Change font', 'Insert a row'], correctAnswer: 1 },
+        { id: 33, question: 'A simple monthly budget in Excel might include:', options: ['Only income', 'Income and expense categories with totals', 'Only formulas', 'Only headers'], correctAnswer: 1 },
+        { id: 34, question: 'To format numbers as currency in Excel, you can:', options: ['Only type a dollar sign', 'Use number format options (e.g., Currency)', 'Only use SUM', 'Only change the column width'], correctAnswer: 1 },
+        { id: 35, question: 'Headers in the first row of a list help you:', options: ['Delete data', 'Identify what each column contains', 'Merge cells only', 'Print blank sheets'], correctAnswer: 1 },
+        // Session 8: Job tracker in Excel
+        { id: 36, question: 'A job application tracker in Excel might have columns for:', options: ['Only company name', 'Company, Job Title, Date Applied, Status, Notes', 'Only salary', 'Only resume file'], correctAnswer: 1 },
+        { id: 37, question: 'Updating the tracker when you apply to a job helps you:', options: ['Delete old applications', 'Keep track of where you applied and follow up', 'Only use Word', 'Only use email'], correctAnswer: 1 },
+        { id: 38, question: 'Sorting the tracker by date can help you:', options: ['Remove duplicates only', 'See the most recent applications first', 'Change the format only', 'Add more columns only'], correctAnswer: 1 },
+        { id: 39, question: 'Saving the job tracker in a dedicated folder (e.g., "Job Search") helps:', options: ['Send email', 'Keep job search materials organized', 'Install software', 'Change browser settings'], correctAnswer: 1 },
+        { id: 40, question: 'Adding a new row to the tracker is useful when:', options: ['Deleting old data', 'You submit another application', 'Only updating the resume', 'Only changing the status'], correctAnswer: 1 },
+        // Session 9: PowerPoint
+        { id: 41, question: 'In PowerPoint, a title slide typically:', options: ['Has no text', 'Shows the presentation title and often the presenter name', 'Only has images', 'Only has bullet points'], correctAnswer: 1 },
+        { id: 42, question: 'For clear slides, you should avoid:', options: ['Using bullet points', 'Long paragraphs and overcrowding', 'Using a theme', 'Adding images'], correctAnswer: 1 },
+        { id: 43, question: 'Presenter View or full-screen view is used to:', options: ['Edit the slide content', 'Run the slideshow as the audience sees it', 'Only save the file', 'Only add images'], correctAnswer: 1 },
+        { id: 44, question: 'You can insert an image on a slide from:', options: ['Only the keyboard', 'Your computer or stock images', 'Only the title', 'Only the notes'], correctAnswer: 1 },
+        { id: 45, question: 'Choosing a theme or template in PowerPoint affects:', options: ['Only the number of slides', 'The overall look (colors, fonts) of the presentation', 'Only the file size', 'Only the title'], correctAnswer: 1 },
+        // Session 10: Email and job search
+        { id: 46, question: 'When composing an email, the subject line should:', options: ['Be left blank', 'Briefly describe what the email is about', 'Only contain the date', 'Only contain your name'], correctAnswer: 1 },
+        { id: 47, question: 'To search for jobs online, you can use:', options: ['Only company websites', 'Indeed, LinkedIn, and company career pages', 'Only email', 'Only Word'], correctAnswer: 1 },
+        { id: 48, question: 'Bookmarks in the browser can help you:', options: ['Delete history', 'Quickly open job sites like Indeed and LinkedIn', 'Only change the home page', 'Only clear cookies'], correctAnswer: 1 },
+        { id: 49, question: 'A secure website often shows:', options: ['Only "www"', 'https and a lock icon', 'Only the company name', 'Only the search bar'], correctAnswer: 1 },
+        { id: 50, question: 'Safe browsing when job searching includes:', options: ['Clicking every link in job ads', 'Being cautious of suspicious links and fake job offers', 'Sharing your password', 'Ignoring the URL'], correctAnswer: 1 },
+        // Session 11: Online job application
+        { id: 51, question: 'When completing an online job application, you often need to:', options: ['Only type your name', 'Enter personal info, work history, education, and upload resume if required', 'Only send email', 'Only use Excel'], correctAnswer: 1 },
+        { id: 52, question: 'After submitting an application, you should:', options: ['Forget about it', 'Update your job tracker with date, status, and notes', 'Only call the company', 'Only send another resume'], correctAnswer: 1 },
+        { id: 53, question: 'A follow-up email after applying is typically sent:', options: ['The same day only', 'About 1–2 weeks after applying, if appropriate', 'Only before applying', 'Only to every company'], correctAnswer: 1 },
+        { id: 54, question: 'Saving a confirmation or application number when possible helps you:', options: ['Delete the resume', 'Reference the application later', 'Only change the tracker', 'Only use LinkedIn'], correctAnswer: 1 },
+        { id: 55, question: 'Before submitting an application, you should:', options: ['Skip the review step', 'Review your answers and attachments', 'Only fill the first field', 'Only upload the resume'], correctAnswer: 1 },
+        // Session 12: Install/uninstall and security
+        { id: 56, question: 'To install software safely, you should use:', options: ['Any download link', 'Official app stores or official software websites', 'Only pop-up ads', 'Only email attachments'], correctAnswer: 1 },
+        { id: 57, question: 'To uninstall an app on Windows, you typically go to:', options: ['Only the Desktop', 'Settings > Apps (or Applications)', 'Only the browser', 'Only the Recycle Bin'], correctAnswer: 1 },
+        { id: 58, question: 'You should never share your passwords with:', options: ['Only strangers', 'Anyone, including people claiming to be tech support', 'Only friends', 'Only employers'], correctAnswer: 1 },
+        { id: 59, question: 'Two-factor authentication (2FA) for email helps:', options: ['Only speed up login', 'Add an extra layer of security', 'Only change the password', 'Only clear cookies'], correctAnswer: 1 },
+        { id: 60, question: 'Common online scams to avoid include:', options: ['Using official websites', 'Fake pop-ups, "tech support" calls, and phishing emails', 'Using strong passwords', 'Updating software'], correctAnswer: 1 }
+    ]
+};
+
 export const exam1Data = {
     examId: 1,
     examName: 'Exam-1',

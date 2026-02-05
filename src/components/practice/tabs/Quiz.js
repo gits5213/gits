@@ -5,8 +5,15 @@ import '../../../styles/base.css';
 
 class Quiz extends Component {
     render() {
-        // Exams sorted numerically by ID (1-23)
+        // Exams sorted numerically by ID (0-23); Exam-0 is BCS-JSE (first)
         const exams = [
+            {
+                id: 0,
+                name: 'Exam-0',
+                title: 'BCS-JSE: Basic Computer Skills + Job Search Essentials',
+                description: '60 questions (5 per session) covering the 12-session BCS-JSE curriculum: computer basics, files, Word, Excel, PowerPoint, email, job search, and security',
+                path: '/practice/quiz/exam-0'
+            },
             { 
                 id: 1, 
                 name: 'Exam-1', 
@@ -298,7 +305,7 @@ class Quiz extends Component {
                                 { icon: '🔒', text: 'Each exam can only be taken once' },
                                 { icon: '⏱️', text: 'You must complete the exam in one session' },
                                 { icon: '💾', text: 'Your progress will be saved automatically' },
-                                { icon: '🏆', text: 'You will receive a certificate if you score 100%' },
+                                { icon: '🏆', text: 'You will receive a certificate if you score at least 95%' },
                                 { icon: '🚫', text: 'Cheating is strictly prohibited' }
                             ].map((item, index) => (
                                 <div key={index} style={{

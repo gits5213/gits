@@ -5,6 +5,9 @@ import { resetExam } from '../../utilities/examReset';
 import { saveExamResult } from '../../utils/scoreStorage';
 import '../../styles/base.css';
 
+// Passing score for all exams: at least 95% correct
+const PASSING_SCORE = 95;
+
 class Exam extends Component {
     constructor(props) {
         super(props);
@@ -52,7 +55,7 @@ class Exam extends Component {
                 score: examResult.score,
                 answers: examResult.answers,
                 timeElapsed: examResult.timeElapsed,
-                showCertificate: examResult.score === 100
+                showCertificate: examResult.score >= PASSING_SCORE
             });
             return;
         }
@@ -188,7 +191,7 @@ class Exam extends Component {
                 score,
                 endTime,
                 timeElapsed,
-                showCertificate: score === 100
+                showCertificate: score >= PASSING_SCORE
             });
         }
     }
@@ -253,14 +256,14 @@ class Exam extends Component {
                         textAlign: 'center',
                         marginBottom: '40px',
                         padding: '30px',
-                        backgroundColor: this.state.score === 100 ? '#d4edda' : '#f8d7da',
+                        backgroundColor: this.state.score >= PASSING_SCORE ? '#d4edda' : '#f8d7da',
                         borderRadius: '8px',
-                        border: `2px solid ${this.state.score === 100 ? '#28a745' : '#dc3545'}`
+                        border: `2px solid ${this.state.score >= PASSING_SCORE ? '#28a745' : '#dc3545'}`
                     }}>
                         <h1 style={{
                             fontSize: '28px',
                             fontWeight: 'bold',
-                            color: this.state.score === 100 ? '#155724' : '#721c24',
+                            color: this.state.score >= PASSING_SCORE ? '#155724' : '#721c24',
                             marginBottom: '15px'
                         }}>
                             {this.examData.examName}: {this.examData.title}
@@ -268,16 +271,16 @@ class Exam extends Component {
                         <h2 style={{
                             fontSize: '32px',
                             fontWeight: 'bold',
-                            color: this.state.score === 100 ? '#155724' : '#721c24',
+                            color: this.state.score >= PASSING_SCORE ? '#155724' : '#721c24',
                             marginBottom: '10px'
                         }}>
-                            {this.state.score === 100 ? '🎉 Perfect Score! 🎉' : 'Exam Completed'}
+                            {this.state.score === 100 ? '🎉 Perfect Score! 🎉' : this.state.score >= PASSING_SCORE ? 'Exam Passed!' : 'Exam Completed'}
                         </h2>
                         {studentInfo && (
                             <p style={{
                                 fontSize: '18px',
                                 fontWeight: '600',
-                                color: this.state.score === 100 ? '#155724' : '#721c24',
+                                color: this.state.score >= PASSING_SCORE ? '#155724' : '#721c24',
                                 marginBottom: '10px'
                             }}>
                                 Student Name: {studentInfo.firstName} {studentInfo.middleName || ''} {studentInfo.lastName}
@@ -286,7 +289,7 @@ class Exam extends Component {
                         <p style={{
                             fontSize: '18px',
                             fontWeight: '600',
-                            color: this.state.score === 100 ? '#155724' : '#721c24',
+                            color: this.state.score >= PASSING_SCORE ? '#155724' : '#721c24',
                             marginBottom: '10px'
                         }}>
                             Attempt Number: {this.state.attemptNumber}
@@ -294,18 +297,18 @@ class Exam extends Component {
                         <p style={{
                             fontSize: '24px',
                             fontWeight: '600',
-                            color: this.state.score === 100 ? '#155724' : '#721c24',
+                            color: this.state.score >= PASSING_SCORE ? '#155724' : '#721c24',
                             marginBottom: '10px'
                         }}>
                             Your Score: {this.state.score}%
                         </p>
                         <p style={{
                             fontSize: '16px',
-                            color: this.state.score === 100 ? '#155724' : '#721c24'
+                            color: this.state.score >= PASSING_SCORE ? '#155724' : '#721c24'
                         }}>
                             Time Taken: {this.formatTime(this.state.timeElapsed)}
                         </p>
-                        {this.state.score === 100 && (
+                        {this.state.score >= PASSING_SCORE && (
                             <p style={{
                                 fontSize: '18px',
                                 fontWeight: '600',

@@ -6,6 +6,7 @@ import { useNextRouterAdapter } from '@/src/utils/nextRouterAdapter'
 
 // Dynamic import for Exam components
 const examComponents = {
+  'exam-0': () => import('@/src/page-components/practice/Exam0'),
   'exam-1': () => import('@/src/page-components/practice/Exam1'),
   'exam-2': () => import('@/src/page-components/practice/Exam2'),
   'exam-3': () => import('@/src/page-components/practice/Exam3'),

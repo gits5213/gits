@@ -4,6 +4,7 @@ import ExamPageClient from './ExamPageClient'
 // Generate static params for static export (must be in server component)
 export function generateStaticParams() {
   return [
+    { examId: 'exam-0' },
     { examId: 'exam-1' },
     { examId: 'exam-2' },
     { examId: 'exam-3' },

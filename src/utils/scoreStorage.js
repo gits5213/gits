@@ -135,10 +135,10 @@ export const loadExamResults = async () => {
 
   // Fallback to localStorage
   const examDataMap = await import('../utilities/data/examData');
-  const { exam1Data, exam2Data, exam3Data, exam4Data, exam5Data, exam6Data, exam7Data, exam8Data, exam9Data, exam10Data, exam11Data, exam12Data, exam13Data, exam14Data, exam15Data, exam16Data, exam17Data } = examDataMap;
+  const { exam0Data, exam1Data, exam2Data, exam3Data, exam4Data, exam5Data, exam6Data, exam7Data, exam8Data, exam9Data, exam10Data, exam11Data, exam12Data, exam13Data, exam14Data, exam15Data, exam16Data, exam17Data } = examDataMap;
   
   const examDataMapObj = {
-    1: exam1Data, 2: exam2Data, 3: exam3Data, 4: exam4Data, 5: exam5Data,
+    0: exam0Data, 1: exam1Data, 2: exam2Data, 3: exam3Data, 4: exam4Data, 5: exam5Data,
     6: exam6Data, 7: exam7Data, 8: exam8Data, 9: exam9Data, 10: exam10Data,
     11: exam11Data, 12: exam12Data, 13: exam13Data, 14: exam14Data,
     15: exam15Data, 16: exam16Data, 17: exam17Data
@@ -149,7 +149,7 @@ export const loadExamResults = async () => {
     return [];
   }
 
-  for (let examId = 1; examId <= 17; examId++) {
+  for (let examId = 0; examId <= 17; examId++) {
     const examTaken = localStorage.getItem(`examTaken_${examId}`);
     const studentInfoStr = localStorage.getItem(`studentInfo_${examId}`);
     const examResultStr = localStorage.getItem(`examResult_${examId}`);
@@ -230,7 +230,7 @@ export const deleteExamResult = async (examId, sheetRowId = null) => {
 export const deleteAllExamResults = async () => {
   // Delete all from localStorage (only in browser)
   if (typeof window !== 'undefined' && window.localStorage) {
-    for (let examId = 1; examId <= 17; examId++) {
+    for (let examId = 0; examId <= 17; examId++) {
       localStorage.removeItem(`examTaken_${examId}`);
       localStorage.removeItem(`studentInfo_${examId}`);
       localStorage.removeItem(`examResult_${examId}`);
