@@ -6426,6 +6426,9 @@ Alternative: Import WSDL
                         <pre style={{ margin: 0, whiteSpace: 'pre-wrap', textAlign: 'left' }}>{`# Install Newman globally
 npm install -g newman
 
+# For reporting
+npm i -g newman-reporter-htmlextra
+
 # Verify installation
 newman --version`}</pre>
                     </div>
