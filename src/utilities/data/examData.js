@@ -443,6 +443,7 @@ export const exam4Data = {
     questions: [
         {
             id: 31,
+            summary: 'Best test title: descriptive "should..." (e.g. should allow user to login with valid credentials).',
             question: 'Which naming convention is BEST for Playwright test titles?',
             options: [
                 '"Test 1"',
@@ -454,6 +455,7 @@ export const exam4Data = {
         },
         {
             id: 32,
+            summary: 'Use stable attributes like data-testid / data-test for selectors; avoid fragile XPath or indices.',
             question: 'Best practice for naming selectors used in automation is:',
             options: [
                 'Use random XPath always',
@@ -465,6 +467,7 @@ export const exam4Data = {
         },
         {
             id: 33,
+            summary: 'test.describe() groups related tests into a suite/block.',
             question: 'What is `test.describe()` used for?',
             options: [
                 'To generate code automatically',
@@ -476,6 +479,7 @@ export const exam4Data = {
         },
         {
             id: 34,
+            summary: 'test.describe.only() runs only that describe block; all other tests are skipped.',
             question: 'What does `test.describe.only()` do?',
             options: [
                 'Runs all tests except the describe block',
@@ -487,6 +491,7 @@ export const exam4Data = {
         },
         {
             id: 35,
+            summary: 'test.only() runs only that single test and skips all others.',
             question: 'What does `test.only()` do?',
             options: [
                 'Runs only that single test (and skips all others)',
@@ -498,6 +503,7 @@ export const exam4Data = {
         },
         {
             id: 36,
+            summary: 'test.skip() skips the test so it does not run.',
             question: 'What does `test.skip()` do?',
             options: [
                 'Deletes the test from the repo',
@@ -509,6 +515,7 @@ export const exam4Data = {
         },
         {
             id: 37,
+            summary: 'Use test.only() only temporarily for local debugging; remove before pushing.',
             question: 'When should you use `test.only()` in a real project?',
             options: [
                 'Always commit it to main branch',
@@ -520,6 +527,7 @@ export const exam4Data = {
         },
         {
             id: 38,
+            summary: 'page.pause() pauses the test and opens Playwright Inspector for debugging.',
             question: 'What does `page.pause()` do?',
             options: [
                 'Stops all tests forever',
@@ -531,6 +539,7 @@ export const exam4Data = {
         },
         {
             id: 39,
+            summary: 'Interactive UI mode: npx playwright test --ui',
             question: 'Which command opens Playwright\'s interactive UI mode?',
             options: [
                 '`npx playwright test --open`',
@@ -542,6 +551,7 @@ export const exam4Data = {
         },
         {
             id: 40,
+            summary: 'Step-by-step debugging: npx playwright test --debug',
             question: 'Which command is used for debugging step-by-step with inspector tools?',
             options: [
                 '`npx playwright test --debug`',
@@ -553,6 +563,7 @@ export const exam4Data = {
         },
         {
             id: 41,
+            summary: 'Record actions to generate tests: npx playwright codegen',
             question: 'Which command generates tests by recording your actions?',
             options: [
                 '`npx playwright test --ui`',
@@ -564,6 +575,7 @@ export const exam4Data = {
         },
         {
             id: 42,
+            summary: 'Run only Chromium: npx playwright test --project=chromium',
             question: 'How do you run only the Chromium project (from config projects)?',
             options: [
                 '`npx playwright test --project=chromium`',
@@ -575,6 +587,7 @@ export const exam4Data = {
         },
         {
             id: 43,
+            summary: 'Run one spec: npx playwright test example.spec.ts',
             question: 'How do you run a single spec file `example.spec.ts`?',
             options: [
                 '`npx playwright test --spec example.spec.ts`',
@@ -586,6 +599,7 @@ export const exam4Data = {
         },
         {
             id: 44,
+            summary: 'Headed (visible browser): npx playwright test --headed',
             question: 'Which command runs tests in headed (non-headless) mode?',
             options: [
                 '`npx playwright test --headed`',
@@ -597,6 +611,7 @@ export const exam4Data = {
         },
         {
             id: 45,
+            summary: 'Run tests matching a name: npx playwright test --grep "login"',
             question: 'Which command runs tests matching a name pattern (grep)?',
             options: [
                 '`npx playwright test --find "login"`',
@@ -608,6 +623,7 @@ export const exam4Data = {
         },
         {
             id: 46,
+            summary: 'List tests without running: npx playwright test --list',
             question: 'Which command lists all discovered tests without running them?',
             options: [
                 '`npx playwright test --dry`',
@@ -619,6 +635,7 @@ export const exam4Data = {
         },
         {
             id: 47,
+            summary: 'Input with label "Email": page.getByLabel(\'Email\')',
             question: 'Best locator for an input with visible label "Email" is:',
             options: [
                 '`page.locator(\'#email\')` always',
@@ -630,6 +647,7 @@ export const exam4Data = {
         },
         {
             id: 48,
+            summary: 'Button "Sign in": page.getByRole(\'button\', { name: \'Sign in\' })',
             question: 'Best locator for a button with accessible name "Sign in" is:',
             options: [
                 '`page.getByRole(\'button\', { name: \'Sign in\' })`',
@@ -641,6 +659,7 @@ export const exam4Data = {
         },
         {
             id: 49,
+            summary: 'getByTestId(\'save\') uses data-testid (or configured test id attribute).',
             question: 'What is `page.getByTestId(\'save\')` mainly based on?',
             options: [
                 'CSS class `.save`',
@@ -652,6 +671,7 @@ export const exam4Data = {
         },
         {
             id: 50,
+            summary: '3rd matching element: locator.nth(2) (zero-based index).',
             question: 'How do you select the 3rd matching element using locators?',
             options: [
                 '`locator.third()`',

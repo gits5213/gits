@@ -39,7 +39,7 @@ class Quiz extends Component {
                 id: 4, 
                 name: 'Exam-4', 
                 title: 'Playwright Advanced: Naming Conventions, Execution & Locators',
-                description: '20 questions covering Playwright naming conventions, execution commands, and locators',
+                description: '20 questions: test/spec naming, CLI and config execution, and element locators (getByRole, getByText, CSS, etc.).',
                 path: '/practice/quiz/exam-4'
             },
             { 
