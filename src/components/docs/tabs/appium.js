@@ -500,6 +500,106 @@ const Appium = () => {
                         />
                     </div>
                     <div style={{ marginBottom: '24px' }}>
+                        <h5 style={{ color: '#00416A', fontSize: '16px', marginBottom: '10px', fontWeight: '600' }}>Sample <code style={{ backgroundColor: '#f8f9fa', padding: '2px 6px', borderRadius: '4px', color: '#00416A' }}>wdio.conf.ts</code></h5>
+                        <p style={{ fontSize: '14px', color: '#333', marginBottom: '8px' }}>Minimal config for Emulator + Chrome. Replace <code style={{ backgroundColor: '#f8f9fa', padding: '2px 6px', borderRadius: '4px', color: '#00416A' }}>Pixel_4_API_30</code> with your emulator name from <code style={{ backgroundColor: '#f8f9fa', padding: '2px 6px', borderRadius: '4px', color: '#00416A' }}>emulator -list-avds</code>.</p>
+                        <CodeBlock
+                            code={`import type { Options } from '@wdio/types'
+
+export const config: Options.Testrunner = {
+  runner: 'local',
+
+  // Appium server address (Appium must be running)
+  hostname: '127.0.0.1',
+  port: 4723,
+  path: '/',
+
+  specs: ['./test/specs/**/*.ts'],
+
+  maxInstances: 1,
+
+  // ✅ Emulator + Chrome capabilities
+  capabilities: [
+    {
+      platformName: 'Android',
+      'appium:automationName': 'UiAutomator2',
+      'appium:deviceName': 'Android Emulator',
+
+      // This tells Appium we want Chrome browser automation
+      browserName: 'Chrome',
+
+      // Helpful defaults
+      'appium:noReset': true,
+      'appium:newCommandTimeout': 180,
+
+      // If WebdriverIO/Appium needs chromedriver automatically
+      'appium:chromedriverAutodownload': true,
+    },
+  ],
+
+  // Use Appium service so WDIO knows we are running mobile tests
+  services: [
+    [
+      'appium',
+      {
+        // We are NOT auto-starting Appium here.
+        // You already start Appium with: appium
+      },
+    ],
+  ],
+
+  framework: 'mocha',
+  reporters: ['spec'],
+
+  mochaOpts: {
+    ui: 'bdd',
+    timeout: 120000,
+  },
+
+  // These make logs readable
+  logLevel: 'info',
+}`}
+                            variant="dark"
+                        />
+                    </div>
+                    <div style={{ marginBottom: '24px' }}>
+                        <h5 style={{ color: '#00416A', fontSize: '16px', marginBottom: '10px', fontWeight: '600' }}>Sample test</h5>
+                        <p style={{ fontSize: '14px', color: '#333', marginBottom: '8px' }}>Save as <code style={{ backgroundColor: '#f8f9fa', padding: '2px 6px', borderRadius: '4px', color: '#00416A' }}>specs/chrome.emulator.spec.ts</code>. This opens Chrome on the emulator, navigates to a page, and checks the title.</p>
+                        <p style={{ fontSize: '14px', color: '#333', marginBottom: '8px' }}>Now install Chai (for the <code style={{ backgroundColor: '#f8f9fa', padding: '2px 6px', borderRadius: '4px', color: '#00416A' }}>expect</code> statement):</p>
+                        <p style={{ fontSize: '14px', color: '#333', marginBottom: '8px' }}><code style={{ backgroundColor: '#f8f9fa', padding: '2px 6px', borderRadius: '4px', color: '#00416A' }}>npm i --save-dev chai @types/chai</code></p>
+                        <CodeBlock
+                            code={`import { expect } from 'chai'
+
+describe('Mobile Chrome test (Emulator)', () => {
+  it('opens Google and searches for WebdriverIO', async () => {
+    // 1) Open website
+    await browser.url('https://www.google.com')
+
+    // 2) Accept cookies if it appears (sometimes shows, sometimes not)
+    // We try safely: if not found, we just continue.
+    const acceptBtn = await $('button=I agree')
+    if (await acceptBtn.isDisplayed().catch(() => false)) {
+      await acceptBtn.click()
+    }
+
+    // 3) Find the search box and type
+    const searchBox = await $('textarea[name="q"], input[name="q"]')
+    await searchBox.waitForDisplayed({ timeout: 20000 })
+    await searchBox.click()
+    await searchBox.setValue('WebdriverIO')
+
+    // 4) Press Enter
+    await browser.keys('Enter')
+
+    // 5) Check results page has the word "WebdriverIO"
+    await browser.pause(2000) // small pause only for demo (later we'll replace with better wait)
+    const pageText = await $('body').getText()
+    expect(pageText).to.include('WebdriverIO')
+  })
+})`}
+                            variant="dark"
+                        />
+                    </div>
+                    <div style={{ marginBottom: '24px' }}>
                         <h5 style={{ color: '#00416A', fontSize: '16px', marginBottom: '10px', fontWeight: '600' }}>Step 4: Run the test</h5>
                         <ol style={{ fontSize: '14px', lineHeight: '1.8', color: '#333', paddingLeft: '24px' }}>
                             <li>Start your emulator (from Android Studio Device Manager, click the play button next to your virtual device). Wait until the phone screen appears on your PC.</li>
@@ -511,6 +611,25 @@ const Appium = () => {
                             </li>
                             <li>In your first Command Prompt (the one in your project folder), type <code style={{ backgroundColor: '#f8f9fa', padding: '2px 6px', borderRadius: '4px', color: '#00416A' }}>npx wdio run wdio.conf.ts</code> and press Enter. The test will run; Chrome may open on the emulator. When it finishes, you should see a summary (e.g. “passed” or number of tests).</li>
                         </ol>
+                    </div>
+                    <div style={{ marginBottom: '24px' }}>
+                        <h5 style={{ color: '#00416A', fontSize: '16px', marginBottom: '10px', fontWeight: '600' }}>Step 5: Add a run command</h5>
+                        <p style={{ fontSize: '14px', color: '#333', marginBottom: '8px' }}>Open <code style={{ backgroundColor: '#f8f9fa', padding: '2px 6px', borderRadius: '4px', color: '#00416A' }}>package.json</code> and under <code style={{ backgroundColor: '#f8f9fa', padding: '2px 6px', borderRadius: '4px', color: '#00416A' }}>&quot;scripts&quot;</code> replace with this:</p>
+                        <CodeBlock
+                            code={`"scripts": {
+  "test": "wdio run wdio.conf.ts"
+}`}
+                            variant="dark"
+                        />
+                    </div>
+                    <div style={{ marginBottom: '24px' }}>
+                        <h5 style={{ color: '#00416A', fontSize: '16px', marginBottom: '10px', fontWeight: '600' }}>If it fails (most common fixes)</h5>
+                        <p style={{ fontSize: '14px', color: '#333', marginBottom: '8px', fontWeight: '600' }}>A) Chrome not found / browserName Chrome fails</p>
+                        <p style={{ fontSize: '14px', color: '#333', marginBottom: '12px', paddingLeft: '16px' }}>In emulator, open Play Store → update/install Chrome.</p>
+                        <p style={{ fontSize: '14px', color: '#333', marginBottom: '8px', fontWeight: '600' }}>B) Chromedriver mismatch error</p>
+                        <p style={{ fontSize: '14px', color: '#333', marginBottom: '12px', paddingLeft: '16px' }}>You already have <code style={{ backgroundColor: '#f8f9fa', padding: '2px 6px', borderRadius: '4px', color: '#00416A' }}>&quot;appium:chromedriverAutodownload&quot;: true</code>. So it usually fixes itself. If not, tell me the error text.</p>
+                        <p style={{ fontSize: '14px', color: '#333', marginBottom: '8px', fontWeight: '600' }}>C) It opens “desktop Google” weirdly</p>
+                        <p style={{ fontSize: '14px', color: '#333', marginBottom: '12px', paddingLeft: '16px' }}>That’s fine for now. Next step we’ll set mobile device metrics or use a mobile-friendly site.</p>
                     </div>
                     </div>
                     )}
@@ -605,6 +724,281 @@ const Appium = () => {
                             <li>In a second Command Prompt window run <code style={{ backgroundColor: '#f8f9fa', padding: '2px 6px', borderRadius: '4px', color: '#00416A' }}>appium</code>. Leave it open.</li>
                             <li>In the first window (project folder) run <code style={{ backgroundColor: '#f8f9fa', padding: '2px 6px', borderRadius: '4px', color: '#00416A' }}>npx wdio run wdio.conf.ts</code>. The demo app should open on the emulator and the test will run.</li>
                         </ol>
+                    </div>
+                    <hr style={{ border: 'none', borderTop: '1px solid #e0e0e0', margin: '24px 0' }} />
+                    <div style={{ marginBottom: '24px' }}>
+                        <p style={{ fontSize: '14px', color: '#333', marginBottom: '16px' }}>
+                            Absolutely — below is a <strong>copy/paste-ready</strong> setup for:
+                        </p>
+                        <ul style={{ fontSize: '14px', lineHeight: '1.8', color: '#333', paddingLeft: '24px', marginBottom: '16px' }}>
+                            <li>✅ <strong>Android Emulator</strong> + <strong>Appium 2</strong> + <strong>WebdriverIO (TypeScript)</strong> + <strong>Sauce Labs Demo App (Swag Labs sample app)</strong></li>
+                        </ul>
+                        <p style={{ fontSize: '14px', color: '#333', marginBottom: '16px' }}>
+                            I'll keep it <strong>non-tech friendly</strong>, with comments in the files.
+                        </p>
+                        <div style={{ marginBottom: '24px' }}>
+                            <h5 style={{ color: '#00416A', fontSize: '16px', marginBottom: '10px', fontWeight: '600' }}># 0) What you will do</h5>
+                            <ol style={{ fontSize: '14px', lineHeight: '1.8', color: '#333', paddingLeft: '24px' }}>
+                                <li>Create a folder project</li>
+                                <li>Install the tools (1 command)</li>
+                                <li>Put the demo app APK in a folder</li>
+                                <li>Run the test (1 command)</li>
+                            </ol>
+                        </div>
+                        <div style={{ marginBottom: '24px' }}>
+                            <h5 style={{ color: '#00416A', fontSize: '16px', marginBottom: '10px', fontWeight: '600' }}># 1) Create project folder</h5>
+                            <p style={{ fontSize: '14px', color: '#333', marginBottom: '10px' }}>
+                                Open <strong>Command Prompt</strong> and run:
+                            </p>
+                            <CodeBlock
+                                code={`mkdir wdio-sauce-demo
+cd wdio-sauce-demo
+npm init -y`}
+                                variant="dark"
+                            />
+                        </div>
+                        <div style={{ marginBottom: '24px' }}>
+                            <h5 style={{ color: '#00416A', fontSize: '16px', marginBottom: '10px', fontWeight: '600' }}># 2) Install dependencies</h5>
+                            <p style={{ fontSize: '14px', color: '#333', marginBottom: '10px' }}>
+                                Run:
+                            </p>
+                            <CodeBlock
+                                code={`npm i -D webdriverio @wdio/cli @wdio/local-runner @wdio/mocha-framework @wdio/spec-reporter @wdio/appium-service typescript ts-node @types/node chai`}
+                                variant="dark"
+                            />
+                        </div>
+                        <div style={{ marginBottom: '24px' }}>
+                            <h5 style={{ color: '#00416A', fontSize: '16px', marginBottom: '10px', fontWeight: '600' }}># 3) Put the Sauce demo APK in the project</h5>
+                            <ol style={{ fontSize: '14px', lineHeight: '1.8', color: '#333', paddingLeft: '24px' }}>
+                                <li>Create a folder named <strong>apps</strong></li>
+                                <li>Put the demo APK file inside it and name it exactly:
+                                    <ul style={{ marginTop: '6px', paddingLeft: '20px' }}>
+                                        <li>✅ <code style={{ backgroundColor: '#f8f9fa', padding: '2px 6px', borderRadius: '4px', color: '#00416A' }}>apps/sauce-demo.apk</code></li>
+                                    </ul>
+                                </li>
+                            </ol>
+                            <p style={{ fontSize: '14px', color: '#333', marginTop: '12px', marginBottom: '8px' }}>
+                                Your project should look like:
+                            </p>
+                            <CodeBlock
+                                code={`wdio-sauce-demo/
+  apps/
+    sauce-demo.apk
+  test/
+    specs/
+  wdio.conf.ts
+  package.json`}
+                                variant="dark"
+                            />
+                            <p style={{ fontSize: '14px', color: '#666', marginTop: '12px', fontStyle: 'italic' }}>
+                                &gt; If you already have the Sauce demo APK, just rename it to <code style={{ backgroundColor: '#f8f9fa', padding: '2px 6px', borderRadius: '4px', color: '#00416A' }}>sauce-demo.apk</code> and put it in <code style={{ backgroundColor: '#f8f9fa', padding: '2px 6px', borderRadius: '4px', color: '#00416A' }}>/apps</code>.
+                            </p>
+                        </div>
+                        <div style={{ marginBottom: '24px' }}>
+                            <h5 style={{ color: '#00416A', fontSize: '16px', marginBottom: '10px', fontWeight: '600' }}># 4) Create <code style={{ backgroundColor: '#f8f9fa', padding: '2px 6px', borderRadius: '4px', color: '#00416A' }}>wdio.conf.ts</code> (copy-paste)</h5>
+                            <p style={{ fontSize: '14px', color: '#333', marginBottom: '10px' }}>
+                                Create a file named: <strong>wdio.conf.ts</strong> in the root and paste this:
+                            </p>
+                            <CodeBlock
+                                code={`export const config: WebdriverIO.Config = {
+  //
+  // Where Appium is running:
+  //
+  hostname: "127.0.0.1",
+  port: 4723,
+  path: "/",
+
+  runner: "local",
+  framework: "mocha",
+  reporters: ["spec"],
+
+  //
+  // Where your tests are:
+  //
+  specs: ["./test/specs/**/*.ts"],
+
+  //
+  // How long to wait for commands:
+  //
+  waitforTimeout: 15000,
+
+  //
+  // Appium service (so WDIO can talk to Appium):
+  //
+  services: [
+    [
+      "appium",
+      {
+        // If Appium is already running, WDIO will just connect to it.
+        // If you want WDIO to start Appium automatically, set:
+        // command: "appium"
+      },
+    ],
+  ],
+
+  //
+  // Android emulator capabilities:
+  //
+  capabilities: [
+    {
+      platformName: "Android",
+      "appium:automationName": "UiAutomator2",
+
+      // "Android Emulator" works for most people
+      "appium:deviceName": "Android Emulator",
+
+      // If you have multiple devices, you can set udid like:
+      // "appium:udid": "emulator-5554",
+
+      // This is the demo app APK in your project folder:
+      "appium:app": \`\${process.cwd()}\\\\apps\\\\sauce-demo.apk\`,
+
+      // Helpful defaults:
+      "appium:autoGrantPermissions": true,
+      "appium:noReset": false, // set true if you don't want reinstall each run
+      "appium:newCommandTimeout": 180,
+    },
+  ],
+
+  //
+  // Mocha options:
+  //
+  mochaOpts: {
+    timeout: 180000, // 3 minutes (mobile can be slow)
+  },
+};`}
+                                variant="dark"
+                            />
+                        </div>
+                        <div style={{ marginBottom: '24px' }}>
+                            <h5 style={{ color: '#00416A', fontSize: '16px', marginBottom: '10px', fontWeight: '600' }}># 5) Create sample test <code style={{ backgroundColor: '#f8f9fa', padding: '2px 6px', borderRadius: '4px', color: '#00416A' }}>test/specs/sauce-demo.e2e.ts</code></h5>
+                            <p style={{ fontSize: '14px', color: '#333', marginBottom: '10px' }}>
+                                Create folders:
+                            </p>
+                            <ul style={{ fontSize: '14px', lineHeight: '1.8', color: '#333', paddingLeft: '24px', marginBottom: '10px' }}>
+                                <li><code style={{ backgroundColor: '#f8f9fa', padding: '2px 6px', borderRadius: '4px', color: '#00416A' }}>test/specs</code></li>
+                            </ul>
+                            <p style={{ fontSize: '14px', color: '#333', marginBottom: '10px' }}>
+                                Create file: <strong>test/specs/sauce-demo.e2e.ts</strong> and paste:
+                            </p>
+                            <CodeBlock
+                                code={`import { expect } from "chai";
+
+describe("Sauce Demo App - Login and add to cart", () => {
+  it("should login and add an item to cart", async () => {
+    //
+    // Wait until the login screen is visible
+    // Most demo builds have these accessibility IDs:
+    //
+    const username = await $(\`~test-Username\`);
+    await username.waitForDisplayed({ timeout: 30000 });
+
+    //
+    // Fill login form
+    //
+    await username.setValue("standard_user");
+
+    const password = await $(\`~test-Password\`);
+    await password.setValue("secret_sauce");
+
+    //
+    // Tap Login
+    //
+    const loginBtn = await $(\`~test-LOGIN\`);
+    await loginBtn.click();
+
+    //
+    // Confirm we landed on Products screen
+    //
+    const productsTitle = await $(\`~test-PRODUCTS\`);
+    await productsTitle.waitForDisplayed({ timeout: 30000 });
+
+    //
+    // Add first item to cart
+    //
+    const addToCartBtn = await $(\`~test-ADD TO CART\`);
+    await addToCartBtn.click();
+
+    //
+    // Open cart
+    //
+    const cartIcon = await $(\`~test-Cart\`);
+    await cartIcon.click();
+
+    //
+    // Validate cart has at least 1 item
+    //
+    const cartItem = await $(\`~test-Item\`);
+    await cartItem.waitForDisplayed({ timeout: 30000 });
+
+    expect(await cartItem.isDisplayed()).to.equal(true);
+  });
+});`}
+                                variant="dark"
+                            />
+                            <p style={{ fontSize: '14px', color: '#666', marginTop: '12px', fontStyle: 'italic' }}>
+                                &gt; If any selector doesn't match your APK version, tell me what fails and I'll adjust to the exact IDs your build uses.
+                            </p>
+                        </div>
+                        <div style={{ marginBottom: '24px' }}>
+                            <h5 style={{ color: '#00416A', fontSize: '16px', marginBottom: '10px', fontWeight: '600' }}># 6) Add run script to <code style={{ backgroundColor: '#f8f9fa', padding: '2px 6px', borderRadius: '4px', color: '#00416A' }}>package.json</code></h5>
+                            <p style={{ fontSize: '14px', color: '#333', marginBottom: '10px' }}>
+                                Open <code style={{ backgroundColor: '#f8f9fa', padding: '2px 6px', borderRadius: '4px', color: '#00416A' }}>package.json</code> and in <code style={{ backgroundColor: '#f8f9fa', padding: '2px 6px', borderRadius: '4px', color: '#00416A' }}>"scripts"</code> set:
+                            </p>
+                            <CodeBlock
+                                code={`"scripts": {
+  "test": "wdio run ./wdio.conf.ts"
+}`}
+                                variant="dark"
+                            />
+                        </div>
+                        <div style={{ marginBottom: '24px' }}>
+                            <h5 style={{ color: '#00416A', fontSize: '16px', marginBottom: '10px', fontWeight: '600' }}># 7) Run it (2 terminals)</h5>
+                            <p style={{ fontSize: '14px', color: '#333', marginBottom: '10px', fontWeight: '600' }}>
+                                Terminal 1: start Appium
+                            </p>
+                            <CodeBlock
+                                code={`appium`}
+                                variant="dark"
+                            />
+                            <p style={{ fontSize: '14px', color: '#333', marginTop: '16px', marginBottom: '10px', fontWeight: '600' }}>
+                                Terminal 2: run tests
+                            </p>
+                            <CodeBlock
+                                code={`npm test`}
+                                variant="dark"
+                            />
+                            <p style={{ fontSize: '14px', color: '#333', marginTop: '12px' }}>
+                                ✅ Emulator should open the app, login, add item, open cart.
+                            </p>
+                        </div>
+                        <div style={{ marginBottom: '24px' }}>
+                            <h5 style={{ color: '#00416A', fontSize: '16px', marginBottom: '10px', fontWeight: '600' }}>Common beginner problems (quick fixes)</h5>
+                            <p style={{ fontSize: '14px', color: '#333', marginBottom: '10px', fontWeight: '600' }}>
+                                A) "Appium driver not installed"
+                            </p>
+                            <p style={{ fontSize: '14px', color: '#333', marginBottom: '16px' }}>
+                                Run:
+                            </p>
+                            <CodeBlock
+                                code={`appium driver install uiautomator2`}
+                                variant="dark"
+                            />
+                            <p style={{ fontSize: '14px', color: '#333', marginTop: '16px', marginBottom: '10px', fontWeight: '600' }}>
+                                B) "adb not recognized"
+                            </p>
+                            <p style={{ fontSize: '14px', color: '#333', marginBottom: '16px' }}>
+                                You already hit this — you must add:
+                                <code style={{ backgroundColor: '#f8f9fa', padding: '2px 6px', borderRadius: '4px', color: '#00416A' }}>...Android\\Sdk\\platform-tools</code> to PATH.
+                            </p>
+                            <p style={{ fontSize: '14px', color: '#333', marginTop: '16px', marginBottom: '10px', fontWeight: '600' }}>
+                                C) "Can't find app / apk"
+                            </p>
+                            <p style={{ fontSize: '14px', color: '#333', marginBottom: '16px' }}>
+                                Make sure this file exists exactly:
+                                <code style={{ backgroundColor: '#f8f9fa', padding: '2px 6px', borderRadius: '4px', color: '#00416A' }}>wdio-sauce-demo\\apps\\sauce-demo.apk</code>
+                            </p>
+                        </div>
                     </div>
                     </div>
                     )}
@@ -702,6 +1096,301 @@ const Appium = () => {
                             <li>In the first window run <code style={{ backgroundColor: '#f8f9fa', padding: '2px 6px', borderRadius: '4px', color: '#00416A' }}>npx wdio run wdio.conf.ts</code>. Chrome on your phone should be controlled by the test.</li>
                         </ol>
                     </div>
+                    <hr style={{ border: 'none', borderTop: '1px solid #e0e0e0', margin: '24px 0' }} />
+                    <div style={{ marginBottom: '24px' }}>
+                        <p style={{ fontSize: '14px', color: '#333', marginBottom: '16px' }}>
+                            Below is a <strong>copy-paste working example</strong> for <strong>Real Android phone + Chrome (mobile web)</strong> using <strong>WebdriverIO + Appium 2 + TypeScript</strong> on Windows. I'm writing it in <strong>non-tech friendly steps</strong>.
+                        </p>
+                        <div style={{ marginBottom: '24px' }}>
+                            <h5 style={{ color: '#00416A', fontSize: '16px', marginBottom: '10px', fontWeight: '600' }}>## 0) Before you start (2 must-do checks)</h5>
+                            <p style={{ fontSize: '14px', color: '#333', marginBottom: '10px', fontWeight: '600' }}>
+                                A) Connect phone
+                            </p>
+                            <ol style={{ fontSize: '14px', lineHeight: '1.8', color: '#333', paddingLeft: '24px' }}>
+                                <li>On your Android phone: <strong>Settings → About phone → tap "Build number" 7 times</strong></li>
+                                <li>Go back: <strong>Settings → Developer options</strong></li>
+                                <li>Turn ON:
+                                    <ul style={{ marginTop: '6px', paddingLeft: '20px' }}>
+                                        <li>✅ <strong>USB debugging</strong></li>
+                                    </ul>
+                                </li>
+                                <li>Plug phone into PC (USB cable)</li>
+                                <li>On phone popup: <strong>Allow USB debugging</strong> → tap <strong>Allow</strong></li>
+                            </ol>
+                            <p style={{ fontSize: '14px', color: '#333', marginTop: '16px', marginBottom: '10px', fontWeight: '600' }}>
+                                B) Make sure PC sees your phone
+                            </p>
+                            <p style={{ fontSize: '14px', color: '#333', marginBottom: '10px' }}>
+                                Open <strong>Command Prompt</strong> and run:
+                            </p>
+                            <ul style={{ fontSize: '14px', lineHeight: '1.8', color: '#333', paddingLeft: '24px', marginBottom: '10px' }}>
+                                <li><code style={{ backgroundColor: '#f8f9fa', padding: '2px 6px', borderRadius: '4px', color: '#00416A' }}>adb devices</code></li>
+                            </ul>
+                            <p style={{ fontSize: '14px', color: '#333', marginBottom: '10px' }}>
+                                You should see something like:
+                            </p>
+                            <ul style={{ fontSize: '14px', lineHeight: '1.8', color: '#333', paddingLeft: '24px', marginBottom: '10px' }}>
+                                <li><code style={{ backgroundColor: '#f8f9fa', padding: '2px 6px', borderRadius: '4px', color: '#00416A' }}>R58N123ABC    device</code></li>
+                            </ul>
+                            <p style={{ fontSize: '14px', color: '#333', marginBottom: '10px' }}>
+                                That <code style={{ backgroundColor: '#f8f9fa', padding: '2px 6px', borderRadius: '4px', color: '#00416A' }}>R58N123ABC</code> is your <strong>UDID</strong> (device id). Copy it.
+                            </p>
+                        </div>
+                        <div style={{ marginBottom: '24px' }}>
+                            <h5 style={{ color: '#00416A', fontSize: '16px', marginBottom: '10px', fontWeight: '600' }}>## 1) Create a project folder</h5>
+                            <p style={{ fontSize: '14px', color: '#333', marginBottom: '10px' }}>
+                                In Command Prompt:
+                            </p>
+                            <CodeBlock
+                                code={`mkdir wdio-realdevice-chrome
+cd wdio-realdevice-chrome
+npm init -y`}
+                                variant="dark"
+                            />
+                        </div>
+                        <div style={{ marginBottom: '24px' }}>
+                            <h5 style={{ color: '#00416A', fontSize: '16px', marginBottom: '10px', fontWeight: '600' }}>## 2) Install WebdriverIO + Appium packages</h5>
+                            <p style={{ fontSize: '14px', color: '#333', marginBottom: '10px' }}>
+                                Run:
+                            </p>
+                            <CodeBlock
+                                code={`npm i -D typescript ts-node @types/node
+npm i -D @wdio/cli @wdio/local-runner @wdio/mocha-framework @wdio/spec-reporter
+npm i -D @wdio/appium-service webdriverio`}
+                                variant="dark"
+                            />
+                        </div>
+                        <div style={{ marginBottom: '24px' }}>
+                            <h5 style={{ color: '#00416A', fontSize: '16px', marginBottom: '10px', fontWeight: '600' }}>## 3) Make sure Appium 2 + Android driver installed</h5>
+                            <p style={{ fontSize: '14px', color: '#333', marginBottom: '10px' }}>
+                                Run:
+                            </p>
+                            <CodeBlock
+                                code={`npm i -g appium
+appium -v
+appium driver install uiautomator2
+appium driver list --installed`}
+                                variant="dark"
+                            />
+                            <p style={{ fontSize: '14px', color: '#333', marginTop: '12px', marginBottom: '10px' }}>
+                                Start Appium server in a separate terminal:
+                            </p>
+                            <CodeBlock
+                                code={`appium`}
+                                variant="dark"
+                            />
+                            <p style={{ fontSize: '14px', color: '#333', marginTop: '12px' }}>
+                                Keep it running.
+                            </p>
+                        </div>
+                        <div style={{ marginBottom: '24px' }}>
+                            <h5 style={{ color: '#00416A', fontSize: '16px', marginBottom: '10px', fontWeight: '600' }}>## 4) Create <code style={{ backgroundColor: '#f8f9fa', padding: '2px 6px', borderRadius: '4px', color: '#00416A' }}>tsconfig.json</code></h5>
+                            <p style={{ fontSize: '14px', color: '#333', marginBottom: '10px' }}>
+                                Create a file named <strong>tsconfig.json</strong> in the project root:
+                            </p>
+                            <CodeBlock
+                                code={`{
+  "compilerOptions": {
+    "target": "ES2020",
+    "module": "CommonJS",
+    "moduleResolution": "Node",
+    "types": ["node"],
+    "strict": true,
+    "esModuleInterop": true,
+    "skipLibCheck": true,
+    "outDir": "dist"
+  },
+  "include": ["./test/**/*.ts", "./wdio.conf.ts"]
+}`}
+                                variant="dark"
+                            />
+                        </div>
+                        <div style={{ marginBottom: '24px' }}>
+                            <h5 style={{ color: '#00416A', fontSize: '16px', marginBottom: '10px', fontWeight: '600' }}>## 5) Create <code style={{ backgroundColor: '#f8f9fa', padding: '2px 6px', borderRadius: '4px', color: '#00416A' }}>wdio.conf.ts</code> (Real Device + Chrome)</h5>
+                            <p style={{ fontSize: '14px', color: '#333', marginBottom: '10px' }}>
+                                Create a file named <strong>wdio.conf.ts</strong> in the project root.
+                            </p>
+                            <p style={{ fontSize: '14px', color: '#333', marginBottom: '10px', fontWeight: '600' }}>
+                                IMPORTANT: Replace <code style={{ backgroundColor: '#f8f9fa', padding: '2px 6px', borderRadius: '4px', color: '#00416A' }}>PUT_YOUR_UDID_HERE</code> with your <code style={{ backgroundColor: '#f8f9fa', padding: '2px 6px', borderRadius: '4px', color: '#00416A' }}>adb devices</code> value.
+                            </p>
+                            <CodeBlock
+                                code={`import type { Options } from "@wdio/types";
+
+export const config: Options.Testrunner = {
+  runner: "local",
+
+  hostname: "127.0.0.1",
+  port: 4723,
+  path: "/",
+
+  specs: ["./test/specs/**/*.ts"],
+  maxInstances: 1,
+
+  logLevel: "info",
+
+  framework: "mocha",
+  mochaOpts: {
+    ui: "bdd",
+    timeout: 180000
+  },
+
+  reporters: ["spec"],
+
+  services: [
+    [
+      "appium",
+      {
+        // We are running "appium" ourselves in another terminal.
+        // If you want WDIO to start it automatically, tell me and I'll adjust.
+        command: "appium"
+      }
+    ]
+  ],
+
+  capabilities: [
+    {
+      platformName: "Android",
+
+      // Appium 2 namespaced capabilities:
+      "appium:automationName": "UiAutomator2",
+      "appium:deviceName": "My Android Phone",
+      "appium:udid": "PUT_YOUR_UDID_HERE",
+
+      // Chrome browser automation:
+      "appium:browserName": "Chrome",
+
+      // Helpful stability settings:
+      "appium:noReset": true,
+      "appium:newCommandTimeout": 180,
+
+      // If chromedriver version mismatch happens, this often fixes it:
+      "appium:chromedriverAutodownload": true
+    }
+  ]
+};`}
+                                variant="dark"
+                            />
+                        </div>
+                        <div style={{ marginBottom: '24px' }}>
+                            <h5 style={{ color: '#00416A', fontSize: '16px', marginBottom: '10px', fontWeight: '600' }}>## 6) Create a sample test (simple Google search)</h5>
+                            <p style={{ fontSize: '14px', color: '#333', marginBottom: '10px' }}>
+                                Create folder: <code style={{ backgroundColor: '#f8f9fa', padding: '2px 6px', borderRadius: '4px', color: '#00416A' }}>test/specs/</code>
+                            </p>
+                            <p style={{ fontSize: '14px', color: '#333', marginBottom: '10px' }}>
+                                Create file: <code style={{ backgroundColor: '#f8f9fa', padding: '2px 6px', borderRadius: '4px', color: '#00416A' }}>test/specs/chrome-real-device.e2e.ts</code>
+                            </p>
+                            <CodeBlock
+                                code={`import { expect } from "chai";
+
+describe("Mobile Chrome on real Android device", () => {
+  it("opens Google and searches WebdriverIO", async () => {
+    // 1) Open a website
+    await browser.url("https://www.google.com");
+
+    // 2) Sometimes Google shows a consent screen; handle it safely
+    // (If it doesn't appear, the try/catch will ignore it)
+    try {
+      const agreeBtn = await $("//button//*[contains(text(),'I agree') or contains(text(),'Accept all')]/..");
+      if (await agreeBtn.isDisplayed()) {
+        await agreeBtn.click();
+      }
+    } catch (e) {
+      // ignore if not found
+    }
+
+    // 3) Find the search box and type text
+    const searchBox = await $(\`input[name="q"]\`);
+    await searchBox.waitForDisplayed({ timeout: 30000 });
+
+    await searchBox.click();
+    await searchBox.setValue("WebdriverIO Appium tutorial");
+
+    // 4) Press Enter on the phone keyboard
+    await browser.keys("Enter");
+
+    // 5) Verify results page loaded (title contains our text)
+    await browser.waitUntil(
+      async () => (await browser.getTitle()).toLowerCase().includes("webdriverio"),
+      { timeout: 30000, timeoutMsg: "Search results did not load or title did not match." }
+    );
+
+    const title = await browser.getTitle();
+    expect(title.toLowerCase()).to.contain("webdriverio");
+  });
+});`}
+                                variant="dark"
+                            />
+                            <p style={{ fontSize: '14px', color: '#333', marginTop: '12px', marginBottom: '10px' }}>
+                                Now install chai types:
+                            </p>
+                            <CodeBlock
+                                code={`npm i -D chai @types/chai`}
+                                variant="dark"
+                            />
+                        </div>
+                        <div style={{ marginBottom: '24px' }}>
+                            <h5 style={{ color: '#00416A', fontSize: '16px', marginBottom: '10px', fontWeight: '600' }}>## 7) Add a run script</h5>
+                            <p style={{ fontSize: '14px', color: '#333', marginBottom: '10px' }}>
+                                Open <strong>package.json</strong> and add:
+                            </p>
+                            <CodeBlock
+                                code={`"scripts": {
+  "test:android:chrome": "wdio run ./wdio.conf.ts"
+}`}
+                                variant="dark"
+                            />
+                        </div>
+                        <div style={{ marginBottom: '24px' }}>
+                            <h5 style={{ color: '#00416A', fontSize: '16px', marginBottom: '10px', fontWeight: '600' }}>## 8) Run it (2 terminals)</h5>
+                            <p style={{ fontSize: '14px', color: '#333', marginBottom: '10px', fontWeight: '600' }}>
+                                Terminal 1 (Appium server)
+                            </p>
+                            <CodeBlock
+                                code={`appium`}
+                                variant="dark"
+                            />
+                            <p style={{ fontSize: '14px', color: '#333', marginTop: '16px', marginBottom: '10px', fontWeight: '600' }}>
+                                Terminal 2 (run test)
+                            </p>
+                            <CodeBlock
+                                code={`npm run test:android:chrome`}
+                                variant="dark"
+                            />
+                            <p style={{ fontSize: '14px', color: '#333', marginTop: '12px' }}>
+                                Your phone Chrome should open Google and perform the search.
+                            </p>
+                        </div>
+                        <div style={{ marginBottom: '24px' }}>
+                            <h5 style={{ color: '#00416A', fontSize: '16px', marginBottom: '10px', fontWeight: '600' }}>If it fails (most common reasons + fix)</h5>
+                            <p style={{ fontSize: '14px', color: '#333', marginBottom: '10px', fontWeight: '600' }}>
+                                A) "ChromeDriver version mismatch"
+                            </p>
+                            <p style={{ fontSize: '14px', color: '#333', marginBottom: '10px' }}>
+                                Keep this in capabilities (already included):
+                            </p>
+                            <CodeBlock
+                                code={`"appium:chromedriverAutodownload": true`}
+                                variant="dark"
+                            />
+                            <p style={{ fontSize: '14px', color: '#333', marginTop: '16px', marginBottom: '10px', fontWeight: '600' }}>
+                                B) Phone not detected
+                            </p>
+                            <ul style={{ fontSize: '14px', lineHeight: '1.8', color: '#333', paddingLeft: '24px', marginBottom: '10px' }}>
+                                <li>Run <code style={{ backgroundColor: '#f8f9fa', padding: '2px 6px', borderRadius: '4px', color: '#00416A' }}>adb devices</code> again</li>
+                                <li>Unplug/plug USB</li>
+                                <li>Accept USB debugging popup again</li>
+                            </ul>
+                            <p style={{ fontSize: '14px', color: '#333', marginTop: '16px', marginBottom: '10px', fontWeight: '600' }}>
+                                C) "Appium server not reachable"
+                            </p>
+                            <p style={{ fontSize: '14px', color: '#333', marginBottom: '10px' }}>
+                                Make sure Appium is running on:
+                            </p>
+                            <ul style={{ fontSize: '14px', lineHeight: '1.8', color: '#333', paddingLeft: '24px' }}>
+                                <li><code style={{ backgroundColor: '#f8f9fa', padding: '2px 6px', borderRadius: '4px', color: '#00416A' }}>http://127.0.0.1:4723</code></li>
+                            </ul>
+                        </div>
+                    </div>
                     </div>
                     )}
                 </div>
@@ -793,6 +1482,192 @@ const Appium = () => {
                             <li>In a second Command Prompt run <code style={{ backgroundColor: '#f8f9fa', padding: '2px 6px', borderRadius: '4px', color: '#00416A' }}>appium</code>. Leave it open.</li>
                             <li>In the first window run <code style={{ backgroundColor: '#f8f9fa', padding: '2px 6px', borderRadius: '4px', color: '#00416A' }}>npx wdio run wdio.conf.ts</code>. The demo app will be installed and opened on your phone and the test will run.</li>
                         </ol>
+                    </div>
+                    <hr style={{ border: 'none', borderTop: '1px solid #e0e0e0', margin: '24px 0' }} />
+                    <div style={{ marginBottom: '24px' }}>
+                        <p style={{ fontSize: '14px', color: '#333', marginBottom: '16px' }}>
+                            Below is a <strong>copy-paste ready</strong> <strong><code style={{ backgroundColor: '#f8f9fa', padding: '2px 6px', borderRadius: '4px', color: '#00416A' }}>wdio.conf.ts</code></strong> + <strong>one simple test</strong> for <strong>Real Android phone + Sauce Labs demo app (APK)</strong>. I'm writing it so a non-technical person can follow: <strong>you only replace 2 things</strong>: <strong>UDID</strong> and <strong>APK path</strong>.
+                        </p>
+                        <p style={{ fontSize: '14px', color: '#666', marginBottom: '16px', fontStyle: 'italic' }}>
+                            &gt; This setup runs on <strong>your own phone</strong> using a <strong>local Appium server</strong> (not Sauce cloud).
+                        </p>
+                        <div style={{ marginBottom: '24px' }}>
+                            <h5 style={{ color: '#00416A', fontSize: '16px', marginBottom: '10px', fontWeight: '600' }}>## 0) Before you paste anything (2 quick values you must get)</h5>
+                            <p style={{ fontSize: '14px', color: '#333', marginBottom: '10px', fontWeight: '600' }}>
+                                A) Get your phone UDID
+                            </p>
+                            <ol style={{ fontSize: '14px', lineHeight: '1.8', color: '#333', paddingLeft: '24px' }}>
+                                <li>Plug phone via USB (USB Debugging ON)</li>
+                                <li>Run:</li>
+                            </ol>
+                            <CodeBlock
+                                code={`adb devices`}
+                                variant="dark"
+                            />
+                            <p style={{ fontSize: '14px', color: '#333', marginTop: '12px', marginBottom: '10px' }}>
+                                You will see something like:
+                                <code style={{ backgroundColor: '#f8f9fa', padding: '2px 6px', borderRadius: '4px', color: '#00416A', marginLeft: '6px' }}>R58N123ABC  device</code>
+                            </p>
+                            <p style={{ fontSize: '14px', color: '#333', marginBottom: '16px' }}>
+                                ✅ Your <strong>UDID</strong> is: <code style={{ backgroundColor: '#f8f9fa', padding: '2px 6px', borderRadius: '4px', color: '#00416A' }}>R58N123ABC</code>
+                            </p>
+                            <p style={{ fontSize: '14px', color: '#333', marginBottom: '10px', fontWeight: '600' }}>
+                                B) Download the Sauce Labs Android demo app (APK)
+                            </p>
+                            <p style={{ fontSize: '14px', color: '#333', marginBottom: '10px' }}>
+                                Sauce provides a public sample APK link in their docs (<a href="https://docs.saucelabs.com" target="_blank" rel="noopener noreferrer" style={{ color: '#00416A', textDecoration: 'underline' }}>Sauce Labs Documentation</a>).
+                            </p>
+                            <p style={{ fontSize: '14px', color: '#333', marginBottom: '10px' }}>
+                                Example: <code style={{ backgroundColor: '#f8f9fa', padding: '2px 6px', borderRadius: '4px', color: '#00416A' }}>Android.SauceLabs.Mobile.Sample.app.2.3.0.apk</code>
+                            </p>
+                            <p style={{ fontSize: '14px', color: '#333', marginBottom: '10px' }}>
+                                Download it and save it somewhere like:
+                            </p>
+                            <p style={{ fontSize: '14px', color: '#333', marginBottom: '10px' }}>
+                                <code style={{ backgroundColor: '#f8f9fa', padding: '2px 6px', borderRadius: '4px', color: '#00416A' }}>C:\mobile-apps\Android.SauceLabs.Mobile.Sample.app.2.3.0.apk</code>
+                            </p>
+                        </div>
+                        <div style={{ marginBottom: '24px' }}>
+                            <h5 style={{ color: '#00416A', fontSize: '16px', marginBottom: '10px', fontWeight: '600' }}>## 1) <code style={{ backgroundColor: '#f8f9fa', padding: '2px 6px', borderRadius: '4px', color: '#00416A' }}>wdio.conf.ts</code> (copy/paste)</h5>
+                            <p style={{ fontSize: '14px', color: '#333', marginBottom: '10px' }}>
+                                Create a file: <strong><code style={{ backgroundColor: '#f8f9fa', padding: '2px 6px', borderRadius: '4px', color: '#00416A' }}>wdio.conf.ts</code></strong>
+                            </p>
+                            <CodeBlock
+                                code={`import type { Options } from "@wdio/types";
+
+export const config: Options.Testrunner = {
+  runner: "local",
+
+  // Appium runs locally on your machine
+  hostname: "127.0.0.1",
+  port: 4723,
+  path: "/",
+
+  specs: ["./test/specs/**/*.ts"],
+  maxInstances: 1,
+
+  logLevel: "info",
+
+  framework: "mocha",
+  mochaOpts: {
+    ui: "bdd",
+    timeout: 180000
+  },
+
+  // Start/stop Appium automatically for you
+  services: [
+    [
+      "appium",
+      {
+        // You can keep defaults. This is beginner-friendly.
+        args: {
+          address: "127.0.0.1",
+          port: 4723,
+          // comment these out if you want less logs
+          log: "./appium.log"
+        }
+      }
+    ]
+  ],
+
+  capabilities: [
+    {
+      platformName: "Android",
+      "appium:automationName": "UiAutomator2",
+
+      // ✅ REPLACE THIS with your real device UDID from: adb devices
+      "appium:udid": "PASTE_YOUR_UDID_HERE",
+
+      // ✅ REPLACE THIS with the APK file path on your PC
+      "appium:app": "C:\\\\mobile-apps\\\\Android.SauceLabs.Mobile.Sample.app.2.3.0.apk",
+
+      "appium:autoGrantPermissions": true,
+      "appium:noReset": false,
+      "appium:newCommandTimeout": 180
+    }
+  ]
+};`}
+                                variant="dark"
+                            />
+                        </div>
+                        <div style={{ marginBottom: '24px' }}>
+                            <h5 style={{ color: '#00416A', fontSize: '16px', marginBottom: '10px', fontWeight: '600' }}>## 2) Sample test (login) — super simple</h5>
+                            <p style={{ fontSize: '14px', color: '#333', marginBottom: '10px' }}>
+                                Create file: <strong><code style={{ backgroundColor: '#f8f9fa', padding: '2px 6px', borderRadius: '4px', color: '#00416A' }}>test/specs/login.e2e.ts</code></strong>
+                            </p>
+                            <CodeBlock
+                                code={`import { expect } from "expect";
+
+describe("Sauce Demo App - Login", () => {
+  it("should login with a sample user", async () => {
+    // These locator names are common in the Sauce demo apps.
+    // If any element is not found, see the note below ("If selectors differ").
+    const username = await $("~test-Username");
+    const password = await $("~test-Password");
+    const loginBtn = await $("~test-LOGIN");
+
+    await username.waitForDisplayed({ timeout: 30000 });
+
+    await username.setValue("standard_user");
+    await password.setValue("secret_sauce");
+    await loginBtn.click();
+
+    // After login, many Sauce demo apps show Products screen.
+    // Common locator:
+    const productsTitle = await $("~test-PRODUCTS");
+    await productsTitle.waitForDisplayed({ timeout: 30000 });
+
+    expect(await productsTitle.isDisplayed()).toBe(true);
+  });
+});`}
+                                variant="dark"
+                            />
+                        </div>
+                        <div style={{ marginBottom: '24px' }}>
+                            <h5 style={{ color: '#00416A', fontSize: '16px', marginBottom: '10px', fontWeight: '600' }}>## 3) Install the minimal packages + run</h5>
+                            <p style={{ fontSize: '14px', color: '#333', marginBottom: '10px' }}>
+                                From your project folder:
+                            </p>
+                            <CodeBlock
+                                code={`npm init -y
+npm i -D typescript ts-node @types/node
+npm i -D @wdio/cli @wdio/local-runner @wdio/mocha-framework @wdio/appium-service webdriverio expect
+npx tsc --init`}
+                                variant="dark"
+                            />
+                            <p style={{ fontSize: '14px', color: '#333', marginTop: '12px', marginBottom: '10px' }}>
+                                Run:
+                            </p>
+                            <CodeBlock
+                                code={`npx wdio run wdio.conf.ts`}
+                                variant="dark"
+                            />
+                        </div>
+                        <div style={{ marginBottom: '24px' }}>
+                            <h5 style={{ color: '#00416A', fontSize: '16px', marginBottom: '10px', fontWeight: '600' }}>If the test fails because "element not found"</h5>
+                            <p style={{ fontSize: '14px', color: '#333', marginBottom: '10px' }}>
+                                Different versions of the Sauce demo apps may have slightly different <strong>accessibility ids</strong>.
+                            </p>
+                            <p style={{ fontSize: '14px', color: '#333', marginBottom: '10px', fontWeight: '600' }}>
+                                Fast beginner fix:
+                            </p>
+                            <ol style={{ fontSize: '14px', lineHeight: '1.8', color: '#333', paddingLeft: '24px' }}>
+                                <li>Install <strong>Appium Inspector</strong></li>
+                                <li>Start Appium (or let WDIO start it)</li>
+                                <li>Inspect the screen and copy the <strong>Accessibility ID</strong></li>
+                                <li>Replace:
+                                    <ul style={{ marginTop: '6px', paddingLeft: '20px' }}>
+                                        <li><code style={{ backgroundColor: '#f8f9fa', padding: '2px 6px', borderRadius: '4px', color: '#00416A' }}>~test-Username</code></li>
+                                        <li><code style={{ backgroundColor: '#f8f9fa', padding: '2px 6px', borderRadius: '4px', color: '#00416A' }}>~test-Password</code></li>
+                                        <li><code style={{ backgroundColor: '#f8f9fa', padding: '2px 6px', borderRadius: '4px', color: '#00416A' }}>~test-LOGIN</code></li>
+                                        <li><code style={{ backgroundColor: '#f8f9fa', padding: '2px 6px', borderRadius: '4px', color: '#00416A' }}>~test-PRODUCTS</code></li>
+                                    </ul>
+                                </li>
+                            </ol>
+                            <p style={{ fontSize: '14px', color: '#333', marginTop: '8px' }}>
+                                (That's it.)
+                            </p>
+                        </div>
                     </div>
                     </div>
                     )}
