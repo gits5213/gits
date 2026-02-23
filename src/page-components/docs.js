@@ -20,7 +20,7 @@ import Cucumber from '../components/docs/tabs/cucumber';
 import Installation from '../components/docs/tabs/installation';
 import ApiTest from '../components/docs/tabs/api-test';
 import Appium from '../components/docs/tabs/appium';
-import JMeter from '../components/docs/tabs/jmeter';
+import PerformanceTest from '../components/docs/tabs/performanceTest';
 import Links from '../components/docs/tabs/resLinks';
 import '../styles/base.css';
 import '../styles/docs.css';
@@ -41,7 +41,7 @@ class docs extends Component {
         if (path.includes('/installation')) return 5;
         if (path.includes('/api-test')) return 6;
         if (path.includes('/appium')) return 7;
-        if (path.includes('/jmeter')) return 8;
+        if (path.includes('/performanceTest')) return 8;
         if (path.includes('/linux')) return 9;
         if (path.includes('/git')) return 10;
         if (path.includes('/html')) return 11;
@@ -83,7 +83,7 @@ class docs extends Component {
             '/docs/installation',
             '/docs/api-test',
             '/docs/appium',
-            '/docs/jmeter',
+            '/docs/performanceTest',
             '/docs/linux',
             '/docs/git',
             '/docs/html',
@@ -147,7 +147,7 @@ class docs extends Component {
             )
         } else if(this.state.activeTab === 8) {
             return(
-                <JMeter />
+                <PerformanceTest />
             )
         } else if(this.state.activeTab === 9) {
             return(
@@ -218,7 +218,7 @@ class docs extends Component {
             { label: 'HTML', id: 11 },
             { label: 'Installation', id: 5 },
             { label: 'JAVA', id: 18 },
-            { label: 'JMeter', id: 8 },
+            { label: 'Performance Test', id: 8 },
             { label: 'JS', id: 13 },
             { label: 'Links', id: 21 },
             { label: 'Linux', id: 9 },

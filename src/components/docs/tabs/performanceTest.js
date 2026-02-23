@@ -3,7 +3,7 @@ import link from '../../../utilities/links.json';
 import { getImageSrc } from '../../../utils/getImageSrc';
 import { leftAlignStyles } from '../../../utils/globalStyles';
 
-const JMeter = () => {
+const PerformanceTest = () => {
     const [gettingStartedOpen, setGettingStartedOpen] = useState(false);
     const [apiTestPlanOpen, setApiTestPlanOpen] = useState(false);
     const [macOSUITestPlanOpen, setMacOSUITestPlanOpen] = useState(false);
@@ -35,6 +35,55 @@ const JMeter = () => {
 
     return(
         <div style={leftAlignStyles.pageContainer}>
+            {/* Introduction to Performance Testing - First item */}
+            <div style={leftAlignStyles.mainContent}>
+                <h2 style={leftAlignStyles.sectionHeading}>
+                    Introduction to Performance Testing
+                </h2>
+                <p style={leftAlignStyles.paragraph}>
+                    Performance testing is the practice of checking how well an application works when many people use it at the same time. It helps ensure your website or app stays <strong>fast</strong>, <strong>stable</strong>, and <strong>reliable</strong> under real-world conditions—before users experience slow loading, errors, or crashes.
+                </p>
+                <p style={leftAlignStyles.paragraph}>
+                    Performance testing answers questions like:
+                </p>
+                <ul style={leftAlignStyles.list}>
+                    <li>How quickly do pages load and APIs respond?</li>
+                    <li>How many users can the system handle smoothly?</li>
+                    <li>What happens during peak traffic or sudden spikes?</li>
+                    <li>Will the system stay stable over long periods of use?</li>
+                </ul>
+
+                <h3 style={leftAlignStyles.sectionHeadingWithMargin}>
+                    Why Performance Testing Matters
+                </h3>
+                <p style={leftAlignStyles.paragraph}>
+                    A slow or unstable system can lead to frustrated users, lost trust, and missed business goals. Performance testing helps you:
+                </p>
+                <ul style={leftAlignStyles.list}>
+                    <li>Prevent slowdowns during high traffic</li>
+                    <li>Reduce timeouts and server errors</li>
+                    <li>Find bottlenecks in APIs, databases, or infrastructure</li>
+                    <li>Plan scaling with confidence (based on data, not guesses)</li>
+                </ul>
+
+                <h3 style={leftAlignStyles.sectionHeadingWithMargin}>
+                    Common Types of Performance Tests
+                </h3>
+                <ul style={leftAlignStyles.list}>
+                    <li><strong>Load Testing:</strong> performance under expected normal traffic</li>
+                    <li><strong>Stress Testing:</strong> behavior beyond limits to find the breaking point</li>
+                    <li><strong>Spike Testing:</strong> response to sudden traffic bursts</li>
+                    <li><strong>Endurance (Soak) Testing:</strong> stability over long usage periods</li>
+                </ul>
+
+                <h3 style={leftAlignStyles.sectionHeadingWithMargin}>
+                    The Result
+                </h3>
+                <p style={leftAlignStyles.paragraph}>
+                    Instead of guessing, you get clear metrics—<strong>response time, throughput, error rate, and resource usage</strong>—so you can improve performance and deliver a smooth experience for every user.
+                </p>
+            </div>
+
             {/* Hero Section */}
             <div style={{
                 ...leftAlignStyles.heroSection,
@@ -1188,4 +1237,4 @@ jmeter -g results.jtl -o reports/html-report
     )
 }
 
-export default JMeter;
+export default PerformanceTest;

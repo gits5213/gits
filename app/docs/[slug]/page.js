@@ -12,7 +12,7 @@ export function generateStaticParams() {
     { slug: 'installation' },
     { slug: 'api-test' },
     { slug: 'appium' },
-    { slug: 'jmeter' },
+    { slug: 'performanceTest' },
     { slug: 'linux' },
     { slug: 'git' },
     { slug: 'html' },
