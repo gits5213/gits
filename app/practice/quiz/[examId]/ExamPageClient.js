@@ -31,6 +31,7 @@ const examComponents = {
   'exam-22': () => import('@/src/page-components/practice/Exam22'),
   'exam-23': () => import('@/src/page-components/practice/Exam23'),
   'exam-24': () => import('@/src/page-components/practice/Exam24'),
+  'exam-25': () => import('@/src/page-components/practice/Exam25'),
 }
 
 // Optimized loading component

@@ -5,7 +5,7 @@ import '../../../styles/base.css';
 
 class Quiz extends Component {
     render() {
-        // Exams sorted numerically by ID (0-24, excluding 21 on listing); Exam-0 is BCS-JSE (first)
+        // Exams list (will be sorted alphabetically by title below)
         const exams = [
             {
                 id: 0,
@@ -174,8 +174,18 @@ class Quiz extends Component {
                 title: 'Appium (Android) with WebdriverIO, TypeScript, Mocha & Chai',
                 description: '20 questions covering Appium Android automation: UiAutomator2, WebdriverIO, TypeScript, Mocha, Chai, Android Studio Emulator, Appium Inspector, capabilities, locators, and best practices',
                 path: '/practice/quiz/exam-24'
+            },
+            { 
+                id: 25, 
+                name: 'Exam-25', 
+                title: 'Appium (iOS) with WebdriverIO, TypeScript, Mocha & Chai',
+                description: '20 questions covering Appium iOS automation: XCUITest, WebdriverIO, TypeScript, Mocha, Chai, Appium Inspector, bundleId, WebDriverAgent, Simulator vs Real Device, capabilities, and locator strategies',
+                path: '/practice/quiz/exam-25'
             }
         ];
+
+        // Sort exams alphabetically by title for display
+        const sortedExams = [...exams].sort((a, b) => a.title.localeCompare(b.title));
 
         return (
             <div style={{
@@ -413,7 +423,7 @@ class Quiz extends Component {
                             </tr>
                         </thead>
                         <tbody>
-                            {exams.map((exam, index) => (
+                            {sortedExams.map((exam, index) => (
                                 <tr
                                     key={exam.id}
                                     style={{
@@ -436,7 +446,7 @@ class Quiz extends Component {
                                         borderRight: '1px solid #e9ecef',
                                         textAlign: 'left'
                                     }}>
-                                        {index + 1}
+                                        {index}
                                     </td>
                                     <td style={{
                                         padding: '18px 20px',
@@ -452,8 +462,8 @@ class Quiz extends Component {
                                             borderRadius: '12px',
                                             fontSize: '13px',
                                             fontWeight: '600'
-                                        }}>
-                                            {exam.name}
+                                            }}>
+                                            {`Exam-${index}`}
                                         </span>
                                     </td>
                                     <td style={{

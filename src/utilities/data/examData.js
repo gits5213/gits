@@ -5463,3 +5463,231 @@ export const exam24Data = {
         }
     ]
 };
+
+export const exam25Data = {
+    examId: 25,
+    examName: 'Exam-25',
+    title: 'Appium (iOS) with WebdriverIO, TypeScript, Mocha & Chai',
+    questions: [
+        {
+            id: 471,
+            question: 'Which Appium automation engine is standard for iOS?',
+            options: [
+                'UiAutomator2',
+                'Espresso',
+                'XCUITest',
+                'Selendroid'
+            ],
+            correctAnswer: 2
+        },
+        {
+            id: 472,
+            question: 'Which Appium driver is used for iOS automation in Appium 2?',
+            options: [
+                'appium-uiautomator2-driver',
+                'appium-xcuitest-driver',
+                'appium-espresso-driver',
+                'appium-selendroid-driver'
+            ],
+            correctAnswer: 1
+        },
+        {
+            id: 473,
+            question: 'Which OS is required to run iOS simulators and Xcode tooling?',
+            options: [
+                'Windows',
+                'Linux',
+                'macOS',
+                'ChromeOS'
+            ],
+            correctAnswer: 2
+        },
+        {
+            id: 474,
+            question: 'In WebdriverIO, which framework is commonly used for test structure with describe() and it()?',
+            options: [
+                'Mocha',
+                'Chai',
+                'Cucumber only',
+                'JMeter'
+            ],
+            correctAnswer: 0
+        },
+        {
+            id: 475,
+            question: 'In Chai, which is a valid assertion?',
+            options: [
+                'expect(x).equals(true)',
+                'expect(x).to.equal(true)',
+                'expect(x).mustBe(true)',
+                'assert.same(x,true)'
+            ],
+            correctAnswer: 1
+        },
+        {
+            id: 476,
+            question: 'Which platformName value is correct for iOS capabilities?',
+            options: [
+                'iPhoneOS',
+                'iOS',
+                'IOS-DEVICE',
+                'Apple'
+            ],
+            correctAnswer: 1
+        },
+        {
+            id: 477,
+            question: 'Which capability sets the iOS automation engine?',
+            options: [
+                'platformVersion',
+                'deviceType',
+                'automationName',
+                'bundleVersion'
+            ],
+            correctAnswer: 2
+        },
+        {
+            id: 478,
+            question: 'Which automationName value is typical for iOS automation?',
+            options: [
+                'UiAutomator2',
+                'XCUITest',
+                'Espresso',
+                'Mac2'
+            ],
+            correctAnswer: 1
+        },
+        {
+            id: 479,
+            question: 'What is bundleId used for in iOS automation?',
+            options: [
+                'Android app package name',
+                'iOS app identifier to launch an installed app',
+                'Emulator name',
+                'Appium server URL'
+            ],
+            correctAnswer: 1
+        },
+        {
+            id: 480,
+            question: 'What is the iOS equivalent of Android’s appPackage/appActivity?',
+            options: [
+                'bundleId',
+                'resourceId',
+                'activityName',
+                'apkName'
+            ],
+            correctAnswer: 0
+        },
+        {
+            id: 481,
+            question: 'Which tool is commonly used to inspect iOS elements and generate locators?',
+            options: [
+                'Android Studio Layout Inspector',
+                'Appium Inspector',
+                'Postman',
+                'Xray'
+            ],
+            correctAnswer: 1
+        },
+        {
+            id: 482,
+            question: 'In Appium Inspector, what does “Refresh Source” do?',
+            options: [
+                'Reinstalls the app',
+                'Pulls the latest UI hierarchy/page source',
+                'Updates Node.js',
+                'Changes simulator device'
+            ],
+            correctAnswer: 1
+        },
+        {
+            id: 483,
+            question: 'Which locator strategy is usually most stable across iOS builds?',
+            options: [
+                'Deep absolute XPath',
+                'Accessibility ID',
+                'Element index',
+                'Screen coordinates only'
+            ],
+            correctAnswer: 1
+        },
+        {
+            id: 484,
+            question: 'In WebdriverIO, what does $(\'~Login\') typically target?',
+            options: [
+                'XPath',
+                'Accessibility ID',
+                'Class chain only',
+                'iOS predicate only'
+            ],
+            correctAnswer: 1
+        },
+        {
+            id: 485,
+            question: 'What’s a recommended way to wait for an element to be visible in WDIO?',
+            options: [
+                'browser.sleep(5000)',
+                'browser.pause(5000)',
+                'elem.waitForDisplayed()',
+                'wait(visible=true)'
+            ],
+            correctAnswer: 2
+        },
+        {
+            id: 486,
+            question: 'Which option is true about iOS Simulator vs Real Device?',
+            options: [
+                'Real device needs no signing',
+                'Simulator requires Apple Developer account always',
+                'Real device often needs signing/provisioning for WebDriverAgent',
+                'Simulator cannot run Appium'
+            ],
+            correctAnswer: 2
+        },
+        {
+            id: 487,
+            question: 'Which capability is commonly used to identify a specific real iOS device?',
+            options: [
+                'udid',
+                'deviceSerial',
+                'androidDeviceId',
+                'simId'
+            ],
+            correctAnswer: 0
+        },
+        {
+            id: 488,
+            question: 'What is WebDriverAgent (WDA) in iOS Appium automation?',
+            options: [
+                'Android debugging bridge',
+                'A tool that runs XCUITest-based automation on device/simulator',
+                'A reporting library',
+                'A WebdriverIO plugin'
+            ],
+            correctAnswer: 1
+        },
+        {
+            id: 489,
+            question: 'UiAutomator2 belongs to which platform?',
+            options: [
+                'iOS',
+                'Android',
+                'Both iOS and Android',
+                'Windows apps'
+            ],
+            correctAnswer: 1
+        },
+        {
+            id: 490,
+            question: 'Android Studio Emulator is used for which platform testing?',
+            options: [
+                'iOS Simulator',
+                'Android Emulator',
+                'iOS Real Device',
+                'macOS desktop apps'
+            ],
+            correctAnswer: 1
+        }
+    ]
+};

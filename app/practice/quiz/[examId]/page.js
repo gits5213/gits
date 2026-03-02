@@ -29,6 +29,7 @@ export function generateStaticParams() {
     { examId: 'exam-22' },
     { examId: 'exam-23' },
     { examId: 'exam-24' },
+    { examId: 'exam-25' },
   ]
 }
 
