@@ -5,7 +5,7 @@ import '../../../styles/base.css';
 
 class Quiz extends Component {
     render() {
-        // Exams sorted numerically by ID (0-23); Exam-0 is BCS-JSE (first)
+        // Exams sorted numerically by ID (0-24, excluding 21 on listing); Exam-0 is BCS-JSE (first)
         const exams = [
             {
                 id: 0,
@@ -155,13 +155,6 @@ class Quiz extends Component {
                 path: '/practice/quiz/exam-20'
             },
             { 
-                id: 21, 
-                name: 'Exam-21', 
-                title: 'Appium Test Automation with Windows',
-                description: '20 questions covering Appium Windows automation, WinAppDriver setup, Windows application testing, capabilities, locator strategies, UI Automation framework, element identification, and desktop application automation',
-                path: '/practice/quiz/exam-21'
-            },
-            { 
                 id: 22, 
                 name: 'Exam-22', 
                 title: 'SQL Fundamentals',
@@ -174,6 +167,13 @@ class Quiz extends Component {
                 title: 'Git & Linux Fundamentals',
                 description: '20 questions covering Git commands (clone, add, commit, push, pull, branch, merge, status, log, diff) and Linux commands (ls, cd, pwd, mkdir, rm, grep, chmod, ps, kill, du, df)',
                 path: '/practice/quiz/exam-23'
+            },
+            { 
+                id: 24, 
+                name: 'Exam-24', 
+                title: 'Appium (Android) with WebdriverIO, TypeScript, Mocha & Chai',
+                description: '20 questions covering Appium Android automation: UiAutomator2, WebdriverIO, TypeScript, Mocha, Chai, Android Studio Emulator, Appium Inspector, capabilities, locators, and best practices',
+                path: '/practice/quiz/exam-24'
             }
         ];
 

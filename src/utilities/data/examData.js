@@ -5235,3 +5235,231 @@ export const exam23Data = {
         }
     ]
 };
+
+export const exam24Data = {
+    examId: 24,
+    examName: 'Exam-24',
+    title: 'Appium (Android) with WebdriverIO, TypeScript, Mocha & Chai',
+    questions: [
+        {
+            id: 451,
+            question: 'Which Appium automation engine is most commonly used for Android today?',
+            options: [
+                'XCUITest',
+                'UiAutomator2',
+                'Espresso only',
+                'Selendroid'
+            ],
+            correctAnswer: 1
+        },
+        {
+            id: 452,
+            question: 'In WebdriverIO, which package provides the Appium service integration?',
+            options: [
+                '@wdio/local-runner',
+                '@wdio/appium-service',
+                'webdriverio-sync',
+                '@wdio/spec-reporter'
+            ],
+            correctAnswer: 1
+        },
+        {
+            id: 453,
+            question: 'Which capability is typically used to select the Android automation engine?',
+            options: [
+                'platformVersion',
+                'automationName',
+                'deviceType',
+                'appWaitDuration'
+            ],
+            correctAnswer: 1
+        },
+        {
+            id: 454,
+            question: 'Which value is correct for platformName when testing Android?',
+            options: [
+                'ANDROID',
+                'Android',
+                'android_os',
+                'Droid'
+            ],
+            correctAnswer: 1
+        },
+        {
+            id: 455,
+            question: 'In Android, which resource id format is commonly used as resource-id?',
+            options: [
+                'id:loginButton',
+                'com.company.app:id/loginButton',
+                'resourceId(loginButton)',
+                'android:id/loginButton (always)'
+            ],
+            correctAnswer: 1
+        },
+        {
+            id: 456,
+            question: 'In Appium Inspector, what is the primary purpose of the “Refresh Source” / “Refresh” button?',
+            options: [
+                'Restart Appium Server',
+                'Re-install the APK',
+                'Pull latest UI hierarchy (page source)',
+                'Change device language'
+            ],
+            correctAnswer: 2
+        },
+        {
+            id: 457,
+            question: 'Which locator strategy is usually most stable for Android UI automation?',
+            options: [
+                'XPath (deep absolute)',
+                'Accessibility ID (content-desc)',
+                'Index-based selectors',
+                'Coordinate tapping only'
+            ],
+            correctAnswer: 1
+        },
+        {
+            id: 458,
+            question: 'In WebdriverIO + TypeScript, what does await $(\'~Login\') typically refer to?',
+            options: [
+                'XPath locator',
+                'ClassName locator',
+                'Accessibility ID locator',
+                'Resource-id locator'
+            ],
+            correctAnswer: 2
+        },
+        {
+            id: 459,
+            question: 'What does the appium:app capability usually point to?',
+            options: [
+                'The package name only',
+                'The APK file path or URL',
+                'The main activity only',
+                'The emulator name'
+            ],
+            correctAnswer: 1
+        },
+        {
+            id: 460,
+            question: 'Which two Android identifiers are commonly used to launch an already-installed app?',
+            options: [
+                'appPackage and appActivity',
+                'bundleId and udid',
+                'appName and versionCode',
+                'mainClass and launchId'
+            ],
+            correctAnswer: 0
+        },
+        {
+            id: 461,
+            question: 'Which Mocha hook runs once before all tests in a suite?',
+            options: [
+                'before()',
+                'beforeEach()',
+                'afterEach()',
+                'setup()'
+            ],
+            correctAnswer: 0
+        },
+        {
+            id: 462,
+            question: 'In Chai, which assertion style is valid?',
+            options: [
+                'expect(value).mustEqual(true)',
+                'assert.equals(value, true)',
+                'expect(value).to.equal(true)',
+                'should(value).equalTo(true)'
+            ],
+            correctAnswer: 2
+        },
+        {
+            id: 463,
+            question: 'In WebdriverIO, which command is best to wait until an element is visible?',
+            options: [
+                'element.sleep(3000)',
+                'element.waitForDisplayed()',
+                'browser.pauseUntilVisible()',
+                'browser.wait(visible)'
+            ],
+            correctAnswer: 1
+        },
+        {
+            id: 464,
+            question: 'Which Appium server URL is commonly used by default locally?',
+            options: [
+                'http://localhost:8080',
+                'http://127.0.0.1:4723',
+                'http://0.0.0.0:4444',
+                'http://localhost:3000'
+            ],
+            correctAnswer: 1
+        },
+        {
+            id: 465,
+            question: 'Android Studio Emulator uses which tool to create and manage virtual devices?',
+            options: [
+                'AVD Manager',
+                'Gradle Manager',
+                'Logcat Builder',
+                'SDK Sync Tool'
+            ],
+            correctAnswer: 0
+        },
+        {
+            id: 466,
+            question: 'What is a common cause of “SessionNotCreatedException” when starting Appium on Android?',
+            options: [
+                'Too many test files',
+                'Mismatched Chromedriver for WebView (or missing drivers)',
+                'Using Mocha instead of Jest',
+                'Using Chai instead of Assert'
+            ],
+            correctAnswer: 1
+        },
+        {
+            id: 467,
+            question: 'Which capability is often required to uniquely target a specific Android device/emulator?',
+            options: [
+                'deviceName',
+                'udid',
+                'orientation',
+                'language'
+            ],
+            correctAnswer: 1
+        },
+        {
+            id: 468,
+            question: 'In UiAutomator2, which selector is generally faster than complex XPath for native elements?',
+            options: [
+                'Absolute XPath',
+                '-android uiautomator selector',
+                'OCR-based selector',
+                'Coordinate tap'
+            ],
+            correctAnswer: 1
+        },
+        {
+            id: 469,
+            question: 'What is the main job of Appium Inspector during test development?',
+            options: [
+                'Generate APK builds',
+                'Run performance tests',
+                'Explore elements and generate locator strategies',
+                'Manage Git branches'
+            ],
+            correctAnswer: 2
+        },
+        {
+            id: 470,
+            question: 'Which file typically controls WebdriverIO test runner configuration in a TS project?',
+            options: [
+                'appium.config.ts',
+                'wdio.conf.ts',
+                'mocha.json',
+                'android.conf.js'
+            ],
+            correctAnswer: 1
+        }
+    ]
+};
