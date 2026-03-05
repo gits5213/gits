@@ -6497,6 +6497,95 @@ newman run my-api-tests.json --bail`}</pre>
                         fontWeight: '600',
                         textAlign: 'left'
                     }}>
+                        Create an API Test Automation Project in VS Code
+                    </h3>
+                    <p style={{
+                        fontSize: '16px',
+                        lineHeight: '1.8',
+                        color: '#333333',
+                        marginBottom: '12px',
+                        textAlign: 'left'
+                    }}>
+                        You can manage Newman runs from a local npm project in VS Code using <code style={{ backgroundColor: '#f1f5f9', padding: '2px 6px', borderRadius: '4px' }}>package.json</code> scripts.
+                    </p>
+                    <div style={{
+                        backgroundColor: '#1e293b',
+                        padding: '16px 20px',
+                        borderRadius: '8px',
+                        fontFamily: '"SF Mono", Monaco, "Cascadia Code", Consolas, monospace',
+                        fontSize: '14px',
+                        color: '#e2e8f0',
+                        overflowX: 'auto',
+                        marginBottom: '20px'
+                    }}>
+                        <pre style={{ margin: 0, whiteSpace: 'pre-wrap', textAlign: 'left' }}>{`# In VS Code terminal, create a project folder
+mkdir api-test-automation
+cd api-test-automation
+
+# Initialize npm project
+npm init -y
+
+# Add Newman and HTML reporter as devDependencies
+npm install --save-dev newman newman-reporter-htmlextra
+
+# (Optional) also install globally if you haven't already
+npm install -g newman
+npm i -g newman-reporter-htmlextra`}</pre>
+                    </div>
+                    <p style={{
+                        fontSize: '16px',
+                        lineHeight: '1.8',
+                        color: '#333333',
+                        marginBottom: '12px',
+                        textAlign: 'left'
+                    }}>
+                        Then, add a script in your <code style={{ backgroundColor: '#f1f5f9', padding: '2px 6px', borderRadius: '4px' }}>package.json</code> to run Newman and generate an HTML report:
+                    </p>
+                    <div style={{
+                        backgroundColor: '#1e293b',
+                        padding: '16px 20px',
+                        borderRadius: '8px',
+                        fontFamily: '"SF Mono", Monaco, "Cascadia Code", Consolas, monospace',
+                        fontSize: '14px',
+                        color: '#e2e8f0',
+                        overflowX: 'auto',
+                        marginBottom: '20px'
+                    }}>
+                        <pre style={{ margin: 0, whiteSpace: 'pre-wrap', textAlign: 'left' }}>{`{
+  "scripts": {
+    "newmanReport": "newman run my-api-tests.json --reporters cli,htmlextra --reporter-htmlextra-export newman-report.html"
+  }
+}`}</pre>
+                    </div>
+                    <p style={{
+                        fontSize: '16px',
+                        lineHeight: '1.8',
+                        color: '#333333',
+                        marginBottom: '12px',
+                        textAlign: 'left'
+                    }}>
+                        Now you can run your Newman tests directly from the project using:
+                    </p>
+                    <div style={{
+                        backgroundColor: '#1e293b',
+                        padding: '16px 20px',
+                        borderRadius: '8px',
+                        fontFamily: '"SF Mono", Monaco, "Cascadia Code", Consolas, monospace',
+                        fontSize: '14px',
+                        color: '#e2e8f0',
+                        overflowX: 'auto',
+                        marginBottom: '20px'
+                    }}>
+                        <pre style={{ margin: 0, whiteSpace: 'pre-wrap', textAlign: 'left' }}>{`npm run newmanReport`}</pre>
+                    </div>
+
+                    <h3 style={{
+                        color: '#00416A',
+                        fontSize: '20px',
+                        marginBottom: '15px',
+                        fontWeight: '600',
+                        textAlign: 'left'
+                    }}>
                         Example: Full Newman Run with Report
                     </h3>
                     <p style={{
