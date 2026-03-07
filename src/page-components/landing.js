@@ -33,6 +33,12 @@ class Landing extends Component {
                 image: codingImage
             },
             {
+                title: 'Training Programs',
+                description: 'Structured programs for Data Science, Cyber Security, SDET, and more',
+                href: '/#training-programs',
+                image: getImageSrc(courseOutline)
+            },
+            {
                 title: 'Documentation',
                 description: 'Learning resources and technical documentation',
                 href: '/docs/agile',
@@ -513,6 +519,72 @@ class Landing extends Component {
                                 <Link href="/courses/sdet-roadmap" style={{ textDecoration: 'none' }}>
                                     <button 
                                         id="home-training-sdet-roadmap-learn-more-btn"
+                                        style={{
+                                        width: '100%',
+                                        padding: '12px 24px',
+                                        fontSize: '16px',
+                                        fontWeight: 600,
+                                        color: '#ffffff',
+                                        backgroundColor: '#003366',
+                                        border: 'none',
+                                        borderRadius: '6px',
+                                        cursor: 'pointer',
+                                        transition: 'all 0.3s'
+                                    }}
+                                    onMouseEnter={(e) => {
+                                        e.currentTarget.style.backgroundColor = '#002244';
+                                        e.currentTarget.style.transform = 'translateY(-2px)';
+                                    }}
+                                    onMouseLeave={(e) => {
+                                        e.currentTarget.style.backgroundColor = '#003366';
+                                        e.currentTarget.style.transform = 'translateY(0)';
+                                    }}>
+                                        Learn More
+                                    </button>
+                                </Link>
+                            </Card>
+                            {/* Python Data & Cyber Card */}
+                            <Card style={{
+                                padding: '24px',
+                                height: '100%',
+                                border: '1px solid #e0e0e0',
+                                transition: 'all 0.3s',
+                                display: 'flex',
+                                flexDirection: 'column'
+                            }}
+                            onMouseEnter={(e) => {
+                                e.currentTarget.style.transform = 'translateY(-4px)';
+                                e.currentTarget.style.boxShadow = '0 8px 16px rgba(0,0,0,0.15)';
+                                e.currentTarget.style.borderColor = '#003366';
+                            }}
+                            onMouseLeave={(e) => {
+                                e.currentTarget.style.transform = 'translateY(0)';
+                                e.currentTarget.style.boxShadow = 'none';
+                                e.currentTarget.style.borderColor = '#e0e0e0';
+                            }}>
+                                <h3 style={{
+                                    fontSize: '20px',
+                                    fontWeight: 700,
+                                    fontFamily: 'monospace',
+                                    color: '#003366',
+                                    marginBottom: '12px',
+                                    margin: '0 0 12px 0',
+                                    letterSpacing: '0.5px'
+                                }}>
+                                    🐍 Python: Data Science & Cyber Security
+                                </h3>
+                                <p style={{
+                                    fontSize: '15px',
+                                    color: '#666666',
+                                    margin: '0 0 20px 0',
+                                    lineHeight: 1.6,
+                                    flex: 1
+                                }}>
+                                    6-month career track from beginner to advanced. Learn Python fundamentals, then specialize in Data Science (NumPy, Pandas, ML) and Cyber Security (log analysis, scripting, automation). Live classes plus labs; build a GitHub portfolio for junior roles in Data Science and Cyber Security.
+                                </p>
+                                <Link href="/courses/py-data-cy" style={{ textDecoration: 'none' }}>
+                                    <button 
+                                        id="home-training-py-data-cy-learn-more-btn"
                                         style={{
                                         width: '100%',
                                         padding: '12px 24px',

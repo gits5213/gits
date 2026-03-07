@@ -7,6 +7,7 @@ const PRACTICE_OPTIONS = [
   { value: 'ui', label: 'UI Practice Examples', path: '/practice/examples' },
   { value: 'api', label: 'API Practice Examples', path: '/practice/api-examples' },
   { value: 'performance', label: 'Performance Practice Example', path: '/practice/performance-examples' },
+  { value: 'python-examples', label: 'Python Practice Example', path: '/practice/python-examples' },
   { value: 'appium-ios-emulator', label: 'Appium iOS (Emulator) Practice Example', path: '/practice/appium-ios-emulator' },
   { value: 'appium-android-emulator', label: 'Appium Android (Emulator) Practice Example', path: '/practice/appium-android-emulator' },
   { value: 'appium-ios-device', label: 'Appium iOS (Real Device) Practice Example', path: '/practice/appium-ios-device' },

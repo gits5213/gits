@@ -13,6 +13,7 @@ import CoursesApiAutomation from '../components/courses/tabs/coursesApiAutomatio
 import CoursesDevOps from '../components/courses/tabs/coursesDevOps';
 import CoursesAiForQa from '../components/courses/tabs/coursesAiForQa';
 import CoursesDigitalMarketing from '../components/courses/tabs/coursesDigitalMarketing';
+import CoursesPyDataCy from '../components/courses/tabs/coursesPyDataCy';
 import '../styles/base.css';
 import '../styles/courses.css';
 
@@ -40,6 +41,7 @@ class Courses extends Component {
         if (path.includes('/security')) return 9;
         if (path.includes('/devops-pipeline')) return 10;
         if (path.includes('/digital-marketing')) return 12;
+        if (path.includes('/py-data-cy')) return 13;
         // Default to code4kids if just /courses
         return 0;
     }
@@ -72,7 +74,8 @@ class Courses extends Component {
             '/courses/security',
             '/courses/devops-pipeline',
             '/courses/selenium-webdriver',
-            '/courses/digital-marketing'
+            '/courses/digital-marketing',
+            '/courses/py-data-cy'
         ];
         // Ensure tabId is a valid number
         const validTabId = typeof tabId === 'number' ? tabId : parseInt(tabId, 10);
@@ -149,6 +152,11 @@ class Courses extends Component {
                 <CoursesDigitalMarketing />
             )
         }
+        else if(this.state.activeTab === 13) {
+            return(
+                <CoursesPyDataCy />
+            )
+        }
     }
 
     render() {
@@ -163,6 +171,7 @@ class Courses extends Component {
             { label: 'Digital Marketing', id: 12 },
             { label: 'Manual', id: 4 },
             { label: 'Performance', id: 8 },
+            { label: 'Py Data & Cyber', id: 13 },
             { label: 'SDET ROADMAP', id: 6 },
             { label: 'Security', id: 9 },
             { label: 'Selenium WebDriver', id: 11 },

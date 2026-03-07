@@ -16,7 +16,8 @@ export function generateStaticParams() {
     { slug: 'api-automation' },
     { slug: 'devops-pipeline' },
     { slug: 'selenium-webdriver' },
-    { slug: 'digital-marketing' }
+    { slug: 'digital-marketing' },
+    { slug: 'py-data-cy' }
   ]
 }
 
