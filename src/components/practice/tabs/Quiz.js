@@ -181,6 +181,13 @@ class Quiz extends Component {
                 title: 'Appium (iOS) with WebdriverIO, TypeScript, Mocha & Chai',
                 description: '20 questions covering Appium iOS automation: XCUITest, WebdriverIO, TypeScript, Mocha, Chai, Appium Inspector, bundleId, WebDriverAgent, Simulator vs Real Device, capabilities, and locator strategies',
                 path: '/practice/quiz/exam-25'
+            },
+            { 
+            id: 26, 
+            name: 'Exam-26', 
+            title: 'Full-Stack QA: Manual, Automation, API, Mobile, Performance & DevOps',
+            description: '80 questions covering manual testing, Playwright + BDD + Cucumber + Allure, API testing with Postman & Newman, mobile automation with Appium, UiAutomator2, WebDriverIO & TypeScript, performance testing with JMeter & Lighthouse, plus Git, Azure DevOps, HTML & CSS fundamentals',
+            path: '/practice/quiz/exam-26'
             }
         ];
 

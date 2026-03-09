@@ -5691,3 +5691,893 @@ export const exam25Data = {
         }
     ]
 };
+
+export const exam26Data = {
+    examId: 26,
+    examName: 'Exam-26',
+    title: 'Full-Stack QA: Manual, Automation, API, Mobile, Performance & DevOps',
+    passingScore: 80,
+    questions: [
+        {
+            id: 491,
+            question: 'What is the primary goal of manual testing?',
+            options: [
+                'To completely replace automation',
+                'To validate software behavior using human observation and exploration',
+                'To generate performance metrics only',
+                'To deploy code to production'
+            ],
+            correctAnswer: 1
+        },
+        {
+            id: 492,
+            question: 'Which type of testing is best suited for ad-hoc exploratory checks of new features?',
+            options: [
+                'Load testing',
+                'Exploratory manual testing',
+                'Security penetration testing',
+                'Unit testing'
+            ],
+            correctAnswer: 1
+        },
+        {
+            id: 493,
+            question: 'In manual testing, which artifact usually describes test steps, preconditions, and expected results?',
+            options: [
+                'User story',
+                'Test case',
+                'Release note',
+                'Burndown chart'
+            ],
+            correctAnswer: 1
+        },
+        {
+            id: 494,
+            question: 'Which testing level focuses on validating the entire system against business requirements?',
+            options: [
+                'Unit testing',
+                'Integration testing',
+                'System testing',
+                'Component testing'
+            ],
+            correctAnswer: 2
+        },
+        {
+            id: 495,
+            question: 'A regression test suite is primarily used to:',
+            options: [
+                'Check API contracts only',
+                'Ensure new changes have not broken existing functionality',
+                'Measure performance under load',
+                'Verify deployment scripts'
+            ],
+            correctAnswer: 1
+        },
+        {
+            id: 496,
+            question: 'Which of the following is a non-functional testing type?',
+            options: [
+                'Smoke testing',
+                'Sanity testing',
+                'Performance testing',
+                'Acceptance testing'
+            ],
+            correctAnswer: 2
+        },
+        {
+            id: 497,
+            question: 'What is the main advantage of combining manual and automated testing?',
+            options: [
+                'Eliminating the need for test planning',
+                'Balancing human insight with fast repeatable execution',
+                'Reducing the need for requirements',
+                'Avoiding maintenance of test assets'
+            ],
+            correctAnswer: 1
+        },
+        {
+            id: 498,
+            question: 'Which approach is best when manually testing a complex, business-critical workflow for the first time?',
+            options: [
+                'Only run unit tests',
+                'Start with exploratory and high-level scenario testing',
+                'Skip testing and rely on monitoring',
+                'Only test the UI on mobile devices'
+            ],
+            correctAnswer: 1
+        },
+        {
+            id: 499,
+            question: 'In Playwright with TypeScript, which method launches a Chromium browser instance?',
+            options: [
+                'chromium.open()',
+                'chromium.launch()',
+                'browser.newContext()',
+                'page.goto()'
+            ],
+            correctAnswer: 1
+        },
+        {
+            id: 500,
+            question: 'What is a key benefit of using Playwright over traditional Selenium WebDriver?',
+            options: [
+                'Playwright only supports one browser',
+                'Playwright has auto-waiting and more reliable locator handling',
+                'Playwright cannot handle API calls',
+                'Playwright does not support headless mode'
+            ],
+            correctAnswer: 1
+        },
+        {
+            id: 501,
+            question: 'In BDD with Cucumber, which file type usually contains Gherkin scenarios?',
+            options: [
+                '.steps',
+                '.feature',
+                '.bdd',
+                '.gherkin'
+            ],
+            correctAnswer: 1
+        },
+        {
+            id: 502,
+            question: 'Which Gherkin keyword is used to define the outcome of a scenario?',
+            options: [
+                'Given',
+                'When',
+                'Then',
+                'And'
+            ],
+            correctAnswer: 2
+        },
+        {
+            id: 503,
+            question: 'In a Cucumber step definition written in TypeScript, what does the annotation @When typically represent?',
+            options: [
+                'Test data setup',
+                'An action or event in the scenario',
+                'The expected result',
+                'Scenario outline metadata'
+            ],
+            correctAnswer: 1
+        },
+        {
+            id: 504,
+            question: 'Which Cucumber concept allows reuse of the same scenario structure with different input datasets?',
+            options: [
+                'Background',
+                'Hooks',
+                'Scenario Outline with Examples',
+                'Tags'
+            ],
+            correctAnswer: 2
+        },
+        {
+            id: 505,
+            question: 'Allure Report is primarily used to:',
+            options: [
+                'Generate code coverage reports only',
+                'Collect browser logs',
+                'Visualize test execution results with rich attachments',
+                'Run performance tests'
+            ],
+            correctAnswer: 2
+        },
+        {
+            id: 506,
+            question: 'Which artifact is commonly attached to Allure reports for UI automation failures?',
+            options: [
+                'Application source code',
+                'Screenshots and console logs',
+                'Database schema',
+                'Network topology diagrams'
+            ],
+            correctAnswer: 1
+        },
+        {
+            id: 507,
+            question: 'In Playwright, which locator is generally more stable and recommended?',
+            options: [
+                'Absolute XPath based on DOM index',
+                'Locators based on role, text, or test-id attributes',
+                'CSS selectors using random class names',
+                'JavaScript execution with coordinates'
+            ],
+            correctAnswer: 1
+        },
+        {
+            id: 508,
+            question: 'What is the main purpose of using API testing tools like Postman?',
+            options: [
+                'Designing UI layouts',
+                'Manually sending HTTP requests and validating responses',
+                'Creating production builds',
+                'Managing source code'
+            ],
+            correctAnswer: 1
+        },
+        {
+            id: 509,
+            question: 'Which HTTP method is typically used to create a new resource in REST APIs?',
+            options: [
+                'GET',
+                'POST',
+                'PUT',
+                'DELETE'
+            ],
+            correctAnswer: 1
+        },
+        {
+            id: 510,
+            question: 'In Postman, where do you usually define environment-specific variables like base URLs or tokens?',
+            options: [
+                'In the request body only',
+                'In global scripts only',
+                'In Environments and Variables',
+                'In cookies tab'
+            ],
+            correctAnswer: 2
+        },
+        {
+            id: 511,
+            question: 'Newman is used for:',
+            options: [
+                'Running Postman collections from the command line',
+                'Editing Postman environment variables',
+                'Generating JMeter scripts',
+                'Deploying Azure DevOps pipelines'
+            ],
+            correctAnswer: 0
+        },
+        {
+            id: 512,
+            question: 'Which format is commonly used to export a Postman collection for Newman?',
+            options: [
+                'YAML',
+                'JSON',
+                'CSV',
+                'XML'
+            ],
+            correctAnswer: 1
+        },
+        {
+            id: 513,
+            question: 'An HTML API test report generated from Newman usually contains:',
+            options: [
+                'Only request URLs',
+                'Pass/fail status, response times, and assertion details',
+                'Production server logs',
+                'Jira ticket summaries'
+            ],
+            correctAnswer: 1
+        },
+        {
+            id: 514,
+            question: 'In API testing, which response code indicates a successful GET request?',
+            options: [
+                '201',
+                '400',
+                '200',
+                '500'
+            ],
+            correctAnswer: 2
+        },
+        {
+            id: 515,
+            question: 'Which header is typically used to send a bearer token for authorization?',
+            options: [
+                'Content-Type',
+                'Authorization',
+                'Accept',
+                'Cache-Control'
+            ],
+            correctAnswer: 1
+        },
+        {
+            id: 516,
+            question: 'In mobile automation with Appium, which automationName is commonly used with UiAutomator2?',
+            options: [
+                'XCUITest',
+                'UiAutomator2',
+                'Espresso',
+                'Mac2'
+            ],
+            correctAnswer: 1
+        },
+        {
+            id: 517,
+            question: 'Which capability typically identifies the Android emulator or real device in Appium?',
+            options: [
+                'deviceName',
+                'bundleId',
+                'browserName',
+                'platformVersion'
+            ],
+            correctAnswer: 0
+        },
+        {
+            id: 518,
+            question: 'For Android, which driver in Appium 2 is standard when using UiAutomator2?',
+            options: [
+                'appium-xcuitest-driver',
+                'appium-uiautomator2-driver',
+                'appium-espresso-driver',
+                'appium-mac2-driver'
+            ],
+            correctAnswer: 1
+        },
+        {
+            id: 519,
+            question: 'Appium Inspector is mainly used to:',
+            options: [
+                'Run performance tests',
+                'Inspect mobile app UI elements and generate locators',
+                'Deploy Android apps to Google Play',
+                'Create Azure DevOps pipelines'
+            ],
+            correctAnswer: 1
+        },
+        {
+            id: 520,
+            question: 'Which locator strategy is usually the most stable for mobile elements?',
+            options: [
+                'Absolute XPath with many indices',
+                'Accessibility ID / content-desc',
+                'Screen coordinates only',
+                'Tag name only'
+            ],
+            correctAnswer: 1
+        },
+        {
+            id: 521,
+            question: 'In WebDriverIO with TypeScript, where do you typically configure baseUrl and capabilities for mobile tests?',
+            options: [
+                'wdio.conf.ts',
+                'package.json',
+                'tsconfig.json',
+                'jest.config.js'
+            ],
+            correctAnswer: 0
+        },
+        {
+            id: 522,
+            question: 'Which WebDriverIO command opens a new URL in a test?',
+            options: [
+                'browser.open()',
+                'browser.goto()',
+                'browser.url()',
+                'page.navigate()'
+            ],
+            correctAnswer: 2
+        },
+        {
+            id: 523,
+            question: 'When running automation on an Android emulator, which tool is typically responsible for managing AVDs?',
+            options: [
+                'Xcode',
+                'Android Studio',
+                'Postman',
+                'Lighthouse'
+            ],
+            correctAnswer: 1
+        },
+        {
+            id: 524,
+            question: 'For testing on a real Android device, which requirement is essential?',
+            options: [
+                'Device in airplane mode',
+                'USB debugging enabled and proper drivers installed',
+                'No PIN or biometrics on device',
+                'Rooted device only'
+            ],
+            correctAnswer: 1
+        },
+        {
+            id: 525,
+            question: 'Which WebDriverIO assertion library is commonly used together with TypeScript?',
+            options: [
+                'Mocha only',
+                'Chai or built-in expect',
+                'JUnit',
+                'JMeter'
+            ],
+            correctAnswer: 1
+        },
+        {
+            id: 526,
+            question: 'What is a key benefit of writing mobile tests in TypeScript instead of plain JavaScript?',
+            options: [
+                'No need for transpilation',
+                'Static typing and better IDE support',
+                'Slower execution by design',
+                'Limited library support'
+            ],
+            correctAnswer: 1
+        },
+        {
+            id: 527,
+            question: 'JMeter is primarily used for:',
+            options: [
+                'Functional manual UI testing',
+                'Load, stress, and performance testing of applications',
+                'Source code management',
+                'Static code analysis'
+            ],
+            correctAnswer: 1
+        },
+        {
+            id: 528,
+            question: 'Which JMeter component is used to define a set of requests representing user actions?',
+            options: [
+                'Thread Group',
+                'View Results Tree',
+                'Summary Report',
+                'Assertions'
+            ],
+            correctAnswer: 0
+        },
+        {
+            id: 529,
+            question: 'In JMeter, which listener provides aggregated metrics like average response time and throughput?',
+            options: [
+                'View Results Tree',
+                'Aggregate Report',
+                'BeanShell Listener',
+                'JSR223 Listener'
+            ],
+            correctAnswer: 1
+        },
+        {
+            id: 530,
+            question: 'When performance testing an API with JMeter, which sampler is typically used?',
+            options: [
+                'HTTP Request',
+                'Debug Sampler',
+                'JDBC Request',
+                'JSR223 Sampler'
+            ],
+            correctAnswer: 0
+        },
+        {
+            id: 531,
+            question: 'What does Lighthouse in Chrome DevTools primarily help you measure?',
+            options: [
+                'Mobile device battery health',
+                'Web app performance, accessibility, best practices, and SEO',
+                'Database query plans',
+                'Git commit history'
+            ],
+            correctAnswer: 1
+        },
+        {
+            id: 532,
+            question: 'Which Lighthouse metric represents how quickly the largest content element becomes visible?',
+            options: [
+                'Time to First Byte (TTFB)',
+                'Largest Contentful Paint (LCP)',
+                'First Input Delay (FID)',
+                'Cumulative Layout Shift (CLS)'
+            ],
+            correctAnswer: 1
+        },
+        {
+            id: 533,
+            question: 'When using Lighthouse for performance testing, which execution mode is typically used inside Chrome DevTools?',
+            options: [
+                'CI server only',
+                'Remote mobile device',
+                'Local run via the Lighthouse panel',
+                'Only via command line'
+            ],
+            correctAnswer: 2
+        },
+        {
+            id: 534,
+            question: 'A JMeter performance test that ramps up many virtual users over time is usually called:',
+            options: [
+                'Functional test',
+                'Spike test',
+                'Load test',
+                'Regression test'
+            ],
+            correctAnswer: 2
+        },
+        {
+            id: 535,
+            question: 'Which Git command stages changes for the next commit?',
+            options: [
+                'git init',
+                'git add',
+                'git clone',
+                'git status'
+            ],
+            correctAnswer: 1
+        },
+        {
+            id: 536,
+            question: 'Which Git command is used to create a new branch?',
+            options: [
+                'git checkout -b feature/xyz',
+                'git init feature/xyz',
+                'git pull feature/xyz',
+                'git remote add feature/xyz'
+            ],
+            correctAnswer: 0
+        },
+        {
+            id: 537,
+            question: 'In Git, which command uploads local commits to a remote repository?',
+            options: [
+                'git fetch',
+                'git merge',
+                'git push',
+                'git reset'
+            ],
+            correctAnswer: 2
+        },
+        {
+            id: 538,
+            question: 'Azure DevOps Repos are primarily used for:',
+            options: [
+                'Managing test data only',
+                'Source code management and pull requests',
+                'Running JMeter scripts locally',
+                'Configuring Android emulators'
+            ],
+            correctAnswer: 1
+        },
+        {
+            id: 539,
+            question: 'Which Azure DevOps feature is commonly used to define CI/CD pipelines?',
+            options: [
+                'Boards',
+                'Repos',
+                'Pipelines (YAML or Classic)',
+                'Artifacts'
+            ],
+            correctAnswer: 2
+        },
+        {
+            id: 540,
+            question: 'What is the main purpose of a pull request in Git/Azure DevOps?',
+            options: [
+                'To delete a branch',
+                'To review and merge code changes into a target branch',
+                'To revert production deployments automatically',
+                'To generate Lighthouse reports'
+            ],
+            correctAnswer: 1
+        },
+        {
+            id: 541,
+            question: 'In HTML, which element is used to create a hyperlink?',
+            options: [
+                '<div>',
+                '<a>',
+                '<span>',
+                '<link>'
+            ],
+            correctAnswer: 1
+        },
+        {
+            id: 542,
+            question: 'Which HTML attribute is used with the anchor tag to specify the destination URL?',
+            options: [
+                'src',
+                'href',
+                'alt',
+                'target'
+            ],
+            correctAnswer: 1
+        },
+        {
+            id: 543,
+            question: 'In CSS, which property controls the text color?',
+            options: [
+                'background-color',
+                'font-style',
+                'color',
+                'text-align'
+            ],
+            correctAnswer: 2
+        },
+        {
+            id: 544,
+            question: 'Which CSS layout technique is best suited for creating responsive, two-dimensional grids?',
+            options: [
+                'Float layout',
+                'CSS Grid',
+                'Inline-block layout',
+                'Table layout'
+            ],
+            correctAnswer: 1
+        },
+        {
+            id: 545,
+            question: 'Which HTML element is most appropriate for marking up a navigation section?',
+            options: [
+                '<section>',
+                '<nav>',
+                '<header>',
+                '<footer>'
+            ],
+            correctAnswer: 1
+        },
+        {
+            id: 546,
+            question: 'In HTML, which tag is used for the largest heading level?',
+            options: [
+                '<h6>',
+                '<h3>',
+                '<h1>',
+                '<title>'
+            ],
+            correctAnswer: 2
+        },
+        {
+            id: 547,
+            question: 'In CSS, which property is used to create space outside the border of an element?',
+            options: [
+                'padding',
+                'margin',
+                'border-spacing',
+                'outline'
+            ],
+            correctAnswer: 1
+        },
+        {
+            id: 548,
+            question: 'Which Git command shows the history of commits for the current branch?',
+            options: [
+                'git status',
+                'git log',
+                'git show',
+                'git diff'
+            ],
+            correctAnswer: 1
+        },
+        {
+            id: 549,
+            question: 'In Azure DevOps, what is the typical unit of work tracked on Boards?',
+            options: [
+                'Pull Requests',
+                'Work items like User Stories, Bugs, and Tasks',
+                'Docker images',
+                'Browser sessions'
+            ],
+            correctAnswer: 1
+        },
+        {
+            id: 550,
+            question: 'Which testing activity directly benefits from having consistent Git branching and pull request practices?',
+            options: [
+                'Uncontrolled hotfixes in production',
+                'Traceable test coverage aligned with features and fixes',
+                'Random manual testing only',
+                'Skipping regression suites'
+            ],
+            correctAnswer: 1
+        },
+        {
+            id: 551,
+            question: 'In Playwright, which assertion library is commonly used in TypeScript tests?',
+            options: [
+                'Node.js assert only',
+                '@playwright/test built-in expect',
+                'JUnit',
+                'Mocha reporter only'
+            ],
+            correctAnswer: 1
+        },
+        {
+            id: 552,
+            question: 'Which Playwright feature simplifies running the same test against multiple browsers?',
+            options: [
+                'Projects configuration in playwright.config',
+                'Manual loops in test files',
+                'Multiple Node.js processes created by user',
+                'Bash scripts only'
+            ],
+            correctAnswer: 0
+        },
+        {
+            id: 553,
+            question: 'In Cucumber, tags like @smoke or @regression are mainly used to:',
+            options: [
+                'Style the HTML report',
+                'Control which scenarios are included in a test run',
+                'Generate performance metrics',
+                'Configure Azure DevOps agents'
+            ],
+            correctAnswer: 1
+        },
+        {
+            id: 554,
+            question: 'Which Postman feature can be used to script preconditions like setting auth tokens before requests?',
+            options: [
+                'Pre-request Scripts',
+                'Console',
+                'Mock Server',
+                'Monitors'
+            ],
+            correctAnswer: 0
+        },
+        {
+            id: 555,
+            question: 'In JMeter, which setting controls how many virtual users are simulated?',
+            options: [
+                'Number of Listeners',
+                'Ramp-Up Period',
+                'Loop Count',
+                'Number of Threads in Thread Group'
+            ],
+            correctAnswer: 3
+        },
+        {
+            id: 556,
+            question: 'What is a good practice when designing test automation for long-term maintenance?',
+            options: [
+                'Hard-code all test data in scripts',
+                'Use page object or screen object patterns and reusable utilities',
+                'Avoid code reviews for test code',
+                'Write one massive test for all flows'
+            ],
+            correctAnswer: 1
+        },
+        {
+            id: 557,
+            question: 'Which Git operation is best suited for frequently syncing your feature branch with the latest main changes while preserving a linear history?',
+            options: [
+                'git merge main',
+                'git rebase main (with care and team agreement)',
+                'git reset --hard main',
+                'git cherry-pick main'
+            ],
+            correctAnswer: 1
+        },
+        {
+            id: 558,
+            question: 'In Azure DevOps Pipelines, where do you typically declare stages, jobs, and steps?',
+            options: [
+                'README.md',
+                'pipeline.yaml or azure-pipelines.yml',
+                'tsconfig.json',
+                'wdio.conf.ts'
+            ],
+            correctAnswer: 1
+        },
+        {
+            id: 559,
+            question: 'Which practice helps ensure your Playwright or WebDriverIO tests run reliably in CI environments like Azure DevOps?',
+            options: [
+                'Using only hard-coded waits',
+                'Running tests only on local machines',
+                'Using explicit waits, stable locators, and isolated test data',
+                'Disabling all assertions'
+            ],
+            correctAnswer: 2
+        },
+        {
+            id: 560,
+            question: 'Which tool would you choose first to quickly benchmark a web page’s performance and accessibility locally?',
+            options: [
+                'JMeter GUI',
+                'Lighthouse in Chrome DevTools',
+                'Postman',
+                'Git CLI'
+            ],
+            correctAnswer: 1
+        },
+        {
+            id: 561,
+            question: 'Which combination best represents a modern UI automation stack based on your described tools?',
+            options: [
+                'Selenium Java + TestNG',
+                'Playwright TypeScript + Cucumber + Allure',
+                'JUnit + Cypress',
+                'Robot Framework + Python only'
+            ],
+            correctAnswer: 1
+        },
+        {
+            id: 562,
+            question: 'When running Newman in a CI pipeline, why is generating an HTML report valuable?',
+            options: [
+                'It is required to execute tests',
+                'It gives a readable summary of API test pass/fail and performance trends',
+                'It replaces logs completely',
+                'It configures environment variables automatically'
+            ],
+            correctAnswer: 1
+        },
+        {
+            id: 563,
+            question: 'Which mobile automation toolset matches your specified stack?',
+            options: [
+                'Appium + UiAutomator2 + WebDriverIO + TypeScript',
+                'Selenium Grid + Cypress',
+                'Puppeteer + Espresso',
+                'XCUITest only'
+            ],
+            correctAnswer: 0
+        },
+        {
+            id: 564,
+            question: 'For a UI performance test of an SPA, which combination of tools is the best fit based on your stack?',
+            options: [
+                'JMeter only',
+                'Lighthouse for front-end metrics and JMeter for backend/API under load',
+                'Postman only',
+                'Git and Azure DevOps only'
+            ],
+            correctAnswer: 1
+        },
+        {
+            id: 565,
+            question: 'In a typical QA workflow, which is the best order of testing activities?',
+            options: [
+                'Performance, then manual, then unit',
+                'Manual exploration, then automation and regression, then performance and non-functional',
+                'Automation only, then deploy',
+                'Skip manual testing entirely'
+            ],
+            correctAnswer: 1
+        },
+        {
+            id: 566,
+            question: 'Which Git branching strategy is commonly used to support parallel feature development and stable release branches?',
+            options: [
+                'Single-branch only',
+                'Gitflow or trunk-based with feature branches',
+                'Random ad-hoc branches',
+                'Using tags instead of branches'
+            ],
+            correctAnswer: 1
+        },
+        {
+            id: 567,
+            question: 'Which HTML element is best suited for grouping related content with its own heading?',
+            options: [
+                '<article>',
+                '<br>',
+                '<hr>',
+                '<meta>'
+            ],
+            correctAnswer: 0
+        },
+        {
+            id: 568,
+            question: 'In CSS, which property would you use to create a responsive layout that wraps items onto multiple lines?',
+            options: [
+                'display: block',
+                'flex-wrap: wrap with display: flex',
+                'position: absolute',
+                'overflow: hidden'
+            ],
+            correctAnswer: 1
+        },
+        {
+            id: 569,
+            question: 'Why is it important for QA engineers to understand Git and Azure DevOps even if they primarily write tests?',
+            options: [
+                'To manage hardware inventory',
+                'To better integrate test code, pipelines, and reporting into the development lifecycle',
+                'To avoid writing test documentation',
+                'To replace developers in coding features'
+            ],
+            correctAnswer: 1
+        },
+        {
+            id: 570,
+            question: 'Which statement best summarizes a full-stack QA role using the tools you listed?',
+            options: [
+                'Focused only on manual UI checks',
+                'Covers manual testing, UI and mobile automation, API testing, performance analysis, and CI/CD collaboration',
+                'Only responsible for Git operations',
+                'Only creates HTML and CSS templates'
+            ],
+            correctAnswer: 1
+        }
+    ]
+};
+
