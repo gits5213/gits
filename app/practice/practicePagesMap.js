@@ -101,6 +101,7 @@ export const practicePagesMap = {
   'appium-ios-device': () => import('@/src/page-components/practice/AppiumIosDevice'),
   'appium-android-device': () => import('@/src/page-components/practice/AppiumAndroidDevice'),
   'examples': () => import('@/src/page-components/practice'), // This is handled by the main practice page
+  'hands-on-practical-exam': () => import('@/src/page-components/practice'), // This is handled by the main practice page
   'testcases': () => import('@/src/page-components/practice'), // This is handled by the main practice page
   'quiz': () => import('@/src/page-components/practice'), // This is handled by the main practice page
   'scorecard': () => import('@/src/page-components/practice'), // This is handled by the main practice page

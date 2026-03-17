@@ -367,7 +367,7 @@ const Appium = () => {
                 </div>
             </div>
 
-            {/* Appium TypeScript + WebDriverIO — Windows Baby Steps (outer collapsible) */}
+            {/* Appium Android native + TypeScript + WebDriverIO — Windows Baby Steps (outer collapsible) */}
             <div style={{ marginBottom: '40px' }}>
                 <div
                     style={{ ...sectionHeaderStyle, marginBottom: babyStepsOpen ? '4px' : '16px' }}
@@ -376,7 +376,7 @@ const Appium = () => {
                     aria-expanded={babyStepsOpen}
                 >
                     <h2 style={{ color: '#00416A', fontSize: '24px', margin: 0, fontWeight: 'bold' }}>
-                        Appium TypeScript + WebDriverIO on Windows — Baby Steps
+                        Appium Android native Mobile app testing leveraging TypeScript + WebDriverIO on Windows — Baby Steps
                     </h2>
                     <span style={{ fontSize: '20px', color: '#00416A' }}>{babyStepsOpen ? '▼' : '▶'}</span>
                 </div>
@@ -2197,7 +2197,7 @@ adb install -r "C:\\path\\to\\my-demo-app.apk"`}</pre>
                 )}
             </div>
 
-            {/* Appium TypeScript + WebDriverIO — macOS Baby Steps (outer collapsible) */}
+            {/* Appium iOS native + TypeScript + WebDriverIO — macOS Baby Steps (outer collapsible) */}
             <div style={{ marginBottom: '40px' }}>
                 <div
                     style={{ ...sectionHeaderStyle, marginBottom: macOSBabyStepsOpen ? '4px' : '16px' }}
@@ -2206,7 +2206,7 @@ adb install -r "C:\\path\\to\\my-demo-app.apk"`}</pre>
                     aria-expanded={macOSBabyStepsOpen}
                 >
                     <h2 style={{ color: '#00416A', fontSize: '24px', margin: 0, fontWeight: 'bold' }}>
-                        Appium TypeScript + WebDriverIO on macOS — Baby Steps
+                        Appium iOS native Mobile app testing leveraging TypeScript + WebDriverIO on macOS — Baby Steps
                     </h2>
                     <span style={{ fontSize: '20px', color: '#00416A' }}>{macOSBabyStepsOpen ? '▼' : '▶'}</span>
                 </div>
@@ -2216,10 +2216,10 @@ adb install -r "C:\\path\\to\\my-demo-app.apk"`}</pre>
                     Written for beginners. No coding experience needed. Do each step in order. When you see a gray box with text, copy it exactly and paste it where the step says (usually in Terminal — the command-line window where you type commands). If something fails, go back one step and try again.
                 </p>
                 <p style={{ fontSize: '14px', color: '#333', marginTop: '16px', marginBottom: '8px' }}>
-                    <strong>Note:</strong> On macOS, you can run <strong>both iOS and Android</strong> Appium tests. iOS requires <strong>Xcode</strong> and <strong>macOS</strong>, while Android requires the <strong>Android SDK + ADB</strong> (similar to Windows).
+                    <strong>Note:</strong> This section is for <strong>iOS native</strong> app testing only. You need <strong>Xcode</strong> and <strong>macOS</strong> to run the iOS Simulator or connect a real iPhone. We use <strong>TypeScript + WebDriverIO</strong> with the <strong>XCUITest</strong> driver.
                 </p>
                 <div style={{ marginTop: '24px' }}>
-                {/* Section 1: Android Emulator + Sauce Labs Demo App (macOS) */}
+                {/* Section 1: iOS Simulator + Sauce Labs Demo App (macOS) */}
                 <div>
                     <div
                         style={sectionHeaderStyle}
@@ -2228,79 +2228,63 @@ adb install -r "C:\\path\\to\\my-demo-app.apk"`}</pre>
                         aria-expanded={openSectionMacOS === 1}
                     >
                         <h3 style={{ color: '#00416A', fontSize: '22px', margin: 0, fontWeight: 'bold' }}>
-                            Appium + TypeScript + WebdriverIO on macOS (Android Emulator + Sauce Labs Demo App)
+                            Appium + TypeScript + WebdriverIO on macOS (iOS Simulator + Sauce Labs Demo App)
                         </h3>
                         <span style={{ fontSize: '18px', color: '#00416A' }}>{openSectionMacOS === 1 ? '▼' : '▶'}</span>
                     </div>
                     {openSectionMacOS === 1 && (
                     <div style={sectionBodyStyle}>
                 <p style={{ fontSize: '14px', color: '#555', marginBottom: '16px', paddingTop: '8px' }}>
-                    This is a <strong>baby-steps</strong> guide for beginners. You will run tests on a <strong>fake Android phone (Emulator)</strong> using a <strong>sample app (Sauce Labs Demo App)</strong>.
+                    This is a <strong>baby-steps</strong> guide for beginners. You will run tests on the <strong>iOS Simulator</strong> (virtual iPhone on your Mac) using a <strong>sample app (Sauce Labs Demo App for iOS)</strong>.
                 </p>
 
                 <hr style={{ border: 'none', borderTop: '1px solid #e0e0e0', margin: '24px 0' }} />
 
                 <h4 style={{ color: '#00416A', fontSize: '18px', marginBottom: '10px', marginTop: '20px', fontWeight: '600' }}>What you will have at the end</h4>
                 <ul style={leftAlignStyles.list}>
-                    <li>✅ A running Android Emulator (virtual phone)</li>
-                    <li>✅ The demo app installed on the emulator</li>
-                    <li>✅ A WebdriverIO + TypeScript project</li>
-                    <li>✅ 1 working Appium test you can run anytime</li>
+                    <li>✅ A running iOS Simulator (virtual iPhone)</li>
+                    <li>✅ The demo app installed on the simulator</li>
+                    <li>✅ A WebdriverIO + TypeScript project for iOS native testing</li>
+                    <li>✅ 1 working Appium iOS test you can run anytime</li>
                 </ul>
 
                 <hr style={{ border: 'none', borderTop: '1px solid #e0e0e0', margin: '24px 0' }} />
 
                 <h4 style={{ color: '#00416A', fontSize: '18px', marginBottom: '10px', marginTop: '20px', fontWeight: '600' }}>Step 1: Install the basic tools (one time)</h4>
-                <h5 style={{ color: '#00416A', fontSize: '16px', marginBottom: '8px', marginTop: '16px', fontWeight: '600' }}>1. Install Android Studio</h5>
+                <h5 style={{ color: '#00416A', fontSize: '16px', marginBottom: '8px', marginTop: '16px', fontWeight: '600' }}>1. Install Xcode</h5>
                 <ol style={{ fontSize: '14px', lineHeight: '1.8', color: '#333', paddingLeft: '24px' }}>
-                    <li>Download and install <strong>Android Studio</strong></li>
-                    <li>Open Android Studio once (let it finish setup)</li>
+                    <li>Install <strong>Xcode</strong> from the Mac App Store (required for iOS Simulator and XCUITest)</li>
+                    <li>Open Xcode once and accept the license; install any requested command-line tools</li>
                 </ol>
                 <h5 style={{ color: '#00416A', fontSize: '16px', marginBottom: '8px', marginTop: '16px', fontWeight: '600' }}>2. Install Node.js</h5>
                 <ol style={{ fontSize: '14px', lineHeight: '1.8', color: '#333', paddingLeft: '24px' }}>
                     <li>Download and install <strong>Node.js (LTS version)</strong></li>
                     <li>Confirm Node works: Open <strong>Terminal</strong> and run: <code style={{ backgroundColor: '#f8f9fa', padding: '2px 6px', borderRadius: '4px', color: '#00416A' }}>node -v</code> and <code style={{ backgroundColor: '#f8f9fa', padding: '2px 6px', borderRadius: '4px', color: '#00416A' }}>npm -v</code></li>
                 </ol>
-                <h5 style={{ color: '#00416A', fontSize: '16px', marginBottom: '8px', marginTop: '16px', fontWeight: '600' }}>3. Install Java (required for Android tools)</h5>
-                <ol style={{ fontSize: '14px', lineHeight: '1.8', color: '#333', paddingLeft: '24px' }}>
-                    <li>Install <strong>JDK 17</strong> (recommended)</li>
-                    <li>Confirm it works: <code style={{ backgroundColor: '#f8f9fa', padding: '2px 6px', borderRadius: '4px', color: '#00416A' }}>java -version</code></li>
-                </ol>
 
-                <h4 style={{ color: '#00416A', fontSize: '18px', marginBottom: '10px', marginTop: '20px', fontWeight: '600' }}>Step 2: Create and start the Android Emulator (fake phone)</h4>
+                <h4 style={{ color: '#00416A', fontSize: '18px', marginBottom: '10px', marginTop: '20px', fontWeight: '600' }}>Step 2: Boot the iOS Simulator (virtual iPhone)</h4>
                 <ol style={{ fontSize: '14px', lineHeight: '1.8', color: '#333', paddingLeft: '24px' }}>
-                    <li>Open <strong>Android Studio</strong></li>
-                    <li>Go to <strong>Tools → Device Manager</strong></li>
-                    <li>Click <strong>Create device</strong></li>
-                    <li>Pick a device like <strong>Pixel 6</strong> → <strong>Next</strong></li>
-                    <li>Choose Android version (example <strong>Android 13/14</strong>) → <strong>Download</strong> if needed → <strong>Next</strong></li>
-                    <li>Click <strong>Finish</strong></li>
-                    <li>In Device Manager, click <strong>Play ▶</strong> to start the emulator</li>
+                    <li>Open <strong>Xcode</strong> → <strong>Window → Devices and Simulators</strong> (or run <code style={{ backgroundColor: '#f8f9fa', padding: '2px 6px', borderRadius: '4px', color: '#00416A' }}>open -a Simulator</code> in Terminal)</li>
+                    <li>Under <strong>Simulators</strong>, pick a device (e.g. <strong>iPhone 15</strong>) and an iOS version</li>
+                    <li>Click the <strong>Play</strong> button to boot the simulator, or start it from the Simulator app</li>
                 </ol>
-                <p style={{ fontSize: '14px', color: '#333', marginTop: '8px' }}>✅ Wait until you see the Android home screen.</p>
+                <p style={{ fontSize: '14px', color: '#333', marginTop: '8px' }}>✅ Wait until you see the iOS home screen.</p>
 
-                <h4 style={{ color: '#00416A', fontSize: '18px', marginBottom: '10px', marginTop: '20px', fontWeight: '600' }}>Step 3: Install Appium 2 (one time)</h4>
+                <h4 style={{ color: '#00416A', fontSize: '18px', marginBottom: '10px', marginTop: '20px', fontWeight: '600' }}>Step 3: Install Appium 2 and the XCUITest driver (one time)</h4>
                 <ol style={{ fontSize: '14px', lineHeight: '1.8', color: '#333', paddingLeft: '24px' }}>
                     <li>Open <strong>Terminal</strong></li>
                     <li>Install Appium: <code style={{ backgroundColor: '#f8f9fa', padding: '2px 6px', borderRadius: '4px', color: '#00416A' }}>npm i -g appium</code></li>
-                    <li>Install the Android driver (UiAutomator2): <code style={{ backgroundColor: '#f8f9fa', padding: '2px 6px', borderRadius: '4px', color: '#00416A' }}>appium driver install uiautomator2</code></li>
+                    <li>Install the <strong>XCUITest</strong> driver (for iOS): <code style={{ backgroundColor: '#f8f9fa', padding: '2px 6px', borderRadius: '4px', color: '#00416A' }}>appium driver install xcuitest</code></li>
                     <li>Confirm driver is installed: <code style={{ backgroundColor: '#f8f9fa', padding: '2px 6px', borderRadius: '4px', color: '#00416A' }}>appium driver list --installed</code></li>
                 </ol>
 
-                <h4 style={{ color: '#00416A', fontSize: '18px', marginBottom: '10px', marginTop: '20px', fontWeight: '600' }}>Step 4: Install the Sauce Labs Demo App on the Emulator</h4>
-                <p style={{ fontSize: '14px', color: '#333', marginBottom: '8px' }}>You need the <strong>demo app APK</strong> file on your Mac first.</p>
-                <h5 style={{ color: '#00416A', fontSize: '16px', marginBottom: '8px', marginTop: '16px', fontWeight: '600' }}>1) Download the demo APK</h5>
+                <h4 style={{ color: '#00416A', fontSize: '18px', marginBottom: '10px', marginTop: '20px', fontWeight: '600' }}>Step 4: Get the Sauce Labs Demo App for iOS</h4>
+                <p style={{ fontSize: '14px', color: '#333', marginBottom: '8px' }}>You need the <strong>iOS demo app</strong> (e.g. <code style={{ backgroundColor: '#f8f9fa', padding: '2px 6px', borderRadius: '4px', color: '#00416A' }}>.app</code> for Simulator or <code style={{ backgroundColor: '#f8f9fa', padding: '2px 6px', borderRadius: '4px', color: '#00416A' }}>.ipa</code> for device).</p>
                 <ul style={leftAlignStyles.list}>
-                    <li>Download the <strong>Sauce Labs demo Android APK</strong> (often called "My Demo App") to your Mac</li>
-                    <li>Put it somewhere easy like: <code style={{ backgroundColor: '#f8f9fa', padding: '2px 6px', borderRadius: '4px', color: '#00416A' }}>~/Downloads/MyDemoApp.apk</code></li>
+                    <li>Download the <strong>Sauce Labs demo iOS app</strong> (e.g. "My Demo App" or "Sauce Labs Demo" for iOS) from Sauce Labs docs</li>
+                    <li>For Simulator: use the <strong>.app</strong> bundle and put it somewhere like <code style={{ backgroundColor: '#f8f9fa', padding: '2px 6px', borderRadius: '4px', color: '#00416A' }}>~/Downloads/MyDemoApp.app</code></li>
                 </ul>
-                <h5 style={{ color: '#00416A', fontSize: '16px', marginBottom: '8px', marginTop: '16px', fontWeight: '600' }}>2) Install it to the emulator</h5>
-                <ol style={{ fontSize: '14px', lineHeight: '1.8', color: '#333', paddingLeft: '24px' }}>
-                    <li>Open Terminal</li>
-                    <li>Run: <code style={{ backgroundColor: '#f8f9fa', padding: '2px 6px', borderRadius: '4px', color: '#00416A' }}>adb devices</code> (You should see an emulator listed)</li>
-                    <li>Install the APK: <code style={{ backgroundColor: '#f8f9fa', padding: '2px 6px', borderRadius: '4px', color: '#00416A' }}>adb install -r ~/Downloads/MyDemoApp.apk</code></li>
-                </ol>
-                <p style={{ fontSize: '14px', color: '#333', marginTop: '8px' }}>✅ Now the demo app will appear on the emulator screen like a normal app.</p>
+                <p style={{ fontSize: '14px', color: '#333', marginTop: '8px' }}>✅ The Simulator will install the app when you point <code style={{ backgroundColor: '#f8f9fa', padding: '2px 6px', borderRadius: '4px', color: '#00416A' }}>app</code> to this path in capabilities.</p>
 
                 <h4 style={{ color: '#00416A', fontSize: '18px', marginBottom: '10px', marginTop: '20px', fontWeight: '600' }}>Step 5: Start the Appium Server (required every time you test)</h4>
                 <ol style={{ fontSize: '14px', lineHeight: '1.8', color: '#333', paddingLeft: '24px' }}>
@@ -2312,54 +2296,56 @@ adb install -r "C:\\path\\to\\my-demo-app.apk"`}</pre>
                 <h4 style={{ color: '#00416A', fontSize: '18px', marginBottom: '10px', marginTop: '20px', fontWeight: '600' }}>Step 6: Create a WebdriverIO + TypeScript project</h4>
                 <ol style={{ fontSize: '14px', lineHeight: '1.8', color: '#333', paddingLeft: '24px' }}>
                     <li>Open a <strong>new Terminal window</strong></li>
-                    <li>Create a project folder: <code style={{ backgroundColor: '#f8f9fa', padding: '2px 6px', borderRadius: '4px', color: '#00416A' }}>mkdir wdio-appium-ts &amp;&amp; cd wdio-appium-ts</code></li>
+                    <li>Create a project folder: <code style={{ backgroundColor: '#f8f9fa', padding: '2px 6px', borderRadius: '4px', color: '#00416A' }}>mkdir wdio-appium-ios-ts &amp;&amp; cd wdio-appium-ios-ts</code></li>
                     <li>Start the setup wizard: <code style={{ backgroundColor: '#f8f9fa', padding: '2px 6px', borderRadius: '4px', color: '#00416A' }}>npm init -y</code> then <code style={{ backgroundColor: '#f8f9fa', padding: '2px 6px', borderRadius: '4px', color: '#00416A' }}>npx wdio config</code></li>
                     <li>During the wizard choose: <strong>TypeScript</strong>: Yes, <strong>Framework</strong>: Mocha (easy), <strong>Service</strong>: Appium, <strong>Reporter</strong>: spec</li>
                 </ol>
                 <p style={{ fontSize: '14px', color: '#333', marginTop: '8px' }}>✅ After this, your project will have a <code style={{ backgroundColor: '#f8f9fa', padding: '2px 6px', borderRadius: '4px', color: '#00416A' }}>wdio.conf.ts</code> file.</p>
 
-                <h4 style={{ color: '#00416A', fontSize: '18px', marginBottom: '10px', marginTop: '20px', fontWeight: '600' }}>Step 7: Add "capabilities" (settings for the fake phone + app)</h4>
-                <p style={{ fontSize: '14px', color: '#333', marginBottom: '8px' }}>Open <code style={{ backgroundColor: '#f8f9fa', padding: '2px 6px', borderRadius: '4px', color: '#00416A' }}>wdio.conf.ts</code> and set the Android capability like this (example):</p>
+                <h4 style={{ color: '#00416A', fontSize: '18px', marginBottom: '10px', marginTop: '20px', fontWeight: '600' }}>Step 7: Add iOS capabilities (Simulator + app)</h4>
+                <p style={{ fontSize: '14px', color: '#333', marginBottom: '8px' }}>Open <code style={{ backgroundColor: '#f8f9fa', padding: '2px 6px', borderRadius: '4px', color: '#00416A' }}>wdio.conf.ts</code> and set the iOS capability like this (example):</p>
                 <div style={{ backgroundColor: '#f8f9fa', padding: '12px', borderRadius: '6px', fontFamily: 'monospace', fontSize: '13px', border: '1px solid #e0e0e0', marginBottom: '12px', overflowX: 'auto' }}>
                     <pre style={{ margin: 0, whiteSpace: 'pre-wrap' }}>{`capabilities: [
   {
-    platformName: "Android",
-    "appium:automationName": "UiAutomator2",
-    "appium:deviceName": "Android Emulator",
+    platformName: "iOS",
+    "appium:automationName": "XCUITest",
+    "appium:deviceName": "iPhone 15",
+    "appium:platformVersion": "17.0",
+    "appium:app": "/Users/you/Downloads/MyDemoApp.app",
     "appium:noReset": true,
     "appium:newCommandTimeout": 120
   }
 ],`}</pre>
                 </div>
-                <p style={{ fontSize: '14px', color: '#666', fontStyle: 'italic', marginTop: '8px' }}>If you want Appium to launch the demo app automatically, we can add <code style={{ backgroundColor: '#f8f9fa', padding: '2px 6px', borderRadius: '4px', color: '#00416A' }}>appPackage</code> + <code style={{ backgroundColor: '#f8f9fa', padding: '2px 6px', borderRadius: '4px', color: '#00416A' }}>appActivity</code> once you confirm them (easy to extract).</p>
+                <p style={{ fontSize: '14px', color: '#666', fontStyle: 'italic', marginTop: '8px' }}>Adjust <code style={{ backgroundColor: '#f8f9fa', padding: '2px 6px', borderRadius: '4px', color: '#00416A' }}>deviceName</code>, <code style={{ backgroundColor: '#f8f9fa', padding: '2px 6px', borderRadius: '4px', color: '#00416A' }}>platformVersion</code>, and <code style={{ backgroundColor: '#f8f9fa', padding: '2px 6px', borderRadius: '4px', color: '#00416A' }}>app</code> to match your Simulator and demo app path.</p>
 
-                <h4 style={{ color: '#00416A', fontSize: '18px', marginBottom: '10px', marginTop: '20px', fontWeight: '600' }}>Step 8: Run your first test</h4>
+                <h4 style={{ color: '#00416A', fontSize: '18px', marginBottom: '10px', marginTop: '20px', fontWeight: '600' }}>Step 8: Run your first iOS test</h4>
                 <ol style={{ fontSize: '14px', lineHeight: '1.8', color: '#333', paddingLeft: '24px' }}>
-                    <li>Make sure: Emulator is running ✅, Appium server is running ✅</li>
+                    <li>Make sure: iOS Simulator is running ✅, Appium server is running ✅</li>
                     <li>Run tests: <code style={{ backgroundColor: '#f8f9fa', padding: '2px 6px', borderRadius: '4px', color: '#00416A' }}>npx wdio run wdio.conf.ts</code></li>
                 </ol>
-                <p style={{ fontSize: '14px', color: '#333', marginTop: '8px' }}>✅ If everything is correct, WebdriverIO will connect to the emulator and start automation.</p>
+                <p style={{ fontSize: '14px', color: '#333', marginTop: '8px' }}>✅ If everything is correct, WebdriverIO will connect to the iOS Simulator and run your native app test.</p>
 
-                <h4 style={{ color: '#00416A', fontSize: '18px', marginBottom: '10px', marginTop: '20px', fontWeight: '600' }}>Step 9: Find buttons and fields (locators) using Appium Inspector (optional but recommended)</h4>
+                <h4 style={{ color: '#00416A', fontSize: '18px', marginBottom: '10px', marginTop: '20px', fontWeight: '600' }}>Step 9: Find elements (locators) with Appium Inspector (optional)</h4>
                 <ol style={{ fontSize: '14px', lineHeight: '1.8', color: '#333', paddingLeft: '24px' }}>
                     <li>Open <strong>Appium Inspector</strong> on macOS</li>
                     <li>Create a new session with: Host: <code style={{ backgroundColor: '#f8f9fa', padding: '2px 6px', borderRadius: '4px', color: '#00416A' }}>127.0.0.1</code>, Port: <code style={{ backgroundColor: '#f8f9fa', padding: '2px 6px', borderRadius: '4px', color: '#00416A' }}>4723</code>, Path: <code style={{ backgroundColor: '#f8f9fa', padding: '2px 6px', borderRadius: '4px', color: '#00416A' }}>/</code></li>
-                    <li>Use the same Android capabilities and click <strong>Start Session</strong></li>
-                    <li>Click on elements inside Inspector to see: <code style={{ backgroundColor: '#f8f9fa', padding: '2px 6px', borderRadius: '4px', color: '#00416A' }}>content-desc</code> (best), <code style={{ backgroundColor: '#f8f9fa', padding: '2px 6px', borderRadius: '4px', color: '#00416A' }}>resource-id</code> (great), <code style={{ backgroundColor: '#f8f9fa', padding: '2px 6px', borderRadius: '4px', color: '#00416A' }}>text</code> (ok), XPath (last option)</li>
+                    <li>Use the same iOS capabilities and click <strong>Start Session</strong></li>
+                    <li>Inspect elements to get: <code style={{ backgroundColor: '#f8f9fa', padding: '2px 6px', borderRadius: '4px', color: '#00416A' }}>accessibility id</code>, <code style={{ backgroundColor: '#f8f9fa', padding: '2px 6px', borderRadius: '4px', color: '#00416A' }}>name</code>, <code style={{ backgroundColor: '#f8f9fa', padding: '2px 6px', borderRadius: '4px', color: '#00416A' }}>class name</code>, or XPath for your tests</li>
                 </ol>
-                <p style={{ fontSize: '14px', color: '#333', marginTop: '8px' }}>✅ This is how you "grab locators" for your tests.</p>
+                <p style={{ fontSize: '14px', color: '#333', marginTop: '8px' }}>✅ Use these locators in your WebdriverIO + TypeScript specs for iOS native testing.</p>
 
                 <hr style={{ border: 'none', borderTop: '1px solid #e0e0e0', margin: '24px 0' }} />
 
-                <h4 style={{ color: '#00416A', fontSize: '18px', marginBottom: '10px', marginTop: '20px', fontWeight: '600' }}>Quick troubleshooting (beginner-friendly)</h4>
-                <p style={{ fontSize: '14px', color: '#333', marginBottom: '8px' }}><strong>"adb not found"</strong> — Install Android Platform Tools or set PATH via Android Studio SDK Manager.</p>
-                <p style={{ fontSize: '14px', color: '#333', marginBottom: '8px' }}><strong>Emulator not showing in <code style={{ backgroundColor: '#f8f9fa', padding: '2px 6px', borderRadius: '4px', color: '#00416A' }}>adb devices</code></strong> — Restart adb: <code style={{ backgroundColor: '#f8f9fa', padding: '2px 6px', borderRadius: '4px', color: '#00416A' }}>adb kill-server</code> then <code style={{ backgroundColor: '#f8f9fa', padding: '2px 6px', borderRadius: '4px', color: '#00416A' }}>adb start-server</code></p>
-                <p style={{ fontSize: '14px', color: '#333', marginBottom: '8px' }}><strong>Appium session fails</strong> — Make sure UiAutomator2 driver is installed: <code style={{ backgroundColor: '#f8f9fa', padding: '2px 6px', borderRadius: '4px', color: '#00416A' }}>appium driver list --installed</code></p>
+                <h4 style={{ color: '#00416A', fontSize: '18px', marginBottom: '10px', marginTop: '20px', fontWeight: '600' }}>Quick troubleshooting (iOS)</h4>
+                <p style={{ fontSize: '14px', color: '#333', marginBottom: '8px' }}><strong>Simulator not found</strong> — Ensure the Simulator is booted and <code style={{ backgroundColor: '#f8f9fa', padding: '2px 6px', borderRadius: '4px', color: '#00416A' }}>deviceName</code> / <code style={{ backgroundColor: '#f8f9fa', padding: '2px 6px', borderRadius: '4px', color: '#00416A' }}>platformVersion</code> match a simulator in Xcode.</p>
+                <p style={{ fontSize: '14px', color: '#333', marginBottom: '8px' }}><strong>XCUITest driver errors</strong> — Confirm: <code style={{ backgroundColor: '#f8f9fa', padding: '2px 6px', borderRadius: '4px', color: '#00416A' }}>appium driver list --installed</code> shows <code style={{ backgroundColor: '#f8f9fa', padding: '2px 6px', borderRadius: '4px', color: '#00416A' }}>xcuitest</code>.</p>
+                <p style={{ fontSize: '14px', color: '#333', marginBottom: '8px' }}><strong>App not launching</strong> — Use the full path to the <code style={{ backgroundColor: '#f8f9fa', padding: '2px 6px', borderRadius: '4px', color: '#00416A' }}>.app</code> bundle and ensure it was built for the Simulator (not device-only).</p>
                     </div>
                     )}
                 </div>
 
-                {/* Section 2: Real Device + Sauce Labs Demo App (macOS) */}
+                {/* Section 2: iOS Real Device + Sauce Labs Demo App (macOS) */}
                 <div>
                     <div
                         style={sectionHeaderStyle}
@@ -2368,14 +2354,14 @@ adb install -r "C:\\path\\to\\my-demo-app.apk"`}</pre>
                         aria-expanded={openSectionMacOS === 2}
                     >
                         <h3 style={{ color: '#00416A', fontSize: '22px', margin: 0, fontWeight: 'bold' }}>
-                            Appium (TypeScript) + WebdriverIO on macOS — Real Device + Sauce Labs Demo App (Baby Steps)
+                            Appium iOS native (TypeScript) + WebdriverIO on macOS — Real Device + Sauce Labs Demo App (Baby Steps)
                         </h3>
                         <span style={{ fontSize: '18px', color: '#00416A' }}>{openSectionMacOS === 2 ? '▼' : '▶'}</span>
                     </div>
                     {openSectionMacOS === 2 && (
                     <div style={sectionBodyStyle}>
                 <p style={{ fontSize: '14px', color: '#555', marginBottom: '16px', paddingTop: '8px' }}>
-                    This guide shows how to run your <strong>mobile Appium tests from a Mac</strong>, while Sauce Labs provides a <strong>real phone in the cloud</strong> (Android or iOS). You'll use a <strong>Sauce Labs demo app</strong> so you don't need your own app yet. (<a href="https://docs.saucelabs.com/" target="_blank" rel="noopener noreferrer" style={{ color: '#00416A', textDecoration: 'underline' }}>docs.saucelabs.com</a>)
+                    This guide shows how to run your <strong>iOS native</strong> Appium tests from a Mac using TypeScript + WebdriverIO, while Sauce Labs provides a <strong>real iPhone in the cloud</strong>. You'll use a <strong>Sauce Labs iOS demo app</strong> so you don't need your own app yet. (<a href="https://docs.saucelabs.com/" target="_blank" rel="noopener noreferrer" style={{ color: '#00416A', textDecoration: 'underline' }}>docs.saucelabs.com</a>)
                 </p>
 
                 <hr style={{ border: 'none', borderTop: '1px solid #e0e0e0', margin: '24px 0' }} />
@@ -2385,9 +2371,9 @@ adb install -r "C:\\path\\to\\my-demo-app.apk"`}</pre>
                     <li>✅ A <strong>Mac</strong> with internet</li>
                     <li>✅ A <strong>Sauce Labs account</strong> (free trial works) + your <strong>Username</strong> and <strong>Access Key</strong> (<a href="https://docs.saucelabs.com/" target="_blank" rel="noopener noreferrer" style={{ color: '#00416A', textDecoration: 'underline' }}>docs.saucelabs.com</a>)</li>
                     <li>✅ Node.js installed (for TypeScript + WebdriverIO)</li>
-                    <li>✅ A demo app file (<strong>Android .apk</strong> or <strong>iOS .ipa</strong>) — Sauce provides demo apps (<a href="https://docs.saucelabs.com/" target="_blank" rel="noopener noreferrer" style={{ color: '#00416A', textDecoration: 'underline' }}>docs.saucelabs.com</a>)</li>
+                    <li>✅ Sauce Labs <strong>iOS demo app</strong> (<code style={{ backgroundColor: '#f8f9fa', padding: '2px 6px', borderRadius: '4px', color: '#00416A' }}>.ipa</code>) — Sauce provides demo apps (<a href="https://docs.saucelabs.com/" target="_blank" rel="noopener noreferrer" style={{ color: '#00416A', textDecoration: 'underline' }}>docs.saucelabs.com</a>)</li>
                 </ul>
-                <p style={{ fontSize: '14px', color: '#666', fontStyle: 'italic', marginTop: '8px' }}>Note: You don't need an emulator for Sauce real devices. Sauce runs the phone remotely. (<a href="https://docs.saucelabs.com/" target="_blank" rel="noopener noreferrer" style={{ color: '#00416A', textDecoration: 'underline' }}>docs.saucelabs.com</a>)</p>
+                <p style={{ fontSize: '14px', color: '#666', fontStyle: 'italic', marginTop: '8px' }}>Note: You don't need a local simulator or device. Sauce runs a real iPhone remotely. (<a href="https://docs.saucelabs.com/" target="_blank" rel="noopener noreferrer" style={{ color: '#00416A', textDecoration: 'underline' }}>docs.saucelabs.com</a>)</p>
 
                 <h4 style={{ color: '#00416A', fontSize: '18px', marginBottom: '10px', marginTop: '20px', fontWeight: '600' }}>Step 1) Get your Sauce Labs login keys</h4>
                 <ol style={{ fontSize: '14px', lineHeight: '1.8', color: '#333', paddingLeft: '24px' }}>
@@ -2395,21 +2381,19 @@ adb install -r "C:\\path\\to\\my-demo-app.apk"`}</pre>
                     <li>Copy your: <strong>Username</strong> and <strong>Access Key</strong> (<a href="https://docs.saucelabs.com/" target="_blank" rel="noopener noreferrer" style={{ color: '#00416A', textDecoration: 'underline' }}>docs.saucelabs.com</a>)</li>
                 </ol>
 
-                <h4 style={{ color: '#00416A', fontSize: '18px', marginBottom: '10px', marginTop: '20px', fontWeight: '600' }}>Step 2) Download a Sauce Labs demo app</h4>
-                <p style={{ fontSize: '14px', color: '#333', marginBottom: '8px' }}>Sauce Labs recommends using their <strong>Demo Apps</strong> if you don't have your own. (<a href="https://docs.saucelabs.com/" target="_blank" rel="noopener noreferrer" style={{ color: '#00416A', textDecoration: 'underline' }}>docs.saucelabs.com</a>)</p>
-                <p style={{ fontSize: '14px', color: '#333', marginBottom: '8px' }}><strong>Pick one:</strong></p>
+                <h4 style={{ color: '#00416A', fontSize: '18px', marginBottom: '10px', marginTop: '20px', fontWeight: '600' }}>Step 2) Download the Sauce Labs iOS demo app</h4>
+                <p style={{ fontSize: '14px', color: '#333', marginBottom: '8px' }}>Sauce Labs provides <strong>iOS Demo Apps</strong> for real device testing. (<a href="https://docs.saucelabs.com/" target="_blank" rel="noopener noreferrer" style={{ color: '#00416A', textDecoration: 'underline' }}>docs.saucelabs.com</a>)</p>
                 <ul style={leftAlignStyles.list}>
-                    <li><strong>Android Demo App</strong> → download the <code style={{ backgroundColor: '#f8f9fa', padding: '2px 6px', borderRadius: '4px', color: '#00416A' }}>.apk</code></li>
-                    <li><strong>iOS Demo App</strong> → download the <code style={{ backgroundColor: '#f8f9fa', padding: '2px 6px', borderRadius: '4px', color: '#00416A' }}>.ipa</code> (<a href="https://docs.saucelabs.com/" target="_blank" rel="noopener noreferrer" style={{ color: '#00416A', textDecoration: 'underline' }}>docs.saucelabs.com</a>)</li>
+                    <li>Download the <strong>iOS Demo App</strong> (<code style={{ backgroundColor: '#f8f9fa', padding: '2px 6px', borderRadius: '4px', color: '#00416A' }}>.ipa</code>) from Sauce Labs docs or demo app resources</li>
                 </ul>
 
-                <h4 style={{ color: '#00416A', fontSize: '18px', marginBottom: '10px', marginTop: '20px', fontWeight: '600' }}>Step 3) Upload the demo app to Sauce "Mobile App Storage"</h4>
+                <h4 style={{ color: '#00416A', fontSize: '18px', marginBottom: '10px', marginTop: '20px', fontWeight: '600' }}>Step 3) Upload the iOS demo app to Sauce "Mobile App Storage"</h4>
                 <ol style={{ fontSize: '14px', lineHeight: '1.8', color: '#333', paddingLeft: '24px' }}>
                     <li>In Sauce Labs, open <strong>Mobile App Storage</strong></li>
-                    <li>Upload the demo app file (<code style={{ backgroundColor: '#f8f9fa', padding: '2px 6px', borderRadius: '4px', color: '#00416A' }}>.apk</code> or <code style={{ backgroundColor: '#f8f9fa', padding: '2px 6px', borderRadius: '4px', color: '#00416A' }}>.ipa</code>)</li>
-                    <li>After upload, note the app reference you'll use in your test: <code style={{ backgroundColor: '#f8f9fa', padding: '2px 6px', borderRadius: '4px', color: '#00416A' }}>storage:&lt;file_id&gt;</code> <strong>OR</strong> <code style={{ backgroundColor: '#f8f9fa', padding: '2px 6px', borderRadius: '4px', color: '#00416A' }}>storage:filename=&lt;your-file-name&gt;.apk</code> (or <code style={{ backgroundColor: '#f8f9fa', padding: '2px 6px', borderRadius: '4px', color: '#00416A' }}>.ipa</code>) (<a href="https://docs.saucelabs.com/" target="_blank" rel="noopener noreferrer" style={{ color: '#00416A', textDecoration: 'underline' }}>docs.saucelabs.com</a>)</li>
+                    <li>Upload the iOS demo app file (<code style={{ backgroundColor: '#f8f9fa', padding: '2px 6px', borderRadius: '4px', color: '#00416A' }}>.ipa</code>)</li>
+                    <li>After upload, note the app reference for your test: <code style={{ backgroundColor: '#f8f9fa', padding: '2px 6px', borderRadius: '4px', color: '#00416A' }}>storage:&lt;file_id&gt;</code> or <code style={{ backgroundColor: '#f8f9fa', padding: '2px 6px', borderRadius: '4px', color: '#00416A' }}>storage:filename=&lt;your-file-name&gt;.ipa</code> (<a href="https://docs.saucelabs.com/" target="_blank" rel="noopener noreferrer" style={{ color: '#00416A', textDecoration: 'underline' }}>docs.saucelabs.com</a>)</li>
                 </ol>
-                <p style={{ fontSize: '14px', color: '#333', marginTop: '8px' }}>Sauce App Storage supports <strong>.apk/.aab/.ipa</strong> and is used for both virtual and real devices. (<a href="https://docs.saucelabs.com/" target="_blank" rel="noopener noreferrer" style={{ color: '#00416A', textDecoration: 'underline' }}>docs.saucelabs.com</a>)</p>
+                <p style={{ fontSize: '14px', color: '#333', marginTop: '8px' }}>Sauce App Storage supports <strong>.ipa</strong> for iOS real devices. (<a href="https://docs.saucelabs.com/" target="_blank" rel="noopener noreferrer" style={{ color: '#00416A', textDecoration: 'underline' }}>docs.saucelabs.com</a>)</p>
 
                 <h4 style={{ color: '#00416A', fontSize: '18px', marginBottom: '10px', marginTop: '20px', fontWeight: '600' }}>Step 4) Create your WebdriverIO + TypeScript project (one-time)</h4>
                 <ol style={{ fontSize: '14px', lineHeight: '1.8', color: '#333', paddingLeft: '24px' }}>
@@ -2453,26 +2437,22 @@ adb install -r "C:\\path\\to\\my-demo-app.apk"`}</pre>
                 </ul>
                 <p style={{ fontSize: '14px', color: '#333', marginTop: '8px' }}>Sauce's modern default endpoint for WDIO is the unified platform (US West). (<a href="https://v7.webdriver.io/docs/sauce-service" target="_blank" rel="noopener noreferrer" style={{ color: '#00416A', textDecoration: 'underline' }}>v7.webdriver.io</a>)</p>
 
-                <h4 style={{ color: '#00416A', fontSize: '18px', marginBottom: '10px', marginTop: '20px', fontWeight: '600' }}>Step 7) Choose ONE real device capability (Android or iOS)</h4>
-                <h5 style={{ color: '#00416A', fontSize: '16px', marginBottom: '8px', marginTop: '16px', fontWeight: '600' }}>Option A — Android real device (Sauce demo app from storage)</h5>
-                <p style={{ fontSize: '14px', color: '#333', marginBottom: '8px' }}>Use your uploaded app reference:</p>
-                <p style={{ fontSize: '14px', color: '#333', marginBottom: '8px' }}><code style={{ backgroundColor: '#f8f9fa', padding: '2px 6px', borderRadius: '4px', color: '#00416A' }}>storage:&lt;file_id&gt;</code> or <code style={{ backgroundColor: '#f8f9fa', padding: '2px 6px', borderRadius: '4px', color: '#00416A' }}>storage:filename=...apk</code> (<a href="https://docs.saucelabs.com/" target="_blank" rel="noopener noreferrer" style={{ color: '#00416A', textDecoration: 'underline' }}>docs.saucelabs.com</a>)</p>
-                <p style={{ fontSize: '14px', color: '#333', marginBottom: '8px' }}>Example capability shape (high-level): platform: Android, automation: UiAutomator2, app: your Sauce storage reference, sauce job name/build (for reporting).</p>
-                <p style={{ fontSize: '14px', color: '#333', marginTop: '8px' }}>Sauce requires the <code style={{ backgroundColor: '#f8f9fa', padding: '2px 6px', borderRadius: '4px', color: '#00416A' }}>app</code> capability (storage id/filename or public URL) for native app tests on real devices. (<a href="https://docs.saucelabs.com/" target="_blank" rel="noopener noreferrer" style={{ color: '#00416A', textDecoration: 'underline' }}>docs.saucelabs.com</a>)</p>
-                <h5 style={{ color: '#00416A', fontSize: '16px', marginBottom: '8px', marginTop: '16px', fontWeight: '600' }}>Option B — iOS real device (Sauce demo app from storage)</h5>
-                <p style={{ fontSize: '14px', color: '#333', marginBottom: '8px' }}>Same idea: platform: iOS, automation: XCUITest, app: <code style={{ backgroundColor: '#f8f9fa', padding: '2px 6px', borderRadius: '4px', color: '#00416A' }}>storage:&lt;file_id&gt;</code> or <code style={{ backgroundColor: '#f8f9fa', padding: '2px 6px', borderRadius: '4px', color: '#00416A' }}>storage:filename=...ipa</code> (<a href="https://docs.saucelabs.com/" target="_blank" rel="noopener noreferrer" style={{ color: '#00416A', textDecoration: 'underline' }}>docs.saucelabs.com</a>)</p>
+                <h4 style={{ color: '#00416A', fontSize: '18px', marginBottom: '10px', marginTop: '20px', fontWeight: '600' }}>Step 7) Set iOS real device capabilities</h4>
+                <p style={{ fontSize: '14px', color: '#333', marginBottom: '8px' }}>In <code style={{ backgroundColor: '#f8f9fa', padding: '2px 6px', borderRadius: '4px', color: '#00416A' }}>wdio.conf.ts</code>, use <strong>iOS</strong> capabilities with your Sauce app reference:</p>
+                <p style={{ fontSize: '14px', color: '#333', marginBottom: '8px' }}><code style={{ backgroundColor: '#f8f9fa', padding: '2px 6px', borderRadius: '4px', color: '#00416A' }}>platformName: "iOS"</code>, <code style={{ backgroundColor: '#f8f9fa', padding: '2px 6px', borderRadius: '4px', color: '#00416A' }}>appium:automationName: "XCUITest"</code>, <code style={{ backgroundColor: '#f8f9fa', padding: '2px 6px', borderRadius: '4px', color: '#00416A' }}>app: "storage:&lt;file_id&gt;"</code> or <code style={{ backgroundColor: '#f8f9fa', padding: '2px 6px', borderRadius: '4px', color: '#00416A' }}>storage:filename=...ipa</code>. Add Sauce job name/build for reporting. (<a href="https://docs.saucelabs.com/" target="_blank" rel="noopener noreferrer" style={{ color: '#00416A', textDecoration: 'underline' }}>docs.saucelabs.com</a>)</p>
+                <p style={{ fontSize: '14px', color: '#333', marginTop: '8px' }}>Sauce requires the <code style={{ backgroundColor: '#f8f9fa', padding: '2px 6px', borderRadius: '4px', color: '#00416A' }}>app</code> capability (storage id or filename) for iOS native app tests on real devices. (<a href="https://docs.saucelabs.com/" target="_blank" rel="noopener noreferrer" style={{ color: '#00416A', textDecoration: 'underline' }}>docs.saucelabs.com</a>)</p>
 
-                <h4 style={{ color: '#00416A', fontSize: '18px', marginBottom: '10px', marginTop: '20px', fontWeight: '600' }}>Step 8) Run your tests</h4>
+                <h4 style={{ color: '#00416A', fontSize: '18px', marginBottom: '10px', marginTop: '20px', fontWeight: '600' }}>Step 8) Run your iOS tests</h4>
                 <p style={{ fontSize: '14px', color: '#333', marginBottom: '8px' }}>From your project folder:</p>
                 <div style={{ backgroundColor: '#f8f9fa', padding: '12px', borderRadius: '6px', fontFamily: 'monospace', fontSize: '14px', border: '1px solid #e0e0e0', margin: '8px 0 12px 0', overflowX: 'auto' }}>
                     <pre style={{ margin: 0, whiteSpace: 'pre-wrap' }}>{`npx wdio run wdio.conf.ts`}</pre>
                 </div>
-                <p style={{ fontSize: '14px', color: '#333', marginTop: '12px' }}>Sauce Labs will: reserve a <strong>real phone</strong>, install the demo app, run your test steps, and show results (video/logs) in your Sauce dashboard (<a href="https://docs.saucelabs.com/" target="_blank" rel="noopener noreferrer" style={{ color: '#00416A', textDecoration: 'underline' }}>docs.saucelabs.com</a>)</p>
+                <p style={{ fontSize: '14px', color: '#333', marginTop: '12px' }}>Sauce Labs will: reserve a <strong>real iPhone</strong>, install the iOS demo app, run your test steps, and show results (video/logs) in your Sauce dashboard. (<a href="https://docs.saucelabs.com/" target="_blank" rel="noopener noreferrer" style={{ color: '#00416A', textDecoration: 'underline' }}>docs.saucelabs.com</a>)</p>
 
                 <hr style={{ border: 'none', borderTop: '1px solid #e0e0e0', margin: '24px 0' }} />
 
                 <h4 style={{ color: '#00416A', fontSize: '18px', marginBottom: '10px', marginTop: '20px', fontWeight: '600' }}>Quick "non-technical" summary</h4>
-                <p style={{ fontSize: '14px', color: '#333' }}><strong>Download</strong> Sauce demo app → <strong>upload</strong> to Sauce App Storage → <strong>run</strong> WDIO tests from your Mac → Sauce runs them on a <strong>real device in the cloud</strong>. (<a href="https://docs.saucelabs.com/" target="_blank" rel="noopener noreferrer" style={{ color: '#00416A', textDecoration: 'underline' }}>docs.saucelabs.com</a>)</p>
+                <p style={{ fontSize: '14px', color: '#333' }}><strong>Download</strong> Sauce iOS demo app (.ipa) → <strong>upload</strong> to Sauce App Storage → <strong>run</strong> WDIO tests from your Mac → Sauce runs them on a <strong>real iPhone in the cloud</strong>. (<a href="https://docs.saucelabs.com/" target="_blank" rel="noopener noreferrer" style={{ color: '#00416A', textDecoration: 'underline' }}>docs.saucelabs.com</a>)</p>
                     </div>
                     )}
                 </div>

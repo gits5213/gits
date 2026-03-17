@@ -6,6 +6,7 @@ export function generateStaticParams() {
   return [
     // Tab routes
     { slug: 'examples' },
+    { slug: 'hands-on-practical-exam' },
     { slug: 'testcases' },
     { slug: 'quiz' },
     { slug: 'scorecard' },
