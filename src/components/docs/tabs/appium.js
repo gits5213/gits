@@ -2197,7 +2197,7 @@ adb install -r "C:\\path\\to\\my-demo-app.apk"`}</pre>
                 )}
             </div>
 
-            {/* Appium iOS native + TypeScript + WebDriverIO — macOS Baby Steps (outer collapsible) */}
+            {/* Appium iOS Native + Xcode + TypeScript + WebdriverIO — macOS Baby Steps (outer collapsible) */}
             <div style={{ marginBottom: '40px' }}>
                 <div
                     style={{ ...sectionHeaderStyle, marginBottom: macOSBabyStepsOpen ? '4px' : '16px' }}
@@ -2206,258 +2206,311 @@ adb install -r "C:\\path\\to\\my-demo-app.apk"`}</pre>
                     aria-expanded={macOSBabyStepsOpen}
                 >
                     <h2 style={{ color: '#00416A', fontSize: '24px', margin: 0, fontWeight: 'bold' }}>
-                        Appium iOS native Mobile app testing leveraging TypeScript + WebDriverIO on macOS — Baby Steps
+                        Appium iOS Native Mobile App Testing Using Xcode, TypeScript + WebdriverIO on macOS — Baby Steps
                     </h2>
                     <span style={{ fontSize: '20px', color: '#00416A' }}>{macOSBabyStepsOpen ? '▼' : '▶'}</span>
                 </div>
                 {macOSBabyStepsOpen && (
-                <div style={{ ...sectionBodyStyle, marginBottom: '24px' }}>
-                <p style={leftAlignStyles.paragraph}>
-                    Written for beginners. No coding experience needed. Do each step in order. When you see a gray box with text, copy it exactly and paste it where the step says (usually in Terminal — the command-line window where you type commands). If something fails, go back one step and try again.
-                </p>
-                <p style={{ fontSize: '14px', color: '#333', marginTop: '16px', marginBottom: '8px' }}>
-                    <strong>Note:</strong> This section is for <strong>iOS native</strong> app testing only. You need <strong>Xcode</strong> and <strong>macOS</strong> to run the iOS Simulator or connect a real iPhone. We use <strong>TypeScript + WebDriverIO</strong> with the <strong>XCUITest</strong> driver.
-                </p>
-                <div style={{ marginTop: '24px' }}>
-                {/* Section 1: iOS Simulator + Sauce Labs Demo App (macOS) */}
-                <div>
-                    <div
-                        style={sectionHeaderStyle}
-                        onClick={() => toggleSectionMacOS(1)}
-                        role="button"
-                        aria-expanded={openSectionMacOS === 1}
-                    >
-                        <h3 style={{ color: '#00416A', fontSize: '22px', margin: 0, fontWeight: 'bold' }}>
-                            Appium + TypeScript + WebdriverIO on macOS (iOS Simulator + Sauce Labs Demo App)
-                        </h3>
-                        <span style={{ fontSize: '18px', color: '#00416A' }}>{openSectionMacOS === 1 ? '▼' : '▶'}</span>
-                    </div>
-                    {openSectionMacOS === 1 && (
-                    <div style={sectionBodyStyle}>
-                <p style={{ fontSize: '14px', color: '#555', marginBottom: '16px', paddingTop: '8px' }}>
-                    This is a <strong>baby-steps</strong> guide for beginners. You will run tests on the <strong>iOS Simulator</strong> (virtual iPhone on your Mac) using a <strong>sample app (Sauce Labs Demo App for iOS)</strong>.
-                </p>
+                    <div style={{ ...sectionBodyStyle, marginBottom: '24px' }}>
+                        <p style={leftAlignStyles.paragraph}>
+                            This beginner-friendly learning path is designed for students who want to start <strong>iOS native mobile automation from zero</strong>.
+                            You can think of it as a &quot;paint by numbers&quot; guide: each step explains <strong>what</strong> is happening in simple words, then shows
+                            exactly <strong>what to click or type</strong> so non‑technical learners can follow along.
+                        </p>
 
-                <hr style={{ border: 'none', borderTop: '1px solid #e0e0e0', margin: '24px 0' }} />
+                        {/* Step 1 */}
+                        <h3 style={{ color: '#00416A', fontSize: '20px', marginTop: '20px', fontWeight: 600 }}>Step 1: Understand iOS Native Testing Basics</h3>
+                        <p style={leftAlignStyles.paragraph}>
+                            Learners first understand the difference between <strong>native apps</strong>, <strong>hybrid apps</strong>, and <strong>mobile web apps</strong>, and why iOS native apps
+                            require different tools and locator strategies than browser-based testing.
+                            This is the &quot;map&quot; before the journey, so they know what problem they are solving.
+                        </p>
+                        <ul style={leftAlignStyles.list}>
+                            <li>What is iOS native app testing</li>
+                            <li>Difference between native and web automation</li>
+                            <li>Why Appium is used for mobile automation</li>
+                            <li>Why Xcode and the iOS Simulator are required</li>
+                            <li>Why TypeScript + WebdriverIO is a modern stack</li>
+                        </ul>
+                        <p style={leftAlignStyles.paragraph}>
+                            Example comparison: a web login form uses HTML locators like <code>&lt;input id="username"&gt;</code>, while an iOS login screen uses native
+                            concepts such as <strong>accessibility id</strong>, <strong>iOS predicates</strong>, or <strong>class chain locators</strong>.
+                            In non‑technical terms: on the web you point at things by their &quot;HTML name&quot;; in an iPhone app you point at things by their
+                            &quot;accessibility label&quot; or internal iOS description.
+                        </p>
 
-                <h4 style={{ color: '#00416A', fontSize: '18px', marginBottom: '10px', marginTop: '20px', fontWeight: '600' }}>What you will have at the end</h4>
-                <ul style={leftAlignStyles.list}>
-                    <li>✅ A running iOS Simulator (virtual iPhone)</li>
-                    <li>✅ The demo app installed on the simulator</li>
-                    <li>✅ A WebdriverIO + TypeScript project for iOS native testing</li>
-                    <li>✅ 1 working Appium iOS test you can run anytime</li>
-                </ul>
+                        {/* Step 2 */}
+                        <h3 style={{ color: '#00416A', fontSize: '20px', marginTop: '24px', fontWeight: 600 }}>Step 2: Prepare the macOS Environment</h3>
+                        <p style={leftAlignStyles.paragraph}>
+                            Before writing any automation code, learners set up the required development environment on macOS. This means installing all the tools and
+                            checking that the machine is truly ready for iOS automation work.
+                        </p>
+                        <p style={leftAlignStyles.paragraph}><strong>Implementation details (plain English checklist):</strong></p>
+                        <ul style={leftAlignStyles.list}>
+                            <li><strong>Install Homebrew</strong> (the &quot;app store for the terminal&quot; on macOS).</li>
+                            <li><strong>Install Node.js and npm</strong> so JavaScript / TypeScript tools can run.</li>
+                            <li><strong>Install Java</strong> if you need it for related tools (some Appium helpers and ecosystem tools still rely on Java).</li>
+                            <li><strong>Install Xcode from the App Store</strong> so you have Apple&apos;s official iOS tooling.</li>
+                            <li><strong>Install Xcode Command Line Tools</strong> (either via <code>xcode-select --install</code> or Xcode prompts).</li>
+                            <li><strong>Accept the Xcode license</strong> and let it finish its first‑time setup.</li>
+                            <li><strong>Install Appium</strong> (either globally for practice or locally inside the project for real frameworks).</li>
+                            <li><strong>Install Appium Inspector</strong> so you can visually inspect elements on the app screens.</li>
+                            <li><strong>Verify everything from the Terminal</strong> with simple version and health‑check commands.</li>
+                        </ul>
+                        <p style={leftAlignStyles.paragraph}>
+                            The idea is to move slowly and check &quot;Did this work?&quot; after every command, so beginners never feel lost.
+                        </p>
+                        <p style={leftAlignStyles.paragraph}><strong>Beginner example commands (run one by one in Terminal):</strong></p>
+                        <CodeBlock language="bash" code={`brew install node
+node -v
+npm -v
+xcode-select --install
+npm install -g appium
+appium -v`} />
+                        <p style={leftAlignStyles.paragraph}>
+                            Learners verify each installation (for example, checking that <code>node -v</code> prints a version) instead of assuming everything worked.
+                        </p>
 
-                <hr style={{ border: 'none', borderTop: '1px solid #e0e0e0', margin: '24px 0' }} />
+                        {/* Step 3 */}
+                        <h3 style={{ color: '#00416A', fontSize: '20px', marginTop: '24px', fontWeight: 600 }}>Step 3: Configure Xcode for iOS Automation</h3>
+                        <p style={leftAlignStyles.paragraph}>
+                            This step walks <strong>non-technical learners</strong> through Xcode in simple language so they are not afraid of Apple&apos;s developer tools.
+                            The goal is to turn a plain Mac into a machine that can run a <strong>fake iPhone</strong> (simulator) for testing.
+                        </p>
+                        <ul style={leftAlignStyles.list}>
+                            <li><strong>Open Xcode for the first time:</strong> Go to the Mac App Store, install Xcode, then open it from Launchpad.</li>
+                            <li><strong>Accept Apple&apos;s agreements:</strong> The first time Xcode opens, click &quot;Agree&quot; on any license popups and wait while it finishes its setup.</li>
+                            <li><strong>Install the command line tools (Xcode&apos;s helpers):</strong> If a window pops up asking to install additional components, click &quot;Install&quot; and let it complete.</li>
+                            <li><strong>Download an iPhone simulator:</strong> In Xcode, go to <code>Settings &gt; Platforms &gt; iOS</code> (or &quot;Components&quot; / &quot;Simulators&quot; depending on version) and download at least one device such as <strong>iPhone 15</strong>.</li>
+                            <li><strong>Open the simulator like an app:</strong> From Xcode&apos;s menu, use <code>Window &gt; Devices and Simulators</code>, pick your iPhone simulator, and click the &quot;Play&quot; / &quot;Boot&quot; button.</li>
+                        </ul>
+                        <p style={leftAlignStyles.paragraph}>
+                            A simple way to explain this to beginners is: <em>&quot;Xcode is Apple&apos;s toolbox. The iOS Simulator is a fake iPhone that lives inside your Mac. 
+                            Before we can automate anything, we must prove that we can open that fake iPhone manually.&quot;</em>
+                        </p>
+                        <p style={leftAlignStyles.paragraph}>
+                            Once learners can see the iPhone home screen on their Mac (from the Simulator), they know Xcode is configured correctly. Only then do they move
+                            on to Appium, so they debug the <strong>platform first</strong>, not the automation tools.
+                        </p>
 
-                <h4 style={{ color: '#00416A', fontSize: '18px', marginBottom: '10px', marginTop: '20px', fontWeight: '600' }}>Step 1: Install the basic tools (one time)</h4>
-                <h5 style={{ color: '#00416A', fontSize: '16px', marginBottom: '8px', marginTop: '16px', fontWeight: '600' }}>1. Install Xcode</h5>
-                <ol style={{ fontSize: '14px', lineHeight: '1.8', color: '#333', paddingLeft: '24px' }}>
-                    <li>Install <strong>Xcode</strong> from the Mac App Store (required for iOS Simulator and XCUITest)</li>
-                    <li>Open Xcode once and accept the license; install any requested command-line tools</li>
-                </ol>
-                <h5 style={{ color: '#00416A', fontSize: '16px', marginBottom: '8px', marginTop: '16px', fontWeight: '600' }}>2. Install Node.js</h5>
-                <ol style={{ fontSize: '14px', lineHeight: '1.8', color: '#333', paddingLeft: '24px' }}>
-                    <li>Download and install <strong>Node.js (LTS version)</strong></li>
-                    <li>Confirm Node works: Open <strong>Terminal</strong> and run: <code style={{ backgroundColor: '#f8f9fa', padding: '2px 6px', borderRadius: '4px', color: '#00416A' }}>node -v</code> and <code style={{ backgroundColor: '#f8f9fa', padding: '2px 6px', borderRadius: '4px', color: '#00416A' }}>npm -v</code></li>
-                </ol>
+                        {/* Step 4 */}
+                        <h3 style={{ color: '#00416A', fontSize: '20px', marginTop: '24px', fontWeight: 600 }}>Step 4: Create the WebdriverIO + TypeScript Project</h3>
+                        <p style={leftAlignStyles.paragraph}>
+                            With the environment ready, learners create a clean, beginner-safe automation project using TypeScript and WebdriverIO.
+                            This is like creating a new empty folder for a school project, then asking a wizard to fill in the basic structure for you.
+                        </p>
+                        <p style={leftAlignStyles.paragraph}>
+                            Even non‑technical people can follow this: copy the commands, paste them into Terminal, press <strong>Enter</strong>, and wait until the
+                            prompts finish. The wizard will ask simple questions (for example, which test framework to use), and you can follow the recommended
+                            options from the instructions.
+                        </p>
+                        <p style={leftAlignStyles.paragraph}><strong>Commands to scaffold the project:</strong></p>
+                        <CodeBlock language="bash" code={`mkdir ios-appium-wdio
+cd ios-appium-wdio
+npm init -y
+npm init wdio@latest .`} />
+                        <p style={leftAlignStyles.paragraph}>
+                            The resulting structure separates <code>specs</code>, <code>pageobjects</code>, and <code>wdio.conf.ts</code>, so tests stay organized as the
+                            project grows.
+                        </p>
 
-                <h4 style={{ color: '#00416A', fontSize: '18px', marginBottom: '10px', marginTop: '20px', fontWeight: '600' }}>Step 2: Boot the iOS Simulator (virtual iPhone)</h4>
-                <ol style={{ fontSize: '14px', lineHeight: '1.8', color: '#333', paddingLeft: '24px' }}>
-                    <li>Open <strong>Xcode</strong> → <strong>Window → Devices and Simulators</strong> (or run <code style={{ backgroundColor: '#f8f9fa', padding: '2px 6px', borderRadius: '4px', color: '#00416A' }}>open -a Simulator</code> in Terminal)</li>
-                    <li>Under <strong>Simulators</strong>, pick a device (e.g. <strong>iPhone 15</strong>) and an iOS version</li>
-                    <li>Click the <strong>Play</strong> button to boot the simulator, or start it from the Simulator app</li>
-                </ol>
-                <p style={{ fontSize: '14px', color: '#333', marginTop: '8px' }}>✅ Wait until you see the iOS home screen.</p>
+                        <p style={leftAlignStyles.paragraph}>
+                            Before configuring Appium, beginners also need a <strong>sample iOS app</strong> (for example, a demo shopping app) so they have something
+                            real to open on the simulator or device. This avoids the stress of using a company app on day one.
+                        </p>
+                        <ul style={leftAlignStyles.list}>
+                            <li><strong>1. Open the sample app download link</strong> provided in the course or on the website. A common example is the Sauce Labs Sample App releases page at <a href="https://github.com/saucelabs/sample-app-mobile/releases" target="_blank" rel="noopener noreferrer" style={{ color: '#00416A', textDecoration: 'underline' }}>github.com/saucelabs/sample-app-mobile/releases</a>, where you can download an <code>.ipa</code> file for practice.</li>
+                            <li><strong>2. Click &quot;Download&quot; and save the file</strong> somewhere easy to find on your Mac, such as the <code>Downloads</code> folder.</li>
+                            <li><strong>3. Remember the full path to the file</strong> (for example, <code>/Users/yourname/Downloads/DemoApp.ipa</code>).</li>
+                            <li><strong>4. Later, you will paste this path</strong> into the Appium capabilities under the <code>'appium:app'</code> (simulator) or use the app&apos;s
+                                <code>bundleId</code> if it is already installed on a real device.</li>
+                        </ul>
+                        <p style={leftAlignStyles.paragraph}>
+                            For non‑technical learners, you can describe this step as: <em>&quot;First we download a practice app that is safe to experiment with. Then we tell
+                            Appium where that file lives, so the robot knows which app to open.&quot;</em>
+                        </p>
 
-                <h4 style={{ color: '#00416A', fontSize: '18px', marginBottom: '10px', marginTop: '20px', fontWeight: '600' }}>Step 3: Install Appium 2 and the XCUITest driver (one time)</h4>
-                <ol style={{ fontSize: '14px', lineHeight: '1.8', color: '#333', paddingLeft: '24px' }}>
-                    <li>Open <strong>Terminal</strong></li>
-                    <li>Install Appium: <code style={{ backgroundColor: '#f8f9fa', padding: '2px 6px', borderRadius: '4px', color: '#00416A' }}>npm i -g appium</code></li>
-                    <li>Install the <strong>XCUITest</strong> driver (for iOS): <code style={{ backgroundColor: '#f8f9fa', padding: '2px 6px', borderRadius: '4px', color: '#00416A' }}>appium driver install xcuitest</code></li>
-                    <li>Confirm driver is installed: <code style={{ backgroundColor: '#f8f9fa', padding: '2px 6px', borderRadius: '4px', color: '#00416A' }}>appium driver list --installed</code></li>
-                </ol>
+                        {/* Step 5 */}
+                        <h3 style={{ color: '#00416A', fontSize: '20px', marginTop: '24px', fontWeight: 600 }}>Step 5: Install and Configure Appium Drivers</h3>
+                        <p style={leftAlignStyles.paragraph}>
+                            Learners install the <strong>XCUITest</strong> driver for iOS and configure <strong>desired capabilities</strong> so Appium knows what to launch.
+                            You can think of desired capabilities as a &quot;flight ticket&quot; for the test: it tells Appium which device, which iOS version, and which app
+                            to open.
+                        </p>
+                        <CodeBlock language="bash" code={`appium driver install xcuitest
+appium driver list
+appium`} />
+                        <p style={leftAlignStyles.paragraph}><strong>Sample iOS simulator capabilities:</strong></p>
+                        <CodeBlock language="ts" code={`capabilities: [{
+  platformName: 'iOS',
+  'appium:deviceName': 'iPhone 15',
+  'appium:platformVersion': '17.0',
+  'appium:automationName': 'XCUITest',
+  'appium:app': '/Users/yourname/apps/MyiOSApp.app'
+}]`} />
 
-                <h4 style={{ color: '#00416A', fontSize: '18px', marginBottom: '10px', marginTop: '20px', fontWeight: '600' }}>Step 4: Get the Sauce Labs Demo App for iOS</h4>
-                <p style={{ fontSize: '14px', color: '#333', marginBottom: '8px' }}>You need the <strong>iOS demo app</strong> (e.g. <code style={{ backgroundColor: '#f8f9fa', padding: '2px 6px', borderRadius: '4px', color: '#00416A' }}>.app</code> for Simulator or <code style={{ backgroundColor: '#f8f9fa', padding: '2px 6px', borderRadius: '4px', color: '#00416A' }}>.ipa</code> for device).</p>
-                <ul style={leftAlignStyles.list}>
-                    <li>Download the <strong>Sauce Labs demo iOS app</strong> (e.g. "My Demo App" or "Sauce Labs Demo" for iOS) from Sauce Labs docs</li>
-                    <li>For Simulator: use the <strong>.app</strong> bundle and put it somewhere like <code style={{ backgroundColor: '#f8f9fa', padding: '2px 6px', borderRadius: '4px', color: '#00416A' }}>~/Downloads/MyDemoApp.app</code></li>
-                </ul>
-                <p style={{ fontSize: '14px', color: '#333', marginTop: '8px' }}>✅ The Simulator will install the app when you point <code style={{ backgroundColor: '#f8f9fa', padding: '2px 6px', borderRadius: '4px', color: '#00416A' }}>app</code> to this path in capabilities.</p>
+                        {/* Step 6 */}
+                        <h3 style={{ color: '#00416A', fontSize: '20px', marginTop: '24px', fontWeight: 600 }}>Step 6: Launch the First iOS Simulator Test</h3>
+                        <p style={leftAlignStyles.paragraph}>
+                            The first automated run focuses on verifying that everything connects correctly: Appium server, simulator, and app.
+                            At this stage, the goal is not to test business rules; it is simply to prove &quot;the robot can touch the fake iPhone&quot;.
+                        </p>
+                        <p style={leftAlignStyles.paragraph}>
+                            Non‑technical learners can treat this as their &quot;Hello, World&quot; moment: if the simulator opens and the app appears without errors,
+                            they have wired all the tools together correctly.
+                        </p>
+                        <CodeBlock language="ts" code={`describe('App Launch Validation', () => {
+  it('should open the app successfully', async () => {
+    await driver.pause(5000);
+  });
+});`} />
+                        <p style={leftAlignStyles.paragraph}>
+                            This simple test confirms that the app launches on the simulator before adding any functional checks.
+                        </p>
 
-                <h4 style={{ color: '#00416A', fontSize: '18px', marginBottom: '10px', marginTop: '20px', fontWeight: '600' }}>Step 5: Start the Appium Server (required every time you test)</h4>
-                <ol style={{ fontSize: '14px', lineHeight: '1.8', color: '#333', paddingLeft: '24px' }}>
-                    <li>Open Terminal</li>
-                    <li>Run: <code style={{ backgroundColor: '#f8f9fa', padding: '2px 6px', borderRadius: '4px', color: '#00416A' }}>appium</code></li>
-                </ol>
-                <p style={{ fontSize: '14px', color: '#333', marginTop: '8px' }}>✅ Leave this terminal open (don't close it).</p>
+                        {/* Step 7 */}
+                        <h3 style={{ color: '#00416A', fontSize: '20px', marginTop: '24px', fontWeight: 600 }}>Step 7: Inspect Mobile Elements</h3>
+                        <p style={leftAlignStyles.paragraph}>
+                            Using <strong>Appium Inspector</strong>, learners connect to the running session, explore the UI hierarchy, and practice using
+                            <strong> accessibility id</strong> locators.
+                            Appium Inspector is like a &quot;pause and inspect&quot; camera that shows what elements are on the screen and what they&apos;re called.
+                        </p>
+                        <CodeBlock language="ts" code={`const loginButton = $('~Login');
+const usernameField = $('~usernameInput');
+const passwordField = $('~passwordInput');`} />
+                        <p style={leftAlignStyles.paragraph}>
+                            They compare this with long XPath locators and learn why accessibility ids are usually a better, more stable choice.
+                        </p>
 
-                <h4 style={{ color: '#00416A', fontSize: '18px', marginBottom: '10px', marginTop: '20px', fontWeight: '600' }}>Step 6: Create a WebdriverIO + TypeScript project</h4>
-                <ol style={{ fontSize: '14px', lineHeight: '1.8', color: '#333', paddingLeft: '24px' }}>
-                    <li>Open a <strong>new Terminal window</strong></li>
-                    <li>Create a project folder: <code style={{ backgroundColor: '#f8f9fa', padding: '2px 6px', borderRadius: '4px', color: '#00416A' }}>mkdir wdio-appium-ios-ts &amp;&amp; cd wdio-appium-ios-ts</code></li>
-                    <li>Start the setup wizard: <code style={{ backgroundColor: '#f8f9fa', padding: '2px 6px', borderRadius: '4px', color: '#00416A' }}>npm init -y</code> then <code style={{ backgroundColor: '#f8f9fa', padding: '2px 6px', borderRadius: '4px', color: '#00416A' }}>npx wdio config</code></li>
-                    <li>During the wizard choose: <strong>TypeScript</strong>: Yes, <strong>Framework</strong>: Mocha (easy), <strong>Service</strong>: Appium, <strong>Reporter</strong>: spec</li>
-                </ol>
-                <p style={{ fontSize: '14px', color: '#333', marginTop: '8px' }}>✅ After this, your project will have a <code style={{ backgroundColor: '#f8f9fa', padding: '2px 6px', borderRadius: '4px', color: '#00416A' }}>wdio.conf.ts</code> file.</p>
+                        {/* Step 8 */}
+                        <h3 style={{ color: '#00416A', fontSize: '20px', marginTop: '24px', fontWeight: 600 }}>Step 8: Write the First Real Test Case</h3>
+                        <p style={leftAlignStyles.paragraph}>
+                            Learners then automate a simple login scenario that taps buttons, enters text, and asserts a successful navigation.
+                            In everyday language: they teach the computer how a human would log in step‑by‑step, and then the computer repeats those steps automatically.
+                        </p>
+                        <CodeBlock language="ts" code={`describe('Login Feature', () => {
+  it('should allow user to login with valid credentials', async () => {
+    const usernameField = $('~usernameInput');
+    const passwordField = $('~passwordInput');
+    const loginButton   = $('~Login');
+    const homeTitle     = $('~Home');
 
-                <h4 style={{ color: '#00416A', fontSize: '18px', marginBottom: '10px', marginTop: '20px', fontWeight: '600' }}>Step 7: Add iOS capabilities (Simulator + app)</h4>
-                <p style={{ fontSize: '14px', color: '#333', marginBottom: '8px' }}>Open <code style={{ backgroundColor: '#f8f9fa', padding: '2px 6px', borderRadius: '4px', color: '#00416A' }}>wdio.conf.ts</code> and set the iOS capability like this (example):</p>
-                <div style={{ backgroundColor: '#f8f9fa', padding: '12px', borderRadius: '6px', fontFamily: 'monospace', fontSize: '13px', border: '1px solid #e0e0e0', marginBottom: '12px', overflowX: 'auto' }}>
-                    <pre style={{ margin: 0, whiteSpace: 'pre-wrap' }}>{`capabilities: [
-  {
-    platformName: "iOS",
-    "appium:automationName": "XCUITest",
-    "appium:deviceName": "iPhone 15",
-    "appium:platformVersion": "17.0",
-    "appium:app": "/Users/you/Downloads/MyDemoApp.app",
-    "appium:noReset": true,
-    "appium:newCommandTimeout": 120
+    await usernameField.setValue('testuser');
+    await passwordField.setValue('Password123');
+    await loginButton.click();
+
+    await expect(homeTitle).toBeDisplayed();
+  });
+});`} />
+
+                        {/* Step 9 */}
+                        <h3 style={{ color: '#00416A', fontSize: '20px', marginTop: '24px', fontWeight: 600 }}>Step 9: Introduce Page Object Model</h3>
+                        <p style={leftAlignStyles.paragraph}>
+                            To keep tests readable and maintainable, learners extract screen interactions into a simple <strong>Page Object</strong>.
+                            A page object is just a &quot;cheat sheet&quot; for one screen: all the buttons and fields are described once, in one place, so the tests
+                            above can stay very short and plain‑English.
+                        </p>
+                        <CodeBlock language="ts" code={`// test/pageobjects/login.page.ts
+class LoginPage {
+  get usernameField() { return $('~usernameInput'); }
+  get passwordField() { return $('~passwordInput'); }
+  get loginButton()   { return $('~Login'); }
+
+  async login(username: string, password: string) {
+    await this.usernameField.setValue(username);
+    await this.passwordField.setValue(password);
+    await this.loginButton.click();
   }
-],`}</pre>
-                </div>
-                <p style={{ fontSize: '14px', color: '#666', fontStyle: 'italic', marginTop: '8px' }}>Adjust <code style={{ backgroundColor: '#f8f9fa', padding: '2px 6px', borderRadius: '4px', color: '#00416A' }}>deviceName</code>, <code style={{ backgroundColor: '#f8f9fa', padding: '2px 6px', borderRadius: '4px', color: '#00416A' }}>platformVersion</code>, and <code style={{ backgroundColor: '#f8f9fa', padding: '2px 6px', borderRadius: '4px', color: '#00416A' }}>app</code> to match your Simulator and demo app path.</p>
+}
 
-                <h4 style={{ color: '#00416A', fontSize: '18px', marginBottom: '10px', marginTop: '20px', fontWeight: '600' }}>Step 8: Run your first iOS test</h4>
-                <ol style={{ fontSize: '14px', lineHeight: '1.8', color: '#333', paddingLeft: '24px' }}>
-                    <li>Make sure: iOS Simulator is running ✅, Appium server is running ✅</li>
-                    <li>Run tests: <code style={{ backgroundColor: '#f8f9fa', padding: '2px 6px', borderRadius: '4px', color: '#00416A' }}>npx wdio run wdio.conf.ts</code></li>
-                </ol>
-                <p style={{ fontSize: '14px', color: '#333', marginTop: '8px' }}>✅ If everything is correct, WebdriverIO will connect to the iOS Simulator and run your native app test.</p>
+export default new LoginPage();`} />
+                        <CodeBlock language="ts" code={`// test/specs/login.e2e.ts
+import LoginPage from '../pageobjects/login.page';
 
-                <h4 style={{ color: '#00416A', fontSize: '18px', marginBottom: '10px', marginTop: '20px', fontWeight: '600' }}>Step 9: Find elements (locators) with Appium Inspector (optional)</h4>
-                <ol style={{ fontSize: '14px', lineHeight: '1.8', color: '#333', paddingLeft: '24px' }}>
-                    <li>Open <strong>Appium Inspector</strong> on macOS</li>
-                    <li>Create a new session with: Host: <code style={{ backgroundColor: '#f8f9fa', padding: '2px 6px', borderRadius: '4px', color: '#00416A' }}>127.0.0.1</code>, Port: <code style={{ backgroundColor: '#f8f9fa', padding: '2px 6px', borderRadius: '4px', color: '#00416A' }}>4723</code>, Path: <code style={{ backgroundColor: '#f8f9fa', padding: '2px 6px', borderRadius: '4px', color: '#00416A' }}>/</code></li>
-                    <li>Use the same iOS capabilities and click <strong>Start Session</strong></li>
-                    <li>Inspect elements to get: <code style={{ backgroundColor: '#f8f9fa', padding: '2px 6px', borderRadius: '4px', color: '#00416A' }}>accessibility id</code>, <code style={{ backgroundColor: '#f8f9fa', padding: '2px 6px', borderRadius: '4px', color: '#00416A' }}>name</code>, <code style={{ backgroundColor: '#f8f9fa', padding: '2px 6px', borderRadius: '4px', color: '#00416A' }}>class name</code>, or XPath for your tests</li>
-                </ol>
-                <p style={{ fontSize: '14px', color: '#333', marginTop: '8px' }}>✅ Use these locators in your WebdriverIO + TypeScript specs for iOS native testing.</p>
+describe('Login Feature', () => {
+  it('should login successfully', async () => {
+    await LoginPage.login('testuser', 'Password123');
+  });
+});`} />
 
-                <hr style={{ border: 'none', borderTop: '1px solid #e0e0e0', margin: '24px 0' }} />
+                        {/* Step 10 */}
+                        <h3 style={{ color: '#00416A', fontSize: '20px', marginTop: '24px', fontWeight: 600 }}>Step 10: Handle Waits and Synchronization</h3>
+                        <p style={leftAlignStyles.paragraph}>
+                            Instead of relying on random pauses, learners adopt explicit waits so tests become less flaky and more reliable.
+                            This is the difference between &quot;always sleep 5 seconds and hope&quot; versus &quot;wait until the button is really visible, then click it&quot;.
+                        </p>
+                        <CodeBlock language="ts" code={`// Weak (fixed sleep)
+await driver.pause(5000);
 
-                <h4 style={{ color: '#00416A', fontSize: '18px', marginBottom: '10px', marginTop: '20px', fontWeight: '600' }}>Quick troubleshooting (iOS)</h4>
-                <p style={{ fontSize: '14px', color: '#333', marginBottom: '8px' }}><strong>Simulator not found</strong> — Ensure the Simulator is booted and <code style={{ backgroundColor: '#f8f9fa', padding: '2px 6px', borderRadius: '4px', color: '#00416A' }}>deviceName</code> / <code style={{ backgroundColor: '#f8f9fa', padding: '2px 6px', borderRadius: '4px', color: '#00416A' }}>platformVersion</code> match a simulator in Xcode.</p>
-                <p style={{ fontSize: '14px', color: '#333', marginBottom: '8px' }}><strong>XCUITest driver errors</strong> — Confirm: <code style={{ backgroundColor: '#f8f9fa', padding: '2px 6px', borderRadius: '4px', color: '#00416A' }}>appium driver list --installed</code> shows <code style={{ backgroundColor: '#f8f9fa', padding: '2px 6px', borderRadius: '4px', color: '#00416A' }}>xcuitest</code>.</p>
-                <p style={{ fontSize: '14px', color: '#333', marginBottom: '8px' }}><strong>App not launching</strong> — Use the full path to the <code style={{ backgroundColor: '#f8f9fa', padding: '2px 6px', borderRadius: '4px', color: '#00416A' }}>.app</code> bundle and ensure it was built for the Simulator (not device-only).</p>
+// Better (wait until button is visible)
+const loginButton = $('~Login');
+await loginButton.waitForDisplayed({ timeout: 10000 });
+await loginButton.click();`} />
+
+                        {/* Step 11 */}
+                        <h3 style={{ color: '#00416A', fontSize: '20px', marginTop: '24px', fontWeight: 600 }}>Step 11: Run Tests on Real iPhone Devices</h3>
+                        <p style={leftAlignStyles.paragraph}>
+                            Once comfortable with simulators, learners are introduced to real-device execution, including device trust, UDID, and signing basics.
+                            A simple mental model is: the simulator is a &quot;practice phone&quot;; a real device adds extra security steps because it is an actual iPhone.
+                        </p>
+                        <p style={leftAlignStyles.paragraph}>
+                            <strong>How a non‑technical learner can find the iPhone UDID (unique device ID):</strong>
+                        </p>
+                        <ul style={leftAlignStyles.list}>
+                            <li><strong>1. Connect the iPhone with a cable</strong> to the Mac and unlock the phone (enter the passcode so the home screen is visible).</li>
+                            <li><strong>2. If asked, tap &quot;Trust This Computer&quot; on the iPhone</strong> and enter the passcode again—this lets the Mac see the device.</li>
+                            <li><strong>3. Open Xcode</strong> on the Mac.</li>
+                            <li><strong>4. In Xcode, open</strong> <code>Window &gt; Devices and Simulators</code>.</li>
+                            <li><strong>5. In the left panel, under &quot;Devices&quot;</strong>, click on your iPhone (for example, &quot;John&apos;s iPhone&quot;).</li>
+                            <li><strong>6. Look for the &quot;Identifier&quot; field</strong> in the right-hand details area — this long string of letters and numbers is the <strong>UDID</strong>.</li>
+                            <li><strong>7. Copy the UDID</strong> (right‑click or use the copy icon) and paste it into the <code>'appium:udid'</code> capability value in your config file.</li>
+                        </ul>
+                        <CodeBlock language="ts" code={`capabilities: [{
+  platformName: 'iOS',
+  'appium:deviceName': 'iPhone 14',
+  'appium:udid': '00008110-001234567890801E',
+  'appium:automationName': 'XCUITest',
+  'appium:bundleId': 'com.example.myiosapp'
+}]`} />
+
+                        {/* Step 12 */}
+                        <h3 style={{ color: '#00416A', fontSize: '20px', marginTop: '24px', fontWeight: 600 }}>Step 12: Debug and Troubleshoot Common Issues</h3>
+                        <p style={leftAlignStyles.paragraph}>
+                            Learners practice reading Appium and WebdriverIO logs to diagnose common beginner problems like wrong simulator names, bad app paths,
+                            or missing drivers.
+                            They are shown where to look first when something fails, so errors feel like puzzles to solve instead of dead ends.
+                        </p>
+                        <ul style={leftAlignStyles.list}>
+                            <li>Session creation failures (capability mismatch)</li>
+                            <li>Simulator not found or not booted</li>
+                            <li>Element not found due to locator issues</li>
+                            <li>Incorrect <code>platformVersion</code> or <code>deviceName</code></li>
+                        </ul>
+
+                        {/* Step 13 */}
+                        <h3 style={{ color: '#00416A', fontSize: '20px', marginTop: '24px', fontWeight: 600 }}>Step 13: Add Reporting and Better Execution Practices</h3>
+                        <p style={leftAlignStyles.paragraph}>
+                            Finally, learners add simple reporting, screenshots-on-failure, and npm scripts to run focused suites.
+                            This turns a basic practice project into something that looks and feels closer to a real team automation framework.
+                        </p>
+                        <CodeBlock language="json" code={`{
+  "scripts": {
+    "test:ios": "wdio run wdio.conf.ts",
+    "test:login": "wdio run wdio.conf.ts --spec ./test/specs/login.e2e.ts"
+  }
+}`} />
+
+                        {/* Step 14 */}
+                        <h3 style={{ color: '#00416A', fontSize: '20px', marginTop: '24px', fontWeight: 600 }}>Step 14: Prepare for Advanced Mobile Automation</h3>
+                        <p style={leftAlignStyles.paragraph}>
+                            The curriculum closes by outlining next steps such as gestures, scrolls, data-driven tests, API + mobile validation, CI/CD, and cloud device labs.
+                            Non‑technical learners see a clear &quot;ladder&quot; of what comes after the basics, instead of feeling like the journey ends with the first test.
+                        </p>
+                        <p style={leftAlignStyles.paragraph}>
+                            By this point, learners have a working <strong>Appium + Xcode + TypeScript + WebdriverIO</strong> project that launches an iOS app,
+                            automates a login flow, uses page objects and waits, and is ready to grow into a more advanced framework.
+                        </p>
                     </div>
-                    )}
-                </div>
-
-                {/* Section 2: iOS Real Device + Sauce Labs Demo App (macOS) */}
-                <div>
-                    <div
-                        style={sectionHeaderStyle}
-                        onClick={() => toggleSectionMacOS(2)}
-                        role="button"
-                        aria-expanded={openSectionMacOS === 2}
-                    >
-                        <h3 style={{ color: '#00416A', fontSize: '22px', margin: 0, fontWeight: 'bold' }}>
-                            Appium iOS native (TypeScript) + WebdriverIO on macOS — Real Device + Sauce Labs Demo App (Baby Steps)
-                        </h3>
-                        <span style={{ fontSize: '18px', color: '#00416A' }}>{openSectionMacOS === 2 ? '▼' : '▶'}</span>
-                    </div>
-                    {openSectionMacOS === 2 && (
-                    <div style={sectionBodyStyle}>
-                <p style={{ fontSize: '14px', color: '#555', marginBottom: '16px', paddingTop: '8px' }}>
-                    This guide shows how to run your <strong>iOS native</strong> Appium tests from a Mac using TypeScript + WebdriverIO, while Sauce Labs provides a <strong>real iPhone in the cloud</strong>. You'll use a <strong>Sauce Labs iOS demo app</strong> so you don't need your own app yet. (<a href="https://docs.saucelabs.com/" target="_blank" rel="noopener noreferrer" style={{ color: '#00416A', textDecoration: 'underline' }}>docs.saucelabs.com</a>)
-                </p>
-
-                <hr style={{ border: 'none', borderTop: '1px solid #e0e0e0', margin: '24px 0' }} />
-
-                <h4 style={{ color: '#00416A', fontSize: '18px', marginBottom: '10px', marginTop: '20px', fontWeight: '600' }}>What you need (simple checklist)</h4>
-                <ul style={leftAlignStyles.list}>
-                    <li>✅ A <strong>Mac</strong> with internet</li>
-                    <li>✅ A <strong>Sauce Labs account</strong> (free trial works) + your <strong>Username</strong> and <strong>Access Key</strong> (<a href="https://docs.saucelabs.com/" target="_blank" rel="noopener noreferrer" style={{ color: '#00416A', textDecoration: 'underline' }}>docs.saucelabs.com</a>)</li>
-                    <li>✅ Node.js installed (for TypeScript + WebdriverIO)</li>
-                    <li>✅ Sauce Labs <strong>iOS demo app</strong> (<code style={{ backgroundColor: '#f8f9fa', padding: '2px 6px', borderRadius: '4px', color: '#00416A' }}>.ipa</code>) — Sauce provides demo apps (<a href="https://docs.saucelabs.com/" target="_blank" rel="noopener noreferrer" style={{ color: '#00416A', textDecoration: 'underline' }}>docs.saucelabs.com</a>)</li>
-                </ul>
-                <p style={{ fontSize: '14px', color: '#666', fontStyle: 'italic', marginTop: '8px' }}>Note: You don't need a local simulator or device. Sauce runs a real iPhone remotely. (<a href="https://docs.saucelabs.com/" target="_blank" rel="noopener noreferrer" style={{ color: '#00416A', textDecoration: 'underline' }}>docs.saucelabs.com</a>)</p>
-
-                <h4 style={{ color: '#00416A', fontSize: '18px', marginBottom: '10px', marginTop: '20px', fontWeight: '600' }}>Step 1) Get your Sauce Labs login keys</h4>
-                <ol style={{ fontSize: '14px', lineHeight: '1.8', color: '#333', paddingLeft: '24px' }}>
-                    <li>Log in to Sauce Labs</li>
-                    <li>Copy your: <strong>Username</strong> and <strong>Access Key</strong> (<a href="https://docs.saucelabs.com/" target="_blank" rel="noopener noreferrer" style={{ color: '#00416A', textDecoration: 'underline' }}>docs.saucelabs.com</a>)</li>
-                </ol>
-
-                <h4 style={{ color: '#00416A', fontSize: '18px', marginBottom: '10px', marginTop: '20px', fontWeight: '600' }}>Step 2) Download the Sauce Labs iOS demo app</h4>
-                <p style={{ fontSize: '14px', color: '#333', marginBottom: '8px' }}>Sauce Labs provides <strong>iOS Demo Apps</strong> for real device testing. (<a href="https://docs.saucelabs.com/" target="_blank" rel="noopener noreferrer" style={{ color: '#00416A', textDecoration: 'underline' }}>docs.saucelabs.com</a>)</p>
-                <ul style={leftAlignStyles.list}>
-                    <li>Download the <strong>iOS Demo App</strong> (<code style={{ backgroundColor: '#f8f9fa', padding: '2px 6px', borderRadius: '4px', color: '#00416A' }}>.ipa</code>) from Sauce Labs docs or demo app resources</li>
-                </ul>
-
-                <h4 style={{ color: '#00416A', fontSize: '18px', marginBottom: '10px', marginTop: '20px', fontWeight: '600' }}>Step 3) Upload the iOS demo app to Sauce "Mobile App Storage"</h4>
-                <ol style={{ fontSize: '14px', lineHeight: '1.8', color: '#333', paddingLeft: '24px' }}>
-                    <li>In Sauce Labs, open <strong>Mobile App Storage</strong></li>
-                    <li>Upload the iOS demo app file (<code style={{ backgroundColor: '#f8f9fa', padding: '2px 6px', borderRadius: '4px', color: '#00416A' }}>.ipa</code>)</li>
-                    <li>After upload, note the app reference for your test: <code style={{ backgroundColor: '#f8f9fa', padding: '2px 6px', borderRadius: '4px', color: '#00416A' }}>storage:&lt;file_id&gt;</code> or <code style={{ backgroundColor: '#f8f9fa', padding: '2px 6px', borderRadius: '4px', color: '#00416A' }}>storage:filename=&lt;your-file-name&gt;.ipa</code> (<a href="https://docs.saucelabs.com/" target="_blank" rel="noopener noreferrer" style={{ color: '#00416A', textDecoration: 'underline' }}>docs.saucelabs.com</a>)</li>
-                </ol>
-                <p style={{ fontSize: '14px', color: '#333', marginTop: '8px' }}>Sauce App Storage supports <strong>.ipa</strong> for iOS real devices. (<a href="https://docs.saucelabs.com/" target="_blank" rel="noopener noreferrer" style={{ color: '#00416A', textDecoration: 'underline' }}>docs.saucelabs.com</a>)</p>
-
-                <h4 style={{ color: '#00416A', fontSize: '18px', marginBottom: '10px', marginTop: '20px', fontWeight: '600' }}>Step 4) Create your WebdriverIO + TypeScript project (one-time)</h4>
-                <ol style={{ fontSize: '14px', lineHeight: '1.8', color: '#333', paddingLeft: '24px' }}>
-                    <li>Open <strong>Terminal</strong> on your Mac</li>
-                    <li>Create a project folder:</li>
-                </ol>
-                <div style={{ backgroundColor: '#f8f9fa', padding: '12px', borderRadius: '6px', fontFamily: 'monospace', fontSize: '14px', border: '1px solid #e0e0e0', margin: '8px 0 12px 0', overflowX: 'auto' }}>
-                    <pre style={{ margin: 0, whiteSpace: 'pre-wrap' }}>{`mkdir wdio-appium-sauce && cd wdio-appium-sauce`}</pre>
-                </div>
-                <ol style={{ fontSize: '14px', lineHeight: '1.8', color: '#333', paddingLeft: '24px', listStyle: 'none', counterReset: 'step' }}>
-                    <li style={{ marginTop: '12px' }}><strong>3.</strong> Start setup:</li>
-                </ol>
-                <div style={{ backgroundColor: '#f8f9fa', padding: '12px', borderRadius: '6px', fontFamily: 'monospace', fontSize: '14px', border: '1px solid #e0e0e0', margin: '8px 0 12px 0', overflowX: 'auto' }}>
-                    <pre style={{ margin: 0, whiteSpace: 'pre-wrap' }}>{`npm init -y`}</pre>
-                </div>
-                <p style={{ fontSize: '14px', color: '#333', marginBottom: '8px' }}><strong>4.</strong> Install WebdriverIO + Sauce integration:</p>
-                <div style={{ backgroundColor: '#f8f9fa', padding: '12px', borderRadius: '6px', fontFamily: 'monospace', fontSize: '14px', border: '1px solid #e0e0e0', margin: '8px 0 12px 0', overflowX: 'auto' }}>
-                    <pre style={{ margin: 0, whiteSpace: 'pre-wrap' }}>{`npm install --save-dev @wdio/cli @wdio/sauce-service typescript ts-node`}</pre>
-                </div>
-                <p style={{ fontSize: '14px', color: '#333', marginBottom: '8px' }}><strong>5.</strong> Run the WebdriverIO setup wizard:</p>
-                <div style={{ backgroundColor: '#f8f9fa', padding: '12px', borderRadius: '6px', fontFamily: 'monospace', fontSize: '14px', border: '1px solid #e0e0e0', margin: '8px 0 12px 0', overflowX: 'auto' }}>
-                    <pre style={{ margin: 0, whiteSpace: 'pre-wrap' }}>{`npx wdio config`}</pre>
-                </div>
-                <p style={{ fontSize: '14px', color: '#333', marginTop: '8px' }}>Choose <strong>TypeScript</strong> when asked.</p>
-                <p style={{ fontSize: '14px', color: '#333', marginTop: '8px' }}>WebdriverIO's <strong>Sauce Service</strong> is the standard integration for running WDIO tests on Sauce Labs (including Real Device Cloud). (<a href="https://webdriver.io/docs/sauce-service" target="_blank" rel="noopener noreferrer" style={{ color: '#00416A', textDecoration: 'underline' }}>webdriver.io</a>)</p>
-
-                <h4 style={{ color: '#00416A', fontSize: '18px', marginBottom: '10px', marginTop: '20px', fontWeight: '600' }}>Step 5) Add your Sauce credentials (safe way)</h4>
-                <p style={{ fontSize: '14px', color: '#333', marginBottom: '8px' }}>Create a file named <code style={{ backgroundColor: '#f8f9fa', padding: '2px 6px', borderRadius: '4px', color: '#00416A' }}>.env</code> (example):</p>
-                <ul style={leftAlignStyles.list}>
-                    <li><code style={{ backgroundColor: '#f8f9fa', padding: '2px 6px', borderRadius: '4px', color: '#00416A' }}>SAUCE_USERNAME=your_username</code></li>
-                    <li><code style={{ backgroundColor: '#f8f9fa', padding: '2px 6px', borderRadius: '4px', color: '#00416A' }}>SAUCE_ACCESS_KEY=your_access_key</code></li>
-                </ul>
-                <p style={{ fontSize: '14px', color: '#666', fontStyle: 'italic' }}>(Keep it private—don't post it publicly.)</p>
-
-                <h4 style={{ color: '#00416A', fontSize: '18px', marginBottom: '10px', marginTop: '20px', fontWeight: '600' }}>Step 6) Tell WebdriverIO to run on Sauce real devices</h4>
-                <p style={{ fontSize: '14px', color: '#333', marginBottom: '8px' }}>In your <code style={{ backgroundColor: '#f8f9fa', padding: '2px 6px', borderRadius: '4px', color: '#00416A' }}>wdio.conf.ts</code>, make sure you have:</p>
-                <ul style={leftAlignStyles.list}>
-                    <li><code style={{ backgroundColor: '#f8f9fa', padding: '2px 6px', borderRadius: '4px', color: '#00416A' }}>services: ['sauce']</code></li>
-                    <li><code style={{ backgroundColor: '#f8f9fa', padding: '2px 6px', borderRadius: '4px', color: '#00416A' }}>user</code> and <code style={{ backgroundColor: '#f8f9fa', padding: '2px 6px', borderRadius: '4px', color: '#00416A' }}>key</code> set (from environment variables)</li>
-                    <li>Sauce region (optional; defaults to US). (<a href="https://v7.webdriver.io/docs/sauce-service" target="_blank" rel="noopener noreferrer" style={{ color: '#00416A', textDecoration: 'underline' }}>v7.webdriver.io</a>)</li>
-                </ul>
-                <p style={{ fontSize: '14px', color: '#333', marginTop: '8px' }}>Sauce's modern default endpoint for WDIO is the unified platform (US West). (<a href="https://v7.webdriver.io/docs/sauce-service" target="_blank" rel="noopener noreferrer" style={{ color: '#00416A', textDecoration: 'underline' }}>v7.webdriver.io</a>)</p>
-
-                <h4 style={{ color: '#00416A', fontSize: '18px', marginBottom: '10px', marginTop: '20px', fontWeight: '600' }}>Step 7) Set iOS real device capabilities</h4>
-                <p style={{ fontSize: '14px', color: '#333', marginBottom: '8px' }}>In <code style={{ backgroundColor: '#f8f9fa', padding: '2px 6px', borderRadius: '4px', color: '#00416A' }}>wdio.conf.ts</code>, use <strong>iOS</strong> capabilities with your Sauce app reference:</p>
-                <p style={{ fontSize: '14px', color: '#333', marginBottom: '8px' }}><code style={{ backgroundColor: '#f8f9fa', padding: '2px 6px', borderRadius: '4px', color: '#00416A' }}>platformName: "iOS"</code>, <code style={{ backgroundColor: '#f8f9fa', padding: '2px 6px', borderRadius: '4px', color: '#00416A' }}>appium:automationName: "XCUITest"</code>, <code style={{ backgroundColor: '#f8f9fa', padding: '2px 6px', borderRadius: '4px', color: '#00416A' }}>app: "storage:&lt;file_id&gt;"</code> or <code style={{ backgroundColor: '#f8f9fa', padding: '2px 6px', borderRadius: '4px', color: '#00416A' }}>storage:filename=...ipa</code>. Add Sauce job name/build for reporting. (<a href="https://docs.saucelabs.com/" target="_blank" rel="noopener noreferrer" style={{ color: '#00416A', textDecoration: 'underline' }}>docs.saucelabs.com</a>)</p>
-                <p style={{ fontSize: '14px', color: '#333', marginTop: '8px' }}>Sauce requires the <code style={{ backgroundColor: '#f8f9fa', padding: '2px 6px', borderRadius: '4px', color: '#00416A' }}>app</code> capability (storage id or filename) for iOS native app tests on real devices. (<a href="https://docs.saucelabs.com/" target="_blank" rel="noopener noreferrer" style={{ color: '#00416A', textDecoration: 'underline' }}>docs.saucelabs.com</a>)</p>
-
-                <h4 style={{ color: '#00416A', fontSize: '18px', marginBottom: '10px', marginTop: '20px', fontWeight: '600' }}>Step 8) Run your iOS tests</h4>
-                <p style={{ fontSize: '14px', color: '#333', marginBottom: '8px' }}>From your project folder:</p>
-                <div style={{ backgroundColor: '#f8f9fa', padding: '12px', borderRadius: '6px', fontFamily: 'monospace', fontSize: '14px', border: '1px solid #e0e0e0', margin: '8px 0 12px 0', overflowX: 'auto' }}>
-                    <pre style={{ margin: 0, whiteSpace: 'pre-wrap' }}>{`npx wdio run wdio.conf.ts`}</pre>
-                </div>
-                <p style={{ fontSize: '14px', color: '#333', marginTop: '12px' }}>Sauce Labs will: reserve a <strong>real iPhone</strong>, install the iOS demo app, run your test steps, and show results (video/logs) in your Sauce dashboard. (<a href="https://docs.saucelabs.com/" target="_blank" rel="noopener noreferrer" style={{ color: '#00416A', textDecoration: 'underline' }}>docs.saucelabs.com</a>)</p>
-
-                <hr style={{ border: 'none', borderTop: '1px solid #e0e0e0', margin: '24px 0' }} />
-
-                <h4 style={{ color: '#00416A', fontSize: '18px', marginBottom: '10px', marginTop: '20px', fontWeight: '600' }}>Quick "non-technical" summary</h4>
-                <p style={{ fontSize: '14px', color: '#333' }}><strong>Download</strong> Sauce iOS demo app (.ipa) → <strong>upload</strong> to Sauce App Storage → <strong>run</strong> WDIO tests from your Mac → Sauce runs them on a <strong>real iPhone in the cloud</strong>. (<a href="https://docs.saucelabs.com/" target="_blank" rel="noopener noreferrer" style={{ color: '#00416A', textDecoration: 'underline' }}>docs.saucelabs.com</a>)</p>
-                    </div>
-                    )}
-                </div>
-                </div>
-                </div>
                 )}
             </div>
 
