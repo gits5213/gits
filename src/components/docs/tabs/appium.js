@@ -10,6 +10,7 @@ const Appium = () => {
     const [babyStepsOpen, setBabyStepsOpen] = useState(false);
     const [openSectionMacOS, setOpenSectionMacOS] = useState(null);
     const [macOSBabyStepsOpen, setMacOSBabyStepsOpen] = useState(false);
+    const [macOSBabyStepsExpanded, setMacOSBabyStepsExpanded] = useState(Array(15).fill(false));
 
     const toggleSection = (num) => {
         setOpenSection((prev) => (prev === num ? null : num));
@@ -17,6 +18,12 @@ const Appium = () => {
 
     const toggleSectionMacOS = (num) => {
         setOpenSectionMacOS((prev) => (prev === num ? null : num));
+    };
+
+    const toggleMacOSBabyStep = (stepNum) => {
+        setMacOSBabyStepsExpanded((prev) =>
+            prev.map((isOpen, idx) => (idx === stepNum ? !isOpen : isOpen))
+        );
     };
 
     const sectionHeaderStyle = {
@@ -2219,82 +2226,189 @@ adb install -r "C:\\path\\to\\my-demo-app.apk"`}</pre>
                         </p>
 
                         {/* Step 1 */}
-                        <h3 style={{ color: '#00416A', fontSize: '20px', marginTop: '20px', fontWeight: 600 }}>Step 1: Understand iOS Native Testing Basics</h3>
-                        <p style={leftAlignStyles.paragraph}>
-                            Learners first understand the difference between <strong>native apps</strong>, <strong>hybrid apps</strong>, and <strong>mobile web apps</strong>, and why iOS native apps
-                            require different tools and locator strategies than browser-based testing.
-                            This is the &quot;map&quot; before the journey, so they know what problem they are solving.
-                        </p>
-                        <ul style={leftAlignStyles.list}>
-                            <li>What is iOS native app testing</li>
-                            <li>Difference between native and web automation</li>
-                            <li>Why Appium is used for mobile automation</li>
-                            <li>Why Xcode and the iOS Simulator are required</li>
-                            <li>Why TypeScript + WebdriverIO is a modern stack</li>
-                        </ul>
-                        <p style={leftAlignStyles.paragraph}>
-                            Example comparison: a web login form uses HTML locators like <code>&lt;input id="username"&gt;</code>, while an iOS login screen uses native
-                            concepts such as <strong>accessibility id</strong>, <strong>iOS predicates</strong>, or <strong>class chain locators</strong>.
-                            In non‑technical terms: on the web you point at things by their &quot;HTML name&quot;; in an iPhone app you point at things by their
-                            &quot;accessibility label&quot; or internal iOS description.
-                        </p>
+                        <div
+                            style={{
+                                display: 'flex',
+                                alignItems: 'center',
+                                justifyContent: 'space-between',
+                                gap: '12px',
+                                cursor: 'pointer',
+                                userSelect: 'none',
+                                marginTop: '20px'
+                            }}
+                            onClick={() => toggleMacOSBabyStep(1)}
+                            role="button"
+                            aria-expanded={macOSBabyStepsExpanded[1]}
+                        >
+                            <h3 style={{ color: '#00416A', fontSize: '20px', margin: 0, fontWeight: 600 }}>
+                                Step 1: Understand iOS Native Testing Basics
+                            </h3>
+                            <span style={{ fontSize: '22px', color: '#00416A' }}>
+                                {macOSBabyStepsExpanded[1] ? '-' : '+'}
+                            </span>
+                        </div>
+                        {macOSBabyStepsExpanded[1] && (
+                            <>
+                                <p style={leftAlignStyles.paragraph}>
+                                    Learners first understand the difference between <strong>native apps</strong>, <strong>hybrid apps</strong>, and <strong>mobile web apps</strong>, and why iOS native apps
+                                    require different tools and locator strategies than browser-based testing.
+                                    This is the &quot;map&quot; before the journey, so they know what problem they are solving.
+                                </p>
+                                <ul style={leftAlignStyles.list}>
+                                    <li>What is iOS native app testing</li>
+                                    <li>Difference between native and web automation</li>
+                                    <li>Why Appium is used for mobile automation</li>
+                                    <li>Why Xcode and the iOS Simulator are required</li>
+                                    <li>Why TypeScript + WebdriverIO is a modern stack</li>
+                                </ul>
+                                <p style={leftAlignStyles.paragraph}>
+                                    Example comparison: a web login form uses HTML locators like <code>&lt;input id="username"&gt;</code>, while an iOS login screen uses native
+                                    concepts such as <strong>accessibility id</strong>, <strong>iOS predicates</strong>, or <strong>class chain locators</strong>.
+                                    In non‑technical terms: on the web you point at things by their &quot;HTML name&quot;; in an iPhone app you point at things by their
+                                    &quot;accessibility label&quot; or internal iOS description.
+                                </p>
+                            </>
+                        )}
 
                         {/* Step 2 */}
-                        <h3 style={{ color: '#00416A', fontSize: '20px', marginTop: '24px', fontWeight: 600 }}>Step 2: Prepare the macOS Environment</h3>
-                        <p style={leftAlignStyles.paragraph}>
-                            Before writing any automation code, learners set up the required development environment on macOS. This means installing all the tools and
-                            checking that the machine is truly ready for iOS automation work.
-                        </p>
-                        <p style={leftAlignStyles.paragraph}><strong>Implementation details (plain English checklist):</strong></p>
-                        <ul style={leftAlignStyles.list}>
-                            <li><strong>Install Homebrew</strong> (the &quot;app store for the terminal&quot; on macOS).</li>
-                            <li><strong>Install Node.js and npm</strong> so JavaScript / TypeScript tools can run.</li>
-                            <li><strong>Install Java</strong> if you need it for related tools (some Appium helpers and ecosystem tools still rely on Java).</li>
-                            <li><strong>Install Xcode from the App Store</strong> so you have Apple&apos;s official iOS tooling.</li>
-                            <li><strong>Install Xcode Command Line Tools</strong> (either via <code>xcode-select --install</code> or Xcode prompts).</li>
-                            <li><strong>Accept the Xcode license</strong> and let it finish its first‑time setup.</li>
-                            <li><strong>Install Appium</strong> (either globally for practice or locally inside the project for real frameworks).</li>
-                            <li><strong>Install Appium Inspector</strong> so you can visually inspect elements on the app screens.</li>
-                            <li><strong>Verify everything from the Terminal</strong> with simple version and health‑check commands.</li>
-                        </ul>
-                        <p style={leftAlignStyles.paragraph}>
-                            The idea is to move slowly and check &quot;Did this work?&quot; after every command, so beginners never feel lost.
-                        </p>
-                        <p style={leftAlignStyles.paragraph}><strong>Beginner example commands (run one by one in Terminal):</strong></p>
-                        <CodeBlock language="bash" code={`brew install node
+                        <div
+                            style={{
+                                display: 'flex',
+                                alignItems: 'center',
+                                justifyContent: 'space-between',
+                                gap: '12px',
+                                cursor: 'pointer',
+                                userSelect: 'none',
+                                marginTop: '24px'
+                            }}
+                            onClick={() => toggleMacOSBabyStep(2)}
+                            role="button"
+                            aria-expanded={macOSBabyStepsExpanded[2]}
+                        >
+                            <h3 style={{ color: '#00416A', fontSize: '20px', margin: 0, fontWeight: 600 }}>
+                                Step 2: Prepare the macOS Environment
+                            </h3>
+                            <span style={{ fontSize: '22px', color: '#00416A' }}>
+                                {macOSBabyStepsExpanded[2] ? '-' : '+'}
+                            </span>
+                        </div>
+                        {macOSBabyStepsExpanded[2] && (
+                            <>
+                                <p style={leftAlignStyles.paragraph}>
+                                    Before writing any automation code, learners set up the required development environment on macOS. This means installing all the tools and
+                                    checking that the machine is truly ready for iOS automation work.
+                                </p>
+                                <p style={leftAlignStyles.paragraph}><strong>Implementation details (plain English checklist):</strong></p>
+                                <ul style={leftAlignStyles.list}>
+                                    <li><strong>Install Homebrew</strong> (the &quot;app store for the terminal&quot; on macOS). Homebrew helps you install Node, Appium, and other tools with simple commands.</li>
+                                    <li><strong>Install Node.js and npm</strong> so JavaScript / TypeScript tools can run.</li>
+                                    <li><strong>Install Java</strong> if you need it for related tools (some Appium helpers and ecosystem tools still rely on Java).</li>
+                                    <li><strong>Install Xcode from the App Store</strong> so you have Apple&apos;s official iOS tooling.</li>
+                                    <li><strong>Install Xcode Command Line Tools</strong> (either via <code>xcode-select --install</code> or Xcode prompts).</li>
+                                    <li><strong>Accept the Xcode license</strong> and let it finish its first‑time setup.</li>
+                                    <li><strong>Install Appium</strong> (either globally for practice or locally inside the project for real frameworks).</li>
+                                    <li><strong>Install Appium Inspector</strong> so you can visually inspect elements on the app screens.</li>
+                                    <li><strong>Verify everything from the Terminal</strong> with simple version and health‑check commands.</li>
+                                </ul>
+                                <p style={leftAlignStyles.paragraph}>
+                                    The idea is to move slowly and check &quot;Did this work?&quot; after every command, so beginners never feel lost.
+                                </p>
+                                <p style={leftAlignStyles.paragraph}>
+                                    <strong>Homebrew install (for non‑technical learners):</strong> Open <code>Terminal</code> and copy the command below exactly. When it asks
+                                    for permission, press <strong>Enter</strong> and follow the prompts. If it asks for your Mac password, type it (it may not show any characters)
+                                    and press <strong>Enter</strong>.
+                                </p>
+                                <CodeBlock
+                                    language="bash"
+                                    code={`/bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
+
+# Verify Homebrew is installed:
+brew --version`}
+                                />
+
+                                <p style={leftAlignStyles.paragraph}><strong>Next beginner example commands (run one by one in Terminal):</strong></p>
+                                <CodeBlock language="bash" code={`brew install node
 node -v
 npm -v
 xcode-select --install
 npm install -g appium
 appium -v`} />
-                        <p style={leftAlignStyles.paragraph}>
-                            Learners verify each installation (for example, checking that <code>node -v</code> prints a version) instead of assuming everything worked.
-                        </p>
+                                <p style={leftAlignStyles.paragraph}>
+                                    Learners verify each installation (for example, checking that <code>node -v</code> prints a version) instead of assuming everything worked.
+                                </p>
+                            </>
+                        )}
 
                         {/* Step 3 */}
-                        <h3 style={{ color: '#00416A', fontSize: '20px', marginTop: '24px', fontWeight: 600 }}>Step 3: Configure Xcode for iOS Automation</h3>
-                        <p style={leftAlignStyles.paragraph}>
-                            This step walks <strong>non-technical learners</strong> through Xcode in simple language so they are not afraid of Apple&apos;s developer tools.
-                            The goal is to turn a plain Mac into a machine that can run a <strong>fake iPhone</strong> (simulator) for testing.
-                        </p>
-                        <ul style={leftAlignStyles.list}>
-                            <li><strong>Open Xcode for the first time:</strong> Go to the Mac App Store, install Xcode, then open it from Launchpad.</li>
-                            <li><strong>Accept Apple&apos;s agreements:</strong> The first time Xcode opens, click &quot;Agree&quot; on any license popups and wait while it finishes its setup.</li>
-                            <li><strong>Install the command line tools (Xcode&apos;s helpers):</strong> If a window pops up asking to install additional components, click &quot;Install&quot; and let it complete.</li>
-                            <li><strong>Download an iPhone simulator:</strong> In Xcode, go to <code>Settings &gt; Platforms &gt; iOS</code> (or &quot;Components&quot; / &quot;Simulators&quot; depending on version) and download at least one device such as <strong>iPhone 15</strong>.</li>
-                            <li><strong>Open the simulator like an app:</strong> From Xcode&apos;s menu, use <code>Window &gt; Devices and Simulators</code>, pick your iPhone simulator, and click the &quot;Play&quot; / &quot;Boot&quot; button.</li>
-                        </ul>
-                        <p style={leftAlignStyles.paragraph}>
-                            A simple way to explain this to beginners is: <em>&quot;Xcode is Apple&apos;s toolbox. The iOS Simulator is a fake iPhone that lives inside your Mac. 
-                            Before we can automate anything, we must prove that we can open that fake iPhone manually.&quot;</em>
-                        </p>
-                        <p style={leftAlignStyles.paragraph}>
-                            Once learners can see the iPhone home screen on their Mac (from the Simulator), they know Xcode is configured correctly. Only then do they move
-                            on to Appium, so they debug the <strong>platform first</strong>, not the automation tools.
-                        </p>
+                        <div
+                            style={{
+                                display: 'flex',
+                                alignItems: 'center',
+                                justifyContent: 'space-between',
+                                gap: '12px',
+                                cursor: 'pointer',
+                                userSelect: 'none',
+                                marginTop: '24px'
+                            }}
+                            onClick={() => toggleMacOSBabyStep(3)}
+                            role="button"
+                            aria-expanded={macOSBabyStepsExpanded[3]}
+                        >
+                            <h3 style={{ color: '#00416A', fontSize: '20px', margin: 0, fontWeight: 600 }}>
+                                Step 3: Configure Xcode for iOS Automation
+                            </h3>
+                            <span style={{ fontSize: '22px', color: '#00416A' }}>
+                                {macOSBabyStepsExpanded[3] ? '-' : '+'}
+                            </span>
+                        </div>
+                        {macOSBabyStepsExpanded[3] && (
+                            <>
+                                <p style={leftAlignStyles.paragraph}>
+                                    This step walks <strong>non-technical learners</strong> through Xcode in simple language so they are not afraid of Apple&apos;s developer tools.
+                                    The goal is to turn a plain Mac into a machine that can run a <strong>fake iPhone</strong> (simulator) for testing.
+                                </p>
+                                <ul style={leftAlignStyles.list}>
+                                    <li><strong>Open Xcode for the first time:</strong> Go to the Mac App Store, install Xcode, then open it from Launchpad.</li>
+                                    <li><strong>Accept Apple&apos;s agreements:</strong> The first time Xcode opens, click &quot;Agree&quot; on any license popups and wait while it finishes its setup.</li>
+                                    <li><strong>Install the command line tools (Xcode&apos;s helpers):</strong> If a window pops up asking to install additional components, click &quot;Install&quot; and let it complete.</li>
+                                    <li><strong>Download an iPhone simulator:</strong> In Xcode, go to <code>Settings &gt; Platforms &gt; iOS</code> (or &quot;Components&quot; / &quot;Simulators&quot; depending on version) and download at least one device such as <strong>iPhone 15</strong>.</li>
+                                    <li><strong>Open the simulator like an app:</strong> From Xcode&apos;s menu, use <code>Window &gt; Devices and Simulators</code>, pick your iPhone simulator, and click the &quot;Play&quot; / &quot;Boot&quot; button.</li>
+                                </ul>
+                                <p style={leftAlignStyles.paragraph}>
+                                    A simple way to explain this to beginners is: <em>&quot;Xcode is Apple&apos;s toolbox. The iOS Simulator is a fake iPhone that lives inside your Mac. 
+                                    Before we can automate anything, we must prove that we can open that fake iPhone manually.&quot;</em>
+                                </p>
+                                <p style={leftAlignStyles.paragraph}>
+                                    Once learners can see the iPhone home screen on their Mac (from the Simulator), they know Xcode is configured correctly. Only then do they move
+                                    on to Appium, so they debug the <strong>platform first</strong>, not the automation tools.
+                                </p>
+                            </>
+                        )}
 
                         {/* Step 4 */}
-                        <h3 style={{ color: '#00416A', fontSize: '20px', marginTop: '24px', fontWeight: 600 }}>Step 4: Create the WebdriverIO + TypeScript Project</h3>
+                        <div
+                            style={{
+                                display: 'flex',
+                                alignItems: 'center',
+                                justifyContent: 'space-between',
+                                gap: '12px',
+                                cursor: 'pointer',
+                                userSelect: 'none',
+                                marginTop: '24px'
+                            }}
+                            onClick={() => toggleMacOSBabyStep(4)}
+                            role="button"
+                            aria-expanded={macOSBabyStepsExpanded[4]}
+                        >
+                            <h3 style={{ color: '#00416A', fontSize: '20px', margin: 0, fontWeight: 600 }}>
+                                Step 4: Create the WebdriverIO + TypeScript Project
+                            </h3>
+                            <span style={{ fontSize: '22px', color: '#00416A' }}>
+                                {macOSBabyStepsExpanded[4] ? '-' : '+'}
+                            </span>
+                        </div>
+                        {macOSBabyStepsExpanded[4] && (
+                            <>
                         <p style={leftAlignStyles.paragraph}>
                             With the environment ready, learners create a clean, beginner-safe automation project using TypeScript and WebdriverIO.
                             This is like creating a new empty folder for a school project, then asking a wizard to fill in the basic structure for you.
@@ -2329,66 +2443,162 @@ npm init wdio@latest .`} />
                             For non‑technical learners, you can describe this step as: <em>&quot;First we download a practice app that is safe to experiment with. Then we tell
                             Appium where that file lives, so the robot knows which app to open.&quot;</em>
                         </p>
+                            </>
+                        )}
 
                         {/* Step 5 */}
-                        <h3 style={{ color: '#00416A', fontSize: '20px', marginTop: '24px', fontWeight: 600 }}>Step 5: Install and Configure Appium Drivers</h3>
-                        <p style={leftAlignStyles.paragraph}>
-                            Learners install the <strong>XCUITest</strong> driver for iOS and configure <strong>desired capabilities</strong> so Appium knows what to launch.
-                            You can think of desired capabilities as a &quot;flight ticket&quot; for the test: it tells Appium which device, which iOS version, and which app
-                            to open.
-                        </p>
-                        <CodeBlock language="bash" code={`appium driver install xcuitest
+                        <div
+                            style={{
+                                display: 'flex',
+                                alignItems: 'center',
+                                justifyContent: 'space-between',
+                                gap: '12px',
+                                cursor: 'pointer',
+                                userSelect: 'none',
+                                marginTop: '24px'
+                            }}
+                            onClick={() => toggleMacOSBabyStep(5)}
+                            role="button"
+                            aria-expanded={macOSBabyStepsExpanded[5]}
+                        >
+                            <h3 style={{ color: '#00416A', fontSize: '20px', margin: 0, fontWeight: 600 }}>
+                                Step 5: Install and Configure Appium Drivers
+                            </h3>
+                            <span style={{ fontSize: '22px', color: '#00416A' }}>
+                                {macOSBabyStepsExpanded[5] ? '-' : '+'}
+                            </span>
+                        </div>
+                        {macOSBabyStepsExpanded[5] && (
+                            <>
+                                <p style={leftAlignStyles.paragraph}>
+                                    Learners install the <strong>XCUITest</strong> driver for iOS and configure <strong>desired capabilities</strong> so Appium knows what to launch.
+                                    You can think of desired capabilities as a &quot;flight ticket&quot; for the test: it tells Appium which device, which iOS version, and which app
+                                    to open.
+                                </p>
+                                <CodeBlock language="bash" code={`appium driver install xcuitest
 appium driver list
 appium`} />
-                        <p style={leftAlignStyles.paragraph}><strong>Sample iOS simulator capabilities:</strong></p>
-                        <CodeBlock language="ts" code={`capabilities: [{
+                                <p style={leftAlignStyles.paragraph}><strong>Sample iOS simulator capabilities:</strong></p>
+                                <CodeBlock language="ts" code={`capabilities: [{
   platformName: 'iOS',
   'appium:deviceName': 'iPhone 15',
   'appium:platformVersion': '17.0',
   'appium:automationName': 'XCUITest',
   'appium:app': '/Users/yourname/apps/MyiOSApp.app'
 }]`} />
+                            </>
+                        )}
 
                         {/* Step 6 */}
-                        <h3 style={{ color: '#00416A', fontSize: '20px', marginTop: '24px', fontWeight: 600 }}>Step 6: Launch the First iOS Simulator Test</h3>
-                        <p style={leftAlignStyles.paragraph}>
-                            The first automated run focuses on verifying that everything connects correctly: Appium server, simulator, and app.
-                            At this stage, the goal is not to test business rules; it is simply to prove &quot;the robot can touch the fake iPhone&quot;.
-                        </p>
-                        <p style={leftAlignStyles.paragraph}>
-                            Non‑technical learners can treat this as their &quot;Hello, World&quot; moment: if the simulator opens and the app appears without errors,
-                            they have wired all the tools together correctly.
-                        </p>
-                        <CodeBlock language="ts" code={`describe('App Launch Validation', () => {
+                        <div
+                            style={{
+                                display: 'flex',
+                                alignItems: 'center',
+                                justifyContent: 'space-between',
+                                gap: '12px',
+                                cursor: 'pointer',
+                                userSelect: 'none',
+                                marginTop: '24px'
+                            }}
+                            onClick={() => toggleMacOSBabyStep(6)}
+                            role="button"
+                            aria-expanded={macOSBabyStepsExpanded[6]}
+                        >
+                            <h3 style={{ color: '#00416A', fontSize: '20px', margin: 0, fontWeight: 600 }}>
+                                Step 6: Launch the First iOS Simulator Test
+                            </h3>
+                            <span style={{ fontSize: '22px', color: '#00416A' }}>
+                                {macOSBabyStepsExpanded[6] ? '-' : '+'}
+                            </span>
+                        </div>
+                        {macOSBabyStepsExpanded[6] && (
+                            <>
+                                <p style={leftAlignStyles.paragraph}>
+                                    The first automated run focuses on verifying that everything connects correctly: Appium server, simulator, and app.
+                                    At this stage, the goal is not to test business rules; it is simply to prove &quot;the robot can touch the fake iPhone&quot;.
+                                </p>
+                                <p style={leftAlignStyles.paragraph}>
+                                    Non‑technical learners can treat this as their &quot;Hello, World&quot; moment: if the simulator opens and the app appears without errors,
+                                    they have wired all the tools together correctly.
+                                </p>
+                                <CodeBlock language="ts" code={`describe('App Launch Validation', () => {
   it('should open the app successfully', async () => {
     await driver.pause(5000);
   });
 });`} />
-                        <p style={leftAlignStyles.paragraph}>
-                            This simple test confirms that the app launches on the simulator before adding any functional checks.
-                        </p>
+                                <p style={leftAlignStyles.paragraph}>
+                                    This simple test confirms that the app launches on the simulator before adding any functional checks.
+                                </p>
+                            </>
+                        )}
 
                         {/* Step 7 */}
-                        <h3 style={{ color: '#00416A', fontSize: '20px', marginTop: '24px', fontWeight: 600 }}>Step 7: Inspect Mobile Elements</h3>
-                        <p style={leftAlignStyles.paragraph}>
-                            Using <strong>Appium Inspector</strong>, learners connect to the running session, explore the UI hierarchy, and practice using
-                            <strong> accessibility id</strong> locators.
-                            Appium Inspector is like a &quot;pause and inspect&quot; camera that shows what elements are on the screen and what they&apos;re called.
-                        </p>
-                        <CodeBlock language="ts" code={`const loginButton = $('~Login');
+                        <div
+                            style={{
+                                display: 'flex',
+                                alignItems: 'center',
+                                justifyContent: 'space-between',
+                                gap: '12px',
+                                cursor: 'pointer',
+                                userSelect: 'none',
+                                marginTop: '24px'
+                            }}
+                            onClick={() => toggleMacOSBabyStep(7)}
+                            role="button"
+                            aria-expanded={macOSBabyStepsExpanded[7]}
+                        >
+                            <h3 style={{ color: '#00416A', fontSize: '20px', margin: 0, fontWeight: 600 }}>
+                                Step 7: Inspect Mobile Elements
+                            </h3>
+                            <span style={{ fontSize: '22px', color: '#00416A' }}>
+                                {macOSBabyStepsExpanded[7] ? '-' : '+'}
+                            </span>
+                        </div>
+                        {macOSBabyStepsExpanded[7] && (
+                            <>
+                                <p style={leftAlignStyles.paragraph}>
+                                    Using <strong>Appium Inspector</strong>, learners connect to the running session, explore the UI hierarchy, and practice using
+                                    <strong> accessibility id</strong> locators.
+                                    Appium Inspector is like a &quot;pause and inspect&quot; camera that shows what elements are on the screen and what they&apos;re called.
+                                </p>
+                                <CodeBlock language="ts" code={`const loginButton = $('~Login');
 const usernameField = $('~usernameInput');
 const passwordField = $('~passwordInput');`} />
-                        <p style={leftAlignStyles.paragraph}>
-                            They compare this with long XPath locators and learn why accessibility ids are usually a better, more stable choice.
-                        </p>
+                                <p style={leftAlignStyles.paragraph}>
+                                    They compare this with long XPath locators and learn why accessibility ids are usually a better, more stable choice.
+                                </p>
+                            </>
+                        )}
 
                         {/* Step 8 */}
-                        <h3 style={{ color: '#00416A', fontSize: '20px', marginTop: '24px', fontWeight: 600 }}>Step 8: Write the First Real Test Case</h3>
-                        <p style={leftAlignStyles.paragraph}>
-                            Learners then automate a simple login scenario that taps buttons, enters text, and asserts a successful navigation.
-                            In everyday language: they teach the computer how a human would log in step‑by‑step, and then the computer repeats those steps automatically.
-                        </p>
-                        <CodeBlock language="ts" code={`describe('Login Feature', () => {
+                        <div
+                            style={{
+                                display: 'flex',
+                                alignItems: 'center',
+                                justifyContent: 'space-between',
+                                gap: '12px',
+                                cursor: 'pointer',
+                                userSelect: 'none',
+                                marginTop: '24px'
+                            }}
+                            onClick={() => toggleMacOSBabyStep(8)}
+                            role="button"
+                            aria-expanded={macOSBabyStepsExpanded[8]}
+                        >
+                            <h3 style={{ color: '#00416A', fontSize: '20px', margin: 0, fontWeight: 600 }}>
+                                Step 8: Write the First Real Test Case
+                            </h3>
+                            <span style={{ fontSize: '22px', color: '#00416A' }}>
+                                {macOSBabyStepsExpanded[8] ? '-' : '+'}
+                            </span>
+                        </div>
+                        {macOSBabyStepsExpanded[8] && (
+                            <>
+                                <p style={leftAlignStyles.paragraph}>
+                                    Learners then automate a simple login scenario that taps buttons, enters text, and asserts a successful navigation.
+                                    In everyday language: they teach the computer how a human would log in step‑by‑step, and then the computer repeats those steps automatically.
+                                </p>
+                                <CodeBlock language="ts" code={`describe('Login Feature', () => {
   it('should allow user to login with valid credentials', async () => {
     const usernameField = $('~usernameInput');
     const passwordField = $('~passwordInput');
@@ -2402,15 +2612,39 @@ const passwordField = $('~passwordInput');`} />
     await expect(homeTitle).toBeDisplayed();
   });
 });`} />
+                            </>
+                        )}
 
                         {/* Step 9 */}
-                        <h3 style={{ color: '#00416A', fontSize: '20px', marginTop: '24px', fontWeight: 600 }}>Step 9: Introduce Page Object Model</h3>
-                        <p style={leftAlignStyles.paragraph}>
-                            To keep tests readable and maintainable, learners extract screen interactions into a simple <strong>Page Object</strong>.
-                            A page object is just a &quot;cheat sheet&quot; for one screen: all the buttons and fields are described once, in one place, so the tests
-                            above can stay very short and plain‑English.
-                        </p>
-                        <CodeBlock language="ts" code={`// test/pageobjects/login.page.ts
+                        <div
+                            style={{
+                                display: 'flex',
+                                alignItems: 'center',
+                                justifyContent: 'space-between',
+                                gap: '12px',
+                                cursor: 'pointer',
+                                userSelect: 'none',
+                                marginTop: '24px'
+                            }}
+                            onClick={() => toggleMacOSBabyStep(9)}
+                            role="button"
+                            aria-expanded={macOSBabyStepsExpanded[9]}
+                        >
+                            <h3 style={{ color: '#00416A', fontSize: '20px', margin: 0, fontWeight: 600 }}>
+                                Step 9: Introduce Page Object Model
+                            </h3>
+                            <span style={{ fontSize: '22px', color: '#00416A' }}>
+                                {macOSBabyStepsExpanded[9] ? '-' : '+'}
+                            </span>
+                        </div>
+                        {macOSBabyStepsExpanded[9] && (
+                            <>
+                                <p style={leftAlignStyles.paragraph}>
+                                    To keep tests readable and maintainable, learners extract screen interactions into a simple <strong>Page Object</strong>.
+                                    A page object is just a &quot;cheat sheet&quot; for one screen: all the buttons and fields are described once, in one place, so the tests
+                                    above can stay very short and plain‑English.
+                                </p>
+                                <CodeBlock language="ts" code={`// test/pageobjects/login.page.ts
 class LoginPage {
   get usernameField() { return $('~usernameInput'); }
   get passwordField() { return $('~passwordInput'); }
@@ -2424,7 +2658,7 @@ class LoginPage {
 }
 
 export default new LoginPage();`} />
-                        <CodeBlock language="ts" code={`// test/specs/login.e2e.ts
+                                <CodeBlock language="ts" code={`// test/specs/login.e2e.ts
 import LoginPage from '../pageobjects/login.page';
 
 describe('Login Feature', () => {
@@ -2432,84 +2666,206 @@ describe('Login Feature', () => {
     await LoginPage.login('testuser', 'Password123');
   });
 });`} />
+                            </>
+                        )}
 
                         {/* Step 10 */}
-                        <h3 style={{ color: '#00416A', fontSize: '20px', marginTop: '24px', fontWeight: 600 }}>Step 10: Handle Waits and Synchronization</h3>
-                        <p style={leftAlignStyles.paragraph}>
-                            Instead of relying on random pauses, learners adopt explicit waits so tests become less flaky and more reliable.
-                            This is the difference between &quot;always sleep 5 seconds and hope&quot; versus &quot;wait until the button is really visible, then click it&quot;.
-                        </p>
-                        <CodeBlock language="ts" code={`// Weak (fixed sleep)
+                        <div
+                            style={{
+                                display: 'flex',
+                                alignItems: 'center',
+                                justifyContent: 'space-between',
+                                gap: '12px',
+                                cursor: 'pointer',
+                                userSelect: 'none',
+                                marginTop: '24px'
+                            }}
+                            onClick={() => toggleMacOSBabyStep(10)}
+                            role="button"
+                            aria-expanded={macOSBabyStepsExpanded[10]}
+                        >
+                            <h3 style={{ color: '#00416A', fontSize: '20px', margin: 0, fontWeight: 600 }}>
+                                Step 10: Handle Waits and Synchronization
+                            </h3>
+                            <span style={{ fontSize: '22px', color: '#00416A' }}>
+                                {macOSBabyStepsExpanded[10] ? '-' : '+'}
+                            </span>
+                        </div>
+                        {macOSBabyStepsExpanded[10] && (
+                            <>
+                                <p style={leftAlignStyles.paragraph}>
+                                    Instead of relying on random pauses, learners adopt explicit waits so tests become less flaky and more reliable.
+                                    This is the difference between &quot;always sleep 5 seconds and hope&quot; versus &quot;wait until the button is really visible, then click it&quot;.
+                                </p>
+                                <CodeBlock language="ts" code={`// Weak (fixed sleep)
 await driver.pause(5000);
 
 // Better (wait until button is visible)
 const loginButton = $('~Login');
 await loginButton.waitForDisplayed({ timeout: 10000 });
 await loginButton.click();`} />
+                            </>
+                        )}
 
                         {/* Step 11 */}
-                        <h3 style={{ color: '#00416A', fontSize: '20px', marginTop: '24px', fontWeight: 600 }}>Step 11: Run Tests on Real iPhone Devices</h3>
-                        <p style={leftAlignStyles.paragraph}>
-                            Once comfortable with simulators, learners are introduced to real-device execution, including device trust, UDID, and signing basics.
-                            A simple mental model is: the simulator is a &quot;practice phone&quot;; a real device adds extra security steps because it is an actual iPhone.
-                        </p>
-                        <p style={leftAlignStyles.paragraph}>
-                            <strong>How a non‑technical learner can find the iPhone UDID (unique device ID):</strong>
-                        </p>
-                        <ul style={leftAlignStyles.list}>
-                            <li><strong>1. Connect the iPhone with a cable</strong> to the Mac and unlock the phone (enter the passcode so the home screen is visible).</li>
-                            <li><strong>2. If asked, tap &quot;Trust This Computer&quot; on the iPhone</strong> and enter the passcode again—this lets the Mac see the device.</li>
-                            <li><strong>3. Open Xcode</strong> on the Mac.</li>
-                            <li><strong>4. In Xcode, open</strong> <code>Window &gt; Devices and Simulators</code>.</li>
-                            <li><strong>5. In the left panel, under &quot;Devices&quot;</strong>, click on your iPhone (for example, &quot;John&apos;s iPhone&quot;).</li>
-                            <li><strong>6. Look for the &quot;Identifier&quot; field</strong> in the right-hand details area — this long string of letters and numbers is the <strong>UDID</strong>.</li>
-                            <li><strong>7. Copy the UDID</strong> (right‑click or use the copy icon) and paste it into the <code>'appium:udid'</code> capability value in your config file.</li>
-                        </ul>
-                        <CodeBlock language="ts" code={`capabilities: [{
+                        <div
+                            style={{
+                                display: 'flex',
+                                alignItems: 'center',
+                                justifyContent: 'space-between',
+                                gap: '12px',
+                                cursor: 'pointer',
+                                userSelect: 'none',
+                                marginTop: '24px'
+                            }}
+                            onClick={() => toggleMacOSBabyStep(11)}
+                            role="button"
+                            aria-expanded={macOSBabyStepsExpanded[11]}
+                        >
+                            <h3 style={{ color: '#00416A', fontSize: '20px', margin: 0, fontWeight: 600 }}>
+                                Step 11: Run Tests on Real iPhone Devices
+                            </h3>
+                            <span style={{ fontSize: '22px', color: '#00416A' }}>
+                                {macOSBabyStepsExpanded[11] ? '-' : '+'}
+                            </span>
+                        </div>
+                        {macOSBabyStepsExpanded[11] && (
+                            <>
+                                <p style={leftAlignStyles.paragraph}>
+                                    Once comfortable with simulators, learners are introduced to real-device execution, including device trust, UDID, and signing basics.
+                                    A simple mental model is: the simulator is a &quot;practice phone&quot;; a real device adds extra security steps because it is an actual iPhone.
+                                </p>
+                                <p style={leftAlignStyles.paragraph}>
+                                    <strong>How a non‑technical learner can find the iPhone UDID (unique device ID):</strong>
+                                </p>
+                                <ul style={leftAlignStyles.list}>
+                                    <li><strong>1. Connect the iPhone with a cable</strong> to the Mac and unlock the phone (enter the passcode so the home screen is visible).</li>
+                                    <li><strong>2. If asked, tap &quot;Trust This Computer&quot; on the iPhone</strong> and enter the passcode again—this lets the Mac see the device.</li>
+                                    <li><strong>3. Open Xcode</strong> on the Mac.</li>
+                                    <li><strong>4. In Xcode, open</strong> <code>Window &gt; Devices and Simulators</code>.</li>
+                                    <li><strong>5. In the left panel, under &quot;Devices&quot;</strong>, click on your iPhone (for example, &quot;John&apos;s iPhone&quot;).</li>
+                                    <li><strong>6. Look for the &quot;Identifier&quot; field</strong> in the right-hand details area — this long string of letters and numbers is the <strong>UDID</strong>.</li>
+                                    <li><strong>7. Copy the UDID</strong> (right‑click or use the copy icon) and paste it into the <code>'appium:udid'</code> capability value in your config file.</li>
+                                </ul>
+                                <CodeBlock language="ts" code={`capabilities: [{
   platformName: 'iOS',
   'appium:deviceName': 'iPhone 14',
   'appium:udid': '00008110-001234567890801E',
   'appium:automationName': 'XCUITest',
   'appium:bundleId': 'com.example.myiosapp'
 }]`} />
+                            </>
+                        )}
 
                         {/* Step 12 */}
-                        <h3 style={{ color: '#00416A', fontSize: '20px', marginTop: '24px', fontWeight: 600 }}>Step 12: Debug and Troubleshoot Common Issues</h3>
-                        <p style={leftAlignStyles.paragraph}>
-                            Learners practice reading Appium and WebdriverIO logs to diagnose common beginner problems like wrong simulator names, bad app paths,
-                            or missing drivers.
-                            They are shown where to look first when something fails, so errors feel like puzzles to solve instead of dead ends.
-                        </p>
-                        <ul style={leftAlignStyles.list}>
-                            <li>Session creation failures (capability mismatch)</li>
-                            <li>Simulator not found or not booted</li>
-                            <li>Element not found due to locator issues</li>
-                            <li>Incorrect <code>platformVersion</code> or <code>deviceName</code></li>
-                        </ul>
+                        <div
+                            style={{
+                                display: 'flex',
+                                alignItems: 'center',
+                                justifyContent: 'space-between',
+                                gap: '12px',
+                                cursor: 'pointer',
+                                userSelect: 'none',
+                                marginTop: '24px'
+                            }}
+                            onClick={() => toggleMacOSBabyStep(12)}
+                            role="button"
+                            aria-expanded={macOSBabyStepsExpanded[12]}
+                        >
+                            <h3 style={{ color: '#00416A', fontSize: '20px', margin: 0, fontWeight: 600 }}>
+                                Step 12: Debug and Troubleshoot Common Issues
+                            </h3>
+                            <span style={{ fontSize: '22px', color: '#00416A' }}>
+                                {macOSBabyStepsExpanded[12] ? '-' : '+'}
+                            </span>
+                        </div>
+                        {macOSBabyStepsExpanded[12] && (
+                            <>
+                                <p style={leftAlignStyles.paragraph}>
+                                    Learners practice reading Appium and WebdriverIO logs to diagnose common beginner problems like wrong simulator names, bad app paths,
+                                    or missing drivers.
+                                    They are shown where to look first when something fails, so errors feel like puzzles to solve instead of dead ends.
+                                </p>
+                                <ul style={leftAlignStyles.list}>
+                                    <li>Session creation failures (capability mismatch)</li>
+                                    <li>Simulator not found or not booted</li>
+                                    <li>Element not found due to locator issues</li>
+                                    <li>Incorrect <code>platformVersion</code> or <code>deviceName</code></li>
+                                </ul>
+                            </>
+                        )}
 
                         {/* Step 13 */}
-                        <h3 style={{ color: '#00416A', fontSize: '20px', marginTop: '24px', fontWeight: 600 }}>Step 13: Add Reporting and Better Execution Practices</h3>
-                        <p style={leftAlignStyles.paragraph}>
-                            Finally, learners add simple reporting, screenshots-on-failure, and npm scripts to run focused suites.
-                            This turns a basic practice project into something that looks and feels closer to a real team automation framework.
-                        </p>
-                        <CodeBlock language="json" code={`{
+                        <div
+                            style={{
+                                display: 'flex',
+                                alignItems: 'center',
+                                justifyContent: 'space-between',
+                                gap: '12px',
+                                cursor: 'pointer',
+                                userSelect: 'none',
+                                marginTop: '24px'
+                            }}
+                            onClick={() => toggleMacOSBabyStep(13)}
+                            role="button"
+                            aria-expanded={macOSBabyStepsExpanded[13]}
+                        >
+                            <h3 style={{ color: '#00416A', fontSize: '20px', margin: 0, fontWeight: 600 }}>
+                                Step 13: Add Reporting and Better Execution Practices
+                            </h3>
+                            <span style={{ fontSize: '22px', color: '#00416A' }}>
+                                {macOSBabyStepsExpanded[13] ? '-' : '+'}
+                            </span>
+                        </div>
+                        {macOSBabyStepsExpanded[13] && (
+                            <>
+                                <p style={leftAlignStyles.paragraph}>
+                                    Finally, learners add simple reporting, screenshots-on-failure, and npm scripts to run focused suites.
+                                    This turns a basic practice project into something that looks and feels closer to a real team automation framework.
+                                </p>
+                                <CodeBlock language="json" code={`{
   "scripts": {
     "test:ios": "wdio run wdio.conf.ts",
     "test:login": "wdio run wdio.conf.ts --spec ./test/specs/login.e2e.ts"
   }
 }`} />
+                            </>
+                        )}
 
                         {/* Step 14 */}
-                        <h3 style={{ color: '#00416A', fontSize: '20px', marginTop: '24px', fontWeight: 600 }}>Step 14: Prepare for Advanced Mobile Automation</h3>
-                        <p style={leftAlignStyles.paragraph}>
-                            The curriculum closes by outlining next steps such as gestures, scrolls, data-driven tests, API + mobile validation, CI/CD, and cloud device labs.
-                            Non‑technical learners see a clear &quot;ladder&quot; of what comes after the basics, instead of feeling like the journey ends with the first test.
-                        </p>
-                        <p style={leftAlignStyles.paragraph}>
-                            By this point, learners have a working <strong>Appium + Xcode + TypeScript + WebdriverIO</strong> project that launches an iOS app,
-                            automates a login flow, uses page objects and waits, and is ready to grow into a more advanced framework.
-                        </p>
+                        <div
+                            style={{
+                                display: 'flex',
+                                alignItems: 'center',
+                                justifyContent: 'space-between',
+                                gap: '12px',
+                                cursor: 'pointer',
+                                userSelect: 'none',
+                                marginTop: '24px'
+                            }}
+                            onClick={() => toggleMacOSBabyStep(14)}
+                            role="button"
+                            aria-expanded={macOSBabyStepsExpanded[14]}
+                        >
+                            <h3 style={{ color: '#00416A', fontSize: '20px', margin: 0, fontWeight: 600 }}>
+                                Step 14: Prepare for Advanced Mobile Automation
+                            </h3>
+                            <span style={{ fontSize: '22px', color: '#00416A' }}>
+                                {macOSBabyStepsExpanded[14] ? '-' : '+'}
+                            </span>
+                        </div>
+                        {macOSBabyStepsExpanded[14] && (
+                            <>
+                                <p style={leftAlignStyles.paragraph}>
+                                    The curriculum closes by outlining next steps such as gestures, scrolls, data-driven tests, API + mobile validation, CI/CD, and cloud device labs.
+                                    Non‑technical learners see a clear &quot;ladder&quot; of what comes after the basics, instead of feeling like the journey ends with the first test.
+                                </p>
+                                <p style={leftAlignStyles.paragraph}>
+                                    By this point, learners have a working <strong>Appium + Xcode + TypeScript + WebdriverIO</strong> project that launches an iOS app,
+                                    automates a login flow, uses page objects and waits, and is ready to grow into a more advanced framework.
+                                </p>
+                            </>
+                        )}
                     </div>
                 )}
             </div>
