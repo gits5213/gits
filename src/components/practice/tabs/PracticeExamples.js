@@ -1,5 +1,6 @@
 import React, {Component} from 'react';
 import {Link} from 'react-router-dom';
+import { PRACTICE_TYPE_OPTIONS } from '../practiceTypeOptions';
 import '../../../styles/base.css';
 
 class PracticeExamples extends Component {
@@ -8,6 +9,8 @@ class PracticeExamples extends Component {
         this.state = {
             examples: [
                 { name: 'Registration Form', path: '/practice/registration-form' },
+                { name: 'Playwright locator & action sandbox', path: '/practice/playwright-sandbox' },
+                { name: 'Playwright syntax reference (full cheat sheet + playground)', path: '/practice/playwright-syntax' },
                 { name: 'E2E Flow', path: '/practice/e2e-flow' },
                 { name: 'A/B Testing', path: '/practice/ab-testing' },
                 { name: 'Add/Remove Elements', path: '/practice/add-remove-elements' },
@@ -75,7 +78,22 @@ class PracticeExamples extends Component {
         return `practice-example-link-${sanitized}-${index}`;
     };
 
+    navigatePracticeType = (path) => {
+        if (!path) return;
+        if (this.props.history && typeof this.props.history.push === 'function') {
+            this.props.history.push(path);
+        } else if (typeof window !== 'undefined') {
+            window.location.assign(path);
+        }
+    };
+
     render() {
+        const pathname = (this.props.location && this.props.location.pathname) || '';
+        const normalizedPath = pathname.replace(/\/$/, '') || '/practice/examples';
+        const currentPracticeType =
+            PRACTICE_TYPE_OPTIONS.find((opt) => opt.value.replace(/\/$/, '') === normalizedPath) ||
+            PRACTICE_TYPE_OPTIONS[0];
+
         return (
             <main 
                 id="practice-examples-main"
@@ -95,6 +113,57 @@ class PracticeExamples extends Component {
                         padding: '40px 20px'
                     }}
                 >
+                    {/* Practice type — same destinations as parent Practice page; placed above examples list */}
+                    <div
+                        id="practice-examples-practice-type-bar"
+                        data-testid="practice-examples-practice-type-bar"
+                        style={{
+                            marginBottom: '24px',
+                            padding: '16px 20px',
+                            background: 'linear-gradient(135deg, #00416A 0%, #005a8a 100%)',
+                            borderRadius: '12px',
+                            boxShadow: '0 4px 12px rgba(0, 65, 106, 0.25)'
+                        }}
+                    >
+                        <label
+                            htmlFor="practice-examples-practice-type-dropdown"
+                            style={{
+                                display: 'block',
+                                fontSize: '14px',
+                                fontWeight: '600',
+                                color: 'rgba(255,255,255,0.95)',
+                                marginBottom: '8px'
+                            }}
+                        >
+                            Practice type
+                        </label>
+                        <select
+                            id="practice-examples-practice-type-dropdown"
+                            data-testid="practice-examples-practice-type-dropdown"
+                            value={currentPracticeType.value}
+                            onChange={(e) => this.navigatePracticeType(e.target.value)}
+                            style={{
+                                width: '100%',
+                                maxWidth: '480px',
+                                padding: '12px 16px',
+                                fontSize: '16px',
+                                color: '#1e293b',
+                                backgroundColor: '#ffffff',
+                                border: '2px solid rgba(255,255,255,0.3)',
+                                borderRadius: '8px',
+                                cursor: 'pointer',
+                                outline: 'none',
+                                fontFamily: 'inherit'
+                            }}
+                        >
+                            {PRACTICE_TYPE_OPTIONS.map((opt) => (
+                                <option key={opt.value} value={opt.value}>
+                                    {opt.label}
+                                </option>
+                            ))}
+                        </select>
+                    </div>
+
                     {/* Modern Header Section */}
                     <div 
                         id="practice-examples-header"

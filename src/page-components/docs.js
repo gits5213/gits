@@ -22,6 +22,7 @@ import ApiTest from '../components/docs/tabs/api-test';
 import Appium from '../components/docs/tabs/appium';
 import PerformanceTest from '../components/docs/tabs/performanceTest';
 import Links from '../components/docs/tabs/resLinks';
+import TTosca from '../components/docs/tabs/ttosca';
 import '../styles/base.css';
 import '../styles/docs.css';
 
@@ -55,6 +56,7 @@ class docs extends Component {
         if (path.includes('/python')) return 19;
         if (path.includes('/network')) return 20;
         if (path.includes('/links')) return 21;
+        if (path.includes('/ttosca') || path.includes('/TTosca')) return 22;
         // Default to agile if just /docs
         return 0;
     }
@@ -96,7 +98,8 @@ class docs extends Component {
             '/docs/java',
             '/docs/python',
             '/docs/network',
-            '/docs/links'
+            '/docs/links',
+            '/docs/ttosca'
         ];
         // Ensure tabId is a valid number
         const validTabId = typeof tabId === 'number' ? tabId : parseInt(tabId, 10);
@@ -201,6 +204,10 @@ class docs extends Component {
             return(
                 <Links />
             )
+        } else if(this.state.activeTab === 22) {
+            return(
+                <TTosca />
+            )
         }
         
     }
@@ -229,7 +236,8 @@ class docs extends Component {
             { label: 'ReactJS', id: 15 },
             { label: 'Scrum', id: 1 },
             { label: 'SQL', id: 17 },
-            { label: 'TS', id: 14 }
+            { label: 'TS', id: 14 },
+            { label: 'TTosca', id: 22 }
         ];
 
         return (

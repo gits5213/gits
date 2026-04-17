@@ -49,6 +49,8 @@ export function generateStaticParams() {
     { slug: 'redirect-link' },
     { slug: 'registration-form' },
     { slug: 'e2e-flow' },
+    { slug: 'playwright-sandbox' },
+    { slug: 'playwright-syntax' },
     { slug: 'secure-file-download' },
     { slug: 'shadow-dom' },
     { slug: 'shifting-content' },

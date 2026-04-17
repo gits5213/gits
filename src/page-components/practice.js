@@ -1,6 +1,7 @@
 import React, {Component} from 'react';
 import { withRouter } from 'react-router-dom';
 import PracticeExamples from '../components/practice/tabs/PracticeExamples';
+import { PRACTICE_TYPE_OPTIONS } from '../components/practice/practiceTypeOptions';
 import HandsOnPracticalExam from '../components/practice/tabs/HandsOnPracticalExam';
 import TestCases from '../components/practice/tabs/TestCases';
 import Quiz from '../components/practice/tabs/Quiz';
@@ -62,7 +63,10 @@ class Practice extends Component {
     toggleCategories() {
         if(this.state.activeTab === 0) {
             return(
-                <PracticeExamples />
+                <PracticeExamples
+                    history={this.props.history}
+                    location={this.props.location}
+                />
             )
         } else if(this.state.activeTab === 1) {
             return(
@@ -138,22 +142,13 @@ class Practice extends Component {
             }
         ];
 
-        const practiceTypeOptions = [
-            { value: '/practice/examples', label: 'UI Practice Examples' },
-            { value: '/practice/api-examples', label: 'API Practice Examples' },
-            { value: '/practice/performance-examples', label: 'Performance Practice Example' },
-            { value: '/practice/python-examples', label: 'Python Practice Example' },
-            { value: '/practice/appium-ios-emulator', label: 'Appium iOS (Emulator) Practice Example' },
-            { value: '/practice/appium-android-emulator', label: 'Appium Android (Emulator) Practice Example' },
-            { value: '/practice/appium-ios-device', label: 'Appium iOS (Real Device) Practice Example' },
-            { value: '/practice/appium-android-device', label: 'Appium Android (Device) Practice Example' }
-        ];
         const currentPath = (this.props.location.pathname || '').replace(/\/$/, '') || '/practice/examples';
-        const currentPracticeType = practiceTypeOptions.find((opt) => (opt.value.replace(/\/$/, '') === currentPath)) || practiceTypeOptions[0];
+        const currentPracticeType = PRACTICE_TYPE_OPTIONS.find((opt) => (opt.value.replace(/\/$/, '') === currentPath)) || PRACTICE_TYPE_OPTIONS[0];
 
         return (
             <div className="category-tabs">
-                {/* Practice Type Dropdown - visible on practice page */}
+                {/* Practice type lives inside UI Practice Examples tab; show here on other tabs only */}
+                {this.state.activeTab !== 0 && (
                 <div style={{
                     maxWidth: '1400px',
                     margin: '0 auto 20px',
@@ -188,11 +183,12 @@ class Practice extends Component {
                             fontFamily: 'inherit'
                         }}
                     >
-                        {practiceTypeOptions.map((opt) => (
+                        {PRACTICE_TYPE_OPTIONS.map((opt) => (
                             <option key={opt.value} value={opt.value}>{opt.label}</option>
                         ))}
                     </select>
                 </div>
+                )}
 
                 {/* Modern Tab Navigation */}
                 <div style={{

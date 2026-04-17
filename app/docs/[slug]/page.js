@@ -26,6 +26,8 @@ export function generateStaticParams() {
     { slug: 'python' },
     { slug: 'network' },
     { slug: 'links' },
+    { slug: 'ttosca' },
+    { slug: 'TTosca' },
   ]
 }
 
