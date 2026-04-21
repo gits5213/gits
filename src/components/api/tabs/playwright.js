@@ -418,6 +418,76 @@ const ResPlaywright = () => {
                             📄 Download PDF
                         </a>
                     </div>
+
+                    {/* Download Option 3 */}
+                    <div style={{
+                        backgroundColor: '#ffffff',
+                        borderRadius: '12px',
+                        padding: '20px',
+                        border: '1px solid #e2e8f0',
+                        textAlign: 'left',
+                        transition: 'all 0.3s cubic-bezier(0.4, 0, 0.2, 1)',
+                        boxShadow: '0 1px 3px rgba(0, 0, 0, 0.08)'
+                    }}
+                    onMouseEnter={(e) => {
+                        e.currentTarget.style.borderColor = colors.primary;
+                        e.currentTarget.style.transform = 'translateY(-3px)';
+                        e.currentTarget.style.boxShadow = '0 6px 12px rgba(0, 65, 106, 0.15)';
+                    }}
+                    onMouseLeave={(e) => {
+                        e.currentTarget.style.borderColor = '#e2e8f0';
+                        e.currentTarget.style.transform = 'translateY(0)';
+                        e.currentTarget.style.boxShadow = '0 1px 3px rgba(0, 0, 0, 0.08)';
+                    }}
+                    >
+                        <h4 style={{ 
+                            marginBottom: '10px',
+                            color: '#1e293b',
+                            fontSize: '16px',
+                            fontWeight: '600',
+                            lineHeight: '1.3'
+                        }}>
+                            Playwright Cheat Sheet (PNG)
+                        </h4>
+                        <p style={{
+                            marginBottom: '16px',
+                            color: '#64748b',
+                            fontSize: '13px',
+                            lineHeight: '1.5'
+                        }}>
+                            Download the Playwright quick reference cheat sheet image
+                        </p>
+                        <a
+                            href={`${process.env.PUBLIC_URL || ''}/images/playwrightCheatsheet.png`.replace(/\/+/g, '/')}
+                            download="playwrightCheatsheet.png"
+                            style={{
+                                display: 'inline-block',
+                                backgroundColor: colors.primary,
+                                color: colors.textWhite,
+                                padding: '10px 20px',
+                                borderRadius: '8px',
+                                textDecoration: 'none',
+                                fontSize: '13px',
+                                fontWeight: '600',
+                                transition: 'all 0.3s ease',
+                                boxShadow: '0 2px 4px rgba(0, 65, 106, 0.2)',
+                                border: 'none',
+                                cursor: 'pointer'
+                            }}
+                            onMouseEnter={(e) => {
+                                e.target.style.backgroundColor = colors.primaryDark;
+                                e.target.style.transform = 'translateY(-2px)';
+                                e.target.style.boxShadow = '0 4px 8px rgba(0, 65, 106, 0.3)';
+                            }}
+                            onMouseLeave={(e) => {
+                                e.target.style.backgroundColor = colors.primary;
+                                e.target.style.transform = 'translateY(0)';
+                                e.target.style.boxShadow = '0 2px 4px rgba(0, 65, 106, 0.2)';
+                            }}
+                        >
+                            🖼️ Download PNG
+                        </a>
+                    </div>
                 </div>
             </div>
 
