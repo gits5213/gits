@@ -8,6 +8,7 @@ import Help from '../components/aid/tabs/help';
 import Frontend from '../components/aid/tabs/frontend';
 import CodeSnippet from '../components/aid/tabs/code-snippet';
 import Online from '../components/aid/tabs/online';
+import AutoWeb from '../components/aid/tabs/Autoweb';
 import '../styles/base.css';
 import '../styles/aid.css';
 
@@ -18,17 +19,24 @@ class links extends Component {
     }
 
     getActiveTabFromPath() {
-        const path = this.props.location.pathname;
-        if (path.includes('/window')) return 0;
-        if (path.includes('/mac')) return 1;
-        if (path.includes('/basic')) return 2;
-        if (path.includes('/gk')) return 3;
-        if (path.includes('/help')) return 4;
-        if (path.includes('/frontend')) return 5;
-        if (path.includes('/codesnippet')) return 6;
-        if (path.includes('/online')) return 7;
-        // Default to window if just /aid
-        return 0;
+        const raw = this.props.location.pathname || '/';
+        // trailingSlash: true in next.config — normalize so the last segment is reliable
+        const path = raw.replace(/\/+$/, '') || '/';
+        const segments = path.split('/').filter(Boolean);
+        const slug = segments.length >= 2 ? segments[segments.length - 1] : 'window';
+        const slugToTab = {
+            window: 0,
+            mac: 1,
+            basic: 2,
+            gk: 3,
+            help: 4,
+            frontend: 5,
+            codesnippet: 6,
+            online: 7,
+            'auto-web': 8,
+        };
+        const tab = slugToTab[slug];
+        return typeof tab === 'number' ? tab : 0;
     }
 
     componentDidMount() {
@@ -54,7 +62,8 @@ class links extends Component {
             '/aid/help',
             '/aid/frontend',
             '/aid/codesnippet',
-            '/aid/online'
+            '/aid/online',
+            '/aid/auto-web'
         ];
         // Ensure tabId is a valid number
         const validTabId = typeof tabId === 'number' ? tabId : parseInt(tabId, 10);
@@ -102,12 +111,17 @@ class links extends Component {
             return(
                 <Online />
             )
+        } else if (this.state.activeTab === 8) {
+            return (
+                <AutoWeb />
+            );
         }
     }
 
     render() {
         // Tabs sorted alphabetically by label
         const tabs = [
+            { label: 'AutoWeb', id: 8 },
             { label: 'Basic', id: 2 },
             { label: 'CodeSnippet', id: 6 },
             { label: 'Frontend', id: 5 },

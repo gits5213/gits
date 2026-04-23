@@ -12,6 +12,7 @@ export function generateStaticParams() {
     { slug: 'frontend' },
     { slug: 'codesnippet' },
     { slug: 'online' },
+    { slug: 'auto-web' },
   ]
 }
 

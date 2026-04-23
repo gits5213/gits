@@ -1,5 +1,6 @@
 'use client'
 
+import './aid-index.css'
 import { usePathname, useRouter } from 'next/navigation'
 import { useEffect } from 'react'
 import AIDComponent from '@/src/page-components/aid'
