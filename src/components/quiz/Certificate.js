@@ -101,12 +101,12 @@ class Certificate extends Component {
             doc.text('has successfully completed', pageWidth / 2, yPos, { align: 'center' });
             yPos += 35;
 
-            // Exam name and title (with wrapping)
-            const examText = `${examData.examName}: ${examData.title}`;
+            // Full exam title only (no exam number / examName on certificate)
+            const examText = examData.title || '';
             doc.setFontSize(22);
             doc.setTextColor(0, 65, 106);
             doc.setFont('helvetica', 'bold');
-            const examLines = splitTextToFit(examText, pageWidth - 200, 22);
+            const examLines = doc.splitTextToSize(examText, pageWidth - 200);
             examLines.forEach((line, index) => {
                 doc.text(line, pageWidth / 2, yPos + (index * 28), { align: 'center' });
             });
@@ -155,8 +155,13 @@ class Certificate extends Component {
             doc.setTextColor(100, 100, 100);
             doc.text('Instructor Signature', pageWidth / 2, signatureY + 15, { align: 'center' });
 
-            // Save PDF
-            const fileName = `Certificate_${examData.examName}_${fullName.replace(/\s+/g, '_')}.pdf`;
+            // Save PDF (filename uses title slug, not exam number)
+            const titleSlug = (examData.title || 'Certificate')
+                .replace(/[^\w\s-]/g, '')
+                .trim()
+                .replace(/\s+/g, '_')
+                .slice(0, 80);
+            const fileName = `Certificate_${titleSlug || 'Quiz'}_${fullName.replace(/\s+/g, '_')}.pdf`;
             doc.save(fileName);
         } catch (error) {
             console.error('PDF generation failed:', error);
@@ -248,9 +253,12 @@ class Certificate extends Component {
                         fontSize: '28px',
                         fontWeight: 'bold',
                         color: '#00416A',
-                        marginBottom: '20px'
+                        marginBottom: '20px',
+                        maxWidth: '100%',
+                        overflowWrap: 'break-word',
+                        wordWrap: 'break-word'
                     }}>
-                        {examData.examName}: {examData.title}
+                        {examData.title}
                     </h3>
 
                     <p style={{
