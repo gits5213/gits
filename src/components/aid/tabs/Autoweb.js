@@ -109,6 +109,12 @@ const AutoWeb = () => {
                     <ResourceItem title="Practice ExpandTesting" href="https://practice.expandtesting.com/">
                         Structured UI and API examples (including Swagger-style docs) for CRUD, authentication, and broader QA scenarios.
                     </ResourceItem>
+                    <ResourceItem
+                        title="Tricentis Training CoffeeShop"
+                        href="https://webservice.toscacloud.com/api/ui/index.html?urls.primaryName=Tricentis%20Training%20CoffeeShop"
+                    >
+                        Hosted API UI (OpenAPI/Swagger-style) for the Tricentis Training CoffeeShop service—useful for exploring endpoints and trying requests against a training backend.
+                    </ResourceItem>
                 </ul>
             </div>
 
