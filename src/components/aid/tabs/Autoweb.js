@@ -115,6 +115,9 @@ const AutoWeb = () => {
                     >
                         Hosted API UI (OpenAPI/Swagger-style) for the Tricentis Training CoffeeShop service—useful for exploring endpoints and trying requests against a training backend.
                     </ResourceItem>
+                    <ResourceItem title="Training Services" href="https://webservice.toscacloud.com/training/">
+                        Tricentis API demo training service: Swagger docs, interactive UI, and access keys for hands-on API automation practice.
+                    </ResourceItem>
                 </ul>
             </div>
 
