@@ -6577,6 +6577,116 @@ export const exam26Data = {
                 'Only creates HTML and CSS templates'
             ],
             correctAnswer: 1
+        },
+        {
+            id: 571,
+            question: 'What is codeless test automation?',
+            options: [
+                'Testing only by writing Java code',
+                'Automating tests without writing manual code or scripts',
+                'Testing only APIs',
+                'Testing without using any tool'
+            ],
+            correctAnswer: 1
+        },
+        {
+            id: 572,
+            question: 'What is the main goal of TestGrid\'s codeless testing platform?',
+            options: [
+                'To replace all developers',
+                'To build, run, and analyze tests quickly without coding',
+                'To test only desktop applications',
+                'To remove the need for QA teams'
+            ],
+            correctAnswer: 1
+        },
+        {
+            id: 573,
+            question: 'Which type of tester can benefit most from codeless automation?',
+            options: [
+                'Only senior developers',
+                'Only database administrators',
+                'Manual testers and QA teams with limited coding knowledge',
+                'Only network engineers'
+            ],
+            correctAnswer: 2
+        },
+        {
+            id: 574,
+            question: 'In codeless testing, does "codeless" mean there is no code behind the tool?',
+            options: [
+                'Yes, no code exists anywhere',
+                'No, the user does not write code, but the tool may generate automation logic/code in the background',
+                'Yes, it only uses screenshots',
+                'No, users must write all code manually'
+            ],
+            correctAnswer: 1
+        },
+        {
+            id: 575,
+            question: 'Which of the following is a benefit of codeless automation?',
+            options: [
+                'Slower testing',
+                'More manual effort',
+                'Faster testing and reduced testing time',
+                'No regression testing support'
+            ],
+            correctAnswer: 2
+        },
+        {
+            id: 576,
+            question: 'What role can AI play in codeless automation?',
+            options: [
+                'It can help identify UI changes and support self-healing tests',
+                'It deletes test cases automatically',
+                'It removes the need for software requirements',
+                'It only writes SQL queries'
+            ],
+            correctAnswer: 0
+        },
+        {
+            id: 577,
+            question: 'What does "self-healing" mean in test automation?',
+            options: [
+                'The application fixes production bugs by itself',
+                'The test automatically adapts when UI elements change',
+                'The tester manually updates every locator',
+                'The test runs only once'
+            ],
+            correctAnswer: 1
+        },
+        {
+            id: 578,
+            question: 'Can TestGrid support testing on real mobile devices and browsers?',
+            options: [
+                'Yes',
+                'No',
+                'Only browsers, not mobile devices',
+                'Only Android emulators'
+            ],
+            correctAnswer: 0
+        },
+        {
+            id: 579,
+            question: 'Why is codeless automation useful for regression testing?',
+            options: [
+                'It helps run repeated test cases faster',
+                'It prevents teams from testing often',
+                'It only works for one-time testing',
+                'It removes the need for test data'
+            ],
+            correctAnswer: 0
+        },
+        {
+            id: 580,
+            question: 'Which feature in TestGrid helps teams create automated tests faster without programming knowledge?',
+            options: [
+                'Manual spreadsheet tracking',
+                'Record-and-playback/codeless test creation',
+                'Writing JavaScript for every test step',
+                'Database backup testing'
+            ],
+            correctAnswer: 1
         }
     ]
 };

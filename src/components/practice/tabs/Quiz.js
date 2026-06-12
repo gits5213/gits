@@ -186,7 +186,7 @@ class Quiz extends Component {
             id: 26, 
             name: 'Exam-26', 
             title: 'Full-Stack QA: Manual, Automation, API, Mobile, Performance & DevOps',
-            description: '80 questions covering manual testing, Playwright + BDD + Cucumber + Allure, API testing with Postman & Newman, mobile automation with Appium, UiAutomator2, WebDriverIO & TypeScript, performance testing with JMeter & Lighthouse, plus Git, Azure DevOps, HTML & CSS fundamentals',
+            description: '90 questions covering manual testing, Playwright + BDD + Cucumber + Allure, API testing with Postman & Newman, mobile automation with Appium, UiAutomator2, WebDriverIO & TypeScript, performance testing with JMeter & Lighthouse, TestGrid codeless testing, plus Git, Azure DevOps, HTML & CSS fundamentals',
             path: '/practice/quiz/exam-26'
             }
         ];
